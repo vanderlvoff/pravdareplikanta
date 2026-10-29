@@ -1,11 +1,11 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "publication": "pravda_replikanta",
   "issue_type": "daily",
   "issue_date": "2026-10-30",
   "issue_id": "daily-2026-10-30",
   "language": "en",
-  "generated_at": "2026-10-30T01:13:47+09:00",
+  "generated_at": "2026-10-30T01:46:55+09:00",
   "title": "Pravda Replikanta — Engineering Data, October 30",
   "lead": "Safer VLA execution, faster manipulation, demonstration capture and humanoid locomotion; Japan is adding insurance for operational robot risk.",
   "news": [
@@ -23,7 +23,8 @@
       "source_ids": [
         "stem"
       ],
-      "time_window": "72h"
+      "time_window": "72h",
+      "body": "A VLA can understand a command and still drive an arm into an obstacle. VLA-Stem addresses that gap without retraining the base model. It turns predicted action chunks into motion references and adds a faster local controller that adjusts execution using robot-state and obstacle observations.\n\nAcross six constrained simulation settings, the researchers report 52.8% collision-free success, versus 23.7% for their strongest safety baseline. Physical tests also show fewer collisions. The architecture is promising for existing policies, but these limited experiments are not a general safety certification or independent replication."
     },
     {
       "id": "tops-flow",
@@ -39,13 +40,14 @@
       "source_ids": [
         "tops"
       ],
-      "time_window": "72h"
+      "time_window": "72h",
+      "body": "Making manipulation faster does not always require a bigger neural network. TOPS changes where flow-based action generation begins and how it progresses, tailoring the source distribution and transport schedule to the task. The network architecture remains unchanged.\n\nOn LIBERO-10, one TOPS step achieved 69.67% success against 53.44% for ten standard flow-matching steps, with roughly one-sixth of the inference time. In a real upper-drawer task, the authors report 80% versus 20%. Both latency and accuracy matter in closed-loop control, although the gains depend on the tested tasks and configurations."
     },
     {
       "id": "openjaws-stereo",
       "title": "OpenJaws: open handheld demonstration gripper with stereo localization",
       "summary": "A robot-free UMI device records metric trajectories using a stereo camera.",
-      "details": "The team presents a 3D-printed gripper with an ISO mounting flange and stereo cameras, with an estimated parts cost near $400. UMI-Loc-Bench-v1 contains 90 demonstrations over nine tasks; one stereo method reports 2.9 mm localization error. Policies trained on the collected data achieved 90% success on each of two UR10 tasks, with ten trials per task.",
+      "details": "The team presents a 3D-printed gripper with an ISO mounting flange and stereo cameras, with an estimated parts cost near $400. UMI-Loc-Bench-v1 contains 90 demonstrations over nine tasks; offline stereo COLMAP reports 2.9 mm localization error. Policies trained on the collected data achieved 90% success on each of two UR10 tasks, with ten trials per task.",
       "technical_novelty": "Co-design of the data-collection device and deployed gripper, avoiding the absolute-scale ambiguity of monocular SLAM.",
       "engineering_impact": "Could reduce demonstration collection cost and the UMI-to-real transfer gap.",
       "limitations": "The project page still marks some code, hardware and dataset links as Coming Soon; real-robot evaluation is small.",
@@ -55,7 +57,8 @@
       "source_ids": [
         "openjaws"
       ],
-      "time_window": "72h"
+      "time_window": "72h",
+      "body": "Before a robot can learn a manipulation skill, someone must demonstrate it. OpenJaws records those examples without a robot: an operator moves a camera-equipped handheld gripper, and stereo vision reconstructs motion at metric scale. That avoids the absolute-scale ambiguity of monocular tracking.\n\nThe estimated parts cost is about $400. A benchmark contains 90 demonstrations across nine tasks, while offline stereo COLMAP reports 2.9 mm position error. Two UR10 policies reached 90% success each, but on just ten trials per task. Some promised code, hardware and dataset links still read Coming Soon, so the practical completeness of the open release remains to be checked."
     },
     {
       "id": "roboauto-programs",
@@ -71,7 +74,8 @@
       "source_ids": [
         "roboauto"
       ],
-      "time_window": "72h"
+      "time_window": "72h",
+      "body": "A robot may execute its program while failing the task: grasping empty space, for example, or proceeding before a drawer opens. RoboAuto puts physical verification into program search. It stores knowledge of objects and possible interactions, grounds it in the current scene and runs small experiments when competing explanations remain.\n\nThe authors report 89.1% success on short LIBERO-PRO tasks and 73.4% on LIBERO-PRO Long, against ASPIRE's 30.8%. Three real-robot tasks are also evaluated. The appeal is inspectable, repairable behavior, but it relies on perception, reusable skills and safeguards for running generated code."
     },
     {
       "id": "reach-crawling",
@@ -87,7 +91,8 @@
       "source_ids": [
         "reach"
       ],
-      "time_window": "72h"
+      "time_window": "72h",
+      "body": "Walking is of little use when a passage is lower than a humanoid's torso. REACH gives the Unitree G1 a way to switch from bipedal movement to crawling and back. A transition policy bridges different contact modes, while LiDAR-based planning anticipates overhead clearance.\n\nReported body-height commands span 1.27–0.50 m for walking and 0.50–0.20 m for crawling. The team demonstrates traversal on a physical G1. Inspection is an obvious possible application, but controlled demonstrations do not establish contact safety or long-term field reliability."
     },
     {
       "id": "hc2-foresight",
@@ -103,11 +108,12 @@
       "source_ids": [
         "hc2"
       ],
-      "time_window": "72h"
+      "time_window": "72h",
+      "body": "Seeing the next foothold is not enough; a humanoid must anticipate when its foot will land and whether the surface can support it. HC2Robot predicts contact timing, position and quality from onboard observations, approximating information available only during simulator training. A Hyper-Connection Transformer combines the temporal signals.\n\nMean traversal success reaches 97.60% across simulated stairs, gaps, platforms and slopes. It is a strong result for those test conditions, not proof of real-world parkour reliability. Unfamiliar surfaces and physical disturbances remain to be tested."
     },
     {
       "id": "dexsafe-hand",
-      "title": "DexSafe reaches 95.2% in-hand pose targets while reducing drops",
+      "title": "LEAP hand reaches 95.2% of in-hand pose targets with fewer drops",
       "summary": "A LEAP hand policy is trained in simulation without human demonstrations; a residual filter reduces object drops.",
       "details": "Over 13.3 hours of real-hand evaluation covering more than 4,800 unseen goals and four objects, the policy reaches 95.2% of targets within 2 cm and 0.4 rad. A separate residual safety filter reduces drops by 75% while retaining 91.5% target success. The authors report zero-shot sim-to-real transfer and a wrist-camera configuration.",
       "technical_novelty": "Adaptive friction curriculum, varied initial grasps and an adjustable residual safety filter.",
@@ -119,7 +125,8 @@
       "source_ids": [
         "dex"
       ],
-      "time_window": "72h"
+      "time_window": "72h",
+      "body": "A dexterous hand can reach the right pose and still drop its object. Researchers using the LEAP hand treat that risk as a separate safety problem. They train in simulation without human demonstrations and add an adjustable residual filter to moderate risky actions.\n\nAcross 13.3 hours of real-hand testing, four objects and more than 4,800 unseen goals, the base policy reached 95.2% of target poses within 2 cm and 0.4 radians. The filter cut drops by 75% while retaining 91.5% target success. The trade-off is measurable, but performance on other hands and industrial duty cycles remains unproven."
     },
     {
       "id": "tokio-robot-insurance",
@@ -135,7 +142,8 @@
       "source_ids": [
         "tokio"
       ],
-      "time_window": "7d"
+      "time_window": "7d",
+      "body": "Robot deployment begins with productivity forecasts. It often ends with a harder question: who pays when the machine stops? Japan's Tokio Marine & Nichido has announced AI Robot Insurance for November 2026, covering specified downtime-related continuity costs alongside equipment damage and third-party liability.\n\nThe stated scope includes autonomous wheeled, quadruped and humanoid systems. Buyers should account for fallback staffing and downtime in total cost of ownership. Cyber-related losses are excluded in the published description, while premiums and precise terms require contract review. Insurance does not make robots safer, but it makes failure costs explicit."
     }
   ],
   "technology_signal": {
