@@ -159,7 +159,10 @@
           ]
         },
         "body": {
-          "$ref": "#/$defs/text"
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[^\\r\\n]+(?:\\n\\n[^\\r\\n]+)+$",
+          "description": "Finished article, at least two paragraphs separated by exactly two newline characters (JSON escaped as \\n\\n). No Markdown or HTML."
         }
       }
     },
