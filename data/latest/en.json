@@ -1,0 +1,130 @@
+{
+  "schema_version": "1.0",
+  "publication": "pravda_replikanta",
+  "issue_type": "daily",
+  "issue_date": "2026-10-30",
+  "issue_id": "daily-2026-10-30",
+  "language": "en",
+  "generated_at": "2026-10-30T00:58:14+09:00",
+  "title": "Replicant Data — October 30, 2026",
+  "lead": "Verified developments: AGIBOT proposed a measure of productive autonomous robot work, introduced GO-3 Preview and the G2 Max industrial platform; in Japan, PLiBOT announced a co-development project with Sumitomo Warehouse.",
+  "news": [
+    {
+      "id": "agibot-worken",
+      "title": "AGIBOT proposes Worken metric for productive robot work",
+      "summary": "Worken combines active robot count, autonomous working hours and task-output efficiency.",
+      "details": "At its October 29 Innovation Day, AGIBOT proposed Worken, or Effective Intelligent Work Hours. Its formula multiplies the number of active robots by hours of autonomous work and an output-efficiency ratio relative to a task benchmark. The aim is to measure accepted productive output rather than robots manufactured.",
+      "technical_novelty": "A combined measure of deployed scale, autonomy and task effectiveness.",
+      "engineering_impact": "Could support operational KPIs if teams agree on task-specific reference performance and human-intervention accounting.",
+      "limitations": "A company proposal, not an established industry standard. Different tasks and benchmarks remain hard to compare, and no independent validation was provided.",
+      "evidence_status": "Company-proposed metric; no independent validation of general applicability.",
+      "published_at": "2026-10-29",
+      "organization": "AGIBOT",
+      "source_ids": [
+        "src-agibot-20261029"
+      ]
+    },
+    {
+      "id": "agibot-go3",
+      "title": "AGIBOT unveils GO-3 Preview and WITA-Omni interaction model",
+      "summary": "GO-3 Preview combines reasoning, prediction and action; WITA-Omni links vision, speech and physical responses.",
+      "details": "GO-3 Preview uses a World Reasoning Action Model (WRAM) architecture designed to anticipate action outcomes. AGIBOT demonstrated zero-shot and few-shot scenarios and claimed first place on RoboDojo for task success and process score, as well as leading overall scores on RoboTwin and RoboColiseum. Separately, WITA-Omni was shown for continuous multimodal interaction with coordinated speech and movement.",
+      "technical_novelty": "World-dynamics reasoning and action generation are brought together, alongside multimodal interaction.",
+      "engineering_impact": "The pre-training, post-training, deployment-feedback loop could improve robotic skills after rollout.",
+      "limitations": "Independent reproduction details and benchmark verification are insufficient; showcased zero-shot behavior does not prove universal deployment without adaptation.",
+      "evidence_status": "Manufacturer demonstrations and benchmark claims, not independently verified.",
+      "published_at": "2026-10-29",
+      "organization": "AGIBOT",
+      "source_ids": [
+        "src-agibot-20261029"
+      ]
+    },
+    {
+      "id": "agibot-g2max",
+      "title": "AGIBOT launches G2 Max and AHA3 for industrial robotics",
+      "summary": "G2 Max targets dual-arm handling of up to 40 kg; AHA3 integrates hardware, connectivity and compute for humanoids.",
+      "details": "G2 Max was announced with 21 degrees of freedom, a claimed combined dual-arm payload up to 40 kg and adjustable working height from 0.1 to 2.5 m. It supports force-controlled manipulation and omnidirectional mobility. AHA3 includes integrated drives and compute, Wi-Fi 6/5G, shared liquid cooling and specialized IP67-rated joints. AGIBOT also cited factory applications at Longcheer and logistics sites.",
+      "technical_novelty": "Engineering focus on sustained operation: thermal management, protected joints, integrated compute and force-aware handling.",
+      "engineering_impact": "Deployment teams should validate cycle time, payload across actual trajectories, thermal behavior and integration with existing equipment.",
+      "limitations": "Specifications are vendor claims; independent trials, MTBF and measured site-level productivity were not supplied.",
+      "evidence_status": "Product launch and deployment descriptions by manufacturer.",
+      "published_at": "2026-10-29",
+      "organization": "AGIBOT",
+      "source_ids": [
+        "src-agibot-20261029"
+      ]
+    },
+    {
+      "id": "plibot-sumitomo",
+      "title": "PLiBOT and Sumitomo Warehouse plan heterogeneous robot orchestration",
+      "summary": "A Japanese project combines centralized AMR/AGF fleet control with learned movement-order optimization.",
+      "details": "On October 29, PLiBOT announced its selection as Sumitomo Warehouse's co-creation partner in LOAD 2026. The project aims to coordinate robots from different vendors, people and warehouse infrastructure as routes and cargo change. Reinforcement learning will choose which robot moves, when and how far, while collision prevention and mutual exclusion remain deterministic. Warehouse trials are planned through March 2027.",
+      "technical_novelty": "Separation of learned traffic optimization from a hard safety layer for multi-robot coordination.",
+      "engineering_impact": "A practical pattern for variable-layout warehouses with mixed AMR/AGF fleets and shared human work areas.",
+      "limitations": "The announcement confirms a selected partner and planned pilot, not successful industrial operation; no measured throughput or safety results yet.",
+      "evidence_status": "Official partnership announcement and planned pilot.",
+      "published_at": "2026-10-29",
+      "organization": "PLiBOT",
+      "source_ids": [
+        "src-plibot-20261029"
+      ]
+    }
+  ],
+  "technology_signal": {
+    "title": "From demonstrations to measurable productivity",
+    "summary": "Robotics claims are increasingly framed around autonomous operating hours, acceptable task output and integration into working facilities. Worken proposes an output metric, while PLiBOT's Japanese project separates learned traffic optimization from deterministic safety controls.",
+    "implications": "Physical AI deployments should track not only single-demo success rates but autonomous hours, human interventions, accepted throughput, safety and total operating cost."
+  },
+  "glossary": [
+    {
+      "term": "Worken",
+      "definition": "AGIBOT's proposed productive-autonomy metric: active robots × autonomous hours × relative output efficiency."
+    },
+    {
+      "term": "WRAM",
+      "definition": "World Reasoning Action Model: an architecture combining world reasoning, outcome prediction and action generation."
+    },
+    {
+      "term": "zero-shot",
+      "definition": "Performing a new task without task-specific additional training; not a guarantee of reliability in new settings."
+    },
+    {
+      "term": "few-shot",
+      "definition": "Performing or adapting to a task using a small number of examples."
+    },
+    {
+      "term": "AMR",
+      "definition": "Autonomous Mobile Robot, a mobile robot that navigates its environment autonomously."
+    },
+    {
+      "term": "AGF",
+      "definition": "Automated Guided Forklift, a forklift that performs guided or autonomous handling tasks."
+    },
+    {
+      "term": "reinforcement learning",
+      "definition": "Learning decisions by optimizing rewards received from actions."
+    },
+    {
+      "term": "deterministic safety control",
+      "definition": "Rule-based, predictable control that enforces safety constraints independently of learned optimization."
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-agibot-20261029",
+      "url": "https://www.agibot.com/article/231/detail/131.html",
+      "domain": "agibot.com",
+      "organization": "AGIBOT",
+      "published_at": "2026-10-29",
+      "title": "AGIBOT Introduces Worken to Measure Productive Robot Work at AGIBOT Innovation Day 2026"
+    },
+    {
+      "id": "src-plibot-20261029",
+      "url": "https://prtimes.jp/main/html/rd/p/000000007.000168723.html",
+      "domain": "prtimes.jp",
+      "organization": "PLiBOT",
+      "published_at": "2026-10-29",
+      "title": "PLiBOT selected as Sumitomo Warehouse co-creation partner in LOAD 2026"
+    }
+  ]
+}
