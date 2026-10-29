@@ -1,0 +1,130 @@
+{
+  "schema_version": "1.0",
+  "publication": "pravda_replikanta",
+  "issue_type": "daily",
+  "issue_date": "2026-10-30",
+  "issue_id": "daily-2026-10-30",
+  "language": "ja",
+  "generated_at": "2026-10-30T00:58:14+09:00",
+  "title": "レプリカント・データ — 2026年10月30日",
+  "lead": "確認できた主な動向は、AGIBOTによるロボットの有効稼働量を測るWorkenの提案、GO-3 Previewと産業用G2 Maxの発表、そして日本でのPLiBOTと住友倉庫の共同検証計画である。",
+  "news": [
+    {
+      "id": "agibot-worken",
+      "title": "AGIBOT、ロボットの生産的稼働を測るWorkenを提案",
+      "summary": "稼働中のロボット台数、自律作業時間、作業成果の効率を組み合わせる指標である。",
+      "details": "AGIBOTは10月29日のInnovation Dayで、Effective Intelligent Work Hoursを意味するWorkenを発表した。算式は「稼働中のロボット台数 × 自律作業時間 × 基準作業に対する成果効率」。製造台数ではなく、実際に受け入れ可能な作業成果を評価する考え方だ。",
+      "technical_novelty": "導入規模、自律性、作業の有効性を一つの指標で扱う。",
+      "engineering_impact": "作業ごとの基準性能と人手介入の計数方法を統一すれば、現場KPIの候補になる。",
+      "limitations": "業界標準ではなく同社の提案段階。異なる作業間の比較可能性や第三者検証は未確立である。",
+      "evidence_status": "企業提案の指標であり、汎用性の独立検証はない。",
+      "published_at": "2026-10-29",
+      "organization": "AGIBOT",
+      "source_ids": [
+        "src-agibot-20261029"
+      ]
+    },
+    {
+      "id": "agibot-go3",
+      "title": "AGIBOT、GO-3 Previewと対話モデルWITA-Omniを発表",
+      "summary": "GO-3 Previewは推論・予測・行動を統合し、WITA-Omniは視覚・音声・身体動作を結び付ける。",
+      "details": "GO-3 Previewは行動の結果を予測するWorld Reasoning Action Model（WRAM）に基づく。AGIBOTはzero-shotとfew-shotのデモを示し、RoboDojoのタスク成功率・過程評価で首位、RoboTwinとRoboColiseumでも総合首位と主張した。WITA-Omniは発話と身体動作を同期させた継続的なマルチモーダル対話を対象とする。",
+      "technical_novelty": "世界の動態に関する推論と行動生成を統合し、対話も複数モダリティで扱う。",
+      "engineering_impact": "事前学習、追加学習、現場データのフィードバックを循環させる仕組みが実用上の焦点となる。",
+      "limitations": "ベンチマークの独立再現に必要な情報は十分ではない。zero-shotデモは無調整での汎用導入を保証しない。",
+      "evidence_status": "メーカーによるデモと評価結果の主張。第三者検証は未確認。",
+      "published_at": "2026-10-29",
+      "organization": "AGIBOT",
+      "source_ids": [
+        "src-agibot-20261029"
+      ]
+    },
+    {
+      "id": "agibot-g2max",
+      "title": "AGIBOT、産業用G2 Maxと統合ハードウェアAHA3を投入",
+      "summary": "G2 Maxは両腕合計最大40 kgの搬送を想定し、AHA3はヒューマノイド向けの駆動・通信・計算を統合する。",
+      "details": "G2 Maxは21自由度、両腕合計最大40 kgの公称可搬重量、0.1～2.5 mの可変作業高さを備えると発表された。力制御マニピュレーションと全方向移動に対応する。AHA3では駆動系と計算機の統合、Wi-Fi 6/5G、共通液冷機構、IP67対応の専用関節を示した。Longcheerの製造ラインや物流での適用例にも言及した。",
+      "technical_novelty": "連続稼働を意識した放熱、防護関節、統合計算基盤、力を考慮した搬送設計。",
+      "engineering_impact": "導入時には実作業でのサイクルタイム、動作中の可搬重量、熱特性、既存設備との連携を検証する必要がある。",
+      "limitations": "数値はメーカー公称値。第三者試験、MTBF、現場別の実測生産性は提示されていない。",
+      "evidence_status": "メーカーによる製品発表と導入事例の説明。",
+      "published_at": "2026-10-29",
+      "organization": "AGIBOT",
+      "source_ids": [
+        "src-agibot-20261029"
+      ]
+    },
+    {
+      "id": "plibot-sumitomo",
+      "title": "PLiBOTと住友倉庫、異種ロボットの統合運行を共同検証へ",
+      "summary": "複数メーカーのAMR/AGFを一元管理し、強化学習で走行順序を最適化する計画。",
+      "details": "PLiBOTは10月29日、LOAD 2026において住友倉庫の共創パートナーに採択されたと発表した。貨物や動線が変化する営業倉庫で、異なるメーカーのロボット、人、設備を統合管制する。強化学習は「どの機体を、いつ、どこまで進めるか」を判断し、衝突回避と排他制御は従来の決定論的な安全ロジックが担う。実証は2027年3月までを予定する。",
+      "technical_novelty": "学習による交通効率の最適化と安全性を保証する制御層を明確に分離する。",
+      "engineering_impact": "レイアウト変更が多く、人と異種AMR/AGFが混在する倉庫に適した設計方針である。",
+      "limitations": "現時点ではパートナー選定と実証計画の発表であり、稼働実績ではない。処理能力や安全性の実測値は未公表。",
+      "evidence_status": "公式の採択発表と今後の実証計画。",
+      "published_at": "2026-10-29",
+      "organization": "PLiBOT",
+      "source_ids": [
+        "src-plibot-20261029"
+      ]
+    }
+  ],
+  "technology_signal": {
+    "title": "デモから測定可能な生産性へ",
+    "summary": "ロボットの評価軸は、デモの成功だけでなく、自律稼働時間、良品として認められる作業量、既存現場への統合へと広がっている。Workenは成果を定量化する枠組みを提案し、PLiBOTの計画は学習型の交通最適化と決定論的な安全制御を分離する。",
+    "implications": "Physical AIの導入評価では、単発デモの成功率に加え、自律稼働時間、人の介入回数、有効処理量、安全性、総運用コストを測定すべきである。"
+  },
+  "glossary": [
+    {
+      "term": "Worken",
+      "definition": "AGIBOTが提案した有効自律稼働の指標。稼働台数×自律作業時間×相対的な成果効率。"
+    },
+    {
+      "term": "WRAM",
+      "definition": "World Reasoning Action Model。世界の状態に関する推論、結果予測、行動生成を統合するモデル構成。"
+    },
+    {
+      "term": "zero-shot",
+      "definition": "対象タスク専用の追加学習なしに新しいタスクを実行すること。新環境での信頼性を保証するものではない。"
+    },
+    {
+      "term": "few-shot",
+      "definition": "少数の例を用いてタスクを実行または適応すること。"
+    },
+    {
+      "term": "AMR",
+      "definition": "Autonomous Mobile Robot。環境を認識し自律移動する搬送ロボット。"
+    },
+    {
+      "term": "AGF",
+      "definition": "Automated Guided Forklift。誘導・自動運転により荷役するフォークリフト。"
+    },
+    {
+      "term": "reinforcement learning",
+      "definition": "強化学習。行動に対する報酬を手掛かりに意思決定を最適化する学習手法。"
+    },
+    {
+      "term": "deterministic safety control",
+      "definition": "決定論的な安全制御。学習による最適化とは独立して安全制約を守る規則ベースの制御。"
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-agibot-20261029",
+      "url": "https://www.agibot.com/article/231/detail/131.html",
+      "domain": "agibot.com",
+      "organization": "AGIBOT",
+      "published_at": "2026-10-29",
+      "title": "AGIBOT Introduces Worken to Measure Productive Robot Work at AGIBOT Innovation Day 2026"
+    },
+    {
+      "id": "src-plibot-20261029",
+      "url": "https://prtimes.jp/main/html/rd/p/000000007.000168723.html",
+      "domain": "prtimes.jp",
+      "organization": "PLiBOT",
+      "published_at": "2026-10-29",
+      "title": "PLiBOT selected as Sumitomo Warehouse co-creation partner in LOAD 2026"
+    }
+  ]
+}
