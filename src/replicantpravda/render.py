@@ -1,29 +1,54 @@
 """Deterministic static rendering; no network or publication operations."""
 
+import hashlib
 import json
 import shutil
 import tempfile
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 from jinja2 import Environment, PackageLoader, select_autoescape
 
+from .assets import copy_assets
 from .models import Issue
+from .verification import artifact_hashes
 
 LABELS = {
     "en": {
+        "proof": "NON-FINAL",
+        "pdf": "PDF edition · 3 A4 pages",
+        "kicker": "Physical AI — engineering newspaper",
+        "strapline": "A NEWSPAPER ABOUT PHYSICAL ARTIFICIAL INTELLIGENCE",
+        "weather": "Weather",
+        "weather_pending": "Forecast not supplied",
+        "issue": "Issue",
         "archive": "Archive",
         "sources": "Sources",
-        "notice": "NON-FINAL · Local preview · Approved artwork and fonts pending",
+        "notice": "NON-FINAL · Local preview · Body fonts provisional · Print layout pending",
     },
     "ru": {
+        "proof": "ПРОБНЫЙ МАКЕТ",
+        "pdf": "PDF выпуска · 3 страницы A4",
+        "kicker": "Physical AI — инженерная газета",
+        "strapline": "ГАЗЕТА О ФИЗИЧЕСКОМ ИСКУССТВЕННОМ ИНТЕЛЛЕКТЕ",
+        "weather": "Погода · Итикава",
+        "weather_pending": "Прогноз для выпуска не предоставлен",
+        "issue": "Выпуск",
         "archive": "Архив",
         "sources": "Источники",
-        "notice": "НЕ ФИНАЛ · Локальный просмотр · Ожидаются утверждённые изображения и шрифты",
+        "notice": "НЕ ФИНАЛ · Локальный просмотр · Шрифты статей временные · Печатный макет в работе",
     },
     "ja": {
+        "proof": "非最終版",
+        "pdf": "PDF版 · A4全3ページ",
+        "kicker": "Physical AI — エンジニアリング新聞",
+        "strapline": "フィジカルAIの新聞",
+        "weather": "天気",
+        "weather_pending": "予報データ未提供",
+        "issue": "号",
         "archive": "アーカイブ",
         "sources": "出典",
-        "notice": "非最終版 · ローカルプレビュー · 承認済み画像とフォント待ち",
+        "notice": "非最終版 · ローカルプレビュー · 本文フォントは仮設定 · 印刷レイアウト準備中",
     },
 }
 
@@ -32,7 +57,7 @@ def load_issue(path: Path) -> Issue:
     return Issue.model_validate_json(path.read_text(encoding="utf-8"))
 
 
-def build(issue: Issue, output: Path) -> None:
+def build(issue: Issue, output: Path, assets: Path = Path("assets"), *, pdf: bool = False) -> None:
     """Build one isolated preview snapshot. Refuse to overwrite existing output."""
     output = output.absolute()
     if output.exists():
@@ -42,22 +67,53 @@ def build(issue: Issue, output: Path) -> None:
     with tempfile.TemporaryDirectory(dir=output.parent, prefix=".rp-build-") as temporary:
         staging = Path(temporary) / "site"
         staging.mkdir()
+        copy_assets(assets, staging / "assets")
+        brand = json.loads(env.loader.get_source(env, "brand.json")[0])
+        weather_labels = json.loads(env.loader.get_source(env, "weather-labels.json")[0])
 
         def write(path: str, content: str) -> None:
             destination = staging / path
             destination.parent.mkdir(parents=True, exist_ok=True)
             destination.write_text(content, encoding="utf-8")
 
-        write("style.css", env.loader.get_source(env, "style.css")[0])
-        write("index.html", env.get_template("root.html").render())
+        style = env.loader.get_source(env, "style.css")[0]
+        write("style.css", style)
+        style_version = hashlib.sha256(style.encode()).hexdigest()[:12]
+
         for lang, edition in sorted(issue.languages.items()):
-            context = dict(issue=issue, lang=lang, edition=edition, labels=LABELS[lang])
+            context = dict(
+                issue=issue,
+                lang=lang,
+                edition=edition,
+                labels=LABELS[lang],
+                brand=brand.get(lang),
+                style_version=style_version,
+                print_enabled=pdf,
+                weather_labels=weather_labels[lang],
+                weather_retrieved=(
+                    issue.weather.retrieved_at.astimezone(ZoneInfo("Asia/Tokyo")).strftime(
+                        "%Y-%m-%d %H:%M JST"
+                    )
+                    if issue.weather
+                    else None
+                ),
+                weather_icons={
+                    "clear": "☀",
+                    "cloudy": "☁",
+                    "fog": "≋",
+                    "rain": "☂",
+                    "snow": "❄",
+                    "storm": "ϟ",
+                },
+            )
             for route in (
                 f"{lang}/index.html",
                 f"{lang}/archive/index.html",
                 f"{lang}/issues/{issue.issue_id}/index.html",
             ):
                 write(route, env.get_template("edition.html").render(**context))
+            if pdf:
+                write(f"{lang}/print/index.html", env.get_template("print.html").render(**context))
             for article in edition.articles:
                 translations = {
                     code: next(a.slug for a in other.articles if a.id == article.id)
@@ -69,7 +125,25 @@ def build(issue: Issue, output: Path) -> None:
                         **context, article=article, translations=translations
                     ),
                 )
+        write("index.html", (staging / "ru/index.html").read_text(encoding="utf-8"))
         write("robots.txt", "User-agent: *\nDisallow: /\n")
+        print_report = None
+        if pdf:
+            from .pdf import PrintFailure, render_pdfs
+
+            write("print.css", env.loader.get_source(env, "print.css")[0])
+            write("source.json", issue.model_dump_json(indent=2) + "\n")
+            try:
+                print_report = render_pdfs(staging, issue)
+            except PrintFailure as error:
+                failed_path = output.parent / f"{output.name}.failed.json"
+                failed_path.write_text(
+                    json.dumps(error.report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+                )
+                raise ValueError(
+                    f"Print overflow/verification failed; report: {failed_path}"
+                ) from error
+            write("artifacts.json", json.dumps(artifact_hashes(staging), indent=2) + "\n")
         write(
             "verification.json",
             json.dumps(
@@ -77,9 +151,10 @@ def build(issue: Issue, output: Path) -> None:
                     "issue_id": str(issue.issue_id),
                     "status": issue.status,
                     "preview_only": True,
-                    "visual_approval": "BLOCKED: approved assets absent",
-                    "pdf": "NOT_IMPLEMENTED",
+                    "visual_approval": "PENDING: supplied header assets; full-page references and review required",
+                    "pdf": print_report if pdf else "NOT_REQUESTED",
                     "publication": "DISABLED",
+                    "weather": issue.weather.kind if issue.weather else "MISSING",
                 },
                 ensure_ascii=False,
                 indent=2,

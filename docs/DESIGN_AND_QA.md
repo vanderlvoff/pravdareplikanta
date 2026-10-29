@@ -43,3 +43,10 @@ A reproducible three-page A4 PDF edition in RU/EN/JA with the owner's approved S
 ## Manual signoff
 
 Even after automated checks pass, human must inspect all three languages and mark issue APPROVED. Reference-perfect compliance cannot be claimed until owner supplies golden PDFs/images.
+
+## Current local implementation
+
+See [PRINT.md](PRINT.md) for the implemented PDF workflow and measured limitations.
+By owner instruction, article fonts and Japanese quotation fonts are temporarily
+system fonts; they remain a reproducibility limitation until approved files arrive.
+The 10mm print margins are provisional because full-page golden references are absent.

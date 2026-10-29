@@ -1,0 +1,527 @@
+{
+  "issue_id": "2026-10-30",
+  "number": 2,
+  "publication_date": "2026-10-30",
+  "revision": 1,
+  "status": "draft",
+  "languages": {
+    "ru": {
+      "title": "Правда репликанта",
+      "editorial_note": "Обзор первоисточников 23–29 октября 2026 года. Заявления компаний и авторов отделены от редакционного анализа. Черновик для проверки фактов, переводов и вёрстки.",
+      "articles": [
+        {
+          "id": "worken-productive-work",
+          "slug": "worken-productive-work",
+          "category": "analysis",
+          "headline": "Worken: считать полезную работу, а не роботов",
+          "dek": "AGIBOT предлагает новую меру производительности. Для заказчика важнее правила её проверки.",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "29 октября AGIBOT представила Worken — предложенную компанией систему измерения полезной работы роботов — на Innovation Day в Шанхае. Одновременно анонсирован GO-3 Preview. Это сообщение производителя; в данном выпуске мы не подтверждаем заявленные возможности независимым испытанием."
+            },
+            {
+              "type": "heading",
+              "text": "Редакционный разбор: что считать результатом"
+            },
+            {
+              "type": "paragraph",
+              "text": "Начинать разговор о производительности мы предлагаем с завершённого задания. Перенесённая коробка и принятая складской системой коробка — разные результаты. Перед испытанием заказчик и поставщик должны договориться, где заканчивается операция, какое качество считается приемлемым и в какой момент запускается секундомер. Иначе одинаковое название метрики оставит место для разных способов подсчёта."
+            },
+            {
+              "type": "paragraph",
+              "text": "Для нашей редакционной оценки нужны два отдельных журнала: результатов и помощи человеку. В первом отмечаются принятые задания, брак и повторные попытки; во втором — вмешательства оператора, перенастройка и восстановление после остановок. Такой протокол мы предлагаем как собственную методику сравнения, а не как описание устройства Worken."
+            },
+            {
+              "type": "heading",
+              "text": "Демонстрация и рабочая смена"
+            },
+            {
+              "type": "paragraph",
+              "text": "Следующий вопрос — границы наблюдения. Нельзя заранее считать часы автономной работы равными длительности смены. Время подготовки, зарядки и ожидания задания стоит показывать отдельно. Тогда читатель увидит, относится ли показатель к активному движению, доступности оборудования или фактически принятой работе. Эти величины отвечают на разные вопросы и не должны заменять друг друга."
+            },
+            {
+              "type": "paragraph",
+              "text": "Наш критерий убедительности прост: независимый наблюдатель должен суметь восстановить итог из журнала попыток. Открытый знаменатель полезнее эффектного единичного ролика. Если определение метрики меняется, рядом с новым числом нужна версия протокола. Название Worken интересно как повод потребовать измеримость; решающим документом для конкретного внедрения останется согласованный акт испытаний."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.agibot.com/article/231/detail/131.html",
+              "title": "AGIBOT Introduces Worken to Measure Productive Robot Work at AGIBOT Innovation Day 2026",
+              "published_at": "2026-10-29",
+              "retrieved_at": "2026-10-30"
+            }
+          ],
+          "print_page": 1
+        },
+        {
+          "id": "learned-speed-prior",
+          "slug": "learned-speed-prior",
+          "category": "analysis",
+          "headline": "Роботу нужен собственный темп",
+          "dek": "Работа о переупорядочивании времени демонстраций ставит вопрос: что именно мы ускоряем?",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "В препринте Retiming Robot Demonstrations with a Learned Speed Prior от 23 октября авторы предлагают обучаемое распределение темпа. Для складывания стаканов они сообщают 3,50 секунды против 6,02 у базового варианта при 29 успешных попытках из 30. Это результат описанного авторами опыта, не универсальная оценка скорости роботизации."
+            },
+            {
+              "type": "heading",
+              "text": "Редакционная методика: разложить цикл"
+            },
+            {
+              "type": "paragraph",
+              "text": "При обсуждении ускорения мы предлагаем сначала разделить рабочий цикл на восприятие, планирование, перемещение, контакт и проверку результата. Уменьшение времени одного участка ещё не показывает, сколько времени займёт весь процесс. Если материал должен быть принят следующим оборудованием или человеком, окончание движения само по себе не является концом задания."
+            },
+            {
+              "type": "paragraph",
+              "text": "Для сравнения двух вариантов мы бы заранее зафиксировали начальное положение, набор предметов, допуск результата и правило остановки. Секундомер запускается в одном и том же состоянии. Отдельно записываются неудачные попытки и время восстановления. Усреднение только удачных эпизодов ответит на иной вопрос, чем среднее время получения одного принятого результата, поэтому оба числа следует подписывать полностью."
+            },
+            {
+              "type": "paragraph",
+              "text": "Полезен и мысленный контроль причин. Что изменилось между двумя опытами: обучающие примеры, управляющий алгоритм, ограничения движения или сразу несколько частей? Если всё заменено одновременно, итоговое улучшение ещё не объясняет вклад каждого элемента. Редакция ожидала бы отдельной таблицы вариантов; это наше требование к читаемости сравнения, а не сообщение о дополнительных экспериментах авторов."
+            },
+            {
+              "type": "heading",
+              "text": "Скорость рядом с надёжностью"
+            },
+            {
+              "type": "paragraph",
+              "text": "В предлагаемом нами протоколе рядом со временем стоят доля принятых заданий, повторные захваты и незапланированные остановки. Для разных предметов нужны отдельные строки. Быстрый перенос жёсткой детали нельзя автоматически считать доказательством такого же результата для мягкого пакета. Проверяемая область применения должна быть названа до вывода о преимуществе."
+            },
+            {
+              "type": "paragraph",
+              "text": "Затем стоит описать, что происходит за пределами обычного сценария. Редакционный вопрос поставщику: как система сообщает об отсутствии решения, кто разрешает повтор и как учитывается потерянное время? Это вопросы приёмки, а не инструкция по настройке оборудования. Менять параметры реального робота по газетной статье нельзя; оценка риска и процедуры эксплуатации относятся к конкретной установке."
+            },
+            {
+              "type": "paragraph",
+              "text": "Наконец, в отчёте нужен полный состав затрат времени. Подготовка демонстраций, настройка и повторная проверка после обновления не исчезают от удачного секундомера. Наш вывод для читателя: обсуждать темп отдельно от модели, контроллера и критерия завершения слишком рано. Сначала воспроизводимый протокол, затем сравнение — и только после него вывод о полезном ускорении."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.32676v1",
+              "title": "Retiming Robot Demonstrations with a Learned Speed Prior — arXiv v1",
+              "published_at": "2026-10-23",
+              "retrieved_at": "2026-10-30"
+            }
+          ],
+          "print_page": 2
+        },
+        {
+          "id": "robojev-success-judge",
+          "slug": "robojev-success-judge",
+          "category": "analysis",
+          "headline": "Кто решает, что робот справился?",
+          "dek": "RoboJev оценивает успешность по видео. Редакционный вопрос — как проверять самого оценщика.",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Препринт RoboJev от 24 октября описывает открытую модель оценки завершённости роботных заданий. Автор сообщает 95,2% сбалансированной точности на 268 отложенных эпизодах SO-101. При проверке на других лабораториях и роботах AUROC составляет 0,890 против 0,900 у исходной модели. Эти показатели относятся к указанным наборам, а не ко всем роботам."
+            },
+            {
+              "type": "heading",
+              "text": "Редакционный разбор: ошибка какого рода"
+            },
+            {
+              "type": "paragraph",
+              "text": "Для журнала испытаний мы предлагаем различать два вида ошибок оценщика. В одном случае система принимает незавершённое действие; в другом отвергает уже выполненное. Их последствия зависят от процесса. Поэтому нам недостаточно общего процента: мы хотели бы видеть отдельные количества решений каждого типа, число просмотренных эпизодов и описание того, кто назначал исходные метки."
+            },
+            {
+              "type": "paragraph",
+              "text": "Следующий вопрос — полнота наблюдения. Если камера не показывает место, куда должен попасть предмет, уверенный ответ программы ещё не заменяет недостающий ракурс. В нашей редакционной схеме у такого эпизода должна быть отдельная категория «недостаточно данных». Принудительное распределение всех роликов между успехом и провалом скроет проблему качества наблюдения за удобным итоговым числом."
+            },
+            {
+              "type": "paragraph",
+              "text": "Мы бы также разделили автоматическую сортировку и окончательную приёмку. В первом случае инструмент помогает человеку найти спорные эпизоды; во втором его ответ становится основанием закрыть задание. Это разные роли. Переход от одной к другой требует отдельного решения владельца процесса, а газетное описание модели не является разрешением такого перехода."
+            },
+            {
+              "type": "heading",
+              "text": "Проверка оценщика после изменения условий"
+            },
+            {
+              "type": "paragraph",
+              "text": "Для собственного сравнительного протокола редакция выбрала бы неизменный контрольный набор и отдельный набор новых условий. Порог решения фиксируется до просмотра результатов. Если его подбирают по тем же эпизодам, которые затем предъявляют как итоговую проверку, читатель должен знать об этом. Нас интересует не только итог, но и порядок принятия решений в эксперименте."
+            },
+            {
+              "type": "paragraph",
+              "text": "В отчёте мы просили бы перечислить ракурсы, освещение, продолжительность роликов и правила работы с неоднозначными заданиями. Когда одна система получает больше кадров, это должно быть видно в таблице рядом с её результатом. Само наличие сравнения не делает входные данные одинаковыми; задача редактора — не допустить, чтобы краткий заголовок стёр эти различия."
+            },
+            {
+              "type": "paragraph",
+              "text": "Практический вывод редакции — сохранять исходные эпизоды, версию оценщика и историю пересмотра меток. Тогда спорное решение можно разобрать, а обновление модели не перепишет прошлый результат незаметно. Удобство автоматической оценки начинается с прозрачного журнала. Её пригодность для конкретного производства устанавливается отдельной проверкой, а не одним числом из препринта."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.33718v1",
+              "title": "RoboJev: An Open Vision-Language Judge for Robot Success Detection — arXiv v1",
+              "published_at": "2026-10-24",
+              "retrieved_at": "2026-10-30"
+            }
+          ],
+          "print_page": 3
+        }
+      ]
+    },
+    "en": {
+      "title": "The Replicant Truth",
+      "editorial_note": "A review of primary sources dated 23–29 October 2026. Company and author claims are separated from editorial analysis. Draft pending fact, translation and layout review.",
+      "articles": [
+        {
+          "id": "worken-productive-work",
+          "slug": "worken-productive-work",
+          "category": "analysis",
+          "headline": "Worken: count useful work, not robot units",
+          "dek": "AGIBOT proposes a productivity measure. Customers still need a testable definition of the result.",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "On 29 October, AGIBOT introduced Worken, its proposed framework for measuring productive robot work, at Innovation Day in Shanghai. It also announced GO-3 Preview. This is a manufacturer announcement; this edition does not independently validate the advertised capabilities."
+            },
+            {
+              "type": "heading",
+              "text": "Editorial analysis: define the accepted result"
+            },
+            {
+              "type": "paragraph",
+              "text": "Our proposed starting point for a productivity discussion is a completed, accepted task. Moving a box and handing over a box that the receiving process accepts are different outcomes. Before a trial, customer and supplier should agree where the operation ends, what quality is acceptable and when the clock starts. A shared metric name cannot resolve incompatible counting rules."
+            },
+            {
+              "type": "paragraph",
+              "text": "For our editorial assessment, we would maintain two separate ledgers: one for outcomes and one for human assistance. The first records accepted jobs, rejects and repeated attempts. The second records operator interventions, reconfiguration and recovery from stops. This is our suggested comparison protocol, not a claim about the implementation of Worken."
+            },
+            {
+              "type": "heading",
+              "text": "A demonstration is not an entire shift"
+            },
+            {
+              "type": "paragraph",
+              "text": "The next question concerns the observation boundary. Autonomous operating hours should not simply be equated with scheduled shift length. Preparation, charging and time waiting for a task deserve separate entries. Readers can then distinguish active movement, equipment availability and accepted productive output. Each answers a different question; none should silently substitute for another."
+            },
+            {
+              "type": "paragraph",
+              "text": "Our test of a convincing report is whether an independent observer could reconstruct its total from the attempt log. An open denominator is more informative than a selected successful video. If the metric definition changes, a protocol version belongs beside the new number. Worken offers an occasion to demand measurable results; a particular deployment still needs agreed acceptance evidence."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.agibot.com/article/231/detail/131.html",
+              "title": "AGIBOT Introduces Worken to Measure Productive Robot Work at AGIBOT Innovation Day 2026",
+              "published_at": "2026-10-29",
+              "retrieved_at": "2026-10-30"
+            }
+          ],
+          "print_page": 1
+        },
+        {
+          "id": "learned-speed-prior",
+          "slug": "learned-speed-prior",
+          "category": "analysis",
+          "headline": "A robot needs a task-appropriate pace",
+          "dek": "Research on retiming demonstrations raises an engineering question: which part of the cycle becomes faster?",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "The 23 October preprint Retiming Robot Demonstrations with a Learned Speed Prior proposes a learned distribution of execution pace. Its authors report cup stacking in 3.50 seconds versus a 6.02-second baseline, with 29 successes in 30 trials. This is a result from the reported experiment, not a universal measure of robotic productivity."
+            },
+            {
+              "type": "heading",
+              "text": "Editorial method: separate the cycle"
+            },
+            {
+              "type": "paragraph",
+              "text": "For an acceleration claim, we would first separate perception, planning, travel, contact and outcome verification. Shortening one segment does not establish the duration of the complete process. If another machine or a person must accept the handover, the end of the robot motion alone need not mark the completion of the job."
+            },
+            {
+              "type": "paragraph",
+              "text": "Our comparison protocol would fix the initial state, object set, acceptance tolerance and stopping rule in advance. The clock would start from the same defined condition. Failed attempts and recovery time would be recorded separately. Average duration among successful attempts answers a different question from average time needed to produce an accepted result, so both figures deserve unambiguous labels."
+            },
+            {
+              "type": "paragraph",
+              "text": "A further editorial check concerns causes. What changed between the alternatives: training examples, the controller, motion constraints, or several components together? Replacing everything at once does not reveal the contribution of each part. We would ask for an explicit table of variants. This is our requirement for an interpretable comparison, not a claim that additional experiments were conducted by the authors."
+            },
+            {
+              "type": "heading",
+              "text": "Keep reliability beside the stopwatch"
+            },
+            {
+              "type": "paragraph",
+              "text": "In our proposed reporting format, timing sits beside acceptance rate, repeated grasps and unplanned stops. Different objects receive separate rows. A fast transfer of a rigid component cannot automatically establish the same performance for a soft package. The evaluated scope must be stated before the reader is invited to generalize the advantage."
+            },
+            {
+              "type": "paragraph",
+              "text": "We would then ask what happens outside the ordinary sequence. How does a system report that it has no solution? Who authorizes another attempt, and where does the lost time appear? These are acceptance questions, not operating instructions. A newspaper article is not a basis for changing a real robot’s settings; installation-specific risk assessment and operating procedures remain necessary."
+            },
+            {
+              "type": "paragraph",
+              "text": "Finally, the time account should include preparation of demonstrations, configuration and renewed checks after an update. Those efforts do not disappear when one timed sequence looks good. Our editorial conclusion is to resist discussing pace in isolation from the model, controller and completion rule. Establish a reproducible protocol first, compare alternatives second, and only then judge whether the acceleration is useful."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.32676v1",
+              "title": "Retiming Robot Demonstrations with a Learned Speed Prior — arXiv v1",
+              "published_at": "2026-10-23",
+              "retrieved_at": "2026-10-30"
+            }
+          ],
+          "print_page": 2
+        },
+        {
+          "id": "robojev-success-judge",
+          "slug": "robojev-success-judge",
+          "category": "analysis",
+          "headline": "Who decides that the robot succeeded?",
+          "dek": "RoboJev judges task completion from video. The editorial challenge is to test the judge as well.",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "The 24 October RoboJev preprint describes an open model for judging robotic task completion. The author reports 95.2% balanced accuracy on 268 held-out SO-101 episodes. On unseen lab/robot data, AUROC is 0.890 versus 0.900 for the base model. These figures describe the specified datasets, not every robot deployment."
+            },
+            {
+              "type": "heading",
+              "text": "Editorial analysis: distinguish the mistakes"
+            },
+            {
+              "type": "paragraph",
+              "text": "For an evaluation ledger, we would separate acceptance of an unfinished action from rejection of a completed one. Their consequences depend on the surrounding process. A single overall percentage is therefore insufficient for our editorial review: we would request separate counts for each decision type, the total number of reviewed episodes and an account of who assigned the reference labels."
+            },
+            {
+              "type": "paragraph",
+              "text": "The next question is whether the evidence is complete. If the camera does not show the destination of an object, a confident program output cannot supply the missing view. Our proposed reporting scheme gives such an episode an explicit insufficient-evidence category. Forcing every recording into success or failure would conceal an observation problem behind a convenient final count."
+            },
+            {
+              "type": "paragraph",
+              "text": "We would also distinguish automatic triage from final acceptance. In one role, the tool helps a person locate disputed episodes; in the other, its answer closes the task. These are separate responsibilities. Moving from one role to the other calls for a decision by the process owner, not an implication drawn from a newspaper description of a model."
+            },
+            {
+              "type": "heading",
+              "text": "Test the judge when conditions change"
+            },
+            {
+              "type": "paragraph",
+              "text": "For our own comparison protocol, we would use a fixed control set alongside a separate collection of new conditions. Decision thresholds would be set before reviewing the results. If they were selected using the same episodes subsequently presented as a final test, that relationship should be disclosed. We want to understand the sequence of experimental decisions, not only the final score."
+            },
+            {
+              "type": "paragraph",
+              "text": "A useful report would list camera views, lighting, recording duration and the treatment of ambiguous instructions. When a system receives more frames than its comparator, that difference belongs next to the result. The existence of a comparison does not make its inputs equal. A short headline should not erase the distinctions needed to interpret it."
+            },
+            {
+              "type": "paragraph",
+              "text": "Our practical editorial conclusion is to retain the original episodes, judge version and label-revision history. A disputed decision can then be examined, and a model update need not silently rewrite an earlier result. Convenient automated assessment starts with a transparent ledger. Suitability for a particular production process requires its own evaluation rather than one number from a preprint."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.33718v1",
+              "title": "RoboJev: An Open Vision-Language Judge for Robot Success Detection — arXiv v1",
+              "published_at": "2026-10-24",
+              "retrieved_at": "2026-10-30"
+            }
+          ],
+          "print_page": 3
+        }
+      ]
+    },
+    "ja": {
+      "title": "日本語題字（要承認）",
+      "editorial_note": "2026年10月23～29日付の一次資料を読む。企業・著者の報告と編集部の考察を区別する。事実、翻訳、組版の確認前の草稿。",
+      "articles": [
+        {
+          "id": "worken-productive-work",
+          "slug": "worken-productive-work",
+          "category": "analysis",
+          "headline": "Worken：台数より、受け入れられた仕事量を",
+          "dek": "AGIBOTが生産性の指標を提案。導入側には、検証可能な測定条件が必要だ。",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "AGIBOTは10月29日、上海のInnovation Dayで、ロボットの有効な仕事量を測る提案枠組みWorkenを発表した。GO-3 Previewも発表された。これはメーカーの発表であり、本号は宣伝された能力を独立した実験で確認したものではない。"
+            },
+            {
+              "type": "heading",
+              "text": "編集部の考察：成果の境界を決める"
+            },
+            {
+              "type": "paragraph",
+              "text": "生産性の議論は、受け入れ可能な状態で完了した仕事から始めたい。箱を移動させることと、次工程が受け入れる箱を引き渡すことは同じではない。試験前に、作業の終点、品質条件、計時の開始点を発注側と供給側で決める。同じ指標名を使うだけでは、数え方の違いは解消しない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "編集部が比較を行うなら、成果と人の支援を別々に記録する。前者には受け入れられた仕事、不良、やり直しを、後者には介入、再設定、停止からの復旧を記す。これは私たちが提案する比較手順であり、Workenの実装方式を説明するものではない。"
+            },
+            {
+              "type": "heading",
+              "text": "デモと一勤務は区別する"
+            },
+            {
+              "type": "paragraph",
+              "text": "観測する時間の境界も必要だ。自律作業時間を、そのまま勤務時間全体と同一視しない。準備、充電、仕事待ちの時間を別に示せば、稼働、設備の利用可能性、受け入れ済みの成果を読み分けられる。それぞれ異なる問いへの答えであり、無断で置き換えるべきではない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "説得力のある報告とは、独立した観察者が試行記録から合計を再計算できる報告だと考える。選ばれた成功動画より、何回中の結果かが分かる記録がほしい。定義が変わるなら手順の版も添える。Workenをきっかけに測定可能性を問えるが、個別の導入判断には合意された受入試験が残る。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.agibot.com/article/231/detail/131.html",
+              "title": "AGIBOT Introduces Worken to Measure Productive Robot Work at AGIBOT Innovation Day 2026",
+              "published_at": "2026-10-29",
+              "retrieved_at": "2026-10-30"
+            }
+          ],
+          "print_page": 1
+        },
+        {
+          "id": "learned-speed-prior",
+          "slug": "learned-speed-prior",
+          "category": "analysis",
+          "headline": "ロボットの動きに、仕事に合ったテンポを",
+          "dek": "実演の時間配分を学ぶ研究から、工程全体の速さをどう比較するかを考える。",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "10月23日付のプレプリントRetiming Robot Demonstrations with a Learned Speed Priorは、実行のテンポを学習する方法を提案する。著者らはカップ積みで3.50秒、比較対象で6.02秒、30試行中29成功と報告した。これは記載された実験の結果であり、ロボット化全般の速度指標ではない。"
+            },
+            {
+              "type": "heading",
+              "text": "編集部の比較案：一周期を分解する"
+            },
+            {
+              "type": "paragraph",
+              "text": "高速化を評価するなら、知覚、計画、移動、接触、成果確認を分けて考えたい。一部分が短くなっても、工程全体の所要時間は決まらない。次の設備や担当者が引き渡しを受け入れる必要があるなら、ロボットの動作終了だけを仕事の完了とはみなせない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "私たちの比較手順では、初期状態、対象物、許容される結果、停止条件をあらかじめ固定する。同じ状態から計時し、失敗した試行と復旧時間を別に残す。成功した試行だけの平均時間と、受け入れ可能な成果を一つ得るまでの平均時間は異なる問いへの答えだ。どちらの数値にも定義を添えたい。"
+            },
+            {
+              "type": "paragraph",
+              "text": "比較の間に何を変更したかも重要だ。学習例、制御器、動作制約を同時に変更すると、どの変更がどれだけ寄与したかは分からない。編集部なら、構成を一つずつ変えた比較表を求める。これは比較を読み解くための提案であり、著者らが追加実験を実施したという報告ではない。"
+            },
+            {
+              "type": "heading",
+              "text": "時計の隣に、受入率を置く"
+            },
+            {
+              "type": "paragraph",
+              "text": "私たちの報告案では、時間の隣に受入率、つかみ直し、予定外の停止を置く。対象物が違えば行も分ける。硬い部品の高速搬送から、柔らかい袋でも同じ結果が出るとは結論しない。利点を一般化する前に、評価した条件の範囲を明らかにする。"
+            },
+            {
+              "type": "paragraph",
+              "text": "通常の手順から外れた場合にも問いがある。解が見つからないことをどう知らせるのか。再試行を誰が許可し、失った時間をどこに記録するのか。これは受入評価の問いであり、装置の設定手順ではない。新聞記事を根拠に実機の設定を変更せず、設備ごとのリスク評価と運用手順を優先する必要がある。"
+            },
+            {
+              "type": "paragraph",
+              "text": "実演データの準備、設定、更新後の再確認に使う時間も残したい。一回の計時が良好でも、これらの作業はなくならない。編集部の結論は、モデル、制御器、完了条件を切り離してテンポだけを語らないことだ。再現可能な手順を定め、構成を比較し、その後で有用な高速化かを判断したい。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.32676v1",
+              "title": "Retiming Robot Demonstrations with a Learned Speed Prior — arXiv v1",
+              "published_at": "2026-10-23",
+              "retrieved_at": "2026-10-30"
+            }
+          ],
+          "print_page": 2
+        },
+        {
+          "id": "robojev-success-judge",
+          "slug": "robojev-success-judge",
+          "category": "analysis",
+          "headline": "ロボットの成功を、誰が判定するのか",
+          "dek": "RoboJevは動画から作業完了を評価する。編集部は、評価器の検証方法を考える。",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "10月24日付のRoboJevプレプリントは、作業完了を判定する公開モデルを記述している。著者の報告ではSO-101の保留268エピソードで均衡正解率95.2％。未知の研究室・ロボットではAUROCが0.890、元モデルが0.900だった。数値は対象データの結果であり、あらゆる現場の保証ではない。"
+            },
+            {
+              "type": "heading",
+              "text": "編集部の考察：誤りの種類を分ける"
+            },
+            {
+              "type": "paragraph",
+              "text": "私たちの評価記録では、未完了の作業を受け入れる誤りと、完了した作業を却下する誤りを分けたい。結果の重さは周囲の工程によって変わる。総合的な割合だけでなく、各種類の件数、確認した総数、正解ラベルを誰が付けたかを記す。"
+            },
+            {
+              "type": "paragraph",
+              "text": "観測に必要な情報がそろっているかも問う。物を置くべき場所が映っていなければ、プログラムの確信度が高くても不足する視点は補えない。編集部の報告案には「判断材料不足」という区分を設ける。すべてを成功か失敗に振り分ければ、観測の問題を便利な集計値の中に隠してしまう。"
+            },
+            {
+              "type": "paragraph",
+              "text": "自動仕分けと最終的な受入判定も分けて扱う。人が確認すべき場面を探す補助と、その回答で作業を完了扱いにすることは、責任が異なる。一方から他方へ移すには工程の管理者による判断が必要だ。モデルを紹介する記事が、その移行を許可するわけではない。"
+            },
+            {
+              "type": "heading",
+              "text": "条件が変わった後、評価器も試す"
+            },
+            {
+              "type": "paragraph",
+              "text": "編集部が比較手順を作るなら、固定した確認用データと、新条件を集めた別データを用意する。判定のしきい値は結果を見る前に決める。同じエピソードで調整し、そのまま最終評価に使った場合は、その関係を明記する。最後の点数だけでなく、実験上の判断の順序を理解したい。"
+            },
+            {
+              "type": "paragraph",
+              "text": "報告にはカメラの視点、照明、動画の長さ、曖昧な指示の扱いを記載してほしい。あるシステムだけに多くのフレームを与えるなら、比較表の結果の隣で分かるようにする。比較したという事実だけでは入力が同一にならない。短い見出しでこの違いを消してはいけない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "編集部の実務的な結論は、元の映像、評価器の版、ラベル修正の履歴を残すことだ。異議のある判定を後から調べられ、更新が過去の結果を無言で書き換えることも避けられる。自動評価の便利さを支えるのは透明な記録であり、特定の生産工程への適合性は個別に検証すべきだ。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.33718v1",
+              "title": "RoboJev: An Open Vision-Language Judge for Robot Success Detection — arXiv v1",
+              "published_at": "2026-10-24",
+              "retrieved_at": "2026-10-30"
+            }
+          ],
+          "print_page": 3
+        }
+      ]
+    }
+  },
+  "weather": {
+    "location": "ichikawa",
+    "timezone": "Asia/Tokyo",
+    "forecast_date": "2026-10-30",
+    "retrieved_at": "2026-10-29T15:12:36.712811Z",
+    "kind": "forecast",
+    "source_name": "Open-Meteo",
+    "source_url": "https://api.open-meteo.com/v1/forecast?latitude=35.72&longitude=139.93&timezone=Asia%2FTokyo&start_date=2026-10-30&end_date=2026-10-30&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+    "temperature_min_c": 12.8,
+    "temperature_max_c": 21.9,
+    "precipitation_probability_max": 24,
+    "slots": [
+      {
+        "hour": 9,
+        "temperature_c": 14.2,
+        "condition": "cloudy",
+        "precipitation_probability": 16,
+        "wind_speed_ms": 0.81,
+        "wind_direction_deg": 330
+      },
+      {
+        "hour": 12,
+        "temperature_c": 18.8,
+        "condition": "cloudy",
+        "precipitation_probability": 24,
+        "wind_speed_ms": 1.33,
+        "wind_direction_deg": 193
+      },
+      {
+        "hour": 18,
+        "temperature_c": 15.9,
+        "condition": "rain",
+        "precipitation_probability": 16,
+        "wind_speed_ms": 2.55,
+        "wind_direction_deg": 334
+      }
+    ]
+  }
+}

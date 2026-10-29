@@ -6,15 +6,16 @@
 - [ ] Confirm Mac architecture, Python tooling, Node tooling.
 
 ## Phase 1 — Minimal build without AI
-- [ ] Python package scaffold and CLI.
-- [ ] Validated example JSON issue with RU/EN/JA fixtures.
-- [ ] Jinja2 responsive website with archive pages, per-article links and language routes.
-- [ ] Local preview of `dist/` and unit tests.
+- [x] Python package scaffold and CLI.
+- [x] Validated example JSON issue with RU/EN/JA fixtures.
+- [x] Jinja2 responsive website with archive pages, per-article links and language routes.
+- [x] Local preview of generated snapshots and unit tests.
 
 ## Phase 2 — Printable newspaper
-- [ ] Print CSS for precisely three A4 pages.
-- [ ] Chromium/Playwright renderer and bundled fonts.
-- [ ] Asset integrity checks and PDF/page preview checks.
+- [x] Provisional print CSS for precisely three A4 pages, with overflow rejection.
+- [x] Pinned Chromium/Playwright renderer and bundled Caveat quotation font.
+- [ ] Approved bundled article and Japanese quotation fonts (currently deferred by owner).
+- [x] Asset integrity checks and PDF/page preview checks.
 - [ ] Golden reference approval for each locale.
 
 ## Phase 3 — Publishing

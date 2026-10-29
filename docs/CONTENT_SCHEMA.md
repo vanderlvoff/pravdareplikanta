@@ -43,3 +43,15 @@ The canonical source of each issue is versioned JSON; the website and paper PDF 
 - Missing translation, article citation, or license metadata should be surfaced in a validation report; the editorial policy decides whether publication is blocked.
 - The example has intentionally incomplete EN/JA content and must fail full tri-language publishing validation.
 - Use stable UTF-8 and language-specific font stacks for Cyrillic, Latin and Japanese.
+
+## Weather snapshot
+
+An optional issue-level `weather` object is shared across languages. Its date must
+match `publication_date`. See [WEATHER.md](WEATHER.md) for fields and workflow;
+the sample issue contains a complete saved forecast.
+
+## Print page assignment
+
+Each article accepts `print_page` with value 1, 2 or 3 (default 1). This controls
+editorial placement in PDF only. Overflow is rejected rather than automatically
+shrinking or redistributing text. See [PRINT.md](PRINT.md).

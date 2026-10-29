@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+  <meta charset="utf-8"><meta name="robots" content="noindex,nofollow">
+  <title>{{ edition.title }} · {{ issue.issue_id }}</title>
+  <link rel="stylesheet" href="/style.css?v={{ style_version }}">
+  <link rel="stylesheet" href="/print.css">
+</head>
+<body class="print-edition">
+{% for page_number in [1, 2, 3] %}
+<section class="sheet" data-page="{{ page_number }}">
+  {% if page_number == 1 %}{% include "header.html" %}
+  {% if issue.weather %}<p class="print-weather-source">{{ weather_labels.source }}: <a href="{{ issue.weather.source_url }}">{{ issue.weather.source_name }}</a> · {{ weather_labels.retrieved }}: {{ weather_retrieved }}{% if issue.weather.kind == 'demo' %} · {{ weather_labels.demo }}{% endif %}</p>{% endif %}
+  {% else %}<header class="running-header"><img src="/assets/masthead/masthead_{{ lang }}.svg" alt="{{ edition.title }}"><p>{{ issue.publication_date }} · № {{ issue.number }}</p></header>{% endif %}
+  <main class="page-body" data-region="articles">
+    <div class="article-columns">
+    {% for article in edition.articles if article.print_page == page_number %}
+      <article data-article="{{ article.id }}">
+        <p class="category">{{ article.category }}</p>
+        <h2>{{ article.headline }}</h2>
+        <p class="dek">{{ article.dek }}</p>
+        {% include "article-body.html" %}
+        <footer class="article-sources"><h3>{{ labels.sources }}</h3>{% for source in article.sources %}<p><a href="{{ source.url }}">{{ source.title }}</a> · {{ source.published_at }}</p>{% endfor %}</footer>
+      </article>
+    {% endfor %}
+    </div>
+  </main>
+  <footer class="page-footer"><span>{{ edition.title }} · {{ issue.publication_date }} · № {{ issue.number }} · rev. {{ issue.revision }}</span><span>{{ labels.proof }} · {{ page_number }} / 3</span></footer>
+</section>
+{% endfor %}
+</body>
+</html>

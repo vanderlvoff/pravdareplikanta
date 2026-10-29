@@ -1,0 +1,438 @@
+{
+  "$defs": {
+    "Article": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "title": "Id",
+          "type": "string"
+        },
+        "slug": {
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "title": "Slug",
+          "type": "string"
+        },
+        "category": {
+          "enum": [
+            "news",
+            "analysis",
+            "opinion",
+            "satire"
+          ],
+          "title": "Category",
+          "type": "string"
+        },
+        "headline": {
+          "minLength": 1,
+          "title": "Headline",
+          "type": "string"
+        },
+        "dek": {
+          "minLength": 1,
+          "title": "Dek",
+          "type": "string"
+        },
+        "body": {
+          "items": {
+            "discriminator": {
+              "mapping": {
+                "caption": "#/$defs/TextBlock",
+                "heading": "#/$defs/TextBlock",
+                "list": "#/$defs/ListBlock",
+                "paragraph": "#/$defs/TextBlock",
+                "quote": "#/$defs/TextBlock"
+              },
+              "propertyName": "type"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/TextBlock"
+              },
+              {
+                "$ref": "#/$defs/ListBlock"
+              }
+            ]
+          },
+          "minItems": 1,
+          "title": "Body",
+          "type": "array"
+        },
+        "sources": {
+          "items": {
+            "$ref": "#/$defs/Source"
+          },
+          "minItems": 1,
+          "title": "Sources",
+          "type": "array"
+        },
+        "image_asset_id": {
+          "default": null,
+          "title": "Image Asset Id",
+          "type": "null"
+        },
+        "print_page": {
+          "default": 1,
+          "enum": [
+            1,
+            2,
+            3
+          ],
+          "title": "Print Page",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "slug",
+        "category",
+        "headline",
+        "dek",
+        "body",
+        "sources"
+      ],
+      "title": "Article",
+      "type": "object"
+    },
+    "Edition": {
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "editorial_note": {
+          "default": "",
+          "title": "Editorial Note",
+          "type": "string"
+        },
+        "articles": {
+          "items": {
+            "$ref": "#/$defs/Article"
+          },
+          "minItems": 1,
+          "title": "Articles",
+          "type": "array"
+        }
+      },
+      "required": [
+        "title",
+        "articles"
+      ],
+      "title": "Edition",
+      "type": "object"
+    },
+    "ListBlock": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "list",
+          "title": "Type",
+          "type": "string"
+        },
+        "items": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Items",
+          "type": "array"
+        }
+      },
+      "required": [
+        "type",
+        "items"
+      ],
+      "title": "ListBlock",
+      "type": "object"
+    },
+    "Source": {
+      "additionalProperties": false,
+      "properties": {
+        "url": {
+          "format": "uri",
+          "maxLength": 2083,
+          "minLength": 1,
+          "title": "Url",
+          "type": "string"
+        },
+        "title": {
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "published_at": {
+          "format": "date",
+          "title": "Published At",
+          "type": "string"
+        },
+        "retrieved_at": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Retrieved At"
+        }
+      },
+      "required": [
+        "url",
+        "title",
+        "published_at"
+      ],
+      "title": "Source",
+      "type": "object"
+    },
+    "TextBlock": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "enum": [
+            "paragraph",
+            "heading",
+            "quote",
+            "caption"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "text": {
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "text"
+      ],
+      "title": "TextBlock",
+      "type": "object"
+    },
+    "Weather": {
+      "additionalProperties": false,
+      "properties": {
+        "location": {
+          "const": "ichikawa",
+          "default": "ichikawa",
+          "title": "Location",
+          "type": "string"
+        },
+        "timezone": {
+          "const": "Asia/Tokyo",
+          "default": "Asia/Tokyo",
+          "title": "Timezone",
+          "type": "string"
+        },
+        "forecast_date": {
+          "format": "date",
+          "title": "Forecast Date",
+          "type": "string"
+        },
+        "retrieved_at": {
+          "format": "date-time",
+          "title": "Retrieved At",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "demo",
+            "forecast"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "source_name": {
+          "enum": [
+            "Open-Meteo",
+            "Editorial fixture"
+          ],
+          "title": "Source Name",
+          "type": "string"
+        },
+        "source_url": {
+          "format": "uri",
+          "maxLength": 2083,
+          "minLength": 1,
+          "title": "Source Url",
+          "type": "string"
+        },
+        "temperature_min_c": {
+          "maximum": 60,
+          "minimum": -90,
+          "title": "Temperature Min C",
+          "type": "number"
+        },
+        "temperature_max_c": {
+          "maximum": 60,
+          "minimum": -90,
+          "title": "Temperature Max C",
+          "type": "number"
+        },
+        "precipitation_probability_max": {
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Precipitation Probability Max",
+          "type": "integer"
+        },
+        "slots": {
+          "items": {
+            "$ref": "#/$defs/WeatherSlot"
+          },
+          "maxItems": 3,
+          "minItems": 3,
+          "title": "Slots",
+          "type": "array"
+        }
+      },
+      "required": [
+        "forecast_date",
+        "retrieved_at",
+        "kind",
+        "source_name",
+        "source_url",
+        "temperature_min_c",
+        "temperature_max_c",
+        "precipitation_probability_max",
+        "slots"
+      ],
+      "title": "Weather",
+      "type": "object"
+    },
+    "WeatherSlot": {
+      "additionalProperties": false,
+      "properties": {
+        "hour": {
+          "enum": [
+            9,
+            12,
+            18
+          ],
+          "title": "Hour",
+          "type": "integer"
+        },
+        "temperature_c": {
+          "maximum": 60,
+          "minimum": -90,
+          "title": "Temperature C",
+          "type": "number"
+        },
+        "condition": {
+          "enum": [
+            "clear",
+            "cloudy",
+            "fog",
+            "rain",
+            "snow",
+            "storm"
+          ],
+          "title": "Condition",
+          "type": "string"
+        },
+        "precipitation_probability": {
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Precipitation Probability",
+          "type": "integer"
+        },
+        "wind_speed_ms": {
+          "maximum": 150,
+          "minimum": 0,
+          "title": "Wind Speed Ms",
+          "type": "number"
+        },
+        "wind_direction_deg": {
+          "maximum": 360,
+          "minimum": 0,
+          "title": "Wind Direction Deg",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "hour",
+        "temperature_c",
+        "condition",
+        "precipitation_probability",
+        "wind_speed_ms",
+        "wind_direction_deg"
+      ],
+      "title": "WeatherSlot",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "issue_id": {
+      "format": "date",
+      "title": "Issue Id",
+      "type": "string"
+    },
+    "number": {
+      "exclusiveMinimum": 0,
+      "title": "Number",
+      "type": "integer"
+    },
+    "publication_date": {
+      "format": "date",
+      "title": "Publication Date",
+      "type": "string"
+    },
+    "revision": {
+      "exclusiveMinimum": 0,
+      "title": "Revision",
+      "type": "integer"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "review",
+        "approved",
+        "published"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "languages": {
+      "additionalProperties": {
+        "$ref": "#/$defs/Edition"
+      },
+      "propertyNames": {
+        "enum": [
+          "ru",
+          "en",
+          "ja"
+        ]
+      },
+      "title": "Languages",
+      "type": "object"
+    },
+    "weather": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Weather"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    }
+  },
+  "required": [
+    "issue_id",
+    "number",
+    "publication_date",
+    "revision",
+    "status",
+    "languages"
+  ],
+  "title": "Issue",
+  "type": "object"
+}

@@ -5,6 +5,8 @@ from typing import Annotated, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, HttpUrl, model_validator
 
+from .weather import Weather
+
 Text = Annotated[str, Field(min_length=1)]
 Slug = Annotated[str, Field(pattern=r"^[a-z0-9]+(?:-[a-z0-9]+)*$")]
 
@@ -39,6 +41,7 @@ class Article(Record):
     body: list[Annotated[TextBlock | ListBlock, Field(discriminator="type")]] = Field(min_length=1)
     sources: list[Source] = Field(min_length=1)
     image_asset_id: None = None
+    print_page: Literal[1, 2, 3] = 1
 
 
 class Edition(Record):
@@ -62,9 +65,12 @@ class Issue(Record):
     revision: int = Field(gt=0)
     status: Literal["draft", "review", "approved", "published"]
     languages: dict[Literal["ru", "en", "ja"], Edition]
+    weather: Weather | None = None
 
     @model_validator(mode="after")
     def parallel_editions(self) -> "Issue":
+        if self.weather and self.weather.forecast_date != self.publication_date:
+            raise ValueError("Weather date must match issue publication_date")
         if set(self.languages) != {"ru", "en", "ja"}:
             raise ValueError("All RU, EN and JA editions are required")
         ids = [{a.id for a in edition.articles} for edition in self.languages.values()]

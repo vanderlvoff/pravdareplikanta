@@ -1,6 +1,6 @@
 # Replicant Pravda
 
-Offline Phase 1 scaffold: strict editorial JSON, RU/EN/JA static website previews,
+Local development build: strict editorial JSON, RU/EN/JA static website previews,
 and a local preview server. No API accounts, Docker, Node or secrets required for daily use.
 Read PROJECT.md and docs/ for the full product requirements.
 
@@ -36,20 +36,97 @@ drafts; do not upload it to public hosting. Robots directives discourage indexin
 but are not access control. Internal editorial notes currently appear in this local
 review output. Publication is not implemented.
 
-The generic screen layout uses browser fonts. Approved artwork, bundled fonts,
-Japanese name and golden references are still required. Unicode and explicit
-line-break preservation are tested; actual font glyph rendering is not yet verified.
+The screen preview uses the supplied SVG mastheads, medals and portrait unchanged.
+Quotations use bundled Caveat-Regular; Russian quotation text comes from the header
+reference. EN quotation is included; JA quotation uses owner-supplied wording. Article text and headline fonts
+remain provisional system fonts by owner instruction. Full-page golden references
+and visual approval are still required. Unicode and explicit line-break preservation
+are tested; RU/EN quotation font usage is also checked in Chrome.
 Images are intentionally rejected until reviewed asset and licensing handling exists.
 
-Phase 2 will add pinned Chromium, exactly three A4 PDF pages per language, font and
-asset checks, overflow reports and raster previews. `verification.json` currently
-records unavailable checks; it is not a certification. Phase 3 will add public-only
-snapshots, canonical URLs, hreflang metadata, RSS, sitemap, historical archive
-aggregation, verification and an owner-approved deployment adapter. Current archive
-pages list only the selected issue. No `verify` or `publish` command exists yet.
+Local PDF support now generates exactly three A4 pages per language with overflow
+checks, embedded Caveat, raster previews and snapshot verification. See
+[docs/PRINT.md](docs/PRINT.md) for installation, commands and current limitations.
+The sample has three short fictional articles, so print pages are intentionally sparse.
+Final body fonts, full-page references and visual approval remain pending.
+Public snapshots, RSS, historical archive aggregation and deployment remain later work.
+
+## Local PDF proof
+
+```sh
+python -m pip install -e '.[pdf]'
+python -m playwright install chromium --only-shell
+rp build --issue 2026-10-29 --pdf --output previews/print-review
+rp verify --issue 2026-10-29 --output previews/print-review
+rp preview --output previews/print-review
+```
+
+The generated proof from development is at `previews/print-3`. Its localized pages
+link to the PDFs. Stop an old server before serving a different output directory.
 
 ## Version control
 
 Canonical JSON and source belong in Git; generated snapshots and secrets are ignored.
 The intended remote is https://github.com/vanderlvoff/pravdareplikanta.git.
 Source pushes and public site deployment are separate operations.
+
+## Weather and current preview
+
+The sample issue includes saved Ichikawa weather for 2026-10-29. Build and preview
+without network:
+
+```sh
+rp build --issue 2026-10-29 --output previews/weather-review
+rp preview --output previews/weather-review
+```
+
+An already-generated preview is available at `previews/weather-3`. Stop an older
+server with Ctrl-C, then run `rp preview --output previews/weather-3` and open
+http://127.0.0.1:8000/ru/ (also `/en/` and `/ja/`). Old snapshots remain unchanged.
+Run from the repository root so `assets/` is available for integrity validation.
+
+To acquire a new saved forecast, use the separate `rp weather` command described
+in [docs/WEATHER.md](docs/WEATHER.md). Builds never refresh weather automatically.
+
+## Browser review
+
+Optional browser verification checks actual rendered quotation glyphs through
+Chromium's font inspection, image loading, and mobile overflow:
+
+```sh
+python -m pip install -e '.[visual]'
+python -m playwright install chromium
+python scripts/check_header.py previews/weather-3 --language ru
+```
+
+Repeat with `--language en` or `--language ja`. For an existing Google Chrome
+installation use `--channel chrome`. It records the actual browser version in
+`browser-review-<language>.json` and saves `desktop-<language>.png` and
+`mobile-<language>.png`. This diagnostic does not certify print reproducibility.
+
+Japanese quotations temporarily use the system Japanese serif font: Caveat has no
+Japanese glyphs. RU/EN quotations use bundled Caveat-Regular, checked in Chrome.
+
+## Optional API editorial drafting
+
+By owner request, `rp draft` can research primary sources and prepare RU/EN/JA
+through OpenAI Responses API. It writes a separate local draft, never publishing
+or overwriting the canonical issue. See [docs/API_EDITORIAL.md](docs/API_EDITORIAL.md)
+for secure key setup, model selection, dry-run and local build commands.
+Normal newspaper generation remains offline and needs no API credentials.
+
+## Editorial draft: 2026-10-30
+
+The next issue contains RU/EN/JA analysis of Worken, learned demonstration timing
+and RoboJev, based on primary publications dated October 23–29. It includes saved
+Ichikawa weather for October 30 and remains a draft for editorial review.
+
+```sh
+rp preview --output previews/issue-2026-10-30-2
+```
+
+Open `/ru/`, `/en/` or `/ja/` and follow the PDF edition link. Each PDF has three A4
+pages; all nine raster previews are under each language's issue directory.
+See [source/review notes](docs/issues/2026-10-30.md) and the
+[monthly API budget estimate](docs/API_BUDGET.md). This issue was prepared in the
+current session without calling the paid OpenAI API.

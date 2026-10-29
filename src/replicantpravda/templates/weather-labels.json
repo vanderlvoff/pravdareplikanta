@@ -1,0 +1,104 @@
+{
+  "ru": {
+    "city": "ИТИКАВА",
+    "forecast": "Прогноз",
+    "demo": "ДЕМО · не прогноз",
+    "periods": {
+      "9": "УТРО",
+      "12": "ДЕНЬ",
+      "18": "ВЕЧЕР"
+    },
+    "conditions": {
+      "clear": "Ясно",
+      "cloudy": "Облачно",
+      "fog": "Туман",
+      "rain": "Дождь",
+      "snow": "Снег",
+      "storm": "Гроза"
+    },
+    "wind": "Ветер",
+    "unit": "м/с",
+    "precip": "Вероятность осадков",
+    "daily": "За сутки",
+    "source": "Погода: источник",
+    "retrieved": "Получено",
+    "directions": [
+      "С",
+      "СВ",
+      "В",
+      "ЮВ",
+      "Ю",
+      "ЮЗ",
+      "З",
+      "СЗ"
+    ]
+  },
+  "en": {
+    "city": "ICHIKAWA",
+    "forecast": "Forecast",
+    "demo": "DEMO · not a forecast",
+    "periods": {
+      "9": "MORNING",
+      "12": "MIDDAY",
+      "18": "EVENING"
+    },
+    "conditions": {
+      "clear": "Clear",
+      "cloudy": "Cloudy",
+      "fog": "Fog",
+      "rain": "Rain",
+      "snow": "Snow",
+      "storm": "Thunderstorm"
+    },
+    "wind": "Wind",
+    "unit": "m/s",
+    "precip": "Precipitation probability",
+    "daily": "Daily",
+    "source": "Weather source",
+    "retrieved": "Retrieved",
+    "directions": [
+      "N",
+      "NE",
+      "E",
+      "SE",
+      "S",
+      "SW",
+      "W",
+      "NW"
+    ]
+  },
+  "ja": {
+    "city": "市川",
+    "forecast": "予報",
+    "demo": "デモ · 実際の予報ではありません",
+    "periods": {
+      "9": "朝",
+      "12": "昼",
+      "18": "夕方"
+    },
+    "conditions": {
+      "clear": "晴れ",
+      "cloudy": "曇り",
+      "fog": "霧",
+      "rain": "雨",
+      "snow": "雪",
+      "storm": "雷雨"
+    },
+    "wind": "風",
+    "unit": "m/s",
+    "precip": "降水確率",
+    "daily": "一日",
+    "source": "天気の出典",
+    "retrieved": "取得日時",
+    "directions": [
+      "北",
+      "北東",
+      "東",
+      "南東",
+      "南",
+      "南西",
+      "西",
+      "北西"
+    ]
+  }
+}

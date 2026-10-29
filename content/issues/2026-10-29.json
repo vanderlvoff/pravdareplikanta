@@ -33,7 +33,66 @@
               "title": "Placeholder citation — editorial review required",
               "published_at": "2026-10-28"
             }
-          ]
+          ],
+          "print_page": 1
+        },
+        {
+          "id": "evaluation-protocol",
+          "slug": "evaluation-protocol",
+          "category": "opinion",
+          "headline": "Протокол проверки: учебный пример",
+          "dek": "Зафиксируйте условия до начала испытаний.",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Это вымышленный материал для проверки газетной вёрстки, а не новость о реальном роботе. Пример показывает, как можно описать процедуру испытания."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Запишите задачу и условия её выполнения.",
+                "Сохраните неудачные попытки вместе с удачными.",
+                "Повторите проверку после изменения условий."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://example.org/",
+              "title": "Placeholder citation — editorial review required",
+              "published_at": "2026-10-28"
+            }
+          ],
+          "print_page": 2
+        },
+        {
+          "id": "editorial-checks",
+          "slug": "editorial-checks",
+          "category": "opinion",
+          "headline": "Редакторский контроль: учебный пример",
+          "dek": "Перед выпуском проверьте содержание и источники.",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Это демонстрационная редакционная памятка. Ссылка ниже служит заглушкой для тестовой сборки; реальные публикации должны ссылаться на проверяемые первоисточники."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Сопоставьте материалы трёх языковых версий.",
+                "Проверьте подписи, даты и единицы измерения.",
+                "Просмотрите все страницы PDF перед утверждением."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://example.org/",
+              "title": "Placeholder citation — editorial review required",
+              "published_at": "2026-10-28"
+            }
+          ],
+          "print_page": 3
         }
       ]
     },
@@ -65,7 +124,66 @@
               "title": "Placeholder citation — editorial review required",
               "published_at": "2026-10-28"
             }
-          ]
+          ],
+          "print_page": 1
+        },
+        {
+          "id": "evaluation-protocol",
+          "slug": "evaluation-protocol",
+          "category": "opinion",
+          "headline": "An evaluation protocol: sample exercise",
+          "dek": "Record the conditions before testing.",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "This is fictional content for testing newspaper layout, not news about a real robot. The exercise illustrates how an evaluation procedure could be described."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Record the task and its operating conditions.",
+                "Keep unsuccessful attempts alongside successful ones.",
+                "Repeat the evaluation after changing conditions."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://example.org/",
+              "title": "Placeholder citation — editorial review required",
+              "published_at": "2026-10-28"
+            }
+          ],
+          "print_page": 2
+        },
+        {
+          "id": "editorial-checks",
+          "slug": "editorial-checks",
+          "category": "opinion",
+          "headline": "Editorial checks: sample exercise",
+          "dek": "Review content and sources before approving an issue.",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "This is a demonstration editorial checklist. The link below is a fixture placeholder; real reporting must cite verifiable primary sources."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Compare the three language editions.",
+                "Check captions, dates and measurement units.",
+                "Inspect every PDF page before approval."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://example.org/",
+              "title": "Placeholder citation — editorial review required",
+              "published_at": "2026-10-28"
+            }
+          ],
+          "print_page": 3
         }
       ]
     },
@@ -97,9 +215,106 @@
               "title": "Placeholder citation — editorial review required",
               "published_at": "2026-10-28"
             }
-          ]
+          ],
+          "print_page": 1
+        },
+        {
+          "id": "evaluation-protocol",
+          "slug": "evaluation-protocol",
+          "category": "opinion",
+          "headline": "評価手順：編集用サンプル",
+          "dek": "試験の前に条件を記録します。",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "これは新聞のレイアウトを確認するための架空の文章であり、実在するロボットのニュースではありません。評価手順の記述例を示します。"
+            },
+            {
+              "type": "list",
+              "items": [
+                "課題と実行条件を記録します。",
+                "成功例だけでなく失敗例も保存します。",
+                "条件を変えた後に評価を繰り返します。"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://example.org/",
+              "title": "Placeholder citation — editorial review required",
+              "published_at": "2026-10-28"
+            }
+          ],
+          "print_page": 2
+        },
+        {
+          "id": "editorial-checks",
+          "slug": "editorial-checks",
+          "category": "opinion",
+          "headline": "編集チェック：サンプル",
+          "dek": "発行前に本文と出典を確認します。",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "これは編集確認用の例です。下記のリンクはテスト用の仮リンクです。実際の記事では検証可能な一次資料を引用します。"
+            },
+            {
+              "type": "list",
+              "items": [
+                "三つの言語版の内容を照合します。",
+                "説明文、日付、単位を確認します。",
+                "承認前にPDFの全ページを確認します。"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://example.org/",
+              "title": "Placeholder citation — editorial review required",
+              "published_at": "2026-10-28"
+            }
+          ],
+          "print_page": 3
         }
       ]
     }
+  },
+  "weather": {
+    "location": "ichikawa",
+    "timezone": "Asia/Tokyo",
+    "forecast_date": "2026-10-29",
+    "retrieved_at": "2026-10-29T14:32:18.974081Z",
+    "kind": "forecast",
+    "source_name": "Open-Meteo",
+    "source_url": "https://api.open-meteo.com/v1/forecast?latitude=35.72&longitude=139.93&timezone=Asia%2FTokyo&start_date=2026-10-29&end_date=2026-10-29&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+    "temperature_min_c": 10.7,
+    "temperature_max_c": 18.7,
+    "precipitation_probability_max": 25,
+    "slots": [
+      {
+        "hour": 9,
+        "temperature_c": 12.7,
+        "condition": "cloudy",
+        "precipitation_probability": 0,
+        "wind_speed_ms": 2.16,
+        "wind_direction_deg": 13
+      },
+      {
+        "hour": 12,
+        "temperature_c": 17.6,
+        "condition": "cloudy",
+        "precipitation_probability": 0,
+        "wind_speed_ms": 2.21,
+        "wind_direction_deg": 95
+      },
+      {
+        "hour": 18,
+        "temperature_c": 15.2,
+        "condition": "cloudy",
+        "precipitation_probability": 25,
+        "wind_speed_ms": 1.75,
+        "wind_direction_deg": 13
+      }
+    ]
   }
 }

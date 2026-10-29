@@ -1,0 +1,49 @@
+/* Provisional physical measurements pending a full-page golden reference. */
+@page { size: A4 portrait; margin: 10mm; }
+html { background: white; }
+body.print-edition { width: 190mm; max-width: none; margin: 0; padding: 0; color: #111; background: white; font-size: 10pt; line-height: 1.35; }
+.sheet { width: 190mm; height: 276.5mm; display: flex; flex-direction: column; break-after: page; }
+.sheet:last-child { break-after: auto; }
+.newspaper-header { flex: none; }
+.kicker { font-size: 10pt; margin-bottom: 2mm; }
+.brand-header { grid-template-columns: 20% minmax(0, 1fr) 23%; gap: 2.5mm; }
+.portrait-medals { width: 80%; }
+.title-panel h1 { border-top-width: .7mm; padding: 1.5mm 0; }
+.strapline { font-size: 5.5pt; letter-spacing: .04em; padding: 1mm 0; }
+.weather { grid-column: auto; border-left: .2mm solid; border-top: 0; padding: 0 0 0 2.5mm; margin: 1mm 0; }
+.weather h2 { display: block; font-size: 10pt; margin: 0; }
+.weather .weather-date { display: block; font-size: 5.5pt; margin: 1mm 0 2mm; padding: 0 0 1mm; border-bottom: .2mm solid; }
+.weather-slots { display: block; }
+.weather-slot { display: grid; grid-template-columns: 4mm minmax(0, 1fr) minmax(0, 1.15fr); gap: 1mm; padding: 1.5mm 0; }
+.weather-description { grid-column: auto; }
+.weather-icon { font-size: 12pt; }
+.weather-period { font-size: 5pt; }
+.weather-temperature { font-size: 13pt; }
+.weather-condition, .weather-detail { font-size: 5pt; margin: .5mm 0 0; }
+.weather-summary, .weather-demo { font-size: 5.5pt; }
+.weather-summary { padding-top: 1mm; margin-top: 1mm; }
+.brand-quote { margin: 2mm 0 0; padding: 2mm 0; }
+.brand-quote blockquote { font-size: 18pt; line-height: 1.2; }
+.brand-quote:lang(ja) blockquote { font-size: 12pt; line-height: 1.5; }
+.brand-quote figcaption { font-size: 7pt; margin-top: 1mm; }
+.issue-line { padding: 1.5mm 0; border-bottom-width: .5mm; gap: 1mm; }
+.issue-line p { font-size: 6pt; }
+.issue-line a { display: none; }
+.page-body { flex: 1; min-height: 0; padding: 3mm 0; }
+.article-columns { height: 100%; column-count: 2; column-gap: 5mm; column-rule: .2mm solid #999; column-fill: balance; }
+article { margin: 0 0 3mm; padding: 0 0 2mm; border-bottom: .2mm solid #999; }
+article h2 { margin: 1mm 0 2mm; font-size: 16pt; line-height: 1.1; break-after: avoid; }
+article h3 { font-size: 11pt; margin: 2mm 0 1mm; break-after: avoid; }
+article p, article li { font-size: 10pt; margin: 0 0 2mm; orphans: 2; widows: 2; }
+article blockquote { font-size: 14pt; margin: 2mm; }
+article:lang(ja) blockquote { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 10pt; }
+article .category { font-size: 7pt; text-transform: uppercase; margin: 0; }
+article .dek { font-weight: 700; }
+.article-sources p, .article-sources h3 { font-size: 7pt; }
+.running-header { flex: none; display: flex; justify-content: space-between; align-items: center; border-bottom: .3mm solid; padding-bottom: 2mm; }
+.running-header img { width: 45mm; height: auto; }
+.running-header p { font-size: 8pt; }
+.page-footer { flex: none; display: flex; justify-content: space-between; border-top: .2mm solid; padding-top: 1mm; font-size: 6pt; }
+a { color: inherit; text-decoration: none; }
+
+.print-weather-source { flex: none; margin: 1mm 0 0; font-size: 5.5pt; }

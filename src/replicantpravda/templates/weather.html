@@ -1,0 +1,26 @@
+<section class="weather" aria-label="{{ labels.weather }}">
+  {% if issue.weather %}
+  {% set weather = issue.weather %}
+  <h2>{{ weather_labels.city }}</h2>
+  <p class="weather-date">{{ weather_labels.forecast }} · {{ weather.forecast_date }} · JST</p>
+  {% if weather.kind == 'demo' %}<p class="weather-demo">{{ weather_labels.demo }}</p>{% endif %}
+  <div class="weather-slots">
+    {% for slot in weather.slots %}
+    <div class="weather-slot">
+      <span class="weather-icon" aria-hidden="true">{{ weather_icons[slot.condition] }}</span>
+      <div class="weather-reading"><p class="weather-period">{{ weather_labels.periods[slot.hour|string] }} · {{ '%02d'|format(slot.hour) }}:00</p>
+        <p class="weather-temperature">{{ '%g'|format(slot.temperature_c) }}°</p>
+      </div>
+      <div class="weather-description">
+        <p class="weather-condition">{{ weather_labels.conditions[slot.condition] }}</p>
+        <p class="weather-detail">{{ weather_labels.wind }}: {{ weather_labels.directions[((slot.wind_direction_deg + 22.5) / 45)|int % 8] }} {{ '%g'|format(slot.wind_speed_ms) }} {{ weather_labels.unit }} · <span title="{{ weather_labels.precip }}">{{ slot.precipitation_probability }}%</span></p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <p class="weather-summary">{{ weather_labels.daily }}: {{ '%g'|format(weather.temperature_min_c) }}–{{ '%g'|format(weather.temperature_max_c) }} °C<br>{{ weather_labels.precip }}: {{ weather.precipitation_probability_max }}%</p>
+  {% else %}
+  <h2>{{ labels.weather }}</h2><p class="weather-date">{{ issue.publication_date }}</p>
+  <p class="weather-pending">{{ labels.weather_pending }}</p>
+  {% endif %}
+</section>

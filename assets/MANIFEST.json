@@ -1,0 +1,102 @@
+[
+  {
+    "path": "fonts/Caveat/Caveat-VariableFont_wght.ttf",
+    "sha256": "2849e2b28ab6c60e7fe090c759285a5a823acda2abee69c762b419117568752a"
+  },
+  {
+    "path": "fonts/Caveat/OFL.txt",
+    "sha256": "106a1fea143a76b93974b82d15ab2cfca509913a667b56eb55c6ff162802b1a8"
+  },
+  {
+    "path": "fonts/Caveat/README.txt",
+    "sha256": "6561f053887154e3171afa814aa7a52685e517f6ce9d45dbd0b86f88e2edc6f9"
+  },
+  {
+    "path": "fonts/Caveat/static/Caveat-Bold.ttf",
+    "sha256": "b42cc772f3528d9150c29d6051e2ed3fd472ad4e584c73fe1500ee628d6b1ac0"
+  },
+  {
+    "path": "fonts/Caveat/static/Caveat-Medium.ttf",
+    "sha256": "2003781246d27c3ea281fb2e7dbd98e9d6ce22baae7ee5e60f35d5969e918a4a"
+  },
+  {
+    "path": "fonts/Caveat/static/Caveat-Regular.ttf",
+    "sha256": "271ee7c4a60b1be2ba13a66990e7475c76c982ac6e906c9db25139976282f6b8"
+  },
+  {
+    "path": "fonts/Caveat/static/Caveat-SemiBold.ttf",
+    "sha256": "1f44700f4362468de6f8b4d87fed36ad101d14696272dd1b5eceaa5d64b5baa8"
+  },
+  {
+    "path": "masthead/masthead_en.svg",
+    "sha256": "6e10dd8adf5c0ec07538ef83ca3dc928dec3f9e6256f625bc8d888700736f16f"
+  },
+  {
+    "path": "masthead/masthead_ja.svg",
+    "sha256": "c08208fe636495c3907085702df06134ea9da41b1380a5afba40a168cf900d71"
+  },
+  {
+    "path": "masthead/masthead_ru.svg",
+    "sha256": "1787f0c8d884c8eeca2e967fccaa28b83835a020942d3f09efbbd4479ce92046"
+  },
+  {
+    "path": "masthead/preview_en.png",
+    "sha256": "f1f1854932f8f81cb52ec2b9a6f7e469398e1330e995719edd01dd3827e83a50"
+  },
+  {
+    "path": "masthead/preview_ja.png",
+    "sha256": "60dc5f3cb24b077b8670f99e3a0c292add33b821b8627fc9fa91866dbda9c4e6"
+  },
+  {
+    "path": "masthead/preview_ru.png",
+    "sha256": "abc6b2b08b51b3ef466aa59963b83a3474274b3ee83f16bb84aa5a5f3c4d7740"
+  },
+  {
+    "path": "medals/en/jupiter_en.jpeg",
+    "sha256": "fb2b206b08339f686b81fd9698bf958835c06274853c5e1e115e4e0e4c5ff3f8"
+  },
+  {
+    "path": "medals/en/orion_en.jpeg",
+    "sha256": "b8ae05596869bc1c403315e3dc73791c862bfccaffa5705ac1d1f438e18b5a92"
+  },
+  {
+    "path": "medals/en/tannhauser_en.png",
+    "sha256": "2c97a5680fc5dd8a26333853c9d9280d77ef027639673687282c6ca9ca8fca87"
+  },
+  {
+    "path": "medals/ja/jupiter_ja.jpeg",
+    "sha256": "c9259cbd5baff07d268622e612f2ec43fe1f6bcafd9d8413dc390a3660cbb504"
+  },
+  {
+    "path": "medals/ja/orion_ja.jpeg",
+    "sha256": "7218e7dd669ec03c179699047e1291892b3f25d6dac9f36c82a6b17d80f03415"
+  },
+  {
+    "path": "medals/ja/tannhauser_ja.png",
+    "sha256": "0c16e868c8b781415d61869a27edea522f4bc9a03461e63c665c32abaf5da86a"
+  },
+  {
+    "path": "medals/ru/jupiter_ru.jpeg",
+    "sha256": "01df439d37c07e6a0ddfe7aa9699a02a1421d13766feacc14869e9971a4da2c3"
+  },
+  {
+    "path": "medals/ru/orion_ru.jpeg",
+    "sha256": "36456f2fb524a9dcea04bb8509e4ba2f55eb29793c31f2b14b1c596f95dc0f4a"
+  },
+  {
+    "path": "medals/ru/tannhauser_ru.png",
+    "sha256": "8ca9d07bd73b5ff4a3b36cd89268179edecea7c6590443d56dd263db19908711"
+  },
+  {
+    "path": "portrait/batty.png",
+    "sha256": "8c692ba65937b7d5398976b046c0ef3b1642e56e14d26733129e8aadf1542142"
+  },
+  {
+    "path": "reference/pravda_replikanta_header_reference_medals.png",
+    "sha256": "655ba6a033660f8ee2a2460d1ec0a69f2f2d8665222a1be9544a05f1ae72a002"
+  },
+  {
+    "path": "reference/Эталон_шапки_2026-10-28.png",
+    "sha256": "c02be10ff1ae2cfd4c5f70219ceaf7b1ba4d9717f4575c6dd4f28b29c2d76414"
+  }
+]
