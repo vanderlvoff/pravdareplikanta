@@ -1,0 +1,11 @@
+/* Generic NON-FINAL screen layout; no approved brand assets or font substitutions. */
+:root { color-scheme: light; color: #222; background: #faf8f1; }
+body { margin: 0 auto; max-width: 65rem; padding: 1rem; font-family: sans-serif; line-height: 1.65; }
+aside { border: 2px dashed #8b2525; padding: .7rem; }
+header { border-bottom: 3px solid #222; padding-block: 1rem; }
+a { color: #712020; overflow-wrap: anywhere; }
+article { max-width: 48rem; padding-block: 1rem; border-bottom: 1px solid #777; }
+p, li, blockquote { white-space: pre-line; overflow-wrap: anywhere; }
+nav a { display: inline-block; padding: .5rem; }
+h1, h2 { line-height: 1.25; overflow-wrap: anywhere; }
+@media (max-width: 40rem) { body { padding: .75rem; } h1 { font-size: 1.8rem; } }

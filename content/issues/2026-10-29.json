@@ -1,0 +1,105 @@
+{
+  "issue_id": "2026-10-29",
+  "number": 1,
+  "publication_date": "2026-10-29",
+  "revision": 1,
+  "status": "draft",
+  "languages": {
+    "ru": {
+      "title": "Правда репликанта",
+      "editorial_note": "Это вымышленный редакционный пример, а не новость.\nПроверяйте результаты в разных условиях.",
+      "articles": [
+        {
+          "id": "robot-evaluation",
+          "slug": "robot-evaluation",
+          "category": "opinion",
+          "headline": "Как оценивать робота: учебный пример",
+          "dek": "Это вымышленный редакционный пример, а не новость.",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Это вымышленный редакционный пример, а не новость.\nПроверяйте результаты в разных условиях."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Проверяйте результаты в разных условиях."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://example.org/",
+              "title": "Placeholder citation — editorial review required",
+              "published_at": "2026-10-28"
+            }
+          ]
+        }
+      ]
+    },
+    "en": {
+      "title": "The Replicant Truth",
+      "editorial_note": "This is a fictional editorial fixture, not news.\nCheck results across different conditions.",
+      "articles": [
+        {
+          "id": "robot-evaluation",
+          "slug": "robot-evaluation",
+          "category": "opinion",
+          "headline": "Evaluating a robot: a sample exercise",
+          "dek": "This is a fictional editorial fixture, not news.",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "This is a fictional editorial fixture, not news.\nCheck results across different conditions."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Check results across different conditions."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://example.org/",
+              "title": "Placeholder citation — editorial review required",
+              "published_at": "2026-10-28"
+            }
+          ]
+        }
+      ]
+    },
+    "ja": {
+      "title": "日本語題字（要承認）",
+      "editorial_note": "これはニュースではなく、架空の編集用サンプルです。\n異なる条件で結果を確認します。",
+      "articles": [
+        {
+          "id": "robot-evaluation",
+          "slug": "robot-evaluation",
+          "category": "opinion",
+          "headline": "ロボット評価：編集用サンプル",
+          "dek": "これはニュースではなく、架空の編集用サンプルです。",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "これはニュースではなく、架空の編集用サンプルです。\n異なる条件で結果を確認します。"
+            },
+            {
+              "type": "list",
+              "items": [
+                "異なる条件で結果を確認します。"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://example.org/",
+              "title": "Placeholder citation — editorial review required",
+              "published_at": "2026-10-28"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

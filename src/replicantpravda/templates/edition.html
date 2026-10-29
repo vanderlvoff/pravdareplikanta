@@ -1,0 +1,1 @@
+{% extends 'base.html' %}{% block content %}<section><h2>{{ issue.issue_id }}</h2><p>{{ edition.editorial_note }}</p>{% for article in edition.articles %}<article><p>{{ article.category }}</p><h2><a href="/{{ lang }}/articles/{{ article.slug }}/">{{ article.headline }}</a></h2><p>{{ article.dek }}</p></article>{% endfor %}</section>{% endblock %}
