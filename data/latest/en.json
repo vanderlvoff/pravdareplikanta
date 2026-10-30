@@ -29,8 +29,8 @@
         "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-31/swapbot-tools.webp",
         "path": "data/images/2026-10-31/swapbot-tools.webp",
         "type": "generated",
-        "caption": "AI-generated technical illustration of a common robot coupling, tactile-equipped adapters and three interchangeable tools; conceptual, not an experimental photograph.",
-        "alt": "Diagram of an articulated arm with a quick-change coupling, tactile sensor pads and separate interchangeable utensils."
+        "caption": "AI-generated conceptual illustration: a robot flips tofu using an interchangeable tactile spatula, with other tools ready nearby. This is not an experimental image of SwapBot.",
+        "alt": "An articulated robot arm slides a tactile spatula beneath tofu in a frying pan; interchangeable brush and tongs stand beside it."
       }
     },
     {
@@ -107,8 +107,8 @@
         "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-31/aeon-mixed-palletizing.webp",
         "path": "data/images/2026-10-31/aeon-mixed-palletizing.webp",
         "type": "generated",
-        "caption": "AI-generated conceptual illustration of mixed-case palletizing with order planning, 3D vision feedback and warehouse coordination; not a photograph of the Aeon facility.",
-        "alt": "Diagram of mixed cartons on a conveyor, a robot arm stacking boxes, overhead 3D camera and warehouse control links."
+        "caption": "AI-generated conceptual illustration of mixed-case palletizing: a vacuum tool carries a carton into a roll cage, overhead 3D vision monitors the stack, and a transparent outline marks the planned placement. Not a photograph of Aeon’s site.",
+        "alt": "An industrial arm with a vacuum gripper holds a carton over a wheeled cage containing boxes of different sizes; an overhead camera and arrow indicate the next position."
       }
     },
     {

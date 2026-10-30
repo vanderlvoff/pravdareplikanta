@@ -29,8 +29,8 @@
         "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-31/swapbot-tools.webp",
         "path": "data/images/2026-10-31/swapbot-tools.webp",
         "type": "generated",
-        "caption": "AI生成の技術概念図。共通結合部、触覚付きアダプター、3種類の交換工具を示す。実験写真ではない。",
-        "alt": "ロボットアームの工具交換部、触覚センサー、複数の交換工具を示した模式図。"
+        "caption": "AI生成の概念図。交換式の触覚付きへらでロボットが豆腐を裏返し、横に別の工具を配置した。SwapBotの実験写真ではない。",
+        "alt": "関節式ロボットアームが触覚付きへらをフライパンの豆腐の下に差し込み、横には交換用のブラシとトングが並ぶ。"
       }
     },
     {
@@ -107,8 +107,8 @@
         "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-31/aeon-mixed-palletizing.webp",
         "path": "data/images/2026-10-31/aeon-mixed-palletizing.webp",
         "type": "generated",
-        "caption": "AI生成の概念図。混載計画、3Dビジョンによるフィードバック、倉庫制御の連携を示す。イオン施設の実写ではない。",
-        "alt": "異なる箱を載せたコンベヤー、積み付けロボット、上部3Dカメラ、倉庫制御の接続を示す模式図。"
+        "caption": "AI生成の概念図。吸着ハンドが箱をカートラックに運び、上部の3Dカメラで積載状態を確認する。半透明の枠は次の配置予定位置を示す。イオン施設の実写ではない。",
+        "alt": "吸着ハンド付き産業用ロボットが大小の箱を積んだカートラック上に箱を保持し、上部カメラと矢印が次の配置位置を示す。"
       }
     },
     {
