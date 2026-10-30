@@ -2,277 +2,290 @@
   "schema_version": "1.3",
   "publication": "pravda_replikanta",
   "issue_type": "daily",
-  "issue_date": "2026-10-30",
-  "issue_id": "daily-2026-10-30",
+  "issue_date": "2026-10-31",
+  "issue_id": "daily-2026-10-31",
   "language": "en",
-  "generated_at": "2026-10-30T01:46:55+09:00",
-  "title": "Pravda Replikanta — Engineering Data, October 30",
-  "lead": "Safer VLA execution, faster manipulation, demonstration capture and humanoid locomotion; Japan is adding insurance for operational robot risk.",
+  "generated_at": "2026-10-31T01:17:54+09:00",
+  "title": "Replicant Pravda — Physical AI, 31 October 2026",
+  "lead": "Eight developments in embodied AI: tactile tools, simulation, recoverable task execution, Japanese warehouse deployment and the economics of scaling.",
   "news": [
     {
-      "id": "vla-stem",
-      "title": "VLA-Stem adds reflex-like safety control without retraining the base VLA",
-      "summary": "A separate RL policy adjusts execution of action chunks around obstacles while retaining the VLA task objective.",
-      "details": "The authors convert action chunks from a frozen VLA into motion references. A local policy then uses proprioception and obstacle observations to adjust timing and motion. Across six constrained simulation settings, mean collision-free success is 52.8% versus 23.7% for the strongest compared safety baseline; the paper also reports fewer collisions in real-world tests.",
-      "technical_novelty": "A split between high-level VLA intent and rapid local RL correction, trained with teacher–student distillation and curriculum learning.",
-      "engineering_impact": "A potential add-on safety layer for existing VLAs without collecting large new obstacle-avoidance demonstration datasets.",
-      "limitations": "The evidence covers selected tasks and base policies; general industrial safety certification and universal reliability are not established.",
-      "evidence_status": "Research preprint with simulation and limited real-world tests; no independent replication.",
-      "published_at": "2026-10-27",
-      "organization": "VLA-Stem research team",
+      "id": "swapbot-tools",
+      "title": "SwapBot replaces the universal gripper with swappable tactile tools",
+      "summary": "A modular tool coupling system enables robots to switch between everyday utensils and learn contact-rich tasks.",
+      "details": "Adapters attach common tools to a fixed robot-side interface, each adding tactile sensors and supporting teleoperated demonstrations. The researchers report 15–25 percentage-point success improvements over RGB-only policies on contact-rich skills.",
+      "technical_novelty": "Low-cost interchangeable end-effectors combine mechanical coupling, tactile sensing and imitation learning.",
+      "engineering_impact": "Tool-specific mechanics could simplify cooking, handling and other tasks where one gripper is a poor fit.",
+      "limitations": "Reported gains come from the authors’ tasks and evaluations; long-term wear, sanitation and broad tool coverage are not established.",
+      "evidence_status": "Research preprint; author experiments and user study, without independent replication.",
+      "published_at": "2026-10-29",
+      "organization": "SwapBot research team",
       "source_ids": [
-        "stem"
+        "swapbot-paper"
       ],
-      "time_window": "72h",
-      "body": "A VLA can understand a command and still drive an arm into an obstacle. VLA-Stem addresses that gap without retraining the base model. It turns predicted action chunks into motion references and adds a faster local controller that adjusts execution using robot-state and obstacle observations.\n\nAcross six constrained simulation settings, the researchers report 52.8% collision-free success, versus 23.7% for their strongest safety baseline. Physical tests also show fewer collisions. The architecture is promising for existing policies, but these limited experiments are not a general safety certification or independent replication.",
+      "time_window": "24h",
+      "body": "The search for a single hand that can do everything has an obvious rival: change the tool instead. SwapBot puts a standard coupling on the robot and inexpensive adapters on ordinary utensils. A spatula, brush or articulated tool can become a robot end-effector, while integrated tactile sensing reports contact that cameras alone cannot reliably reveal.\n\nThe team collected demonstrations through teleoperation and trained imitation learning policies for cooking-style manipulation. It reports success gains of 15–25 percentage points over RGB-only policies on contact-rich skills, alongside lower operator workload in a user study. The idea is practical, but the experiments do not establish reliability across every tool or industrial environment.",
       "image": {
-        "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-30/vla-stem.webp",
-        "path": "data/images/2026-10-30/vla-stem.webp",
+        "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-31/swapbot-tools.webp",
+        "path": "data/images/2026-10-31/swapbot-tools.webp",
         "type": "generated",
-        "caption": "AI-generated technical diagram: a local safety controller adjusts a VLA reference trajectory to avoid an obstacle. This illustrates a general principle, not a specific experimental result.",
-        "alt": "Robot arm and obstacle, with a red reference path and green corrected path; below, a camera-to-action-to-safety-controller-to-actuator flow."
+        "caption": "AI-generated technical illustration of a common robot coupling, tactile-equipped adapters and three interchangeable tools; conceptual, not an experimental photograph.",
+        "alt": "Diagram of an articulated arm with a quick-change coupling, tactile sensor pads and separate interchangeable utensils."
       }
     },
     {
-      "id": "tops-flow",
-      "title": "TOPS accelerates flow-based manipulation without changing the network",
-      "summary": "Task-specific source distributions and generation schedules lift LIBERO-10 success from 53.44% to 69.67%.",
-      "details": "MARS Lab fits a separate starting distribution and nonlinear transport schedule for each language-conditioned task. On LIBERO-10, one TOPS step beats ten standard flow-matching steps while using about one-sixth of the inference time. The authors report 80% success opening a real upper drawer versus 20% for standard flow matching.",
-      "technical_novelty": "Task-oriented priors and slow-then-fast transport along expansion directions, with the policy architecture unchanged.",
-      "engineering_impact": "Lower inference latency matters for closed-loop manipulation and resource-constrained edge deployment.",
-      "limitations": "Results depend on benchmark, solver and settings; the gains do not automatically generalize to every VLA.",
-      "evidence_status": "Research preprint and author project page with benchmarks and real-robot demonstrations; not independently replicated.",
-      "published_at": "2026-10-27",
-      "organization": "Nanyang Technological University / MARS Lab",
+      "id": "gym-anything",
+      "title": "Gym-Anything lets coding agents build the robot training worlds",
+      "summary": "An agentic simulation pipeline produced 25 simulations and exposed large gaps in frontier-model physical reasoning.",
+      "details": "RoboWorld contains 25 simulations, 25 test environments and 175 training RL environments. The authors report that the strongest frontier models fail all test tasks, averaging reward 0.06; they release the benchmark and creation pipeline.",
+      "technical_novelty": "Coding agents generate and audit physics-based tasks through an adversarial creation–verification loop.",
+      "engineering_impact": "More varied simulations can stress-test policies before costly hardware trials and support sim-to-real research.",
+      "limitations": "Simulation fidelity and real-world transfer are not proven by benchmark creation; model scores depend on the evaluation setup.",
+      "evidence_status": "Research preprint with released benchmark and code; model performance is author-reported.",
+      "published_at": "2026-10-29",
+      "organization": "Gym-Anything research team",
       "source_ids": [
-        "tops"
+        "gym-paper"
       ],
-      "time_window": "72h",
-      "body": "Making manipulation faster does not always require a bigger neural network. TOPS changes where flow-based action generation begins and how it progresses, tailoring the source distribution and transport schedule to the task. The network architecture remains unchanged.\n\nOn LIBERO-10, one TOPS step achieved 69.67% success against 53.44% for ten standard flow-matching steps, with roughly one-sixth of the inference time. In a real upper-drawer task, the authors report 80% versus 20%. Both latency and accuracy matter in closed-loop control, although the gains depend on the tested tasks and configurations.",
+      "time_window": "24h",
+      "body": "A robot policy can look capable in a familiar simulator and still fail when the world changes. Gym-Anything attacks the supply side of that problem: coding agents create and audit new physical simulations, rather than waiting for experts to hand-build each environment. The resulting RoboWorld benchmark spans 25 simulations and 25 test tasks.\n\nThe researchers report an average reward of just 0.06 for the best frontier models, with no test task solved. They also explore repeated attempts, privileged teachers and demonstration-generating code policies. The work broadens the testing ground for embodied AI and sim-to-real research, but a convincing simulation is not automatically a faithful model of factory physics.",
       "image": null
     },
     {
-      "id": "openjaws-stereo",
-      "title": "OpenJaws: open handheld demonstration gripper with stereo localization",
-      "summary": "A robot-free UMI device records metric trajectories using a stereo camera.",
-      "details": "The team presents a 3D-printed gripper with an ISO mounting flange and stereo cameras, with an estimated parts cost near $400. UMI-Loc-Bench-v1 contains 90 demonstrations over nine tasks; offline stereo COLMAP reports 2.9 mm localization error. Policies trained on the collected data achieved 90% success on each of two UR10 tasks, with ten trials per task.",
-      "technical_novelty": "Co-design of the data-collection device and deployed gripper, avoiding the absolute-scale ambiguity of monocular SLAM.",
-      "engineering_impact": "Could reduce demonstration collection cost and the UMI-to-real transfer gap.",
-      "limitations": "The project page still marks some code, hardware and dataset links as Coming Soon; real-robot evaluation is small.",
-      "evidence_status": "Research preprint and author demonstration; completeness of the announced open release remains to be verified.",
-      "published_at": "2026-10-27",
-      "organization": "NVIDIA Research / OpenJaws team",
+      "id": "touchbridge-tactile",
+      "title": "TouchBridge carries human fingertip contact into robot training",
+      "summary": "A wearable tactile interface converts human demonstrations into robot-domain examples without object meshes or physics simulation.",
+      "details": "Across four physical dexterous tasks, policies trained on converted human demonstrations reach 72.5% mean success, compared with 77.5% using equal-count robot teleoperation data; collecting human demonstrations is 7.0 times faster.",
+      "technical_novelty": "Tac-Retarget aligns fingertip contact patches across human and robot hands using measured tactile information.",
+      "engineering_impact": "Faster contact-rich demonstration collection could reduce the cost of fine-tuning dexterous VLA systems.",
+      "limitations": "Evidence covers four tasks and specific hands; performance remains below direct robot teleoperation and lacks independent replication.",
+      "evidence_status": "Research preprint with four real-robot tasks; author-reported comparative results.",
+      "published_at": "2026-10-29",
+      "organization": "TouchBridge research team",
       "source_ids": [
-        "openjaws"
+        "touchbridge-paper"
       ],
       "time_window": "72h",
-      "body": "Before a robot can learn a manipulation skill, someone must demonstrate it. OpenJaws records those examples without a robot: an operator moves a camera-equipped handheld gripper, and stereo vision reconstructs motion at metric scale. That avoids the absolute-scale ambiguity of monocular tracking.\n\nThe estimated parts cost is about $400. A benchmark contains 90 demonstrations across nine tasks, while offline stereo COLMAP reports 2.9 mm position error. Two UR10 policies reached 90% success each, but on just ten trials per task. Some promised code, hardware and dataset links still read Coming Soon, so the practical completeness of the open release remains to be checked.",
+      "body": "When a person turns an object in the hand, the important information is not just where the fingers went. It is where they touched and how the contact changed. TouchBridge combines a wearable demonstration interface with tactile-conditioned retargeting, preserving fingertip contact relations as examples are converted for a robot hand.\n\nOn four real tasks, the resulting VLA policy reached 72.5% average success, versus 77.5% with the same number of directly teleoperated robot demonstrations. Human data collection was 7.0 times faster. That trade-off could be attractive when robot time is scarce, though the gap in success and the narrow evaluation still matter.",
       "image": null
     },
     {
-      "id": "roboauto-programs",
-      "title": "RoboAuto searches robot programs by testing physical hypotheses",
-      "summary": "An agent combines a skill library, object knowledge and experiments to verify the effects of actions.",
-      "details": "RoboAuto stores affordances, spatial relationships and action effects, grounds them in the observed scene, and verifies intermediate results in multi-stage programs. The authors report 89.1% success on short LIBERO-PRO tasks and 73.4% versus 30.8% for ASPIRE on LIBERO-PRO Long. They also evaluate three challenging real-robot manipulation tasks.",
-      "technical_novelty": "Executable program search with distinct grounding, stage verification and active uncertainty-resolution procedures.",
-      "engineering_impact": "An inspectable and repairable alternative to monolithic end-to-end VLA control for some manipulation workflows.",
-      "limitations": "Program search relies on external perception models, computation and safe skill interfaces; metrics are benchmark-specific.",
-      "evidence_status": "Research preprint with author-run simulation and real-robot evaluations.",
-      "published_at": "2026-10-27",
-      "organization": "RoboAuto research team",
+      "id": "logiv-repair",
+      "title": "LOGIV checks whether the world still supports the robot’s plan",
+      "summary": "A task graph verifies physical prerequisites and repairs only the dependencies broken by disturbances.",
+      "details": "On three real-robot tasks, successful trials increased from 12/30 to 17/30. The authors also evaluate 20 dual-arm benchmark tasks using three execution backbones, with higher completion under injected disturbances.",
+      "technical_novelty": "Condition-support and resource-ordering edges connect symbolic plans to observed physical state, with local causal repair.",
+      "engineering_impact": "Task graphs may improve reliability of long-horizon workflows without retraining the underlying VLA policy.",
+      "limitations": "The experiments cover selected benchmarks and only three real tasks; symbolic conditions require accurate definitions and sensing.",
+      "evidence_status": "Research preprint with simulation and limited real-robot tests; not independently replicated.",
+      "published_at": "2026-10-29",
+      "organization": "LOGIV research team",
       "source_ids": [
-        "roboauto"
+        "logiv-paper"
       ],
       "time_window": "72h",
-      "body": "A robot may execute its program while failing the task: grasping empty space, for example, or proceeding before a drawer opens. RoboAuto puts physical verification into program search. It stores knowledge of objects and possible interactions, grounds it in the current scene and runs small experiments when competing explanations remain.\n\nThe authors report 89.1% success on short LIBERO-PRO tasks and 73.4% on LIBERO-PRO Long, against ASPIRE's 30.8%. Three real-robot tasks are also evaluated. The appeal is inspectable, repairable behavior, but it relies on perception, reusable skills and safeguards for running generated code.",
+      "body": "Completing a step is not the same as preserving its result. A robot may place a part correctly, then knock it aside while executing the next instruction. LOGIV introduces an explicit task graph that records which later actions depend on which physical conditions, checks those conditions against observations and repairs the broken links locally.\n\nThe framework sits above existing VLA or world-action policies and adds no trainable component. In three real-robot tasks, successful trials rose from 12 out of 30 to 17 out of 30; broader dual-arm tests also showed gains. The engineering promise is recoverable long-horizon execution, provided the task graph and observations capture what actually matters.",
       "image": null
     },
     {
-      "id": "reach-crawling",
-      "title": "REACH teaches Unitree G1 to switch between walking and crawling",
-      "summary": "Hierarchical RL connects walking, crouching and crawling to a LiDAR-based planner.",
-      "details": "The team trains G1 locomotion with body-height commands of 1.27–0.50 m in bipedal mode and 0.50–0.20 m while crawling. A transition policy bridges different contact modes, while a LiDAR planner turns point clouds into 3D routes and height targets. Real-world confined-space demonstrations are reported.",
-      "technical_novelty": "Bidirectional transitions between locomotion modes and route planning that explicitly accounts for overhead clearance.",
-      "engineering_impact": "May allow humanoids to inspect or traverse spaces inaccessible to normal walking.",
-      "limitations": "Demonstrations do not establish industrial readiness; contact safety, generalization and long-term reliability need testing.",
-      "evidence_status": "Research preprint and author-run real-world experiments on Unitree G1.",
-      "published_at": "2026-10-27",
-      "organization": "Southern University of Science and Technology",
+      "id": "aeon-mixed-palletizing",
+      "title": "Aeon and Mujin put mixed-case palletizing into a live Japanese distribution hub",
+      "summary": "Aeon’s Kawaguchi East cross-dock began full operation with robotic mixed-case stacking, 3D vision and WES coordination.",
+      "details": "The joint release dated October 29 describes order-based stacking simulation, 3D vision feedback, local motion correction and a warehouse execution system coordinating robot arms, AGVs, shuttles and workers.",
+      "technical_novelty": "Combining precomputed mixed-case plans with live 3D perception and WES orchestration links planning to changing pallet state.",
+      "engineering_impact": "A concrete Japanese deployment tackles variable box size, weight and store-specific outbound orders rather than a fixed demo.",
+      "limitations": "Performance and automation targets are company statements; independent reliability, downtime and cost data are not provided.",
+      "evidence_status": "Joint operator and vendor announcement of a live site; not an independently audited performance study.",
+      "published_at": "2026-10-29",
+      "organization": "Aeon / Mujin",
       "source_ids": [
-        "reach"
+        "aeon-release"
       ],
       "time_window": "72h",
-      "body": "Walking is of little use when a passage is lower than a humanoid's torso. REACH gives the Unitree G1 a way to switch from bipedal movement to crawling and back. A transition policy bridges different contact modes, while LiDAR-based planning anticipates overhead clearance.\n\nReported body-height commands span 1.27–0.50 m for walking and 0.50–0.20 m for crawling. The team demonstrates traversal on a physical G1. Inspection is an obvious possible application, but controlled demonstrations do not establish contact safety or long-term field reliability.",
-      "image": null
-    },
-    {
-      "id": "hc2-foresight",
-      "title": "HC2Robot predicts footholds for humanoid parkour",
-      "summary": "The controller estimates upcoming foot-contact locations and support quality from deployable onboard observations.",
-      "details": "A Predicted Foresight Module predicts the timing, location and support quality of the next foot touchdown. A Hyper-Connection Transformer integrates temporal streams. Across simulated stairs, gaps, platforms and slopes, mean traversal success reaches 97.60%.",
-      "technical_novelty": "Predicting useful approximations of privileged simulator information without requiring privileged sensing at deployment.",
-      "engineering_impact": "Could improve support selection and reduce the sim-to-real information gap for perceptive locomotion.",
-      "limitations": "The headline quantitative result is simulated; it does not establish real-world robustness.",
-      "evidence_status": "Research preprint with primarily simulation-based evaluation.",
-      "published_at": "2026-10-27",
-      "organization": "HC2Robot research team",
-      "source_ids": [
-        "hc2"
-      ],
-      "time_window": "72h",
-      "body": "Seeing the next foothold is not enough; a humanoid must anticipate when its foot will land and whether the surface can support it. HC2Robot predicts contact timing, position and quality from onboard observations, approximating information available only during simulator training. A Hyper-Connection Transformer combines the temporal signals.\n\nMean traversal success reaches 97.60% across simulated stairs, gaps, platforms and slopes. It is a strong result for those test conditions, not proof of real-world parkour reliability. Unfamiliar surfaces and physical disturbances remain to be tested.",
-      "image": null
-    },
-    {
-      "id": "dexsafe-hand",
-      "title": "LEAP hand reaches 95.2% of in-hand pose targets with fewer drops",
-      "summary": "A LEAP hand policy is trained in simulation without human demonstrations; a residual filter reduces object drops.",
-      "details": "Over 13.3 hours of real-hand evaluation covering more than 4,800 unseen goals and four objects, the policy reaches 95.2% of targets within 2 cm and 0.4 rad. A separate residual safety filter reduces drops by 75% while retaining 91.5% target success. The authors report zero-shot sim-to-real transfer and a wrist-camera configuration.",
-      "technical_novelty": "Adaptive friction curriculum, varied initial grasps and an adjustable residual safety filter.",
-      "engineering_impact": "Relevant to dexterous manipulation where avoiding dropped parts matters as much as achieving motion targets.",
-      "limitations": "Results cover a LEAP hand and four objects; transfer to other hands and sustained production cycles is unproven.",
-      "evidence_status": "Research preprint with extended author-run real-robot evaluation; no independent replication.",
-      "published_at": "2026-10-27",
-      "organization": "University of California Berkeley / Davis",
-      "source_ids": [
-        "dex"
-      ],
-      "time_window": "72h",
-      "body": "A dexterous hand can reach the right pose and still drop its object. Researchers using the LEAP hand treat that risk as a separate safety problem. They train in simulation without human demonstrations and add an adjustable residual filter to moderate risky actions.\n\nAcross 13.3 hours of real-hand testing, four objects and more than 4,800 unseen goals, the base policy reached 95.2% of target poses within 2 cm and 0.4 radians. The filter cut drops by 75% while retaining 91.5% target success. The trade-off is measurable, but performance on other hands and industrial duty cycles remains unproven.",
-      "image": null
-    },
-    {
-      "id": "tokio-robot-insurance",
-      "title": "Japan: Tokio Marine launches coverage for AI-robot downtime",
-      "summary": "The new policy addresses robot damage, third-party liability and some costs of interrupted operations.",
-      "details": "On October 26, Tokio Marine & Nichido announced AI Robot Insurance, scheduled to launch in November 2026. The described coverage includes physical damage, liability to third parties and replacement-staff costs during robot downtime. This is deployment infrastructure rather than a new control algorithm.",
-      "technical_novelty": "Shifting part of autonomous-system failure exposure into insurance, including operational continuity costs.",
-      "engineering_impact": "Robot TCO planning increasingly needs explicit downtime costs, continuity plans and incident records.",
-      "limitations": "Contract terms, exclusions, premiums and actual claims require scrutiny; the announcement does not certify any robot as safe.",
-      "evidence_status": "Official corporate announcement dated October 26, 2026; product scheduled for November.",
-      "published_at": "2026-10-26",
-      "organization": "Tokio Marine & Nichido Fire Insurance",
-      "source_ids": [
-        "tokio"
-      ],
-      "time_window": "7d",
-      "body": "Robot deployment begins with productivity forecasts. It often ends with a harder question: who pays when the machine stops? Japan's Tokio Marine & Nichido has announced AI Robot Insurance for November 2026, covering specified downtime-related continuity costs alongside equipment damage and third-party liability.\n\nThe stated scope includes autonomous wheeled, quadruped and humanoid systems. Buyers should account for fallback staffing and downtime in total cost of ownership. Cyber-related losses are excluded in the published description, while premiums and precise terms require contract review. Insurance does not make robots safer, but it makes failure costs explicit.",
+      "body": "Mixed cartons rarely arrive in the neat order that a fixed palletizing script expects. At Aeon’s Kawaguchi East XD, launched on October 29 with Mujin, the system simulates a loading plan for each order, then uses 3D vision to check the evolving stack and adjust the robot’s movements if boxes shift. That feedback loop is the engineering heart of the deployment.\n\nThe WES coordinates robot arms, AGVs, shuttles and worker instructions against store orders and deadlines. Unlike a staged laboratory demonstration, this is a declared operating distribution hub. Yet the published description is from the companies themselves: throughput, uptime and savings need independent, sustained operational evidence.",
       "image": {
-        "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-30/tokio-robot-insurance.webp",
-        "path": "data/images/2026-10-30/tokio-robot-insurance.webp",
+        "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-31/aeon-mixed-palletizing.webp",
+        "path": "data/images/2026-10-31/aeon-mixed-palletizing.webp",
         "type": "generated",
-        "caption": "AI-generated conceptual technical illustration: an autonomous transport robot stops and a worker takes over the material-handling task. This is not a depiction of an insurance product.",
-        "alt": "Three stages of operations: autonomous load transport, robot stoppage with warning, and continued work by a person using a manual trolley; a clock indicates downtime."
+        "caption": "AI-generated conceptual illustration of mixed-case palletizing with order planning, 3D vision feedback and warehouse coordination; not a photograph of the Aeon facility.",
+        "alt": "Diagram of mixed cartons on a conveyor, a robot arm stacking boxes, overhead 3D camera and warehouse control links."
       }
+    },
+    {
+      "id": "agility-financing",
+      "title": "Agility updates the capital available for scaling Digit 5",
+      "summary": "A regulatory filing puts expected gross transaction proceeds near $465 million, subject to approvals and closing.",
+      "details": "The October 30 filing says the proposed Churchill XI combination could close November 4, with Nasdaq trading planned November 5. Digit 5 early-access deliveries are targeted for H1 2027; over $300 million in multiyear orders is a company disclosure, not current revenue.",
+      "technical_novelty": "The announcement concerns commercialization capacity and production financing, not a newly verified autonomy capability.",
+      "engineering_impact": "Capital may support scaling humanoid production, field support and fulfillment of existing commitments.",
+      "limitations": "Closing remains conditional; financing, order commitments and schedules do not establish deployed robot performance or profitability.",
+      "evidence_status": "Company statement filed with the SEC; transaction terms documented, future outcomes unverified.",
+      "published_at": "2026-10-30",
+      "organization": "Agility Robotics / Churchill Capital Corp XI",
+      "source_ids": [
+        "agility-sec"
+      ],
+      "time_window": "24h",
+      "body": "The distance from a convincing humanoid demonstration to a serviceable fleet is measured partly in capital. Agility Robotics and Churchill XI now expect roughly $465 million in gross proceeds from their proposed combination, according to a filing dated October 30. The companies target closing on November 4 and Nasdaq trading on November 5, subject to approval and other conditions.\n\nAgility says early Digit 5 deliveries are planned for the first half of 2027 and cites more than $300 million in multiyear orders. Those are commitments and plans, not revenue already earned or evidence of a new control breakthrough. The question for Physical AI is how financing translates into uptime, support and repeatable customer work.",
+      "image": null
+    },
+    {
+      "id": "opentrons-autonomous-labs",
+      "title": "Opentrons raises $40 million to connect AI experiments with physical labs",
+      "summary": "The lab-automation supplier plans to expand robots, software and data infrastructure for closed-loop experimentation.",
+      "details": "The October 29 company release reports a $40 million Series E led by Avego and says over 11,000 robots have been deployed in more than 80 countries. The stated goal is an AI-to-robot experiment loop.",
+      "technical_novelty": "Open API-driven lab robots create structured, reproducible execution data for automated experimental cycles.",
+      "engineering_impact": "Physical execution and reliable data collection can make AI-designed experiments more actionable.",
+      "limitations": "The financing and installed-base numbers are company statements; this is not proof of fully autonomous discovery or model performance.",
+      "evidence_status": "Company funding announcement with installed-base claims; no independent technical benchmark.",
+      "published_at": "2026-10-29",
+      "organization": "Opentrons",
+      "source_ids": [
+        "opentrons-release"
+      ],
+      "time_window": "72h",
+      "body": "A language model can propose a thousand experiments before a human laboratory has finished one. Opentrons is investing in the slower half of that loop: liquid-handling robots, software and structured records of what was actually done. On October 29 it announced a $40 million Series E to expand the infrastructure for AI-directed laboratory work.\n\nThe company reports more than 11,000 robots deployed across over 80 countries. An open API and repeatable physical execution matter because scientific models need trustworthy outcomes, not just plausible hypotheses. The release documents a financing plan and installed-base claim, however, not independent proof that an autonomous laboratory can discover reliably without human oversight.",
+      "image": null
+    },
+    {
+      "id": "bleu-few-shot",
+      "title": "Bleu Robotics bets on few-shot teaching rather than general-purpose hype",
+      "summary": "A €5 million pre-seed round backs a factory-oriented imitation-learning stack aimed at rapid task changeovers.",
+      "details": "The October 29 financing announcement concerns software that learns from about ten demonstrations. The company’s earlier Bleu_0.1 technical note reports selected ManiSkill3 and laboratory results; real factory deployment at scale is still a goal.",
+      "technical_novelty": "Abductive learning combines tracked object state, existing whole-body controllers and a task-specific inference layer.",
+      "engineering_impact": "A few-shot approach could lower the integration burden at high-mix industrial workstations.",
+      "limitations": "The under-one-hour deployment target and success figures are company claims; soft objects and out-of-distribution situations remain limitations.",
+      "evidence_status": "Funding reported by specialist media; technical claims originate with the company and lack independent production validation.",
+      "published_at": "2026-10-29",
+      "organization": "Bleu Robotics",
+      "source_ids": [
+        "bleu-funding",
+        "bleu-tech"
+      ],
+      "time_window": "72h",
+      "body": "Industrial robotics has a stubborn problem: the next product variant can invalidate yesterday’s carefully programmed cell. Bleu Robotics, an Inria spinout, has raised €5 million to pursue a narrower alternative to universal robot intelligence. Its few-shot imitation learning approach tries to infer a workstation task from roughly ten operator demonstrations, using existing perception and motion-control tools.\n\nThe company’s earlier Bleu_0.1 material reports promising controlled experiments and aims for task deployment in under an hour. It also states clear boundaries: deformable materials are outside its present focus, and the robot stops when an unfamiliar trajectory appears. The funding is real news; factory-scale robustness remains a claim to test.",
+      "image": null
     }
   ],
   "technology_signal": {
-    "title": "From demonstrations to reliable execution",
-    "summary": "Recent research increasingly separates task intent from local correction, intermediate verification and management of physical risk.",
-    "implications": "Deployments should measure collisions, object drops, inference latency, data collection cost and downtime exposure alongside benchmark success."
+    "title": "Physical AI shifts from isolated demonstrations to systems that can be operated",
+    "summary": "Tool changing, tactile data, verified task dependencies and live warehouse feedback make the surrounding engineering stack as important as the foundation model.",
+    "implications": "Measure contact success, recovery after disturbances, integration effort and operational uptime alongside policy benchmarks."
   },
   "glossary": [
     {
       "term": "VLA",
-      "definition": "Vision-Language-Action model: maps visual observations and language instructions to robot actions."
+      "definition": "Vision-Language-Action model: turns visual observations and instructions into robot actions."
     },
     {
-      "term": "Action chunk",
-      "definition": "A short sequence of future motor commands predicted in one policy invocation."
+      "term": "Tactile sensing",
+      "definition": "Measuring physical contact or force through sensors on a tool or hand."
     },
     {
-      "term": "Flow matching",
-      "definition": "A generative learning method that transforms a source distribution into action trajectories."
+      "term": "Imitation learning",
+      "definition": "Learning a robot policy from demonstrated actions."
     },
     {
-      "term": "UMI",
-      "definition": "Universal Manipulation Interface: a handheld interface for collecting demonstrations without a robot."
-    },
-    {
-      "term": "SLAM",
-      "definition": "Simultaneous Localization and Mapping: estimating pose while building an environment map."
-    },
-    {
-      "term": "Affordance",
-      "definition": "An object property describing which interactions are physically possible."
-    },
-    {
-      "term": "Proprioception",
-      "definition": "Internal robot state sensing, including joint positions and velocities."
+      "term": "End-effector",
+      "definition": "A robot’s tool or gripper attached at the end of its arm."
     },
     {
       "term": "Sim-to-real",
-      "definition": "Transferring a controller learned in simulation to physical hardware."
+      "definition": "Transfer of policies or insights from simulation to physical hardware."
     },
     {
-      "term": "TCO",
-      "definition": "Total Cost of Ownership: acquisition, operations, maintenance and downtime costs."
+      "term": "Task graph",
+      "definition": "Representation of actions and the conditions on which later steps depend."
+    },
+    {
+      "term": "WES",
+      "definition": "Warehouse Execution System: coordinates equipment and operational work."
+    },
+    {
+      "term": "3D vision",
+      "definition": "Visual sensing that estimates object geometry and spatial placement."
+    },
+    {
+      "term": "Palletizing",
+      "definition": "Arranging boxes or goods into stable loads for transport."
+    },
+    {
+      "term": "Few-shot",
+      "definition": "Adapting to a new task from a small number of examples."
     }
   ],
   "sources": [
     {
-      "id": "stem",
-      "url": "https://arxiv.org/abs/2610.37378",
+      "id": "swapbot-paper",
+      "url": "https://arxiv.org/abs/2610.40646",
       "domain": "arxiv.org",
-      "organization": "VLA-Stem research team",
-      "published_at": "2026-10-27",
-      "title": "VLA-Stem: A Lightweight Safety Mechanism for Vision-Language-Action Models via Reinforcement Learning"
+      "organization": "SwapBot research team",
+      "published_at": "2026-10-29",
+      "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing"
     },
     {
-      "id": "tops",
-      "url": "https://ntumars.github.io/TOPS/",
-      "domain": "ntumars.github.io",
-      "organization": "Nanyang Technological University / MARS Lab",
-      "published_at": "2026-10-27",
-      "title": "TOPS: Reshaping Flow Source and Transport for Multi-Task Robot Manipulation"
-    },
-    {
-      "id": "openjaws",
-      "url": "https://open-jaws.github.io/",
-      "domain": "open-jaws.github.io",
-      "organization": "NVIDIA Research / OpenJaws team",
-      "published_at": "2026-10-27",
-      "title": "OpenJaws: An Open Hardware UMI Framework with Stereo Localization for Generalist Manipulation"
-    },
-    {
-      "id": "roboauto",
-      "url": "https://arxiv.org/abs/2610.36533",
+      "id": "gym-paper",
+      "url": "https://arxiv.org/abs/2610.40565",
       "domain": "arxiv.org",
-      "organization": "RoboAuto research team",
-      "published_at": "2026-10-27",
-      "title": "RoboAuto: Autonomous Robot Program Search through Multi-Level Physical Understanding"
+      "organization": "Gym-Anything research team",
+      "published_at": "2026-10-29",
+      "title": "Gym-Anything for Robotics: Scaling physical simulations with digital agents"
     },
     {
-      "id": "reach",
-      "url": "https://arxiv.org/abs/2610.36546",
+      "id": "touchbridge-paper",
+      "url": "https://arxiv.org/abs/2610.40349",
       "domain": "arxiv.org",
-      "organization": "Southern University of Science and Technology",
-      "published_at": "2026-10-27",
-      "title": "REACH: An RL-based Hierarchical Humanoid Crawling Framework for Adaptable Confined Space Traversal"
+      "organization": "TouchBridge research team",
+      "published_at": "2026-10-29",
+      "title": "TouchBridge: Tactile-Conditioned Human-to-Robot Transfer for Dexterous Manipulation"
     },
     {
-      "id": "hc2",
-      "url": "https://arxiv.org/abs/2610.36825",
+      "id": "logiv-paper",
+      "url": "https://arxiv.org/abs/2610.40016",
       "domain": "arxiv.org",
-      "organization": "HC2Robot research team",
-      "published_at": "2026-10-27",
-      "title": "HC2Robot: Hyper-Connection Transformers with Predicted Foresight for Multi-Terrain Humanoid Parkour"
+      "organization": "LOGIV research team",
+      "published_at": "2026-10-29",
+      "title": "LOGIV: Graph-Verified Execution with Causal Local Repair for Long-Horizon Robot Tasks"
     },
     {
-      "id": "dex",
-      "url": "https://arxiv.org/abs/2610.37652",
-      "domain": "arxiv.org",
-      "organization": "University of California Berkeley / Davis",
-      "published_at": "2026-10-27",
-      "title": "Pushing Dexterity and Safety for In-Hand Object Pose Reaching That Works Remarkably Well"
+      "id": "aeon-release",
+      "url": "https://www.aeon.info/en/news/release_115103/",
+      "domain": "aeon.info",
+      "organization": "Aeon / Aeon Global SCM / Mujin",
+      "published_at": "2026-10-29",
+      "title": "イオン物流構造改革の次世代自動化モデルセンター「イオン川口東ＸＤ」稼働"
     },
     {
-      "id": "tokio",
-      "url": "https://www.tokiomarine-nichido.co.jp/company/release/pdf/261026_01.pdf",
-      "domain": "tokiomarine-nichido.co.jp",
-      "organization": "Tokio Marine & Nichido Fire Insurance",
-      "published_at": "2026-10-26",
-      "title": "AIロボット導入を支援する「AIロボット保険」の提供開始"
+      "id": "agility-sec",
+      "url": "https://www.sec.gov/Archives/edgar/data/2074973/000121390026114063/ea031030301ex99-1.htm",
+      "domain": "sec.gov",
+      "organization": "Agility Robotics / Churchill Capital Corp XI",
+      "published_at": "2026-10-30",
+      "title": "Agility Robotics and Churchill Capital Corp XI Announce Expected Gross Capital Raise of Approximately $465 Million"
+    },
+    {
+      "id": "opentrons-release",
+      "url": "https://opentrons.com/archives/news/opentrons-announces-40m-series-e-round-to-standardize-ai-driven-science-on-its-robots",
+      "domain": "opentrons.com",
+      "organization": "Opentrons",
+      "published_at": "2026-10-29",
+      "title": "Opentrons Announces $40M Series E Round to Standardize AI-Driven Science on Its Robots"
+    },
+    {
+      "id": "bleu-funding",
+      "url": "https://www.eu-startups.com/2026/10/french-startup-bleu-robotics-secures-e5-million-to-teach-humanoid-robots-new-tasks-with-fewer-demonstrations/",
+      "domain": "eu-startups.com",
+      "organization": "EU-Startups / Bleu Robotics",
+      "published_at": "2026-10-29",
+      "title": "French startup Bleu Robotics secures €5 million to teach humanoid robots new tasks with fewer demonstrations"
+    },
+    {
+      "id": "bleu-tech",
+      "url": "https://bleu-robotics.com/blog/introducing-bleu-0-1",
+      "domain": "bleu-robotics.com",
+      "organization": "Bleu Robotics",
+      "published_at": "2026-03-17",
+      "title": "Introducing Bleu_0.1"
     }
   ]
 }
