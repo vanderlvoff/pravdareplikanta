@@ -99,8 +99,8 @@ p, li, blockquote { white-space: pre-line; overflow-wrap: anywhere; }
 
 /* Screen columns are independent of measured A4 pagination. */
 @media screen and (min-width: 701px) {
-  .edition-articles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; }
-  .edition-articles article { min-width: 0; }
+  .edition-articles { column-count: 2; column-gap: 32px; }
+  .edition-articles article { min-width: 0; break-inside: avoid; }
   .article-text { column-count: 2; column-gap: 32px; column-rule: 1px solid #aaa; }
   .article-text p, .article-text li { orphans: 2; widows: 2; }
   .article-text h3 { break-after: avoid; }

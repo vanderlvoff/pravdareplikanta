@@ -137,8 +137,8 @@ current session without calling the paid OpenAI API.
 Use `rp import` for the owner's `data/latest/{ru,en,ja}.json` feeds (`jp.json` is
 also accepted for Japanese). See [docs/DAILY_IMPORT.md](docs/DAILY_IMPORT.md) for
 commands, validation and section/page mapping. All incoming files stay unchanged.
-The imported GitHub v1.2 issue (2026-10-30, revision 4) has a ready local web and PDF preview:
+The imported illustrated GitHub v1.3 issue (2026-10-30, revision 5) has a ready local web and PDF preview:
 
 ```sh
-rp preview --output previews/latest-2026-10-30-30
+rp preview --output previews/latest-2026-10-30-32
 ```

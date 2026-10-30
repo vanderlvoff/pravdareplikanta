@@ -68,13 +68,13 @@ rp preview --output previews/daily-review-1
 
 ## Текущая сборка
 
-Файлы обновлены из GitHub до коммита `d9b1816` включительно (schema_version 1.2,
-восемь новостей на язык с редакционным body). Нормализованный выпуск:
-`content/localized/2026-10-30.json`, № 2, revision 4 с отдельной погодой EN/JA.
+Файлы обновлены из GitHub до коммита `5e3f12d` включительно (schema_version 1.3,
+восемь новостей на язык, две настоящие иллюстрации из репозитория и редакционный body). Нормализованный выпуск:
+`content/illustrated/2026-10-30.json`, № 2, revision 5 с иллюстрациями и отдельной погодой EN/JA.
 Исходный импорт `content/imported-v1.2-review/2026-10-30.json` и старые выпуски сохранены.
 
 ```sh
-rp preview --output previews/latest-2026-10-30-30
+rp preview --output previews/latest-2026-10-30-32
 ```
 
 Сборка содержит PDF с автоматической пагинацией для каждого языка.

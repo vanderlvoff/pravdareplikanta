@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Imported the actual illustrated 2026-10-30 v1.3 feeds with VLA-Stem and robot-insurance figures, preserving localized forecasts.
+- Let web article cards fill each column independently to avoid empty grid rows beside illustrations.
+
 - Added daily feed v1.3 support for exactly two shared, localized editorial illustrations per edition.
 - Added offline WebP copying, path/URL validation, source checksums, accessible figures and AI illustration labels in web and print.
 - Integrated indivisible figures into automatic pagination, with image loading, placement and caption verification.

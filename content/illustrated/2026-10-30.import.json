@@ -1,0 +1,57 @@
+{
+  "status": "draft",
+  "sources": {
+    "ru": {
+      "file": "data/latest/ru.json",
+      "sha256": "fcd93fb4013907fd0949da94416946db15df9fcdfa333a00e5b329c746dab00a",
+      "metadata": {
+        "schema_version": "1.3",
+        "publication": "pravda_replikanta",
+        "issue_type": "daily",
+        "issue_date": "2026-10-30",
+        "issue_id": "daily-2026-10-30",
+        "language": "ru",
+        "generated_at": "2026-10-30T01:46:55+09:00",
+        "title": "Правда репликанта — инженерные данные, 30 октября",
+        "lead": "Безопасное выполнение VLA, ускорение манипуляции, сбор демонстраций и локомоция гуманоидов; японский рынок готовит страхование операционных рисков."
+      }
+    },
+    "en": {
+      "file": "data/latest/en.json",
+      "sha256": "bd0f20bf4c514b8435cd30c6ceb6a713d5abc58e77ff97249d7960536d30c361",
+      "metadata": {
+        "schema_version": "1.3",
+        "publication": "pravda_replikanta",
+        "issue_type": "daily",
+        "issue_date": "2026-10-30",
+        "issue_id": "daily-2026-10-30",
+        "language": "en",
+        "generated_at": "2026-10-30T01:46:55+09:00",
+        "title": "Pravda Replikanta — Engineering Data, October 30",
+        "lead": "Safer VLA execution, faster manipulation, demonstration capture and humanoid locomotion; Japan is adding insurance for operational robot risk."
+      }
+    },
+    "ja": {
+      "file": "data/latest/ja.json",
+      "sha256": "b302ab18c04c48413ce71bb43ae13fca3709c74eef7b9abcd589fd0efa1cdf93",
+      "metadata": {
+        "schema_version": "1.3",
+        "publication": "pravda_replikanta",
+        "issue_type": "daily",
+        "issue_date": "2026-10-30",
+        "issue_id": "daily-2026-10-30",
+        "language": "ja",
+        "generated_at": "2026-10-30T01:46:55+09:00",
+        "title": "レプリカント・プラウダ — 技術データ、10月30日",
+        "lead": "VLAの安全実行、操作の高速化、デモ収集、ヒューマノイド移動制御。日本ではロボット停止リスクへの保険も動き始めた。"
+      }
+    }
+  },
+  "pagination": "automatic",
+  "review_required": [
+    "facts and source claims",
+    "translations",
+    "print overflow",
+    "visual review"
+  ]
+}

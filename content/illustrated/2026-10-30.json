@@ -1,0 +1,1453 @@
+{
+  "issue_id": "2026-10-30",
+  "number": 2,
+  "publication_date": "2026-10-30",
+  "revision": 5,
+  "status": "draft",
+  "languages": {
+    "ru": {
+      "title": "Правда репликанта",
+      "weather": null,
+      "issue_title": "Правда репликанта — инженерные данные, 30 октября",
+      "editorial_note": "Безопасное выполнение VLA, ускорение манипуляции, сбор демонстраций и локомоция гуманоидов; японский рынок готовит страхование операционных рисков.",
+      "articles": [
+        {
+          "id": "vla-stem",
+          "slug": "vla-stem",
+          "category": "news",
+          "headline": "VLA-Stem: реактивный защитный контур для VLA без дообучения базовой модели",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Большая VLA может понимать команду, но всё равно вести манипулятор к препятствию. VLA-Stem предлагает не переучивать базовую модель, а добавить быстрый защитный контур. Он превращает предсказанные действия в опорную траекторию и корректирует движение по данным о состоянии робота и ближайших препятствиях."
+            },
+            {
+              "type": "paragraph",
+              "text": "В шести ограниченных симуляционных сценариях авторы получили 52,8% успеха без столкновений против 23,7% у сильнейшего сравниваемого метода. На реальном оборудовании также отмечено снижение столкновений. Это многообещающая инженерная конструкция, но пока не универсальная система безопасности: испытания ограничены, независимой репликации нет."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.37378",
+              "title": "VLA-Stem: A Lightweight Safety Mechanism for Vision-Language-Action Models via Reinforcement Learning",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": {
+            "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-30/vla-stem.webp",
+            "path": "data/images/2026-10-30/vla-stem.webp",
+            "type": "generated",
+            "caption": "Концептуальная иллюстрация ИИ: робот взаимодействует с предметом. Это не кадр эксперимента.",
+            "alt": "Стилизованный гуманоидный робот протягивает руку к предмету на рабочей поверхности."
+          },
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "tops-flow",
+          "slug": "tops-flow",
+          "category": "news",
+          "headline": "TOPS: ускорение flow-политик манипуляции без изменения архитектуры",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Чтобы ускорить манипулятор, иногда достаточно изменить не нейросеть, а способ генерации её действий. TOPS подбирает начальное распределение и график переноса отдельно для каждой задачи. Сама архитектура политики остаётся прежней."
+            },
+            {
+              "type": "paragraph",
+              "text": "На LIBERO-10 один шаг TOPS дал 69,67% успеха против 53,44% у десяти шагов стандартного flow matching, сократив время вывода примерно до одной шестой. На реальном открывании верхнего ящика исследователи сообщают 80% против 20%. Для замкнутого управления важны и скорость, и точность, но результаты зависят от конкретных тестов и настроек."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://ntumars.github.io/TOPS/",
+              "title": "TOPS: Reshaping Flow Source and Transport for Multi-Task Robot Manipulation",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "openjaws-stereo",
+          "slug": "openjaws-stereo",
+          "category": "news",
+          "headline": "OpenJaws: открытый захват для сбора демонстраций со стереолокализацией",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Обучение манипулятора начинается с примера. OpenJaws позволяет записывать его без самого робота: человек держит захват со стереокамерой, а система восстанавливает траекторию в метрическом масштабе. Это снимает одну из проблем монокулярной SLAM — неопределённость абсолютного масштаба."
+            },
+            {
+              "type": "paragraph",
+              "text": "Стоимость компонентов авторы оценивают примерно в 400 долларов. Бенчмарк включает 90 демонстраций девяти задач; офлайновый стереометод COLMAP показал ошибку 2,9 мм. На UR10 две обученные политики достигли по 90% успеха, но каждая проверялась лишь десять раз. Часть обещанных файлов проекта всё ещё помечена Coming Soon, поэтому полнота открытой публикации требует проверки."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://open-jaws.github.io/",
+              "title": "OpenJaws: An Open Hardware UMI Framework with Stereo Localization for Generalist Manipulation",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "roboauto-programs",
+          "slug": "roboauto-programs",
+          "category": "news",
+          "headline": "RoboAuto: поиск программ робота с проверкой физических гипотез",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Робот может выполнить команду и всё же не достичь результата: захватить воздух вместо предмета или продолжить работу после неоткрытой дверцы. RoboAuto делает проверку физических последствий частью поиска программы. Система хранит знания об объектах и допустимых действиях, а при неопределённости проверяет конкурирующие гипотезы экспериментом."
+            },
+            {
+              "type": "paragraph",
+              "text": "Авторы сообщают 89,1% успеха на коротких LIBERO-PRO и 73,4% на LIBERO-PRO Long против 30,8% у ASPIRE; также представлены три реальные задачи. Подход позволяет исследовать и исправлять отдельные этапы, но требует надёжного восприятия, библиотеки навыков и безопасной среды исполнения кода."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.36533",
+              "title": "RoboAuto: Autonomous Robot Program Search through Multi-Level Physical Understanding",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "reach-crawling",
+          "slug": "reach-crawling",
+          "category": "news",
+          "headline": "REACH: Unitree G1 переходит от ходьбы к ползанию в низких проходах",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Перед низким проходом обычная ходьба перестаёт помогать даже гуманоиду. REACH учит Unitree G1 переходить от двуногого движения к ползанию и обратно. Отдельная политика согласует разные режимы контакта, а LiDAR-планировщик заранее определяет требуемую высоту корпуса."
+            },
+            {
+              "type": "paragraph",
+              "text": "Диапазон команд высоты составляет 1,27–0,50 м при ходьбе и 0,50–0,20 м при ползании. Исследователи показали прохождение тесных пространств на физическом G1. Для инспекции это интересная возможность, но лабораторная демонстрация ещё не доказывает безопасность контактов и долговременную надёжность в реальных условиях."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.36546",
+              "title": "REACH: An RL-based Hierarchical Humanoid Crawling Framework for Adaptable Confined Space Traversal",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "hc2-foresight",
+          "slug": "hc2-foresight",
+          "category": "news",
+          "headline": "HC2Robot: прогноз опоры стопы для паркура гуманоидов",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Увидеть площадку для шага недостаточно: надо предсказать, где стопа коснётся поверхности и насколько надёжной окажется опора. HC2Robot обучает такой прогноз на данных симулятора, но при исполнении использует только доступные бортовые наблюдения. Hyper-Connection Transformer объединяет временную информацию."
+            },
+            {
+              "type": "paragraph",
+              "text": "В симуляционных испытаниях с лестницами, разрывами, платформами и уклонами средний успех составил 97,60%. Это убедительная метрика для выбранных сценариев, но пока не доказательство устойчивого паркура на настоящем роботе. Неизвестные покрытия и реальные возмущения ещё предстоит проверить."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.36825",
+              "title": "HC2Robot: Hyper-Connection Transformers with Predicted Foresight for Multi-Terrain Humanoid Parkour",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "dexsafe-hand",
+          "slug": "dexsafe-hand",
+          "category": "news",
+          "headline": "Ловкая кисть LEAP: 95,2% точных достижений и меньше падений",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Ловкая кисть может точно повернуть предмет и всё же уронить его по дороге. Исследователи LEAP hand отдельно измеряют этот риск. Политику обучили в симуляции без человеческих демонстраций, а затем добавили регулируемый остаточный фильтр безопасности."
+            },
+            {
+              "type": "paragraph",
+              "text": "За 13,3 часа реальных испытаний на четырёх предметах и более чем 4800 новых целях политика достигла 95,2% целевых поз в пределах 2 см и 0,4 радиана. Фильтр уменьшил падения на 75%, сохранив 91,5% успешных достижений. Компромисс между ловкостью и надёжностью стал измеримым, хотя перенос на другие кисти и производственные циклы не подтверждён."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.37652",
+              "title": "Pushing Dexterity and Safety for In-Hand Object Pose Reaching That Works Remarkably Well",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "tokio-robot-insurance",
+          "slug": "tokio-robot-insurance",
+          "category": "news",
+          "headline": "Япония: Tokio Marine вводит страхование остановок AI-роботов",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Роботизация обычно начинается с расчёта производительности. Но кто оплачивает работу людей, если робот сломался? Японская Tokio Marine & Nichido анонсировала на ноябрь 2026 года страхование AI-роботов, включающее не только повреждения и ответственность перед третьими лицами, но и отдельные расходы при простое."
+            },
+            {
+              "type": "paragraph",
+              "text": "Речь идёт об автономных колёсных, четвероногих и гуманоидных платформах. Для заказчика это ещё один повод учитывать простои и резервирование персонала в TCO. Киберинциденты, согласно опубликованным условиям, исключены; тарифы и детали договора надо изучать отдельно. Страховка не делает машину безопаснее, но помогает оценить последствия её отказа."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.tokiomarine-nichido.co.jp/company/release/pdf/261026_01.pdf",
+              "title": "AIロボット導入を支援する「AIロボット保険」の提供開始",
+              "published_at": "2026-10-26",
+              "retrieved_at": null
+            }
+          ],
+          "image": {
+            "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-30/tokio-robot-insurance.webp",
+            "path": "data/images/2026-10-30/tokio-robot-insurance.webp",
+            "type": "generated",
+            "caption": "Концептуальная иллюстрация ИИ: защитный щит символизирует страхование роботов, а не реальный продукт.",
+            "alt": "Стилизованный робот внутри защитного щита, рядом грузовые коробки."
+          },
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "technology-signal",
+          "slug": "technology-signal",
+          "category": "analysis",
+          "headline": "От демонстраций к надёжному исполнению",
+          "dek": "Новые исследования всё чаще отделяют намерение робота от локальной коррекции, проверки промежуточных результатов и управления физическим риском.",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "При внедрении сравнивать не только успех benchmark, но и частоту столкновений, падений, задержку inference, стоимость сбора данных и расходы при простое."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.37378",
+              "title": "VLA-Stem: A Lightweight Safety Mechanism for Vision-Language-Action Models via Reinforcement Learning",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://ntumars.github.io/TOPS/",
+              "title": "TOPS: Reshaping Flow Source and Transport for Multi-Task Robot Manipulation",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://open-jaws.github.io/",
+              "title": "OpenJaws: An Open Hardware UMI Framework with Stereo Localization for Generalist Manipulation",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.36533",
+              "title": "RoboAuto: Autonomous Robot Program Search through Multi-Level Physical Understanding",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.36546",
+              "title": "REACH: An RL-based Hierarchical Humanoid Crawling Framework for Adaptable Confined Space Traversal",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.36825",
+              "title": "HC2Robot: Hyper-Connection Transformers with Predicted Foresight for Multi-Terrain Humanoid Parkour",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.37652",
+              "title": "Pushing Dexterity and Safety for In-Hand Object Pose Reaching That Works Remarkably Well",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.tokiomarine-nichido.co.jp/company/release/pdf/261026_01.pdf",
+              "title": "AIロボット導入を支援する「AIロボット保険」の提供開始",
+              "published_at": "2026-10-26",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "glossary",
+          "slug": "glossary",
+          "category": "analysis",
+          "headline": "Словарь выпуска",
+          "dek": "Термины и определения из редакционного набора.",
+          "body": [
+            {
+              "type": "heading",
+              "text": "VLA"
+            },
+            {
+              "type": "paragraph",
+              "text": "Vision-Language-Action: модель, преобразующая изображение и текстовую команду в действия робота."
+            },
+            {
+              "type": "heading",
+              "text": "Action chunk"
+            },
+            {
+              "type": "paragraph",
+              "text": "Короткая последовательность управляющих действий, предсказанная за один вызов политики."
+            },
+            {
+              "type": "heading",
+              "text": "Flow matching"
+            },
+            {
+              "type": "paragraph",
+              "text": "Генеративный метод обучения преобразованию исходного распределения в траектории действий."
+            },
+            {
+              "type": "heading",
+              "text": "UMI"
+            },
+            {
+              "type": "paragraph",
+              "text": "Universal Manipulation Interface: ручной интерфейс для записи демонстраций без робота."
+            },
+            {
+              "type": "heading",
+              "text": "SLAM"
+            },
+            {
+              "type": "paragraph",
+              "text": "Одновременная локализация устройства и построение карты окружения."
+            },
+            {
+              "type": "heading",
+              "text": "Affordance"
+            },
+            {
+              "type": "paragraph",
+              "text": "Свойство объекта, определяющее физически возможные способы взаимодействия."
+            },
+            {
+              "type": "heading",
+              "text": "Proprioception"
+            },
+            {
+              "type": "paragraph",
+              "text": "Внутренние измерения состояния робота, включая положения и скорости суставов."
+            },
+            {
+              "type": "heading",
+              "text": "Sim-to-real"
+            },
+            {
+              "type": "paragraph",
+              "text": "Перенос управления, обученного в симуляции, на физического робота."
+            },
+            {
+              "type": "heading",
+              "text": "TCO"
+            },
+            {
+              "type": "paragraph",
+              "text": "Совокупная стоимость владения, включая внедрение, эксплуатацию, обслуживание и простои."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.37378",
+              "title": "VLA-Stem: A Lightweight Safety Mechanism for Vision-Language-Action Models via Reinforcement Learning",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://ntumars.github.io/TOPS/",
+              "title": "TOPS: Reshaping Flow Source and Transport for Multi-Task Robot Manipulation",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://open-jaws.github.io/",
+              "title": "OpenJaws: An Open Hardware UMI Framework with Stereo Localization for Generalist Manipulation",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.36533",
+              "title": "RoboAuto: Autonomous Robot Program Search through Multi-Level Physical Understanding",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.36546",
+              "title": "REACH: An RL-based Hierarchical Humanoid Crawling Framework for Adaptable Confined Space Traversal",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.36825",
+              "title": "HC2Robot: Hyper-Connection Transformers with Predicted Foresight for Multi-Terrain Humanoid Parkour",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.37652",
+              "title": "Pushing Dexterity and Safety for In-Hand Object Pose Reaching That Works Remarkably Well",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.tokiomarine-nichido.co.jp/company/release/pdf/261026_01.pdf",
+              "title": "AIロボット導入を支援する「AIロボット保険」の提供開始",
+              "published_at": "2026-10-26",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        }
+      ]
+    },
+    "en": {
+      "title": "The Replicant Truth",
+      "weather": {
+        "location": "breukelen",
+        "timezone": "Europe/Amsterdam",
+        "forecast_date": "2026-10-30",
+        "retrieved_at": "2026-10-30T13:42:39.216807Z",
+        "kind": "forecast",
+        "source_name": "Open-Meteo",
+        "source_url": "https://api.open-meteo.com/v1/forecast?latitude=52.1742&longitude=5.0014&timezone=Europe%2FAmsterdam&start_date=2026-10-30&end_date=2026-10-30&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+        "temperature_min_c": 4.9,
+        "temperature_max_c": 13.5,
+        "precipitation_probability_max": 0,
+        "slots": [
+          {
+            "hour": 9,
+            "temperature_c": 6.6,
+            "condition": "fog",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 0.8,
+            "wind_direction_deg": 54
+          },
+          {
+            "hour": 12,
+            "temperature_c": 11.2,
+            "condition": "clear",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 1.4,
+            "wind_direction_deg": 47
+          },
+          {
+            "hour": 18,
+            "temperature_c": 9.6,
+            "condition": "cloudy",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 2.6,
+            "wind_direction_deg": 46
+          }
+        ]
+      },
+      "issue_title": "Pravda Replikanta — Engineering Data, October 30",
+      "editorial_note": "Safer VLA execution, faster manipulation, demonstration capture and humanoid locomotion; Japan is adding insurance for operational robot risk.",
+      "articles": [
+        {
+          "id": "vla-stem",
+          "slug": "vla-stem",
+          "category": "news",
+          "headline": "VLA-Stem adds reflex-like safety control without retraining the base VLA",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "A VLA can understand a command and still drive an arm into an obstacle. VLA-Stem addresses that gap without retraining the base model. It turns predicted action chunks into motion references and adds a faster local controller that adjusts execution using robot-state and obstacle observations."
+            },
+            {
+              "type": "paragraph",
+              "text": "Across six constrained simulation settings, the researchers report 52.8% collision-free success, versus 23.7% for their strongest safety baseline. Physical tests also show fewer collisions. The architecture is promising for existing policies, but these limited experiments are not a general safety certification or independent replication."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.37378",
+              "title": "VLA-Stem: A Lightweight Safety Mechanism for Vision-Language-Action Models via Reinforcement Learning",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": {
+            "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-30/vla-stem.webp",
+            "path": "data/images/2026-10-30/vla-stem.webp",
+            "type": "generated",
+            "caption": "AI-generated conceptual illustration of a robot handling an object, not an actual experimental image.",
+            "alt": "Stylized humanoid robot reaching toward an object on a work surface."
+          },
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "tops-flow",
+          "slug": "tops-flow",
+          "category": "news",
+          "headline": "TOPS accelerates flow-based manipulation without changing the network",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Making manipulation faster does not always require a bigger neural network. TOPS changes where flow-based action generation begins and how it progresses, tailoring the source distribution and transport schedule to the task. The network architecture remains unchanged."
+            },
+            {
+              "type": "paragraph",
+              "text": "On LIBERO-10, one TOPS step achieved 69.67% success against 53.44% for ten standard flow-matching steps, with roughly one-sixth of the inference time. In a real upper-drawer task, the authors report 80% versus 20%. Both latency and accuracy matter in closed-loop control, although the gains depend on the tested tasks and configurations."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://ntumars.github.io/TOPS/",
+              "title": "TOPS: Reshaping Flow Source and Transport for Multi-Task Robot Manipulation",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "openjaws-stereo",
+          "slug": "openjaws-stereo",
+          "category": "news",
+          "headline": "OpenJaws: open handheld demonstration gripper with stereo localization",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Before a robot can learn a manipulation skill, someone must demonstrate it. OpenJaws records those examples without a robot: an operator moves a camera-equipped handheld gripper, and stereo vision reconstructs motion at metric scale. That avoids the absolute-scale ambiguity of monocular tracking."
+            },
+            {
+              "type": "paragraph",
+              "text": "The estimated parts cost is about $400. A benchmark contains 90 demonstrations across nine tasks, while offline stereo COLMAP reports 2.9 mm position error. Two UR10 policies reached 90% success each, but on just ten trials per task. Some promised code, hardware and dataset links still read Coming Soon, so the practical completeness of the open release remains to be checked."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://open-jaws.github.io/",
+              "title": "OpenJaws: An Open Hardware UMI Framework with Stereo Localization for Generalist Manipulation",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "roboauto-programs",
+          "slug": "roboauto-programs",
+          "category": "news",
+          "headline": "RoboAuto searches robot programs by testing physical hypotheses",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "A robot may execute its program while failing the task: grasping empty space, for example, or proceeding before a drawer opens. RoboAuto puts physical verification into program search. It stores knowledge of objects and possible interactions, grounds it in the current scene and runs small experiments when competing explanations remain."
+            },
+            {
+              "type": "paragraph",
+              "text": "The authors report 89.1% success on short LIBERO-PRO tasks and 73.4% on LIBERO-PRO Long, against ASPIRE's 30.8%. Three real-robot tasks are also evaluated. The appeal is inspectable, repairable behavior, but it relies on perception, reusable skills and safeguards for running generated code."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.36533",
+              "title": "RoboAuto: Autonomous Robot Program Search through Multi-Level Physical Understanding",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "reach-crawling",
+          "slug": "reach-crawling",
+          "category": "news",
+          "headline": "REACH teaches Unitree G1 to switch between walking and crawling",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Walking is of little use when a passage is lower than a humanoid's torso. REACH gives the Unitree G1 a way to switch from bipedal movement to crawling and back. A transition policy bridges different contact modes, while LiDAR-based planning anticipates overhead clearance."
+            },
+            {
+              "type": "paragraph",
+              "text": "Reported body-height commands span 1.27–0.50 m for walking and 0.50–0.20 m for crawling. The team demonstrates traversal on a physical G1. Inspection is an obvious possible application, but controlled demonstrations do not establish contact safety or long-term field reliability."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.36546",
+              "title": "REACH: An RL-based Hierarchical Humanoid Crawling Framework for Adaptable Confined Space Traversal",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "hc2-foresight",
+          "slug": "hc2-foresight",
+          "category": "news",
+          "headline": "HC2Robot predicts footholds for humanoid parkour",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Seeing the next foothold is not enough; a humanoid must anticipate when its foot will land and whether the surface can support it. HC2Robot predicts contact timing, position and quality from onboard observations, approximating information available only during simulator training. A Hyper-Connection Transformer combines the temporal signals."
+            },
+            {
+              "type": "paragraph",
+              "text": "Mean traversal success reaches 97.60% across simulated stairs, gaps, platforms and slopes. It is a strong result for those test conditions, not proof of real-world parkour reliability. Unfamiliar surfaces and physical disturbances remain to be tested."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.36825",
+              "title": "HC2Robot: Hyper-Connection Transformers with Predicted Foresight for Multi-Terrain Humanoid Parkour",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "dexsafe-hand",
+          "slug": "dexsafe-hand",
+          "category": "news",
+          "headline": "LEAP hand reaches 95.2% of in-hand pose targets with fewer drops",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "A dexterous hand can reach the right pose and still drop its object. Researchers using the LEAP hand treat that risk as a separate safety problem. They train in simulation without human demonstrations and add an adjustable residual filter to moderate risky actions."
+            },
+            {
+              "type": "paragraph",
+              "text": "Across 13.3 hours of real-hand testing, four objects and more than 4,800 unseen goals, the base policy reached 95.2% of target poses within 2 cm and 0.4 radians. The filter cut drops by 75% while retaining 91.5% target success. The trade-off is measurable, but performance on other hands and industrial duty cycles remains unproven."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.37652",
+              "title": "Pushing Dexterity and Safety for In-Hand Object Pose Reaching That Works Remarkably Well",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "tokio-robot-insurance",
+          "slug": "tokio-robot-insurance",
+          "category": "news",
+          "headline": "Japan: Tokio Marine launches coverage for AI-robot downtime",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Robot deployment begins with productivity forecasts. It often ends with a harder question: who pays when the machine stops? Japan's Tokio Marine & Nichido has announced AI Robot Insurance for November 2026, covering specified downtime-related continuity costs alongside equipment damage and third-party liability."
+            },
+            {
+              "type": "paragraph",
+              "text": "The stated scope includes autonomous wheeled, quadruped and humanoid systems. Buyers should account for fallback staffing and downtime in total cost of ownership. Cyber-related losses are excluded in the published description, while premiums and precise terms require contract review. Insurance does not make robots safer, but it makes failure costs explicit."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.tokiomarine-nichido.co.jp/company/release/pdf/261026_01.pdf",
+              "title": "AIロボット導入を支援する「AIロボット保険」の提供開始",
+              "published_at": "2026-10-26",
+              "retrieved_at": null
+            }
+          ],
+          "image": {
+            "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-30/tokio-robot-insurance.webp",
+            "path": "data/images/2026-10-30/tokio-robot-insurance.webp",
+            "type": "generated",
+            "caption": "AI-generated conceptual illustration: a shield symbolizes robot insurance, not an actual product.",
+            "alt": "Stylized robot inside a protective shield, flanked by cargo boxes."
+          },
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "technology-signal",
+          "slug": "technology-signal",
+          "category": "analysis",
+          "headline": "From demonstrations to reliable execution",
+          "dek": "Recent research increasingly separates task intent from local correction, intermediate verification and management of physical risk.",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Deployments should measure collisions, object drops, inference latency, data collection cost and downtime exposure alongside benchmark success."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.37378",
+              "title": "VLA-Stem: A Lightweight Safety Mechanism for Vision-Language-Action Models via Reinforcement Learning",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://ntumars.github.io/TOPS/",
+              "title": "TOPS: Reshaping Flow Source and Transport for Multi-Task Robot Manipulation",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://open-jaws.github.io/",
+              "title": "OpenJaws: An Open Hardware UMI Framework with Stereo Localization for Generalist Manipulation",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.36533",
+              "title": "RoboAuto: Autonomous Robot Program Search through Multi-Level Physical Understanding",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.36546",
+              "title": "REACH: An RL-based Hierarchical Humanoid Crawling Framework for Adaptable Confined Space Traversal",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.36825",
+              "title": "HC2Robot: Hyper-Connection Transformers with Predicted Foresight for Multi-Terrain Humanoid Parkour",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.37652",
+              "title": "Pushing Dexterity and Safety for In-Hand Object Pose Reaching That Works Remarkably Well",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.tokiomarine-nichido.co.jp/company/release/pdf/261026_01.pdf",
+              "title": "AIロボット導入を支援する「AIロボット保険」の提供開始",
+              "published_at": "2026-10-26",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "glossary",
+          "slug": "glossary",
+          "category": "analysis",
+          "headline": "Issue glossary",
+          "dek": "Terms and definitions from the editorial dataset.",
+          "body": [
+            {
+              "type": "heading",
+              "text": "VLA"
+            },
+            {
+              "type": "paragraph",
+              "text": "Vision-Language-Action model: maps visual observations and language instructions to robot actions."
+            },
+            {
+              "type": "heading",
+              "text": "Action chunk"
+            },
+            {
+              "type": "paragraph",
+              "text": "A short sequence of future motor commands predicted in one policy invocation."
+            },
+            {
+              "type": "heading",
+              "text": "Flow matching"
+            },
+            {
+              "type": "paragraph",
+              "text": "A generative learning method that transforms a source distribution into action trajectories."
+            },
+            {
+              "type": "heading",
+              "text": "UMI"
+            },
+            {
+              "type": "paragraph",
+              "text": "Universal Manipulation Interface: a handheld interface for collecting demonstrations without a robot."
+            },
+            {
+              "type": "heading",
+              "text": "SLAM"
+            },
+            {
+              "type": "paragraph",
+              "text": "Simultaneous Localization and Mapping: estimating pose while building an environment map."
+            },
+            {
+              "type": "heading",
+              "text": "Affordance"
+            },
+            {
+              "type": "paragraph",
+              "text": "An object property describing which interactions are physically possible."
+            },
+            {
+              "type": "heading",
+              "text": "Proprioception"
+            },
+            {
+              "type": "paragraph",
+              "text": "Internal robot state sensing, including joint positions and velocities."
+            },
+            {
+              "type": "heading",
+              "text": "Sim-to-real"
+            },
+            {
+              "type": "paragraph",
+              "text": "Transferring a controller learned in simulation to physical hardware."
+            },
+            {
+              "type": "heading",
+              "text": "TCO"
+            },
+            {
+              "type": "paragraph",
+              "text": "Total Cost of Ownership: acquisition, operations, maintenance and downtime costs."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.37378",
+              "title": "VLA-Stem: A Lightweight Safety Mechanism for Vision-Language-Action Models via Reinforcement Learning",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://ntumars.github.io/TOPS/",
+              "title": "TOPS: Reshaping Flow Source and Transport for Multi-Task Robot Manipulation",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://open-jaws.github.io/",
+              "title": "OpenJaws: An Open Hardware UMI Framework with Stereo Localization for Generalist Manipulation",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.36533",
+              "title": "RoboAuto: Autonomous Robot Program Search through Multi-Level Physical Understanding",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.36546",
+              "title": "REACH: An RL-based Hierarchical Humanoid Crawling Framework for Adaptable Confined Space Traversal",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.36825",
+              "title": "HC2Robot: Hyper-Connection Transformers with Predicted Foresight for Multi-Terrain Humanoid Parkour",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.37652",
+              "title": "Pushing Dexterity and Safety for In-Hand Object Pose Reaching That Works Remarkably Well",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.tokiomarine-nichido.co.jp/company/release/pdf/261026_01.pdf",
+              "title": "AIロボット導入を支援する「AIロボット保険」の提供開始",
+              "published_at": "2026-10-26",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        }
+      ]
+    },
+    "ja": {
+      "title": "日本語題字（要承認）",
+      "weather": {
+        "location": "smolensk",
+        "timezone": "Europe/Moscow",
+        "forecast_date": "2026-10-30",
+        "retrieved_at": "2026-10-30T13:42:40.113509Z",
+        "kind": "forecast",
+        "source_name": "Open-Meteo",
+        "source_url": "https://api.open-meteo.com/v1/forecast?latitude=54.7826&longitude=32.0453&timezone=Europe%2FMoscow&start_date=2026-10-30&end_date=2026-10-30&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+        "temperature_min_c": 4.2,
+        "temperature_max_c": 9.3,
+        "precipitation_probability_max": 15,
+        "slots": [
+          {
+            "hour": 9,
+            "temperature_c": 4.2,
+            "condition": "cloudy",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 0.72,
+            "wind_direction_deg": 146
+          },
+          {
+            "hour": 12,
+            "temperature_c": 7.8,
+            "condition": "cloudy",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 1.53,
+            "wind_direction_deg": 169
+          },
+          {
+            "hour": 18,
+            "temperature_c": 7.8,
+            "condition": "cloudy",
+            "precipitation_probability": 5,
+            "wind_speed_ms": 0.36,
+            "wind_direction_deg": 146
+          }
+        ]
+      },
+      "issue_title": "レプリカント・プラウダ — 技術データ、10月30日",
+      "editorial_note": "VLAの安全実行、操作の高速化、デモ収集、ヒューマノイド移動制御。日本ではロボット停止リスクへの保険も動き始めた。",
+      "articles": [
+        {
+          "id": "vla-stem",
+          "slug": "vla-stem",
+          "category": "news",
+          "headline": "VLA-Stem、基盤VLAを再学習せずに反射的な安全制御を追加",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "指示を理解したVLAでも、腕を障害物にぶつけることはある。VLA-Stemは基盤モデルを再学習せず、予測された動作列を参照軌道に変換して高速な補正制御を重ねる。機体の状態と周辺障害物を見ながら、作業の目的を保ったまま動きを調整する。"
+            },
+            {
+              "type": "paragraph",
+              "text": "制約付きシミュレーション6条件で、衝突なしの平均成功率は52.8%。比較対象で最良の手法の23.7%を上回った。実機でも衝突低減が報告される。ただし対象は限られ、産業用途の安全認証や独立した再現試験を意味するものではない。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.37378",
+              "title": "VLA-Stem: A Lightweight Safety Mechanism for Vision-Language-Action Models via Reinforcement Learning",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": {
+            "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-30/vla-stem.webp",
+            "path": "data/images/2026-10-30/vla-stem.webp",
+            "type": "generated",
+            "caption": "AI生成の概念イラスト。ロボットによる物体操作を表現したもので、実際の実験画像ではない。",
+            "alt": "作業台の物体に手を伸ばす、図案化された人型ロボット。"
+          },
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "tops-flow",
+          "slug": "tops-flow",
+          "category": "news",
+          "headline": "TOPS、ネットワーク構造を変えずにflow型操作ポリシーを高速化",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "操作を速くするのに、必ずしもネットワークを大きくする必要はない。TOPSはflow型の動作生成で、出発点となる分布と目標へ向かう過程をタスク別に調整する。モデルの構造はそのままだ。"
+            },
+            {
+              "type": "paragraph",
+              "text": "LIBERO-10では1ステップで成功率69.67%を達成し、標準flow matchingの10ステップによる53.44%を上回った。推論時間は約6分の1。実機の上段引き出し開放でも80%対20%と報告する。閉ループ制御には有望だが、結果は評価条件に依存する。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://ntumars.github.io/TOPS/",
+              "title": "TOPS: Reshaping Flow Source and Transport for Multi-Task Robot Manipulation",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "openjaws-stereo",
+          "slug": "openjaws-stereo",
+          "category": "news",
+          "headline": "OpenJaws、ステレオ測位を備えたオープンなデモ収集グリッパー",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "ロボットに作業を教えるには、まず手本を記録する必要がある。OpenJawsでは人がステレオカメラ付きグリッパーを持って操作し、実機なしで実寸の軌跡を収集する。単眼方式の絶対スケールの曖昧さを避けられる。"
+            },
+            {
+              "type": "paragraph",
+              "text": "部品費は約400米ドル。9課題90件のデモからなるベンチマークで、オフラインのステレオ手法COLMAPは位置誤差2.9 mmを示した。UR10の2課題はそれぞれ成功率90%だが、各10試行に限られる。コードやハードウェアの一部はComing Soon表示で、公開の完成度は確認が必要だ。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://open-jaws.github.io/",
+              "title": "OpenJaws: An Open Hardware UMI Framework with Stereo Localization for Generalist Manipulation",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "roboauto-programs",
+          "slug": "roboauto-programs",
+          "category": "news",
+          "headline": "RoboAuto、物理仮説の検証を通じてロボットプログラムを探索",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "プログラムどおり動いても、物体をつかめていなければ作業は失敗だ。RoboAutoは、操作後に実際の状態変化を確かめる仕組みを計画へ組み込む。物体のアフォーダンスと操作効果を知識として蓄え、曖昧な場面では小さな実験で仮説を検証する。"
+            },
+            {
+              "type": "paragraph",
+              "text": "短期LIBERO-PROで成功率89.1%、LIBERO-PRO Longで73.4%を報告し、後者ではASPIREの30.8%を上回った。実機の3課題も評価した。段階ごとに原因を追える一方、知覚モデルやスキル群、生成コードを安全に動かす環境が必要となる。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.36533",
+              "title": "RoboAuto: Autonomous Robot Program Search through Multi-Level Physical Understanding",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "reach-crawling",
+          "slug": "reach-crawling",
+          "category": "news",
+          "headline": "REACH、Unitree G1で歩行から匍匐への切り替えを実現",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "低い通路を前にすると、歩行だけでは進めない。REACHはUnitree G1に二足移動と匍匐を切り替える能力を与えた。接触状態が大きく異なる動作を遷移ポリシーでつなぎ、LiDARの経路計画が先の高さ制約を判断する。"
+            },
+            {
+              "type": "paragraph",
+              "text": "胴体高さの指令範囲は歩行で1.27〜0.50 m、匍匐で0.50〜0.20 m。研究チームは実機で狭い空間を通過した。点検への応用が考えられるが、予期しない接触や長時間運用に対する安全性はまだ証明されていない。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.36546",
+              "title": "REACH: An RL-based Hierarchical Humanoid Crawling Framework for Adaptable Confined Space Traversal",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "hc2-foresight",
+          "slug": "hc2-foresight",
+          "category": "news",
+          "headline": "HC2Robot、ヒューマノイドの着地点と支持品質を予測",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "足場が見えても、次の一歩を支えられるとは限らない。HC2Robotは接地時刻、位置、支持の良さを事前に予測する。学習時のシミュレータ情報を手掛かりにしながら、実行時には機体上で得られる観測だけを使う。Hyper-Connection Transformerが時間的な情報を統合する。"
+            },
+            {
+              "type": "paragraph",
+              "text": "階段、溝、高い足場、斜面のシミュレーションで平均通過成功率97.60%を報告した。重要な成果だが、主要な数字は仮想環境のもの。実際の床材や予期しない外乱での検証が必要だ。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.36825",
+              "title": "HC2Robot: Hyper-Connection Transformers with Predicted Foresight for Multi-Terrain Humanoid Parkour",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "dexsafe-hand",
+          "slug": "dexsafe-hand",
+          "category": "news",
+          "headline": "LEAP hand、目標姿勢の95.2%を達成し物体落下を抑制",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "物体を正しい姿勢へ動かしても、途中で落とせば失敗だ。LEAP handの研究は落下を独立した安全指標として扱う。人のデモなしでシミュレーション学習し、危険な動きを抑える調整可能な残差フィルターを追加した。"
+            },
+            {
+              "type": "paragraph",
+              "text": "実機で13.3時間、4物体と4800件超の未知目標を評価。基本ポリシーは位置2 cm、角度0.4 rad以内で95.2%を達成し、フィルターは落下を75%減らしつつ91.5%の達成率を保った。他のハンドや長期生産への適用は今後の課題だ。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.37652",
+              "title": "Pushing Dexterity and Safety for In-Hand Object Pose Reaching That Works Remarkably Well",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "tokio-robot-insurance",
+          "slug": "tokio-robot-insurance",
+          "category": "news",
+          "headline": "日本：東京海上日動、AIロボットの稼働停止に備える保険を発表",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "ロボット導入では生産性が注目される。では停止した日の仕事を誰が引き継ぐのか。東京海上日動は2026年11月から、機体損害や第三者賠償に加え、停止時の代替要員など事業継続費用も対象とするAIロボット保険を提供すると発表した。"
+            },
+            {
+              "type": "paragraph",
+              "text": "対象には自律移動する車輪型、四足歩行型、ヒューマノイド型が含まれる。停止損失と代替体制をTCOへ織り込む契機になるが、公開内容ではサイバー事故は対象外。保険料や詳細条件は契約確認が必要だ。保険は安全技術ではないが、故障の代償を可視化する。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.tokiomarine-nichido.co.jp/company/release/pdf/261026_01.pdf",
+              "title": "AIロボット導入を支援する「AIロボット保険」の提供開始",
+              "published_at": "2026-10-26",
+              "retrieved_at": null
+            }
+          ],
+          "image": {
+            "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-30/tokio-robot-insurance.webp",
+            "path": "data/images/2026-10-30/tokio-robot-insurance.webp",
+            "type": "generated",
+            "caption": "AI生成の概念イラスト。保護シールドでロボット向け保険を象徴したもので、実在製品の描写ではない。",
+            "alt": "保護シールドの内側に立つロボットと、周囲に配置された荷物の箱。"
+          },
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "technology-signal",
+          "slug": "technology-signal",
+          "category": "analysis",
+          "headline": "デモから信頼できる実行へ",
+          "dek": "新しい研究では、作業意図と局所補正、中間結果の検証、物理的リスク管理を分離する設計が目立つ。",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "導入時はベンチマーク成功率に加え、衝突・落下・推論遅延・データ収集費・停止損失を測定すべきだ。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.37378",
+              "title": "VLA-Stem: A Lightweight Safety Mechanism for Vision-Language-Action Models via Reinforcement Learning",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://ntumars.github.io/TOPS/",
+              "title": "TOPS: Reshaping Flow Source and Transport for Multi-Task Robot Manipulation",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://open-jaws.github.io/",
+              "title": "OpenJaws: An Open Hardware UMI Framework with Stereo Localization for Generalist Manipulation",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.36533",
+              "title": "RoboAuto: Autonomous Robot Program Search through Multi-Level Physical Understanding",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.36546",
+              "title": "REACH: An RL-based Hierarchical Humanoid Crawling Framework for Adaptable Confined Space Traversal",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.36825",
+              "title": "HC2Robot: Hyper-Connection Transformers with Predicted Foresight for Multi-Terrain Humanoid Parkour",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.37652",
+              "title": "Pushing Dexterity and Safety for In-Hand Object Pose Reaching That Works Remarkably Well",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.tokiomarine-nichido.co.jp/company/release/pdf/261026_01.pdf",
+              "title": "AIロボット導入を支援する「AIロボット保険」の提供開始",
+              "published_at": "2026-10-26",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "glossary",
+          "slug": "glossary",
+          "category": "analysis",
+          "headline": "本号の用語集",
+          "dek": "編集データに含まれる用語と定義。",
+          "body": [
+            {
+              "type": "heading",
+              "text": "VLA"
+            },
+            {
+              "type": "paragraph",
+              "text": "Vision-Language-Action。画像と指示文からロボットの動作を生成するモデル。"
+            },
+            {
+              "type": "heading",
+              "text": "Action chunk"
+            },
+            {
+              "type": "paragraph",
+              "text": "ポリシーが一度に予測する連続した動作指令のまとまり。"
+            },
+            {
+              "type": "heading",
+              "text": "Flow matching"
+            },
+            {
+              "type": "paragraph",
+              "text": "確率分布から動作系列への連続的な変換を学習する生成手法。"
+            },
+            {
+              "type": "heading",
+              "text": "UMI"
+            },
+            {
+              "type": "paragraph",
+              "text": "Universal Manipulation Interface。実機なしで手持ち装置から操作デモを収集する方式。"
+            },
+            {
+              "type": "heading",
+              "text": "SLAM"
+            },
+            {
+              "type": "paragraph",
+              "text": "自己位置推定と環境地図作成を同時に行う技術。"
+            },
+            {
+              "type": "heading",
+              "text": "Affordance"
+            },
+            {
+              "type": "paragraph",
+              "text": "物体の形状・状態から実行可能な操作を表す性質。"
+            },
+            {
+              "type": "heading",
+              "text": "Proprioception"
+            },
+            {
+              "type": "paragraph",
+              "text": "関節角度や速度など、ロボット自身の内部状態の感覚情報。"
+            },
+            {
+              "type": "heading",
+              "text": "Sim-to-real"
+            },
+            {
+              "type": "paragraph",
+              "text": "シミュレーションで学習した制御を実機に移すこと。"
+            },
+            {
+              "type": "heading",
+              "text": "TCO"
+            },
+            {
+              "type": "paragraph",
+              "text": "Total Cost of Ownership。導入から運用・停止・保守まで含む総保有コスト。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.37378",
+              "title": "VLA-Stem: A Lightweight Safety Mechanism for Vision-Language-Action Models via Reinforcement Learning",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://ntumars.github.io/TOPS/",
+              "title": "TOPS: Reshaping Flow Source and Transport for Multi-Task Robot Manipulation",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://open-jaws.github.io/",
+              "title": "OpenJaws: An Open Hardware UMI Framework with Stereo Localization for Generalist Manipulation",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.36533",
+              "title": "RoboAuto: Autonomous Robot Program Search through Multi-Level Physical Understanding",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.36546",
+              "title": "REACH: An RL-based Hierarchical Humanoid Crawling Framework for Adaptable Confined Space Traversal",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.36825",
+              "title": "HC2Robot: Hyper-Connection Transformers with Predicted Foresight for Multi-Terrain Humanoid Parkour",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.37652",
+              "title": "Pushing Dexterity and Safety for In-Hand Object Pose Reaching That Works Remarkably Well",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.tokiomarine-nichido.co.jp/company/release/pdf/261026_01.pdf",
+              "title": "AIロボット導入を支援する「AIロボット保険」の提供開始",
+              "published_at": "2026-10-26",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        }
+      ]
+    }
+  },
+  "weather": {
+    "location": "ichikawa",
+    "timezone": "Asia/Tokyo",
+    "forecast_date": "2026-10-30",
+    "retrieved_at": "2026-10-29T15:12:36.712811Z",
+    "kind": "forecast",
+    "source_name": "Open-Meteo",
+    "source_url": "https://api.open-meteo.com/v1/forecast?latitude=35.72&longitude=139.93&timezone=Asia%2FTokyo&start_date=2026-10-30&end_date=2026-10-30&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+    "temperature_min_c": 12.8,
+    "temperature_max_c": 21.9,
+    "precipitation_probability_max": 24,
+    "slots": [
+      {
+        "hour": 9,
+        "temperature_c": 14.2,
+        "condition": "cloudy",
+        "precipitation_probability": 16,
+        "wind_speed_ms": 0.81,
+        "wind_direction_deg": 330
+      },
+      {
+        "hour": 12,
+        "temperature_c": 18.8,
+        "condition": "cloudy",
+        "precipitation_probability": 24,
+        "wind_speed_ms": 1.33,
+        "wind_direction_deg": 193
+      },
+      {
+        "hour": 18,
+        "temperature_c": 15.9,
+        "condition": "rain",
+        "precipitation_probability": 16,
+        "wind_speed_ms": 2.55,
+        "wind_direction_deg": 334
+      }
+    ]
+  }
+}
