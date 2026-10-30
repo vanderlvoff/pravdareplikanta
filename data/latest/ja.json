@@ -29,8 +29,8 @@
         "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-30/vla-stem.webp",
         "path": "data/images/2026-10-30/vla-stem.webp",
         "type": "generated",
-        "caption": "AI生成の概念イラスト。ロボットによる物体操作を表現したもので、実際の実験画像ではない。",
-        "alt": "作業台の物体に手を伸ばす、図案化された人型ロボット。"
+        "caption": "AI生成の技術概念図。VLAが出力した基準軌道を局所安全制御が障害物に応じて修正する一般原理を示す。特定の実験結果を描いたものではない。",
+        "alt": "ロボットアームと障害物、赤色の基準軌道と緑色の修正軌道。下段にはカメラ、動作計画、安全制御、アクチュエータの情報の流れを示す。"
       }
     },
     {
@@ -161,8 +161,8 @@
         "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-30/tokio-robot-insurance.webp",
         "path": "data/images/2026-10-30/tokio-robot-insurance.webp",
         "type": "generated",
-        "caption": "AI生成の概念イラスト。保護シールドでロボット向け保険を象徴したもので、実在製品の描写ではない。",
-        "alt": "保護シールドの内側に立つロボットと、周囲に配置された荷物の箱。"
+        "caption": "AI生成の技術概念図。自律搬送ロボットが停止した際、作業員が手動搬送を引き継ぐ運用例を示す。特定の保険商品の図示ではない。",
+        "alt": "荷物の自律搬送、警告を伴うロボット停止、手押し台車による作業員の代替作業という三段階。時計は稼働停止時間を表す。"
       }
     }
   ],
