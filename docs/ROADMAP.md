@@ -12,7 +12,7 @@
 - [x] Local preview of generated snapshots and unit tests.
 
 ## Phase 2 — Printable newspaper
-- [x] Provisional print CSS for precisely three A4 pages, with overflow rejection.
+- [x] Provisional print CSS for automatically paginated A4 editions, with clipping/overlap rejection.
 - [x] Pinned Chromium/Playwright renderer and bundled Caveat quotation font.
 - [ ] Approved bundled article and Japanese quotation fonts (currently deferred by owner).
 - [x] Asset integrity checks and PDF/page preview checks.

@@ -1,7 +1,7 @@
 Research Physical AI news for the specified editorial window in Asia/Tokyo.
 Focus on humanoid robots, embodied models, VLA, manipulation, real deployments,
 commercial viability and safety. Find three distinct substantial stories that
-can form a three-page newspaper issue. Use primary sources: papers, official
+can form a newspaper issue with automatic pagination. Use primary sources: papers, official
 announcements, repositories, original interviews or regulatory documents.
 For every story provide direct URLs, exact source titles and known publication
 dates. Distinguish event dates from source publication dates. Check whether a

@@ -1,0 +1,26 @@
+{
+  "ru": {
+    "technical_novelty": "Техническая новизна",
+    "engineering_impact": "Значение для внедрения",
+    "limitations": "Ограничения",
+    "evidence_status": "Статус подтверждения",
+    "glossary": "Словарь выпуска",
+    "glossary_dek": "Термины и определения из редакционного набора."
+  },
+  "en": {
+    "technical_novelty": "Technical novelty",
+    "engineering_impact": "Engineering impact",
+    "limitations": "Limitations",
+    "evidence_status": "Evidence status",
+    "glossary": "Issue glossary",
+    "glossary_dek": "Terms and definitions from the editorial dataset."
+  },
+  "ja": {
+    "technical_novelty": "技術的な新規性",
+    "engineering_impact": "導入への影響",
+    "limitations": "制約・限界",
+    "evidence_status": "根拠の位置付け",
+    "glossary": "本号の用語集",
+    "glossary_dek": "編集データに含まれる用語と定義。"
+  }
+}

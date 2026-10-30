@@ -13,10 +13,11 @@ Read `PROJECT.md` and `docs/*.md` before implementation. These documents describ
 ## Strict design rules
 
 - Treat approved masthead, medals, portrait, fonts and quote styling as immutable assets.
+- Owner approved the RU/EN/JA PCB mastheads on 2026-10-30, including the final Russian П refinement. Exact approved files/hashes: `assets/masthead/APPROVAL.json`. Preserve them unless the owner requests another change.
 - Do not use generative image tools to recreate approved assets.
 - Do not invent missing artwork or declare the design approved when reference files are absent.
 - Store language-specific text separate from layout constants. Maintain deterministic page measurements.
-- The newspaper must fit exactly three A4 pages per language. Never shrink all text or stretch artwork just to make it fit. Reject/flag overflow and return a report for editorial shortening.
+- Owner update (2026-10-30): paginate A4 editions automatically, with no fixed page count. Fill columns sequentially; unused space is acceptable at the end of the final page. Never shrink text or stretch artwork to fit. Reject clipping, overlapping text, or unplaceable blocks with a report.
 - Use local assets with known relative paths; pin fonts and browser renderer versions.
 
 ## Security and publication

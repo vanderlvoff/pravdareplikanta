@@ -2,19 +2,19 @@
     <p class="kicker">{{ labels.kicker }}</p>
     <div class="brand-header">
       <div class="portrait-medals">
-        <img class="portrait" src="/assets/portrait/batty.png" alt="Roy Batty">
-        <div class="medals">{% for name, ext in [('jupiter','jpeg'),('tannhauser','png'),('orion','jpeg')] %}<img class="medal medal-{{ name }}" src="/assets/medals/{{ lang }}/{{ name }}_{{ lang }}.{{ ext }}" alt="{{ name }}">{% endfor %}</div>
+        <img class="portrait" src="/assets/portrait/ly.png" alt="{{ brand.portrait_alt }}">
+        <div class="medals">{% for name, ext in [('jupiter','jpeg'),('tannhauser','png'),('orion','jpeg')] %}<img class="medal medal-{{ name }}" src="/assets/medals/press/{{ name }}_{{ lang }}.png" alt="{{ name }}">{% endfor %}</div>
       </div>
       <div class="title-panel">
-        <h1><a href="/{{ lang }}/"><img class="masthead" src="/assets/masthead/masthead_{{ lang }}.svg" alt="{{ edition.title }}"></a></h1>
-        <p class="strapline">{{ labels.strapline }}</p>
+        <h1><a href="/{{ lang }}/"><img class="masthead" src="/assets/masthead/pcb/masthead_{{ lang }}.svg" alt="{{ edition.title }}"></a></h1>
+        <p class="strapline">{% if labels.translated_title %}<span class="strapline-name">{{ labels.translated_title }}</span>{% if lang == "ja" %} - {% endif %}{% endif %}{{ labels.strapline }}</p>
       </div>
       {% include "weather.html" %}
     </div>
     {% if brand %}
     <figure class="brand-quote" lang="{{ lang }}">
       <blockquote>{{ brand.quote }}</blockquote>
-      <figcaption>{{ brand.credit }}</figcaption>
+      {% if brand.credit %}<figcaption>{{ brand.credit }}</figcaption>{% endif %}
     </figure>
     {% endif %}
     <div class="issue-line">

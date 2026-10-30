@@ -7,26 +7,28 @@
   <link rel="stylesheet" href="/print.css">
 </head>
 <body class="print-edition">
-{% for page_number in [1, 2, 3] %}
-<section class="sheet" data-page="{{ page_number }}">
-  {% if page_number == 1 %}{% include "header.html" %}
-  {% if issue.weather %}<p class="print-weather-source">{{ weather_labels.source }}: <a href="{{ issue.weather.source_url }}">{{ issue.weather.source_name }}</a> · {{ weather_labels.retrieved }}: {{ weather_retrieved }}{% if issue.weather.kind == 'demo' %} · {{ weather_labels.demo }}{% endif %}</p>{% endif %}
-  {% else %}<header class="running-header"><img src="/assets/masthead/masthead_{{ lang }}.svg" alt="{{ edition.title }}"><p>{{ issue.publication_date }} · № {{ issue.number }}</p></header>{% endif %}
-  <main class="page-body" data-region="articles">
-    <div class="article-columns">
-    {% for article in edition.articles if article.print_page == page_number %}
+<section class="sheet" data-page="1">{% include "header.html" %}
+  {% if weather %}<p class="print-weather-source">{{ weather_labels.source }}: <a href="{{ weather.source_url }}">{{ weather.source_name }}</a> · {{ weather_labels.retrieved }}: {{ weather_retrieved }}{% if weather.kind == 'demo' %} · {{ weather_labels.demo }}{% endif %}</p>{% endif %}
+  {% if edition.issue_title %}<div class="print-issue-intro"><h2>{{ edition.issue_title }}</h2><p>{{ edition.editorial_note }}</p></div>{% endif %}
+<main class="page-body" data-region="articles"><div class="article-columns"><div class="print-column"></div><div class="print-column"></div></div></main><footer class="page-footer"><span>{{ edition.title }} · {{ issue.publication_date }} · № {{ issue.number }} · rev. {{ issue.revision }}</span><span>{{ labels.proof }} · <span class="page-number"></span></span></footer></section>
+<template id="continuation-page"><section class="sheet"><header class="running-header"><img width="2048" height="704" src="/assets/masthead/pcb/masthead_{{ lang }}.svg" alt="{{ edition.title }}"><p>{{ issue.publication_date }} · № {{ issue.number }}</p></header><main class="page-body" data-region="articles"><div class="article-columns"><div class="print-column"></div><div class="print-column"></div></div></main><footer class="page-footer"><span>{{ edition.title }} · {{ issue.publication_date }} · № {{ issue.number }} · rev. {{ issue.revision }}</span><span>{{ labels.proof }} · <span class="page-number"></span></span></footer></section></template>
+<template id="print-content">    {% for section in article_sections %}
+    {% set page_articles = section.articles %}
+    {% if page_articles %}
+      <section class="editorial-section"><h2 class="section-heading">{{ section.title }}</h2>
+    {% for article in page_articles %}
       <article data-article="{{ article.id }}">
-        <p class="category">{{ article.category }}</p>
+        {% if article.category in labels.article_kinds %}<p class="article-kind">{{ labels.article_kinds[article.category] }}</p>{% endif %}
         <h2>{{ article.headline }}</h2>
-        <p class="dek">{{ article.dek }}</p>
+        {% if article.dek %}<p class="dek">{{ article.dek }}</p>{% endif %}
         {% include "article-body.html" %}
         <footer class="article-sources"><h3>{{ labels.sources }}</h3>{% for source in article.sources %}<p><a href="{{ source.url }}">{{ source.title }}</a> · {{ source.published_at }}</p>{% endfor %}</footer>
       </article>
     {% endfor %}
-    </div>
-  </main>
-  <footer class="page-footer"><span>{{ edition.title }} · {{ issue.publication_date }} · № {{ issue.number }} · rev. {{ issue.revision }}</span><span>{{ labels.proof }} · {{ page_number }} / 3</span></footer>
-</section>
-{% endfor %}
+      </section>
+    {% endif %}
+    {% endfor %}
+</template>
+<script src="/paginate.js"></script>
 </body>
 </html>

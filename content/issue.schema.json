@@ -29,7 +29,7 @@
           "type": "string"
         },
         "dek": {
-          "minLength": 1,
+          "default": "",
           "title": "Dek",
           "type": "string"
         },
@@ -73,11 +73,8 @@
         },
         "print_page": {
           "default": 1,
-          "enum": [
-            1,
-            2,
-            3
-          ],
+          "description": "Legacy hint; automatic pagination ignores this field",
+          "minimum": 1,
           "title": "Print Page",
           "type": "integer"
         }
@@ -87,7 +84,6 @@
         "slug",
         "category",
         "headline",
-        "dek",
         "body",
         "sources"
       ],
@@ -100,6 +96,22 @@
         "title": {
           "minLength": 1,
           "title": "Title",
+          "type": "string"
+        },
+        "weather": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Weather"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "issue_title": {
+          "default": "",
+          "title": "Issue Title",
           "type": "string"
         },
         "editorial_note": {
@@ -220,14 +232,22 @@
       "additionalProperties": false,
       "properties": {
         "location": {
-          "const": "ichikawa",
           "default": "ichikawa",
+          "enum": [
+            "ichikawa",
+            "breukelen",
+            "smolensk"
+          ],
           "title": "Location",
           "type": "string"
         },
         "timezone": {
-          "const": "Asia/Tokyo",
           "default": "Asia/Tokyo",
+          "enum": [
+            "Asia/Tokyo",
+            "Europe/Amsterdam",
+            "Europe/Moscow"
+          ],
           "title": "Timezone",
           "type": "string"
         },

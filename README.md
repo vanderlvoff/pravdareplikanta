@@ -44,7 +44,7 @@ and visual approval are still required. Unicode and explicit line-break preserva
 are tested; RU/EN quotation font usage is also checked in Chrome.
 Images are intentionally rejected until reviewed asset and licensing handling exists.
 
-Local PDF support now generates exactly three A4 pages per language with overflow
+Local PDF support now generates as many A4 pages per language as needed, with clipping/overlap
 checks, embedded Caveat, raster previews and snapshot verification. See
 [docs/PRINT.md](docs/PRINT.md) for installation, commands and current limitations.
 The sample has three short fictional articles, so print pages are intentionally sparse.
@@ -104,8 +104,8 @@ installation use `--channel chrome`. It records the actual browser version in
 `browser-review-<language>.json` and saves `desktop-<language>.png` and
 `mobile-<language>.png`. This diagnostic does not certify print reproducibility.
 
-Japanese quotations temporarily use the system Japanese serif font: Caveat has no
-Japanese glyphs. RU/EN quotations use bundled Caveat-Regular, checked in Chrome.
+The Japanese motto uses bundled Zen Kurenaido Regular (SIL OFL 1.1). RU/EN mottos
+use bundled Caveat-Regular. Actual font usage is checked in Chromium and PDF.
 
 ## Optional API editorial drafting
 
@@ -125,8 +125,18 @@ Ichikawa weather for October 30 and remains a draft for editorial review.
 rp preview --output previews/issue-2026-10-30-2
 ```
 
-Open `/ru/`, `/en/` or `/ja/` and follow the PDF edition link. Each PDF has three A4
-pages; all nine raster previews are under each language's issue directory.
+Open `/ru/`, `/en/` or `/ja/` and follow the PDF edition link. Older snapshots retain their original page counts; raster previews are under each language's issue directory.
 See [source/review notes](docs/issues/2026-10-30.md) and the
 [monthly API budget estimate](docs/API_BUDGET.md). This issue was prepared in the
 current session without calling the paid OpenAI API.
+
+## Import prepared daily JSON
+
+Use `rp import` for the owner's `data/latest/{ru,en,ja}.json` feeds (`jp.json` is
+also accepted for Japanese). See [docs/DAILY_IMPORT.md](docs/DAILY_IMPORT.md) for
+commands, validation and section/page mapping. All incoming files stay unchanged.
+The imported GitHub v1.2 issue (2026-10-30, revision 4) has a ready local web and PDF preview:
+
+```sh
+rp preview --output previews/latest-2026-10-30-30
+```

@@ -22,23 +22,23 @@ body.print-edition { width: 190mm; max-width: none; margin: 0; padding: 0; color
 .weather-condition, .weather-detail { font-size: 5pt; margin: .5mm 0 0; }
 .weather-summary, .weather-demo { font-size: 5.5pt; }
 .weather-summary { padding-top: 1mm; margin-top: 1mm; }
-.brand-quote { margin: 2mm 0 0; padding: 2mm 0; }
-.brand-quote blockquote { font-size: 18pt; line-height: 1.2; }
-.brand-quote:lang(ja) blockquote { font-size: 12pt; line-height: 1.5; }
+.brand-quote { width: 84%; margin: 1.333mm auto 0; padding: 1.333mm 0; }
+.brand-quote blockquote { font-size: 12pt; line-height: 1.2; }
+.brand-quote:lang(ja) blockquote { font-size: 8pt; line-height: 1.5; }
 .brand-quote figcaption { font-size: 7pt; margin-top: 1mm; }
 .issue-line { padding: 1.5mm 0; border-bottom-width: .5mm; gap: 1mm; }
 .issue-line p { font-size: 6pt; }
 .issue-line a { display: none; }
 .page-body { flex: 1; min-height: 0; padding: 3mm 0; }
-.article-columns { height: 100%; column-count: 2; column-gap: 5mm; column-rule: .2mm solid #999; column-fill: balance; }
+.article-columns { height: 100%; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5mm; }
 article { margin: 0 0 3mm; padding: 0 0 2mm; border-bottom: .2mm solid #999; }
 article h2 { margin: 1mm 0 2mm; font-size: 16pt; line-height: 1.1; break-after: avoid; }
 article h3 { font-size: 11pt; margin: 2mm 0 1mm; break-after: avoid; }
 article p, article li { font-size: 10pt; margin: 0 0 2mm; orphans: 2; widows: 2; }
 article blockquote { font-size: 14pt; margin: 2mm; }
 article:lang(ja) blockquote { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 10pt; }
-article .category { font-size: 7pt; text-transform: uppercase; margin: 0; }
-article .dek { font-weight: 700; }
+article .category { font-size: 7pt; text-transform: uppercase; margin: 0; break-after: avoid; }
+article .dek { font-weight: 700; break-after: avoid; }
 .article-sources p, .article-sources h3 { font-size: 7pt; }
 .running-header { flex: none; display: flex; justify-content: space-between; align-items: center; border-bottom: .3mm solid; padding-bottom: 2mm; }
 .running-header img { width: 45mm; height: auto; }
@@ -47,3 +47,17 @@ article .dek { font-weight: 700; }
 a { color: inherit; text-decoration: none; }
 
 .print-weather-source { flex: none; margin: 1mm 0 0; font-size: 5.5pt; }
+
+.print-issue-intro { flex: none; padding-top: 2mm; }
+.print-issue-intro h2 { font-size: 12pt; margin: 0 0 1mm; }
+.print-issue-intro p { font-size: 8pt; margin: 0 0 1mm; }
+
+.section-heading { font-size: 10pt; margin: 0 0 2mm; padding: 1mm 0; border-block: .3mm solid; break-after: avoid; }
+article .article-kind { font-size: 7pt; margin: 0; break-after: avoid; }
+
+.print-column { min-height: 0; height: 100%; display: flow-root; }
+.print-column + .print-column { border-left: .2mm solid #999; padding-left: 2.5mm; margin-left: -2.5mm; }
+.print-column article { display: flow-root; }
+article .source-line { font-size: 7pt; }
+article p.source-line { margin-bottom: 1mm; }
+article h3.source-line { margin: 1mm 0; }

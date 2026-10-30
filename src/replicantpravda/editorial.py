@@ -13,7 +13,7 @@ from typing import Literal
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
-from pydantic import BaseModel, ConfigDict, HttpUrl
+from pydantic import BaseModel, ConfigDict, Field, HttpUrl
 
 from .models import Issue
 
@@ -38,7 +38,7 @@ class DraftArticle(WireRecord):
     dek: str
     paragraphs: list[str]
     sources: list[DraftSource]
-    print_page: Literal[1, 2, 3]
+    print_page: int = Field(ge=1)
 
 
 class DraftEdition(WireRecord):
@@ -170,12 +170,8 @@ def assemble_issue(
     for edition in result.editions:
         if edition.language in languages:
             raise ValueError("Duplicate language in API draft")
-        if len(edition.articles) != 3 or sorted(a.print_page for a in edition.articles) != [
-            1,
-            2,
-            3,
-        ]:
-            raise ValueError("Each API edition must have three articles assigned to pages 1, 2, 3")
+        if len(edition.articles) != 3:
+            raise ValueError("Each API edition must have three articles")
         articles = []
         for article in edition.articles:
             for source in article.sources:

@@ -37,9 +37,13 @@ def verify_pdf(path: Path, issue: Issue, lang: str, *, rasterize: bool = False) 
     except ImportError as error:
         raise ValueError("Install PDF support: python -m pip install -e '.[pdf]'") from error
     errors = []
+    layout_path = path.with_name("pagination.json")
+    layout = json.loads(layout_path.read_text(encoding="utf-8")) if layout_path.exists() else None
     with pymupdf.open(path) as document:
-        if len(document) != 3:
-            errors.append(f"Expected 3 pages, found {len(document)}")
+        if not len(document):
+            errors.append("PDF has no pages")
+        if layout and len(document) != layout["page_count"]:
+            errors.append("PDF page count differs from measured pagination")
         pages = []
         fonts = {}
         for number, page in enumerate(document, start=1):
@@ -65,6 +69,13 @@ def verify_pdf(path: Path, issue: Issue, lang: str, *, rasterize: bool = False) 
                 else:
                     fonts[name] = bool(document.extract_font(xref)[3])
             for article in issue.languages[lang].articles:
+                if layout:
+                    for fragment in layout["articles"].get(article.id, []):
+                        if fragment["page"] == number and normalized(
+                            fragment["text"]
+                        ) not in normalized(text):
+                            errors.append(f"Page {number}: missing article text ({article.id})")
+                    continue
                 if article.print_page != number:
                     continue
                 required = [article.headline, article.dek]
@@ -77,6 +88,11 @@ def verify_pdf(path: Path, issue: Issue, lang: str, *, rasterize: bool = False) 
             for mandatory in (str(issue.publication_date), issue.languages[lang].title):
                 if normalized(mandatory) not in normalized(text):
                     errors.append(f"Page {number}: missing date or edition title")
+            edition = issue.languages[lang]
+            if number == 1 and edition.issue_title:
+                for value in (edition.issue_title, edition.editorial_note):
+                    if normalized(value) not in normalized(text):
+                        errors.append("Page 1: missing imported issue title or lead")
             if rasterize:
                 page.get_pixmap(dpi=110).save(path.parent / f"page-{number}.png")
             pages.append(
@@ -87,10 +103,25 @@ def verify_pdf(path: Path, issue: Issue, lang: str, *, rasterize: bool = False) 
                     "text_characters": len(text),
                 }
             )
-        if lang != "ja" and not any(
-            "Caveat" in name and embedded for name, embedded in fonts.items()
-        ):
-            errors.append("Caveat quotation font is not embedded")
+        # Verify source coverage independently of page assignments and fragment boundaries.
+        all_text = normalized("".join(page.get_text() for page in document))
+        expected_ids = {article.id for article in issue.languages[lang].articles}
+        if layout and set(layout["articles"]) != expected_ids:
+            errors.append("Pagination article IDs differ from source")
+        for article in issue.languages[lang].articles:
+            article_text = (
+                normalized("".join(part["text"] for part in layout["articles"].get(article.id, [])))
+                if layout
+                else all_text
+            )
+            required = [article.headline, article.dek]
+            for block in article.body:
+                required.extend(block.items if block.type == "list" else [block.text])
+            if any(normalized(value) not in article_text for value in required):
+                errors.append(f"Missing article text ({article.id})")
+        expected_font = "ZenKurenaido" if lang == "ja" else "Caveat"
+        if not any(expected_font in name and embedded for name, embedded in fonts.items()):
+            errors.append(f"{expected_font} motto font is not embedded")
         if any(not embedded for embedded in fonts.values()):
             errors.append("Some PDF fonts are not embedded")
     return {

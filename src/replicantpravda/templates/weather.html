@@ -1,8 +1,7 @@
 <section class="weather" aria-label="{{ labels.weather }}">
-  {% if issue.weather %}
-  {% set weather = issue.weather %}
-  <h2>{{ weather_labels.city }}</h2>
-  <p class="weather-date">{{ weather_labels.forecast }} · {{ weather.forecast_date }} · JST</p>
+  {% if weather %}
+  <h2>{{ weather_city }}{% if weather_country %} <small class="weather-country">{% if lang == "ja" %}（{{ weather_country }}）{% else %}({{ weather_country }}){% endif %}</small>{% endif %}</h2>
+  <p class="weather-date">{{ weather_labels.forecast }} · {{ weather.forecast_date }} · {{ weather_timezone }}</p>
   {% if weather.kind == 'demo' %}<p class="weather-demo">{{ weather_labels.demo }}</p>{% endif %}
   <div class="weather-slots">
     {% for slot in weather.slots %}
@@ -20,7 +19,7 @@
   </div>
   <p class="weather-summary">{{ weather_labels.daily }}: {{ '%g'|format(weather.temperature_min_c) }}–{{ '%g'|format(weather.temperature_max_c) }} °C<br>{{ weather_labels.precip }}: {{ weather.precipitation_probability_max }}%</p>
   {% else %}
-  <h2>{{ labels.weather }}</h2><p class="weather-date">{{ issue.publication_date }}</p>
+  <h2>{{ weather_city }}{% if weather_country %} <small class="weather-country">{% if lang == "ja" %}（{{ weather_country }}）{% else %}({{ weather_country }}){% endif %}</small>{% endif %}</h2><p class="weather-date">{{ issue.publication_date }}</p>
   <p class="weather-pending">{{ labels.weather_pending }}</p>
   {% endif %}
 </section>

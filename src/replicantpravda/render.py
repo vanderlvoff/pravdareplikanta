@@ -4,6 +4,7 @@ import hashlib
 import json
 import shutil
 import tempfile
+from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -16,8 +17,11 @@ from .verification import artifact_hashes
 LABELS = {
     "en": {
         "proof": "NON-FINAL",
-        "pdf": "PDF edition · 3 A4 pages",
-        "kicker": "Physical AI — engineering newspaper",
+        "pdf": "PDF edition · A4",
+        "kicker": "Physical AI — the path to a beautiful tomorrow.",
+        "sections": {"news": "News", "analysis": "Analysis"},
+        "article_kinds": {"opinion": "Opinion", "satire": "Satire"},
+        "translated_title": "THE REPLICANT TRUTH",
         "strapline": "A NEWSPAPER ABOUT PHYSICAL ARTIFICIAL INTELLIGENCE",
         "weather": "Weather",
         "weather_pending": "Forecast not supplied",
@@ -28,8 +32,11 @@ LABELS = {
     },
     "ru": {
         "proof": "ПРОБНЫЙ МАКЕТ",
-        "pdf": "PDF выпуска · 3 страницы A4",
-        "kicker": "Physical AI — инженерная газета",
+        "pdf": "PDF выпуска · A4",
+        "kicker": "Physical AI — путь в прекрасное далёко.",
+        "sections": {"news": "Новости", "analysis": "Анализ"},
+        "article_kinds": {"opinion": "Мнение", "satire": "Сатира"},
+        "translated_title": "",
         "strapline": "ГАЗЕТА О ФИЗИЧЕСКОМ ИСКУССТВЕННОМ ИНТЕЛЛЕКТЕ",
         "weather": "Погода · Итикава",
         "weather_pending": "Прогноз для выпуска не предоставлен",
@@ -40,8 +47,11 @@ LABELS = {
     },
     "ja": {
         "proof": "非最終版",
-        "pdf": "PDF版 · A4全3ページ",
-        "kicker": "Physical AI — エンジニアリング新聞",
+        "pdf": "PDF版 · A4",
+        "kicker": "Physical AI — 素晴らしい未来への道。",
+        "sections": {"news": "ニュース", "analysis": "分析"},
+        "article_kinds": {"opinion": "論説", "satire": "風刺"},
+        "translated_title": "レプリカントの真実",
         "strapline": "フィジカルAIの新聞",
         "weather": "天気",
         "weather_pending": "予報データ未提供",
@@ -81,6 +91,12 @@ def build(issue: Issue, output: Path, assets: Path = Path("assets"), *, pdf: boo
         style_version = hashlib.sha256(style.encode()).hexdigest()[:12]
 
         for lang, edition in sorted(issue.languages.items()):
+            current_weather = edition.weather or issue.weather
+            location = (
+                current_weather.location
+                if current_weather
+                else {"ru": "ichikawa", "en": "breukelen", "ja": "smolensk"}[lang]
+            )
             context = dict(
                 issue=issue,
                 lang=lang,
@@ -89,12 +105,32 @@ def build(issue: Issue, output: Path, assets: Path = Path("assets"), *, pdf: boo
                 brand=brand.get(lang),
                 style_version=style_version,
                 print_enabled=pdf,
+                article_sections=[
+                    {
+                        "key": key,
+                        "title": LABELS[lang]["sections"][key],
+                        "articles": [
+                            a for a in edition.articles if (a.category == "news") == (key == "news")
+                        ],
+                    }
+                    for key in ("news", "analysis")
+                ],
+                weather=current_weather,
+                weather_city=weather_labels[lang]["cities"][location],
+                weather_country=weather_labels[lang].get("countries", {}).get(location, ""),
+                weather_timezone=(
+                    datetime.fromisoformat(str(current_weather.forecast_date) + "T09:00:00")
+                    .replace(tzinfo=ZoneInfo(current_weather.timezone))
+                    .strftime("%Z")
+                    if current_weather
+                    else ""
+                ),
                 weather_labels=weather_labels[lang],
                 weather_retrieved=(
-                    issue.weather.retrieved_at.astimezone(ZoneInfo("Asia/Tokyo")).strftime(
-                        "%Y-%m-%d %H:%M JST"
-                    )
-                    if issue.weather
+                    current_weather.retrieved_at.astimezone(
+                        ZoneInfo(current_weather.timezone)
+                    ).strftime("%Y-%m-%d %H:%M %Z")
+                    if current_weather
                     else None
                 ),
                 weather_icons={
@@ -131,6 +167,7 @@ def build(issue: Issue, output: Path, assets: Path = Path("assets"), *, pdf: boo
         if pdf:
             from .pdf import PrintFailure, render_pdfs
 
+            write("paginate.js", env.loader.get_source(env, "paginate.js")[0])
             write("print.css", env.loader.get_source(env, "print.css")[0])
             write("source.json", issue.model_dump_json(indent=2) + "\n")
             try:

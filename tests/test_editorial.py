@@ -127,7 +127,7 @@ def test_successful_two_request_draft(template, wire, monkeypatch, tmp_path):
     assert len(calls) == 2
 
 
-@pytest.mark.parametrize("fault", ["url", "date", "missing_language", "not_ready", "pages"])
+@pytest.mark.parametrize("fault", ["url", "date", "missing_language", "not_ready", "article_count"])
 def test_reject_unreliable_editorial(wire, template, fault):
     if fault == "url":
         wire["editions"][0]["articles"][0]["sources"][0]["url"] = "https://example.net/invented"
@@ -138,7 +138,7 @@ def test_reject_unreliable_editorial(wire, template, fault):
     elif fault == "not_ready":
         wire["ready"] = False
     else:
-        wire["editions"][0]["articles"][0]["print_page"] = 2
+        wire["editions"][0]["articles"].pop()
     with pytest.raises(ValueError):
         assemble_issue(DraftResult.model_validate(wire), template, DAY, 2, {URL})
 

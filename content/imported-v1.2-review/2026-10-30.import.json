@@ -1,0 +1,68 @@
+{
+  "status": "draft",
+  "sources": {
+    "ru": {
+      "file": "data/latest/ru.json",
+      "sha256": "cbdaa9cc993dcef33653dcf491853641a2f1f421c6e74c47e8dee6013cfd1a6d",
+      "metadata": {
+        "schema_version": "1.2",
+        "publication": "pravda_replikanta",
+        "issue_type": "daily",
+        "issue_date": "2026-10-30",
+        "issue_id": "daily-2026-10-30",
+        "language": "ru",
+        "generated_at": "2026-10-30T01:46:55+09:00",
+        "title": "Правда репликанта — инженерные данные, 30 октября",
+        "lead": "Безопасное выполнение VLA, ускорение манипуляции, сбор демонстраций и локомоция гуманоидов; японский рынок готовит страхование операционных рисков."
+      }
+    },
+    "en": {
+      "file": "data/latest/en.json",
+      "sha256": "724eb1cff880c55ab09135fb6c940d85a9f6e03c45fd3d16e0c621e9bcff3768",
+      "metadata": {
+        "schema_version": "1.2",
+        "publication": "pravda_replikanta",
+        "issue_type": "daily",
+        "issue_date": "2026-10-30",
+        "issue_id": "daily-2026-10-30",
+        "language": "en",
+        "generated_at": "2026-10-30T01:46:55+09:00",
+        "title": "Pravda Replikanta — Engineering Data, October 30",
+        "lead": "Safer VLA execution, faster manipulation, demonstration capture and humanoid locomotion; Japan is adding insurance for operational robot risk."
+      }
+    },
+    "ja": {
+      "file": "data/latest/ja.json",
+      "sha256": "c65f8e4974499f53cfff3707c2538c70512ac506e2a31740f56be239e7702f05",
+      "metadata": {
+        "schema_version": "1.2",
+        "publication": "pravda_replikanta",
+        "issue_type": "daily",
+        "issue_date": "2026-10-30",
+        "issue_id": "daily-2026-10-30",
+        "language": "ja",
+        "generated_at": "2026-10-30T01:46:55+09:00",
+        "title": "レプリカント・プラウダ — 技術データ、10月30日",
+        "lead": "VLAの安全実行、操作の高速化、デモ収集、ヒューマノイド移動制御。日本ではロボット停止リスクへの保険も動き始めた。"
+      }
+    }
+  },
+  "page_plan": {
+    "vla-stem": 1,
+    "tops-flow": 1,
+    "openjaws-stereo": 2,
+    "roboauto-programs": 2,
+    "reach-crawling": 2,
+    "hc2-foresight": 3,
+    "dexsafe-hand": 3,
+    "tokio-robot-insurance": 3,
+    "technology-signal": 3,
+    "glossary": 2
+  },
+  "review_required": [
+    "facts and source claims",
+    "translations",
+    "print overflow",
+    "visual review"
+  ]
+}

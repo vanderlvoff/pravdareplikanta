@@ -150,3 +150,41 @@ def test_missing_weather_is_explicit(tmp_path):
     html = (tmp_path / "site/ru/index.html").read_text()
     assert "Прогноз для выпуска не предоставлен" in html
     assert 'class="weather-slot"' not in html
+
+
+@pytest.mark.parametrize(
+    "location,timezone", [("breukelen", "Europe/Amsterdam"), ("smolensk", "Europe/Moscow")]
+)
+def test_location_specific_forecasts(payload, location, timezone):
+    payload["timezone"] = timezone
+    weather = parse_forecast(payload, DAY, RETRIEVED, location)
+    assert weather.location == location and weather.timezone == timezone
+    assert timezone.replace("/", "%2F") in str(weather.source_url)
+    bad = weather.model_dump()
+    bad["timezone"] = "Asia/Tokyo"
+    with pytest.raises(ValidationError, match="timezone"):
+        Weather.model_validate(bad)
+
+
+def test_edition_weather_uses_local_city_time_and_source(payload, tmp_path):
+    data = json.loads(Path("content/issues/2026-10-29.json").read_text())
+    for language, location, timezone in (
+        ("en", "breukelen", "Europe/Amsterdam"),
+        ("ja", "smolensk", "Europe/Moscow"),
+    ):
+        local = copy.deepcopy(payload)
+        local["timezone"] = timezone
+        data["languages"][language]["weather"] = parse_forecast(
+            local, DAY, RETRIEVED, location
+        ).model_dump(mode="json")
+    build(Issue.model_validate(data), tmp_path / "site")
+    for lang, city, zone in (
+        ("en", "Breukelen", "CET"),
+        ("ja", "スモレンスク", "MSK"),
+    ):
+        html = (tmp_path / "site" / lang / "index.html").read_text()
+        assert city in html and f" · {zone}</p>" in html
+        assert "JST" not in html
+    data["languages"]["en"]["weather"]["forecast_date"] = "2026-10-30"
+    with pytest.raises(ValidationError, match="Edition weather date"):
+        Issue.model_validate(data)

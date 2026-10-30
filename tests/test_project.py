@@ -91,7 +91,8 @@ def test_quote_font_and_original_assets(data, tmp_path):
         "assets/fonts/Caveat/static/Caveat-Regular.ttf"
     ).read_bytes()
     html = (root / "ru/index.html").read_text()
-    assert "Все эти мгновения" in html
+    assert "Всё, что мы можем, — учиться быть людьми, пока идёт дождь." in html
+    assert "/assets/portrait/ly.png" in html
     assert 'class="brand-quote"' in html
     assert "Caveat-Regular.ttf" in (root / "style.css").read_text()
 

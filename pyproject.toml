@@ -10,6 +10,7 @@ requires-python = ">=3.12"
 dependencies = ["Jinja2==3.1.6", "pydantic==2.12.3"]
 
 [project.optional-dependencies]
+artwork = ["Pillow==12.0.0"]
 visual = ["playwright==1.56.0"]
 pdf = ["playwright==1.56.0", "PyMuPDF==1.26.5"]
 dev = ["pytest==8.4.2", "ruff==0.14.2"]

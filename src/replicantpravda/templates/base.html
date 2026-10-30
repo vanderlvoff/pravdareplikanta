@@ -15,6 +15,6 @@
   {% include "header.html" %}
   {% if print_enabled %}<p class="pdf-link"><a href="/{{ lang }}/issues/{{ issue.issue_id }}/edition.pdf">{{ labels.pdf }}</a></p>{% endif %}
   <main>{% block content %}{% endblock %}</main>
-  {% if issue.weather %}<footer class="weather-source">{{ weather_labels.source }}: <a href="{{ issue.weather.source_url }}" rel="noopener noreferrer">{{ issue.weather.source_name }}</a> · {{ weather_labels.retrieved }}: <time datetime="{{ issue.weather.retrieved_at.isoformat() }}">{{ weather_retrieved }}</time>{% if issue.weather.kind == 'demo' %} · {{ weather_labels.demo }}{% endif %}</footer>{% endif %}
+  {% if weather %}<footer class="weather-source">{{ weather_labels.source }}: <a href="{{ weather.source_url }}" rel="noopener noreferrer">{{ weather.source_name }}</a> · {{ weather_labels.retrieved }}: <time datetime="{{ weather.retrieved_at.isoformat() }}">{{ weather_retrieved }}</time>{% if weather.kind == 'demo' %} · {{ weather_labels.demo }}{% endif %}</footer>{% endif %}
 </body>
 </html>

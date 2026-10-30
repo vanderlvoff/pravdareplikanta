@@ -1,15 +1,14 @@
 # Local weather snapshots
 
-The issue's optional `weather` object stores one Ichikawa forecast for its publication
-date in `Asia/Tokyo`. It includes 09:00, 12:00 and 18:00 conditions, temperatures,
+The issue's optional `weather` object stores the shared fallback forecast for its publication
+date in the location's timezone. It includes 09:00, 12:00 and 18:00 conditions, temperatures,
 precipitation probabilities, wind speed in m/s and meteorological direction in degrees.
 The summary uses the provider's daily temperature range and maximum precipitation
 probability, not the range of the three displayed hours.
 
 `retrieved_at` is timezone-aware acquisition time, not model issuance time. Acquisition
 can happen later than displayed hours: these remain forecast data, not observations.
-The snapshot records source name and the exact request URL. All three editions use
-the same numbers and translated labels. The issue date must match the forecast date.
+The snapshot records source name and the exact request URL. Each edition uses its selected city snapshot with translated labels. The issue date must match the forecast date.
 
 ## Workflow
 
@@ -41,3 +40,23 @@ HTML on repeated builds. A new request is always an explicit operator action.
 
 Provider fields and WMO code mappings follow the [Open-Meteo documentation](https://open-meteo.com/en/docs).
 Attribution and acquisition time appear in the issue footer, outside the masthead.
+
+## Per-edition cities
+
+Current owner settings: RU Ichikawa (Asia/Tokyo), EN Breukelen (Netherlands,
+Europe/Amsterdam), JA Smolensk (Europe/Moscow). Each `languages.<lang>.weather`
+overrides the shared issue weather. City labels, 09/12/18 slots and acquisition
+timestamps use that snapshot's location and local timezone (including DST).
+The location/timezone pair and issue date are validated; data is never relabeled
+as another city's forecast. Import preserves same-date template edition weather.
+
+```sh
+rp weather --date 2026-10-30 --location breukelen --output content/weather/breukelen-2026-10-30.json
+rp weather --date 2026-10-30 --location smolensk --output content/weather/smolensk-2026-10-30.json
+rp build --issue 2026-10-30 --content-dir content/imported-v1.2-review --edition-weather en=content/weather/breukelen-2026-10-30.json --edition-weather ja=content/weather/smolensk-2026-10-30.json --pdf --output previews/local-weather-review
+```
+
+Existing snapshot paths refuse overwrite; use a new path for refreshes. The
+combined normalized source is saved separately in `content/localized/2026-10-30.json`
+(revision 4). `rp build --content-dir content/localized ...` needs no override flags.
+All builds remain offline; acquisition is a separate command.

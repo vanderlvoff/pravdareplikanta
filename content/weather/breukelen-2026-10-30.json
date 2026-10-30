@@ -1,0 +1,38 @@
+{
+  "location": "breukelen",
+  "timezone": "Europe/Amsterdam",
+  "forecast_date": "2026-10-30",
+  "retrieved_at": "2026-10-30T13:42:39.216807Z",
+  "kind": "forecast",
+  "source_name": "Open-Meteo",
+  "source_url": "https://api.open-meteo.com/v1/forecast?latitude=52.1742&longitude=5.0014&timezone=Europe%2FAmsterdam&start_date=2026-10-30&end_date=2026-10-30&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+  "temperature_min_c": 4.9,
+  "temperature_max_c": 13.5,
+  "precipitation_probability_max": 0,
+  "slots": [
+    {
+      "hour": 9,
+      "temperature_c": 6.6,
+      "condition": "fog",
+      "precipitation_probability": 0,
+      "wind_speed_ms": 0.8,
+      "wind_direction_deg": 54
+    },
+    {
+      "hour": 12,
+      "temperature_c": 11.2,
+      "condition": "clear",
+      "precipitation_probability": 0,
+      "wind_speed_ms": 1.4,
+      "wind_direction_deg": 47
+    },
+    {
+      "hour": 18,
+      "temperature_c": 9.6,
+      "condition": "cloudy",
+      "precipitation_probability": 0,
+      "wind_speed_ms": 2.6,
+      "wind_direction_deg": 46
+    }
+  ]
+}

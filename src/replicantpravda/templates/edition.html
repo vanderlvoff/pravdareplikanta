@@ -1,1 +1,21 @@
-{% extends 'base.html' %}{% block content %}<section><h2>{{ issue.issue_id }}</h2><p>{{ edition.editorial_note }}</p>{% for article in edition.articles %}<article><p>{{ article.category }}</p><h2><a href="/{{ lang }}/articles/{{ article.slug }}/">{{ article.headline }}</a></h2><p>{{ article.dek }}</p></article>{% endfor %}</section>{% endblock %}
+{% extends 'base.html' %}
+{% block content %}
+<div class="issue-intro">
+  <h2>{{ edition.issue_title or issue.issue_id }}</h2>
+  <p>{{ edition.editorial_note }}</p>
+</div>
+{% for section in article_sections if section.articles %}
+<section class="editorial-section" aria-labelledby="section-{{ section.key }}">
+  <h2 class="section-heading" id="section-{{ section.key }}">{{ section.title }}</h2>
+  <div class="edition-articles">
+  {% for article in section.articles %}
+  <article>
+    {% if article.category in labels.article_kinds %}<p class="article-kind">{{ labels.article_kinds[article.category] }}</p>{% endif %}
+    <h2><a href="/{{ lang }}/articles/{{ article.slug }}/">{{ article.headline }}</a></h2>
+    {% if article.dek %}<p>{{ article.dek }}</p>{% elif article.body[0].type == "paragraph" %}<p>{{ article.body[0].text }}</p>{% endif %}
+  </article>
+  {% endfor %}
+  </div>
+</section>
+{% endfor %}
+{% endblock %}

@@ -1,4 +1,4 @@
-"""Saved Ichikawa forecast data and an explicit network acquisition adapter."""
+"""Saved local forecast data and an explicit network acquisition adapter."""
 
 import json
 import ssl
@@ -9,6 +9,13 @@ from urllib.parse import urlencode
 from urllib.request import urlopen
 
 from pydantic import AwareDatetime, BaseModel, ConfigDict, Field, HttpUrl, model_validator
+
+
+LOCATIONS = {
+    "ichikawa": (35.72, 139.93, "Asia/Tokyo"),
+    "breukelen": (52.1742, 5.0014, "Europe/Amsterdam"),
+    "smolensk": (54.7826, 32.0453, "Europe/Moscow"),
+}
 
 
 class WeatherRecord(BaseModel):
@@ -25,8 +32,8 @@ class WeatherSlot(WeatherRecord):
 
 
 class Weather(WeatherRecord):
-    location: Literal["ichikawa"] = "ichikawa"
-    timezone: Literal["Asia/Tokyo"] = "Asia/Tokyo"
+    location: Literal["ichikawa", "breukelen", "smolensk"] = "ichikawa"
+    timezone: Literal["Asia/Tokyo", "Europe/Amsterdam", "Europe/Moscow"] = "Asia/Tokyo"
     forecast_date: date
     retrieved_at: AwareDatetime
     kind: Literal["demo", "forecast"]
@@ -39,8 +46,10 @@ class Weather(WeatherRecord):
 
     @model_validator(mode="after")
     def consistent(self) -> "Weather":
+        if self.timezone != LOCATIONS[self.location][2]:
+            raise ValueError("Weather timezone does not match location")
         if [slot.hour for slot in self.slots] != [9, 12, 18]:
-            raise ValueError("Weather slots must be 09:00, 12:00, 18:00 JST in order")
+            raise ValueError("Weather slots must be 09:00, 12:00, 18:00 local time in order")
         if self.temperature_min_c > self.temperature_max_c:
             raise ValueError("Weather temperature minimum exceeds maximum")
         for slot in self.slots:
@@ -69,12 +78,13 @@ def condition(code: int) -> str:
     raise ValueError(f"Unsupported WMO weather code: {code}")
 
 
-def forecast_url(day: date) -> str:
+def forecast_url(day: date, location: str = "ichikawa") -> str:
+    latitude, longitude, timezone = LOCATIONS[location]
     return "https://api.open-meteo.com/v1/forecast?" + urlencode(
         {
-            "latitude": 35.72,
-            "longitude": 139.93,
-            "timezone": "Asia/Tokyo",
+            "latitude": latitude,
+            "longitude": longitude,
+            "timezone": timezone,
             "start_date": day.isoformat(),
             "end_date": day.isoformat(),
             "wind_speed_unit": "ms",
@@ -84,10 +94,12 @@ def forecast_url(day: date) -> str:
     )
 
 
-def parse_forecast(payload: dict, day: date, retrieved_at: datetime) -> Weather:
+def parse_forecast(
+    payload: dict, day: date, retrieved_at: datetime, location: str = "ichikawa"
+) -> Weather:
     """Reject incomplete provider data rather than silently inventing values."""
     try:
-        if payload["timezone"] != "Asia/Tokyo":
+        if payload["timezone"] != LOCATIONS[location][2]:
             raise ValueError("Unexpected forecast timezone")
         hourly, daily = payload["hourly"], payload["daily"]
         expected_units = {
@@ -123,11 +135,13 @@ def parse_forecast(payload: dict, day: date, retrieved_at: datetime) -> Weather:
                 )
             )
         return Weather(
+            location=location,
+            timezone=LOCATIONS[location][2],
             forecast_date=day,
             retrieved_at=retrieved_at,
             kind="forecast",
             source_name="Open-Meteo",
-            source_url=forecast_url(day),
+            source_url=forecast_url(day, location),
             temperature_min_c=daily["temperature_2m_min"][0],
             temperature_max_c=daily["temperature_2m_max"][0],
             precipitation_probability_max=daily["precipitation_probability_max"][0],
@@ -137,7 +151,7 @@ def parse_forecast(payload: dict, day: date, retrieved_at: datetime) -> Weather:
         raise ValueError("Incomplete forecast response") from error
 
 
-def fetch_forecast(day: date) -> Weather:
+def fetch_forecast(day: date, location: str = "ichikawa") -> Weather:
     from datetime import UTC
 
     context = ssl.create_default_context()
@@ -145,9 +159,9 @@ def fetch_forecast(day: date) -> Weather:
     # Use the operating system CA file while retaining certificate verification.
     if sys.platform == "darwin" and not context.get_ca_certs():
         context.load_verify_locations(cafile="/etc/ssl/cert.pem")
-    with urlopen(forecast_url(day), timeout=20, context=context) as response:
+    with urlopen(forecast_url(day, location), timeout=20, context=context) as response:
         raw = response.read(2_000_001)
         if len(raw) > 2_000_000:
             raise ValueError("Forecast response exceeds size limit")
         payload = json.loads(raw)
-    return parse_forecast(payload, day, datetime.now(UTC))
+    return parse_forecast(payload, day, datetime.now(UTC), location)

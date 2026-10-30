@@ -16,11 +16,13 @@ def issue():
     return load_issue(Path("content/issues/2026-10-29.json"))
 
 
-def test_print_page_rejects_out_of_range(issue):
+def test_legacy_print_page_accepts_positive_hint(issue):
     from pydantic import ValidationError
 
     data = issue.model_dump()
     data["languages"]["ru"]["articles"][0]["print_page"] = 4
+    assert Issue.model_validate(data).languages["ru"].articles[0].print_page == 4
+    data["languages"]["ru"]["articles"][0]["print_page"] = 0
     with pytest.raises(ValidationError):
         Issue.model_validate(data)
 
@@ -33,7 +35,6 @@ def test_incomplete_pdf_is_rejected(issue, tmp_path):
         document.save(path)
     report = verify_pdf(path, issue, "en")
     assert not report["passed"]
-    assert any("3 pages" in error for error in report["errors"])
     assert any("A4" in error for error in report["errors"])
     assert any("missing article text" in error for error in report["errors"])
     assert any("Caveat" in error for error in report["errors"])
@@ -50,7 +51,7 @@ def test_changed_snapshot_is_rejected(issue, tmp_path):
 @pytest.mark.skipif(
     os.environ.get("RP_TEST_PDF") != "1", reason="Set RP_TEST_PDF=1 for real Chromium"
 )
-def test_three_localized_pdfs_and_overflow(issue, tmp_path):
+def test_localized_automatic_pagination(issue, tmp_path):
     pytest.importorskip("playwright")
     pytest.importorskip("pymupdf")
     site = tmp_path / "complete"
@@ -58,9 +59,10 @@ def test_three_localized_pdfs_and_overflow(issue, tmp_path):
     report = verify_snapshot(site, str(issue.issue_id))
     assert report["passed"]
     for lang in ("ru", "en", "ja"):
-        assert report["editions"][lang]["page_count"] == 3
+        count = report["editions"][lang]["page_count"]
+        assert count >= 1
         folder = site / lang / "issues" / str(issue.issue_id)
-        assert all((folder / f"page-{page}.png").is_file() for page in (1, 2, 3))
+        assert all((folder / f"page-{page}.png").is_file() for page in range(1, count + 1))
     repeat = tmp_path / "repeat"
     build(issue, repeat, pdf=True)
     for lang in ("ru", "en", "ja"):
@@ -68,16 +70,21 @@ def test_three_localized_pdfs_and_overflow(issue, tmp_path):
         assert (site / relative).read_bytes() == (repeat / relative).read_bytes()
     data = issue.model_dump()
     data["languages"]["ru"]["articles"][0]["body"] = [
-        {"type": "paragraph", "text": "Переполнение текста. " * 8000}
+        {"type": "paragraph", "text": "Переполнение текста. " * 900}
     ]
-    overflow = tmp_path / "overflow"
+    long_site = tmp_path / "long"
+    build(Issue.model_validate(data), long_site, pdf=True)
+    extended = verify_snapshot(long_site, str(issue.issue_id))
+    assert extended["passed"]
+    assert extended["editions"]["ru"]["page_count"] > 3
+
+    # Adding pages must not silently accept an indivisible block that clips a column.
+    data["languages"]["ru"]["articles"][0]["body"] = [
+        {"type": "quote", "text": "Неразрывная цитата. " * 2000}
+    ]
+    broken = tmp_path / "unplaceable"
     with pytest.raises(ValueError, match="report"):
-        build(Issue.model_validate(data), overflow, pdf=True)
-    assert not overflow.exists()
-    failed = json.loads((tmp_path / "overflow.failed.json").read_text())
+        build(Issue.model_validate(data), broken, pdf=True)
+    assert not broken.exists()
+    failed = json.loads((tmp_path / "unplaceable.failed.json").read_text())
     assert failed["editions"]["ru"]["overflow"]
-    assert any(
-        problem.get("article") == "robot-evaluation"
-        or "robot-evaluation" in problem.get("articles", [])
-        for problem in failed["editions"]["ru"]["overflow"]
-    )

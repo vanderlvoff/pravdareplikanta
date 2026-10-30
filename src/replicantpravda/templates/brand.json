@@ -1,14 +1,17 @@
 {
   "ru": {
-    "quote": "«Все эти мгновения исчезнут во времени, как слёзы под дождём»",
-    "credit": "Рой Батти · „Бегущий по лезвию“, 1982 · перевод"
+    "quote": "Всё, что мы можем, — учиться быть людьми, пока идёт дождь.",
+    "credit": "",
+    "portrait_alt": "Герой газеты"
   },
   "en": {
-    "quote": "“All those moments will be lost in time, like tears in rain.”",
-    "credit": "Roy Batty · Blade Runner, 1982"
+    "quote": "All we can do is learn to be human while the rain falls.",
+    "credit": "",
+    "portrait_alt": "Newspaper hero"
   },
   "ja": {
-    "quote": "それらのすべての瞬間は、雨の中の涙のように、時の流れの中で失われていく。",
-    "credit": "ロイ・バッティ · 『ブレードランナー』、1982年 · 翻訳"
+    "quote": "雨の降るあいだ、私たちにできるのは、人間であることを学ぶことだけ。",
+    "credit": "",
+    "portrait_alt": "新聞の主人公"
   }
 }

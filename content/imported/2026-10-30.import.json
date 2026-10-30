@@ -1,0 +1,64 @@
+{
+  "status": "draft",
+  "sources": {
+    "ru": {
+      "file": "data/latest/ru.json",
+      "sha256": "54ae91d1aa8b76637f14892e266544c003422bea85bdd2705801b6acdecfcb2f",
+      "metadata": {
+        "schema_version": "1.0",
+        "publication": "pravda_replikanta",
+        "issue_type": "daily",
+        "issue_date": "2026-10-30",
+        "issue_id": "daily-2026-10-30",
+        "language": "ru",
+        "generated_at": "2026-10-30T00:58:14+09:00",
+        "title": "Данные репликанта — 30 октября 2026",
+        "lead": "Главные подтверждённые события: AGIBOT предложила измерять производительную автономную работу роботов, представила модель GO-3 Preview и промышленную платформу G2 Max; в Японии PLiBOT объявила о совместном проекте с Sumitomo Warehouse."
+      }
+    },
+    "en": {
+      "file": "data/latest/en.json",
+      "sha256": "f80b2212ce56bf853d9f95007eb7dc89d92f7cbc44f61b7b7645fc41ed6f3c66",
+      "metadata": {
+        "schema_version": "1.0",
+        "publication": "pravda_replikanta",
+        "issue_type": "daily",
+        "issue_date": "2026-10-30",
+        "issue_id": "daily-2026-10-30",
+        "language": "en",
+        "generated_at": "2026-10-30T00:58:14+09:00",
+        "title": "Replicant Data — October 30, 2026",
+        "lead": "Verified developments: AGIBOT proposed a measure of productive autonomous robot work, introduced GO-3 Preview and the G2 Max industrial platform; in Japan, PLiBOT announced a co-development project with Sumitomo Warehouse."
+      }
+    },
+    "ja": {
+      "file": "data/latest/ja.json",
+      "sha256": "ff1ede007f9724ecfb9501fcd3c124d403905f263586c814efa38ce541538fca",
+      "metadata": {
+        "schema_version": "1.0",
+        "publication": "pravda_replikanta",
+        "issue_type": "daily",
+        "issue_date": "2026-10-30",
+        "issue_id": "daily-2026-10-30",
+        "language": "ja",
+        "generated_at": "2026-10-30T00:58:14+09:00",
+        "title": "レプリカント・データ — 2026年10月30日",
+        "lead": "確認できた主な動向は、AGIBOTによるロボットの有効稼働量を測るWorkenの提案、GO-3 Previewと産業用G2 Maxの発表、そして日本でのPLiBOTと住友倉庫の共同検証計画である。"
+      }
+    }
+  },
+  "page_plan": {
+    "agibot-worken": 1,
+    "agibot-go3": 2,
+    "agibot-g2max": 2,
+    "plibot-sumitomo": 3,
+    "technology-signal": 1,
+    "glossary": 3
+  },
+  "review_required": [
+    "facts and source claims",
+    "translations",
+    "print overflow",
+    "visual review"
+  ]
+}

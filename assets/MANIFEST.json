@@ -96,7 +96,83 @@
     "sha256": "655ba6a033660f8ee2a2460d1ec0a69f2f2d8665222a1be9544a05f1ae72a002"
   },
   {
-    "path": "reference/Эталон_шапки_2026-10-28.png",
+    "path": "reference/\u042d\u0442\u0430\u043b\u043e\u043d_\u0448\u0430\u043f\u043a\u0438_2026-10-28.png",
     "sha256": "c02be10ff1ae2cfd4c5f70219ceaf7b1ba4d9717f4575c6dd4f28b29c2d76414"
+  },
+  {
+    "path": "medals/press/jupiter_en.png",
+    "sha256": "5165eefdb905e859a47d260ed0c05b99c4f830abd54ab0aa8fde2ce302bb2e1e"
+  },
+  {
+    "path": "medals/press/jupiter_ja.png",
+    "sha256": "4dd540faf898a309e7c7bcc419c85cc1c89415c77a4719e79a9d93a42c625323"
+  },
+  {
+    "path": "medals/press/jupiter_ru.png",
+    "sha256": "1333f35d64a421c3701fd571a714944cf61bd1a7fbca7dafc6cd41c76a15e78f"
+  },
+  {
+    "path": "medals/press/orion_en.png",
+    "sha256": "895fa0cc40052fd737b33db5bc385bb267a60e9a35f5166e045a2537dbf6207b"
+  },
+  {
+    "path": "medals/press/orion_ja.png",
+    "sha256": "a764457e2e93382657c93c0a3604511786ff59798763bd37bacefc4c6590e569"
+  },
+  {
+    "path": "medals/press/orion_ru.png",
+    "sha256": "6bde2fd7a72fd1c384e5cd1bc6fd9f9b473c6f675ea59036da42f3fe32eeb008"
+  },
+  {
+    "path": "medals/press/spacing.css",
+    "sha256": "361f2f0b49ad3039c039917fc9267f9f8b610dee9e4a49c0e11f0a0db9e778c2"
+  },
+  {
+    "path": "medals/press/tannhauser_en.png",
+    "sha256": "38735c971b180f300a365571cf3c7fdac6bc34aa58fc03bb6807eacf391a4d8e"
+  },
+  {
+    "path": "medals/press/tannhauser_ja.png",
+    "sha256": "6393c589cbf429617c3d31e6b994fc28be986f3769b696389d2366f01bb0a6b1"
+  },
+  {
+    "path": "medals/press/tannhauser_ru.png",
+    "sha256": "5dc9b4480b0df7e846a6ec4d1a07b1d192c34d8c85ce14653280b0feea782ca1"
+  },
+  {
+    "path": "portrait/ly.png",
+    "sha256": "a4b5b4a588b53d439a1ebeb28481cd08d4df8272e01fd65c581f243362ebfb14"
+  },
+  {
+    "path": "masthead/cyber/masthead_ru.svg",
+    "sha256": "1cf4320531a0e7b536e39d24cd51e6047e2e293017782a2b2f381c2a543191bc"
+  },
+  {
+    "path": "masthead/cyber/masthead_en.svg",
+    "sha256": "1fd1696deb8545a475364924c44315952b776f7448ac2a47a32ec7e114bd3be5"
+  },
+  {
+    "path": "masthead/cyber/masthead_ja.svg",
+    "sha256": "95f25f5549d9c8cef259b869f856531345cca33d0f55fd9805381d7e8b6f92e2"
+  },
+  {
+    "path": "masthead/pcb/masthead_ru.svg",
+    "sha256": "85faa8bb1147a1074238267293559e755c8a03833dc86303f8e4e4ea3f20c424"
+  },
+  {
+    "path": "masthead/pcb/masthead_en.svg",
+    "sha256": "7f43bff1e47c6b55870f2e935a66a28612c4d3789f87162603d7407f2aa293ab"
+  },
+  {
+    "path": "masthead/pcb/masthead_ja.svg",
+    "sha256": "5e8895df23c6fff29ed10f927303b8f81c8c09a47d2603288e9df65893dc0608"
+  },
+  {
+    "path": "fonts/ZenKurenaido/OFL.txt",
+    "sha256": "fdfcb596ac910b447e482f42d4d1e5df3cfcb71c681a9f10e7f2d0126b274111"
+  },
+  {
+    "path": "fonts/ZenKurenaido/ZenKurenaido-Regular.ttf",
+    "sha256": "58b8d930d9fc10c8a5810c085bae378dacb98d0779073ee6d53d919f19ee6a4f"
   }
 ]

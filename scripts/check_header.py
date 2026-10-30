@@ -45,11 +45,11 @@ def main() -> None:
             )
             fonts = session.send("CSS.getPlatformFontsForNode", {"nodeId": node["nodeId"]})
             assert fonts["fonts"], "No rendered quotation glyphs"
-            if args.language != "ja":
-                assert all(
-                    font["isCustomFont"] and font["postScriptName"] == "Caveat-Regular"
-                    for font in fonts["fonts"]
-                ), fonts
+            expected_font = "ZenKurenaido-Regular" if args.language == "ja" else "Caveat-Regular"
+            assert all(
+                font["isCustomFont"] and font["postScriptName"] == expected_font
+                for font in fonts["fonts"]
+            ), fonts
             assert not errors, errors
             assert page.locator("img").evaluate_all(
                 "es => es.every(e => e.complete && e.naturalWidth > 0)"

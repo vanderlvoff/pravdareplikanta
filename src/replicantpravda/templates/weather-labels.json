@@ -31,10 +31,20 @@
       "ЮЗ",
       "З",
       "СЗ"
-    ]
+    ],
+    "cities": {
+      "ichikawa": "ИТИКАВА",
+      "breukelen": "Брёкелен (Нидерланды)",
+      "smolensk": "Смоленск"
+    },
+    "countries": {
+      "ichikawa": "Япония",
+      "breukelen": "Нидерланды",
+      "smolensk": "Россия"
+    }
   },
   "en": {
-    "city": "ICHIKAWA",
+    "city": "Breukelen",
     "forecast": "Forecast",
     "demo": "DEMO · not a forecast",
     "periods": {
@@ -65,10 +75,20 @@
       "SW",
       "W",
       "NW"
-    ]
+    ],
+    "cities": {
+      "ichikawa": "ICHIKAWA",
+      "breukelen": "Breukelen",
+      "smolensk": "Smolensk"
+    },
+    "countries": {
+      "ichikawa": "Japan",
+      "breukelen": "Netherlands",
+      "smolensk": "Russia"
+    }
   },
   "ja": {
-    "city": "市川",
+    "city": "スモレンスク",
     "forecast": "予報",
     "demo": "デモ · 実際の予報ではありません",
     "periods": {
@@ -99,6 +119,16 @@
       "南西",
       "西",
       "北西"
-    ]
+    ],
+    "cities": {
+      "ichikawa": "市川",
+      "breukelen": "ブルーケレン",
+      "smolensk": "スモレンスク"
+    },
+    "countries": {
+      "ichikawa": "日本",
+      "breukelen": "オランダ",
+      "smolensk": "ロシア"
+    }
   }
 }

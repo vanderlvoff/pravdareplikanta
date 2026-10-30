@@ -52,6 +52,18 @@ the sample issue contains a complete saved forecast.
 
 ## Print page assignment
 
-Each article accepts `print_page` with value 1, 2 or 3 (default 1). This controls
-editorial placement in PDF only. Overflow is rejected rather than automatically
-shrinking or redistributing text. See [PRINT.md](PRINT.md).
+`print_page` remains an optional positive integer (default 1) for compatibility
+with older JSON. Automatic pagination ignores this hint. Articles flow in section
+order (news, then analysis) across as many A4 pages as needed. Font sizes stay fixed;
+clipping and overlaps still reject the build. See [PRINT.md](PRINT.md).
+
+## Prepared daily feeds
+
+The external daily schema (`schema_version: 1.0`, issue_id `daily-YYYY-MM-DD`) is
+accepted by `rp import`, which converts it to this internal issue schema.
+`Edition.issue_title` retains the external issue title separately from the masthead.
+See [DAILY_IMPORT.md](DAILY_IMPORT.md) for lossless editorial section mapping and
+source validation.
+
+Edition-level `weather` overrides the issue fallback forecast, with the same
+validated snapshot schema and matching publication date. See WEATHER.md.

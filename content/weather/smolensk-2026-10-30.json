@@ -1,0 +1,38 @@
+{
+  "location": "smolensk",
+  "timezone": "Europe/Moscow",
+  "forecast_date": "2026-10-30",
+  "retrieved_at": "2026-10-30T13:42:40.113509Z",
+  "kind": "forecast",
+  "source_name": "Open-Meteo",
+  "source_url": "https://api.open-meteo.com/v1/forecast?latitude=54.7826&longitude=32.0453&timezone=Europe%2FMoscow&start_date=2026-10-30&end_date=2026-10-30&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+  "temperature_min_c": 4.2,
+  "temperature_max_c": 9.3,
+  "precipitation_probability_max": 15,
+  "slots": [
+    {
+      "hour": 9,
+      "temperature_c": 4.2,
+      "condition": "cloudy",
+      "precipitation_probability": 0,
+      "wind_speed_ms": 0.72,
+      "wind_direction_deg": 146
+    },
+    {
+      "hour": 12,
+      "temperature_c": 7.8,
+      "condition": "cloudy",
+      "precipitation_probability": 0,
+      "wind_speed_ms": 1.53,
+      "wind_direction_deg": 169
+    },
+    {
+      "hour": 18,
+      "temperature_c": 7.8,
+      "condition": "cloudy",
+      "precipitation_probability": 5,
+      "wind_speed_ms": 0.36,
+      "wind_direction_deg": 146
+    }
+  ]
+}

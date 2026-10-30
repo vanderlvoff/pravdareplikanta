@@ -2,7 +2,7 @@
 
 ## Objective
 
-A reproducible three-page A4 PDF edition in RU/EN/JA with the owner's approved Soviet *Pravda*-inspired masthead and medal block.
+A reproducible automatically paginated A4 PDF edition in RU/EN/JA with the owner's approved Soviet *Pravda*-inspired masthead and medal block.
 
 ## Geometry
 
@@ -25,7 +25,7 @@ A reproducible three-page A4 PDF edition in RU/EN/JA with the owner's approved S
 
 1. Validate all required assets present and hashes match a manifest.
 2. Render PDF with pinned Playwright browser, wait for fonts and images loaded.
-3. Extract PDF metadata: page count exactly 3 per locale, expected page dimensions A4.
+3. Extract PDF metadata: nonzero page count matching measured pagination per locale, expected page dimensions A4.
 4. Check for overflow via DOM geometry before printing (element scroll bounding comparisons, regions beyond page boundaries).
 5. Check text extraction includes mandatory masthead/date/issue number; PDF raster inspection for missing glyphs.
 6. Rasterize all pages and compare against approved golden images when available, using appropriate image difference tolerance.
@@ -47,6 +47,6 @@ Even after automated checks pass, human must inspect all three languages and mar
 ## Current local implementation
 
 See [PRINT.md](PRINT.md) for the implemented PDF workflow and measured limitations.
-By owner instruction, article fonts and Japanese quotation fonts are temporarily
-system fonts; they remain a reproducibility limitation until approved files arrive.
+By owner instruction, article fonts remain temporary system fonts. RU/EN mottos
+use bundled Caveat; the Japanese motto uses owner-selected bundled Zen Kurenaido.
 The 10mm print margins are provisional because full-page golden references are absent.

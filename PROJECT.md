@@ -10,7 +10,7 @@ Create a public, multilingual internet newspaper about Physical AI, titled **П�
 The newspaper has two distinct outputs built from a **single editorial dataset**:
 
 1. A responsive public website with news articles, issue archive, language navigation, permanent URLs and RSS.
-2. A print-ready newspaper PDF: **exactly three A4 pages per language** (RU, EN, JA), designed in the established Soviet *Pravda*-inspired newspaper style.
+2. A print-ready newspaper PDF: **automatically paginated A4 editions with no fixed page limit** (RU, EN, JA), designed in the established Soviet *Pravda*-inspired newspaper style.
 
 The masthead and its adornments must preserve the user's **already approved design**. Do NOT redesign or regenerate it based on a prose description. Approved assets must be explicitly supplied before finalizing the newspaper visuals.
 
@@ -38,7 +38,7 @@ The masthead and its adornments must preserve the user's **already approved desi
 ## 4. Immutable brand requirements
 
 - Print PDF must use the exact previously approved masthead composition, not an image generated anew.
-- Roy Batty portrait, three medals (Orion Falcon, Defense of Jupiter, Hero of Tannhäuser), typography, borders, offsets and alignment must come from approved files. Medals' inscriptions must match edition language where approved variants exist.
+- Owner-supplied hero portrait (`ly.png`, updated 2026-10-30), three medals (Orion Falcon, Defense of Jupiter, Hero of Tannhäuser), typography, borders, offsets and alignment must come from approved files. Medals' inscriptions must match edition language where approved variants exist.
 - Fonts, including user-supplied Caveat-Regular for quotations, must be bundled inside the project and embedded in exported PDFs where licensing permits.
 - Do not download, substitute, redraw, restyle, stretch, crop, or reflow approved assets without explicit approval.
 - Use visual regression image comparisons of PDF pages against a user-approved golden reference. If references are not supplied, mark visual approval BLOCKED; do not claim fidelity.
@@ -55,8 +55,8 @@ The masthead and its adornments must preserve the user's **already approved desi
 
 ### Editorial/build
 - Import and validate editorial JSON against schema.
-- Render website and three paper PDFs from common content; separate screen and print CSS layouts are permitted.
-- Fail loudly if fonts/images missing, schema invalid, pages are not exactly 3, or pages have clipped content.
+- Render website and RU/EN/JA paper PDFs from common content; separate screen and print CSS layouts are permitted.
+- Fail loudly if fonts/images missing, schema invalid, pages have clipped or overlapping content.
 - Produce preview images and a validation report before publication.
 - Atomic-style publication of a whole `dist/` snapshot; do not overwrite live site on failed build.
 - Local SQLite for optional drafts and publishing metadata; avoid needless backend complexity.
@@ -120,8 +120,8 @@ These commands are **design targets**, not existing code. Publishing must requir
 ## 9. Definition of done for MVP
 
 1. Fresh clone can install dependencies and build demo content on a Mac.
-2. A sample issue renders all three localized website editions and 3-page A4 PDFs.
-3. Each PDF reports 3 pages; no clipped text, missing glyphs or missing assets.
+2. A sample issue renders all three localized website editions and automatically paginated A4 PDFs.
+3. Each PDF reports its measured page count; no clipped or overlapping text, missing glyphs or missing assets.
 4. Approved masthead visual regression passes once source assets and golden reference are received.
 5. Local preview serves static pages and PDF without any external backend.
 6. Deployment script can publish `dist/` to an operator-owned Cloudflare Pages project.

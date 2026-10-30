@@ -1,83 +1,64 @@
-# Local three-page print proof
+# Local automatically paginated A4 proof
 
 Install on macOS Intel or Apple Silicon in the activated Python 3.12+ environment:
 
 ```sh
 python -m pip install -e '.[dev,pdf]'
 python -m playwright install chromium --only-shell
-rp build --issue 2026-10-29 --pdf --output previews/print-review
-rp verify --issue 2026-10-29 --output previews/print-review
+rp build --issue 2026-10-30 --content-dir content/imported-v1.2-review --pdf --output previews/print-review
+rp verify --issue 2026-10-30 --output previews/print-review
 rp preview --output previews/print-review
 ```
 
-The first installation downloads Chromium. Subsequent builds are offline. Node,
-Docker and a cloud account are not required. `--pdf` is opt-in; ordinary web builds
-still work without the PDF dependencies. Install errors are never worked around by
-silently selecting a system browser.
+Chromium downloads once; subsequent builds are offline. No Node, Docker or cloud
+account is required. Ordinary web builds work without PDF dependencies.
 
-Open `/ru/`, `/en/` or `/ja/` on the preview server and follow the PDF link. Files:
+## Pagination
 
-- `<lang>/issues/2026-10-29/edition.pdf`: three A4 portrait pages.
-- `<lang>/issues/2026-10-29/page-1.png` through `page-3.png`: raster previews.
-- `<lang>/print/`: generated print HTML (PDF is the authoritative print proof).
-- `verification.json`: geometry, resource, font and PDF checks, plus limitations.
-- `source.json`: exact issue data used in this build, including saved weather.
-- `artifacts.json`: SHA-256 inventory checked by `rp verify`.
+Owner decision on 2026-10-30 supersedes the earlier three-page rule. Each language
+gets as many A4 pages as needed. Text fills the left column, then the right column,
+then the next page. The final page balances its two columns and may have unused space below them. Articles follow
+section order: news, then analysis. Legacy `print_page` hints are accepted but ignored.
 
-Do not modify a successful snapshot or add diagnostic files inside it: verification
-rejects any changed inventory. Use a new output directory for each revision.
-Existing output is never overwritten. No publication command is provided.
+The first page keeps the supplied masthead, portrait/medals, weather and quote.
+Later pages have a compact masthead. Article text stays at 10pt and headlines at
+16pt. Columns, margins and artwork are never scaled to squeeze in more text.
+Margins remain provisional 10mm pending a full-page approved reference.
 
-## Editorial pagination
+Pinned Chromium measures font-loaded content before printing. Long plain-text
+paragraphs can continue in another column, splitting at word boundaries where
+available and Unicode character boundaries for Japanese. Headings reserve space
+for the start of the following text. Source links and list items remain independent
+blocks. An indivisible block taller than an empty column fails with a report.
 
-Each article has `print_page: 1`, `2` or `3` (default 1). The screen routes ignore this
-field. Print articles on each page flow through two fixed-width columns at 10pt;
-headlines use a fixed 16pt size. The masthead, weather and quotation appear on page
-one; pages two and three have a compact running masthead. Layout constants use mm
-and pt. Margins are provisional 10mm until a full-page approved reference exists.
+The generator checks page/column bounds and adjacent text blocks for clipping and
+intersection. It also records text fragments and verifies their PDF extraction,
+plus completeness against the original article text. A machine check cannot
+certify perfect visual harmony; inspect the raster previews for every language.
 
-The sample contains three short fictional editorial exercises, one per page, with
-explicit placeholder sources. It intentionally leaves ample whitespace; it is not a
-finished news issue or a density reference. A real editorial dataset can contain
-multiple articles on each page.
+## Artifacts and verification
 
-The renderer measures page regions and column overflow before printing. It never
-reduces all text to make it fit. On overflow it rejects the snapshot and writes
-`<output-name>.failed.json` next to the requested output directory. The report names
-the language, page and affected article IDs. Shorten or move articles in JSON and
-rebuild into a fresh directory. Previous successful snapshots remain untouched.
+- `<lang>/issues/<date>/edition.pdf`: variable-length A4 portrait edition.
+- `page-1.png` through `page-N.png`: every PDF page, rasterized for visual review.
+- `pagination.json`: measured page count, article fragments and column fill ratios.
+- `<lang>/print/`: persisted paginated HTML; PDF remains the print proof.
+- `source.json`: exact editorial input, including weather.
+- `verification.json`: geometry, resources, fonts and PDF checks.
+- `artifacts.json`: checksums validated by `rp verify`.
 
-## Renderer and verification
+Do not modify successful snapshots or add diagnostic files inside them. Build into
+a fresh directory each time. Failed builds write `<output-name>.failed.json` and do
+not replace a previous snapshot. Publishing remains a separate unimplemented step.
 
 Pinned tools: Playwright 1.56.0, Chromium 141.0.7390.37 (build 1194), PyMuPDF 1.26.5.
-The renderer requires the expected Playwright/Chromium versions and blocks external
-browser resource requests. Images and Caveat bytes come from the checked asset
-manifest. Chromium's generation timestamps are removed from PDFs; repeated builds
-are byte-identical in the tested local environment.
+External browser requests are blocked. Local assets are checksummed, and PDF time
+metadata is removed for deterministic repeated builds in the same environment.
+Verification also checks A4 dimensions, embedded fonts, RU/EN Caveat and Japanese Zen Kurenaido motto usage, missing
+text/glyph heuristics and snapshot integrity. Page counts may differ by language.
 
-Checks cover exactly three pages per language, A4 geometry (1pt renderer rounding
-tolerance), text within page bounds, expected article text, issue date/title,
-replacement/null characters, embedded font resources and RU/EN quotation glyphs
-actually using Caveat-Regular. All nine pages are rasterized. `rp verify` checks
-artifact hashes and repeats PDF checks without launching a browser or using the
-network. It requires a snapshot originally built with `--pdf`.
-
-Glyph/text checks are heuristics. A successful machine check cannot certify visual
-fidelity, every font glyph shape, or absence of every possible overlap. Inspect the
-nine PNG pages manually. Full-page golden comparisons remain pending.
-
-## Temporary font exception
-
-By owner instruction, article text/headlines and Japanese quotations currently use
-system fonts. Caveat-Regular is bundled and embedded for RU/EN quotations. The print
-report records actual quotation fonts and embedded PDF font resources. Japanese
-system glyphs may be embedded as Type3 outlines by Chromium.
-
-This is a NON-FINAL local proof. Cross-machine typography is not reproducible until
-body and Japanese quotation fonts are approved, bundled and checksummed. No supplied
-artwork is redrawn, cropped or distorted.
-
-## Tests
+Article fonts remain provisional system fonts by owner instruction. Motto fonts
+are bundled: Caveat for RU/EN and Zen Kurenaido for JA. Full-page golden references are still absent: visual approval
+is pending and cross-machine typography is not yet fully reproducible.
 
 ```sh
 pytest
@@ -86,6 +67,5 @@ ruff check .
 ruff format --check .
 ```
 
-The integration test renders all languages, checks nine page previews, compares
-repeated PDFs byte for byte, then intentionally overflows an article and requires a
-failed build plus an editorial report.
+Integration checks cover all three languages, repeated PDF byte equality, and a
+long article continuing beyond three pages with full text preserved.

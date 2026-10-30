@@ -37,15 +37,19 @@ class Article(Record):
     slug: Slug
     category: Literal["news", "analysis", "opinion", "satire"]
     headline: Text
-    dek: Text
+    dek: str = ""
     body: list[Annotated[TextBlock | ListBlock, Field(discriminator="type")]] = Field(min_length=1)
     sources: list[Source] = Field(min_length=1)
     image_asset_id: None = None
-    print_page: Literal[1, 2, 3] = 1
+    print_page: int = Field(
+        default=1, ge=1, description="Legacy hint; automatic pagination ignores this field"
+    )
 
 
 class Edition(Record):
     title: Text
+    weather: Weather | None = None
+    issue_title: str = ""
     editorial_note: str = ""
     articles: list[Article] = Field(min_length=1)
 
@@ -71,6 +75,11 @@ class Issue(Record):
     def parallel_editions(self) -> "Issue":
         if self.weather and self.weather.forecast_date != self.publication_date:
             raise ValueError("Weather date must match issue publication_date")
+        if any(
+            edition.weather and edition.weather.forecast_date != self.publication_date
+            for edition in self.languages.values()
+        ):
+            raise ValueError("Edition weather date must match issue publication_date")
         if set(self.languages) != {"ru", "en", "ja"}:
             raise ValueError("All RU, EN and JA editions are required")
         ids = [{a.id for a in edition.articles} for edition in self.languages.values()]

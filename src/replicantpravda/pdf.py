@@ -1,5 +1,6 @@
 """Pinned Chromium rendering with geometry checks before PDF creation."""
 
+import json
 import threading
 from functools import partial
 from http.server import SimpleHTTPRequestHandler
@@ -33,10 +34,20 @@ GEOMETRY_CHECK = """() => {
         }
       }
     }
+    for (const column of sheet.querySelectorAll('.print-column')) {
+      const blocks = [...column.querySelectorAll('p,h2,h3,li,blockquote')];
+      for (let index = 1; index < blocks.length; index++) {
+        if (blocks[index - 1].getBoundingClientRect().bottom >
+            blocks[index].getBoundingClientRect().top + 1) {
+          problems.push({page: Number(sheet.dataset.page), reason: 'Overlapping text blocks',
+            article: blocks[index].closest('[data-article]')?.dataset.article || null});
+        }
+      }
+    }
     const columns = sheet.querySelector('.article-columns');
     if (columns.scrollWidth > columns.clientWidth + 1 ||
         columns.scrollHeight > columns.clientHeight + 1) {
-      problems.push({page: Number(sheet.dataset.page), reason: 'Article columns overflow',
+      problems.push({page: Number(sheet.dataset.page), reason: 'Article columns overflow', dimensions: {width: columns.clientWidth, scrollWidth: columns.scrollWidth, height: columns.clientHeight, scrollHeight: columns.scrollHeight},
         articles: [...columns.querySelectorAll('[data-article]')].map(e => e.dataset.article)});
     }
   }
@@ -93,7 +104,9 @@ def render_pdfs(site: Path, issue: Issue) -> dict:
                 loaded = page.locator("img").evaluate_all(
                     "es => es.every(e => e.complete && e.naturalWidth > 0)"
                 )
-                geometry = page.evaluate(GEOMETRY_CHECK)
+                pagination = page.evaluate("window.paginateNewspaper()")
+                page.evaluate("document.fonts.ready")
+                geometry = pagination["errors"] + page.evaluate(GEOMETRY_CHECK)
                 current = {"resource_errors": errors, "images_loaded": loaded, "overflow": geometry}
                 report["editions"][lang] = current
                 if errors or not loaded or geometry:
@@ -108,15 +121,18 @@ def render_pdfs(site: Path, issue: Issue) -> dict:
                 )
                 fonts = session.send("CSS.getPlatformFontsForNode", {"nodeId": node["nodeId"]})
                 current["quote_fonts"] = fonts["fonts"]
-                if lang != "ja" and (
-                    not fonts["fonts"]
-                    or any(
-                        not f["isCustomFont"] or f["postScriptName"] != "Caveat-Regular"
-                        for f in fonts["fonts"]
-                    )
+                expected_font = "ZenKurenaido-Regular" if lang == "ja" else "Caveat-Regular"
+                if not fonts["fonts"] or any(
+                    not f["isCustomFont"] or f["postScriptName"] != expected_font
+                    for f in fonts["fonts"]
                 ):
                     raise PrintFailure(report)
                 pdf_path = site / lang / "issues" / str(issue.issue_id) / "edition.pdf"
+                pdf_path.with_name("pagination.json").write_text(
+                    json.dumps(pagination, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+                )
+                current["pagination"] = {"page_count": pagination["page_count"]}
+                (site / lang / "print/index.html").write_text(page.content(), encoding="utf-8")
                 page.pdf(
                     path=str(pdf_path),
                     prefer_css_page_size=True,
@@ -139,7 +155,7 @@ def render_pdfs(site: Path, issue: Issue) -> dict:
         server.shutdown()
         server.server_close()
     report["warnings"] = [
-        "Article and Japanese quotation fonts are provisional system fonts.",
+        "Article fonts remain provisional system fonts; motto fonts are bundled.",
         "Full-page golden references absent; visual approval pending.",
         "Glyph checks are text-extraction heuristics; inspect raster previews.",
     ]
