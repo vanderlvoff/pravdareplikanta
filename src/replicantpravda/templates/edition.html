@@ -12,6 +12,7 @@
   <article>
     {% if article.category in labels.article_kinds %}<p class="article-kind">{{ labels.article_kinds[article.category] }}</p>{% endif %}
     <h2><a href="/{{ lang }}/articles/{{ article.slug }}/">{{ article.headline }}</a></h2>
+    {% include "illustration.html" %}
     {% if article.dek %}<p>{{ article.dek }}</p>{% elif article.body[0].type == "paragraph" %}<p>{{ article.body[0].text }}</p>{% endif %}
   </article>
   {% endfor %}

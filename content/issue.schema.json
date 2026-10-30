@@ -66,6 +66,17 @@
           "title": "Sources",
           "type": "array"
         },
+        "image": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ArticleImage"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
         "image_asset_id": {
           "default": null,
           "title": "Image Asset Id",
@@ -88,6 +99,47 @@
         "sources"
       ],
       "title": "Article",
+      "type": "object"
+    },
+    "ArticleImage": {
+      "additionalProperties": false,
+      "properties": {
+        "url": {
+          "format": "uri",
+          "maxLength": 2083,
+          "minLength": 1,
+          "title": "Url",
+          "type": "string"
+        },
+        "path": {
+          "pattern": "^data/images/\\d{4}-\\d{2}-\\d{2}/[a-z0-9]+(?:-[a-z0-9]+)*\\.webp$",
+          "title": "Path",
+          "type": "string"
+        },
+        "type": {
+          "const": "generated",
+          "title": "Type",
+          "type": "string"
+        },
+        "caption": {
+          "minLength": 1,
+          "title": "Caption",
+          "type": "string"
+        },
+        "alt": {
+          "minLength": 1,
+          "title": "Alt",
+          "type": "string"
+        }
+      },
+      "required": [
+        "url",
+        "path",
+        "type",
+        "caption",
+        "alt"
+      ],
+      "title": "ArticleImage",
       "type": "object"
     },
     "Edition": {

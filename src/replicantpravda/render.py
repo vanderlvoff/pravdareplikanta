@@ -12,11 +12,13 @@ from jinja2 import Environment, PackageLoader, select_autoescape
 
 from .assets import copy_assets
 from .models import Issue
+from .illustrations import copy_illustrations
 from .verification import artifact_hashes
 
 LABELS = {
     "en": {
         "proof": "NON-FINAL",
+        "generated_illustration": "AI-generated illustration",
         "pdf": "PDF edition · A4",
         "kicker": "Physical AI — the path to a beautiful tomorrow.",
         "sections": {"news": "News", "analysis": "Analysis"},
@@ -32,6 +34,7 @@ LABELS = {
     },
     "ru": {
         "proof": "ПРОБНЫЙ МАКЕТ",
+        "generated_illustration": "Иллюстрация, созданная ИИ",
         "pdf": "PDF выпуска · A4",
         "kicker": "Physical AI — путь в прекрасное далёко.",
         "sections": {"news": "Новости", "analysis": "Анализ"},
@@ -47,6 +50,7 @@ LABELS = {
     },
     "ja": {
         "proof": "非最終版",
+        "generated_illustration": "AI生成イラスト",
         "pdf": "PDF版 · A4",
         "kicker": "Physical AI — 素晴らしい未来への道。",
         "sections": {"news": "ニュース", "analysis": "分析"},
@@ -67,7 +71,14 @@ def load_issue(path: Path) -> Issue:
     return Issue.model_validate_json(path.read_text(encoding="utf-8"))
 
 
-def build(issue: Issue, output: Path, assets: Path = Path("assets"), *, pdf: bool = False) -> None:
+def build(
+    issue: Issue,
+    output: Path,
+    assets: Path = Path("assets"),
+    *,
+    pdf: bool = False,
+    image_root: Path = Path("."),
+) -> None:
     """Build one isolated preview snapshot. Refuse to overwrite existing output."""
     output = output.absolute()
     if output.exists():
@@ -78,6 +89,7 @@ def build(issue: Issue, output: Path, assets: Path = Path("assets"), *, pdf: boo
         staging = Path(temporary) / "site"
         staging.mkdir()
         copy_assets(assets, staging / "assets")
+        illustration_assets = copy_illustrations(issue, image_root, staging)
         brand = json.loads(env.loader.get_source(env, "brand.json")[0])
         weather_labels = json.loads(env.loader.get_source(env, "weather-labels.json")[0])
 
@@ -86,6 +98,8 @@ def build(issue: Issue, output: Path, assets: Path = Path("assets"), *, pdf: boo
             destination.parent.mkdir(parents=True, exist_ok=True)
             destination.write_text(content, encoding="utf-8")
 
+        if illustration_assets:
+            write("illustrations.json", json.dumps(illustration_assets, indent=2) + "\n")
         style = env.loader.get_source(env, "style.css")[0]
         write("style.css", style)
         style_version = hashlib.sha256(style.encode()).hexdigest()[:12]
@@ -101,6 +115,7 @@ def build(issue: Issue, output: Path, assets: Path = Path("assets"), *, pdf: boo
                 issue=issue,
                 lang=lang,
                 edition=edition,
+                illustration_assets=illustration_assets,
                 labels=LABELS[lang],
                 brand=brand.get(lang),
                 style_version=style_version,

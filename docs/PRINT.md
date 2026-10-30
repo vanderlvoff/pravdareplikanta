@@ -69,3 +69,13 @@ ruff format --check .
 
 Integration checks cover all three languages, repeated PDF byte equality, and a
 long article continuing beyond three pages with full text preserved.
+
+## Editorial illustrations
+
+Image dimensions are read before layout and included as HTML width/height to
+reserve geometry. Figures keep their aspect ratio, are limited to 65mm image
+height and continue as indivisible units with their captions. The renderer waits
+for cloned figure images to decode, checks figure bounds/adjacent blocks, and
+records image placement by article/page. Verification compares placements and
+caption extraction with source JSON. `RP_TEST_PDF=1 pytest tests/test_illustrations.py`
+exercises all languages using clearly marked non-final fixture artwork.

@@ -124,3 +124,9 @@ p, li, blockquote { white-space: pre-line; overflow-wrap: anywhere; }
 @media screen and (max-width: 700px) {
   .strapline:lang(ja) { font-size: clamp(7px, 2.1vw, 9px); letter-spacing: 0; }
 }
+
+.article-illustration { margin: 14px 0; break-inside: avoid; }
+.article-illustration img { display: block; width: 100%; height: auto; filter: grayscale(1); }
+.article-illustration figcaption { font-size: 12px; line-height: 1.4; margin-top: 6px; color: #444; }
+.illustration-kind { font-weight: 700; }
+.article-detail > .article-illustration { max-width: 760px; margin-inline: auto; }

@@ -42,7 +42,9 @@ reference. EN quotation is included; JA quotation uses owner-supplied wording. A
 remain provisional system fonts by owner instruction. Full-page golden references
 and visual approval are still required. Unicode and explicit line-break preservation
 are tested; RU/EN quotation font usage is also checked in Chrome.
-Images are intentionally rejected until reviewed asset and licensing handling exists.
+Daily v1.3 feeds support two owner-supplied generated editorial WebP illustrations
+per language. Images are copied from local `data/images/` with localized captions
+and alt text; builds never include remote files. See [daily import](docs/DAILY_IMPORT.md).
 
 Local PDF support now generates as many A4 pages per language as needed, with clipping/overlap
 checks, embedded Caveat, raster previews and snapshot verification. See

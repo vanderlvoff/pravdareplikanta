@@ -103,6 +103,23 @@ def verify_pdf(path: Path, issue: Issue, lang: str, *, rasterize: bool = False) 
                     "text_characters": len(text),
                 }
             )
+        expected_images = sorted(
+            (article.id, "/" + article.image.path)
+            for article in issue.languages[lang].articles
+            if article.image
+        )
+        if expected_images:
+            if (
+                not layout
+                or sorted((image["article"], image["src"]) for image in layout.get("images", []))
+                != expected_images
+            ):
+                errors.append("PDF illustration placement differs from source")
+            for article in issue.languages[lang].articles:
+                if article.image and normalized(article.image.caption) not in normalized(
+                    "".join(page.get_text() for page in document)
+                ):
+                    errors.append(f"Missing illustration caption ({article.id})")
         # Verify source coverage independently of page assignments and fragment boundaries.
         all_text = normalized("".join(page.get_text() for page in document))
         expected_ids = {article.id for article in issue.languages[lang].articles}

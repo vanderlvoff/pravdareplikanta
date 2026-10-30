@@ -61,3 +61,7 @@ article .article-kind { font-size: 7pt; margin: 0; break-after: avoid; }
 article .source-line { font-size: 7pt; }
 article p.source-line { margin-bottom: 1mm; }
 article h3.source-line { margin: 1mm 0; }
+
+.print-column .article-illustration { margin: 1.5mm 0 2mm; }
+.print-column .article-illustration img { width: 100%; height: auto; max-height: 65mm; object-fit: contain; }
+.print-column .article-illustration figcaption { font-size: 7pt; line-height: 1.25; margin-top: 1mm; color: #111; }

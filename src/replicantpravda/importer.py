@@ -10,7 +10,7 @@ from urllib.parse import urlsplit
 
 from pydantic import AwareDatetime, Field, HttpUrl, model_validator
 
-from .models import Article, Edition, Issue, Record, Slug, Source, Text
+from .models import Article, ArticleImage, Edition, Issue, Record, Slug, Source, Text
 
 
 class FeedSource(Record):
@@ -30,6 +30,7 @@ class FeedSource(Record):
 
 
 class FeedNews(Record):
+    image: ArticleImage | None = None
     id: Slug
     title: Text
     body: Text | Annotated[list[Text], Field(min_length=1)] = Field(
@@ -59,7 +60,7 @@ class GlossaryEntry(Record):
 
 
 class FeedEdition(Record):
-    schema_version: Literal["1.0", "1.2"]
+    schema_version: Literal["1.0", "1.2", "1.3"]
     publication: Literal["pravda_replikanta"]
     issue_type: Literal["daily"]
     issue_date: date
@@ -77,6 +78,13 @@ class FeedEdition(Record):
     def consistent(self) -> "FeedEdition":
         if self.issue_id != f"daily-{self.issue_date}":
             raise ValueError("Feed issue_id differs from issue_date")
+        if self.schema_version == "1.3":
+            if sum(item.image is not None for item in self.news) != 2:
+                raise ValueError("Feed v1.3 requires exactly two illustrated news articles")
+            if any("image" not in item.model_fields_set for item in self.news):
+                raise ValueError("Feed v1.3 requires image (object or null) on every news item")
+            if len(self.news) > 10 or len(self.glossary) > 12:
+                raise ValueError("Feed v1.3 exceeds news/glossary limits")
         ids = [item.id for item in self.news]
         source_ids = [item.id for item in self.sources]
         if len(ids) != len(set(ids)) or len(source_ids) != len(set(source_ids)):
@@ -135,6 +143,10 @@ def import_feed(folder: Path, template: Issue, *, number: int, revision: int) ->
             raise ValueError("News IDs differ across language editions")
         if len(feed.glossary) != len(reference.glossary):
             raise ValueError("Glossary entries missing in a language edition")
+        if {n.id: (n.image.path, str(n.image.url)) for n in feed.news if n.image} != {
+            n.id: (n.image.path, str(n.image.url)) for n in reference.news if n.image
+        }:
+            raise ValueError("Illustrations differ across language editions")
         identity = {(s.id, str(s.url), s.published_at) for s in feed.sources}
         if identity != {(s.id, str(s.url), s.published_at) for s in reference.sources}:
             raise ValueError("Source IDs, URLs or dates differ across language editions")
@@ -162,6 +174,7 @@ def import_feed(folder: Path, template: Issue, *, number: int, revision: int) ->
                     id=item.id,
                     slug=item.id,
                     category="news",
+                    image=item.image,
                     headline=item.title,
                     dek="",
                     body=blocks,

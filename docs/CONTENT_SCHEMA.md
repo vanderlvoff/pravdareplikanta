@@ -39,7 +39,7 @@ The canonical source of each issue is versioned JSON; the website and paper PDF 
 - All language editions have identical article `id` for cross-language linking, but may contain editorially adapted text.
 - Store sources per article (URL, title, source publication date, retrieval date when available).
 - Use an allowlist for body block types (`paragraph`, `heading`, `quote`, `list`, `image`, `caption`), not arbitrary HTML from LLM output.
-- HTML escaping is mandatory. Images are separately reviewed and stored in `assets/`.
+- HTML escaping is mandatory. Brand images are stored in `assets/`; reviewed editorial WebPs live in `data/images/`.
 - Missing translation, article citation, or license metadata should be surfaced in a validation report; the editorial policy decides whether publication is blocked.
 - The example has intentionally incomplete EN/JA content and must fail full tri-language publishing validation.
 - Use stable UTF-8 and language-specific font stacks for Cyrillic, Latin and Japanese.
@@ -67,3 +67,10 @@ source validation.
 
 Edition-level `weather` overrides the issue fallback forecast, with the same
 validated snapshot schema and matching publication date. See WEATHER.md.
+
+## Article illustration
+
+`Article.image` is optional. For v1.3 feed imports it maps the supplied generated
+image metadata directly: repository WebP `path`, matching HTTPS `url`, `type`,
+localized `caption` and `alt`. Builds copy the referenced local file only; no
+remote inclusion. See DAILY_IMPORT.md for validation and output behavior.

@@ -21,6 +21,7 @@
         {% if article.category in labels.article_kinds %}<p class="article-kind">{{ labels.article_kinds[article.category] }}</p>{% endif %}
         <h2>{{ article.headline }}</h2>
         {% if article.dek %}<p class="dek">{{ article.dek }}</p>{% endif %}
+        {% include "illustration.html" %}
         {% include "article-body.html" %}
         <footer class="article-sources"><h3>{{ labels.sources }}</h3>{% for source in article.sources %}<p><a href="{{ source.url }}">{{ source.title }}</a> · {{ source.published_at }}</p>{% endfor %}</footer>
       </article>

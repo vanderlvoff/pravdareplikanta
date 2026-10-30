@@ -32,7 +32,7 @@ window.paginateNewspaper = () => {
   }
   function fits() {
     const bottom = column.getBoundingClientRect().bottom;
-    return [...column.querySelectorAll('p,h2,h3,li,blockquote')].every(
+    return [...column.querySelectorAll('p,h2,h3,li,blockquote,figure')].every(
       e => e.getBoundingClientRect().bottom <= bottom - 2
     ) && column.scrollHeight <= column.clientHeight + 1;
   }
@@ -154,10 +154,14 @@ window.paginateNewspaper = () => {
     refill(Math.min(height, high + 1));
   }
   const articles = {};
+  const images = [];
   sheets.forEach((page, index) => {
     page.dataset.page = index + 1;
     page.querySelector('.page-number').textContent = `${index + 1} / ${sheets.length}`;
     page.querySelectorAll('[data-article]').forEach(article => {
+      article.querySelectorAll('.article-illustration img').forEach(image => {
+        images.push({article: article.dataset.article, page: index + 1, src: image.getAttribute('src')});
+      });
       (articles[article.dataset.article] ||= []).push({page: index + 1, text: article.textContent});
     });
   });
@@ -169,5 +173,5 @@ window.paginateNewspaper = () => {
         col.getBoundingClientRect().top) / col.clientHeight) / 1000 : 0;
     })
   }));
-  return {page_count: sheets.length, articles, columns, errors};
+  return {page_count: sheets.length, articles, images, columns, errors};
 };

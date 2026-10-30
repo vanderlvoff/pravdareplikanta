@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Added daily feed v1.3 support for exactly two shared, localized editorial illustrations per edition.
+- Added offline WebP copying, path/URL validation, source checksums, accessible figures and AI illustration labels in web and print.
+- Integrated indivisible figures into automatic pagination, with image loading, placement and caption verification.
+
 - Added the same small weather country label to the Russian edition: Итикава (Япония).
 
 - Set the Japanese translated title and strapline on one line; added small country labels beside EN/JA weather cities without uppercase transformation.

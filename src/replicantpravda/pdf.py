@@ -20,7 +20,7 @@ GEOMETRY_CHECK = """() => {
     const bounds = sheet.getBoundingClientRect();
     const body = sheet.querySelector('.page-body');
     const region = body.getBoundingClientRect();
-    for (const element of sheet.querySelectorAll('p,h1,h2,h3,li,blockquote,img,.page-footer')) {
+    for (const element of sheet.querySelectorAll('p,h1,h2,h3,li,blockquote,img,figure,figcaption,.page-footer')) {
       const insideArticle = element.closest('[data-article]');
       const limit = insideArticle ? region : bounds;
       for (const rect of element.getClientRects()) {
@@ -35,7 +35,7 @@ GEOMETRY_CHECK = """() => {
       }
     }
     for (const column of sheet.querySelectorAll('.print-column')) {
-      const blocks = [...column.querySelectorAll('p,h2,h3,li,blockquote')];
+      const blocks = [...column.querySelectorAll('p,h2,h3,li,blockquote,figure')];
       for (let index = 1; index < blocks.length; index++) {
         if (blocks[index - 1].getBoundingClientRect().bottom >
             blocks[index].getBoundingClientRect().top + 1) {
@@ -105,7 +105,13 @@ def render_pdfs(site: Path, issue: Issue) -> dict:
                     "es => es.every(e => e.complete && e.naturalWidth > 0)"
                 )
                 pagination = page.evaluate("window.paginateNewspaper()")
-                page.evaluate("document.fonts.ready")
+                page.evaluate("""async () => {
+                    await document.fonts.ready;
+                    await Promise.all([...document.images].map(image => image.decode().catch(() => {})));
+                }""")
+                loaded = page.locator("img").evaluate_all(
+                    "es => es.every(e => e.complete && e.naturalWidth > 0)"
+                )
                 geometry = pagination["errors"] + page.evaluate(GEOMETRY_CHECK)
                 current = {"resource_errors": errors, "images_loaded": loaded, "overflow": geometry}
                 report["editions"][lang] = current
