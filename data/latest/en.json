@@ -29,8 +29,8 @@
         "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-30/vla-stem.webp",
         "path": "data/images/2026-10-30/vla-stem.webp",
         "type": "generated",
-        "caption": "AI-generated conceptual illustration of a robot handling an object, not an actual experimental image.",
-        "alt": "Stylized humanoid robot reaching toward an object on a work surface."
+        "caption": "AI-generated technical diagram: a local safety controller adjusts a VLA reference trajectory to avoid an obstacle. This illustrates a general principle, not a specific experimental result.",
+        "alt": "Robot arm and obstacle, with a red reference path and green corrected path; below, a camera-to-action-to-safety-controller-to-actuator flow."
       }
     },
     {
@@ -161,8 +161,8 @@
         "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-30/tokio-robot-insurance.webp",
         "path": "data/images/2026-10-30/tokio-robot-insurance.webp",
         "type": "generated",
-        "caption": "AI-generated conceptual illustration: a shield symbolizes robot insurance, not an actual product.",
-        "alt": "Stylized robot inside a protective shield, flanked by cargo boxes."
+        "caption": "AI-generated conceptual technical illustration: an autonomous transport robot stops and a worker takes over the material-handling task. This is not a depiction of an insurance product.",
+        "alt": "Three stages of operations: autonomous load transport, robot stoppage with warning, and continued work by a person using a manual trolley; a clock indicates downtime."
       }
     }
   ],
