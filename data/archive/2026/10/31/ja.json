@@ -5,7 +5,7 @@
   "issue_date": "2026-10-31",
   "issue_id": "daily-2026-10-31",
   "language": "ja",
-  "generated_at": "2026-10-31T01:17:54+09:00",
+  "generated_at": "2026-10-31T03:22:03.168+09:00",
   "title": "レプリカント・プラウダ — Physical AI、2026年10月31日",
   "lead": "触覚工具、シミュレーション、タスク復旧、日本の物流導入、商用拡大の経済性をめぐる8件の動向。",
   "news": [
@@ -29,8 +29,8 @@
         "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-31/swapbot-tools.webp",
         "path": "data/images/2026-10-31/swapbot-tools.webp",
         "type": "generated",
-        "caption": "AI生成の技術概念図。共通結合部、触覚付きアダプター、3種類の交換工具を示す。実験写真ではない。",
-        "alt": "ロボットアームの工具交換部、触覚センサー、複数の交換工具を示した模式図。"
+        "caption": "SwapBotの原理を示す概念的なAI生成イラスト。ロボットが交換式ヘラを使い、共通接続部を持つ別の工具も示す。実験の記録写真ではない。",
+        "alt": "関節式ロボットがフライパン内の豆腐をヘラですくい、そばに交換用のブラシとトングが置かれた立体的な概念図。"
       }
     },
     {
@@ -107,8 +107,8 @@
         "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-31/aeon-mixed-palletizing.webp",
         "path": "data/images/2026-10-31/aeon-mixed-palletizing.webp",
         "type": "generated",
-        "caption": "AI生成の概念図。混載計画、3Dビジョンによるフィードバック、倉庫制御の連携を示す。イオン施設の実写ではない。",
-        "alt": "異なる箱を載せたコンベヤー、積み付けロボット、上部3Dカメラ、倉庫制御の接続を示す模式図。"
+        "caption": "混載パレタイジングの原理を示す概念的なAI生成イラスト。ロボットによる箱の配置と、計画した積み付けと実際の状態を照合する三次元表現を描く。イオンの実機を再現したものではない。",
+        "alt": "左側にデジタル上の工程表現、右側にパレットへ箱を積むロボットと荷姿の観測を描いた概念的な技術図。"
       }
     },
     {

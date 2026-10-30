@@ -5,7 +5,7 @@
   "issue_date": "2026-10-31",
   "issue_id": "daily-2026-10-31",
   "language": "en",
-  "generated_at": "2026-10-31T01:17:54+09:00",
+  "generated_at": "2026-10-31T03:22:03.168+09:00",
   "title": "Replicant Pravda — Physical AI, 31 October 2026",
   "lead": "Eight developments in embodied AI: tactile tools, simulation, recoverable task execution, Japanese warehouse deployment and the economics of scaling.",
   "news": [
@@ -29,8 +29,8 @@
         "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-31/swapbot-tools.webp",
         "path": "data/images/2026-10-31/swapbot-tools.webp",
         "type": "generated",
-        "caption": "AI-generated technical illustration of a common robot coupling, tactile-equipped adapters and three interchangeable tools; conceptual, not an experimental photograph.",
-        "alt": "Diagram of an articulated arm with a quick-change coupling, tactile sensor pads and separate interchangeable utensils."
+        "caption": "Conceptual AI-generated illustration of the SwapBot principle: a robot arm uses an interchangeable spatula, with alternative tools sharing a coupling interface. Not an experimental photograph.",
+        "alt": "Three-dimensional conceptual scene of an articulated robot lifting tofu with a spatula in a pan; a brush and tongs are arranged beside it."
       }
     },
     {
@@ -107,8 +107,8 @@
         "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-31/aeon-mixed-palletizing.webp",
         "path": "data/images/2026-10-31/aeon-mixed-palletizing.webp",
         "type": "generated",
-        "caption": "AI-generated conceptual illustration of mixed-case palletizing with order planning, 3D vision feedback and warehouse coordination; not a photograph of the Aeon facility.",
-        "alt": "Diagram of mixed cartons on a conveyor, a robot arm stacking boxes, overhead 3D camera and warehouse control links."
+        "caption": "Conceptual AI-generated illustration of robotic mixed-case palletizing: a robot places a box while a three-dimensional representation helps relate the planned stack to observed reality. Not a depiction of Aeon's actual equipment.",
+        "alt": "Conceptual technical scene showing a robot stacking cartons on a pallet, with a digital process representation on the left and the physical operation and load-position observation on the right."
       }
     },
     {
