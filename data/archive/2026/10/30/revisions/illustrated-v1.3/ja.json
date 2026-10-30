@@ -1,0 +1,278 @@
+{
+  "schema_version": "1.3",
+  "publication": "pravda_replikanta",
+  "issue_type": "daily",
+  "issue_date": "2026-10-30",
+  "issue_id": "daily-2026-10-30",
+  "language": "ja",
+  "generated_at": "2026-10-30T01:46:55+09:00",
+  "title": "レプリカント・プラウダ — 技術データ、10月30日",
+  "lead": "VLAの安全実行、操作の高速化、デモ収集、ヒューマノイド移動制御。日本ではロボット停止リスクへの保険も動き始めた。",
+  "news": [
+    {
+      "id": "vla-stem",
+      "title": "VLA-Stem、基盤VLAを再学習せずに反射的な安全制御を追加",
+      "summary": "別の強化学習ポリシーが障害物に応じて動作チャンクの実行を調整し、VLAの作業意図を維持する。",
+      "details": "基盤VLAの動作チャンクを参照軌道に変換し、固有受容感覚と周辺障害物の情報を使う局所ポリシーが動きとタイミングを修正する。制約付きのシミュレーション6条件で、衝突なしの平均タスク成功率は52.8%。比較対象で最良の安全手法の23.7%を上回り、実機試験でも衝突低減が報告された。",
+      "technical_novelty": "高水準のVLA意図と即応的な局所RL補正を分離し、教師・生徒蒸留とカリキュラム学習で訓練する。",
+      "engineering_impact": "障害物回避の大量デモを追加収集せず、既存VLAに安全レイヤーを重ねる選択肢となる。",
+      "limitations": "対象タスクと基盤ポリシーは限定的で、産業用途の安全認証や汎用的な信頼性は示されていない。",
+      "evidence_status": "シミュレーションと限定的な実機試験を含むプレプリント。独立再現は未確認。",
+      "published_at": "2026-10-27",
+      "organization": "VLA-Stem research team",
+      "source_ids": [
+        "stem"
+      ],
+      "time_window": "72h",
+      "body": "指示を理解したVLAでも、腕を障害物にぶつけることはある。VLA-Stemは基盤モデルを再学習せず、予測された動作列を参照軌道に変換して高速な補正制御を重ねる。機体の状態と周辺障害物を見ながら、作業の目的を保ったまま動きを調整する。\n\n制約付きシミュレーション6条件で、衝突なしの平均成功率は52.8%。比較対象で最良の手法の23.7%を上回った。実機でも衝突低減が報告される。ただし対象は限られ、産業用途の安全認証や独立した再現試験を意味するものではない。",
+      "image": {
+        "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-30/vla-stem.webp",
+        "path": "data/images/2026-10-30/vla-stem.webp",
+        "type": "generated",
+        "caption": "AI生成の概念イラスト。ロボットによる物体操作を表現したもので、実際の実験画像ではない。",
+        "alt": "作業台の物体に手を伸ばす、図案化された人型ロボット。"
+      }
+    },
+    {
+      "id": "tops-flow",
+      "title": "TOPS、ネットワーク構造を変えずにflow型操作ポリシーを高速化",
+      "summary": "タスク別の初期分布と生成スケジュールにより、LIBERO-10成功率が53.44%から69.67%に向上した。",
+      "details": "MARS Labは言語で指定された各タスクに固有の開始分布と非線形な輸送スケジュールを導入した。LIBERO-10ではTOPSの1ステップが標準flow matchingの10ステップを上回り、推論時間は約6分の1となった。実機の上段引き出し開放では80%対20%の成功率を報告している。",
+      "technical_novelty": "ネットワークを維持したまま、task-oriented priorsと分布拡張方向のslow-then-fast輸送を用いる。",
+      "engineering_impact": "低遅延化は閉ループ操作や計算資源の限られたエッジ実装に有効となり得る。",
+      "limitations": "結果はベンチマーク、ソルバー、設定に依存し、全VLAへの一般化は保証されない。",
+      "evidence_status": "プレプリントと研究チームのサイトに評価と実機デモがある。独立検証は未確認。",
+      "published_at": "2026-10-27",
+      "organization": "Nanyang Technological University / MARS Lab",
+      "source_ids": [
+        "tops"
+      ],
+      "time_window": "72h",
+      "body": "操作を速くするのに、必ずしもネットワークを大きくする必要はない。TOPSはflow型の動作生成で、出発点となる分布と目標へ向かう過程をタスク別に調整する。モデルの構造はそのままだ。\n\nLIBERO-10では1ステップで成功率69.67%を達成し、標準flow matchingの10ステップによる53.44%を上回った。推論時間は約6分の1。実機の上段引き出し開放でも80%対20%と報告する。閉ループ制御には有望だが、結果は評価条件に依存する。",
+      "image": null
+    },
+    {
+      "id": "openjaws-stereo",
+      "title": "OpenJaws、ステレオ測位を備えたオープンなデモ収集グリッパー",
+      "summary": "ロボットを使わずに手持ちUMIデバイスでメートル尺度の動作軌跡を記録する。",
+      "details": "3DプリントのグリッパーにISO取付フランジとステレオカメラを組み合わせ、部品費は約400米ドルとする。UMI-Loc-Bench-v1は9タスクの90デモを含み、オフラインのステレオ手法COLMAPで測位誤差2.9 mmを報告。収集データで学習したポリシーはUR10の2タスクで、それぞれ10試行中90%の成功率を示した。",
+      "technical_novelty": "収集用デバイスと実機グリッパーを共通設計し、単眼SLAMの絶対スケール不定性を回避する。",
+      "engineering_impact": "デモ収集コストとUMIから実機への移行誤差を抑えられる可能性がある。",
+      "limitations": "プロジェクトページのコード、ハードウェア、データセットへの一部リンクはComing Soon表示で、実機評価の試行数も少ない。",
+      "evidence_status": "プレプリントと著者のデモ。公開予定物の提供状況には追加確認が必要。",
+      "published_at": "2026-10-27",
+      "organization": "NVIDIA Research / OpenJaws team",
+      "source_ids": [
+        "openjaws"
+      ],
+      "time_window": "72h",
+      "body": "ロボットに作業を教えるには、まず手本を記録する必要がある。OpenJawsでは人がステレオカメラ付きグリッパーを持って操作し、実機なしで実寸の軌跡を収集する。単眼方式の絶対スケールの曖昧さを避けられる。\n\n部品費は約400米ドル。9課題90件のデモからなるベンチマークで、オフラインのステレオ手法COLMAPは位置誤差2.9 mmを示した。UR10の2課題はそれぞれ成功率90%だが、各10試行に限られる。コードやハードウェアの一部はComing Soon表示で、公開の完成度は確認が必要だ。",
+      "image": null
+    },
+    {
+      "id": "roboauto-programs",
+      "title": "RoboAuto、物理仮説の検証を通じてロボットプログラムを探索",
+      "summary": "スキル集、物体知識、実験を組み合わせ、操作が意図した状態変化を生んだか検証する。",
+      "details": "RoboAutoはアフォーダンス、空間関係、操作効果を保持し、現場の観測に対応付けて多段階プログラムの中間結果を確認する。短期LIBERO-PROで89.1%、LIBERO-PRO LongではASPIREの30.8%に対し73.4%の成功率を報告。実機で難度の高い操作3タスクも評価した。",
+      "technical_novelty": "シーングラウンディング、各段階の検証、不確実性を解く能動実験を分離した実行可能プログラム探索。",
+      "engineering_impact": "一部の操作工程では、巨大なend-to-end VLAとは異なる、検査・修正しやすい制御方式となる。",
+      "limitations": "外部の知覚モデル、計算資源、安全なスキル実行環境が必要で、数値は特定ベンチマークに依存する。",
+      "evidence_status": "著者によるシミュレーション・実機評価を含む研究プレプリント。",
+      "published_at": "2026-10-27",
+      "organization": "RoboAuto research team",
+      "source_ids": [
+        "roboauto"
+      ],
+      "time_window": "72h",
+      "body": "プログラムどおり動いても、物体をつかめていなければ作業は失敗だ。RoboAutoは、操作後に実際の状態変化を確かめる仕組みを計画へ組み込む。物体のアフォーダンスと操作効果を知識として蓄え、曖昧な場面では小さな実験で仮説を検証する。\n\n短期LIBERO-PROで成功率89.1%、LIBERO-PRO Longで73.4%を報告し、後者ではASPIREの30.8%を上回った。実機の3課題も評価した。段階ごとに原因を追える一方、知覚モデルやスキル群、生成コードを安全に動かす環境が必要となる。",
+      "image": null
+    },
+    {
+      "id": "reach-crawling",
+      "title": "REACH、Unitree G1で歩行から匍匐への切り替えを実現",
+      "summary": "階層型RLが歩行・しゃがみ・匍匐をLiDAR経路計画と連携させる。",
+      "details": "G1の胴体高さを二足歩行時1.27〜0.50 m、匍匐時0.50〜0.20 mで制御するポリシーを学習した。遷移ポリシーが接触状態の異なる移動モードを接続し、LiDARプランナーが点群から3D経路と目標高さを生成する。狭隘空間での実機デモが示された。",
+      "technical_novelty": "接触モードをまたぐ双方向遷移と、頭上クリアランスを考慮する経路計画。",
+      "engineering_impact": "通常歩行では進入できない場所の点検・探索への応用が考えられる。",
+      "limitations": "実機デモだけでは産業運用の成熟度は証明できず、接触安全性と長期信頼性の検証が必要。",
+      "evidence_status": "Unitree G1による著者の実機実験を含むプレプリント。",
+      "published_at": "2026-10-27",
+      "organization": "Southern University of Science and Technology",
+      "source_ids": [
+        "reach"
+      ],
+      "time_window": "72h",
+      "body": "低い通路を前にすると、歩行だけでは進めない。REACHはUnitree G1に二足移動と匍匐を切り替える能力を与えた。接触状態が大きく異なる動作を遷移ポリシーでつなぎ、LiDARの経路計画が先の高さ制約を判断する。\n\n胴体高さの指令範囲は歩行で1.27〜0.50 m、匍匐で0.50〜0.20 m。研究チームは実機で狭い空間を通過した。点検への応用が考えられるが、予期しない接触や長時間運用に対する安全性はまだ証明されていない。",
+      "image": null
+    },
+    {
+      "id": "hc2-foresight",
+      "title": "HC2Robot、ヒューマノイドの着地点と支持品質を予測",
+      "summary": "実機で利用可能なオンボード観測から、次の足接触の位置と支持品質を推定する。",
+      "details": "Predicted Foresight Moduleが次の接地時刻、位置、支持品質を予測し、Hyper-Connection Transformerが時間的情報を統合する。階段、段差、足場、斜面を含むシミュレーションで平均通過成功率97.60%を報告した。",
+      "technical_novelty": "学習時だけ使えるシミュレータの特権情報を、実行可能な観測からの予測で近似する。",
+      "engineering_impact": "着地点選択を改善し、シミュレーションと実機の情報ギャップを縮小する可能性がある。",
+      "limitations": "主要な定量結果はシミュレーションであり、実環境の頑健性を示すものではない。",
+      "evidence_status": "主にシミュレーション評価を行った研究プレプリント。",
+      "published_at": "2026-10-27",
+      "organization": "HC2Robot research team",
+      "source_ids": [
+        "hc2"
+      ],
+      "time_window": "72h",
+      "body": "足場が見えても、次の一歩を支えられるとは限らない。HC2Robotは接地時刻、位置、支持の良さを事前に予測する。学習時のシミュレータ情報を手掛かりにしながら、実行時には機体上で得られる観測だけを使う。Hyper-Connection Transformerが時間的な情報を統合する。\n\n階段、溝、高い足場、斜面のシミュレーションで平均通過成功率97.60%を報告した。重要な成果だが、主要な数字は仮想環境のもの。実際の床材や予期しない外乱での検証が必要だ。",
+      "image": null
+    },
+    {
+      "id": "dexsafe-hand",
+      "title": "LEAP hand、目標姿勢の95.2%を達成し物体落下を抑制",
+      "summary": "人間のデモを使わずシミュレーションで学習したLEAP handに残差安全フィルターを追加した。",
+      "details": "実機で13.3時間、4物体・4800超の未知目標を評価し、位置2 cm・角度0.4 rad以内で95.2%の目標を達成。別の残差安全フィルターにより落下を75%減らしつつ、91.5%の目標達成率を維持した。zero-shot sim-to-realと手首カメラ構成も報告している。",
+      "technical_novelty": "摩擦条件を段階的に変えるカリキュラム、多様な初期把持、調整可能な残差安全フィルター。",
+      "engineering_impact": "動作達成だけでなく部品落下の抑制が重要な器用な操作に有用。",
+      "limitations": "LEAP handと4物体での結果であり、他のハンドや長期生産への移行は未検証。",
+      "evidence_status": "著者による比較的長時間の実機評価を含むプレプリント。独立再現は未確認。",
+      "published_at": "2026-10-27",
+      "organization": "University of California Berkeley / Davis",
+      "source_ids": [
+        "dex"
+      ],
+      "time_window": "72h",
+      "body": "物体を正しい姿勢へ動かしても、途中で落とせば失敗だ。LEAP handの研究は落下を独立した安全指標として扱う。人のデモなしでシミュレーション学習し、危険な動きを抑える調整可能な残差フィルターを追加した。\n\n実機で13.3時間、4物体と4800件超の未知目標を評価。基本ポリシーは位置2 cm、角度0.4 rad以内で95.2%を達成し、フィルターは落下を75%減らしつつ91.5%の達成率を保った。他のハンドや長期生産への適用は今後の課題だ。",
+      "image": null
+    },
+    {
+      "id": "tokio-robot-insurance",
+      "title": "日本：東京海上日動、AIロボットの稼働停止に備える保険を発表",
+      "summary": "機体損害や第三者賠償に加え、稼働停止時の代替要員費用などを対象とする。",
+      "details": "東京海上日動は10月26日、2026年11月から「AIロボット保険」を提供すると発表した。公表内容では、機体損害、第三者への賠償責任、停止時の代替人材の人件費などを補償対象に含める。制御技術の新発明ではなく、ロボット導入を支える運用インフラの動きである。",
+      "technical_novelty": "自律システムの故障による業務継続コストの一部を保険で扱う設計。",
+      "engineering_impact": "ロボットのTCO評価で停止損失、代替体制、事故ログの整備が重要になる。",
+      "limitations": "具体的な免責、保険料、支払条件は契約確認が必要で、個別ロボットの安全性を保証するものではない。",
+      "evidence_status": "2026年10月26日の公式発表。提供開始は11月予定。",
+      "published_at": "2026-10-26",
+      "organization": "Tokio Marine & Nichido Fire Insurance",
+      "source_ids": [
+        "tokio"
+      ],
+      "time_window": "7d",
+      "body": "ロボット導入では生産性が注目される。では停止した日の仕事を誰が引き継ぐのか。東京海上日動は2026年11月から、機体損害や第三者賠償に加え、停止時の代替要員など事業継続費用も対象とするAIロボット保険を提供すると発表した。\n\n対象には自律移動する車輪型、四足歩行型、ヒューマノイド型が含まれる。停止損失と代替体制をTCOへ織り込む契機になるが、公開内容ではサイバー事故は対象外。保険料や詳細条件は契約確認が必要だ。保険は安全技術ではないが、故障の代償を可視化する。",
+      "image": {
+        "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-30/tokio-robot-insurance.webp",
+        "path": "data/images/2026-10-30/tokio-robot-insurance.webp",
+        "type": "generated",
+        "caption": "AI生成の概念イラスト。保護シールドでロボット向け保険を象徴したもので、実在製品の描写ではない。",
+        "alt": "保護シールドの内側に立つロボットと、周囲に配置された荷物の箱。"
+      }
+    }
+  ],
+  "technology_signal": {
+    "title": "デモから信頼できる実行へ",
+    "summary": "新しい研究では、作業意図と局所補正、中間結果の検証、物理的リスク管理を分離する設計が目立つ。",
+    "implications": "導入時はベンチマーク成功率に加え、衝突・落下・推論遅延・データ収集費・停止損失を測定すべきだ。"
+  },
+  "glossary": [
+    {
+      "term": "VLA",
+      "definition": "Vision-Language-Action。画像と指示文からロボットの動作を生成するモデル。"
+    },
+    {
+      "term": "Action chunk",
+      "definition": "ポリシーが一度に予測する連続した動作指令のまとまり。"
+    },
+    {
+      "term": "Flow matching",
+      "definition": "確率分布から動作系列への連続的な変換を学習する生成手法。"
+    },
+    {
+      "term": "UMI",
+      "definition": "Universal Manipulation Interface。実機なしで手持ち装置から操作デモを収集する方式。"
+    },
+    {
+      "term": "SLAM",
+      "definition": "自己位置推定と環境地図作成を同時に行う技術。"
+    },
+    {
+      "term": "Affordance",
+      "definition": "物体の形状・状態から実行可能な操作を表す性質。"
+    },
+    {
+      "term": "Proprioception",
+      "definition": "関節角度や速度など、ロボット自身の内部状態の感覚情報。"
+    },
+    {
+      "term": "Sim-to-real",
+      "definition": "シミュレーションで学習した制御を実機に移すこと。"
+    },
+    {
+      "term": "TCO",
+      "definition": "Total Cost of Ownership。導入から運用・停止・保守まで含む総保有コスト。"
+    }
+  ],
+  "sources": [
+    {
+      "id": "stem",
+      "url": "https://arxiv.org/abs/2610.37378",
+      "domain": "arxiv.org",
+      "organization": "VLA-Stem research team",
+      "published_at": "2026-10-27",
+      "title": "VLA-Stem: A Lightweight Safety Mechanism for Vision-Language-Action Models via Reinforcement Learning"
+    },
+    {
+      "id": "tops",
+      "url": "https://ntumars.github.io/TOPS/",
+      "domain": "ntumars.github.io",
+      "organization": "Nanyang Technological University / MARS Lab",
+      "published_at": "2026-10-27",
+      "title": "TOPS: Reshaping Flow Source and Transport for Multi-Task Robot Manipulation"
+    },
+    {
+      "id": "openjaws",
+      "url": "https://open-jaws.github.io/",
+      "domain": "open-jaws.github.io",
+      "organization": "NVIDIA Research / OpenJaws team",
+      "published_at": "2026-10-27",
+      "title": "OpenJaws: An Open Hardware UMI Framework with Stereo Localization for Generalist Manipulation"
+    },
+    {
+      "id": "roboauto",
+      "url": "https://arxiv.org/abs/2610.36533",
+      "domain": "arxiv.org",
+      "organization": "RoboAuto research team",
+      "published_at": "2026-10-27",
+      "title": "RoboAuto: Autonomous Robot Program Search through Multi-Level Physical Understanding"
+    },
+    {
+      "id": "reach",
+      "url": "https://arxiv.org/abs/2610.36546",
+      "domain": "arxiv.org",
+      "organization": "Southern University of Science and Technology",
+      "published_at": "2026-10-27",
+      "title": "REACH: An RL-based Hierarchical Humanoid Crawling Framework for Adaptable Confined Space Traversal"
+    },
+    {
+      "id": "hc2",
+      "url": "https://arxiv.org/abs/2610.36825",
+      "domain": "arxiv.org",
+      "organization": "HC2Robot research team",
+      "published_at": "2026-10-27",
+      "title": "HC2Robot: Hyper-Connection Transformers with Predicted Foresight for Multi-Terrain Humanoid Parkour"
+    },
+    {
+      "id": "dex",
+      "url": "https://arxiv.org/abs/2610.37652",
+      "domain": "arxiv.org",
+      "organization": "University of California Berkeley / Davis",
+      "published_at": "2026-10-27",
+      "title": "Pushing Dexterity and Safety for In-Hand Object Pose Reaching That Works Remarkably Well"
+    },
+    {
+      "id": "tokio",
+      "url": "https://www.tokiomarine-nichido.co.jp/company/release/pdf/261026_01.pdf",
+      "domain": "tokiomarine-nichido.co.jp",
+      "organization": "Tokio Marine & Nichido Fire Insurance",
+      "published_at": "2026-10-26",
+      "title": "AIロボット導入を支援する「AIロボット保険」の提供開始"
+    }
+  ]
+}
