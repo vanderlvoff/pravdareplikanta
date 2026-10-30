@@ -1,0 +1,278 @@
+{
+  "schema_version": "1.3",
+  "publication": "pravda_replikanta",
+  "issue_type": "daily",
+  "issue_date": "2026-10-30",
+  "issue_id": "daily-2026-10-30",
+  "language": "en",
+  "generated_at": "2026-10-30T01:46:55+09:00",
+  "title": "Pravda Replikanta — Engineering Data, October 30",
+  "lead": "Safer VLA execution, faster manipulation, demonstration capture and humanoid locomotion; Japan is adding insurance for operational robot risk.",
+  "news": [
+    {
+      "id": "vla-stem",
+      "title": "VLA-Stem adds reflex-like safety control without retraining the base VLA",
+      "summary": "A separate RL policy adjusts execution of action chunks around obstacles while retaining the VLA task objective.",
+      "details": "The authors convert action chunks from a frozen VLA into motion references. A local policy then uses proprioception and obstacle observations to adjust timing and motion. Across six constrained simulation settings, mean collision-free success is 52.8% versus 23.7% for the strongest compared safety baseline; the paper also reports fewer collisions in real-world tests.",
+      "technical_novelty": "A split between high-level VLA intent and rapid local RL correction, trained with teacher–student distillation and curriculum learning.",
+      "engineering_impact": "A potential add-on safety layer for existing VLAs without collecting large new obstacle-avoidance demonstration datasets.",
+      "limitations": "The evidence covers selected tasks and base policies; general industrial safety certification and universal reliability are not established.",
+      "evidence_status": "Research preprint with simulation and limited real-world tests; no independent replication.",
+      "published_at": "2026-10-27",
+      "organization": "VLA-Stem research team",
+      "source_ids": [
+        "stem"
+      ],
+      "time_window": "72h",
+      "body": "A VLA can understand a command and still drive an arm into an obstacle. VLA-Stem addresses that gap without retraining the base model. It turns predicted action chunks into motion references and adds a faster local controller that adjusts execution using robot-state and obstacle observations.\n\nAcross six constrained simulation settings, the researchers report 52.8% collision-free success, versus 23.7% for their strongest safety baseline. Physical tests also show fewer collisions. The architecture is promising for existing policies, but these limited experiments are not a general safety certification or independent replication.",
+      "image": {
+        "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-30/vla-stem.webp",
+        "path": "data/images/2026-10-30/vla-stem.webp",
+        "type": "generated",
+        "caption": "AI-generated conceptual illustration of a robot handling an object, not an actual experimental image.",
+        "alt": "Stylized humanoid robot reaching toward an object on a work surface."
+      }
+    },
+    {
+      "id": "tops-flow",
+      "title": "TOPS accelerates flow-based manipulation without changing the network",
+      "summary": "Task-specific source distributions and generation schedules lift LIBERO-10 success from 53.44% to 69.67%.",
+      "details": "MARS Lab fits a separate starting distribution and nonlinear transport schedule for each language-conditioned task. On LIBERO-10, one TOPS step beats ten standard flow-matching steps while using about one-sixth of the inference time. The authors report 80% success opening a real upper drawer versus 20% for standard flow matching.",
+      "technical_novelty": "Task-oriented priors and slow-then-fast transport along expansion directions, with the policy architecture unchanged.",
+      "engineering_impact": "Lower inference latency matters for closed-loop manipulation and resource-constrained edge deployment.",
+      "limitations": "Results depend on benchmark, solver and settings; the gains do not automatically generalize to every VLA.",
+      "evidence_status": "Research preprint and author project page with benchmarks and real-robot demonstrations; not independently replicated.",
+      "published_at": "2026-10-27",
+      "organization": "Nanyang Technological University / MARS Lab",
+      "source_ids": [
+        "tops"
+      ],
+      "time_window": "72h",
+      "body": "Making manipulation faster does not always require a bigger neural network. TOPS changes where flow-based action generation begins and how it progresses, tailoring the source distribution and transport schedule to the task. The network architecture remains unchanged.\n\nOn LIBERO-10, one TOPS step achieved 69.67% success against 53.44% for ten standard flow-matching steps, with roughly one-sixth of the inference time. In a real upper-drawer task, the authors report 80% versus 20%. Both latency and accuracy matter in closed-loop control, although the gains depend on the tested tasks and configurations.",
+      "image": null
+    },
+    {
+      "id": "openjaws-stereo",
+      "title": "OpenJaws: open handheld demonstration gripper with stereo localization",
+      "summary": "A robot-free UMI device records metric trajectories using a stereo camera.",
+      "details": "The team presents a 3D-printed gripper with an ISO mounting flange and stereo cameras, with an estimated parts cost near $400. UMI-Loc-Bench-v1 contains 90 demonstrations over nine tasks; offline stereo COLMAP reports 2.9 mm localization error. Policies trained on the collected data achieved 90% success on each of two UR10 tasks, with ten trials per task.",
+      "technical_novelty": "Co-design of the data-collection device and deployed gripper, avoiding the absolute-scale ambiguity of monocular SLAM.",
+      "engineering_impact": "Could reduce demonstration collection cost and the UMI-to-real transfer gap.",
+      "limitations": "The project page still marks some code, hardware and dataset links as Coming Soon; real-robot evaluation is small.",
+      "evidence_status": "Research preprint and author demonstration; completeness of the announced open release remains to be verified.",
+      "published_at": "2026-10-27",
+      "organization": "NVIDIA Research / OpenJaws team",
+      "source_ids": [
+        "openjaws"
+      ],
+      "time_window": "72h",
+      "body": "Before a robot can learn a manipulation skill, someone must demonstrate it. OpenJaws records those examples without a robot: an operator moves a camera-equipped handheld gripper, and stereo vision reconstructs motion at metric scale. That avoids the absolute-scale ambiguity of monocular tracking.\n\nThe estimated parts cost is about $400. A benchmark contains 90 demonstrations across nine tasks, while offline stereo COLMAP reports 2.9 mm position error. Two UR10 policies reached 90% success each, but on just ten trials per task. Some promised code, hardware and dataset links still read Coming Soon, so the practical completeness of the open release remains to be checked.",
+      "image": null
+    },
+    {
+      "id": "roboauto-programs",
+      "title": "RoboAuto searches robot programs by testing physical hypotheses",
+      "summary": "An agent combines a skill library, object knowledge and experiments to verify the effects of actions.",
+      "details": "RoboAuto stores affordances, spatial relationships and action effects, grounds them in the observed scene, and verifies intermediate results in multi-stage programs. The authors report 89.1% success on short LIBERO-PRO tasks and 73.4% versus 30.8% for ASPIRE on LIBERO-PRO Long. They also evaluate three challenging real-robot manipulation tasks.",
+      "technical_novelty": "Executable program search with distinct grounding, stage verification and active uncertainty-resolution procedures.",
+      "engineering_impact": "An inspectable and repairable alternative to monolithic end-to-end VLA control for some manipulation workflows.",
+      "limitations": "Program search relies on external perception models, computation and safe skill interfaces; metrics are benchmark-specific.",
+      "evidence_status": "Research preprint with author-run simulation and real-robot evaluations.",
+      "published_at": "2026-10-27",
+      "organization": "RoboAuto research team",
+      "source_ids": [
+        "roboauto"
+      ],
+      "time_window": "72h",
+      "body": "A robot may execute its program while failing the task: grasping empty space, for example, or proceeding before a drawer opens. RoboAuto puts physical verification into program search. It stores knowledge of objects and possible interactions, grounds it in the current scene and runs small experiments when competing explanations remain.\n\nThe authors report 89.1% success on short LIBERO-PRO tasks and 73.4% on LIBERO-PRO Long, against ASPIRE's 30.8%. Three real-robot tasks are also evaluated. The appeal is inspectable, repairable behavior, but it relies on perception, reusable skills and safeguards for running generated code.",
+      "image": null
+    },
+    {
+      "id": "reach-crawling",
+      "title": "REACH teaches Unitree G1 to switch between walking and crawling",
+      "summary": "Hierarchical RL connects walking, crouching and crawling to a LiDAR-based planner.",
+      "details": "The team trains G1 locomotion with body-height commands of 1.27–0.50 m in bipedal mode and 0.50–0.20 m while crawling. A transition policy bridges different contact modes, while a LiDAR planner turns point clouds into 3D routes and height targets. Real-world confined-space demonstrations are reported.",
+      "technical_novelty": "Bidirectional transitions between locomotion modes and route planning that explicitly accounts for overhead clearance.",
+      "engineering_impact": "May allow humanoids to inspect or traverse spaces inaccessible to normal walking.",
+      "limitations": "Demonstrations do not establish industrial readiness; contact safety, generalization and long-term reliability need testing.",
+      "evidence_status": "Research preprint and author-run real-world experiments on Unitree G1.",
+      "published_at": "2026-10-27",
+      "organization": "Southern University of Science and Technology",
+      "source_ids": [
+        "reach"
+      ],
+      "time_window": "72h",
+      "body": "Walking is of little use when a passage is lower than a humanoid's torso. REACH gives the Unitree G1 a way to switch from bipedal movement to crawling and back. A transition policy bridges different contact modes, while LiDAR-based planning anticipates overhead clearance.\n\nReported body-height commands span 1.27–0.50 m for walking and 0.50–0.20 m for crawling. The team demonstrates traversal on a physical G1. Inspection is an obvious possible application, but controlled demonstrations do not establish contact safety or long-term field reliability.",
+      "image": null
+    },
+    {
+      "id": "hc2-foresight",
+      "title": "HC2Robot predicts footholds for humanoid parkour",
+      "summary": "The controller estimates upcoming foot-contact locations and support quality from deployable onboard observations.",
+      "details": "A Predicted Foresight Module predicts the timing, location and support quality of the next foot touchdown. A Hyper-Connection Transformer integrates temporal streams. Across simulated stairs, gaps, platforms and slopes, mean traversal success reaches 97.60%.",
+      "technical_novelty": "Predicting useful approximations of privileged simulator information without requiring privileged sensing at deployment.",
+      "engineering_impact": "Could improve support selection and reduce the sim-to-real information gap for perceptive locomotion.",
+      "limitations": "The headline quantitative result is simulated; it does not establish real-world robustness.",
+      "evidence_status": "Research preprint with primarily simulation-based evaluation.",
+      "published_at": "2026-10-27",
+      "organization": "HC2Robot research team",
+      "source_ids": [
+        "hc2"
+      ],
+      "time_window": "72h",
+      "body": "Seeing the next foothold is not enough; a humanoid must anticipate when its foot will land and whether the surface can support it. HC2Robot predicts contact timing, position and quality from onboard observations, approximating information available only during simulator training. A Hyper-Connection Transformer combines the temporal signals.\n\nMean traversal success reaches 97.60% across simulated stairs, gaps, platforms and slopes. It is a strong result for those test conditions, not proof of real-world parkour reliability. Unfamiliar surfaces and physical disturbances remain to be tested.",
+      "image": null
+    },
+    {
+      "id": "dexsafe-hand",
+      "title": "LEAP hand reaches 95.2% of in-hand pose targets with fewer drops",
+      "summary": "A LEAP hand policy is trained in simulation without human demonstrations; a residual filter reduces object drops.",
+      "details": "Over 13.3 hours of real-hand evaluation covering more than 4,800 unseen goals and four objects, the policy reaches 95.2% of targets within 2 cm and 0.4 rad. A separate residual safety filter reduces drops by 75% while retaining 91.5% target success. The authors report zero-shot sim-to-real transfer and a wrist-camera configuration.",
+      "technical_novelty": "Adaptive friction curriculum, varied initial grasps and an adjustable residual safety filter.",
+      "engineering_impact": "Relevant to dexterous manipulation where avoiding dropped parts matters as much as achieving motion targets.",
+      "limitations": "Results cover a LEAP hand and four objects; transfer to other hands and sustained production cycles is unproven.",
+      "evidence_status": "Research preprint with extended author-run real-robot evaluation; no independent replication.",
+      "published_at": "2026-10-27",
+      "organization": "University of California Berkeley / Davis",
+      "source_ids": [
+        "dex"
+      ],
+      "time_window": "72h",
+      "body": "A dexterous hand can reach the right pose and still drop its object. Researchers using the LEAP hand treat that risk as a separate safety problem. They train in simulation without human demonstrations and add an adjustable residual filter to moderate risky actions.\n\nAcross 13.3 hours of real-hand testing, four objects and more than 4,800 unseen goals, the base policy reached 95.2% of target poses within 2 cm and 0.4 radians. The filter cut drops by 75% while retaining 91.5% target success. The trade-off is measurable, but performance on other hands and industrial duty cycles remains unproven.",
+      "image": null
+    },
+    {
+      "id": "tokio-robot-insurance",
+      "title": "Japan: Tokio Marine launches coverage for AI-robot downtime",
+      "summary": "The new policy addresses robot damage, third-party liability and some costs of interrupted operations.",
+      "details": "On October 26, Tokio Marine & Nichido announced AI Robot Insurance, scheduled to launch in November 2026. The described coverage includes physical damage, liability to third parties and replacement-staff costs during robot downtime. This is deployment infrastructure rather than a new control algorithm.",
+      "technical_novelty": "Shifting part of autonomous-system failure exposure into insurance, including operational continuity costs.",
+      "engineering_impact": "Robot TCO planning increasingly needs explicit downtime costs, continuity plans and incident records.",
+      "limitations": "Contract terms, exclusions, premiums and actual claims require scrutiny; the announcement does not certify any robot as safe.",
+      "evidence_status": "Official corporate announcement dated October 26, 2026; product scheduled for November.",
+      "published_at": "2026-10-26",
+      "organization": "Tokio Marine & Nichido Fire Insurance",
+      "source_ids": [
+        "tokio"
+      ],
+      "time_window": "7d",
+      "body": "Robot deployment begins with productivity forecasts. It often ends with a harder question: who pays when the machine stops? Japan's Tokio Marine & Nichido has announced AI Robot Insurance for November 2026, covering specified downtime-related continuity costs alongside equipment damage and third-party liability.\n\nThe stated scope includes autonomous wheeled, quadruped and humanoid systems. Buyers should account for fallback staffing and downtime in total cost of ownership. Cyber-related losses are excluded in the published description, while premiums and precise terms require contract review. Insurance does not make robots safer, but it makes failure costs explicit.",
+      "image": {
+        "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-30/tokio-robot-insurance.webp",
+        "path": "data/images/2026-10-30/tokio-robot-insurance.webp",
+        "type": "generated",
+        "caption": "AI-generated conceptual illustration: a shield symbolizes robot insurance, not an actual product.",
+        "alt": "Stylized robot inside a protective shield, flanked by cargo boxes."
+      }
+    }
+  ],
+  "technology_signal": {
+    "title": "From demonstrations to reliable execution",
+    "summary": "Recent research increasingly separates task intent from local correction, intermediate verification and management of physical risk.",
+    "implications": "Deployments should measure collisions, object drops, inference latency, data collection cost and downtime exposure alongside benchmark success."
+  },
+  "glossary": [
+    {
+      "term": "VLA",
+      "definition": "Vision-Language-Action model: maps visual observations and language instructions to robot actions."
+    },
+    {
+      "term": "Action chunk",
+      "definition": "A short sequence of future motor commands predicted in one policy invocation."
+    },
+    {
+      "term": "Flow matching",
+      "definition": "A generative learning method that transforms a source distribution into action trajectories."
+    },
+    {
+      "term": "UMI",
+      "definition": "Universal Manipulation Interface: a handheld interface for collecting demonstrations without a robot."
+    },
+    {
+      "term": "SLAM",
+      "definition": "Simultaneous Localization and Mapping: estimating pose while building an environment map."
+    },
+    {
+      "term": "Affordance",
+      "definition": "An object property describing which interactions are physically possible."
+    },
+    {
+      "term": "Proprioception",
+      "definition": "Internal robot state sensing, including joint positions and velocities."
+    },
+    {
+      "term": "Sim-to-real",
+      "definition": "Transferring a controller learned in simulation to physical hardware."
+    },
+    {
+      "term": "TCO",
+      "definition": "Total Cost of Ownership: acquisition, operations, maintenance and downtime costs."
+    }
+  ],
+  "sources": [
+    {
+      "id": "stem",
+      "url": "https://arxiv.org/abs/2610.37378",
+      "domain": "arxiv.org",
+      "organization": "VLA-Stem research team",
+      "published_at": "2026-10-27",
+      "title": "VLA-Stem: A Lightweight Safety Mechanism for Vision-Language-Action Models via Reinforcement Learning"
+    },
+    {
+      "id": "tops",
+      "url": "https://ntumars.github.io/TOPS/",
+      "domain": "ntumars.github.io",
+      "organization": "Nanyang Technological University / MARS Lab",
+      "published_at": "2026-10-27",
+      "title": "TOPS: Reshaping Flow Source and Transport for Multi-Task Robot Manipulation"
+    },
+    {
+      "id": "openjaws",
+      "url": "https://open-jaws.github.io/",
+      "domain": "open-jaws.github.io",
+      "organization": "NVIDIA Research / OpenJaws team",
+      "published_at": "2026-10-27",
+      "title": "OpenJaws: An Open Hardware UMI Framework with Stereo Localization for Generalist Manipulation"
+    },
+    {
+      "id": "roboauto",
+      "url": "https://arxiv.org/abs/2610.36533",
+      "domain": "arxiv.org",
+      "organization": "RoboAuto research team",
+      "published_at": "2026-10-27",
+      "title": "RoboAuto: Autonomous Robot Program Search through Multi-Level Physical Understanding"
+    },
+    {
+      "id": "reach",
+      "url": "https://arxiv.org/abs/2610.36546",
+      "domain": "arxiv.org",
+      "organization": "Southern University of Science and Technology",
+      "published_at": "2026-10-27",
+      "title": "REACH: An RL-based Hierarchical Humanoid Crawling Framework for Adaptable Confined Space Traversal"
+    },
+    {
+      "id": "hc2",
+      "url": "https://arxiv.org/abs/2610.36825",
+      "domain": "arxiv.org",
+      "organization": "HC2Robot research team",
+      "published_at": "2026-10-27",
+      "title": "HC2Robot: Hyper-Connection Transformers with Predicted Foresight for Multi-Terrain Humanoid Parkour"
+    },
+    {
+      "id": "dex",
+      "url": "https://arxiv.org/abs/2610.37652",
+      "domain": "arxiv.org",
+      "organization": "University of California Berkeley / Davis",
+      "published_at": "2026-10-27",
+      "title": "Pushing Dexterity and Safety for In-Hand Object Pose Reaching That Works Remarkably Well"
+    },
+    {
+      "id": "tokio",
+      "url": "https://www.tokiomarine-nichido.co.jp/company/release/pdf/261026_01.pdf",
+      "domain": "tokiomarine-nichido.co.jp",
+      "organization": "Tokio Marine & Nichido Fire Insurance",
+      "published_at": "2026-10-26",
+      "title": "AIロボット導入を支援する「AIロボット保険」の提供開始"
+    }
+  ]
+}
