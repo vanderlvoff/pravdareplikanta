@@ -5,7 +5,7 @@
   "issue_date": "2026-10-31",
   "issue_id": "daily-2026-10-31",
   "language": "en",
-  "generated_at": "2026-10-31T03:40:02+09:00",
+  "generated_at": "2026-10-31T03:55:10+09:00",
   "title": "Replicant Pravda — Physical AI, 31 October 2026",
   "lead": "Eight developments in embodied AI: tactile tools, simulation, recoverable task execution, Japanese warehouse deployment and the economics of scaling.",
   "news": [
@@ -29,8 +29,8 @@
         "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-31/swapbot-tools.webp",
         "path": "data/images/2026-10-31/swapbot-tools.webp",
         "type": "generated",
-        "caption": "Conceptual AI-generated illustration of SwapBot's principle: a common robot wrist coupling and interchangeable tools supported in a rack. Not a reconstruction of the research apparatus.",
-        "alt": "Volumetric technical illustration of an articulated arm docking with a spatula attachment while a brush and tongs rest in separate tool holders."
+        "caption": "Conceptual AI-generated illustration of the general SwapBot principle: a robot aligns its coupling with a tool still supported by its holder, with another tool docked nearby. Not a reconstruction of the research apparatus.",
+        "alt": "A matte articulated robot arm aligns its wrist coupler above a vertical spatula supported in a rack socket; a brush occupies a separate socket."
       }
     },
     {
@@ -107,8 +107,8 @@
         "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-31/aeon-mixed-palletizing.webp",
         "path": "data/images/2026-10-31/aeon-mixed-palletizing.webp",
         "type": "generated",
-        "caption": "Conceptual AI-generated illustration of generalized robotic palletizing: a digital plan alongside physical box handling by an articulated arm. Not a depiction of Aeon's actual facility.",
-        "alt": "A digital model of box grasping and placement appears on a screen beside an articulated robot arm handling cartons on a pallet."
+        "caption": "Conceptual AI-generated illustration of mixed-case palletizing: a suction-equipped arm holds a carton above a pallet-supported stack while an overhead camera observes the placement area. Not a depiction of actual Aeon or Mujin equipment.",
+        "alt": "An articulated industrial arm holds a cardboard box with suction pads above a stable stack on a wooden pallet, with a conceptual overhead 3D camera observation zone."
       }
     },
     {

@@ -5,7 +5,7 @@
   "issue_date": "2026-10-31",
   "issue_id": "daily-2026-10-31",
   "language": "ja",
-  "generated_at": "2026-10-31T03:40:02+09:00",
+  "generated_at": "2026-10-31T03:55:10+09:00",
   "title": "レプリカント・プラウダ — Physical AI、2026年10月31日",
   "lead": "触覚工具、シミュレーション、タスク復旧、日本の物流導入、商用拡大の経済性をめぐる8件の動向。",
   "news": [
@@ -29,8 +29,8 @@
         "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-31/swapbot-tools.webp",
         "path": "data/images/2026-10-31/swapbot-tools.webp",
         "type": "generated",
-        "caption": "SwapBotの原理を示す概念的なAI生成イラスト。共通のロボット手首接続部と、ラックに支持された交換式工具を描く。研究装置の正確な再現ではない。",
-        "alt": "関節式ロボットアームがヘラの接続部に位置を合わせ、隣のホルダーにはブラシとトングが置かれた立体的な技術図。"
+        "caption": "SwapBotの一般的な仕組みを示す概念的なAI生成イラスト。ホルダーに支えられた工具へロボットが接続部を同軸に近づけ、隣には別の工具を置いている。研究装置の正確な再現ではない。",
+        "alt": "マット仕上げの多関節ロボットアームが、ラックの受け台に保持された縦向きのへらへ手首の接続部を近づける。隣の受け台にはブラシが置かれている。"
       }
     },
     {
@@ -107,8 +107,8 @@
         "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-31/aeon-mixed-palletizing.webp",
         "path": "data/images/2026-10-31/aeon-mixed-palletizing.webp",
         "type": "generated",
-        "caption": "ロボットによる箱の積み付けを概念的に示すAI生成イラスト。デジタル上の作業計画と実際の箱の操作を対比する。Aeonの施設を正確に再現したものではない。",
-        "alt": "画面上の箱の把持・配置計画と、パレット上の段ボール箱を扱う関節式ロボットアームを並べた図。"
+        "caption": "異種サイズの箱を積み付ける一般原理を示す概念的なAI生成イラスト。吸着式のアームがパレット上の箱の積み重ねの上で箱を保持し、上方カメラが配置領域を観測する。イオンやMujinの実機を描いたものではない。",
+        "alt": "多関節産業用ロボットが吸着パッドで段ボール箱を保持し、木製パレット上の安定した箱の山の上へ移動させる。上方には概念的な3Dカメラの観測範囲が示される。"
       }
     },
     {
