@@ -5,7 +5,7 @@
   "issue_date": "2026-10-31",
   "issue_id": "daily-2026-10-31",
   "language": "en",
-  "generated_at": "2026-10-31T03:22:03.168+09:00",
+  "generated_at": "2026-10-31T03:40:02+09:00",
   "title": "Replicant Pravda — Physical AI, 31 October 2026",
   "lead": "Eight developments in embodied AI: tactile tools, simulation, recoverable task execution, Japanese warehouse deployment and the economics of scaling.",
   "news": [
@@ -23,14 +23,14 @@
       "source_ids": [
         "swapbot-paper"
       ],
-      "time_window": "24h",
+      "time_window": "72h",
       "body": "The search for a single hand that can do everything has an obvious rival: change the tool instead. SwapBot puts a standard coupling on the robot and inexpensive adapters on ordinary utensils. A spatula, brush or articulated tool can become a robot end-effector, while integrated tactile sensing reports contact that cameras alone cannot reliably reveal.\n\nThe team collected demonstrations through teleoperation and trained imitation learning policies for cooking-style manipulation. It reports success gains of 15–25 percentage points over RGB-only policies on contact-rich skills, alongside lower operator workload in a user study. The idea is practical, but the experiments do not establish reliability across every tool or industrial environment.",
       "image": {
         "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-31/swapbot-tools.webp",
         "path": "data/images/2026-10-31/swapbot-tools.webp",
         "type": "generated",
-        "caption": "Conceptual AI-generated illustration of the SwapBot principle: a robot arm uses an interchangeable spatula, with alternative tools sharing a coupling interface. Not an experimental photograph.",
-        "alt": "Three-dimensional conceptual scene of an articulated robot lifting tofu with a spatula in a pan; a brush and tongs are arranged beside it."
+        "caption": "Conceptual AI-generated illustration of SwapBot's principle: a common robot wrist coupling and interchangeable tools supported in a rack. Not a reconstruction of the research apparatus.",
+        "alt": "Volumetric technical illustration of an articulated arm docking with a spatula attachment while a brush and tongs rest in separate tool holders."
       }
     },
     {
@@ -47,7 +47,7 @@
       "source_ids": [
         "gym-paper"
       ],
-      "time_window": "24h",
+      "time_window": "72h",
       "body": "A robot policy can look capable in a familiar simulator and still fail when the world changes. Gym-Anything attacks the supply side of that problem: coding agents create and audit new physical simulations, rather than waiting for experts to hand-build each environment. The resulting RoboWorld benchmark spans 25 simulations and 25 test tasks.\n\nThe researchers report an average reward of just 0.06 for the best frontier models, with no test task solved. They also explore repeated attempts, privileged teachers and demonstration-generating code policies. The work broadens the testing ground for embodied AI and sim-to-real research, but a convincing simulation is not automatically a faithful model of factory physics.",
       "image": null
     },
@@ -107,8 +107,8 @@
         "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-31/aeon-mixed-palletizing.webp",
         "path": "data/images/2026-10-31/aeon-mixed-palletizing.webp",
         "type": "generated",
-        "caption": "Conceptual AI-generated illustration of robotic mixed-case palletizing: a robot places a box while a three-dimensional representation helps relate the planned stack to observed reality. Not a depiction of Aeon's actual equipment.",
-        "alt": "Conceptual technical scene showing a robot stacking cartons on a pallet, with a digital process representation on the left and the physical operation and load-position observation on the right."
+        "caption": "Conceptual AI-generated illustration of generalized robotic palletizing: a digital plan alongside physical box handling by an articulated arm. Not a depiction of Aeon's actual facility.",
+        "alt": "A digital model of box grasping and placement appears on a screen beside an articulated robot arm handling cartons on a pallet."
       }
     },
     {
@@ -125,7 +125,7 @@
       "source_ids": [
         "agility-sec"
       ],
-      "time_window": "24h",
+      "time_window": "72h",
       "body": "The distance from a convincing humanoid demonstration to a serviceable fleet is measured partly in capital. Agility Robotics and Churchill XI now expect roughly $465 million in gross proceeds from their proposed combination, according to a filing dated October 30. The companies target closing on November 4 and Nasdaq trading on November 5, subject to approval and other conditions.\n\nAgility says early Digit 5 deliveries are planned for the first half of 2027 and cites more than $300 million in multiyear orders. Those are commitments and plans, not revenue already earned or evidence of a new control breakthrough. The question for Physical AI is how financing translates into uptime, support and repeatable customer work.",
       "image": null
     },
