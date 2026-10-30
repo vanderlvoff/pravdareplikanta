@@ -1,0 +1,291 @@
+{
+  "schema_version": "1.3",
+  "publication": "pravda_replikanta",
+  "issue_type": "daily",
+  "issue_date": "2026-10-31",
+  "issue_id": "daily-2026-10-31",
+  "language": "ja",
+  "generated_at": "2026-10-31T03:22:03.168+09:00",
+  "title": "レプリカント・プラウダ — Physical AI、2026年10月31日",
+  "lead": "触覚工具、シミュレーション、タスク復旧、日本の物流導入、商用拡大の経済性をめぐる8件の動向。",
+  "news": [
+    {
+      "id": "swapbot-tools",
+      "title": "SwapBot：万能グリッパーではなく触覚付き工具を交換する",
+      "summary": "交換式の工具インターフェースにより、ロボットが日用品を使い分け、接触を伴う作業を学習する。",
+      "details": "共通のロボット側結合部と低コストの工具側アダプターを用い、各アダプターに触覚センサーを組み込む。著者らはRGBのみの方策と比較して成功率が15〜25ポイント向上したと報告する。",
+      "technical_novelty": "工具交換、触覚センシング、模倣学習を一体化したエンドエフェクター設計。",
+      "engineering_impact": "一つの把持器では難しい調理や多様な道具操作への適用が期待される。",
+      "limitations": "検証対象は限定的で、耐久性、衛生面、幅広い工具への対応は未確認。",
+      "evidence_status": "研究プレプリントと著者らの実験・ユーザー調査。独立追試なし。",
+      "published_at": "2026-10-29",
+      "organization": "SwapBot research team",
+      "source_ids": [
+        "swapbot-paper"
+      ],
+      "time_window": "24h",
+      "body": "あらゆる作業をこなす万能の手を作る代わりに、道具そのものを交換する。SwapBotはロボット側の共通結合部と、身近な道具に取り付ける低コストのアダプターを組み合わせる。アダプターには触覚センシングがあり、カメラだけでは捉えにくい接触状態を扱える。\n\n研究チームは遠隔操作で実演データを集め、調理に近い操作を模倣学習で習得させた。接触の多い技能では、RGBのみの方策より成功率が15〜25ポイント高く、操作者の負担も減ったと報告する。ただし、すべての工具や工場環境での信頼性を証明したものではない。",
+      "image": {
+        "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-31/swapbot-tools.webp",
+        "path": "data/images/2026-10-31/swapbot-tools.webp",
+        "type": "generated",
+        "caption": "SwapBotの原理を示す概念的なAI生成イラスト。ロボットが交換式ヘラを使い、共通接続部を持つ別の工具も示す。実験の記録写真ではない。",
+        "alt": "関節式ロボットがフライパン内の豆腐をヘラですくい、そばに交換用のブラシとトングが置かれた立体的な概念図。"
+      }
+    },
+    {
+      "id": "gym-anything",
+      "title": "Gym-Anything：コーディングエージェントがロボット用シミュレーターを作る",
+      "summary": "自動生成と監査により25種類の物理シミュレーションを構築し、先端モデルの弱点を示した。",
+      "details": "RoboWorldは25シミュレーション、25評価環境、175学習用RL環境からなる。著者らによると最良の先端モデルも全評価課題で失敗し、平均報酬は0.06だった。コードと評価環境を公開した。",
+      "technical_novelty": "コーディングエージェントによる物理課題生成と対抗的な検査を組み合わせる。",
+      "engineering_impact": "実機試験前の多様な検証やsim-to-real研究に役立つ。",
+      "limitations": "シミュレーションの品質と実環境への転移は別問題で、評価条件にも依存する。",
+      "evidence_status": "コードとベンチマークを公開した研究プレプリント。成績は著者らの評価。",
+      "published_at": "2026-10-29",
+      "organization": "Gym-Anything research team",
+      "source_ids": [
+        "gym-paper"
+      ],
+      "time_window": "24h",
+      "body": "慣れたシミュレーターでは優秀なロボット方策も、条件が変わると簡単に失敗する。Gym-Anythingは環境を作る側の問題に取り組む。専門家の手作業だけに頼らず、コーディングエージェントが物理環境を生成し、別の検査工程で妥当性を確かめる。その成果が25種類のシミュレーションを含むRoboWorldだ。\n\n著者らによれば、最良の先端モデルでも評価課題を一つも解けず、平均報酬は0.06にとどまった。反復試行、内部状態を知る教師からの学習、コードによる実演生成も検討している。sim-to-real研究の試験場は広がるが、デジタル環境の精巧さが現実の物理を保証するわけではない。",
+      "image": null
+    },
+    {
+      "id": "touchbridge-tactile",
+      "title": "TouchBridge：人の指先の接触情報をロボット学習へ移す",
+      "summary": "装着型の触覚インターフェースで、人の実演を物体メッシュや物理シミュレーションなしにロボット用データへ変換する。",
+      "details": "実機の4課題で平均成功率72.5%。同数のロボット遠隔操作データでは77.5%だった一方、人の実演収集は7.0倍速かった。",
+      "technical_novelty": "Tac-Retargetが人とロボットの指先接触領域の位置関係を触覚データで対応付ける。",
+      "engineering_impact": "器用な操作に必要なVLAの追加学習データを低コストで集められる可能性がある。",
+      "limitations": "4課題と特定の手に限られ、直接遠隔操作より成功率は低い。独立追試なし。",
+      "evidence_status": "4件の実機実験を含む研究プレプリント。比較値は著者らの報告。",
+      "published_at": "2026-10-29",
+      "organization": "TouchBridge research team",
+      "source_ids": [
+        "touchbridge-paper"
+      ],
+      "time_window": "72h",
+      "body": "人が手の中で物を回すとき、重要なのは指の位置だけではない。どこに触れ、接触がどう変化したかも欠かせない。TouchBridgeは装着型インターフェースと触覚情報に基づく動作変換を組み合わせ、人とロボットの異なる手の間で接触関係を保った実演データを作る。\n\n4件の実機課題で、変換した人のデータから学習したVLA方策の平均成功率は72.5%。同数のロボット遠隔操作データでは77.5%だったが、人のデータ収集は7.0倍速かった。ロボットの稼働時間が貴重な現場では魅力的な交換条件だが、信頼性の差と検証範囲には注意が必要だ。",
+      "image": null
+    },
+    {
+      "id": "logiv-repair",
+      "title": "LOGIV：計画の前提条件が現実に残っているかを確認",
+      "summary": "タスクグラフで物理的な依存関係を検証し、乱れた部分だけを修復する。",
+      "details": "実機3課題の成功試行は12/30から17/30に増加。3種類の実行基盤と20件の双腕課題でも外乱下の完了率が改善したと報告する。",
+      "technical_novelty": "条件の支持関係と資源順序をタスクグラフに記録し、観測に基づいて局所的に修復する。",
+      "engineering_impact": "VLAを再学習せずに長時間の作業手順を頑健にできる可能性がある。",
+      "limitations": "実機は3課題のみ。前提条件の定義とセンサーの精度に依存する。",
+      "evidence_status": "シミュレーションと限定的な実機試験を含むプレプリント。独立追試なし。",
+      "published_at": "2026-10-29",
+      "organization": "LOGIV research team",
+      "source_ids": [
+        "logiv-paper"
+      ],
+      "time_window": "72h",
+      "body": "ある工程が成功しても、その結果が次の工程まで保たれるとは限らない。部品を正しく置いたロボットが、次の動作でその部品を動かしてしまうこともある。LOGIVはタスクグラフに後続工程の物理的な前提条件を記録し、観測によって検証して、壊れた依存関係だけを修復する。\n\n既存のVLAやworld-action方策の上位で動き、新しい学習モジュールは必要ない。実機3課題では成功試行が30回中12回から17回に増え、双腕ベンチマークでも改善したという。長時間作業の復旧性を高める発想だが、タスクグラフとセンサーが重要な状態を正しく表せることが前提となる。",
+      "image": null
+    },
+    {
+      "id": "aeon-mixed-palletizing",
+      "title": "イオンとMujin、混載積み付けを自動化した物流拠点を本格稼働",
+      "summary": "川口東XDで3Dビジョン、ロボットアーム、WESを連携させた店舗別出荷が始まった。",
+      "details": "10月29日の共同発表によると、出荷注文に基づく積み付けシミュレーション、3Dビジョンによる状態確認、動作補正を実装。WESがアーム、AGV、シャトル、作業者を統合する。",
+      "technical_novelty": "混載計画と現場の3D認識を結び、荷崩れなどに対応する制御とWESを組み合わせる。",
+      "engineering_impact": "サイズや重量の異なる商品を扱う国内物流での実運用例。",
+      "limitations": "自動化率などは企業発表であり、稼働率や費用対効果の独立検証はない。",
+      "evidence_status": "運営企業と設備提供企業の共同発表。実稼働を公表したが性能の独立監査はない。",
+      "published_at": "2026-10-29",
+      "organization": "Aeon / Mujin",
+      "source_ids": [
+        "aeon-release"
+      ],
+      "time_window": "72h",
+      "body": "大きさも重さも異なる箱は、固定された積み付け手順に都合よく並んではくれない。イオンとMujinが10月29日に本格稼働させた川口東XDでは、注文ごとに積載計画を計算し、3Dビジョンで積み上がる荷物の状態を確認する。箱がずれればロボットの動作を補正する。現実の状態を見ながら計画を修正する点が重要だ。\n\nWESはロボットアーム、AGV、シャトル、作業者への指示を店舗別注文と締切に合わせて統合する。これは研究室だけの実演ではなく、実際に稼働を開始した物流拠点だ。ただし、処理能力や安定稼働に関する説明は企業側の発表であり、長期の停止時間や経済性は別途検証が必要になる。",
+      "image": {
+        "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-31/aeon-mixed-palletizing.webp",
+        "path": "data/images/2026-10-31/aeon-mixed-palletizing.webp",
+        "type": "generated",
+        "caption": "混載パレタイジングの原理を示す概念的なAI生成イラスト。ロボットによる箱の配置と、計画した積み付けと実際の状態を照合する三次元表現を描く。イオンの実機を再現したものではない。",
+        "alt": "左側にデジタル上の工程表現、右側にパレットへ箱を積むロボットと荷姿の観測を描いた概念的な技術図。"
+      }
+    },
+    {
+      "id": "agility-financing",
+      "title": "Agility、Digit 5量産に向けた資金調達見通しを更新",
+      "summary": "規制当局への提出資料で、取引による総調達額を約4億6500万ドルと見込んだ。",
+      "details": "10月30日の資料によるとChurchill XIとの統合は11月4日完了、5日Nasdaq上場を予定するが承認等が条件。Digit 5の初期顧客向け納入は2027年上半期を目指し、3億ドル超の複数年受注は当期売上ではない。",
+      "technical_novelty": "新しい自律制御の実証ではなく、商用展開と製造体制の資金基盤に関する進展。",
+      "engineering_impact": "量産、保守体制、顧客への納入を支える可能性がある。",
+      "limitations": "統合は未完了で、受注額や納入予定は稼働実績や収益性を証明しない。",
+      "evidence_status": "SEC提出資料に基づく企業発表。将来の成果は未確認。",
+      "published_at": "2026-10-30",
+      "organization": "Agility Robotics / Churchill Capital Corp XI",
+      "source_ids": [
+        "agility-sec"
+      ],
+      "time_window": "24h",
+      "body": "人型ロボットの華やかなデモから、顧客が安心して使える機体群へ進むには資金も要る。Agility RoboticsとChurchill XIは10月30日、予定する企業統合で約4億6500万ドルの総調達額を見込むと開示した。11月4日の取引完了と5日のNasdaq取引開始を目指すが、承認などの条件が残る。\n\nAgilityはDigit 5の初期納入を2027年上半期に予定し、3億ドル超の複数年受注を公表している。だが受注はすでに実現した売上ではなく、資金調達も新たな運動能力の検証ではない。Physical AIの次の評価軸は、投資が現場の稼働率と保守可能性につながるかどうかだ。",
+      "image": null
+    },
+    {
+      "id": "opentrons-autonomous-labs",
+      "title": "Opentrons、AI主導の実験を支えるため4000万ドル調達",
+      "summary": "ラボロボットとソフトウェア、データ基盤を拡充し、実験の閉ループ化を目指す。",
+      "details": "10月29日の発表でAvego主導のシリーズE資金調達4000万ドルを公表。80か国超に1万1000台以上を導入したとし、AIによる実験設計から実行・結果収集までを支援する。",
+      "technical_novelty": "公開APIを持つ実験ロボットが再現可能な物理操作と構造化データを提供する。",
+      "engineering_impact": "AIの仮説を実験結果に結びつける実行基盤となる。",
+      "limitations": "導入台数は企業の自己申告。資金調達だけで自律的な科学的発見は証明できない。",
+      "evidence_status": "企業の資金調達発表。独立した技術ベンチマークではない。",
+      "published_at": "2026-10-29",
+      "organization": "Opentrons",
+      "source_ids": [
+        "opentrons-release"
+      ],
+      "time_window": "72h",
+      "body": "AIが大量の実験仮説を提案しても、実験室での実行には時間がかかる。Opentronsが投資するのは、この物理的なボトルネックだ。液体操作ロボット、実験手順のソフトウェア、結果を記録するデータ基盤を拡充するため、10月29日に4000万ドルのシリーズE調達を発表した。\n\n同社は80か国超で1万1000台以上のロボットを導入したと説明する。公開APIと再現性のある実験実行は、AIがもっともらしい仮説だけでなく検証可能な結果を得るために重要だ。ただし、発表が示すのは投資計画と導入実績の自己申告であり、人間の監督なしに科学的発見を達成した証拠ではない。",
+      "image": null
+    },
+    {
+      "id": "bleu-few-shot",
+      "title": "Bleu Robotics、少数実演による工場作業学習に500万ユーロ",
+      "summary": "工場での段取り替えを短縮する模倣学習ソフトの開発にプレシード資金を確保した。",
+      "details": "10月29日に500万ユーロの調達が報じられた。約10回の実演から作業を学ぶ構想で、既存のBleu_0.1技術資料にはManiSkill3や研究室での評価がある。工場規模での実証はこれからだ。",
+      "technical_novelty": "物体位置推定、既存制御器、作業の構造を推定するabductive learningを組み合わせる。",
+      "engineering_impact": "多品種少量生産のロボット導入コストを下げる可能性がある。",
+      "limitations": "1時間以内の導入や成功率は企業の主張。柔軟物や未知の動作への対応は制約がある。",
+      "evidence_status": "資金調達は業界メディアの報道、性能は企業の自己評価であり独立実証なし。",
+      "published_at": "2026-10-29",
+      "organization": "Bleu Robotics",
+      "source_ids": [
+        "bleu-funding",
+        "bleu-tech"
+      ],
+      "time_window": "72h",
+      "body": "製造ラインでは、製品が変わるたびにロボットの設定をやり直す負担が大きい。Inria発のBleu Roboticsは、この課題に向けて500万ユーロを調達した。万能モデルを一から学習するのではなく、既存の認識・運動制御を使い、約10回の実演から作業の構造を推定するfew-shot模倣学習を重視する。\n\n以前公開されたBleu_0.1の技術資料には、限定された研究室環境での好成績と、1時間以内の導入という目標が示されている。一方、柔軟物は対象外で、未知の軌道に遭遇すると停止する。今回の資金調達は事実だが、工場での大規模な信頼性は今後の検証課題である。",
+      "image": null
+    }
+  ],
+  "technology_signal": {
+    "title": "Physical AIは単発のデモから運用可能なシステムへ",
+    "summary": "工具交換、触覚データ、タスク依存関係の検証、実物流現場でのフィードバックが基盤モデルと同じくらい重要になっている。",
+    "implications": "方策の成功率だけでなく、接触操作の信頼性、外乱後の復旧、導入工数、稼働停止時間を測る必要がある。"
+  },
+  "glossary": [
+    {
+      "term": "VLA",
+      "definition": "画像と言語指示からロボット動作を生成するVision-Language-Actionモデル。"
+    },
+    {
+      "term": "触覚センシング",
+      "definition": "工具や指のセンサーで接触や力を計測すること。"
+    },
+    {
+      "term": "模倣学習",
+      "definition": "実演された動作からロボットの方策を学習する方法。"
+    },
+    {
+      "term": "エンドエフェクター",
+      "definition": "ロボットアーム先端に取り付ける工具や把持器。"
+    },
+    {
+      "term": "sim-to-real",
+      "definition": "シミュレーションで得た方策や知見を実機へ移すこと。"
+    },
+    {
+      "term": "タスクグラフ",
+      "definition": "工程と後続工程が依存する条件を表す構造。"
+    },
+    {
+      "term": "WES",
+      "definition": "設備と作業者の動きを統合管理する倉庫実行システム。"
+    },
+    {
+      "term": "3Dビジョン",
+      "definition": "物体の形状と空間位置を推定する視覚計測。"
+    },
+    {
+      "term": "パレタイズ",
+      "definition": "箱などを運搬用に安定して積み付けること。"
+    },
+    {
+      "term": "few-shot",
+      "definition": "少数の実演例から新しい作業に適応すること。"
+    }
+  ],
+  "sources": [
+    {
+      "id": "swapbot-paper",
+      "url": "https://arxiv.org/abs/2610.40646",
+      "domain": "arxiv.org",
+      "organization": "SwapBot research team",
+      "published_at": "2026-10-29",
+      "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing"
+    },
+    {
+      "id": "gym-paper",
+      "url": "https://arxiv.org/abs/2610.40565",
+      "domain": "arxiv.org",
+      "organization": "Gym-Anything research team",
+      "published_at": "2026-10-29",
+      "title": "Gym-Anything for Robotics: Scaling physical simulations with digital agents"
+    },
+    {
+      "id": "touchbridge-paper",
+      "url": "https://arxiv.org/abs/2610.40349",
+      "domain": "arxiv.org",
+      "organization": "TouchBridge research team",
+      "published_at": "2026-10-29",
+      "title": "TouchBridge: Tactile-Conditioned Human-to-Robot Transfer for Dexterous Manipulation"
+    },
+    {
+      "id": "logiv-paper",
+      "url": "https://arxiv.org/abs/2610.40016",
+      "domain": "arxiv.org",
+      "organization": "LOGIV research team",
+      "published_at": "2026-10-29",
+      "title": "LOGIV: Graph-Verified Execution with Causal Local Repair for Long-Horizon Robot Tasks"
+    },
+    {
+      "id": "aeon-release",
+      "url": "https://www.aeon.info/en/news/release_115103/",
+      "domain": "aeon.info",
+      "organization": "Aeon / Aeon Global SCM / Mujin",
+      "published_at": "2026-10-29",
+      "title": "イオン物流構造改革の次世代自動化モデルセンター「イオン川口東ＸＤ」稼働"
+    },
+    {
+      "id": "agility-sec",
+      "url": "https://www.sec.gov/Archives/edgar/data/2074973/000121390026114063/ea031030301ex99-1.htm",
+      "domain": "sec.gov",
+      "organization": "Agility Robotics / Churchill Capital Corp XI",
+      "published_at": "2026-10-30",
+      "title": "Agility Robotics and Churchill Capital Corp XI Announce Expected Gross Capital Raise of Approximately $465 Million"
+    },
+    {
+      "id": "opentrons-release",
+      "url": "https://opentrons.com/archives/news/opentrons-announces-40m-series-e-round-to-standardize-ai-driven-science-on-its-robots",
+      "domain": "opentrons.com",
+      "organization": "Opentrons",
+      "published_at": "2026-10-29",
+      "title": "Opentrons Announces $40M Series E Round to Standardize AI-Driven Science on Its Robots"
+    },
+    {
+      "id": "bleu-funding",
+      "url": "https://www.eu-startups.com/2026/10/french-startup-bleu-robotics-secures-e5-million-to-teach-humanoid-robots-new-tasks-with-fewer-demonstrations/",
+      "domain": "eu-startups.com",
+      "organization": "EU-Startups / Bleu Robotics",
+      "published_at": "2026-10-29",
+      "title": "French startup Bleu Robotics secures €5 million to teach humanoid robots new tasks with fewer demonstrations"
+    },
+    {
+      "id": "bleu-tech",
+      "url": "https://bleu-robotics.com/blog/introducing-bleu-0-1",
+      "domain": "bleu-robotics.com",
+      "organization": "Bleu Robotics",
+      "published_at": "2026-03-17",
+      "title": "Introducing Bleu_0.1"
+    }
+  ]
+}
