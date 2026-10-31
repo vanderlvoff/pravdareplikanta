@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.4",
+  "publication": "pravda_replikanta",
+  "issue_type": "daily",
+  "issue_date": "2026-10-31",
+  "issue_id": "daily-2026-10-31",
+  "edition": "enthusiast",
+  "language": "en",
+  "generated_at": "2026-10-31T22:25:32+09:00",
+  "title": "Pravda Replikanta — Enthusiast Edition",
+  "lead": "Robots are learning to coordinate two hands and check whether their movements match their intended plans.",
+  "news": [
+    {
+      "id": "acrossdex-two-hands",
+      "title": "AcrossDEX learns two-handed robot manipulation from human motion",
+      "summary": "AcrossDEX 1.0 uses human-motion pretraining and adapts the result to two different robot hands, Inspire and Allegro, for coordinated object manipulation.",
+      "details": "The system uses images, command history and repeated replanning for lid handling and object reorientation.",
+      "technical_novelty": "Shared wrist representations are combined with separate finger parameters for different hand mechanisms.",
+      "engineering_impact": "Suggests a common training pipeline that can be adapted across robot-hand designs.",
+      "limitations": "Author tests range from 40.6% on opening and returning a lid to 100% on a particular reorientation task; generality remains unproven.",
+      "evidence_status": "Research preprint with author-run experiments, not independently replicated.",
+      "published_at": "2026-10-29",
+      "organization": "AcrossDEX research authors",
+      "source_ids": [
+        "acrossdex-source"
+      ],
+      "time_window": "72h",
+      "body": "Opening a box with two hands looks ordinary: one hand holds the base while the other lifts the lid. A robot has to coordinate both wrists and many finger contacts without dropping the object. AcrossDEX 1.0, introduced by its research authors, tackles bimanual dexterous manipulation. That means controlling two articulated robot hands to change an object's position or state while keeping contact.\n\nThe training pipeline begins with recorded human hand motion, then combines simulation-based learning and robot demonstrations. Some wrist-motion representations are shared across robots, while finger commands depend on the hand design. The paper considers six-channel Inspire hands and sixteen-joint Allegro hands. Those mechanisms differ enough that copying the same joint commands between them would not work.\n\nAt execution time, the robot reads camera images and recent commands, predicts a short action sequence, executes part of it and observes again. This is feedback-based replanning rather than blindly replaying a long movement. The researchers compare direct regression with diffusion and flow matching, two methods for generating candidate action sequences from learned distributions.\n\nThe results vary sharply by task. Direct regression succeeds 40.6% of the time on lid opening and return, but reaches 100% on Inspire object reorientation and 93.3% on Allegro reorientation. Flow matching reaches 90% on Allegro reorientation. These are particular experimental settings, not evidence of human-level general dexterity. A natural next question is whether the same approach survives new objects, hand designs and imperfect camera views.",
+      "image": null
+    },
+    {
+      "id": "coract-reason-action",
+      "title": "CoRAct asks whether a robot's reasoning matches its actions",
+      "summary": "CoRAct trains vision-language-action models by checking candidate movements against intended motion and predicted spatial consequences.",
+      "details": "Candidate actions receive feedback based on movement consistency and agreement with expected waypoints.",
+      "technical_novelty": "Intermediate spatial reasoning is tied to action optimization rather than treated only as explanatory text.",
+      "engineering_impact": "Could help detect mismatches between a robot's stated plan and the movement it generates.",
+      "limitations": "Authors report gains on RoboCasa, VLABench and physical tasks, without universal safety guarantees.",
+      "evidence_status": "Research preprint with author evaluations, not independently validated in industry.",
+      "published_at": "2026-10-29",
+      "organization": "CoRAct research authors",
+      "source_ids": [
+        "coract-source"
+      ],
+      "time_window": "72h",
+      "body": "A robot might describe the correct destination for an object and still generate a movement in the wrong direction. CoRAct, a method introduced by its research authors, studies that gap between reasoning and execution. It targets vision-language-action (VLA) models, which connect camera input and language instructions to robot movements. The aim is to make intermediate reasoning accountable to predicted physical consequences.\n\nRather than using reasoning only as text, the method extracts intended movement and waypoints, or expected intermediate positions. It generates candidate actions and scores whether they agree with the intended direction and predicted outcome. Those scores influence the learning process that generates future actions. Here, 'reasoning' does not imply human understanding; it refers to structured predictions that can be checked against movement geometry.\n\nThe authors report improvements on RoboCasa and VLABench, two robotic-action evaluation suites, as well as physical manipulation tasks. They also discuss zero-shot adaptation, meaning applying a learned method to a new setting without task-specific retraining. None of this proves that a robot will always recognize a bad instruction or avoid unsafe contact.\n\nThe next useful question is how reliably plan-execution alignment can be measured when an object slips, a camera misjudges its position or a person changes the task. CoRAct supplies a research mechanism for testing that question. Independent replication and broader hardware trials remain necessary.",
+      "image": null
+    }
+  ],
+  "technology_signal": {
+    "title": "Choosing an action is not the same as executing it",
+    "summary": "AcrossDEX studies two-hand coordination; CoRAct connects predicted consequences with generated movements.",
+    "implications": "Evaluate contact stability and plan-execution alignment, not only final task success."
+  },
+  "glossary": [
+    {
+      "term": "bimanual manipulation",
+      "definition": "Using two coordinated robot hands to handle an object."
+    },
+    {
+      "term": "feedback",
+      "definition": "Using observed results to guide the next action."
+    },
+    {
+      "term": "VLA",
+      "definition": "A model connecting visual observations, language and physical actions."
+    },
+    {
+      "term": "waypoint",
+      "definition": "An expected intermediate position in a movement."
+    },
+    {
+      "term": "zero-shot",
+      "definition": "Applying a method to a new task without task-specific retraining."
+    }
+  ],
+  "sources": [
+    {
+      "id": "acrossdex-source",
+      "title": "AcrossDEX 1.0: From Human Motion Pretraining to Bimanual Dexterous Manipulation across Hand Embodiments",
+      "url": "https://arxiv.org/abs/2610.40210",
+      "domain": "arxiv.org",
+      "organization": "AcrossDEX research authors",
+      "published_at": "2026-10-29"
+    },
+    {
+      "id": "coract-source",
+      "title": "From Reasoning to Action: Consequence-Grounded Alignment for Vision-Language-Action Models",
+      "url": "https://arxiv.org/abs/2610.39543",
+      "domain": "arxiv.org",
+      "organization": "CoRAct research authors",
+      "published_at": "2026-10-29"
+    }
+  ]
+}

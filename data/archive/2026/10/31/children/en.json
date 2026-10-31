@@ -6,14 +6,14 @@
   "issue_id": "daily-2026-10-31",
   "edition": "children",
   "language": "en",
-  "generated_at": "2026-10-31T22:25:32+09:00",
+  "generated_at": "2026-10-31T13:48:50.995Z",
   "title": "Pravda Replikanta — Young Explorers",
   "lead": "How robots remember routes, ask for help and prepare to patrol buildings safely.",
   "news": [
     {
       "id": "evolife-robot-memory",
-      "title": "EvoLife helps a robot remember routes and ask for help",
-      "summary": "Researchers introduced EvoLife, a system for navigating, remembering places and asking questions when instructions are unclear.",
+      "title": "How a robot can remember routes and learn to ask for help",
+      "summary": "Researchers published a study on October 29 describing a system that remembers places, finds routes and asks people for clarification when instructions are unclear.",
       "details": "It stores information about locations and past conversations for later visits.",
       "technical_novelty": "Memory and help-seeking are combined with several ways of choosing movements.",
       "engineering_impact": "Could make robots more useful when they revisit the same buildings.",
@@ -25,13 +25,13 @@
         "evolife-source"
       ],
       "time_window": "72h",
-      "body": "Imagine visiting a large museum for the first time. You remember the stairs near a gallery, and when you get lost, you ask a staff member for directions. Your second visit is easier. Researchers introduced EvoLife to give robots some useful versions of those abilities. A robot is a machine that can sense its surroundings and act in the physical world.\n\nEvoLife helps a robot choose a route, store information about places and decide when to ask someone for clarification. This memory is not a human memory: it is stored information about observations, locations and conversations. Scientists call the process of finding a route to a destination navigation. The system combines several kinds of movement commands with the ability to reuse information from earlier visits.\n\nThe authors tested EvoLife on eight evaluation sets, including finding objects and following spoken or written directions. In some carefully defined tests, the first visit succeeded in all 100 attempts within each tested set. They also report multi-day demonstrations with a physical robot. Those results do not mean the machine will never get lost. Furniture can move, doors can close and instructions can be wrong.\n\nAn important question is whom the robot should ask, and how it can tell whether an answer is trustworthy. Sometimes saying 'I need help' is safer than confidently moving the wrong way. EvoLife is still a research system, not proof of a robot that can work alone anywhere.",
+      "body": "Imagine visiting a large museum for the first time. You remember the stairs near a gallery, and when you get lost, you ask a staff member for directions. Your second visit is easier. Researchers introduced a system to give robots some useful versions of those abilities. A robot is a machine that can sense its surroundings and act in the physical world.\n\nThe system helps a robot choose a route, store information about places and decide when to ask someone for clarification. This memory is not a human memory: it is stored information about observations, locations and conversations. Scientists call the process of finding a route to a destination navigation. The system combines several kinds of movement commands with the ability to reuse information from earlier visits.\n\nThe authors tested the system on eight evaluation sets, including finding objects and following spoken or written directions. In some carefully defined tests, the first visit succeeded in all 100 attempts within each tested set. They also report multi-day demonstrations with a physical robot. Those results do not mean the machine will never get lost. Furniture can move, doors can close and instructions can be wrong.\n\nAn important question is whom the robot should ask, and how it can tell whether an answer is trustworthy. Sometimes saying 'I need help' is safer than confidently moving the wrong way. This is still a research system, not proof of a robot that can work alone anywhere. For reference, the researchers call their system EvoLife.",
       "image": null
     },
     {
       "id": "kit-go2-patrol",
-      "title": "A four-legged Go2 prepares for building patrols in Japan",
-      "summary": "Kanazawa Institute of Technology and two companies built a Unitree Go2 patrol prototype; a continuous 24-hour test is still ahead.",
+      "title": "Japan is preparing a four-legged robot to patrol buildings",
+      "summary": "Kanazawa Institute of Technology and two companies have reported a robot that maps and patrols an area. Its planned 24-hour continuous test has not yet taken place.",
       "details": "The prototype maps and patrols an area of 100 by 100 metres, using an L1 laser-ranging sensor.",
       "technical_novelty": "A map, distance sensors and automatic charging are combined for repeated routes.",
       "engineering_impact": "Robots might help people inspect buildings if their reliability is demonstrated.",
@@ -43,14 +43,14 @@
         "kit-go2-source"
       ],
       "time_window": "7d",
-      "body": "Imagine having to check a large building's corridors at night. In Japan, Kanazawa Institute of Technology and two companies are developing a patrol robot based on Unitree Go2. It has four legs, so it may remind you of a mechanical dog. Engineers call this a quadruped robot, but it is a machine, not a living animal.\n\nThe team says its prototype, an early working version, can build a map and patrol an area measuring 100 by 100 metres. To notice walls and obstacles, it uses an L1 lidar. Lidar is a sensor that sends out laser light and measures distances to objects. The system also includes automatic charging so it can prepare for repeated trips.\n\nThe researchers plan a test in which the robot will operate for 24 hours continuously inside a university building. That test has not yet been completed. So we cannot say the robot has already proved it can patrol reliably for an entire day. The team hopes to test it later in factories and offices.\n\nWhat happens if a door closes unexpectedly? What if the battery runs low or a person asks the robot to stop? Questions like these separate an interesting prototype from a dependable product. Following a map is only one part of working safely around people.",
+      "body": "Imagine having to check a large building's corridors at night. In Japan, Kanazawa Institute of Technology and two companies are developing a patrol robot based on a four-legged robot. It has four legs, so it may remind you of a mechanical dog. Engineers call this a quadruped robot, but it is a machine, not a living animal.\n\nThe team says its prototype, an early working version, can build a map and patrol an area measuring 100 by 100 metres. To notice walls and obstacles, it uses a lidar. Lidar is a sensor that sends out laser light and measures distances to objects. The system also includes automatic charging so it can prepare for repeated trips.\n\nThe researchers plan a test in which the robot will operate for 24 hours continuously inside a university building. That test has not yet been completed. So we cannot say the robot has already proved it can patrol reliably for an entire day. The team hopes to test it later in factories and offices.\n\nWhat happens if a door closes unexpectedly? What if the battery runs low or a person asks the robot to stop? Questions like these separate an interesting prototype from a dependable product. Following a map is only one part of working safely around people. For reference, the four-legged model used in the prototype is called Unitree Go2.",
       "image": null
     }
   ],
   "technology_signal": {
-    "title": "Knowing when to ask is a useful skill",
-    "summary": "EvoLife stores information about places and seeks help; Japan's Go2 patrol is preparing a long-duration test.",
-    "implications": "Good robots need to respond safely to surprises, not just follow a route."
+    "title": "A useful robot knows when to ask and stop",
+    "summary": "One research team is studying memory and requests for help; a Japanese team is preparing a robot for a long patrol test.",
+    "implications": "Following a route is not enough: a robot must also respond safely when the world changes."
   },
   "glossary": [
     {
