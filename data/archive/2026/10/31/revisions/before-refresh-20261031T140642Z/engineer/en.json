@@ -1,0 +1,207 @@
+{
+  "schema_version": "1.4",
+  "publication": "pravda_replikanta",
+  "issue_type": "daily",
+  "issue_date": "2026-10-31",
+  "issue_id": "daily-2026-10-31",
+  "edition": "engineer",
+  "language": "en",
+  "generated_at": "2026-10-31T13:48:50.995Z",
+  "title": "Pravda Replikanta — Engineering Edition",
+  "lead": "Six verified stories on onboard VLA, dexterous hands, action alignment, navigation memory and patrol robots.",
+  "news": [
+    {
+      "id": "openflyv2-onboard",
+      "title": "OpenFlyV2 puts a vision-language-action flight loop onboard",
+      "summary": "Researchers combined vision, language instructions and flight control on a Jetson Orin NX, reporting 48% navigation success across four physical environments.",
+      "details": "The model generates 12-waypoint action chunks at 10 Hz entirely onboard.",
+      "technical_novelty": "A shared vision-language representation feeds a compact action expert with motion-aware memory.",
+      "engineering_impact": "Offers a concrete architecture for testing VLA without offboard action computation.",
+      "limitations": "48% success is insufficient for dependable operation; code was promised, not yet released.",
+      "evidence_status": "Author-reported preprint with physical flight tests, without independent replication.",
+      "published_at": "2026-10-29",
+      "organization": "OpenFlyV2 research authors",
+      "source_ids": [
+        "openflyv2-source"
+      ],
+      "time_window": "72h",
+      "body": "A vision-language-action (VLA) model turns camera observations and language instructions into physical actions. OpenFlyV2 applies that idea to a quadrotor. Its research authors connect scene understanding, spatial reasoning and flight decisions within one onboard control loop. Unlike a model that merely describes a photograph, it must repeatedly observe its surroundings and update the next movement.\n\nAn NVIDIA Jetson Orin NX handles the onboard computation. A compact action expert produces chunks of 12 waypoints at 10 Hz; a waypoint is an intermediate target position along a route. Motion-aware temporal memory reduces the computational burden. After executing part of a plan, the aircraft observes again and revises its next action. This is closed-loop control rather than playback of a fixed flight path.\n\nTraining uses approximately 70,000 simulated navigation trajectories and 60,000 vision-language instruction-response pairs. Without training on physical flight data, the authors report 48% navigation success across four real environments. The result supports a limited simulation-to-reality transfer, not operational safety. Engineers still need latency, power, lighting and moving-obstacle tests. The paper describes source-code release as forthcoming, leaving independent reproduction unresolved.",
+      "image": null
+    },
+    {
+      "id": "dexsuite-framework",
+      "title": "DexSuite standardizes dexterous-manipulation experiments",
+      "summary": "The open framework includes 30 tasks, 10 arms, 12 end-effectors and 4,700 successful simulated episodes.",
+      "details": "Built on Genesis, it combines more than 100 single-arm robots and thousands of two-arm pairings.",
+      "technical_novelty": "A shared API, teleoperation and simulated tactile sensing support cross-embodiment evaluation.",
+      "engineering_impact": "May reduce the setup burden of comparable manipulation experiments.",
+      "limitations": "All 4,700 episodes are simulated; general physical transfer is unproven.",
+      "evidence_status": "Open-source research project and preprint with simulation-based results.",
+      "published_at": "2026-10-27",
+      "organization": "DexSuite research authors",
+      "source_ids": [
+        "dexsuite-source"
+      ],
+      "time_window": "7d",
+      "body": "Comparing dexterous-manipulation algorithms is difficult when every paper uses a different hand, task set and physics engine. DexSuite, an open research framework built on the Genesis simulator, aims to provide a common experimental environment. Researchers can change the arm, the end-effector and the task while keeping a standardized software interface.\n\nThe release contains 30 tasks, 10 arms and 12 end-effectors, meaning tools or grippers attached to the arm. Those combinations produce more than 100 single-arm configurations and thousands of bimanual pairings. A shared API, or programming interface, is supplemented by teleoperation and simulated touch sensors. The authors define a benchmark of 16 task-and-embodiment pairs to compare methods under more consistent conditions.\n\nThe dataset includes 4,700 successful simulated episodes collected through human teleoperation, scripted experts and learned policies. An episode is a completed attempt; a policy is an algorithm choosing actions from observations. Shared infrastructure helps replication, but does not guarantee that virtual contact mechanics resemble reality. Friction, object deformation, actuator delay and sensor noise may all differ on hardware. Physical trials remain necessary before interpreting simulator scores as factory performance.",
+      "image": null
+    },
+    {
+      "id": "acrossdex-two-hands",
+      "title": "AcrossDEX learns two-handed robot manipulation from human motion",
+      "summary": "AcrossDEX 1.0 uses human-motion pretraining and adapts the result to two different robot hands, Inspire and Allegro, for coordinated object manipulation.",
+      "details": "The system uses images, command history and repeated replanning for lid handling and object reorientation.",
+      "technical_novelty": "Shared wrist representations are combined with separate finger parameters for different hand mechanisms.",
+      "engineering_impact": "Suggests a common training pipeline that can be adapted across robot-hand designs.",
+      "limitations": "Author tests range from 40.6% on opening and returning a lid to 100% on a particular reorientation task; generality remains unproven.",
+      "evidence_status": "Research preprint with author-run experiments, not independently replicated.",
+      "published_at": "2026-10-29",
+      "organization": "AcrossDEX research authors",
+      "source_ids": [
+        "acrossdex-source"
+      ],
+      "time_window": "72h",
+      "body": "Opening a box with two hands looks ordinary: one hand holds the base while the other lifts the lid. A robot has to coordinate both wrists and many finger contacts without dropping the object. AcrossDEX 1.0, introduced by its research authors, tackles bimanual dexterous manipulation. That means controlling two articulated robot hands to change an object's position or state while keeping contact.\n\nThe training pipeline begins with recorded human hand motion, then combines simulation-based learning and robot demonstrations. Some wrist-motion representations are shared across robots, while finger commands depend on the hand design. The paper considers six-channel Inspire hands and sixteen-joint Allegro hands. Those mechanisms differ enough that copying the same joint commands between them would not work.\n\nAt execution time, the robot reads camera images and recent commands, predicts a short action sequence, executes part of it and observes again. This is feedback-based replanning rather than blindly replaying a long movement. The researchers compare direct regression with diffusion and flow matching, two methods for generating candidate action sequences from learned distributions.\n\nThe results vary sharply by task. Direct regression succeeds 40.6% of the time on lid opening and return, but reaches 100% on Inspire object reorientation and 93.3% on Allegro reorientation. Flow matching reaches 90% on Allegro reorientation. These are particular experimental settings, not evidence of human-level general dexterity. A natural next question is whether the same approach survives new objects, hand designs and imperfect camera views.\n\nAcross Inspire and Allegro, wrist representations are shared while finger parameters remain hand-specific and invalid degrees of freedom are masked. Executing short action chunks with replanning requires checking contact continuity. Reproduction depends on exact success criteria, object sets and control frequency.",
+      "image": null
+    },
+    {
+      "id": "coract-reason-action",
+      "title": "CoRAct asks whether a robot's reasoning matches its actions",
+      "summary": "CoRAct trains vision-language-action models by checking candidate movements against intended motion and predicted spatial consequences.",
+      "details": "Candidate actions receive feedback based on movement consistency and agreement with expected waypoints.",
+      "technical_novelty": "Intermediate spatial reasoning is tied to action optimization rather than treated only as explanatory text.",
+      "engineering_impact": "Could help detect mismatches between a robot's stated plan and the movement it generates.",
+      "limitations": "Authors report gains on RoboCasa, VLABench and physical tasks, without universal safety guarantees.",
+      "evidence_status": "Research preprint with author evaluations, not independently validated in industry.",
+      "published_at": "2026-10-29",
+      "organization": "CoRAct research authors",
+      "source_ids": [
+        "coract-source"
+      ],
+      "time_window": "72h",
+      "body": "A robot might describe the correct destination for an object and still generate a movement in the wrong direction. CoRAct, a method introduced by its research authors, studies that gap between reasoning and execution. It targets vision-language-action (VLA) models, which connect camera input and language instructions to robot movements. The aim is to make intermediate reasoning accountable to predicted physical consequences.\n\nRather than using reasoning only as text, the method extracts intended movement and waypoints, or expected intermediate positions. It generates candidate actions and scores whether they agree with the intended direction and predicted outcome. Those scores influence the learning process that generates future actions. Here, 'reasoning' does not imply human understanding; it refers to structured predictions that can be checked against movement geometry.\n\nThe authors report improvements on RoboCasa and VLABench, two robotic-action evaluation suites, as well as physical manipulation tasks. They also discuss zero-shot adaptation, meaning applying a learned method to a new setting without task-specific retraining. None of this proves that a robot will always recognize a bad instruction or avoid unsafe contact.\n\nThe next useful question is how reliably plan-execution alignment can be measured when an object slips, a camera misjudges its position or a person changes the task. CoRAct supplies a research mechanism for testing that question. Independent replication and broader hardware trials remain necessary.\n\nCoRAct scores candidate actions against intended motion and predicted waypoints, then uses group-relative optimization of the generator's initial noise. Engineering evaluation should separate spatial prediction error, task success and unsafe contact frequency; one metric cannot substitute for another.",
+      "image": null
+    },
+    {
+      "id": "evolife-robot-memory",
+      "title": "EvoLife helps a robot remember routes and ask for help",
+      "summary": "Researchers introduced EvoLife, a system for navigating, remembering places and asking questions when instructions are unclear.",
+      "details": "It stores information about locations and past conversations for later visits.",
+      "technical_novelty": "Memory and help-seeking are combined with several ways of choosing movements.",
+      "engineering_impact": "Could make robots more useful when they revisit the same buildings.",
+      "limitations": "High scores come from defined tests and do not prove flawless navigation in every building.",
+      "evidence_status": "Author preprint with benchmark tests and multi-day physical demonstrations; no independent replication.",
+      "published_at": "2026-10-29",
+      "organization": "EvoLife research authors",
+      "source_ids": [
+        "evolife-source"
+      ],
+      "time_window": "72h",
+      "body": "Imagine visiting a large museum for the first time. You remember the stairs near a gallery, and when you get lost, you ask a staff member for directions. Your second visit is easier. Researchers introduced EvoLife to give robots some useful versions of those abilities. A robot is a machine that can sense its surroundings and act in the physical world.\n\nEvoLife helps a robot choose a route, store information about places and decide when to ask someone for clarification. This memory is not a human memory: it is stored information about observations, locations and conversations. Scientists call the process of finding a route to a destination navigation. The system combines several kinds of movement commands with the ability to reuse information from earlier visits.\n\nThe authors tested EvoLife on eight evaluation sets, including finding objects and following spoken or written directions. In some carefully defined tests, the first visit succeeded in all 100 attempts within each tested set. They also report multi-day demonstrations with a physical robot. Those results do not mean the machine will never get lost. Furniture can move, doors can close and instructions can be wrong.\n\nAn important question is whom the robot should ask, and how it can tell whether an answer is trustworthy. Sometimes saying 'I need help' is safer than confidently moving the wrong way. EvoLife is still a research system, not proof of a robot that can work alone anywhere.\n\nEvoLife combines waypoint navigation, local discrete corrections, pixel-based movement and object-directed navigation. Spatial memory associates observations and dialogue with locations. The authors report R2R revisit SPL, a success metric weighted by route length, rising from 82.23% to 93.31% with retained experience. This is not a physical safety metric.\n\nDeployment needs stale-memory handling, verification of guidance and safe stopping. The reported average is 1.87 active help-seeking interactions per episode, a figure dependent on the evaluation tasks rather than a universal operating rate.",
+      "image": null
+    },
+    {
+      "id": "kit-go2-patrol",
+      "title": "Japan's Go2 patrol prototype moves toward proof-of-concept testing",
+      "summary": "Kanazawa Institute of Technology and partners have developed a Unitree Go2 patrol prototype; a continuous 24-hour test is still planned, not completed.",
+      "details": "The prototype maps and patrols an area of 100 by 100 metres, using an L1 lidar and automatic charging.",
+      "technical_novelty": "It combines autonomous routes, ranging sensors and charging infrastructure for building patrols.",
+      "engineering_impact": "Customers should assess uptime, incident procedures, operator interventions and operating costs.",
+      "limitations": "The proposed 24-hour operation is not yet backed by completed continuous-run results.",
+      "evidence_status": "Official university announcement about a prototype and planned PoC, not independent field statistics.",
+      "published_at": "2026-10-28",
+      "organization": "Kanazawa Institute of Technology",
+      "source_ids": [
+        "kit-go2-source"
+      ],
+      "time_window": "7d",
+      "body": "A patrol robot's commercial value depends less on a polished demonstration than on whether it can reliably finish its rounds overnight. On October 28, Kanazawa Institute of Technology announced joint work with Kanazawa Kiko and AI Robot Systems on a patrol system based on the Unitree Go2 quadruped. The university says a prototype is complete and the project has entered a proof-of-concept (PoC) stage: testing whether an idea works under realistic conditions.\n\nThe team reports autonomous map-based patrol over a 100-by-100-metre area. An L1 lidar, a laser ranging sensor that measures distances to surrounding objects, provides a stated field of view of 360 degrees horizontally and 90 degrees vertically. Automatic charging is part of the proposed long-duration operation. A continuous 24-hour campus test is planned, followed by trials in factories and office buildings.\n\nPotential duties include routine rounds, equipment checks and remote observation of hazardous areas. A buyer still needs evidence about people crossing the route, locked doors, network failures, charging interruptions and escalation to human staff. Useful procurement metrics include completed patrols, uptime, operator interventions and maintenance costs. The university announcement contains no results from the planned 24-hour run and does not demonstrate a labor-saving return on investment.\n\nThe technical configuration includes an L1 lidar with a stated 360-degree horizontal and 90-degree vertical field of view, map-based routing and automatic charging. The claimed 100-by-100-metre coverage is not a localization accuracy or patrol completion metric. The planned 24-hour test should record failures, interventions and recovery time.",
+      "image": null
+    }
+  ],
+  "technology_signal": {
+    "title": "From model to action: physical verification matters",
+    "summary": "Six studies and projects examine control, contact, memory, feedback and testing conditions.",
+    "implications": "Measure motion quality, failure modes, simulation transfer and hardware costs separately."
+  },
+  "glossary": [
+    {
+      "term": "VLA",
+      "definition": "A model connecting visual input and language to actions."
+    },
+    {
+      "term": "closed-loop control",
+      "definition": "Control that updates commands from fresh observations."
+    },
+    {
+      "term": "waypoint",
+      "definition": "An intermediate target position on a route."
+    },
+    {
+      "term": "sim-to-real",
+      "definition": "Transfer from simulation to physical hardware."
+    },
+    {
+      "term": "end-effector",
+      "definition": "A gripper or tool attached to a robot arm."
+    },
+    {
+      "term": "feedback",
+      "definition": "Using observed results to guide the next action."
+    },
+    {
+      "term": "SPL",
+      "definition": "Navigation success weighted by path length."
+    }
+  ],
+  "sources": [
+    {
+      "id": "openflyv2-source",
+      "title": "OpenFlyV2: An onboard vision-language-action model for aerial perception and navigation",
+      "url": "https://arxiv.org/abs/2610.39287",
+      "domain": "arxiv.org",
+      "organization": "OpenFlyV2 research authors",
+      "published_at": "2026-10-29"
+    },
+    {
+      "id": "dexsuite-source",
+      "title": "DexSuite: An All-in-One Framework for Dexterous Manipulation Across Arms, Hands, and Tasks",
+      "url": "https://arxiv.org/abs/2610.37799",
+      "domain": "arxiv.org",
+      "organization": "DexSuite research authors",
+      "published_at": "2026-10-27"
+    },
+    {
+      "id": "acrossdex-source",
+      "title": "AcrossDEX 1.0: From Human Motion Pretraining to Bimanual Dexterous Manipulation across Hand Embodiments",
+      "url": "https://arxiv.org/abs/2610.40210",
+      "domain": "arxiv.org",
+      "organization": "AcrossDEX research authors",
+      "published_at": "2026-10-29"
+    },
+    {
+      "id": "coract-source",
+      "title": "From Reasoning to Action: Consequence-Grounded Alignment for Vision-Language-Action Models",
+      "url": "https://arxiv.org/abs/2610.39543",
+      "domain": "arxiv.org",
+      "organization": "CoRAct research authors",
+      "published_at": "2026-10-29"
+    },
+    {
+      "id": "evolife-source",
+      "title": "Ask to Evolve: A Unified Harness for Lifelong Embodied Navigation with Hybrid Action Space and Persistent Memory",
+      "url": "https://arxiv.org/abs/2610.39446",
+      "domain": "arxiv.org",
+      "organization": "EvoLife research authors",
+      "published_at": "2026-10-29"
+    },
+    {
+      "id": "kit-go2-source",
+      "title": "四足歩行ロボット「Unitree Go2」を活用した巡回ロボットの社会実装を目指して",
+      "url": "https://www.kanazawa-it.ac.jp/kitnews/2026/1028_unitree-go2.html",
+      "domain": "www.kanazawa-it.ac.jp",
+      "organization": "Kanazawa Institute of Technology",
+      "published_at": "2026-10-28"
+    }
+  ]
+}
