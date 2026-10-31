@@ -72,12 +72,20 @@ def test_sample_and_cli(monkeypatch, tmp_path):
     assert report["preview_only"] is True
 
 
-def test_asset_integrity_blocks_build(data, tmp_path):
+@pytest.mark.parametrize(
+    "font",
+    [
+        "Caveat/static/Caveat-Regular.ttf",
+        "PTSerif/PTSerif-Regular.ttf",
+        "NotoSerifJP/NotoSerifJP-Regular.ttf",
+    ],
+)
+def test_asset_integrity_blocks_build(data, tmp_path, font):
     import shutil
 
     assets = tmp_path / "assets"
     shutil.copytree("assets", assets)
-    (assets / "fonts/Caveat/static/Caveat-Regular.ttf").write_bytes(b"corrupt")
+    (assets / "fonts" / font).write_bytes(b"corrupt")
     output = tmp_path / "site"
     with pytest.raises(ValueError, match="checksum mismatch"):
         build(Issue.model_validate(data), output, assets=assets)

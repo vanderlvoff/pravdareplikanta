@@ -114,8 +114,9 @@ def test_successful_two_request_draft(template, wire, monkeypatch, tmp_path):
         template=template, day=DAY, number=2, output=output, model="fixture-model"
     )
     issue = load_issue(output / f"{DAY}.json")
-    assert issue.status == "draft" and issue.weather is None
-    assert report["status"] == "draft"
+    assert issue.status == "approved" and issue.weather is None
+    assert report["status"] == "approved"
+    assert report["review_stage"] == "cloudflare_upload"
     assert all(payload["store"] is False for payload in calls)
     assert calls[0]["tools"] == [{"type": "web_search"}]
     assert calls[0]["tool_choice"] == "required"

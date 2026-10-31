@@ -1,0 +1,23 @@
+{
+  "ru": {
+    "intro": "Все выпуски газеты — от новых к предыдущим.",
+    "latest": "Последний выпуск",
+    "open": "Читать выпуск",
+    "home": "К последнему выпуску",
+    "revision": "Редакция"
+  },
+  "en": {
+    "intro": "Every issue of the newspaper, newest first.",
+    "latest": "Latest issue",
+    "open": "Read issue",
+    "home": "Back to the latest issue",
+    "revision": "Revision"
+  },
+  "ja": {
+    "intro": "これまでの紙面を、新しい号から順に掲載しています。",
+    "latest": "最新号",
+    "open": "この号を読む",
+    "home": "最新号に戻る",
+    "revision": "改訂"
+  }
+}

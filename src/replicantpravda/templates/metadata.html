@@ -1,0 +1,3 @@
+  <link rel="canonical" href="{{ site_url }}{{ language_links[lang] }}">
+  {% for code, path in language_links.items() %}<link rel="alternate" hreflang="{{ code }}" href="{{ site_url }}{{ path }}">
+  {% endfor %}<link rel="alternate" type="application/rss+xml" title="{{ edition.title }} — RSS" href="{{ site_url }}/{{ lang }}/rss.xml">

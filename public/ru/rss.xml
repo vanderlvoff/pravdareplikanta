@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Правда репликанта</title>
+    <link>https://repravda.com/ru/</link>
+    <description>Новости и анализ из мира физического искусственного интеллекта.</description>
+    <language>ru</language>
+    <atom:link href="https://repravda.com/ru/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SwapBot: вместо универсального захвата — сменные инструменты с тактильной обратной связью</title>
+      <link>https://repravda.com/ru/issues/2026-10-31/articles/swapbot-tools/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:ru:swapbot-tools</guid>
+      <description>В поисках универсальной роботизированной кисти есть очевидная альтернатива: не делать одну руку на все случаи, а менять инструмент. SwapBot предлагает единое крепление на роботе и недорогие адаптеры для привычных предметов. Встроенная тактильная обратная связь сообщает о контакте, который камера не всегда способна надёжно распознать.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>Gym-Anything: агенты-программисты создают полигоны для обучения роботов</title>
+      <link>https://repravda.com/ru/issues/2026-10-31/articles/gym-anything/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:ru:gym-anything</guid>
+      <description>Робот может блестяще выглядеть в знакомом симуляторе и растеряться при первом изменении условий. Gym-Anything атакует проблему со стороны инфраструктуры: цифровые агенты сами создают и проверяют физические среды, вместо того чтобы ждать ручной работы специалистов. Так появился RoboWorld — 25 симуляций и 25 тестовых задач.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>TouchBridge переносит человеческие касания в обучение ловкой роботизированной кисти</title>
+      <link>https://repravda.com/ru/issues/2026-10-31/articles/touchbridge-tactile/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:ru:touchbridge-tactile</guid>
+      <description>Когда человек поворачивает предмет в руке, важно не только положение пальцев. Важно, где они касаются поверхности и как меняется контакт. TouchBridge сочетает носимый интерфейс с переносом тактильных данных между разными кистями, сохраняя пространственные отношения зон контакта при преобразовании демонстраций для робота.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>LOGIV проверяет, сохранились ли физические условия плана</title>
+      <link>https://repravda.com/ru/issues/2026-10-31/articles/logiv-repair/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:ru:logiv-repair</guid>
+      <description>Выполнить шаг — ещё не значит сохранить его результат. Робот может правильно поставить деталь, а затем задеть её следующим движением. LOGIV использует явный граф задач: он хранит зависимости будущих действий от физических условий, проверяет эти условия по наблюдениям и восстанавливает только нарушенные связи.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>Aeon и Mujin запустили в Японии логистический центр со смешанной роботизированной укладкой</title>
+      <link>https://repravda.com/ru/issues/2026-10-31/articles/aeon-mixed-palletizing/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:ru:aeon-mixed-palletizing</guid>
+      <description>Коробки разных размеров и массы редко приходят в порядке, удобном для заранее записанной траектории. На центре Aeon Kawaguchi East XD, запущенном 29 октября совместно с Mujin, система рассчитывает план укладки по заказу, а затем проверяет формирующийся штабель с помощью 3D-зрения. Если груз смещается, робот корректирует действия. Именно эта обратная связь отличает решение от жёсткого сценария.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>Agility уточнила финансирование масштабирования Digit 5</title>
+      <link>https://repravda.com/ru/issues/2026-10-31/articles/agility-financing/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:ru:agility-financing</guid>
+      <description>Между эффектной демонстрацией гуманоида и обслуживаемым парком машин лежит не только алгоритм, но и капитал. Agility Robotics и Churchill XI теперь ожидают около 465 млн долларов валовых поступлений от предполагаемого объединения, говорится в документе от 30 октября. Закрытие намечено на 4 ноября, торги на Nasdaq — на 5 ноября, но оба события зависят от выполнения условий.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>Opentrons привлекла 40 млн долларов для соединения ИИ с физической лабораторией</title>
+      <link>https://repravda.com/ru/issues/2026-10-31/articles/opentrons-autonomous-labs/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:ru:opentrons-autonomous-labs</guid>
+      <description>Языковая модель может предложить тысячу экспериментов раньше, чем лаборатория закончит один. Opentrons инвестирует в медленную половину этого цикла: роботы дозируют жидкости, выполняют протоколы и фиксируют структурированные результаты. 29 октября компания объявила о раунде Series E на 40 млн долларов для расширения этой инфраструктуры.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>Bleu Robotics делает ставку на обучение за несколько демонстраций</title>
+      <link>https://repravda.com/ru/issues/2026-10-31/articles/bleu-few-shot/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:ru:bleu-few-shot</guid>
+      <description>У промышленной робототехники упрямая проблема: следующая модификация изделия способна обесценить вчерашнюю тщательно запрограммированную ячейку. Французская Bleu Robotics, выросшая из Inria, привлекла 5 млн евро на более узкий подход, чем мечта о всеобщем интеллекте. Её few-shot imitation learning пытается восстановить смысл операции примерно по десяти демонстрациям, используя готовые средства восприятия и управления.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>Physical AI переходит от отдельных демонстраций к управляемым системам</title>
+      <link>https://repravda.com/ru/issues/2026-10-31/articles/technology-signal/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:ru:technology-signal</guid>
+      <description>Смена инструментов, тактильные данные, проверка зависимостей и обратная связь реального склада делают инженерную обвязку не менее важной, чем базовую модель.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>Анализ</category>
+    </item>
+    <item>
+      <title>VLA-Stem: реактивный защитный контур для VLA без дообучения базовой модели</title>
+      <link>https://repravda.com/ru/issues/2026-10-30/articles/vla-stem/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-30:ru:vla-stem</guid>
+      <description>Большая VLA может понимать команду, но всё равно вести манипулятор к препятствию. VLA-Stem предлагает не переучивать базовую модель, а добавить быстрый защитный контур. Он превращает предсказанные действия в опорную траекторию и корректирует движение по данным о состоянии робота и ближайших препятствиях.</description>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>TOPS: ускорение flow-политик манипуляции без изменения архитектуры</title>
+      <link>https://repravda.com/ru/issues/2026-10-30/articles/tops-flow/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-30:ru:tops-flow</guid>
+      <description>Чтобы ускорить манипулятор, иногда достаточно изменить не нейросеть, а способ генерации её действий. TOPS подбирает начальное распределение и график переноса отдельно для каждой задачи. Сама архитектура политики остаётся прежней.</description>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>OpenJaws: открытый захват для сбора демонстраций со стереолокализацией</title>
+      <link>https://repravda.com/ru/issues/2026-10-30/articles/openjaws-stereo/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-30:ru:openjaws-stereo</guid>
+      <description>Обучение манипулятора начинается с примера. OpenJaws позволяет записывать его без самого робота: человек держит захват со стереокамерой, а система восстанавливает траекторию в метрическом масштабе. Это снимает одну из проблем монокулярной SLAM — неопределённость абсолютного масштаба.</description>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>RoboAuto: поиск программ робота с проверкой физических гипотез</title>
+      <link>https://repravda.com/ru/issues/2026-10-30/articles/roboauto-programs/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-30:ru:roboauto-programs</guid>
+      <description>Робот может выполнить команду и всё же не достичь результата: захватить воздух вместо предмета или продолжить работу после неоткрытой дверцы. RoboAuto делает проверку физических последствий частью поиска программы. Система хранит знания об объектах и допустимых действиях, а при неопределённости проверяет конкурирующие гипотезы экспериментом.</description>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>REACH: Unitree G1 переходит от ходьбы к ползанию в низких проходах</title>
+      <link>https://repravda.com/ru/issues/2026-10-30/articles/reach-crawling/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-30:ru:reach-crawling</guid>
+      <description>Перед низким проходом обычная ходьба перестаёт помогать даже гуманоиду. REACH учит Unitree G1 переходить от двуногого движения к ползанию и обратно. Отдельная политика согласует разные режимы контакта, а LiDAR-планировщик заранее определяет требуемую высоту корпуса.</description>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>HC2Robot: прогноз опоры стопы для паркура гуманоидов</title>
+      <link>https://repravda.com/ru/issues/2026-10-30/articles/hc2-foresight/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-30:ru:hc2-foresight</guid>
+      <description>Увидеть площадку для шага недостаточно: надо предсказать, где стопа коснётся поверхности и насколько надёжной окажется опора. HC2Robot обучает такой прогноз на данных симулятора, но при исполнении использует только доступные бортовые наблюдения. Hyper-Connection Transformer объединяет временную информацию.</description>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>Ловкая кисть LEAP: 95,2% точных достижений и меньше падений</title>
+      <link>https://repravda.com/ru/issues/2026-10-30/articles/dexsafe-hand/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-30:ru:dexsafe-hand</guid>
+      <description>Ловкая кисть может точно повернуть предмет и всё же уронить его по дороге. Исследователи LEAP hand отдельно измеряют этот риск. Политику обучили в симуляции без человеческих демонстраций, а затем добавили регулируемый остаточный фильтр безопасности.</description>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>Япония: Tokio Marine вводит страхование остановок AI-роботов</title>
+      <link>https://repravda.com/ru/issues/2026-10-30/articles/tokio-robot-insurance/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-30:ru:tokio-robot-insurance</guid>
+      <description>Роботизация обычно начинается с расчёта производительности. Но кто оплачивает работу людей, если робот сломался? Японская Tokio Marine &amp;amp; Nichido анонсировала на ноябрь 2026 года страхование AI-роботов, включающее не только повреждения и ответственность перед третьими лицами, но и отдельные расходы при простое.</description>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>От демонстраций к надёжному исполнению</title>
+      <link>https://repravda.com/ru/issues/2026-10-30/articles/technology-signal/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-30:ru:technology-signal</guid>
+      <description>Новые исследования всё чаще отделяют намерение робота от локальной коррекции, проверки промежуточных результатов и управления физическим риском.</description>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 +0900</pubDate>
+      <category>Анализ</category>
+    </item>
+  </channel>
+</rss>

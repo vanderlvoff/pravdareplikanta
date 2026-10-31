@@ -16,5 +16,6 @@ or pad stories with unsupported facts. Reuse a source across translations faithf
 Do not insert model citation markers such as turn0search0 into the article text.
 If the research cannot support the three articles or required dates, set ready=false,
 list missing information, and return an empty editions array. Otherwise set ready=true
-and return all three editions. Never claim approval; this is a draft for human review.
+and return all three editions. Never claim human review has occurred. The app assigns
+workflow status after validation; final human review happens at publication upload.
 Do not include weather, artwork, secret values or publishing instructions.

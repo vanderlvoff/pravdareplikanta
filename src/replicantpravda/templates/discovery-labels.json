@@ -1,0 +1,17 @@
+{
+  "ru": {
+    "rss": "RSS — новые статьи",
+    "description": "Новости и анализ из мира физического искусственного интеллекта.",
+    "categories": {"news": "Новости", "analysis": "Анализ", "opinion": "Мнение", "satire": "Сатира"}
+  },
+  "en": {
+    "rss": "RSS — latest articles",
+    "description": "News and analysis from the world of physical artificial intelligence.",
+    "categories": {"news": "News", "analysis": "Analysis", "opinion": "Opinion", "satire": "Satire"}
+  },
+  "ja": {
+    "rss": "RSS — 最新記事",
+    "description": "フィジカルAIの世界からニュースと分析をお届けします。",
+    "categories": {"news": "ニュース", "analysis": "分析", "opinion": "論説", "satire": "風刺"}
+  }
+}

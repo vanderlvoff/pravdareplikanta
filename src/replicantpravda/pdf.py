@@ -14,13 +14,31 @@ from .verification import normalize_pdf, verify_pdf
 PLAYWRIGHT_VERSION = "1.56.0"
 CHROMIUM_VERSION = "141.0.7390.37"
 
+ARTICLE_FONT_LOAD = """async () => {
+  // Load the actual reading stack before measuring content from inert <template>.
+  const family = getComputedStyle(document.querySelector('.page-body')).fontFamily;
+  const specs = [
+    `400 10pt ${family}`, `700 16pt ${family}`,
+    `italic 400 10pt ${family}`, `italic 700 10pt ${family}`,
+  ];
+  const sample = 'Газета newspaper 新聞';
+  const results = await Promise.all(specs.map(async font => {
+    try {
+      await document.fonts.load(font, sample);
+      return {font, loaded: document.fonts.check(font, sample)};
+    } catch { return {font, loaded: false}; }
+  }));
+  await document.fonts.ready;
+  return results;
+}"""
+
 GEOMETRY_CHECK = """() => {
   const problems = [];
   for (const sheet of document.querySelectorAll('.sheet')) {
     const bounds = sheet.getBoundingClientRect();
     const body = sheet.querySelector('.page-body');
     const region = body.getBoundingClientRect();
-    for (const element of sheet.querySelectorAll('p,h1,h2,h3,li,blockquote,img,figure,figcaption,.page-footer')) {
+    for (const element of sheet.querySelectorAll('p,h1,h2,h3,li,blockquote,img,figure,figcaption,.page-footer,.running-title')) {
       const insideArticle = element.closest('[data-article]');
       const limit = insideArticle ? region : bounds;
       for (const rect of element.getClientRects()) {
@@ -99,8 +117,14 @@ def render_pdfs(site: Path, issue: Issue) -> dict:
                     else None,
                 )
                 page.emulate_media(media="print")
-                page.goto(f"{origin}/{lang}/print/", wait_until="networkidle")
+                page.goto(
+                    f"{origin}/{lang}/issues/{issue.issue_id}/print/", wait_until="networkidle"
+                )
                 page.evaluate("document.fonts.ready")
+                font_loads = page.evaluate(ARTICLE_FONT_LOAD)
+                if not all(result["loaded"] for result in font_loads):
+                    report["editions"][lang] = {"article_font_loads": font_loads}
+                    raise PrintFailure(report)
                 loaded = page.locator("img").evaluate_all(
                     "es => es.every(e => e.complete && e.naturalWidth > 0)"
                 )
@@ -114,6 +138,7 @@ def render_pdfs(site: Path, issue: Issue) -> dict:
                 )
                 geometry = pagination["errors"] + page.evaluate(GEOMETRY_CHECK)
                 current = {"resource_errors": errors, "images_loaded": loaded, "overflow": geometry}
+                current["article_font_loads"] = font_loads
                 report["editions"][lang] = current
                 if errors or not loaded or geometry:
                     raise PrintFailure(report)
@@ -133,12 +158,42 @@ def render_pdfs(site: Path, issue: Issue) -> dict:
                     for f in fonts["fonts"]
                 ):
                     raise PrintFailure(report)
+                nodes = session.send(
+                    "DOM.querySelectorAll",
+                    {
+                        "nodeId": document["root"]["nodeId"],
+                        "selector": ".print-column article :is(h2,h3,p,li,blockquote,figcaption,a,span)",
+                    },
+                )
+                article_fonts = {}
+                for node_id in nodes["nodeIds"]:
+                    for font in session.send("CSS.getPlatformFontsForNode", {"nodeId": node_id})[
+                        "fonts"
+                    ]:
+                        article_fonts[font["postScriptName"]] = font
+                current["article_fonts"] = sorted(
+                    article_fonts.values(), key=lambda font: font["postScriptName"]
+                )
+                current["article_font_policy"] = "footer-sans"
+                current["unexpected_article_fonts"] = [
+                    font for font in current["article_fonts"] if font["isCustomFont"]
+                ]
+                current["article_family_matches_footer"] = page.evaluate("""() => {
+                    const family = getComputedStyle(document.body).fontFamily;
+                    return [...document.querySelectorAll('.print-column article :is(h2,h3,p,li,blockquote,figcaption)')]
+                      .every(node => getComputedStyle(node).fontFamily === family);
+                }""")
+                if (
+                    current["unexpected_article_fonts"]
+                    or not current["article_family_matches_footer"]
+                ):
+                    raise PrintFailure(report)
                 pdf_path = site / lang / "issues" / str(issue.issue_id) / "edition.pdf"
                 pdf_path.with_name("pagination.json").write_text(
                     json.dumps(pagination, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
                 )
                 current["pagination"] = {"page_count": pagination["page_count"]}
-                (site / lang / "print/index.html").write_text(page.content(), encoding="utf-8")
+                (pdf_path.parent / "print/index.html").write_text(page.content(), encoding="utf-8")
                 page.pdf(
                     path=str(pdf_path),
                     prefer_css_page_size=True,
@@ -161,7 +216,7 @@ def render_pdfs(site: Path, issue: Issue) -> dict:
         server.shutdown()
         server.server_close()
     report["warnings"] = [
-        "Article fonts remain provisional system fonts; motto fonts are bundled.",
+        "Articles use the owner-selected footer system-font stack; motto fonts are bundled.",
         "Full-page golden references absent; visual approval pending.",
         "Glyph checks are text-extraction heuristics; inspect raster previews.",
     ]

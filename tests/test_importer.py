@@ -38,7 +38,9 @@ def template():
 def test_import_preserves_sections_and_sources(feed_folder, template, tmp_path):
     before = {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in feed_folder.iterdir()}
     issue, report = import_feed(feed_folder, template, number=2, revision=2)
-    assert issue.status == "draft" and issue.revision == 2
+    assert issue.status == "approved" and issue.revision == 2
+    assert report["status"] == "approved"
+    assert report["review_stage"] == "cloudflare_upload"
     assert issue.weather == template.weather
     for lang in ("ru", "en", "ja"):
         raw = json.loads((feed_folder / f"{lang}.json").read_text())
@@ -68,6 +70,13 @@ def test_import_preserves_sections_and_sources(feed_folder, template, tmp_path):
     html = (tmp_path / "site/ru/index.html").read_text()
     assert issue.languages["ru"].issue_title in html
     assert "glossary" in html
+    from xml.etree import ElementTree as ET
+
+    assert (tmp_path / "site/sitemap.xml").is_file()
+    assert ET.parse(tmp_path / "site/ru/rss.xml").findall("channel/item")
+    verification = json.loads((tmp_path / "site/verification.json").read_text())
+    assert verification["preview_only"] is True
+    assert verification["publication"] == "DISABLED"
 
 
 def test_jp_alias(feed_folder, template):

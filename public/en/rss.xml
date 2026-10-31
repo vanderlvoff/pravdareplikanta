@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>The Replicant Truth</title>
+    <link>https://repravda.com/en/</link>
+    <description>News and analysis from the world of physical artificial intelligence.</description>
+    <language>en</language>
+    <atom:link href="https://repravda.com/en/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SwapBot replaces the universal gripper with swappable tactile tools</title>
+      <link>https://repravda.com/en/issues/2026-10-31/articles/swapbot-tools/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:en:swapbot-tools</guid>
+      <description>The search for a single hand that can do everything has an obvious rival: change the tool instead. SwapBot puts a standard coupling on the robot and inexpensive adapters on ordinary utensils. A spatula, brush or articulated tool can become a robot end-effector, while integrated tactile sensing reports contact that cameras alone cannot reliably reveal.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>Gym-Anything lets coding agents build the robot training worlds</title>
+      <link>https://repravda.com/en/issues/2026-10-31/articles/gym-anything/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:en:gym-anything</guid>
+      <description>A robot policy can look capable in a familiar simulator and still fail when the world changes. Gym-Anything attacks the supply side of that problem: coding agents create and audit new physical simulations, rather than waiting for experts to hand-build each environment. The resulting RoboWorld benchmark spans 25 simulations and 25 test tasks.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>TouchBridge carries human fingertip contact into robot training</title>
+      <link>https://repravda.com/en/issues/2026-10-31/articles/touchbridge-tactile/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:en:touchbridge-tactile</guid>
+      <description>When a person turns an object in the hand, the important information is not just where the fingers went. It is where they touched and how the contact changed. TouchBridge combines a wearable demonstration interface with tactile-conditioned retargeting, preserving fingertip contact relations as examples are converted for a robot hand.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>LOGIV checks whether the world still supports the robot’s plan</title>
+      <link>https://repravda.com/en/issues/2026-10-31/articles/logiv-repair/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:en:logiv-repair</guid>
+      <description>Completing a step is not the same as preserving its result. A robot may place a part correctly, then knock it aside while executing the next instruction. LOGIV introduces an explicit task graph that records which later actions depend on which physical conditions, checks those conditions against observations and repairs the broken links locally.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>Aeon and Mujin put mixed-case palletizing into a live Japanese distribution hub</title>
+      <link>https://repravda.com/en/issues/2026-10-31/articles/aeon-mixed-palletizing/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:en:aeon-mixed-palletizing</guid>
+      <description>Mixed cartons rarely arrive in the neat order that a fixed palletizing script expects. At Aeon’s Kawaguchi East XD, launched on October 29 with Mujin, the system simulates a loading plan for each order, then uses 3D vision to check the evolving stack and adjust the robot’s movements if boxes shift. That feedback loop is the engineering heart of the deployment.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>Agility updates the capital available for scaling Digit 5</title>
+      <link>https://repravda.com/en/issues/2026-10-31/articles/agility-financing/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:en:agility-financing</guid>
+      <description>The distance from a convincing humanoid demonstration to a serviceable fleet is measured partly in capital. Agility Robotics and Churchill XI now expect roughly $465 million in gross proceeds from their proposed combination, according to a filing dated October 30. The companies target closing on November 4 and Nasdaq trading on November 5, subject to approval and other conditions.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>Opentrons raises $40 million to connect AI experiments with physical labs</title>
+      <link>https://repravda.com/en/issues/2026-10-31/articles/opentrons-autonomous-labs/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:en:opentrons-autonomous-labs</guid>
+      <description>A language model can propose a thousand experiments before a human laboratory has finished one. Opentrons is investing in the slower half of that loop: liquid-handling robots, software and structured records of what was actually done. On October 29 it announced a $40 million Series E to expand the infrastructure for AI-directed laboratory work.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>Bleu Robotics bets on few-shot teaching rather than general-purpose hype</title>
+      <link>https://repravda.com/en/issues/2026-10-31/articles/bleu-few-shot/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:en:bleu-few-shot</guid>
+      <description>Industrial robotics has a stubborn problem: the next product variant can invalidate yesterday’s carefully programmed cell. Bleu Robotics, an Inria spinout, has raised €5 million to pursue a narrower alternative to universal robot intelligence. Its few-shot imitation learning approach tries to infer a workstation task from roughly ten operator demonstrations, using existing perception and motion-control tools.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>Physical AI shifts from isolated demonstrations to systems that can be operated</title>
+      <link>https://repravda.com/en/issues/2026-10-31/articles/technology-signal/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:en:technology-signal</guid>
+      <description>Tool changing, tactile data, verified task dependencies and live warehouse feedback make the surrounding engineering stack as important as the foundation model.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>Analysis</category>
+    </item>
+    <item>
+      <title>VLA-Stem adds reflex-like safety control without retraining the base VLA</title>
+      <link>https://repravda.com/en/issues/2026-10-30/articles/vla-stem/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-30:en:vla-stem</guid>
+      <description>A VLA can understand a command and still drive an arm into an obstacle. VLA-Stem addresses that gap without retraining the base model. It turns predicted action chunks into motion references and adds a faster local controller that adjusts execution using robot-state and obstacle observations.</description>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>TOPS accelerates flow-based manipulation without changing the network</title>
+      <link>https://repravda.com/en/issues/2026-10-30/articles/tops-flow/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-30:en:tops-flow</guid>
+      <description>Making manipulation faster does not always require a bigger neural network. TOPS changes where flow-based action generation begins and how it progresses, tailoring the source distribution and transport schedule to the task. The network architecture remains unchanged.</description>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>OpenJaws: open handheld demonstration gripper with stereo localization</title>
+      <link>https://repravda.com/en/issues/2026-10-30/articles/openjaws-stereo/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-30:en:openjaws-stereo</guid>
+      <description>Before a robot can learn a manipulation skill, someone must demonstrate it. OpenJaws records those examples without a robot: an operator moves a camera-equipped handheld gripper, and stereo vision reconstructs motion at metric scale. That avoids the absolute-scale ambiguity of monocular tracking.</description>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>RoboAuto searches robot programs by testing physical hypotheses</title>
+      <link>https://repravda.com/en/issues/2026-10-30/articles/roboauto-programs/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-30:en:roboauto-programs</guid>
+      <description>A robot may execute its program while failing the task: grasping empty space, for example, or proceeding before a drawer opens. RoboAuto puts physical verification into program search. It stores knowledge of objects and possible interactions, grounds it in the current scene and runs small experiments when competing explanations remain.</description>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>REACH teaches Unitree G1 to switch between walking and crawling</title>
+      <link>https://repravda.com/en/issues/2026-10-30/articles/reach-crawling/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-30:en:reach-crawling</guid>
+      <description>Walking is of little use when a passage is lower than a humanoid&amp;#x27;s torso. REACH gives the Unitree G1 a way to switch from bipedal movement to crawling and back. A transition policy bridges different contact modes, while LiDAR-based planning anticipates overhead clearance.</description>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>HC2Robot predicts footholds for humanoid parkour</title>
+      <link>https://repravda.com/en/issues/2026-10-30/articles/hc2-foresight/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-30:en:hc2-foresight</guid>
+      <description>Seeing the next foothold is not enough; a humanoid must anticipate when its foot will land and whether the surface can support it. HC2Robot predicts contact timing, position and quality from onboard observations, approximating information available only during simulator training. A Hyper-Connection Transformer combines the temporal signals.</description>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>LEAP hand reaches 95.2% of in-hand pose targets with fewer drops</title>
+      <link>https://repravda.com/en/issues/2026-10-30/articles/dexsafe-hand/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-30:en:dexsafe-hand</guid>
+      <description>A dexterous hand can reach the right pose and still drop its object. Researchers using the LEAP hand treat that risk as a separate safety problem. They train in simulation without human demonstrations and add an adjustable residual filter to moderate risky actions.</description>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>Japan: Tokio Marine launches coverage for AI-robot downtime</title>
+      <link>https://repravda.com/en/issues/2026-10-30/articles/tokio-robot-insurance/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-30:en:tokio-robot-insurance</guid>
+      <description>Robot deployment begins with productivity forecasts. It often ends with a harder question: who pays when the machine stops? Japan&amp;#x27;s Tokio Marine &amp;amp; Nichido has announced AI Robot Insurance for November 2026, covering specified downtime-related continuity costs alongside equipment damage and third-party liability.</description>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>From demonstrations to reliable execution</title>
+      <link>https://repravda.com/en/issues/2026-10-30/articles/technology-signal/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-30:en:technology-signal</guid>
+      <description>Recent research increasingly separates task intent from local correction, intermediate verification and management of physical risk.</description>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 +0900</pubDate>
+      <category>Analysis</category>
+    </item>
+  </channel>
+</rss>

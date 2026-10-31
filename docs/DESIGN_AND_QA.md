@@ -42,11 +42,16 @@ A reproducible automatically paginated A4 PDF edition in RU/EN/JA with the owner
 
 ## Manual signoff
 
-Even after automated checks pass, human must inspect all three languages and mark issue APPROVED. Reference-perfect compliance cannot be claimed until owner supplies golden PDFs/images.
+Complete generated/imported issues receive approved status automatically by owner instruction.
+Final human review of all three languages and publication confirmation happen during
+Cloudflare upload. Reference-perfect compliance cannot be claimed until owner supplies
+golden PDFs/images. Comparisons with these images are algorithmic and require no AI
+service or API. No AI-based visual approval is required.
 
 ## Current local implementation
 
 See [PRINT.md](PRINT.md) for the implemented PDF workflow and measured limitations.
-By owner instruction, article fonts remain temporary system fonts. RU/EN mottos
-use bundled Caveat; the Japanese motto uses owner-selected bundled Zen Kurenaido.
+Article text and headings use the footer’s Arial/sans-serif stack, including
+system Japanese fallback, by owner preference; see [TYPOGRAPHY.md](TYPOGRAPHY.md). RU/EN mottos use
+bundled Caveat; the Japanese motto uses owner-selected bundled Zen Kurenaido.
 The 10mm print margins are provisional because full-page golden references are absent.

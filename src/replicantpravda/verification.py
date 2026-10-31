@@ -2,8 +2,11 @@
 
 import hashlib
 import json
+from datetime import date
+from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import urlsplit
+from urllib.parse import unquote, urlsplit
+from xml.etree import ElementTree as ET
 
 from .models import Issue
 
@@ -31,7 +34,14 @@ def normalize_pdf(path: Path) -> None:
     path.write_bytes(data)
 
 
-def verify_pdf(path: Path, issue: Issue, lang: str, *, rasterize: bool = False) -> dict:
+def verify_pdf(
+    path: Path,
+    issue: Issue,
+    lang: str,
+    *,
+    rasterize: bool = False,
+    require_article_fonts: bool = False,
+) -> dict:
     try:
         import pymupdf
     except ImportError as error:
@@ -139,6 +149,14 @@ def verify_pdf(path: Path, issue: Issue, lang: str, *, rasterize: bool = False) 
         expected_font = "ZenKurenaido" if lang == "ja" else "Caveat"
         if not any(expected_font in name and embedded for name, embedded in fonts.items()):
             errors.append(f"{expected_font} motto font is not embedded")
+        if require_article_fonts:
+            expected_article = "NotoSerifJP" if lang == "ja" else "PTSerif"
+            for weight in ("Regular", "Bold"):
+                if not any(
+                    f"{expected_article}-{weight}" in name and embedded
+                    for name, embedded in fonts.items()
+                ):
+                    errors.append(f"{expected_article}-{weight} article font is not embedded")
         if any(not embedded for embedded in fonts.values()):
             errors.append("Some PDF fonts are not embedded")
     return {
@@ -158,6 +176,159 @@ def artifact_hashes(site: Path) -> dict[str, str]:
     }
 
 
+class PageLinks(HTMLParser):
+    def __init__(self, html: str) -> None:
+        super().__init__()
+        self.hrefs: list[str] = []
+        self.ids: set[str] = set()
+        self.head_links: list[dict[str, str | None]] = []
+        self.language: str | None = None
+        self.feed(html)
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        values = dict(attrs)
+        if tag == "html":
+            self.language = values.get("lang")
+        if tag == "link":
+            self.head_links.append(values)
+        if values.get("id"):
+            self.ids.add(values["id"])
+        if tag in {"a", "link"} and values.get("href"):
+            self.hrefs.append(values["href"])
+
+
+def verify_site_links(site: Path) -> list[str]:
+    """Check local page/PDF links and fragment targets, including archived articles."""
+    root = site.resolve()
+    config = root / "site.json"
+    origin = (
+        urlsplit(json.loads(config.read_text(encoding="utf-8"))["site_url"])
+        if config.exists()
+        else None
+    )
+    pages = {path: PageLinks(path.read_text(encoding="utf-8")) for path in root.rglob("*.html")}
+    errors = []
+    for path, page in pages.items():
+        for href in page.hrefs:
+            url = urlsplit(href)
+            if (url.scheme or url.netloc) and (
+                not origin or (url.scheme, url.netloc) != (origin.scheme, origin.netloc)
+            ):
+                continue
+            target = (
+                root / unquote(url.path).lstrip("/")
+                if url.path.startswith("/")
+                else path.parent / unquote(url.path)
+                if url.path
+                else path
+            ).resolve()
+            if target.is_dir():
+                target /= "index.html"
+            if not target.is_relative_to(root) or not target.is_file():
+                errors.append(f"{path.relative_to(root)}: missing local target {href}")
+            elif (
+                url.fragment and target in pages and unquote(url.fragment) not in pages[target].ids
+            ):
+                errors.append(f"{path.relative_to(root)}: missing fragment {href}")
+    return sorted(errors)
+
+
+def verify_discovery(site: Path, issues: list[Issue]) -> list[str]:
+    """Check metadata reciprocity, stable RSS destinations and eligible sitemap URLs."""
+    config = site / "site.json"
+    if not config.exists():
+        return []  # Snapshots built before discovery metadata was implemented.
+    from .discovery import (
+        ATOM_NS,
+        PUBLIC_STATUSES,
+        SITEMAP_NS,
+        article_guid,
+        article_path,
+        sitemap_paths,
+    )
+
+    origin = json.loads(config.read_text(encoding="utf-8"))["site_url"]
+    errors = []
+    pages = {}
+    for path in site.rglob("*.html"):
+        page = PageLinks(path.read_text(encoding="utf-8"))
+        canonical = [link.get("href") for link in page.head_links if link.get("rel") == "canonical"]
+        alternates = {
+            link.get("hreflang"): link.get("href")
+            for link in page.head_links
+            if link.get("rel") == "alternate" and link.get("hreflang")
+        }
+        feeds = [
+            link.get("href")
+            for link in page.head_links
+            if link.get("type") == "application/rss+xml"
+        ]
+        if (
+            len(canonical) != 1
+            or set(alternates) != {"ru", "en", "ja"}
+            or canonical[0] != alternates.get(page.language)
+            or feeds != [f"{origin}/{page.language}/rss.xml"]
+            or any(not url or not url.startswith(origin + "/") for url in alternates.values())
+        ):
+            errors.append(f"{path.relative_to(site)}: inconsistent canonical/hreflang/RSS metadata")
+        pages[path.resolve()] = alternates
+    for path, alternates in pages.items():
+        for url in alternates.values():
+            if not url or not url.startswith(origin + "/"):
+                continue
+            target = (site / url.removeprefix(origin).lstrip("/") / "index.html").resolve()
+            if pages.get(target) != alternates:
+                errors.append(f"{path.relative_to(site.resolve())}: nonreciprocal hreflang {url}")
+    for lang in ("ru", "en", "ja"):
+        try:
+            rss = ET.parse(site / lang / "rss.xml").getroot()
+        except (ET.ParseError, OSError):
+            errors.append(f"{lang}/rss.xml: missing or invalid XML")
+            continue
+        expected = [
+            origin + article_path(issue, lang, article)
+            for issue in issues
+            if issue.status in PUBLIC_STATUSES
+            for article in issue.languages[lang].articles
+            if article.id != "glossary"
+        ]
+        expected_guids = [
+            article_guid(issue, lang, article)
+            for issue in issues
+            if issue.status in PUBLIC_STATUSES
+            for article in issue.languages[lang].articles
+            if article.id != "glossary"
+        ]
+        items = rss.findall("channel/item")
+        self_link = rss.find(f"channel/{{{ATOM_NS}}}link")
+        if (
+            rss.tag != "rss"
+            or rss.get("version") != "2.0"
+            or rss.findtext("channel/language") != lang
+            or self_link is None
+            or self_link.get("href") != f"{origin}/{lang}/rss.xml"
+            or [item.findtext("link") for item in items] != expected
+            or [item.findtext("guid") for item in items] != expected_guids
+        ):
+            errors.append(f"{lang}/rss.xml: RSS destinations differ from eligible source articles")
+    sitemap = site / "sitemap.xml"
+    expected_urls = [origin + path for path in sitemap_paths(issues)]
+    if not expected_urls:
+        if sitemap.exists():
+            errors.append("sitemap.xml: no approved or published pages are eligible")
+    else:
+        try:
+            tree = ET.parse(sitemap).getroot()
+            if (
+                tree.tag != f"{{{SITEMAP_NS}}}urlset"
+                or [entry.findtext(f"{{{SITEMAP_NS}}}loc") for entry in tree] != expected_urls
+            ):
+                errors.append("sitemap.xml: URLs differ from eligible canonical pages")
+        except (ET.ParseError, OSError):
+            errors.append("sitemap.xml: missing or invalid XML")
+    return sorted(errors)
+
+
 def verify_snapshot(site: Path, issue_id: str) -> dict:
     expected = json.loads((site / "artifacts.json").read_text(encoding="utf-8"))
     if artifact_hashes(site) != expected:
@@ -165,11 +336,59 @@ def verify_snapshot(site: Path, issue_id: str) -> dict:
     issue = Issue.model_validate_json((site / "source.json").read_text(encoding="utf-8"))
     if str(issue.issue_id) != issue_id:
         raise ValueError("Snapshot issue ID differs from requested issue")
-    report = {"issue_id": issue_id, "editions": {}}
-    for lang in ("ru", "en", "ja"):
-        path = site / lang / "issues" / issue_id / "edition.pdf"
-        report["editions"][lang] = verify_pdf(path, issue, lang)
-    report["passed"] = all(edition["passed"] for edition in report["editions"].values())
+    archive_path = site / "archive.json"
+    archive = (
+        json.loads(archive_path.read_text(encoding="utf-8")) if archive_path.exists() else None
+    )
+    issues = [issue]
+    if archive:
+        if archive["latest"] != issue_id:
+            raise ValueError("Archive latest issue differs from requested issue")
+        issues = [
+            Issue.model_validate_json(
+                (site / "sources" / f"{date.fromisoformat(entry['issue_id'])}.json").read_text(
+                    encoding="utf-8"
+                )
+            )
+            for entry in archive["issues"]
+        ]
+        from .archive import archive_metadata, collect_issues
+
+        history = tuple(entry for entry in issues if str(entry.issue_id) != issue_id)
+        selected = collect_issues(issue, history)
+        if [archive_metadata(entry) for entry in selected] != archive["issues"] or not any(
+            entry == issue for entry in issues
+        ):
+            raise ValueError("Archive sources differ from the selected issue metadata")
+    report = {"issue_id": issue_id, "editions": {}, "archive": {}}
+    pdf = archive["pdf"] if archive else True
+    for entry in issues:
+        editions = {}
+        if pdf:
+            for lang in ("ru", "en", "ja"):
+                path = site / lang / "issues" / str(entry.issue_id) / "edition.pdf"
+                editions[lang] = verify_pdf(
+                    path,
+                    entry,
+                    lang,
+                    require_article_fonts=(
+                        site / "assets/fonts/PTSerif/PTSerif-Regular.ttf"
+                    ).is_file(),
+                )
+        report["archive"][str(entry.issue_id)] = editions
+        if str(entry.issue_id) == issue_id:
+            report["editions"] = editions
+    report["link_errors"] = verify_site_links(site)
+    report["metadata_errors"] = verify_discovery(site, issues)
+    report["passed"] = (
+        not report["link_errors"]
+        and not report["metadata_errors"]
+        and all(
+            edition["passed"]
+            for editions in report["archive"].values()
+            for edition in editions.values()
+        )
+    )
     report["visual_approval"] = "PENDING"
     report["publication"] = "DISABLED"
     return report

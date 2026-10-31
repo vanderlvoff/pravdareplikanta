@@ -1,0 +1,11 @@
+{
+  "name": "pravdareplikanta-deployment",
+  "private": true,
+  "scripts": {
+    "check:public": "node scripts/check-public.mjs",
+    "deploy": "npm run check:public && wrangler deploy",
+    "dev:public": "wrangler dev"
+  },
+  "devDependencies": { "wrangler": "4.156.0" },
+  "engines": { "node": ">=22.0.0" }
+}

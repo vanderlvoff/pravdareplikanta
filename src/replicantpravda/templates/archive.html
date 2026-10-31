@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="archive-intro">
+  <a class="back-link" href="/{{ lang }}/"><span aria-hidden="true">←</span>{{ archive_labels.home }}</a>
+  <h2>{{ labels.archive }}</h2>
+  <p>{{ archive_labels.intro }}</p>
+</div>
+{% for year, entries in archive_groups.items() %}
+<section class="archive-year" aria-labelledby="archive-year-{{ year }}">
+  <h3 class="section-heading" id="archive-year-{{ year }}">{{ year }}</h3>
+  <ol class="archive-list">
+  {% for entry in entries %}
+    {% set archived = entry.languages[lang] %}
+    {% set issue_url = '/' ~ lang ~ '/issues/' ~ entry.issue_id ~ '/' %}
+    <li class="archive-entry">
+      <div class="archive-date">
+        <time datetime="{{ entry.publication_date }}">{{ entry.publication_date }}</time>
+        <span>{{ labels.issue }} № {{ entry.number }}</span>
+        {% if entry.issue_id == latest_id %}<span class="archive-latest">{{ archive_labels.latest }}</span>{% endif %}
+      </div>
+      <div class="archive-description">
+        <h4><a href="{{ issue_url }}">{{ archived.issue_title or archived.title }}</a></h4>
+        {% if archived.editorial_note %}<p>{{ archived.editorial_note }}</p>{% endif %}
+        <p class="archive-revision">{{ archive_labels.revision }} {{ entry.revision }}</p>
+        <div class="archive-actions">
+          <a class="read-more" href="{{ issue_url }}">{{ archive_labels.open }} <span aria-hidden="true">→</span></a>
+          {% if print_enabled %}<a class="archive-pdf" href="{{ issue_url }}edition.pdf">{{ labels.pdf }}</a>{% endif %}
+        </div>
+      </div>
+    </li>
+  {% endfor %}
+  </ol>
+</section>
+{% endfor %}
+{% endblock %}

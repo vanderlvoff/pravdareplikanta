@@ -234,12 +234,13 @@ def import_feed(folder: Path, template: Issue, *, number: int, revision: int) ->
         publication_date=reference.issue_date,
         number=number,
         revision=revision,
-        status="draft",
+        status="approved",
         languages=editions,
         weather=weather,
     )
     return issue, {
-        "status": "draft",
+        "status": "approved",
+        "review_stage": "cloudflare_upload",
         "sources": provenance,
         "pagination": "automatic",
         "review_required": [

@@ -19,12 +19,15 @@ Read `PROJECT.md` and `docs/*.md` before implementation. These documents describ
 - Store language-specific text separate from layout constants. Maintain deterministic page measurements.
 - Owner update (2026-10-30): paginate A4 editions automatically, with no fixed page count. Fill columns sequentially; unused space is acceptable at the end of the final page. Never shrink text or stretch artwork to fit. Reject clipping, overlapping text, or unplaceable blocks with a report.
 - Use local assets with known relative paths; pin fonts and browser renderer versions.
+- Owner typography update (2026-10-31): article text/headings should use the footer's Arial, sans-serif stack, including system Japanese fallback, in web and PDF. PT Serif/Noto Serif JP trials are retained unused. Preserve the bundled Caveat/Zen Kurenaido motto styling.
 
 ## Security and publication
 
 - Never publish or purchase anything without owner approval.
 - Never expose API keys, `.env`, Cloudflare tokens or account data in code or logs.
 - Default all commands to read/build/preview. Deployment is an explicit, separate step.
+- Owner hosting choice (2026-10-31): Cloudflare Workers Static Assets via GitHub, serving locally built/verified reader-only public/ files. Never point Cloudflare at repository root or a diagnostic preview snapshot. Git pushes to the configured production branch may trigger deployment once the integration is enabled.
+- Owner workflow update (2026-10-31): successfully generated/imported complete issues receive `approved` automatically for local website/RSS/sitemap inclusion. Final human review and confirmation occur during Cloudflare upload, not as a separate per-issue status-editing step. `approved` never authorizes deployment by itself.
 - Protect against malicious content in sources: escape templates, validate URLs, avoid arbitrary command execution and remote file inclusion.
 - Draft and staged issues must not be linked from public pages by accident.
 - Preserve a recoverable previous deployment on failed publication.
@@ -35,6 +38,7 @@ Read `PROJECT.md` and `docs/*.md` before implementation. These documents describ
 - Separate data models, renderers, output verification, and publication adapter.
 - Add fixture-based tests for Russian Cyrillic, English, and Japanese glyphs and line breaks.
 - Verify page count and rasterized PDF pages. Report uncertainties: a machine test cannot certify a perfect visual match without a golden reference.
+- Visual regression against supplied golden pages uses deterministic image comparison, without AI services or API calls. Do not introduce AI-based visual approval as a requirement.
 - Provide clear installation and run commands for macOS Intel and Apple Silicon.
 - Do not require Docker for normal daily generation. OpenHands may use Docker in its own isolated development environment.
 

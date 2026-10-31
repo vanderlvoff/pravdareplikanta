@@ -5,7 +5,7 @@ Status: development handoff / MVP specification
 
 ## 1. Product vision
 
-Create a public, multilingual internet newspaper about Physical AI, titled **Правда репликанта / The Replicant Truth** (Japanese display name to be approved). Target domain: `replicantpravda.com` (registration and availability NOT confirmed).
+Create a public, multilingual internet newspaper about Physical AI, titled **Правда репликанта / The Replicant Truth** (Japanese display name to be approved). Target domain selected by the owner on 2026-10-31: `repravda.com` (hosting and registration setup remain separate).
 
 The newspaper has two distinct outputs built from a **single editorial dataset**:
 
@@ -19,8 +19,8 @@ The masthead and its adornments must preserve the user's **already approved desi
 **Local-first publishing from the user's Mac.** No VPS, shared hosting, PHP, PythonAnywhere, permanent remote backend, or GitHub Actions required for the MVP.
 
 - On macOS: Python application, Jinja2 HTML templates, CSS, Playwright/Chromium for print output (replaceable renderer), SQLite for local editorial state, file-based assets, tests.
-- Publication: static site generator outputs an immutable `dist/` directory; upload build to Cloudflare Pages via Wrangler Direct Upload.
-- Cloudflare hosts only static HTML/CSS/JS/images/PDF/RSS; it does not generate issues or need API access to the model.
+- Owner hosting choice (2026-10-31): prepare/verify static website and PDFs locally, export a reader-only `public/` release to GitHub, and use Cloudflare Workers Static Assets with Git integration. This supersedes the earlier Pages Direct Upload plan.
+- Cloudflare hosts only static HTML/CSS/images/PDF/RSS; its build checks the release manifest and uploads prebuilt files. It does not generate issues/PDFs or need API access to the model.
 - Domain and DNS configured separately by owner. Do not assume it has been purchased.
 - Local scheduler may be added later via macOS `launchd`; manual `build`, `verify`, and `publish` commands must work first.
 
@@ -32,7 +32,7 @@ The masthead and its adornments must preserve the user's **already approved desi
 - Languages: Russian, English, Japanese. Maintain parallel edition/issue IDs, but allow editorially correct translations rather than literal word-for-word translation.
 - Distinguish news, analysis, opinion, and satire. Every news claim should be traceable to a cited source URL and publication date. Do not fabricate sources.
 - A future AI editorial pipeline may generate drafts via external APIs. MVP should first accept **manually supplied validated JSON**; no AI subscription or API key necessary to build the first issue.
-- Human review gate before public publication, even if automated checks pass.
+- Owner workflow (2026-10-31): complete generated/imported issues receive `approved` automatically. Final human review and confirmation happen during Cloudflare upload, even if automated checks pass. No separate manual status edit is required after generation; `approved` is not deployment permission.
 - Corrected editions must be labeled with revision timestamps; keep original source JSON version history in Git.
 
 ## 4. Immutable brand requirements
@@ -40,8 +40,9 @@ The masthead and its adornments must preserve the user's **already approved desi
 - Print PDF must use the exact previously approved masthead composition, not an image generated anew.
 - Owner-supplied hero portrait (`ly.png`, updated 2026-10-30), three medals (Orion Falcon, Defense of Jupiter, Hero of Tannhäuser), typography, borders, offsets and alignment must come from approved files. Medals' inscriptions must match edition language where approved variants exist.
 - Fonts, including user-supplied Caveat-Regular for quotations, must be bundled inside the project and embedded in exported PDFs where licensing permits.
+- Owner typography choice (2026-10-31): article text/headings use the same `Arial, sans-serif` system stack as the footer, including Japanese system glyph fallback. This supersedes the PT Serif/Noto Serif JP trial; motto fonts remain bundled and PDF font embedding is still checked.
 - Do not download, substitute, redraw, restyle, stretch, crop, or reflow approved assets without explicit approval.
-- Use visual regression image comparisons of PDF pages against a user-approved golden reference. If references are not supplied, mark visual approval BLOCKED; do not claim fidelity.
+- Use algorithmic visual regression image comparisons of PDF pages against a user-approved golden reference, without AI services or API calls. If references are not supplied, mark reference comparison pending; do not claim fidelity. AI-based visual approval is not a requirement.
 - Explicitly test masthead right edge, medal alignment, portrait proportion, weather block, and quote font. These are known regression-sensitive elements.
 
 ## 5. MVP features
@@ -112,10 +113,13 @@ rp validate content/issues/2026-10-29.json
 rp build --issue 2026-10-29 --output dist
 rp verify --issue 2026-10-29 --output dist
 rp preview --issue 2026-10-29
-rp publish --output dist --confirm
+rp build --publication --issue 2026-10-31 --content-dir content/technical --pdf --output previews/release-proof
+rp release --snapshot previews/release-proof --output public
 ```
 
-These commands are **design targets**, not existing code. Publishing must require explicit confirmation; optional automation can later be enabled through clearly configured policy.
+Local validate/build/verify/preview/release commands are implemented. Initial upload
+is confirmed in Cloudflare; later pushes to its production branch trigger deployment.
+Review each new public/ release before that push. See docs/DEPLOYMENT.md.
 
 ## 9. Definition of done for MVP
 
@@ -124,14 +128,14 @@ These commands are **design targets**, not existing code. Publishing must requir
 3. Each PDF reports its measured page count; no clipped or overlapping text, missing glyphs or missing assets.
 4. Approved masthead visual regression passes once source assets and golden reference are received.
 5. Local preview serves static pages and PDF without any external backend.
-6. Deployment script can publish `dist/` to an operator-owned Cloudflare Pages project.
+6. A verified reader-only release can be deployed from GitHub to the owner's Cloudflare Workers Static Assets application.
 7. A failed validation cannot trigger publication.
 8. Setup and recovery are documented; secrets remain out of Git.
 
 ## 10. Pending inputs — do not guess
 
 - Owner must supply approved fonts, portrait, medals, masthead reference and sample PDFs. Files may currently be in ChatGPT Library and are not automatically available to Codex.
-- Domain purchase and Cloudflare Pages project creation are not completed.
-- Japanese publication name and translation/style policies require final editorial approval.
+- Domain/DNS and Cloudflare Workers application setup are handled by the owner.
+- The owner-selected Japanese reader-facing name is レプリカントの真実; translations/style are reviewed with each release.
 - Exact print spacing, typography measurements and existing issue numbering derive from the final approved sample, not this spec.
 - API provider/model, usage budgets and publishing schedule to be decided separately.

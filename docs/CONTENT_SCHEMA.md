@@ -35,7 +35,7 @@ The canonical source of each issue is versioned JSON; the website and paper PDF 
 ## Validation rules
 
 - `issue_id` ISO date; unique and stable. `revision` increments when correcting a public issue.
-- `status` draft/review/approved/published. Publishing requires approved status.
+- `status` draft/review/approved/published. By owner workflow, complete generated/imported issues are automatically `approved` for inclusion in local output and discovery files. Final human approval happens during Cloudflare upload; status alone never authorizes deployment. Explicit incomplete draft/review inputs remain supported and excluded from RSS/sitemap.
 - All language editions have identical article `id` for cross-language linking, but may contain editorially adapted text.
 - Store sources per article (URL, title, source publication date, retrieval date when available).
 - Use an allowlist for body block types (`paragraph`, `heading`, `quote`, `list`, `image`, `caption`), not arbitrary HTML from LLM output.

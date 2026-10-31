@@ -21,7 +21,7 @@ then the next page. The final page balances its two columns and may have unused 
 section order: news, then analysis. Legacy `print_page` hints are accepted but ignored.
 
 The first page keeps the supplied masthead, portrait/medals, weather and quote.
-Later pages have a compact masthead. Article text stays at 10pt and headlines at
+Later pages have a compact, plain bold text title instead of the artwork. Article text stays at 10pt and headlines at
 16pt. Columns, margins and artwork are never scaled to squeeze in more text.
 Margins remain provisional 10mm pending a full-page approved reference.
 
@@ -42,13 +42,19 @@ certify perfect visual harmony; inspect the raster previews for every language.
 - `page-1.png` through `page-N.png`: every PDF page, rasterized for visual review.
 - `pagination.json`: measured page count, article fragments and column fill ratios.
 - `<lang>/print/`: persisted paginated HTML; PDF remains the print proof.
+- `<lang>/issues/<date>/print/`: dated print HTML for every selected historical issue.
 - `source.json`: exact editorial input, including weather.
 - `verification.json`: geometry, resources, fonts and PDF checks.
 - `artifacts.json`: checksums validated by `rp verify`.
 
 Do not modify successful snapshots or add diagnostic files inside them. Build into
 a fresh directory each time. Failed builds write `<output-name>.failed.json` and do
-not replace a previous snapshot. Publishing remains a separate unimplemented step.
+not replace a previous snapshot. Upload remains a separate step; see [DEPLOYMENT.md](DEPLOYMENT.md)
+for publication proofs and GitHub/Cloudflare release packaging.
+
+With `--archive-issue JSON`, each selected issue gets its own PDF, pagination map,
+source snapshot and raster previews; `rp verify` checks all included dates.
+See [ARCHIVE.md](ARCHIVE.md) for multi-issue builds and reader routes.
 
 Pinned tools: Playwright 1.56.0, Chromium 141.0.7390.37 (build 1194), PyMuPDF 1.26.5.
 External browser requests are blocked. Local assets are checksummed, and PDF time
@@ -56,9 +62,12 @@ metadata is removed for deterministic repeated builds in the same environment.
 Verification also checks A4 dimensions, embedded fonts, RU/EN Caveat and Japanese Zen Kurenaido motto usage, missing
 text/glyph heuristics and snapshot integrity. Page counts may differ by language.
 
-Article fonts remain provisional system fonts by owner instruction. Motto fonts
-are bundled: Caveat for RU/EN and Zen Kurenaido for JA. Full-page golden references are still absent: visual approval
-is pending and cross-machine typography is not yet fully reproducible.
+Article text and headings use the footer’s Arial/sans-serif stack by owner
+preference, including system Japanese fallback. Chromium checks family consistency
+and records actual font usage; PDF verification checks embedding. Motto fonts
+remain Caveat for RU/EN and Zen Kurenaido for JA. See [TYPOGRAPHY.md](TYPOGRAPHY.md).
+Full-page golden references are still absent; visual approval remains pending.
+Header/navigation system fonts still limit complete cross-machine reproducibility.
 
 ```sh
 pytest

@@ -2,6 +2,39 @@
 
 ## Unreleased
 
+- Added local publication proofs and reader-only release packaging for Cloudflare Workers Static Assets via GitHub, with a checksum guard and pinned Wrangler configuration. Kept PDF generation on the Mac and diagnostic/source files outside public/.
+- Removed preview labels/status from publication HTML/PDF, enabled public sitemap/robots output, and corrected the prepared Japanese edition name to the previously selected レプリカントの真実.
+
+- Switched article text/headings back to the footer's Arial/sans-serif stack in web and PDF at the owner's preference. Retained the serif trial assets unused; preserved motto fonts and PDF embedding/overflow checks.
+
+- Bundled licensed, pinned PT Serif and Noto Serif JP article fonts for web/PDF, including genuine bold headings and PT Serif italics. Preserved mastheads and motto fonts.
+- Added deterministic Noto TrueType instance preparation and checks for actual custom-font usage, unexpected fallback and named PDF font embedding.
+
+- Applied the owner's generation workflow: complete imports/API results receive approved status automatically; final human confirmation belongs to Cloudflare upload. Included the current October 30/31 issues in RSS and sitemap.
+- Clarified that golden-page visual regression is algorithmic and requires no AI service or API.
+
+- Added localized RSS 2.0 feeds, discovery links, canonical and reciprocal hreflang metadata using owner-selected repravda.com; stable article GUIDs survive corrections.
+- Added a sitemap for approved/published reader pages, excluding aliases/proofs/drafts, and semantic XML/link verification. Preview noindex/robots restrictions remain enabled.
+
+- Arranged the newspaper introduction and disclaimer side by side on wide screens, retaining a single column on phones; changed viewers to people in RU/EN/JA disclaimers.
+
+- Refreshed the October 31 archive preview from GitHub 10fab77: two updated technical illustrations and localized captions, imported as revision 2 while preserving the previous snapshot.
+
+- Replaced the archive's duplicate current issue with a localized, year-grouped issue list and per-issue PDF links.
+- Added explicit historical issue inputs, date-scoped article/print routes, language navigation that preserves issue context, and complete multi-issue snapshot/link/PDF verification. Included October 30 and 31 in the local archive preview.
+- Documented archive selection, revisions, reproducibility and preview-only status in docs/ARCHIVE.md.
+
+- Imported the October 31 v1.3 issue with SwapBot/AEON illustrations and refreshed all three city forecasts; preserved local design changes.
+
+- Added a localized, personal fan-project disclaimer acknowledging Roy Batty/Blade Runner as inspiration and stating no affiliation or claim to the underlying character/monologue rights.
+
+- Added localized Read more links to web article previews, keeping the full glossary expanded.
+- Added a multilingual newspaper footer describing the Physical AI digest, its AI-assisted creation and tribute to Roy Batty.
+
+- Replaced continuation-page SVG mastheads with bold text titles.
+- Removed strapline rules, extended motto rules to full content width, and reduced the single-line motto block height by 10% while retaining its font size.
+- Added localized back-to-issue navigation and expanded the full glossary directly in web issue pages.
+
 - Imported the actual illustrated 2026-10-30 v1.3 feeds with VLA-Stem and robot-insurance figures, preserving localized forecasts.
 - Let web article cards fill each column independently to avoid empty grid rows beside illustrations.
 

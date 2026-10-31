@@ -1,5 +1,5 @@
 @import url("/assets/medals/press/spacing.css");
-/* Screen proof based on the supplied header. Article fonts remain provisional. */
+/* Owner-selected footer typography for articles; motto fonts stay bundled locally. */
 @font-face {
   font-family: "Caveat Quote";
   src: url("/assets/fonts/Caveat/static/Caveat-Regular.ttf") format("truetype");
@@ -31,19 +31,22 @@ nav { display: flex; gap: 14px; font-size: 12px; }
 .title-panel { display: flex; flex-direction: column; justify-content: center; min-width: 0; }
 h1 { margin: 0; padding: 10px 0 7px; border-top: 5px solid; }
 .masthead { display: block; width: 100%; height: auto; }
-.strapline { border-block: 1px solid; margin: 0; padding: 6px 0; font-size: clamp(10px, 1.05vw, 15px); font-weight: 700; text-align: center; letter-spacing: .12em; }
+.strapline { border: 0; margin: 0; padding: 6px 0; font-size: clamp(10px, 1.05vw, 15px); font-weight: 700; text-align: center; letter-spacing: .12em; }
 .weather { border-left: 1px solid; padding-left: 18px; margin-block: 8px; }
 .weather h2 { font-size: clamp(15px, 1.8vw, 25px); line-height: 1.2; text-transform: uppercase; margin: 0; }
 .weather-date { margin: 6px 0 16px; border-bottom: 1px solid; padding-bottom: 12px; }
 .weather-pending { font-size: 14px; color: #666; }
-.brand-quote { width: 84%; margin: 12px auto 0; padding: 9.333px 0 8px; border-block: 1px solid; text-align: center; }
+.brand-quote { --motto-size: clamp(16px, 2.2vw, 31.333px); --motto-leading: 1.25; --motto-padding: 17.333px; width: 100%; margin: 12px auto 0; font-size: var(--motto-size); padding-block: calc((.9 * var(--motto-padding) - .1 * (var(--motto-leading) * 1em + 2px)) / 2); border-block: 1px solid; text-align: center; }
 blockquote { font-family: "Caveat Quote"; font-weight: 400; font-style: normal; font-synthesis: none; }
-.brand-quote blockquote { margin: 0; font-size: clamp(16px, 2.2vw, 31.333px); line-height: 1.25; }
+.brand-quote blockquote { max-width: 84%; margin: 0 auto; font-size: clamp(16px, 2.2vw, 31.333px); line-height: 1.25; }
 .brand-quote figcaption { margin-top: 6px; font-size: clamp(12px, 1.35vw, 19px); }
 .issue-line { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px 18px; border-bottom: 3px double; padding-block: 10px; }
 .issue-line p { margin: 0; font-size: 13px; }
 .issue-line p:first-child { font-weight: 700; text-transform: uppercase; }
+main, .print-issue-intro { font-family: inherit; }
 main { padding-top: 18px; }
+main blockquote { font-family: inherit; font-style: italic; }
+main:lang(ja) blockquote { font-style: normal; }
 article { padding-block: 16px; border-bottom: 1px solid #aaa; }
 article h2 { font-size: 27px; line-height: 1.2; }
 p, li, blockquote { white-space: pre-line; overflow-wrap: anywhere; }
@@ -58,6 +61,7 @@ p, li, blockquote { white-space: pre-line; overflow-wrap: anywhere; }
 }
 
 /* Owner-selected bundled Japanese motto font. */
+.brand-quote:lang(ja) { --motto-size: clamp(13.333px, 1.6667vw, 24px); --motto-leading: 1.6; }
 .brand-quote:lang(ja) blockquote {
   font-family: "Zen Kurenaido Quote";
   font-size: clamp(13.333px, 1.6667vw, 24px);
@@ -130,3 +134,50 @@ p, li, blockquote { white-space: pre-line; overflow-wrap: anywhere; }
 .article-illustration figcaption { font-size: 12px; line-height: 1.4; margin-top: 6px; color: #444; }
 .illustration-kind { font-weight: 700; }
 .article-detail > .article-illustration { max-width: 760px; margin-inline: auto; }
+
+.article-navigation { margin: 0 0 14px; }
+.back-link { display: inline-flex; align-items: center; gap: .45em; padding: .45em .75em; border: 1px solid #b7cbc4; font-size: 14px; font-weight: 700; }
+.glossary-inline { margin-top: 20px; }
+.glossary-terms h3 { break-after: avoid; margin-bottom: 4px; }
+.glossary-terms p { break-inside: avoid; margin-top: 0; }
+@media screen and (min-width: 701px) {
+  .glossary-terms { column-count: 2; column-gap: 32px; }
+  .edition-articles:has(> article:only-child) { column-count: 1; }
+}
+
+.article-actions { margin-bottom: 0; }
+.read-more { display: inline-flex; align-items: center; gap: .45em; padding: 3px 0; font-size: 13px; font-weight: 700; }
+.site-footer { margin-top: 36px; padding-top: 20px; border-top: 3px double; }
+.rss-link { margin: 0 0 18px; font-size: 12px; }
+.rss-link a { color: #155e59; }
+.about-newspaper h2 { margin: 0 0 16px; font-size: 20px; line-height: 1.3; }
+.about-copy { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; font-size: 14px; line-height: 1.65; }
+.about-copy p { margin: 0 0 10px; }
+.about-copy p:last-child { margin-bottom: 0; }
+.about-copy > .about-disclaimer { margin: 0; padding-left: 24px; border-left: 1px solid #d4dcd8; font-size: 12px; line-height: 1.65; color: #555; }
+@media (max-width: 700px) {
+  .about-copy { grid-template-columns: 1fr; gap: 16px; }
+  .about-copy > .about-disclaimer { padding: 12px 0 0; border-left: 0; border-top: 1px solid #d4dcd8; }
+}
+
+.archive-intro { margin-bottom: 28px; }
+.archive-intro h2 { font-size: 32px; margin-bottom: 6px; }
+.archive-intro > p { margin-top: 0; color: #555; }
+.archive-year { margin-bottom: 36px; }
+.archive-list { list-style: none; padding: 0; margin: 0; }
+.archive-entry { display: grid; grid-template-columns: minmax(150px, 1fr) minmax(0, 4fr); gap: 32px; padding: 24px 0; border-bottom: 1px solid #aaa; white-space: normal; }
+.archive-date { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; font-size: 13px; }
+.archive-date time { font-size: 21px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.archive-latest { padding: 2px 7px; background: #e8eeeb; color: #284e43; font-size: 11px; }
+.archive-description h4 { margin: 0 0 10px; font-size: 25px; line-height: 1.25; }
+.archive-description h4 a { color: inherit; }
+.archive-description > p { margin: 0 0 12px; }
+.archive-description .archive-revision { font-size: 12px; color: #666; }
+.archive-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; }
+.archive-pdf { font-size: 13px; }
+@media (max-width: 700px) {
+  .archive-entry { grid-template-columns: 1fr; gap: 12px; padding: 20px 0; }
+  .archive-date { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 6px 14px; }
+  .archive-date time { font-size: 17px; }
+  .archive-description h4 { font-size: 22px; }
+}

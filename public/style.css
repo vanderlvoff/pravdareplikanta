@@ -1,0 +1,183 @@
+@import url("/assets/medals/press/spacing.css");
+/* Owner-selected footer typography for articles; motto fonts stay bundled locally. */
+@font-face {
+  font-family: "Caveat Quote";
+  src: url("/assets/fonts/Caveat/static/Caveat-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Zen Kurenaido Quote";
+  src: url("/assets/fonts/ZenKurenaido/ZenKurenaido-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+* { box-sizing: border-box; }
+:root { color-scheme: light; color: #111; background: #e9e9e9; }
+body { margin: 0 auto; max-width: 1440px; padding: 24px 38px 60px; background: #fff; font-family: Arial, sans-serif; line-height: 1.5; }
+a { color: inherit; text-underline-offset: .2em; }
+.preview-tools { display: flex; align-items: center; justify-content: space-between; gap: 1rem; color: #666; border-bottom: 1px solid #ddd; padding-bottom: 10px; margin-bottom: 18px; }
+.preview-tools small { font-size: 11px; }
+nav { display: flex; gap: 14px; font-size: 12px; }
+.kicker { margin: 0 0 10px; font-size: clamp(15px, 1.8vw, 25px); font-weight: 700; }
+.brand-header { display: grid; grid-template-columns: 20% minmax(0, 1fr) 23%; gap: 18px; align-items: stretch; }
+.portrait-medals { display: flex; flex-direction: column; justify-content: flex-end; min-width: 0; width: 80%; justify-self: center; align-self: start; }
+.portrait { display: block; width: 100%; height: auto; }
+.medals { display: flex; align-items: flex-start; justify-content: center; gap: 0; }
+.medals img { display: block; flex: none; width: 32%; height: auto; }
+.medals .medal-orion { width: 35.175%; }
+.title-panel { display: flex; flex-direction: column; justify-content: center; min-width: 0; }
+h1 { margin: 0; padding: 10px 0 7px; border-top: 5px solid; }
+.masthead { display: block; width: 100%; height: auto; }
+.strapline { border: 0; margin: 0; padding: 6px 0; font-size: clamp(10px, 1.05vw, 15px); font-weight: 700; text-align: center; letter-spacing: .12em; }
+.weather { border-left: 1px solid; padding-left: 18px; margin-block: 8px; }
+.weather h2 { font-size: clamp(15px, 1.8vw, 25px); line-height: 1.2; text-transform: uppercase; margin: 0; }
+.weather-date { margin: 6px 0 16px; border-bottom: 1px solid; padding-bottom: 12px; }
+.weather-pending { font-size: 14px; color: #666; }
+.brand-quote { --motto-size: clamp(16px, 2.2vw, 31.333px); --motto-leading: 1.25; --motto-padding: 17.333px; width: 100%; margin: 12px auto 0; font-size: var(--motto-size); padding-block: calc((.9 * var(--motto-padding) - .1 * (var(--motto-leading) * 1em + 2px)) / 2); border-block: 1px solid; text-align: center; }
+blockquote { font-family: "Caveat Quote"; font-weight: 400; font-style: normal; font-synthesis: none; }
+.brand-quote blockquote { max-width: 84%; margin: 0 auto; font-size: clamp(16px, 2.2vw, 31.333px); line-height: 1.25; }
+.brand-quote figcaption { margin-top: 6px; font-size: clamp(12px, 1.35vw, 19px); }
+.issue-line { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px 18px; border-bottom: 3px double; padding-block: 10px; }
+.issue-line p { margin: 0; font-size: 13px; }
+.issue-line p:first-child { font-weight: 700; text-transform: uppercase; }
+main, .print-issue-intro { font-family: inherit; }
+main { padding-top: 18px; }
+main blockquote { font-family: inherit; font-style: italic; }
+main:lang(ja) blockquote { font-style: normal; }
+article { padding-block: 16px; border-bottom: 1px solid #aaa; }
+article h2 { font-size: 27px; line-height: 1.2; }
+p, li, blockquote { white-space: pre-line; overflow-wrap: anywhere; }
+@media (max-width: 700px) {
+  body { padding: 12px 16px 40px; }
+  .preview-tools { align-items: flex-start; }
+  .brand-header { grid-template-columns: 25% minmax(0, 1fr); gap: 10px; }
+  .weather { grid-column: 1 / -1; border-left: 0; border-top: 1px solid; padding: 10px 0 0; margin: 0; }
+  .weather h2, .weather-date, .weather-pending { display: inline; font-size: 12px; border: 0; padding: 0; margin-right: 8px; }
+  h1 { border-top-width: 3px; }
+  .strapline { font-size: 9px; letter-spacing: .04em; }
+}
+
+/* Owner-selected bundled Japanese motto font. */
+.brand-quote:lang(ja) { --motto-size: clamp(13.333px, 1.6667vw, 24px); --motto-leading: 1.6; }
+.brand-quote:lang(ja) blockquote {
+  font-family: "Zen Kurenaido Quote";
+  font-size: clamp(13.333px, 1.6667vw, 24px);
+  line-height: 1.6;
+  line-break: strict;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+.weather-demo { margin: 0 0 4px; font-size: 10px; font-weight: 700; }
+.weather-slot { display: grid; grid-template-columns: 26px minmax(0, 1fr) minmax(0, 1.15fr); align-items: center; gap: 8px; padding: 8px 0; border-top: 1px solid #aaa; }
+.weather-icon { font-size: 26px; line-height: 1.5; }
+.weather-period { font-size: 11px; font-weight: 700; margin: 0; }
+.weather-temperature { font-size: 29px; font-weight: 700; margin: 0; line-height: 1.1; }
+.weather-condition, .weather-detail { font-size: 11px; margin: 2px 0 0; }
+.weather-summary { border-top: 1px solid; padding-top: 7px; font-size: 12px; margin: 4px 0 0; }
+.weather-source { margin-top: 24px; border-top: 1px solid #aaa; padding-top: 10px; font-size: 11px; overflow-wrap: anywhere; }
+@media (max-width: 700px) {
+  .weather .weather-date { display: block; margin: 4px 0; }
+  .weather-slots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .weather-slot { grid-template-columns: 22px minmax(0, 1fr); gap: 4px; }
+  .weather-description { grid-column: 1 / -1; }
+  .weather-icon { font-size: 26px; line-height: 1.2; }
+  .weather-period { font-size: 10px; }
+  .weather-temperature { font-size: 24px; }
+  .weather-detail { font-size: 10px; }
+}
+
+.issue-intro { margin-bottom: 24px; }
+.editorial-section { margin-bottom: 36px; }
+.section-heading { margin: 0; padding: 8px 0; border-block: 2px solid; font-size: 24px; line-height: 1.2; }
+.article-section { font-size: 20px; font-weight: 700; border-bottom: 2px solid; padding-bottom: 8px; }
+.article-kind { font-size: 12px; font-weight: 700; margin: 0 0 8px; }
+@media screen {
+  .weather-slot:first-child { border-top: 0; }
+}
+@media screen and (max-width: 700px) {
+  .weather-slot { border-top: 0; }
+}
+
+/* Screen columns are independent of measured A4 pagination. */
+@media screen and (min-width: 701px) {
+  .edition-articles { column-count: 2; column-gap: 32px; }
+  .edition-articles article { min-width: 0; break-inside: avoid; }
+  .article-text { column-count: 2; column-gap: 32px; column-rule: 1px solid #aaa; }
+  .article-text p, .article-text li { orphans: 2; widows: 2; }
+  .article-text h3 { break-after: avoid; }
+}
+
+.strapline-name { display: block; letter-spacing: .08em; }
+@media screen {
+  a { text-decoration: none; border-radius: 3px; transition: color .16s ease, background-color .16s ease; }
+  main a, .weather-source a, .pdf-link a { color: #155e59; }
+  article h2 a { color: inherit; }
+  a:hover, a:focus-visible { color: #0c554e; background-color: #dceee8; }
+  a:focus-visible { outline: 2px solid #287c70; outline-offset: 3px; }
+  .title-panel h1 a { display: block; border-radius: 0; }
+  .title-panel h1 a:hover, .title-panel h1 a:focus-visible { background: transparent; }
+}
+@media (prefers-reduced-motion: reduce) { a { transition: none; } }
+
+.strapline:lang(ja) { white-space: nowrap; letter-spacing: .02em; }
+.strapline:lang(ja) .strapline-name { display: inline; letter-spacing: inherit; }
+.weather-country { display: inline-block; font-size: .55em; font-weight: 400; line-height: 1.3; text-transform: none; letter-spacing: 0; white-space: nowrap; }
+@media screen and (max-width: 700px) {
+  .strapline:lang(ja) { font-size: clamp(7px, 2.1vw, 9px); letter-spacing: 0; }
+}
+
+.article-illustration { margin: 14px 0; break-inside: avoid; }
+.article-illustration img { display: block; width: 100%; height: auto; filter: grayscale(1); }
+.article-illustration figcaption { font-size: 12px; line-height: 1.4; margin-top: 6px; color: #444; }
+.illustration-kind { font-weight: 700; }
+.article-detail > .article-illustration { max-width: 760px; margin-inline: auto; }
+
+.article-navigation { margin: 0 0 14px; }
+.back-link { display: inline-flex; align-items: center; gap: .45em; padding: .45em .75em; border: 1px solid #b7cbc4; font-size: 14px; font-weight: 700; }
+.glossary-inline { margin-top: 20px; }
+.glossary-terms h3 { break-after: avoid; margin-bottom: 4px; }
+.glossary-terms p { break-inside: avoid; margin-top: 0; }
+@media screen and (min-width: 701px) {
+  .glossary-terms { column-count: 2; column-gap: 32px; }
+  .edition-articles:has(> article:only-child) { column-count: 1; }
+}
+
+.article-actions { margin-bottom: 0; }
+.read-more { display: inline-flex; align-items: center; gap: .45em; padding: 3px 0; font-size: 13px; font-weight: 700; }
+.site-footer { margin-top: 36px; padding-top: 20px; border-top: 3px double; }
+.rss-link { margin: 0 0 18px; font-size: 12px; }
+.rss-link a { color: #155e59; }
+.about-newspaper h2 { margin: 0 0 16px; font-size: 20px; line-height: 1.3; }
+.about-copy { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; font-size: 14px; line-height: 1.65; }
+.about-copy p { margin: 0 0 10px; }
+.about-copy p:last-child { margin-bottom: 0; }
+.about-copy > .about-disclaimer { margin: 0; padding-left: 24px; border-left: 1px solid #d4dcd8; font-size: 12px; line-height: 1.65; color: #555; }
+@media (max-width: 700px) {
+  .about-copy { grid-template-columns: 1fr; gap: 16px; }
+  .about-copy > .about-disclaimer { padding: 12px 0 0; border-left: 0; border-top: 1px solid #d4dcd8; }
+}
+
+.archive-intro { margin-bottom: 28px; }
+.archive-intro h2 { font-size: 32px; margin-bottom: 6px; }
+.archive-intro > p { margin-top: 0; color: #555; }
+.archive-year { margin-bottom: 36px; }
+.archive-list { list-style: none; padding: 0; margin: 0; }
+.archive-entry { display: grid; grid-template-columns: minmax(150px, 1fr) minmax(0, 4fr); gap: 32px; padding: 24px 0; border-bottom: 1px solid #aaa; white-space: normal; }
+.archive-date { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; font-size: 13px; }
+.archive-date time { font-size: 21px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.archive-latest { padding: 2px 7px; background: #e8eeeb; color: #284e43; font-size: 11px; }
+.archive-description h4 { margin: 0 0 10px; font-size: 25px; line-height: 1.25; }
+.archive-description h4 a { color: inherit; }
+.archive-description > p { margin: 0 0 12px; }
+.archive-description .archive-revision { font-size: 12px; color: #666; }
+.archive-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; }
+.archive-pdf { font-size: 13px; }
+@media (max-width: 700px) {
+  .archive-entry { grid-template-columns: 1fr; gap: 12px; padding: 20px 0; }
+  .archive-date { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 6px 14px; }
+  .archive-date time { font-size: 17px; }
+  .archive-description h4 { font-size: 22px; }
+}

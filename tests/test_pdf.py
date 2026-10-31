@@ -59,6 +59,9 @@ def test_localized_automatic_pagination(issue, tmp_path):
     report = verify_snapshot(site, str(issue.issue_id))
     assert report["passed"]
     for lang in ("ru", "en", "ja"):
+        fonts = report["editions"][lang]["fonts_embedded"]
+        assert all(fonts.values())
+        assert not any("PTSerif" in name or "NotoSerifJP" in name for name in fonts)
         count = report["editions"][lang]["page_count"]
         assert count >= 1
         folder = site / lang / "issues" / str(issue.issue_id)

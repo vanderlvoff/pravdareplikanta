@@ -9,6 +9,7 @@ from http.server import SimpleHTTPRequestHandler
 from pathlib import Path
 
 from .models import Issue
+from .discovery import DEFAULT_SITE_URL
 from .preview import PreviewServer
 from .render import build, load_issue
 from .weather import LOCATIONS, Weather, fetch_forecast
@@ -22,10 +23,28 @@ def main() -> int:
     generate = commands.add_parser("build")
     generate.add_argument("--issue", required=True)
     generate.add_argument(
+        "--publication",
+        action="store_true",
+        help="Prepare reader-facing output for upload review; does not upload anything",
+    )
+    generate.add_argument(
         "--pdf", action="store_true", help="Render and verify automatically paginated A4 editions"
     )
     generate.add_argument("--content-dir", type=Path, default=Path("content/issues"))
+    generate.add_argument(
+        "--archive-issue",
+        type=Path,
+        action="append",
+        default=[],
+        metavar="JSON",
+        help="Explicit historical issue JSON to include (repeatable; local preview only)",
+    )
     generate.add_argument("--output", type=Path, default=Path("dist"))
+    generate.add_argument(
+        "--site-url",
+        default=DEFAULT_SITE_URL,
+        help="Absolute site origin for canonical, hreflang, RSS and sitemap URLs",
+    )
     generate.add_argument("--weather", type=Path, help="Saved weather JSON; must match issue date")
     generate.add_argument(
         "--edition-weather",
@@ -42,7 +61,7 @@ def main() -> int:
     verify.add_argument("--issue", required=True, type=date.fromisoformat)
     verify.add_argument("--output", type=Path, default=Path("dist"))
     draft = commands.add_parser(
-        "draft", help="Research and generate a local editorial draft via OpenAI"
+        "draft", help="Generate a local issue via OpenAI; publication review happens at upload"
     )
     draft.add_argument("--issue", required=True, type=date.fromisoformat)
     draft.add_argument("--number", required=True, type=int)
@@ -61,6 +80,11 @@ def main() -> int:
     preview = commands.add_parser("preview")
     preview.add_argument("--output", type=Path, default=Path("dist"))
     preview.add_argument("--port", type=int, default=8000)
+    release = commands.add_parser(
+        "release", help="Export a verified publication snapshot for GitHub"
+    )
+    release.add_argument("--snapshot", type=Path, required=True)
+    release.add_argument("--output", type=Path, default=Path("public"))
     args = parser.parse_args()
     try:
         if args.command == "validate":
@@ -98,8 +122,22 @@ def main() -> int:
                         Path(filename).read_text(encoding="utf-8")
                     )
                 issue = Issue.model_validate(data)
-            build(issue, args.output, pdf=args.pdf)
-            print(f"Built NON-FINAL local preview: {args.output}")
+            build(
+                issue,
+                args.output,
+                pdf=args.pdf,
+                archive_issues=tuple(load_issue(path) for path in args.archive_issue),
+                site_url=args.site_url,
+                publication=args.publication,
+            )
+            print(
+                f"Built local {'publication proof' if args.publication else 'preview'}: {args.output}"
+            )
+        elif args.command == "release":
+            from .publication import prepare_release
+
+            report = prepare_release(args.snapshot, args.output)
+            print(json.dumps(report, ensure_ascii=False, indent=2))
         elif args.command == "verify":
             from .verification import verify_snapshot
 
@@ -131,10 +169,16 @@ def main() -> int:
                 number=args.number,
                 revision=args.revision,
             )
-            print(f"Imported draft {issue.issue_id}: {args.output}")
+            print(f"Imported prepared issue {issue.issue_id} ({issue.status}): {args.output}")
         else:
             if not (args.output / "verification.json").is_file():
-                raise ValueError("Preview requires a generated snapshot")
+                from .verification import artifact_hashes
+
+                manifest = args.output.with_name(args.output.name + ".release.json")
+                if not manifest.is_file() or artifact_hashes(args.output) != json.loads(
+                    manifest.read_text(encoding="utf-8")
+                ).get("files"):
+                    raise ValueError("Preview requires a verified snapshot or release bundle")
             handler = partial(SimpleHTTPRequestHandler, directory=str(args.output.resolve()))
             with PreviewServer(("127.0.0.1", args.port), handler) as server:
                 print(f"Local preview: http://127.0.0.1:{args.port}", flush=True)

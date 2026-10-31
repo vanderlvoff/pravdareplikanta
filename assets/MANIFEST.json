@@ -174,5 +174,49 @@
   {
     "path": "fonts/ZenKurenaido/ZenKurenaido-Regular.ttf",
     "sha256": "58b8d930d9fc10c8a5810c085bae378dacb98d0779073ee6d53d919f19ee6a4f"
+  },
+  {
+    "path": "fonts/PTSerif/PTSerif-Regular.ttf",
+    "sha256": "a4951fade06ff8f09b7673aa81ffb65a8cd409e24d3289a6dc670bc4dda2557a"
+  },
+  {
+    "path": "fonts/PTSerif/PTSerif-Bold.ttf",
+    "sha256": "038ba7336bd7ea14f12ad155bed51a4345cac5153275d521dec3ba04021c526e"
+  },
+  {
+    "path": "fonts/PTSerif/PTSerif-Italic.ttf",
+    "sha256": "f57e95ff9dc85691a3b2e193f2028db36f6663939a46c0fc4f286d618b80b7ce"
+  },
+  {
+    "path": "fonts/PTSerif/PTSerif-BoldItalic.ttf",
+    "sha256": "f003788ba08981eb0988b3557a6f224a53dab49c20e283e8b74d5af3c466f8be"
+  },
+  {
+    "path": "fonts/PTSerif/OFL.txt",
+    "sha256": "ddf311c28ddf5a5ad9747649837346b67bed9d356789c3072bb27dbce49e514d"
+  },
+  {
+    "path": "fonts/PTSerif/README.md",
+    "sha256": "fbedb94ade83380f15ad5fd2f3074841ebadd181cf09c89ed293d57c7855ebd2"
+  },
+  {
+    "path": "fonts/NotoSerifJP/NotoSerifJP-Variable.ttf",
+    "sha256": "2fd527ba12b6a44ec30d796d633360da0aeba6c5d4af1304ce12bb4dc15a7dfc"
+  },
+  {
+    "path": "fonts/NotoSerifJP/OFL.txt",
+    "sha256": "5e0da210fb04058a8c0087985d2d456b931c2579811a49655721d3cf0c36b6d6"
+  },
+  {
+    "path": "fonts/NotoSerifJP/README.md",
+    "sha256": "11f358535c15a89facca00bc10679a3632622d36963783ea5cf66c9fdc8e9d22"
+  },
+  {
+    "path": "fonts/NotoSerifJP/NotoSerifJP-Regular.ttf",
+    "sha256": "83181245ea893229f7f171b9de600d48a58ec607ef46cc3bd11d3d66bdd88fbd"
+  },
+  {
+    "path": "fonts/NotoSerifJP/NotoSerifJP-Bold.ttf",
+    "sha256": "8fd0256019f1fe27ac950f9d13d38238a0553f1c2dcf85947ca149634349e211"
   }
 ]

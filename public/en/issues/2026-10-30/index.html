@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Pravda Replikanta — Engineering Data, October 30 · The Replicant Truth</title>
+  <meta name="description" content="Safer VLA execution, faster manipulation, demonstration capture and humanoid locomotion; Japan is adding insurance for operational robot risk.">
+    <link rel="canonical" href="https://repravda.com/en/issues/2026-10-30/">
+  <link rel="alternate" hreflang="ru" href="https://repravda.com/ru/issues/2026-10-30/">
+  <link rel="alternate" hreflang="en" href="https://repravda.com/en/issues/2026-10-30/">
+  <link rel="alternate" hreflang="ja" href="https://repravda.com/ja/issues/2026-10-30/">
+  <link rel="alternate" type="application/rss+xml" title="The Replicant Truth — RSS" href="https://repravda.com/en/rss.xml">
+  <link rel="stylesheet" href="/style.css?v=41a60f9d8e31">
+</head>
+<body>
+  <div class="preview-tools">
+    
+    <nav aria-label="Languages"><a lang="ru" hreflang="ru" href="/ru/issues/2026-10-30/">RU</a><a lang="en" hreflang="en" href="/en/issues/2026-10-30/">EN</a><a lang="ja" hreflang="ja" href="/ja/issues/2026-10-30/">JA</a></nav>
+  </div>
+    <header class="newspaper-header">
+    <p class="kicker">Physical AI — the path to a beautiful tomorrow.</p>
+    <div class="brand-header">
+      <div class="portrait-medals">
+        <img class="portrait" src="/assets/portrait/ly.png" alt="Newspaper hero">
+        <div class="medals"><img class="medal medal-jupiter" src="/assets/medals/press/jupiter_en.png" alt="jupiter"><img class="medal medal-tannhauser" src="/assets/medals/press/tannhauser_en.png" alt="tannhauser"><img class="medal medal-orion" src="/assets/medals/press/orion_en.png" alt="orion"></div>
+      </div>
+      <div class="title-panel">
+        <h1><a href="/en/"><img class="masthead" src="/assets/masthead/pcb/masthead_en.svg" alt="The Replicant Truth"></a></h1>
+        <p class="strapline"><span class="strapline-name">THE REPLICANT TRUTH</span>A NEWSPAPER ABOUT PHYSICAL ARTIFICIAL INTELLIGENCE</p>
+      </div>
+      <section class="weather" aria-label="Weather">
+  
+  <h2>Breukelen <small class="weather-country">(Netherlands)</small></h2>
+  <p class="weather-date">Forecast · 2026-10-30 · CET</p>
+  
+  <div class="weather-slots">
+    
+    <div class="weather-slot">
+      <span class="weather-icon" aria-hidden="true">≋</span>
+      <div class="weather-reading"><p class="weather-period">MORNING · 09:00</p>
+        <p class="weather-temperature">6.6°</p>
+      </div>
+      <div class="weather-description">
+        <p class="weather-condition">Fog</p>
+        <p class="weather-detail">Wind: NE 0.8 m/s · <span title="Precipitation probability">0%</span></p>
+      </div>
+    </div>
+    
+    <div class="weather-slot">
+      <span class="weather-icon" aria-hidden="true">☀</span>
+      <div class="weather-reading"><p class="weather-period">MIDDAY · 12:00</p>
+        <p class="weather-temperature">11.2°</p>
+      </div>
+      <div class="weather-description">
+        <p class="weather-condition">Clear</p>
+        <p class="weather-detail">Wind: NE 1.4 m/s · <span title="Precipitation probability">0%</span></p>
+      </div>
+    </div>
+    
+    <div class="weather-slot">
+      <span class="weather-icon" aria-hidden="true">☁</span>
+      <div class="weather-reading"><p class="weather-period">EVENING · 18:00</p>
+        <p class="weather-temperature">9.6°</p>
+      </div>
+      <div class="weather-description">
+        <p class="weather-condition">Cloudy</p>
+        <p class="weather-detail">Wind: NE 2.6 m/s · <span title="Precipitation probability">0%</span></p>
+      </div>
+    </div>
+    
+  </div>
+  <p class="weather-summary">Daily: 4.9–13.5 °C<br>Precipitation probability: 0%</p>
+  
+</section>
+    </div>
+    
+    <figure class="brand-quote" lang="en">
+      <blockquote>All we can do is learn to be human while the rain falls.</blockquote>
+      
+    </figure>
+    
+    <div class="issue-line">
+      <p>Issue № 2 · <time datetime="2026-10-30">2026-10-30</time></p>
+      <p>rev. 6 · <a href="/en/archive/">Archive</a></p>
+    </div>
+  </header>
+  <p class="pdf-link"><a href="/en/issues/2026-10-30/edition.pdf">PDF edition · A4</a></p>
+  <main>
+<div class="issue-intro">
+  <h2>Pravda Replikanta — Engineering Data, October 30</h2>
+  <p>Safer VLA execution, faster manipulation, demonstration capture and humanoid locomotion; Japan is adding insurance for operational robot risk.</p>
+</div>
+
+<section class="editorial-section" aria-labelledby="section-news">
+  <h2 class="section-heading" id="section-news">News</h2>
+  <div class="edition-articles">
+  
+  <article id="article-vla-stem">
+    
+    <h2><a href="/en/issues/2026-10-30/articles/vla-stem/">VLA-Stem adds reflex-like safety control without retraining the base VLA</a></h2>
+    
+
+<figure class="article-illustration">
+  <img src="/data/images/2026-10-30/vla-stem.webp" width="1600" height="900" alt="Robot arm and obstacle, with a red reference path and green corrected path; below, a camera-to-action-to-safety-controller-to-actuator flow.">
+  <figcaption><span class="illustration-kind">AI-generated illustration</span> · AI-generated technical diagram: a local safety controller adjusts a VLA reference trajectory to avoid an obstacle. This illustrates a general principle, not a specific experimental result.</figcaption>
+</figure>
+
+    <p>A VLA can understand a command and still drive an arm into an obstacle. VLA-Stem addresses that gap without retraining the base model. It turns predicted action chunks into motion references and adds a faster local controller that adjusts execution using robot-state and obstacle observations.</p>
+    <p class="article-actions"><a class="read-more" href="/en/issues/2026-10-30/articles/vla-stem/" aria-label="Read more… — VLA-Stem adds reflex-like safety control without retraining the base VLA">Read more… <span aria-hidden="true">→</span></a></p>
+  </article>
+  
+  <article id="article-tops-flow">
+    
+    <h2><a href="/en/issues/2026-10-30/articles/tops-flow/">TOPS accelerates flow-based manipulation without changing the network</a></h2>
+    
+    <p>Making manipulation faster does not always require a bigger neural network. TOPS changes where flow-based action generation begins and how it progresses, tailoring the source distribution and transport schedule to the task. The network architecture remains unchanged.</p>
+    <p class="article-actions"><a class="read-more" href="/en/issues/2026-10-30/articles/tops-flow/" aria-label="Read more… — TOPS accelerates flow-based manipulation without changing the network">Read more… <span aria-hidden="true">→</span></a></p>
+  </article>
+  
+  <article id="article-openjaws-stereo">
+    
+    <h2><a href="/en/issues/2026-10-30/articles/openjaws-stereo/">OpenJaws: open handheld demonstration gripper with stereo localization</a></h2>
+    
+    <p>Before a robot can learn a manipulation skill, someone must demonstrate it. OpenJaws records those examples without a robot: an operator moves a camera-equipped handheld gripper, and stereo vision reconstructs motion at metric scale. That avoids the absolute-scale ambiguity of monocular tracking.</p>
+    <p class="article-actions"><a class="read-more" href="/en/issues/2026-10-30/articles/openjaws-stereo/" aria-label="Read more… — OpenJaws: open handheld demonstration gripper with stereo localization">Read more… <span aria-hidden="true">→</span></a></p>
+  </article>
+  
+  <article id="article-roboauto-programs">
+    
+    <h2><a href="/en/issues/2026-10-30/articles/roboauto-programs/">RoboAuto searches robot programs by testing physical hypotheses</a></h2>
+    
+    <p>A robot may execute its program while failing the task: grasping empty space, for example, or proceeding before a drawer opens. RoboAuto puts physical verification into program search. It stores knowledge of objects and possible interactions, grounds it in the current scene and runs small experiments when competing explanations remain.</p>
+    <p class="article-actions"><a class="read-more" href="/en/issues/2026-10-30/articles/roboauto-programs/" aria-label="Read more… — RoboAuto searches robot programs by testing physical hypotheses">Read more… <span aria-hidden="true">→</span></a></p>
+  </article>
+  
+  <article id="article-reach-crawling">
+    
+    <h2><a href="/en/issues/2026-10-30/articles/reach-crawling/">REACH teaches Unitree G1 to switch between walking and crawling</a></h2>
+    
+    <p>Walking is of little use when a passage is lower than a humanoid&#39;s torso. REACH gives the Unitree G1 a way to switch from bipedal movement to crawling and back. A transition policy bridges different contact modes, while LiDAR-based planning anticipates overhead clearance.</p>
+    <p class="article-actions"><a class="read-more" href="/en/issues/2026-10-30/articles/reach-crawling/" aria-label="Read more… — REACH teaches Unitree G1 to switch between walking and crawling">Read more… <span aria-hidden="true">→</span></a></p>
+  </article>
+  
+  <article id="article-hc2-foresight">
+    
+    <h2><a href="/en/issues/2026-10-30/articles/hc2-foresight/">HC2Robot predicts footholds for humanoid parkour</a></h2>
+    
+    <p>Seeing the next foothold is not enough; a humanoid must anticipate when its foot will land and whether the surface can support it. HC2Robot predicts contact timing, position and quality from onboard observations, approximating information available only during simulator training. A Hyper-Connection Transformer combines the temporal signals.</p>
+    <p class="article-actions"><a class="read-more" href="/en/issues/2026-10-30/articles/hc2-foresight/" aria-label="Read more… — HC2Robot predicts footholds for humanoid parkour">Read more… <span aria-hidden="true">→</span></a></p>
+  </article>
+  
+  <article id="article-dexsafe-hand">
+    
+    <h2><a href="/en/issues/2026-10-30/articles/dexsafe-hand/">LEAP hand reaches 95.2% of in-hand pose targets with fewer drops</a></h2>
+    
+    <p>A dexterous hand can reach the right pose and still drop its object. Researchers using the LEAP hand treat that risk as a separate safety problem. They train in simulation without human demonstrations and add an adjustable residual filter to moderate risky actions.</p>
+    <p class="article-actions"><a class="read-more" href="/en/issues/2026-10-30/articles/dexsafe-hand/" aria-label="Read more… — LEAP hand reaches 95.2% of in-hand pose targets with fewer drops">Read more… <span aria-hidden="true">→</span></a></p>
+  </article>
+  
+  <article id="article-tokio-robot-insurance">
+    
+    <h2><a href="/en/issues/2026-10-30/articles/tokio-robot-insurance/">Japan: Tokio Marine launches coverage for AI-robot downtime</a></h2>
+    
+
+<figure class="article-illustration">
+  <img src="/data/images/2026-10-30/tokio-robot-insurance.webp" width="1600" height="900" alt="Three stages of operations: autonomous load transport, robot stoppage with warning, and continued work by a person using a manual trolley; a clock indicates downtime.">
+  <figcaption><span class="illustration-kind">AI-generated illustration</span> · AI-generated conceptual technical illustration: an autonomous transport robot stops and a worker takes over the material-handling task. This is not a depiction of an insurance product.</figcaption>
+</figure>
+
+    <p>Robot deployment begins with productivity forecasts. It often ends with a harder question: who pays when the machine stops? Japan&#39;s Tokio Marine &amp; Nichido has announced AI Robot Insurance for November 2026, covering specified downtime-related continuity costs alongside equipment damage and third-party liability.</p>
+    <p class="article-actions"><a class="read-more" href="/en/issues/2026-10-30/articles/tokio-robot-insurance/" aria-label="Read more… — Japan: Tokio Marine launches coverage for AI-robot downtime">Read more… <span aria-hidden="true">→</span></a></p>
+  </article>
+  
+  </div>
+  
+</section>
+
+<section class="editorial-section" aria-labelledby="section-analysis">
+  <h2 class="section-heading" id="section-analysis">Analysis</h2>
+  <div class="edition-articles">
+  
+  <article id="article-technology-signal">
+    
+    <h2><a href="/en/issues/2026-10-30/articles/technology-signal/">From demonstrations to reliable execution</a></h2>
+    
+    <p>Recent research increasingly separates task intent from local correction, intermediate verification and management of physical risk.</p>
+    <p class="article-actions"><a class="read-more" href="/en/issues/2026-10-30/articles/technology-signal/" aria-label="Read more… — From demonstrations to reliable execution">Read more… <span aria-hidden="true">→</span></a></p>
+  </article>
+  
+  </div>
+  
+  <article class="glossary-inline" id="article-glossary">
+    <h2>Issue glossary</h2>
+    <p>Terms and definitions from the editorial dataset.</p>
+    <div class="glossary-terms">
+<h3>VLA</h3>
+
+
+<p>Vision-Language-Action model: maps visual observations and language instructions to robot actions.</p>
+
+<h3>Action chunk</h3>
+
+
+<p>A short sequence of future motor commands predicted in one policy invocation.</p>
+
+<h3>Flow matching</h3>
+
+
+<p>A generative learning method that transforms a source distribution into action trajectories.</p>
+
+<h3>UMI</h3>
+
+
+<p>Universal Manipulation Interface: a handheld interface for collecting demonstrations without a robot.</p>
+
+<h3>SLAM</h3>
+
+
+<p>Simultaneous Localization and Mapping: estimating pose while building an environment map.</p>
+
+<h3>Affordance</h3>
+
+
+<p>An object property describing which interactions are physically possible.</p>
+
+<h3>Proprioception</h3>
+
+
+<p>Internal robot state sensing, including joint positions and velocities.</p>
+
+<h3>Sim-to-real</h3>
+
+
+<p>Transferring a controller learned in simulation to physical hardware.</p>
+
+<h3>TCO</h3>
+
+
+<p>Total Cost of Ownership: acquisition, operations, maintenance and downtime costs.</p>
+</div>
+  </article>
+  
+</section>
+
+</main>
+  <footer class="site-footer">
+    <p class="rss-link"><a href="/en/rss.xml">RSS — latest articles</a></p>
+    <section class="about-newspaper" aria-labelledby="about-newspaper-title">
+      <h2 id="about-newspaper-title">About the newspaper</h2>
+      <div class="about-copy">
+        <div class="about-description"><p>The Replicant Truth is a digest from the world of physical artificial intelligence, created almost entirely with the help of AI.</p><p>This project is a tribute to Roy Batty from Blade Runner. To its author, Batty embodies a question that grows more urgent in our digital present: what makes us human — and how do we hold on to our humanity amid an avalanche of technological change?</p></div>
+        <p class="about-disclaimer">Roy Batty and his famous monologue mean a great deal to me, as they do to many people. I claim no rights to the character, his screen portrayal or the monologue. The portrait and motto here are my own imaginative interpretation inspired by a much-loved film, offered as a tribute to the original. This is an independent fan project, unaffiliated with the creators or rights holders of Blade Runner.</p>
+      </div>
+    </section>
+  <div class="weather-source">Weather source: <a href="https://api.open-meteo.com/v1/forecast?latitude=52.1742&amp;longitude=5.0014&amp;timezone=Europe%2FAmsterdam&amp;start_date=2026-10-30&amp;end_date=2026-10-30&amp;wind_speed_unit=ms&amp;hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&amp;daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max" rel="noopener noreferrer">Open-Meteo</a> · Retrieved: <time datetime="2026-10-30T13:42:39.216807+00:00">2026-10-30 14:42 CET</time></div>
+  </footer>
+</body>
+</html>

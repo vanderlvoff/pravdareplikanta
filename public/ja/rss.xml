@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>レプリカントの真実</title>
+    <link>https://repravda.com/ja/</link>
+    <description>フィジカルAIの世界からニュースと分析をお届けします。</description>
+    <language>ja</language>
+    <atom:link href="https://repravda.com/ja/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SwapBot：万能グリッパーではなく触覚付き工具を交換する</title>
+      <link>https://repravda.com/ja/issues/2026-10-31/articles/swapbot-tools/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:ja:swapbot-tools</guid>
+      <description>あらゆる作業をこなす万能の手を作る代わりに、道具そのものを交換する。SwapBotはロボット側の共通結合部と、身近な道具に取り付ける低コストのアダプターを組み合わせる。アダプターには触覚センシングがあり、カメラだけでは捉えにくい接触状態を扱える。</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>Gym-Anything：コーディングエージェントがロボット用シミュレーターを作る</title>
+      <link>https://repravda.com/ja/issues/2026-10-31/articles/gym-anything/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:ja:gym-anything</guid>
+      <description>慣れたシミュレーターでは優秀なロボット方策も、条件が変わると簡単に失敗する。Gym-Anythingは環境を作る側の問題に取り組む。専門家の手作業だけに頼らず、コーディングエージェントが物理環境を生成し、別の検査工程で妥当性を確かめる。その成果が25種類のシミュレーションを含むRoboWorldだ。</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>TouchBridge：人の指先の接触情報をロボット学習へ移す</title>
+      <link>https://repravda.com/ja/issues/2026-10-31/articles/touchbridge-tactile/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:ja:touchbridge-tactile</guid>
+      <description>人が手の中で物を回すとき、重要なのは指の位置だけではない。どこに触れ、接触がどう変化したかも欠かせない。TouchBridgeは装着型インターフェースと触覚情報に基づく動作変換を組み合わせ、人とロボットの異なる手の間で接触関係を保った実演データを作る。</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>LOGIV：計画の前提条件が現実に残っているかを確認</title>
+      <link>https://repravda.com/ja/issues/2026-10-31/articles/logiv-repair/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:ja:logiv-repair</guid>
+      <description>ある工程が成功しても、その結果が次の工程まで保たれるとは限らない。部品を正しく置いたロボットが、次の動作でその部品を動かしてしまうこともある。LOGIVはタスクグラフに後続工程の物理的な前提条件を記録し、観測によって検証して、壊れた依存関係だけを修復する。</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>イオンとMujin、混載積み付けを自動化した物流拠点を本格稼働</title>
+      <link>https://repravda.com/ja/issues/2026-10-31/articles/aeon-mixed-palletizing/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:ja:aeon-mixed-palletizing</guid>
+      <description>大きさも重さも異なる箱は、固定された積み付け手順に都合よく並んではくれない。イオンとMujinが10月29日に本格稼働させた川口東XDでは、注文ごとに積載計画を計算し、3Dビジョンで積み上がる荷物の状態を確認する。箱がずれればロボットの動作を補正する。現実の状態を見ながら計画を修正する点が重要だ。</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>Agility、Digit 5量産に向けた資金調達見通しを更新</title>
+      <link>https://repravda.com/ja/issues/2026-10-31/articles/agility-financing/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:ja:agility-financing</guid>
+      <description>人型ロボットの華やかなデモから、顧客が安心して使える機体群へ進むには資金も要る。Agility RoboticsとChurchill XIは10月30日、予定する企業統合で約4億6500万ドルの総調達額を見込むと開示した。11月4日の取引完了と5日のNasdaq取引開始を目指すが、承認などの条件が残る。</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>Opentrons、AI主導の実験を支えるため4000万ドル調達</title>
+      <link>https://repravda.com/ja/issues/2026-10-31/articles/opentrons-autonomous-labs/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:ja:opentrons-autonomous-labs</guid>
+      <description>AIが大量の実験仮説を提案しても、実験室での実行には時間がかかる。Opentronsが投資するのは、この物理的なボトルネックだ。液体操作ロボット、実験手順のソフトウェア、結果を記録するデータ基盤を拡充するため、10月29日に4000万ドルのシリーズE調達を発表した。</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>Bleu Robotics、少数実演による工場作業学習に500万ユーロ</title>
+      <link>https://repravda.com/ja/issues/2026-10-31/articles/bleu-few-shot/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:ja:bleu-few-shot</guid>
+      <description>製造ラインでは、製品が変わるたびにロボットの設定をやり直す負担が大きい。Inria発のBleu Roboticsは、この課題に向けて500万ユーロを調達した。万能モデルを一から学習するのではなく、既存の認識・運動制御を使い、約10回の実演から作業の構造を推定するfew-shot模倣学習を重視する。</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>Physical AIは単発のデモから運用可能なシステムへ</title>
+      <link>https://repravda.com/ja/issues/2026-10-31/articles/technology-signal/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:ja:technology-signal</guid>
+      <description>工具交換、触覚データ、タスク依存関係の検証、実物流現場でのフィードバックが基盤モデルと同じくらい重要になっている。</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>分析</category>
+    </item>
+    <item>
+      <title>VLA-Stem、基盤VLAを再学習せずに反射的な安全制御を追加</title>
+      <link>https://repravda.com/ja/issues/2026-10-30/articles/vla-stem/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-30:ja:vla-stem</guid>
+      <description>指示を理解したVLAでも、腕を障害物にぶつけることはある。VLA-Stemは基盤モデルを再学習せず、予測された動作列を参照軌道に変換して高速な補正制御を重ねる。機体の状態と周辺障害物を見ながら、作業の目的を保ったまま動きを調整する。</description>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>TOPS、ネットワーク構造を変えずにflow型操作ポリシーを高速化</title>
+      <link>https://repravda.com/ja/issues/2026-10-30/articles/tops-flow/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-30:ja:tops-flow</guid>
+      <description>操作を速くするのに、必ずしもネットワークを大きくする必要はない。TOPSはflow型の動作生成で、出発点となる分布と目標へ向かう過程をタスク別に調整する。モデルの構造はそのままだ。</description>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>OpenJaws、ステレオ測位を備えたオープンなデモ収集グリッパー</title>
+      <link>https://repravda.com/ja/issues/2026-10-30/articles/openjaws-stereo/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-30:ja:openjaws-stereo</guid>
+      <description>ロボットに作業を教えるには、まず手本を記録する必要がある。OpenJawsでは人がステレオカメラ付きグリッパーを持って操作し、実機なしで実寸の軌跡を収集する。単眼方式の絶対スケールの曖昧さを避けられる。</description>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>RoboAuto、物理仮説の検証を通じてロボットプログラムを探索</title>
+      <link>https://repravda.com/ja/issues/2026-10-30/articles/roboauto-programs/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-30:ja:roboauto-programs</guid>
+      <description>プログラムどおり動いても、物体をつかめていなければ作業は失敗だ。RoboAutoは、操作後に実際の状態変化を確かめる仕組みを計画へ組み込む。物体のアフォーダンスと操作効果を知識として蓄え、曖昧な場面では小さな実験で仮説を検証する。</description>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>REACH、Unitree G1で歩行から匍匐への切り替えを実現</title>
+      <link>https://repravda.com/ja/issues/2026-10-30/articles/reach-crawling/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-30:ja:reach-crawling</guid>
+      <description>低い通路を前にすると、歩行だけでは進めない。REACHはUnitree G1に二足移動と匍匐を切り替える能力を与えた。接触状態が大きく異なる動作を遷移ポリシーでつなぎ、LiDARの経路計画が先の高さ制約を判断する。</description>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>HC2Robot、ヒューマノイドの着地点と支持品質を予測</title>
+      <link>https://repravda.com/ja/issues/2026-10-30/articles/hc2-foresight/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-30:ja:hc2-foresight</guid>
+      <description>足場が見えても、次の一歩を支えられるとは限らない。HC2Robotは接地時刻、位置、支持の良さを事前に予測する。学習時のシミュレータ情報を手掛かりにしながら、実行時には機体上で得られる観測だけを使う。Hyper-Connection Transformerが時間的な情報を統合する。</description>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>LEAP hand、目標姿勢の95.2%を達成し物体落下を抑制</title>
+      <link>https://repravda.com/ja/issues/2026-10-30/articles/dexsafe-hand/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-30:ja:dexsafe-hand</guid>
+      <description>物体を正しい姿勢へ動かしても、途中で落とせば失敗だ。LEAP handの研究は落下を独立した安全指標として扱う。人のデモなしでシミュレーション学習し、危険な動きを抑える調整可能な残差フィルターを追加した。</description>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>日本：東京海上日動、AIロボットの稼働停止に備える保険を発表</title>
+      <link>https://repravda.com/ja/issues/2026-10-30/articles/tokio-robot-insurance/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-30:ja:tokio-robot-insurance</guid>
+      <description>ロボット導入では生産性が注目される。では停止した日の仕事を誰が引き継ぐのか。東京海上日動は2026年11月から、機体損害や第三者賠償に加え、停止時の代替要員など事業継続費用も対象とするAIロボット保険を提供すると発表した。</description>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>デモから信頼できる実行へ</title>
+      <link>https://repravda.com/ja/issues/2026-10-30/articles/technology-signal/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-30:ja:technology-signal</guid>
+      <description>新しい研究では、作業意図と局所補正、中間結果の検証、物理的リスク管理を分離する設計が目立つ。</description>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 +0900</pubDate>
+      <category>分析</category>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,1531 @@
+{
+  "issue_id": "2026-10-31",
+  "number": 3,
+  "publication_date": "2026-10-31",
+  "revision": 1,
+  "status": "draft",
+  "languages": {
+    "ru": {
+      "title": "Правда репликанта",
+      "weather": null,
+      "issue_title": "Правда репликанта — Physical AI, 31 октября 2026",
+      "editorial_note": "Восемь событий Physical AI: тактильные инструменты, симуляции, восстановление планов, японская логистика и экономика масштабирования.",
+      "articles": [
+        {
+          "id": "swapbot-tools",
+          "slug": "swapbot-tools",
+          "category": "news",
+          "headline": "SwapBot: вместо универсального захвата — сменные инструменты с тактильной обратной связью",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "В поисках универсальной роботизированной кисти есть очевидная альтернатива: не делать одну руку на все случаи, а менять инструмент. SwapBot предлагает единое крепление на роботе и недорогие адаптеры для привычных предметов. Встроенная тактильная обратная связь сообщает о контакте, который камера не всегда способна надёжно распознать."
+            },
+            {
+              "type": "paragraph",
+              "text": "Исследователи собрали демонстрации через телеуправление и обучили политики imitation learning для операций вроде приготовления еды. В контактных задачах они сообщают о выигрыше 15–25 процентных пунктов по успешности относительно RGB-only, а также о меньшей нагрузке на оператора. Идея инженерно убедительна, но испытания пока не доказывают надёжность со всеми инструментами и в промышленной среде."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": {
+            "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-31/swapbot-tools.webp",
+            "path": "data/images/2026-10-31/swapbot-tools.webp",
+            "type": "generated",
+            "caption": "Концептуальная ИИ-иллюстрация принципа SwapBot: роботизированная рука работает сменной лопаткой, а рядом показаны альтернативные инструменты с унифицированным соединением. Не является экспериментальным снимком.",
+            "alt": "Объёмный концептуальный рисунок: сочленённый робот удерживает лопатку под кусочком тофу на сковороде; рядом находятся сменные щётка и щипцы."
+          },
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "gym-anything",
+          "slug": "gym-anything",
+          "category": "news",
+          "headline": "Gym-Anything: агенты-программисты создают полигоны для обучения роботов",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Робот может блестяще выглядеть в знакомом симуляторе и растеряться при первом изменении условий. Gym-Anything атакует проблему со стороны инфраструктуры: цифровые агенты сами создают и проверяют физические среды, вместо того чтобы ждать ручной работы специалистов. Так появился RoboWorld — 25 симуляций и 25 тестовых задач."
+            },
+            {
+              "type": "paragraph",
+              "text": "По данным авторов, даже лучшая из проверенных передовых моделей получила среднюю награду лишь 0,06 и не справилась ни с одной тестовой задачей. Команда также исследует повторные попытки, обучение от привилегированного учителя и генерацию демонстраций кодом. Для sim-to-real это полезный полигон, но красивый цифровой мир ещё не означает точной модели реального цеха."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40565",
+              "title": "Gym-Anything for Robotics: Scaling physical simulations with digital agents",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "touchbridge-tactile",
+          "slug": "touchbridge-tactile",
+          "category": "news",
+          "headline": "TouchBridge переносит человеческие касания в обучение ловкой роботизированной кисти",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Когда человек поворачивает предмет в руке, важно не только положение пальцев. Важно, где они касаются поверхности и как меняется контакт. TouchBridge сочетает носимый интерфейс с переносом тактильных данных между разными кистями, сохраняя пространственные отношения зон контакта при преобразовании демонстраций для робота."
+            },
+            {
+              "type": "paragraph",
+              "text": "На четырёх реальных задачах обученная VLA-политика достигла 72,5% успешности против 77,5% при прямом телеуправлении роботом. Зато демонстрации человеком собирались в семь раз быстрее. Такой компромисс интересен при дефиците машинного времени, хотя разница в надёжности и узость испытаний пока не позволяют говорить о готовой универсальной технологии."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40349",
+              "title": "TouchBridge: Tactile-Conditioned Human-to-Robot Transfer for Dexterous Manipulation",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "logiv-repair",
+          "slug": "logiv-repair",
+          "category": "news",
+          "headline": "LOGIV проверяет, сохранились ли физические условия плана",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Выполнить шаг — ещё не значит сохранить его результат. Робот может правильно поставить деталь, а затем задеть её следующим движением. LOGIV использует явный граф задач: он хранит зависимости будущих действий от физических условий, проверяет эти условия по наблюдениям и восстанавливает только нарушенные связи."
+            },
+            {
+              "type": "paragraph",
+              "text": "Система работает поверх существующих VLA или world-action политик и не требует нового обучаемого модуля. На трёх реальных задачах число успешных попыток выросло с 12 из 30 до 17 из 30; улучшения отмечены и в двухручных бенчмарках. Обещание здесь — восстанавливаемое длительное выполнение, но лишь при условии, что граф и датчики действительно описывают важные состояния мира."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40016",
+              "title": "LOGIV: Graph-Verified Execution with Causal Local Repair for Long-Horizon Robot Tasks",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "aeon-mixed-palletizing",
+          "slug": "aeon-mixed-palletizing",
+          "category": "news",
+          "headline": "Aeon и Mujin запустили в Японии логистический центр со смешанной роботизированной укладкой",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Коробки разных размеров и массы редко приходят в порядке, удобном для заранее записанной траектории. На центре Aeon Kawaguchi East XD, запущенном 29 октября совместно с Mujin, система рассчитывает план укладки по заказу, а затем проверяет формирующийся штабель с помощью 3D-зрения. Если груз смещается, робот корректирует действия. Именно эта обратная связь отличает решение от жёсткого сценария."
+            },
+            {
+              "type": "paragraph",
+              "text": "WES координирует манипуляторы, AGV, шаттлы и указания работникам с учётом заказов магазинов и сроков отправки. Это заявленный действующий логистический объект, а не только лабораторная демонстрация. Однако сведения о производительности пока исходят от самих компаний: нужны независимые данные о стабильности, простоях и экономике эксплуатации."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.aeon.info/en/news/release_115103/",
+              "title": "イオン物流構造改革の次世代自動化モデルセンター「イオン川口東ＸＤ」稼働",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": {
+            "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-31/aeon-mixed-palletizing.webp",
+            "path": "data/images/2026-10-31/aeon-mixed-palletizing.webp",
+            "type": "generated",
+            "caption": "Концептуальная ИИ-иллюстрация принципа роботизированной укладки: манипулятор переносит коробку, а трёхмерная модель и наблюдение за штабелем позволяют сопоставлять план с реальным состоянием. Не является изображением оборудования Aeon.",
+            "alt": "Техническая концептуальная визуализация: робот укладывает коробки на паллету, слева условно показана цифровая модель процесса, справа — физическая операция и контроль положения груза."
+          },
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "agility-financing",
+          "slug": "agility-financing",
+          "category": "news",
+          "headline": "Agility уточнила финансирование масштабирования Digit 5",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Между эффектной демонстрацией гуманоида и обслуживаемым парком машин лежит не только алгоритм, но и капитал. Agility Robotics и Churchill XI теперь ожидают около 465 млн долларов валовых поступлений от предполагаемого объединения, говорится в документе от 30 октября. Закрытие намечено на 4 ноября, торги на Nasdaq — на 5 ноября, но оба события зависят от выполнения условий."
+            },
+            {
+              "type": "paragraph",
+              "text": "Agility планирует первые поставки Digit 5 в первой половине 2027 года и сообщает о многолетних заказах более чем на 300 млн долларов. Это планы и обязательства, а не уже заработанная выручка и не новая верификация системы управления. Главный вопрос для Physical AI — превратятся ли инвестиции в устойчивую работу роботов у заказчиков."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/2074973/000121390026114063/ea031030301ex99-1.htm",
+              "title": "Agility Robotics and Churchill Capital Corp XI Announce Expected Gross Capital Raise of Approximately $465 Million",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "opentrons-autonomous-labs",
+          "slug": "opentrons-autonomous-labs",
+          "category": "news",
+          "headline": "Opentrons привлекла 40 млн долларов для соединения ИИ с физической лабораторией",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Языковая модель может предложить тысячу экспериментов раньше, чем лаборатория закончит один. Opentrons инвестирует в медленную половину этого цикла: роботы дозируют жидкости, выполняют протоколы и фиксируют структурированные результаты. 29 октября компания объявила о раунде Series E на 40 млн долларов для расширения этой инфраструктуры."
+            },
+            {
+              "type": "paragraph",
+              "text": "По собственным данным, Opentrons поставила более 11 тысяч роботов в более чем 80 стран. Открытый API и повторяемое физическое исполнение важны потому, что научному ИИ нужны проверяемые исходы, а не только убедительные гипотезы. Но пресс-релиз подтверждает инвестиционный план, а не способность автономной лаборатории работать без контроля человека."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://opentrons.com/archives/news/opentrons-announces-40m-series-e-round-to-standardize-ai-driven-science-on-its-robots",
+              "title": "Opentrons Announces $40M Series E Round to Standardize AI-Driven Science on Its Robots",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "bleu-few-shot",
+          "slug": "bleu-few-shot",
+          "category": "news",
+          "headline": "Bleu Robotics делает ставку на обучение за несколько демонстраций",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "У промышленной робототехники упрямая проблема: следующая модификация изделия способна обесценить вчерашнюю тщательно запрограммированную ячейку. Французская Bleu Robotics, выросшая из Inria, привлекла 5 млн евро на более узкий подход, чем мечта о всеобщем интеллекте. Её few-shot imitation learning пытается восстановить смысл операции примерно по десяти демонстрациям, используя готовые средства восприятия и управления."
+            },
+            {
+              "type": "paragraph",
+              "text": "В прежнем техническом описании Bleu_0.1 приведены обнадёживающие лабораторные результаты, а целевое время внедрения новой задачи составляет менее часа. Границы обозначены прямо: деформируемые материалы пока вне фокуса, а при незнакомой траектории робот останавливается. Финансирование подтверждено, но надёжность массового внедрения ещё предстоит доказать."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.eu-startups.com/2026/10/french-startup-bleu-robotics-secures-e5-million-to-teach-humanoid-robots-new-tasks-with-fewer-demonstrations/",
+              "title": "French startup Bleu Robotics secures €5 million to teach humanoid robots new tasks with fewer demonstrations",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://bleu-robotics.com/blog/introducing-bleu-0-1",
+              "title": "Introducing Bleu_0.1",
+              "published_at": "2026-03-17",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "technology-signal",
+          "slug": "technology-signal",
+          "category": "analysis",
+          "headline": "Physical AI переходит от отдельных демонстраций к управляемым системам",
+          "dek": "Смена инструментов, тактильные данные, проверка зависимостей и обратная связь реального склада делают инженерную обвязку не менее важной, чем базовую модель.",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Наряду с успешностью модели нужно измерять контактную надёжность, восстановление после сбоев, трудоёмкость интеграции и простой."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40565",
+              "title": "Gym-Anything for Robotics: Scaling physical simulations with digital agents",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40349",
+              "title": "TouchBridge: Tactile-Conditioned Human-to-Robot Transfer for Dexterous Manipulation",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40016",
+              "title": "LOGIV: Graph-Verified Execution with Causal Local Repair for Long-Horizon Robot Tasks",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.aeon.info/en/news/release_115103/",
+              "title": "イオン物流構造改革の次世代自動化モデルセンター「イオン川口東ＸＤ」稼働",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/2074973/000121390026114063/ea031030301ex99-1.htm",
+              "title": "Agility Robotics and Churchill Capital Corp XI Announce Expected Gross Capital Raise of Approximately $465 Million",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://opentrons.com/archives/news/opentrons-announces-40m-series-e-round-to-standardize-ai-driven-science-on-its-robots",
+              "title": "Opentrons Announces $40M Series E Round to Standardize AI-Driven Science on Its Robots",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.eu-startups.com/2026/10/french-startup-bleu-robotics-secures-e5-million-to-teach-humanoid-robots-new-tasks-with-fewer-demonstrations/",
+              "title": "French startup Bleu Robotics secures €5 million to teach humanoid robots new tasks with fewer demonstrations",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://bleu-robotics.com/blog/introducing-bleu-0-1",
+              "title": "Introducing Bleu_0.1",
+              "published_at": "2026-03-17",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "glossary",
+          "slug": "glossary",
+          "category": "analysis",
+          "headline": "Словарь выпуска",
+          "dek": "Термины и определения из редакционного набора.",
+          "body": [
+            {
+              "type": "heading",
+              "text": "VLA"
+            },
+            {
+              "type": "paragraph",
+              "text": "Модель Vision-Language-Action: преобразует изображения и команды в действия робота."
+            },
+            {
+              "type": "heading",
+              "text": "Тактильная обратная связь"
+            },
+            {
+              "type": "paragraph",
+              "text": "Измерение контакта и сил датчиками на инструменте или кисти."
+            },
+            {
+              "type": "heading",
+              "text": "Imitation learning"
+            },
+            {
+              "type": "paragraph",
+              "text": "Обучение политики робота по демонстрациям действий."
+            },
+            {
+              "type": "heading",
+              "text": "Энд-эффектор"
+            },
+            {
+              "type": "paragraph",
+              "text": "Инструмент или захват на конце манипулятора."
+            },
+            {
+              "type": "heading",
+              "text": "Sim-to-real"
+            },
+            {
+              "type": "paragraph",
+              "text": "Перенос решений из симуляции на физический робот."
+            },
+            {
+              "type": "heading",
+              "text": "Граф задач"
+            },
+            {
+              "type": "paragraph",
+              "text": "Структура действий и условий, от которых зависят последующие шаги."
+            },
+            {
+              "type": "heading",
+              "text": "WES"
+            },
+            {
+              "type": "paragraph",
+              "text": "Warehouse Execution System: координирует оборудование и операции склада."
+            },
+            {
+              "type": "heading",
+              "text": "3D-зрение"
+            },
+            {
+              "type": "paragraph",
+              "text": "Оптическое измерение формы и пространственного положения объектов."
+            },
+            {
+              "type": "heading",
+              "text": "Палетизация"
+            },
+            {
+              "type": "paragraph",
+              "text": "Укладка коробок в устойчивую транспортную грузовую единицу."
+            },
+            {
+              "type": "heading",
+              "text": "Few-shot"
+            },
+            {
+              "type": "paragraph",
+              "text": "Адаптация к задаче по небольшому числу примеров."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40565",
+              "title": "Gym-Anything for Robotics: Scaling physical simulations with digital agents",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40349",
+              "title": "TouchBridge: Tactile-Conditioned Human-to-Robot Transfer for Dexterous Manipulation",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40016",
+              "title": "LOGIV: Graph-Verified Execution with Causal Local Repair for Long-Horizon Robot Tasks",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.aeon.info/en/news/release_115103/",
+              "title": "イオン物流構造改革の次世代自動化モデルセンター「イオン川口東ＸＤ」稼働",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/2074973/000121390026114063/ea031030301ex99-1.htm",
+              "title": "Agility Robotics and Churchill Capital Corp XI Announce Expected Gross Capital Raise of Approximately $465 Million",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://opentrons.com/archives/news/opentrons-announces-40m-series-e-round-to-standardize-ai-driven-science-on-its-robots",
+              "title": "Opentrons Announces $40M Series E Round to Standardize AI-Driven Science on Its Robots",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.eu-startups.com/2026/10/french-startup-bleu-robotics-secures-e5-million-to-teach-humanoid-robots-new-tasks-with-fewer-demonstrations/",
+              "title": "French startup Bleu Robotics secures €5 million to teach humanoid robots new tasks with fewer demonstrations",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://bleu-robotics.com/blog/introducing-bleu-0-1",
+              "title": "Introducing Bleu_0.1",
+              "published_at": "2026-03-17",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        }
+      ]
+    },
+    "en": {
+      "title": "The Replicant Truth",
+      "weather": {
+        "location": "breukelen",
+        "timezone": "Europe/Amsterdam",
+        "forecast_date": "2026-10-31",
+        "retrieved_at": "2026-10-30T18:37:46.659155Z",
+        "kind": "forecast",
+        "source_name": "Open-Meteo",
+        "source_url": "https://api.open-meteo.com/v1/forecast?latitude=52.1742&longitude=5.0014&timezone=Europe%2FAmsterdam&start_date=2026-10-31&end_date=2026-10-31&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+        "temperature_min_c": 5.8,
+        "temperature_max_c": 11.1,
+        "precipitation_probability_max": 0,
+        "slots": [
+          {
+            "hour": 9,
+            "temperature_c": 6.6,
+            "condition": "fog",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 2.6,
+            "wind_direction_deg": 85
+          },
+          {
+            "hour": 12,
+            "temperature_c": 8.1,
+            "condition": "cloudy",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 3.2,
+            "wind_direction_deg": 115
+          },
+          {
+            "hour": 18,
+            "temperature_c": 8.9,
+            "condition": "cloudy",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 2.6,
+            "wind_direction_deg": 75
+          }
+        ]
+      },
+      "issue_title": "Replicant Pravda — Physical AI, 31 October 2026",
+      "editorial_note": "Eight developments in embodied AI: tactile tools, simulation, recoverable task execution, Japanese warehouse deployment and the economics of scaling.",
+      "articles": [
+        {
+          "id": "swapbot-tools",
+          "slug": "swapbot-tools",
+          "category": "news",
+          "headline": "SwapBot replaces the universal gripper with swappable tactile tools",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "The search for a single hand that can do everything has an obvious rival: change the tool instead. SwapBot puts a standard coupling on the robot and inexpensive adapters on ordinary utensils. A spatula, brush or articulated tool can become a robot end-effector, while integrated tactile sensing reports contact that cameras alone cannot reliably reveal."
+            },
+            {
+              "type": "paragraph",
+              "text": "The team collected demonstrations through teleoperation and trained imitation learning policies for cooking-style manipulation. It reports success gains of 15–25 percentage points over RGB-only policies on contact-rich skills, alongside lower operator workload in a user study. The idea is practical, but the experiments do not establish reliability across every tool or industrial environment."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": {
+            "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-31/swapbot-tools.webp",
+            "path": "data/images/2026-10-31/swapbot-tools.webp",
+            "type": "generated",
+            "caption": "Conceptual AI-generated illustration of the SwapBot principle: a robot arm uses an interchangeable spatula, with alternative tools sharing a coupling interface. Not an experimental photograph.",
+            "alt": "Three-dimensional conceptual scene of an articulated robot lifting tofu with a spatula in a pan; a brush and tongs are arranged beside it."
+          },
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "gym-anything",
+          "slug": "gym-anything",
+          "category": "news",
+          "headline": "Gym-Anything lets coding agents build the robot training worlds",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "A robot policy can look capable in a familiar simulator and still fail when the world changes. Gym-Anything attacks the supply side of that problem: coding agents create and audit new physical simulations, rather than waiting for experts to hand-build each environment. The resulting RoboWorld benchmark spans 25 simulations and 25 test tasks."
+            },
+            {
+              "type": "paragraph",
+              "text": "The researchers report an average reward of just 0.06 for the best frontier models, with no test task solved. They also explore repeated attempts, privileged teachers and demonstration-generating code policies. The work broadens the testing ground for embodied AI and sim-to-real research, but a convincing simulation is not automatically a faithful model of factory physics."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40565",
+              "title": "Gym-Anything for Robotics: Scaling physical simulations with digital agents",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "touchbridge-tactile",
+          "slug": "touchbridge-tactile",
+          "category": "news",
+          "headline": "TouchBridge carries human fingertip contact into robot training",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "When a person turns an object in the hand, the important information is not just where the fingers went. It is where they touched and how the contact changed. TouchBridge combines a wearable demonstration interface with tactile-conditioned retargeting, preserving fingertip contact relations as examples are converted for a robot hand."
+            },
+            {
+              "type": "paragraph",
+              "text": "On four real tasks, the resulting VLA policy reached 72.5% average success, versus 77.5% with the same number of directly teleoperated robot demonstrations. Human data collection was 7.0 times faster. That trade-off could be attractive when robot time is scarce, though the gap in success and the narrow evaluation still matter."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40349",
+              "title": "TouchBridge: Tactile-Conditioned Human-to-Robot Transfer for Dexterous Manipulation",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "logiv-repair",
+          "slug": "logiv-repair",
+          "category": "news",
+          "headline": "LOGIV checks whether the world still supports the robot’s plan",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Completing a step is not the same as preserving its result. A robot may place a part correctly, then knock it aside while executing the next instruction. LOGIV introduces an explicit task graph that records which later actions depend on which physical conditions, checks those conditions against observations and repairs the broken links locally."
+            },
+            {
+              "type": "paragraph",
+              "text": "The framework sits above existing VLA or world-action policies and adds no trainable component. In three real-robot tasks, successful trials rose from 12 out of 30 to 17 out of 30; broader dual-arm tests also showed gains. The engineering promise is recoverable long-horizon execution, provided the task graph and observations capture what actually matters."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40016",
+              "title": "LOGIV: Graph-Verified Execution with Causal Local Repair for Long-Horizon Robot Tasks",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "aeon-mixed-palletizing",
+          "slug": "aeon-mixed-palletizing",
+          "category": "news",
+          "headline": "Aeon and Mujin put mixed-case palletizing into a live Japanese distribution hub",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Mixed cartons rarely arrive in the neat order that a fixed palletizing script expects. At Aeon’s Kawaguchi East XD, launched on October 29 with Mujin, the system simulates a loading plan for each order, then uses 3D vision to check the evolving stack and adjust the robot’s movements if boxes shift. That feedback loop is the engineering heart of the deployment."
+            },
+            {
+              "type": "paragraph",
+              "text": "The WES coordinates robot arms, AGVs, shuttles and worker instructions against store orders and deadlines. Unlike a staged laboratory demonstration, this is a declared operating distribution hub. Yet the published description is from the companies themselves: throughput, uptime and savings need independent, sustained operational evidence."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.aeon.info/en/news/release_115103/",
+              "title": "イオン物流構造改革の次世代自動化モデルセンター「イオン川口東ＸＤ」稼働",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": {
+            "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-31/aeon-mixed-palletizing.webp",
+            "path": "data/images/2026-10-31/aeon-mixed-palletizing.webp",
+            "type": "generated",
+            "caption": "Conceptual AI-generated illustration of robotic mixed-case palletizing: a robot places a box while a three-dimensional representation helps relate the planned stack to observed reality. Not a depiction of Aeon's actual equipment.",
+            "alt": "Conceptual technical scene showing a robot stacking cartons on a pallet, with a digital process representation on the left and the physical operation and load-position observation on the right."
+          },
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "agility-financing",
+          "slug": "agility-financing",
+          "category": "news",
+          "headline": "Agility updates the capital available for scaling Digit 5",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "The distance from a convincing humanoid demonstration to a serviceable fleet is measured partly in capital. Agility Robotics and Churchill XI now expect roughly $465 million in gross proceeds from their proposed combination, according to a filing dated October 30. The companies target closing on November 4 and Nasdaq trading on November 5, subject to approval and other conditions."
+            },
+            {
+              "type": "paragraph",
+              "text": "Agility says early Digit 5 deliveries are planned for the first half of 2027 and cites more than $300 million in multiyear orders. Those are commitments and plans, not revenue already earned or evidence of a new control breakthrough. The question for Physical AI is how financing translates into uptime, support and repeatable customer work."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/2074973/000121390026114063/ea031030301ex99-1.htm",
+              "title": "Agility Robotics and Churchill Capital Corp XI Announce Expected Gross Capital Raise of Approximately $465 Million",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "opentrons-autonomous-labs",
+          "slug": "opentrons-autonomous-labs",
+          "category": "news",
+          "headline": "Opentrons raises $40 million to connect AI experiments with physical labs",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "A language model can propose a thousand experiments before a human laboratory has finished one. Opentrons is investing in the slower half of that loop: liquid-handling robots, software and structured records of what was actually done. On October 29 it announced a $40 million Series E to expand the infrastructure for AI-directed laboratory work."
+            },
+            {
+              "type": "paragraph",
+              "text": "The company reports more than 11,000 robots deployed across over 80 countries. An open API and repeatable physical execution matter because scientific models need trustworthy outcomes, not just plausible hypotheses. The release documents a financing plan and installed-base claim, however, not independent proof that an autonomous laboratory can discover reliably without human oversight."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://opentrons.com/archives/news/opentrons-announces-40m-series-e-round-to-standardize-ai-driven-science-on-its-robots",
+              "title": "Opentrons Announces $40M Series E Round to Standardize AI-Driven Science on Its Robots",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "bleu-few-shot",
+          "slug": "bleu-few-shot",
+          "category": "news",
+          "headline": "Bleu Robotics bets on few-shot teaching rather than general-purpose hype",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Industrial robotics has a stubborn problem: the next product variant can invalidate yesterday’s carefully programmed cell. Bleu Robotics, an Inria spinout, has raised €5 million to pursue a narrower alternative to universal robot intelligence. Its few-shot imitation learning approach tries to infer a workstation task from roughly ten operator demonstrations, using existing perception and motion-control tools."
+            },
+            {
+              "type": "paragraph",
+              "text": "The company’s earlier Bleu_0.1 material reports promising controlled experiments and aims for task deployment in under an hour. It also states clear boundaries: deformable materials are outside its present focus, and the robot stops when an unfamiliar trajectory appears. The funding is real news; factory-scale robustness remains a claim to test."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.eu-startups.com/2026/10/french-startup-bleu-robotics-secures-e5-million-to-teach-humanoid-robots-new-tasks-with-fewer-demonstrations/",
+              "title": "French startup Bleu Robotics secures €5 million to teach humanoid robots new tasks with fewer demonstrations",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://bleu-robotics.com/blog/introducing-bleu-0-1",
+              "title": "Introducing Bleu_0.1",
+              "published_at": "2026-03-17",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "technology-signal",
+          "slug": "technology-signal",
+          "category": "analysis",
+          "headline": "Physical AI shifts from isolated demonstrations to systems that can be operated",
+          "dek": "Tool changing, tactile data, verified task dependencies and live warehouse feedback make the surrounding engineering stack as important as the foundation model.",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Measure contact success, recovery after disturbances, integration effort and operational uptime alongside policy benchmarks."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40565",
+              "title": "Gym-Anything for Robotics: Scaling physical simulations with digital agents",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40349",
+              "title": "TouchBridge: Tactile-Conditioned Human-to-Robot Transfer for Dexterous Manipulation",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40016",
+              "title": "LOGIV: Graph-Verified Execution with Causal Local Repair for Long-Horizon Robot Tasks",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.aeon.info/en/news/release_115103/",
+              "title": "イオン物流構造改革の次世代自動化モデルセンター「イオン川口東ＸＤ」稼働",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/2074973/000121390026114063/ea031030301ex99-1.htm",
+              "title": "Agility Robotics and Churchill Capital Corp XI Announce Expected Gross Capital Raise of Approximately $465 Million",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://opentrons.com/archives/news/opentrons-announces-40m-series-e-round-to-standardize-ai-driven-science-on-its-robots",
+              "title": "Opentrons Announces $40M Series E Round to Standardize AI-Driven Science on Its Robots",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.eu-startups.com/2026/10/french-startup-bleu-robotics-secures-e5-million-to-teach-humanoid-robots-new-tasks-with-fewer-demonstrations/",
+              "title": "French startup Bleu Robotics secures €5 million to teach humanoid robots new tasks with fewer demonstrations",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://bleu-robotics.com/blog/introducing-bleu-0-1",
+              "title": "Introducing Bleu_0.1",
+              "published_at": "2026-03-17",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "glossary",
+          "slug": "glossary",
+          "category": "analysis",
+          "headline": "Issue glossary",
+          "dek": "Terms and definitions from the editorial dataset.",
+          "body": [
+            {
+              "type": "heading",
+              "text": "VLA"
+            },
+            {
+              "type": "paragraph",
+              "text": "Vision-Language-Action model: turns visual observations and instructions into robot actions."
+            },
+            {
+              "type": "heading",
+              "text": "Tactile sensing"
+            },
+            {
+              "type": "paragraph",
+              "text": "Measuring physical contact or force through sensors on a tool or hand."
+            },
+            {
+              "type": "heading",
+              "text": "Imitation learning"
+            },
+            {
+              "type": "paragraph",
+              "text": "Learning a robot policy from demonstrated actions."
+            },
+            {
+              "type": "heading",
+              "text": "End-effector"
+            },
+            {
+              "type": "paragraph",
+              "text": "A robot’s tool or gripper attached at the end of its arm."
+            },
+            {
+              "type": "heading",
+              "text": "Sim-to-real"
+            },
+            {
+              "type": "paragraph",
+              "text": "Transfer of policies or insights from simulation to physical hardware."
+            },
+            {
+              "type": "heading",
+              "text": "Task graph"
+            },
+            {
+              "type": "paragraph",
+              "text": "Representation of actions and the conditions on which later steps depend."
+            },
+            {
+              "type": "heading",
+              "text": "WES"
+            },
+            {
+              "type": "paragraph",
+              "text": "Warehouse Execution System: coordinates equipment and operational work."
+            },
+            {
+              "type": "heading",
+              "text": "3D vision"
+            },
+            {
+              "type": "paragraph",
+              "text": "Visual sensing that estimates object geometry and spatial placement."
+            },
+            {
+              "type": "heading",
+              "text": "Palletizing"
+            },
+            {
+              "type": "paragraph",
+              "text": "Arranging boxes or goods into stable loads for transport."
+            },
+            {
+              "type": "heading",
+              "text": "Few-shot"
+            },
+            {
+              "type": "paragraph",
+              "text": "Adapting to a new task from a small number of examples."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40565",
+              "title": "Gym-Anything for Robotics: Scaling physical simulations with digital agents",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40349",
+              "title": "TouchBridge: Tactile-Conditioned Human-to-Robot Transfer for Dexterous Manipulation",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40016",
+              "title": "LOGIV: Graph-Verified Execution with Causal Local Repair for Long-Horizon Robot Tasks",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.aeon.info/en/news/release_115103/",
+              "title": "イオン物流構造改革の次世代自動化モデルセンター「イオン川口東ＸＤ」稼働",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/2074973/000121390026114063/ea031030301ex99-1.htm",
+              "title": "Agility Robotics and Churchill Capital Corp XI Announce Expected Gross Capital Raise of Approximately $465 Million",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://opentrons.com/archives/news/opentrons-announces-40m-series-e-round-to-standardize-ai-driven-science-on-its-robots",
+              "title": "Opentrons Announces $40M Series E Round to Standardize AI-Driven Science on Its Robots",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.eu-startups.com/2026/10/french-startup-bleu-robotics-secures-e5-million-to-teach-humanoid-robots-new-tasks-with-fewer-demonstrations/",
+              "title": "French startup Bleu Robotics secures €5 million to teach humanoid robots new tasks with fewer demonstrations",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://bleu-robotics.com/blog/introducing-bleu-0-1",
+              "title": "Introducing Bleu_0.1",
+              "published_at": "2026-03-17",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        }
+      ]
+    },
+    "ja": {
+      "title": "日本語題字（要承認）",
+      "weather": {
+        "location": "smolensk",
+        "timezone": "Europe/Moscow",
+        "forecast_date": "2026-10-31",
+        "retrieved_at": "2026-10-30T18:37:47.556473Z",
+        "kind": "forecast",
+        "source_name": "Open-Meteo",
+        "source_url": "https://api.open-meteo.com/v1/forecast?latitude=54.7826&longitude=32.0453&timezone=Europe%2FMoscow&start_date=2026-10-31&end_date=2026-10-31&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+        "temperature_min_c": 4.7,
+        "temperature_max_c": 9.2,
+        "precipitation_probability_max": 18,
+        "slots": [
+          {
+            "hour": 9,
+            "temperature_c": 4.8,
+            "condition": "cloudy",
+            "precipitation_probability": 13,
+            "wind_speed_ms": 1.3,
+            "wind_direction_deg": 32
+          },
+          {
+            "hour": 12,
+            "temperature_c": 7.4,
+            "condition": "cloudy",
+            "precipitation_probability": 3,
+            "wind_speed_ms": 2.05,
+            "wind_direction_deg": 43
+          },
+          {
+            "hour": 18,
+            "temperature_c": 8.0,
+            "condition": "cloudy",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 1.56,
+            "wind_direction_deg": 40
+          }
+        ]
+      },
+      "issue_title": "レプリカント・プラウダ — Physical AI、2026年10月31日",
+      "editorial_note": "触覚工具、シミュレーション、タスク復旧、日本の物流導入、商用拡大の経済性をめぐる8件の動向。",
+      "articles": [
+        {
+          "id": "swapbot-tools",
+          "slug": "swapbot-tools",
+          "category": "news",
+          "headline": "SwapBot：万能グリッパーではなく触覚付き工具を交換する",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "あらゆる作業をこなす万能の手を作る代わりに、道具そのものを交換する。SwapBotはロボット側の共通結合部と、身近な道具に取り付ける低コストのアダプターを組み合わせる。アダプターには触覚センシングがあり、カメラだけでは捉えにくい接触状態を扱える。"
+            },
+            {
+              "type": "paragraph",
+              "text": "研究チームは遠隔操作で実演データを集め、調理に近い操作を模倣学習で習得させた。接触の多い技能では、RGBのみの方策より成功率が15〜25ポイント高く、操作者の負担も減ったと報告する。ただし、すべての工具や工場環境での信頼性を証明したものではない。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": {
+            "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-31/swapbot-tools.webp",
+            "path": "data/images/2026-10-31/swapbot-tools.webp",
+            "type": "generated",
+            "caption": "SwapBotの原理を示す概念的なAI生成イラスト。ロボットが交換式ヘラを使い、共通接続部を持つ別の工具も示す。実験の記録写真ではない。",
+            "alt": "関節式ロボットがフライパン内の豆腐をヘラですくい、そばに交換用のブラシとトングが置かれた立体的な概念図。"
+          },
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "gym-anything",
+          "slug": "gym-anything",
+          "category": "news",
+          "headline": "Gym-Anything：コーディングエージェントがロボット用シミュレーターを作る",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "慣れたシミュレーターでは優秀なロボット方策も、条件が変わると簡単に失敗する。Gym-Anythingは環境を作る側の問題に取り組む。専門家の手作業だけに頼らず、コーディングエージェントが物理環境を生成し、別の検査工程で妥当性を確かめる。その成果が25種類のシミュレーションを含むRoboWorldだ。"
+            },
+            {
+              "type": "paragraph",
+              "text": "著者らによれば、最良の先端モデルでも評価課題を一つも解けず、平均報酬は0.06にとどまった。反復試行、内部状態を知る教師からの学習、コードによる実演生成も検討している。sim-to-real研究の試験場は広がるが、デジタル環境の精巧さが現実の物理を保証するわけではない。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40565",
+              "title": "Gym-Anything for Robotics: Scaling physical simulations with digital agents",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "touchbridge-tactile",
+          "slug": "touchbridge-tactile",
+          "category": "news",
+          "headline": "TouchBridge：人の指先の接触情報をロボット学習へ移す",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "人が手の中で物を回すとき、重要なのは指の位置だけではない。どこに触れ、接触がどう変化したかも欠かせない。TouchBridgeは装着型インターフェースと触覚情報に基づく動作変換を組み合わせ、人とロボットの異なる手の間で接触関係を保った実演データを作る。"
+            },
+            {
+              "type": "paragraph",
+              "text": "4件の実機課題で、変換した人のデータから学習したVLA方策の平均成功率は72.5%。同数のロボット遠隔操作データでは77.5%だったが、人のデータ収集は7.0倍速かった。ロボットの稼働時間が貴重な現場では魅力的な交換条件だが、信頼性の差と検証範囲には注意が必要だ。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40349",
+              "title": "TouchBridge: Tactile-Conditioned Human-to-Robot Transfer for Dexterous Manipulation",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "logiv-repair",
+          "slug": "logiv-repair",
+          "category": "news",
+          "headline": "LOGIV：計画の前提条件が現実に残っているかを確認",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "ある工程が成功しても、その結果が次の工程まで保たれるとは限らない。部品を正しく置いたロボットが、次の動作でその部品を動かしてしまうこともある。LOGIVはタスクグラフに後続工程の物理的な前提条件を記録し、観測によって検証して、壊れた依存関係だけを修復する。"
+            },
+            {
+              "type": "paragraph",
+              "text": "既存のVLAやworld-action方策の上位で動き、新しい学習モジュールは必要ない。実機3課題では成功試行が30回中12回から17回に増え、双腕ベンチマークでも改善したという。長時間作業の復旧性を高める発想だが、タスクグラフとセンサーが重要な状態を正しく表せることが前提となる。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40016",
+              "title": "LOGIV: Graph-Verified Execution with Causal Local Repair for Long-Horizon Robot Tasks",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "aeon-mixed-palletizing",
+          "slug": "aeon-mixed-palletizing",
+          "category": "news",
+          "headline": "イオンとMujin、混載積み付けを自動化した物流拠点を本格稼働",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "大きさも重さも異なる箱は、固定された積み付け手順に都合よく並んではくれない。イオンとMujinが10月29日に本格稼働させた川口東XDでは、注文ごとに積載計画を計算し、3Dビジョンで積み上がる荷物の状態を確認する。箱がずれればロボットの動作を補正する。現実の状態を見ながら計画を修正する点が重要だ。"
+            },
+            {
+              "type": "paragraph",
+              "text": "WESはロボットアーム、AGV、シャトル、作業者への指示を店舗別注文と締切に合わせて統合する。これは研究室だけの実演ではなく、実際に稼働を開始した物流拠点だ。ただし、処理能力や安定稼働に関する説明は企業側の発表であり、長期の停止時間や経済性は別途検証が必要になる。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.aeon.info/en/news/release_115103/",
+              "title": "イオン物流構造改革の次世代自動化モデルセンター「イオン川口東ＸＤ」稼働",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": {
+            "url": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/main/data/images/2026-10-31/aeon-mixed-palletizing.webp",
+            "path": "data/images/2026-10-31/aeon-mixed-palletizing.webp",
+            "type": "generated",
+            "caption": "混載パレタイジングの原理を示す概念的なAI生成イラスト。ロボットによる箱の配置と、計画した積み付けと実際の状態を照合する三次元表現を描く。イオンの実機を再現したものではない。",
+            "alt": "左側にデジタル上の工程表現、右側にパレットへ箱を積むロボットと荷姿の観測を描いた概念的な技術図。"
+          },
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "agility-financing",
+          "slug": "agility-financing",
+          "category": "news",
+          "headline": "Agility、Digit 5量産に向けた資金調達見通しを更新",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "人型ロボットの華やかなデモから、顧客が安心して使える機体群へ進むには資金も要る。Agility RoboticsとChurchill XIは10月30日、予定する企業統合で約4億6500万ドルの総調達額を見込むと開示した。11月4日の取引完了と5日のNasdaq取引開始を目指すが、承認などの条件が残る。"
+            },
+            {
+              "type": "paragraph",
+              "text": "AgilityはDigit 5の初期納入を2027年上半期に予定し、3億ドル超の複数年受注を公表している。だが受注はすでに実現した売上ではなく、資金調達も新たな運動能力の検証ではない。Physical AIの次の評価軸は、投資が現場の稼働率と保守可能性につながるかどうかだ。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/2074973/000121390026114063/ea031030301ex99-1.htm",
+              "title": "Agility Robotics and Churchill Capital Corp XI Announce Expected Gross Capital Raise of Approximately $465 Million",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "opentrons-autonomous-labs",
+          "slug": "opentrons-autonomous-labs",
+          "category": "news",
+          "headline": "Opentrons、AI主導の実験を支えるため4000万ドル調達",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "AIが大量の実験仮説を提案しても、実験室での実行には時間がかかる。Opentronsが投資するのは、この物理的なボトルネックだ。液体操作ロボット、実験手順のソフトウェア、結果を記録するデータ基盤を拡充するため、10月29日に4000万ドルのシリーズE調達を発表した。"
+            },
+            {
+              "type": "paragraph",
+              "text": "同社は80か国超で1万1000台以上のロボットを導入したと説明する。公開APIと再現性のある実験実行は、AIがもっともらしい仮説だけでなく検証可能な結果を得るために重要だ。ただし、発表が示すのは投資計画と導入実績の自己申告であり、人間の監督なしに科学的発見を達成した証拠ではない。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://opentrons.com/archives/news/opentrons-announces-40m-series-e-round-to-standardize-ai-driven-science-on-its-robots",
+              "title": "Opentrons Announces $40M Series E Round to Standardize AI-Driven Science on Its Robots",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "bleu-few-shot",
+          "slug": "bleu-few-shot",
+          "category": "news",
+          "headline": "Bleu Robotics、少数実演による工場作業学習に500万ユーロ",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "製造ラインでは、製品が変わるたびにロボットの設定をやり直す負担が大きい。Inria発のBleu Roboticsは、この課題に向けて500万ユーロを調達した。万能モデルを一から学習するのではなく、既存の認識・運動制御を使い、約10回の実演から作業の構造を推定するfew-shot模倣学習を重視する。"
+            },
+            {
+              "type": "paragraph",
+              "text": "以前公開されたBleu_0.1の技術資料には、限定された研究室環境での好成績と、1時間以内の導入という目標が示されている。一方、柔軟物は対象外で、未知の軌道に遭遇すると停止する。今回の資金調達は事実だが、工場での大規模な信頼性は今後の検証課題である。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.eu-startups.com/2026/10/french-startup-bleu-robotics-secures-e5-million-to-teach-humanoid-robots-new-tasks-with-fewer-demonstrations/",
+              "title": "French startup Bleu Robotics secures €5 million to teach humanoid robots new tasks with fewer demonstrations",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://bleu-robotics.com/blog/introducing-bleu-0-1",
+              "title": "Introducing Bleu_0.1",
+              "published_at": "2026-03-17",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "technology-signal",
+          "slug": "technology-signal",
+          "category": "analysis",
+          "headline": "Physical AIは単発のデモから運用可能なシステムへ",
+          "dek": "工具交換、触覚データ、タスク依存関係の検証、実物流現場でのフィードバックが基盤モデルと同じくらい重要になっている。",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "方策の成功率だけでなく、接触操作の信頼性、外乱後の復旧、導入工数、稼働停止時間を測る必要がある。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40565",
+              "title": "Gym-Anything for Robotics: Scaling physical simulations with digital agents",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40349",
+              "title": "TouchBridge: Tactile-Conditioned Human-to-Robot Transfer for Dexterous Manipulation",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40016",
+              "title": "LOGIV: Graph-Verified Execution with Causal Local Repair for Long-Horizon Robot Tasks",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.aeon.info/en/news/release_115103/",
+              "title": "イオン物流構造改革の次世代自動化モデルセンター「イオン川口東ＸＤ」稼働",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/2074973/000121390026114063/ea031030301ex99-1.htm",
+              "title": "Agility Robotics and Churchill Capital Corp XI Announce Expected Gross Capital Raise of Approximately $465 Million",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://opentrons.com/archives/news/opentrons-announces-40m-series-e-round-to-standardize-ai-driven-science-on-its-robots",
+              "title": "Opentrons Announces $40M Series E Round to Standardize AI-Driven Science on Its Robots",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.eu-startups.com/2026/10/french-startup-bleu-robotics-secures-e5-million-to-teach-humanoid-robots-new-tasks-with-fewer-demonstrations/",
+              "title": "French startup Bleu Robotics secures €5 million to teach humanoid robots new tasks with fewer demonstrations",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://bleu-robotics.com/blog/introducing-bleu-0-1",
+              "title": "Introducing Bleu_0.1",
+              "published_at": "2026-03-17",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "glossary",
+          "slug": "glossary",
+          "category": "analysis",
+          "headline": "本号の用語集",
+          "dek": "編集データに含まれる用語と定義。",
+          "body": [
+            {
+              "type": "heading",
+              "text": "VLA"
+            },
+            {
+              "type": "paragraph",
+              "text": "画像と言語指示からロボット動作を生成するVision-Language-Actionモデル。"
+            },
+            {
+              "type": "heading",
+              "text": "触覚センシング"
+            },
+            {
+              "type": "paragraph",
+              "text": "工具や指のセンサーで接触や力を計測すること。"
+            },
+            {
+              "type": "heading",
+              "text": "模倣学習"
+            },
+            {
+              "type": "paragraph",
+              "text": "実演された動作からロボットの方策を学習する方法。"
+            },
+            {
+              "type": "heading",
+              "text": "エンドエフェクター"
+            },
+            {
+              "type": "paragraph",
+              "text": "ロボットアーム先端に取り付ける工具や把持器。"
+            },
+            {
+              "type": "heading",
+              "text": "sim-to-real"
+            },
+            {
+              "type": "paragraph",
+              "text": "シミュレーションで得た方策や知見を実機へ移すこと。"
+            },
+            {
+              "type": "heading",
+              "text": "タスクグラフ"
+            },
+            {
+              "type": "paragraph",
+              "text": "工程と後続工程が依存する条件を表す構造。"
+            },
+            {
+              "type": "heading",
+              "text": "WES"
+            },
+            {
+              "type": "paragraph",
+              "text": "設備と作業者の動きを統合管理する倉庫実行システム。"
+            },
+            {
+              "type": "heading",
+              "text": "3Dビジョン"
+            },
+            {
+              "type": "paragraph",
+              "text": "物体の形状と空間位置を推定する視覚計測。"
+            },
+            {
+              "type": "heading",
+              "text": "パレタイズ"
+            },
+            {
+              "type": "paragraph",
+              "text": "箱などを運搬用に安定して積み付けること。"
+            },
+            {
+              "type": "heading",
+              "text": "few-shot"
+            },
+            {
+              "type": "paragraph",
+              "text": "少数の実演例から新しい作業に適応すること。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40565",
+              "title": "Gym-Anything for Robotics: Scaling physical simulations with digital agents",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40349",
+              "title": "TouchBridge: Tactile-Conditioned Human-to-Robot Transfer for Dexterous Manipulation",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40016",
+              "title": "LOGIV: Graph-Verified Execution with Causal Local Repair for Long-Horizon Robot Tasks",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.aeon.info/en/news/release_115103/",
+              "title": "イオン物流構造改革の次世代自動化モデルセンター「イオン川口東ＸＤ」稼働",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/2074973/000121390026114063/ea031030301ex99-1.htm",
+              "title": "Agility Robotics and Churchill Capital Corp XI Announce Expected Gross Capital Raise of Approximately $465 Million",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://opentrons.com/archives/news/opentrons-announces-40m-series-e-round-to-standardize-ai-driven-science-on-its-robots",
+              "title": "Opentrons Announces $40M Series E Round to Standardize AI-Driven Science on Its Robots",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.eu-startups.com/2026/10/french-startup-bleu-robotics-secures-e5-million-to-teach-humanoid-robots-new-tasks-with-fewer-demonstrations/",
+              "title": "French startup Bleu Robotics secures €5 million to teach humanoid robots new tasks with fewer demonstrations",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://bleu-robotics.com/blog/introducing-bleu-0-1",
+              "title": "Introducing Bleu_0.1",
+              "published_at": "2026-03-17",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        }
+      ]
+    }
+  },
+  "weather": {
+    "location": "ichikawa",
+    "timezone": "Asia/Tokyo",
+    "forecast_date": "2026-10-31",
+    "retrieved_at": "2026-10-30T18:37:44.957594Z",
+    "kind": "forecast",
+    "source_name": "Open-Meteo",
+    "source_url": "https://api.open-meteo.com/v1/forecast?latitude=35.72&longitude=139.93&timezone=Asia%2FTokyo&start_date=2026-10-31&end_date=2026-10-31&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+    "temperature_min_c": 14.1,
+    "temperature_max_c": 22.9,
+    "precipitation_probability_max": 34,
+    "slots": [
+      {
+        "hour": 9,
+        "temperature_c": 16.8,
+        "condition": "clear",
+        "precipitation_probability": 0,
+        "wind_speed_ms": 2.64,
+        "wind_direction_deg": 335
+      },
+      {
+        "hour": 12,
+        "temperature_c": 22.1,
+        "condition": "clear",
+        "precipitation_probability": 0,
+        "wind_speed_ms": 3.22,
+        "wind_direction_deg": 330
+      },
+      {
+        "hour": 18,
+        "temperature_c": 19.6,
+        "condition": "cloudy",
+        "precipitation_probability": 0,
+        "wind_speed_ms": 1.81,
+        "wind_direction_deg": 354
+      }
+    ]
+  }
+}

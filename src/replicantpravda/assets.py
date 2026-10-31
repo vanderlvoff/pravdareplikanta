@@ -21,7 +21,7 @@ def copy_assets(source: Path, destination: Path) -> None:
         for name, extension in (("orion", "jpeg"), ("jupiter", "jpeg"), ("tannhauser", "png")):
             required.add(f"medals/{lang}/{name}_{lang}.{extension}")
     if not required <= indexed.keys():
-        raise ValueError("Manifest lacks required header assets")
+        raise ValueError("Manifest lacks required newspaper assets")
     for relative, expected in indexed.items():
         path = (source / relative).resolve()
         if not path.is_relative_to(source.resolve()) or not path.is_file():

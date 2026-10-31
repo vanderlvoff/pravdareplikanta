@@ -31,15 +31,17 @@ ruff format --check .
 ## Scope and review
 
 The sample is a fictional editorial exercise with an explicitly marked placeholder
-citation, not reporting. All output is a NON-FINAL local review snapshot, including
-drafts; do not upload it to public hosting. Robots directives discourage indexing
-but are not access control. Internal editorial notes currently appear in this local
-review output. Publication is not implemented.
+citation, not reporting. Ordinary builds are local NON-FINAL review snapshots,
+including explicitly selected drafts; do not upload those snapshots to public hosting.
+Use --publication and rp release to prepare the verified reader-only public/ folder
+for GitHub/Cloudflare. Full source/diagnostic snapshots remain local. See deployment
+instructions below; upload confirmation remains a separate step.
 
 The screen preview uses the supplied SVG mastheads, medals and portrait unchanged.
 Quotations use bundled Caveat-Regular; Russian quotation text comes from the header
-reference. EN quotation is included; JA quotation uses owner-supplied wording. Article text and headline fonts
-remain provisional system fonts by owner instruction. Full-page golden references
+reference. EN quotation is included; JA quotation uses owner-supplied wording.
+Article text and headings use the footer’s Arial/sans-serif stack, including
+system Japanese fallback, by owner preference. See [typography notes](docs/TYPOGRAPHY.md). Full-page golden references
 and visual approval are still required. Unicode and explicit line-break preservation
 are tested; RU/EN quotation font usage is also checked in Chrome.
 Daily v1.3 feeds support two owner-supplied generated editorial WebP illustrations
@@ -50,8 +52,58 @@ Local PDF support now generates as many A4 pages per language as needed, with cl
 checks, embedded Caveat, raster previews and snapshot verification. See
 [docs/PRINT.md](docs/PRINT.md) for installation, commands and current limitations.
 The sample has three short fictional articles, so print pages are intentionally sparse.
-Final body fonts, full-page references and visual approval remain pending.
-Public snapshots, RSS, historical archive aggregation and deployment remain later work.
+Full-page references and visual approval remain pending.
+The localized site archive supports explicitly selected historical issues and their
+articles/PDFs. See [archive documentation](docs/ARCHIVE.md).
+RU/EN/JA RSS, canonical/hreflang metadata and an approved-content sitemap are
+implemented; see [docs/DISCOVERY.md](docs/DISCOVERY.md). Publication proofs and a
+reader-only GitHub/Cloudflare release bundle are implemented; actual uploads require review.
+
+## Cloudflare through GitHub
+
+The current hosting setup uses Workers Static Assets, serving the locally prepared
+`public/` directory. PDF rendering remains on the Mac. Cloudflare settings:
+
+| Field | Value |
+|---|---|
+| Application name | `pravdareplikanta` |
+| Production branch | `main` |
+| Build command | `npm run check:public` |
+| Deploy command | `npx wrangler deploy` |
+| Root directory | repository root |
+| Environment variable | `NODE_VERSION=22.16.0` |
+
+Full instructions, local release commands and rollback:
+[docs/DEPLOYMENT.md](docs/DEPLOYMENT.md). After enabling Git integration, pushes
+to the production branch trigger deployment; review the release before pushing.
+
+## RSS and search metadata
+
+The owner-selected origin is `https://repravda.com`; override it with
+`rp build ... --site-url http://127.0.0.1:8000` for local URL checks.
+Each language has `/ru/rss.xml`, `/en/rss.xml` or `/ja/rss.xml`, with a footer
+subscription link. RSS and sitemap include only approved/published issues.
+Complete generated/imported issues receive approved status automatically; final
+human review/confirmation happens during Cloudflare upload. The current October
+30/31 issues are included in the feeds and sitemap. Explicit unfinished drafts
+remain excluded. Preview robots/noindex rules remain in place.
+
+## Site archive
+
+The current archive includes October 30 and 31 in RU/EN/JA:
+
+```sh
+rp build --issue 2026-10-31 --content-dir content/technical \
+  --archive-issue content/technical/2026-10-30.json \
+  --pdf --output previews/archive-2026-10-31-8
+rp verify --issue 2026-10-31 --output previews/archive-2026-10-31-8
+rp preview --output previews/archive-2026-10-31-8
+```
+
+Open http://127.0.0.1:8000/ru/archive/ (also `/en/archive/`, `/ja/archive/`).
+Repeat `--archive-issue PATH` to include another normalized issue. Without it,
+the archive lists only the current issue. Historical drafts are never discovered
+automatically. This remains a local review snapshot, with publication disabled.
 
 ## Local PDF proof
 
@@ -112,7 +164,7 @@ use bundled Caveat-Regular. Actual font usage is checked in Chromium and PDF.
 ## Optional API editorial drafting
 
 By owner request, `rp draft` can research primary sources and prepare RU/EN/JA
-through OpenAI Responses API. It writes a separate local draft, never publishing
+through OpenAI Responses API. It writes a separate generated issue with approved status, never publishing
 or overwriting the canonical issue. See [docs/API_EDITORIAL.md](docs/API_EDITORIAL.md)
 for secure key setup, model selection, dry-run and local build commands.
 Normal newspaper generation remains offline and needs no API credentials.
@@ -137,8 +189,9 @@ current session without calling the paid OpenAI API.
 Use `rp import` for the owner's `data/latest/{ru,en,ja}.json` feeds (`jp.json` is
 also accepted for Japanese). See [docs/DAILY_IMPORT.md](docs/DAILY_IMPORT.md) for
 commands, validation and section/page mapping. All incoming files stay unchanged.
-The imported illustrated GitHub v1.3 issue (2026-10-30, revision 5) has a ready local web and PDF preview:
+The illustrated GitHub v1.3 issue (2026-10-31, revision 2) and October 30 history
+have a local web and PDF archive preview:
 
 ```sh
-rp preview --output previews/latest-2026-10-30-32
+rp preview --output previews/archive-2026-10-31-8
 ```

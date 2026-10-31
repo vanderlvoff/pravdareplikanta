@@ -10,10 +10,18 @@ from zoneinfo import ZoneInfo
 
 from jinja2 import Environment, PackageLoader, select_autoescape
 
+from .archive import archive_metadata, collect_issues
 from .assets import copy_assets
+from .discovery import (
+    DEFAULT_SITE_URL,
+    article_excerpt,
+    normalize_site_url,
+    render_rss,
+    render_sitemap,
+)
 from .models import Issue
 from .illustrations import copy_illustrations
-from .verification import artifact_hashes
+from .verification import artifact_hashes, verify_discovery, verify_site_links
 
 LABELS = {
     "en": {
@@ -27,10 +35,12 @@ LABELS = {
         "strapline": "A NEWSPAPER ABOUT PHYSICAL ARTIFICIAL INTELLIGENCE",
         "weather": "Weather",
         "weather_pending": "Forecast not supplied",
+        "read_more": "Read more…",
+        "back_to_issue": "Back to issue",
         "issue": "Issue",
         "archive": "Archive",
         "sources": "Sources",
-        "notice": "NON-FINAL · Local preview · Body fonts provisional · Print layout pending",
+        "notice": "NON-FINAL · Local preview · Full-page visual review pending",
     },
     "ru": {
         "proof": "ПРОБНЫЙ МАКЕТ",
@@ -43,10 +53,12 @@ LABELS = {
         "strapline": "ГАЗЕТА О ФИЗИЧЕСКОМ ИСКУССТВЕННОМ ИНТЕЛЛЕКТЕ",
         "weather": "Погода · Итикава",
         "weather_pending": "Прогноз для выпуска не предоставлен",
+        "read_more": "Читать дальше…",
+        "back_to_issue": "Назад к выпуску",
         "issue": "Выпуск",
         "archive": "Архив",
         "sources": "Источники",
-        "notice": "НЕ ФИНАЛ · Локальный просмотр · Шрифты статей временные · Печатный макет в работе",
+        "notice": "НЕ ФИНАЛ · Локальный просмотр · Полный макет ожидает визуальной проверки",
     },
     "ja": {
         "proof": "非最終版",
@@ -59,10 +71,12 @@ LABELS = {
         "strapline": "フィジカルAIの新聞",
         "weather": "天気",
         "weather_pending": "予報データ未提供",
+        "read_more": "続きを読む…",
+        "back_to_issue": "紙面に戻る",
         "issue": "号",
         "archive": "アーカイブ",
         "sources": "出典",
-        "notice": "非最終版 · ローカルプレビュー · 本文フォントは仮設定 · 印刷レイアウト準備中",
+        "notice": "非最終版 · ローカルプレビュー · 紙面全体の目視確認待ち",
     },
 }
 
@@ -78,8 +92,16 @@ def build(
     *,
     pdf: bool = False,
     image_root: Path = Path("."),
+    archive_issues: tuple[Issue, ...] = (),
+    site_url: str = DEFAULT_SITE_URL,
+    publication: bool = False,
 ) -> None:
-    """Build one isolated preview snapshot. Refuse to overwrite existing output."""
+    """Build latest and explicitly selected history as one isolated local preview."""
+    latest = issue
+    issues = collect_issues(latest, archive_issues)
+    if publication and any(entry.status not in {"approved", "published"} for entry in issues):
+        raise ValueError("Publication builds require approved/published issues only")
+    site_url = normalize_site_url(site_url)
     output = output.absolute()
     if output.exists():
         raise ValueError(f"Output already exists: {output}; choose a new directory")
@@ -89,8 +111,13 @@ def build(
         staging = Path(temporary) / "site"
         staging.mkdir()
         copy_assets(assets, staging / "assets")
-        illustration_assets = copy_illustrations(issue, image_root, staging)
+        illustration_assets = {}
+        for entry in issues:
+            illustration_assets.update(copy_illustrations(entry, image_root, staging))
         brand = json.loads(env.loader.get_source(env, "brand.json")[0])
+        about = json.loads(env.loader.get_source(env, "about.json")[0])
+        archive_labels = json.loads(env.loader.get_source(env, "archive-labels.json")[0])
+        discovery_labels = json.loads(env.loader.get_source(env, "discovery-labels.json")[0])
         weather_labels = json.loads(env.loader.get_source(env, "weather-labels.json")[0])
 
         def write(path: str, content: str) -> None:
@@ -104,90 +131,204 @@ def build(
         write("style.css", style)
         style_version = hashlib.sha256(style.encode()).hexdigest()[:12]
 
-        for lang, edition in sorted(issue.languages.items()):
-            current_weather = edition.weather or issue.weather
-            location = (
-                current_weather.location
-                if current_weather
-                else {"ru": "ichikawa", "en": "breukelen", "ja": "smolensk"}[lang]
-            )
-            context = dict(
-                issue=issue,
-                lang=lang,
-                edition=edition,
-                illustration_assets=illustration_assets,
-                labels=LABELS[lang],
-                brand=brand.get(lang),
-                style_version=style_version,
-                print_enabled=pdf,
-                article_sections=[
-                    {
-                        "key": key,
-                        "title": LABELS[lang]["sections"][key],
-                        "articles": [
-                            a for a in edition.articles if (a.category == "news") == (key == "news")
-                        ],
-                    }
-                    for key in ("news", "analysis")
-                ],
-                weather=current_weather,
-                weather_city=weather_labels[lang]["cities"][location],
-                weather_country=weather_labels[lang].get("countries", {}).get(location, ""),
-                weather_timezone=(
-                    datetime.fromisoformat(str(current_weather.forecast_date) + "T09:00:00")
-                    .replace(tzinfo=ZoneInfo(current_weather.timezone))
-                    .strftime("%Z")
-                    if current_weather
-                    else ""
-                ),
-                weather_labels=weather_labels[lang],
-                weather_retrieved=(
-                    current_weather.retrieved_at.astimezone(
-                        ZoneInfo(current_weather.timezone)
-                    ).strftime("%Y-%m-%d %H:%M %Z")
-                    if current_weather
-                    else None
-                ),
-                weather_icons={
-                    "clear": "☀",
-                    "cloudy": "☁",
-                    "fog": "≋",
-                    "rain": "☂",
-                    "snow": "❄",
-                    "storm": "ϟ",
+        sitemap = render_sitemap(issues, site_url)
+        if sitemap:
+            write("sitemap.xml", sitemap)
+        for lang in ("ru", "en", "ja"):
+            write(f"{lang}/rss.xml", render_rss(issues, site_url, lang, discovery_labels[lang]))
+        write(
+            "site.json",
+            json.dumps(
+                {
+                    "site_url": site_url,
+                    "sitemap": bool(sitemap),
+                    "preview_only": not publication,
                 },
+                indent=2,
             )
-            for route in (
-                f"{lang}/index.html",
-                f"{lang}/archive/index.html",
-                f"{lang}/issues/{issue.issue_id}/index.html",
-            ):
-                write(route, env.get_template("edition.html").render(**context))
-            if pdf:
-                write(f"{lang}/print/index.html", env.get_template("print.html").render(**context))
-            for article in edition.articles:
-                translations = {
-                    code: next(a.slug for a in other.articles if a.id == article.id)
-                    for code, other in issue.languages.items()
-                }
-                write(
-                    f"{lang}/articles/{article.slug}/index.html",
-                    env.get_template("article.html").render(
-                        **context, article=article, translations=translations
-                    ),
+            + "\n",
+        )
+
+        for issue in issues:
+            write(f"sources/{issue.issue_id}.json", issue.model_dump_json(indent=2) + "\n")
+            for lang, edition in sorted(issue.languages.items()):
+                current_weather = edition.weather or issue.weather
+                location = (
+                    current_weather.location
+                    if current_weather
+                    else {"ru": "ichikawa", "en": "breukelen", "ja": "smolensk"}[lang]
                 )
+                context = dict(
+                    issue=issue,
+                    preview_only=not publication,
+                    site_url=site_url,
+                    discovery_labels=discovery_labels[lang],
+                    page_title=f"{edition.issue_title or issue.issue_id} · {edition.title}",
+                    page_description=edition.editorial_note
+                    or discovery_labels[lang]["description"],
+                    language_links={
+                        code: f"/{code}/issues/{issue.issue_id}/" for code in issue.languages
+                    },
+                    article_base=f"/{lang}/issues/{issue.issue_id}/articles/",
+                    archive_labels=archive_labels[lang],
+                    lang=lang,
+                    edition=edition,
+                    illustration_assets=illustration_assets,
+                    labels=LABELS[lang],
+                    brand=brand.get(lang),
+                    about=about[lang],
+                    style_version=style_version,
+                    print_enabled=pdf,
+                    article_sections=[
+                        {
+                            "key": key,
+                            "title": LABELS[lang]["sections"][key],
+                            "articles": [
+                                a
+                                for a in edition.articles
+                                if (a.category == "news") == (key == "news")
+                            ],
+                        }
+                        for key in ("news", "analysis")
+                    ],
+                    weather=current_weather,
+                    weather_city=weather_labels[lang]["cities"][location],
+                    weather_country=weather_labels[lang].get("countries", {}).get(location, ""),
+                    weather_timezone=(
+                        datetime.fromisoformat(str(current_weather.forecast_date) + "T09:00:00")
+                        .replace(tzinfo=ZoneInfo(current_weather.timezone))
+                        .strftime("%Z")
+                        if current_weather
+                        else ""
+                    ),
+                    weather_labels=weather_labels[lang],
+                    weather_retrieved=(
+                        current_weather.retrieved_at.astimezone(
+                            ZoneInfo(current_weather.timezone)
+                        ).strftime("%Y-%m-%d %H:%M %Z")
+                        if current_weather
+                        else None
+                    ),
+                    weather_icons={
+                        "clear": "☀",
+                        "cloudy": "☁",
+                        "fog": "≋",
+                        "rain": "☂",
+                        "snow": "❄",
+                        "storm": "ϟ",
+                    },
+                )
+                write(
+                    f"{lang}/issues/{issue.issue_id}/index.html",
+                    env.get_template("edition.html").render(**context),
+                )
+                if issue == latest:
+                    write(
+                        f"{lang}/index.html",
+                        env.get_template("edition.html").render(
+                            **(
+                                context
+                                | {
+                                    "language_links": {
+                                        code: f"/{code}/" for code in issue.languages
+                                    }
+                                }
+                            )
+                        ),
+                    )
+                    groups = {}
+                    for entry in issues:
+                        groups.setdefault(entry.publication_date.year, []).append(entry)
+                    write(
+                        f"{lang}/archive/index.html",
+                        env.get_template("archive.html").render(
+                            **(
+                                context
+                                | {
+                                    "archive_groups": groups,
+                                    "latest_id": latest.issue_id,
+                                    "page_title": f"{LABELS[lang]['archive']} · {edition.title}",
+                                    "page_description": archive_labels[lang]["intro"],
+                                    "language_links": {
+                                        code: f"/{code}/archive/" for code in issue.languages
+                                    },
+                                    "is_archive": True,
+                                }
+                            )
+                        ),
+                    )
+                if pdf:
+                    write(
+                        f"{lang}/issues/{issue.issue_id}/print/index.html",
+                        env.get_template("print.html").render(**context),
+                    )
+                for article in edition.articles:
+                    translations = {
+                        code: next(a.slug for a in other.articles if a.id == article.id)
+                        for code, other in issue.languages.items()
+                    }
+                    html = env.get_template("article.html").render(
+                        **(
+                            context
+                            | {
+                                "article": article,
+                                "page_title": f"{article.headline} · {edition.title}",
+                                "page_description": article_excerpt(article),
+                                "language_links": {
+                                    code: f"/{code}/issues/{issue.issue_id}/articles/{slug}/"
+                                    for code, slug in translations.items()
+                                },
+                            }
+                        )
+                    )
+                    write(
+                        f"{lang}/issues/{issue.issue_id}/articles/{article.slug}/index.html", html
+                    )
+                    # Preserve old bookmarks; a repeated slug resolves to its newest edition.
+                    alias = f"{lang}/articles/{article.slug}/index.html"
+                    if not (staging / alias).exists():
+                        write(alias, html)
         write("index.html", (staging / "ru/index.html").read_text(encoding="utf-8"))
-        write("robots.txt", "User-agent: *\nDisallow: /\n")
+        write(
+            "robots.txt",
+            ("User-agent: *\nAllow: /\n" if publication else "User-agent: *\nDisallow: /\n")
+            + (f"\nSitemap: {site_url}/sitemap.xml\n" if sitemap else ""),
+        )
+        issue = latest
+        write("source.json", latest.model_dump_json(indent=2) + "\n")
+        write(
+            "archive.json",
+            json.dumps(
+                {
+                    "latest": str(latest.issue_id),
+                    "pdf": pdf,
+                    "issues": [archive_metadata(entry) for entry in issues],
+                },
+                ensure_ascii=False,
+                indent=2,
+            )
+            + "\n",
+        )
         print_report = None
+        archive_print_reports = {}
         if pdf:
             from .pdf import PrintFailure, render_pdfs
 
             write("paginate.js", env.loader.get_source(env, "paginate.js")[0])
             write("print.css", env.loader.get_source(env, "print.css")[0])
-            write("source.json", issue.model_dump_json(indent=2) + "\n")
             try:
-                print_report = render_pdfs(staging, issue)
+                for entry in issues:
+                    archive_print_reports[str(entry.issue_id)] = render_pdfs(staging, entry)
+                print_report = archive_print_reports[str(latest.issue_id)]
+                for lang in latest.languages:
+                    write(
+                        f"{lang}/print/index.html",
+                        (
+                            staging / lang / "issues" / str(latest.issue_id) / "print/index.html"
+                        ).read_text(encoding="utf-8"),
+                    )
             except PrintFailure as error:
+                error.report["issue_id"] = str(entry.issue_id)
                 failed_path = output.parent / f"{output.name}.failed.json"
                 failed_path.write_text(
                     json.dumps(error.report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
@@ -195,17 +336,28 @@ def build(
                 raise ValueError(
                     f"Print overflow/verification failed; report: {failed_path}"
                 ) from error
-            write("artifacts.json", json.dumps(artifact_hashes(staging), indent=2) + "\n")
+        link_errors = verify_site_links(staging)
+        if link_errors:
+            raise ValueError("Broken snapshot links: " + "; ".join(link_errors[:10]))
+        metadata_errors = verify_discovery(staging, issues)
+        if metadata_errors:
+            raise ValueError("Invalid discovery metadata: " + "; ".join(metadata_errors[:10]))
         write(
             "verification.json",
             json.dumps(
                 {
                     "issue_id": str(issue.issue_id),
                     "status": issue.status,
-                    "preview_only": True,
+                    "link_errors": link_errors,
+                    "metadata_errors": metadata_errors,
+                    "archive": {
+                        "issues": [archive_metadata(entry) for entry in issues],
+                        "pdf": archive_print_reports if pdf else "NOT_REQUESTED",
+                    },
+                    "preview_only": not publication,
                     "visual_approval": "PENDING: supplied header assets; full-page references and review required",
                     "pdf": print_report if pdf else "NOT_REQUESTED",
-                    "publication": "DISABLED",
+                    "publication": "READY_FOR_UPLOAD_REVIEW" if publication else "DISABLED",
                     "weather": issue.weather.kind if issue.weather else "MISSING",
                 },
                 ensure_ascii=False,
@@ -213,4 +365,5 @@ def build(
             )
             + "\n",
         )
+        write("artifacts.json", json.dumps(artifact_hashes(staging), indent=2) + "\n")
         shutil.move(str(staging), str(output))

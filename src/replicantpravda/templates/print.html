@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8"><meta name="robots" content="noindex,nofollow">
   <title>{{ edition.title }} · {{ issue.issue_id }}</title>
+  {% include "metadata.html" %}
   <link rel="stylesheet" href="/style.css?v={{ style_version }}">
   <link rel="stylesheet" href="/print.css">
 </head>
@@ -10,8 +11,8 @@
 <section class="sheet" data-page="1">{% include "header.html" %}
   {% if weather %}<p class="print-weather-source">{{ weather_labels.source }}: <a href="{{ weather.source_url }}">{{ weather.source_name }}</a> · {{ weather_labels.retrieved }}: {{ weather_retrieved }}{% if weather.kind == 'demo' %} · {{ weather_labels.demo }}{% endif %}</p>{% endif %}
   {% if edition.issue_title %}<div class="print-issue-intro"><h2>{{ edition.issue_title }}</h2><p>{{ edition.editorial_note }}</p></div>{% endif %}
-<main class="page-body" data-region="articles"><div class="article-columns"><div class="print-column"></div><div class="print-column"></div></div></main><footer class="page-footer"><span>{{ edition.title }} · {{ issue.publication_date }} · № {{ issue.number }} · rev. {{ issue.revision }}</span><span>{{ labels.proof }} · <span class="page-number"></span></span></footer></section>
-<template id="continuation-page"><section class="sheet"><header class="running-header"><img width="2048" height="704" src="/assets/masthead/pcb/masthead_{{ lang }}.svg" alt="{{ edition.title }}"><p>{{ issue.publication_date }} · № {{ issue.number }}</p></header><main class="page-body" data-region="articles"><div class="article-columns"><div class="print-column"></div><div class="print-column"></div></div></main><footer class="page-footer"><span>{{ edition.title }} · {{ issue.publication_date }} · № {{ issue.number }} · rev. {{ issue.revision }}</span><span>{{ labels.proof }} · <span class="page-number"></span></span></footer></section></template>
+<main class="page-body" data-region="articles"><div class="article-columns"><div class="print-column"></div><div class="print-column"></div></div></main><footer class="page-footer"><span>{{ edition.title }} · {{ issue.publication_date }} · № {{ issue.number }} · rev. {{ issue.revision }}</span><span>{% if preview_only %}{{ labels.proof }} · {% endif %}<span class="page-number"></span></span></footer></section>
+<template id="continuation-page"><section class="sheet"><header class="running-header"><strong class="running-title">{{ edition.title }}</strong><p>{{ issue.publication_date }} · № {{ issue.number }}</p></header><main class="page-body" data-region="articles"><div class="article-columns"><div class="print-column"></div><div class="print-column"></div></div></main><footer class="page-footer"><span>{{ edition.title }} · {{ issue.publication_date }} · № {{ issue.number }} · rev. {{ issue.revision }}</span><span>{% if preview_only %}{{ labels.proof }} · {% endif %}<span class="page-number"></span></span></footer></section></template>
 <template id="print-content">    {% for section in article_sections %}
     {% set page_articles = section.articles %}
     {% if page_articles %}

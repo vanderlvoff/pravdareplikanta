@@ -193,7 +193,7 @@ def assemble_issue(
             "publication_date": day,
             "number": number,
             "revision": 1,
-            "status": "draft",
+            "status": "approved",
             "languages": languages,
         }
     )
@@ -301,7 +301,8 @@ def generate_draft(
             issue = assemble_issue(result, template, day, number, sources)
             save(f"{day}.json", issue.model_dump(mode="json"))
             summary.update(
-                status="draft",
+                status="approved",
+                review_stage="cloudflare_upload",
                 issue_file=f"{day}.json",
                 source_urls=sorted(sources),
                 usage={"research": research.get("usage"), "editorial": editorial.get("usage")},

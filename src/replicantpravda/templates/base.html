@@ -3,18 +3,30 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex,nofollow">
-  <title>{{ edition.title }}</title>
+  {% if preview_only %}<meta name="robots" content="noindex,nofollow">{% endif %}
+  <title>{{ page_title or edition.title }}</title>
+  <meta name="description" content="{{ page_description }}">
+  {% include "metadata.html" %}
   <link rel="stylesheet" href="/style.css?v={{ style_version }}">
 </head>
 <body>
   <div class="preview-tools">
-    <small>{{ labels.notice }}</small>
-    <nav aria-label="Languages">{% for code in ['ru','en','ja'] %}<a lang="{{ code }}" hreflang="{{ code }}" href="/{{ code }}/{% if translations is defined %}articles/{{ translations[code] }}/{% endif %}">{{ code|upper }}</a>{% endfor %}</nav>
+    {% if preview_only %}<small>{{ labels.notice }}</small>{% endif %}
+    <nav aria-label="Languages">{% for code in ['ru','en','ja'] %}<a lang="{{ code }}" hreflang="{{ code }}" href="{{ language_links[code] }}">{{ code|upper }}</a>{% endfor %}</nav>
   </div>
   {% include "header.html" %}
-  {% if print_enabled %}<p class="pdf-link"><a href="/{{ lang }}/issues/{{ issue.issue_id }}/edition.pdf">{{ labels.pdf }}</a></p>{% endif %}
+  {% if print_enabled and not is_archive %}<p class="pdf-link"><a href="/{{ lang }}/issues/{{ issue.issue_id }}/edition.pdf">{{ labels.pdf }}</a></p>{% endif %}
   <main>{% block content %}{% endblock %}</main>
-  {% if weather %}<footer class="weather-source">{{ weather_labels.source }}: <a href="{{ weather.source_url }}" rel="noopener noreferrer">{{ weather.source_name }}</a> · {{ weather_labels.retrieved }}: <time datetime="{{ weather.retrieved_at.isoformat() }}">{{ weather_retrieved }}</time>{% if weather.kind == 'demo' %} · {{ weather_labels.demo }}{% endif %}</footer>{% endif %}
+  <footer class="site-footer">
+    <p class="rss-link"><a href="/{{ lang }}/rss.xml">{{ discovery_labels.rss }}</a></p>
+    <section class="about-newspaper" aria-labelledby="about-newspaper-title">
+      <h2 id="about-newspaper-title">{{ about.title }}</h2>
+      <div class="about-copy">
+        <div class="about-description"><p>{{ about.intro }}</p><p>{{ about.tribute }}</p></div>
+        <p class="about-disclaimer">{{ about.disclaimer }}</p>
+      </div>
+    </section>
+  {% if weather %}<div class="weather-source">{{ weather_labels.source }}: <a href="{{ weather.source_url }}" rel="noopener noreferrer">{{ weather.source_name }}</a> · {{ weather_labels.retrieved }}: <time datetime="{{ weather.retrieved_at.isoformat() }}">{{ weather_retrieved }}</time>{% if weather.kind == 'demo' %} · {{ weather_labels.demo }}{% endif %}</div>{% endif %}
+  </footer>
 </body>
 </html>

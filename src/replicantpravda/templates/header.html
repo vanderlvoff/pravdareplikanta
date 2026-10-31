@@ -19,6 +19,6 @@
     {% endif %}
     <div class="issue-line">
       <p>{{ labels.issue }} № {{ issue.number }} · <time datetime="{{ issue.publication_date }}">{{ issue.publication_date }}</time></p>
-      <p>rev. {{ issue.revision }} · {{ issue.status }} · <a href="/{{ lang }}/archive/">{{ labels.archive }}</a></p>
+      <p>rev. {{ issue.revision }}{% if preview_only %} · {{ issue.status }}{% endif %} · <a href="/{{ lang }}/archive/">{{ labels.archive }}</a></p>
     </div>
   </header>

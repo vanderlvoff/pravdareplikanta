@@ -1,0 +1,18 @@
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/ru/rss.xml
+  Content-Type: application/rss+xml; charset=utf-8
+
+/en/rss.xml
+  Content-Type: application/rss+xml; charset=utf-8
+
+/ja/rss.xml
+  Content-Type: application/rss+xml; charset=utf-8
+
+https://:worker.:account.workers.dev/*
+  X-Robots-Tag: noindex
+
+https://:version.:worker.:account.workers.dev/*
+  X-Robots-Tag: noindex

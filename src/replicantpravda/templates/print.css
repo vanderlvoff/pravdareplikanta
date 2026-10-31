@@ -22,7 +22,8 @@ body.print-edition { width: 190mm; max-width: none; margin: 0; padding: 0; color
 .weather-condition, .weather-detail { font-size: 5pt; margin: .5mm 0 0; }
 .weather-summary, .weather-demo { font-size: 5.5pt; }
 .weather-summary { padding-top: 1mm; margin-top: 1mm; }
-.brand-quote { width: 84%; margin: 1.333mm auto 0; padding: 1.333mm 0; }
+.brand-quote { --motto-size: 12pt; --motto-leading: 1.2; --motto-padding: 2.666mm; width: 100%; margin: 1.333mm auto 0; }
+.brand-quote:lang(ja) { --motto-size: 8pt; --motto-leading: 1.5; }
 .brand-quote blockquote { font-size: 12pt; line-height: 1.2; }
 .brand-quote:lang(ja) blockquote { font-size: 8pt; line-height: 1.5; }
 .brand-quote figcaption { font-size: 7pt; margin-top: 1mm; }
@@ -36,13 +37,13 @@ article h2 { margin: 1mm 0 2mm; font-size: 16pt; line-height: 1.1; break-after: 
 article h3 { font-size: 11pt; margin: 2mm 0 1mm; break-after: avoid; }
 article p, article li { font-size: 10pt; margin: 0 0 2mm; orphans: 2; widows: 2; }
 article blockquote { font-size: 14pt; margin: 2mm; }
-article:lang(ja) blockquote { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 10pt; }
+article:lang(ja) blockquote { font-family: inherit; font-size: 10pt; }
 article .category { font-size: 7pt; text-transform: uppercase; margin: 0; break-after: avoid; }
 article .dek { font-weight: 700; break-after: avoid; }
 .article-sources p, .article-sources h3 { font-size: 7pt; }
 .running-header { flex: none; display: flex; justify-content: space-between; align-items: center; border-bottom: .3mm solid; padding-bottom: 2mm; }
-.running-header img { width: 45mm; height: auto; }
-.running-header p { font-size: 8pt; }
+.running-title { font-size: 11pt; font-weight: 700; line-height: 1.2; }
+.running-header p { font-size: 8pt; margin: 0; }
 .page-footer { flex: none; display: flex; justify-content: space-between; border-top: .2mm solid; padding-top: 1mm; font-size: 6pt; }
 a { color: inherit; text-decoration: none; }
 
