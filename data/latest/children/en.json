@@ -6,176 +6,184 @@
   "issue_id": "daily-2026-11-01",
   "edition": "children",
   "language": "en",
-  "generated_at": "2026-10-31T16:24:23.346Z",
+  "generated_at": "2026-10-31T16:51:31Z",
   "title": "Replicant Data — Young Explorers",
-  "lead": "How robots learn to move and handle surprises.",
+  "lead": "Five stories about how robots pick things up, pull loads and learn from tests.",
   "news": [
     {
-      "id": "musbric-pneumatic-bricks",
-      "title": "Reusable air-powered muscle blocks make a walking robot",
-      "summary": "Researchers developed reusable robot parts with artificial muscles that move under air pressure. They tested an elbow, a gripping hand, fifteen leg arrangements and a four-legged robot that could walk.",
-      "details": "The connectors work with LEGO-compatible pieces, making it easier to rebuild a mechanism in a different shape. Ordinary toy bricks do not walk by themselves, however. The system also needs special air-powered muscles, an air supply and controls. The researchers wanted a reusable way to test how different body shapes behave without manufacturing every component from scratch.",
-      "technical_novelty": "First, the team built an elbow-like joint and measured how its bending changed under different loads. They also made a hand that could grip gently. For legs, they compared fifteen configurations, then assembled a four-legged robot that demonstrated walking. Each experiment tested a particular part of the mechanism rather than proving that one finished robot could perform every task.",
-      "engineering_impact": "A computer simulation helps researchers explore designs before building them. It uses measurements from the real artificial muscles, but a successful simulation is not a substitute for a physical test. The authors say hardware designs and software will be released openly in the future; the paper does not confirm that every file is already available. For reference, they call the system MUSBRIC.",
-      "limitations": "First, the team built an elbow-like joint and measured how its bending changed under different loads. They also made a hand that could grip gently. For legs, they compared fifteen configurations, then assembled a four-legged robot that demonstrated walking. Each experiment tested a particular part of the mechanism rather than proving that one finished robot could perform every task.",
-      "evidence_status": "Research preprint; results are author-reported, without independent replication.",
+      "id": "swapbot-tools",
+      "title": "Why changing tools can help a robot handle different jobs",
+      "summary": "Researchers built a way for a robot to swap tools and sense when they touch an object. Touch information improved results in laboratory tests, but the system is not an independent household cook.",
+      "details": "A connector stays on the robot while adapters attach to different tools. Small touch sensors in the adapters report physical contact. A camera shows where objects are, but an image alone does not always reveal whether a tool is pressing against something. That is why the researchers added touch information.",
+      "technical_novelty": "People first demonstrated actions by remotely controlling the robot. A learning program then used those examples to choose movements. In the reported tests, touch increased success by 15 to 25 percentage points compared with learning from images alone. The number describes the authors' selected tasks, not every possible tool or food.",
+      "engineering_impact": "The robot still needs reliable attachments, safe contact and ways to recover when a tool slips or a task changes. It has not shown that it can cook a complete meal by itself in an unfamiliar kitchen. The researchers call their system SwapBot.",
+      "limitations": "The robot still needs reliable attachments, safe contact and ways to recover when a tool slips or a task changes. It has not shown that it can cook a complete meal by itself in an unfamiliar kitchen. The researchers call their system SwapBot.",
+      "evidence_status": "Author-reported research or demonstration; operation beyond the test conditions remains unverified.",
       "published_at": "2026-10-29",
-      "organization": "Qiyao Wang et al.",
+      "organization": "Yunchu Zhang et al.",
       "source_ids": [
-        "src-musbric-pneumatic-bricks-20261029"
-      ],
-      "time_window": "72h",
-      "body": "Imagine construction blocks that do more than fit together: some can move because air pressure changes their length. Researchers led by Qiyao Wang developed a modular robot-building system using artificial muscles. These soft components stretch or pull when air pressure changes, moving the parts connected to them. That produces motion without putting a separate electric motor at every joint.\n\nThe connectors work with LEGO-compatible pieces, making it easier to rebuild a mechanism in a different shape. Ordinary toy bricks do not walk by themselves, however. The system also needs special air-powered muscles, an air supply and controls. The researchers wanted a reusable way to test how different body shapes behave without manufacturing every component from scratch.\n\nFirst, the team built an elbow-like joint and measured how its bending changed under different loads. They also made a hand that could grip gently. For legs, they compared fifteen configurations, then assembled a four-legged robot that demonstrated walking. Each experiment tested a particular part of the mechanism rather than proving that one finished robot could perform every task.\n\nA computer simulation helps researchers explore designs before building them. It uses measurements from the real artificial muscles, but a successful simulation is not a substitute for a physical test. The authors say hardware designs and software will be released openly in the future; the paper does not confirm that every file is already available. For reference, they call the system MUSBRIC.",
-      "image": null
-    },
-    {
-      "id": "gxo-digit-multisite",
-      "title": "More helper robots are planned for warehouses",
-      "summary": "Warehouse operator GXO plans to add humanoid robots at two more US sites. Those deployments are scheduled for 2027 and are not already operating.",
-      "details": "A commercial warehouse deployment is moving toward a multi-site rollout under a robots-as-a-service arrangement.",
-      "technical_novelty": "The expansion is expected to start with Digit 4 and later migrate to Digit 5, supported by Agility Arc fleet software.",
-      "engineering_impact": "Integration must account for conveyors, safety procedures, support, uptime and changes between sites.",
-      "limitations": "The additional sites are planned rather than operating; unit economics and independently audited performance are unavailable.",
-      "evidence_status": "Joint company announcement, with operating figures supplied by the partners rather than independent verification.",
-      "published_at": "2026-10-26",
-      "organization": "GXO Logistics and Agility Robotics",
-      "source_ids": [
-        "src-gxo-agility-20261026"
+        "src-swapbot-tools-20261029"
       ],
       "time_window": "7d",
-      "body": "Imagine following a plan when someone suddenly moves an object you need. It helps to notice the change and repair the plan instead of blindly continuing. Researchers are testing ways for robots to do something similar by checking the conditions required for each action.\n\nThe partners say Digit has moved more than 100,000 totes at the Georgia facility. That cumulative figure establishes that work has occurred in a live logistics environment, but it does not reveal throughput per hour, human intervention rates, operating cost or total robot-hours. The arrangement is described as robots-as-a-service, meaning the customer obtains robotic capability and ongoing service rather than simply buying machines outright. Agility Arc is the cloud-based fleet-management and integration platform associated with the existing agreement.\n\nThe next sites will support e-commerce fulfillment and are expected to start with Digit 4, then transition to Digit 5 once the newer model is commercially available. For an implementation team, a multi-site rollout raises questions about conveyor interfaces, workspace safety, maintenance coverage, spare units, shift schedules and software change management. A skill that works in one warehouse does not automatically reproduce its economics in another building with different layouts and demand patterns. The new deployment is an opportunity to test operational transfer, not proof that transfer has already succeeded.\n\nNeither company disclosed the number of robots for the additional sites, contract value, payback period or independently audited productivity figures. The evidence therefore supports two narrower conclusions: a customer has decided to expand a live commercial relationship, and the original site has accumulated substantial tote-handling activity. A purchasing decision elsewhere should still require a measured baseline, uptime and exception logs, labor and integration costs, and an agreed method for calculating value. The commercial signal is credible, but the return on investment remains unquantified in this release.",
+      "body": "Imagine stirring a salad, turning food in a pan and cutting an ingredient. One tool would be awkward for all three jobs. Researchers designed a robot interface that changes ordinary tools without replacing the whole arm. The work appeared on October 29 and describes a laboratory system rather than a ready-made kitchen assistant.\n\nA connector stays on the robot while adapters attach to different tools. Small touch sensors in the adapters report physical contact. A camera shows where objects are, but an image alone does not always reveal whether a tool is pressing against something. That is why the researchers added touch information.\n\nPeople first demonstrated actions by remotely controlling the robot. A learning program then used those examples to choose movements. In the reported tests, touch increased success by 15 to 25 percentage points compared with learning from images alone. The number describes the authors' selected tasks, not every possible tool or food.\n\nThe robot still needs reliable attachments, safe contact and ways to recover when a tool slips or a task changes. It has not shown that it can cook a complete meal by itself in an unfamiliar kitchen. The researchers call their system SwapBot.",
       "image": null
     },
     {
-      "id": "elyza-robotics-japan-scale",
-      "title": "A Japanese team wants to connect robot research with real jobs",
-      "summary": "KDDI and ELYZA announced a new organization for developing artificial intelligence for robots. It is a business initiative, not proof that general-purpose robots are already working everywhere.",
-      "details": "The company began operating on October 1 and was publicly announced on October 27 with separate research and operations platforms.",
-      "technical_novelty": "The roadmap combines vision-language-action models, site data, digital twins, distributed inference and remote supervision.",
-      "engineering_impact": "Enterprise integration is proposed across retail, logistics, manufacturing and services using multiple robot types.",
-      "limitations": "No independently verified deployments, autonomy metrics or unit economics were provided.",
-      "evidence_status": "Corporate strategy and investment announcement, not an independent technical evaluation.",
-      "published_at": "2026-10-27",
-      "organization": "KDDI and ELYZA",
+      "id": "raibo-wagon-towing",
+      "title": "How a four-legged robot learns to pull a wagon around obstacles",
+      "summary": "Researchers tested navigation for a four-legged robot pulling a loaded wagon. It completed 85 percent of trials on short routes, but that does not mean it can handle every road or load.",
+      "details": "The wagon changes how sharply the robot can turn and how much space it needs. The planning program must predict where the load will travel after each movement. That is different from finding an empty path for a robot traveling alone. The connection between the robot and the wagon also matters.",
+      "technical_novelty": "In tests with a real quadruped, the researchers used routes 15 meters long. The system completed 85 percent of 40 trials and handled loads of up to 40 kilograms. Those figures describe the tested setup, not every possible wagon, surface or route. Some attempts still failed.",
+      "engineering_impact": "Before a system like this works reliably in warehouses or public places, it needs tests with longer journeys, uneven ground, moving people and wheels that become stuck. The lesson is that the robot must plan for everything it is pulling, not just its own feet. The robot in this research was called RAIBO.",
+      "limitations": "Before a system like this works reliably in warehouses or public places, it needs tests with longer journeys, uneven ground, moving people and wheels that become stuck. The lesson is that the robot must plan for everything it is pulling, not just its own feet. The robot in this research was called RAIBO.",
+      "evidence_status": "Author-reported research or demonstration; operation beyond the test conditions remains unverified.",
+      "published_at": "2026-10-29",
+      "organization": "Insung Yang et al.",
       "source_ids": [
-        "src-elyza-robotics-20261027"
+        "src-raibo-wagon-2610"
       ],
       "time_window": "7d",
-      "body": "Imagine following a plan when someone suddenly moves an object you need. It helps to notice the change and repair the plan instead of blindly continuing. Researchers are testing ways for robots to do something similar by checking the conditions required for each action.\n\nThe proposed architecture spans three levels. Research teams plan to develop vision-language models that interpret images and text, and vision-language-action models that additionally produce robot actions. Implementation teams will collect data from workplaces and use digital twins, which are software representations of real equipment and processes, to support testing. Operations platforms are intended to provide distributed model execution, remote monitoring and coordination between machines. The combination recognizes a familiar deployment problem: an impressive robot skill does not become a business service until it can interact reliably with the customer's systems and procedures.\n\nKDDI identifies retail, logistics, manufacturing and services as early areas of application, with partners from its wider group including Lawson and Soracom. The company also expects to source different categories of robots, including industrial arms, quadrupeds and humanoids, according to the task. That could reduce dependence on one mechanical design, but creates integration demands around interfaces, training data, security, maintenance and responsibility for failures. Proof-of-concept projects are planned from 2026, with adoption expected to progress in stages.\n\nThe release contains no audited installed-base figure, measured autonomy rate, cost per completed task or customer payback calculation. The business case is therefore a strategic hypothesis, not an independently demonstrated result. A prospective customer should ask how safety validation is performed, how site-specific data is governed, which party supports a malfunctioning robot, and whether model updates require renewed acceptance testing. The meaningful milestone will be repeated, supportable operation in real workplaces rather than the announced size of the investment program.",
+      "body": "Pulling a suitcase around a corner can be harder than walking around the corner yourself. The wheels may catch an obstacle even when you pass safely. A four-legged robot pulling a wagon faces a similar problem. Researchers built a navigation system that considers the path of both the robot and its trailer.\n\nThe wagon changes how sharply the robot can turn and how much space it needs. The planning program must predict where the load will travel after each movement. That is different from finding an empty path for a robot traveling alone. The connection between the robot and the wagon also matters.\n\nIn tests with a real quadruped, the researchers used routes 15 meters long. The system completed 85 percent of 40 trials and handled loads of up to 40 kilograms. Those figures describe the tested setup, not every possible wagon, surface or route. Some attempts still failed.\n\nBefore a system like this works reliably in warehouses or public places, it needs tests with longer journeys, uneven ground, moving people and wheels that become stuck. The lesson is that the robot must plan for everything it is pulling, not just its own feet. The robot in this research was called RAIBO.",
       "image": null
     },
     {
-      "id": "dawn-robot-unscrewing",
-      "title": "A robot learns to line up a screwdriver before turning it",
-      "summary": "Researchers divided screw removal into careful alignment and turning. It is a laboratory experiment, not a machine that can dismantle every device.",
-      "details": "Vision, robot position and force feedback feed separate models for alignment, contact detection and removal.",
-      "technical_novelty": "A diffusion-based alignment policy is combined with a contact classifier and a force-controlled unfastening controller.",
-      "engineering_impact": "The staged architecture could support automated disassembly if alignment robustness improves.",
-      "limitations": "The initial engagement stage remains unreliable across variations; angled fasteners were not tested.",
-      "evidence_status": "Research preprint with Franka Emika robot-arm experiments.",
+      "id": "roboseed-evaluation",
+      "title": "How can we compare robots that demonstrate different tricks?",
+      "summary": "Researchers proposed judging robot action models across several separate dimensions. They warn that a single ranking can be misleading when cost and repeatability data are missing.",
+      "details": "The approach considers five dimensions of evaluation for models that control robot actions. Important questions include how convincingly a result was tested, what it costs to adapt the system to another task, and whether another team could repeat the experiment. Reproducibility means that others can obtain comparable results when the procedure and conditions are clear.",
+      "technical_novelty": "The authors point out that published studies do not always provide enough information for a fair comparison. If cost or reproducibility evidence is missing, a reviewer should not invent a number and combine everything into one score. Their framework can therefore decline to produce an overall ranking instead of declaring a winner without enough support.",
+      "engineering_impact": "This matters when watching robot demonstration videos too. How many attempts were made? Which ones failed? How much preparation was needed before filming? The framework does not make any robot smarter; it helps people judge claims about robots more carefully. The researchers call the evaluation approach RoboSeed.",
+      "limitations": "This matters when watching robot demonstration videos too. How many attempts were made? Which ones failed? How much preparation was needed before filming? The framework does not make any robot smarter; it helps people judge claims about robots more carefully. The researchers call the evaluation approach RoboSeed.",
+      "evidence_status": "Author-reported research or demonstration; operation beyond the test conditions remains unverified.",
       "published_at": "2026-10-29",
-      "organization": "Hemant Kumar et al.",
+      "organization": "Xin Ma et al.",
       "source_ids": [
-        "src-dawn-unfastening-2610"
+        "src-roboseed-evaluation-20261029"
       ],
-      "time_window": "72h",
-      "body": "Imagine following a plan when someone suddenly moves an object you need. It helps to notice the change and repair the plan instead of blindly continuing. Researchers are testing ways for robots to do something similar by checking the conditions required for each action.\n\nThe first component uses a diffusion-based action policy, a learned method that progressively constructs movements from observations, to position and insert the screwdriver. A second model combines visual and force information to decide whether the tip has engaged securely. A third controller handles turning and removal, relying mainly on force feedback rather than slow image-based action generation. The authors impose a reaction-force limit of 20 newtons during this stage. The separation matters because positioning, recognizing contact and applying torque have different sensing and timing requirements.\n\nThe experiments used a real Franka Emika robot arm fitted with an electric screwdriver. The researchers collected 199 expert demonstrations for the alignment stage and 6,000 contact images for training the engagement classifier. In a reported comparison, the alignment-and-engagement policy succeeded in roughly half the trials, comparable to trained human teleoperators under that test setup. The contact classifier reached an accuracy of 0.90. Once the tool was properly engaged, the tested removal stage performed much more consistently, showing where the difficult bottleneck actually lies.\n\nThis is not evidence that a robot can already dismantle arbitrary electronics without supervision. Screw heads with unfamiliar appearances, changes in lighting and small positioning errors can defeat the initial stage. The researchers did not evaluate non-parallel screw orientations, and they identify sensitivity to variation in the paper. A production system would also need to detect screws on complex assemblies, recover from slips and verify that the surrounding components remain undamaged. DAWN offers a useful lesson: the hardest part of a seemingly simple task may be establishing the right contact before the visible action begins.",
+      "time_window": "7d",
+      "body": "One robot moves blocks quickly while another carefully lifts a delicate object. Which is better? A single success number cannot answer that when the tasks and testing conditions differ. Researchers proposed a framework that asks readers to look more closely at what each experiment actually measured.\n\nThe approach considers five dimensions of evaluation for models that control robot actions. Important questions include how convincingly a result was tested, what it costs to adapt the system to another task, and whether another team could repeat the experiment. Reproducibility means that others can obtain comparable results when the procedure and conditions are clear.\n\nThe authors point out that published studies do not always provide enough information for a fair comparison. If cost or reproducibility evidence is missing, a reviewer should not invent a number and combine everything into one score. Their framework can therefore decline to produce an overall ranking instead of declaring a winner without enough support.\n\nThis matters when watching robot demonstration videos too. How many attempts were made? Which ones failed? How much preparation was needed before filming? The framework does not make any robot smarter; it helps people judge claims about robots more carefully. The researchers call the evaluation approach RoboSeed.",
       "image": null
     },
     {
-      "id": "logiv-task-graph-repair",
-      "title": "A robot checks whether its plan still works after something changes",
-      "summary": "Researchers developed a way to check the conditions needed by each step of a long robot task. When circumstances change, the system tries to repair the plan, but success is not guaranteed in every situation.",
-      "details": "An explicit task graph represents condition support and resource ordering; observations verify those dependencies during execution.",
-      "technical_novelty": "Causal local repair of invalidated task conditions without retraining the underlying robot policy.",
-      "engineering_impact": "Separates sequential execution reliability from individual manipulation skills and can sit above existing VLA controllers.",
-      "limitations": "Evidence is confined to selected dual-arm tasks; real-robot success was 17 of 30 trials, not full reliability.",
-      "evidence_status": "Research preprint with simulated benchmarks and limited real-robot trials.",
+      "id": "simto-robust-grippers",
+      "title": "Why a soft robot gripper should tolerate small mistakes",
+      "summary": "Researchers calculated thousands of soft gripper designs and tested a smaller group on real hardware. They wanted grippers that still work when the robot approaches an object slightly off target.",
+      "details": "A soft gripper is the part of a robot that holds an object while changing shape slightly during contact. The team generated 6,646 candidate designs in a computer model. They considered different objects and grasp positions to look for shapes that would not fail after a small shift in alignment. That makes the design question different from finding the best shape for one perfect attempt.",
+      "technical_novelty": "The researchers then manufactured and physically tested 24 selected designs against alternatives. Real tests matter because a promising simulation does not guarantee that a physical gripper will hold an object. Yet checking 24 examples does not prove that every one of the thousands of computer-generated designs would work equally well.",
+      "engineering_impact": "This approach might help robots sort products or pick up unfamiliar household items. Before relying on it, engineers still need to study material wear, slippery or heavy objects and repeated failures over long periods. The researchers call their design method SimTO-Robust.",
+      "limitations": "This approach might help robots sort products or pick up unfamiliar household items. Before relying on it, engineers still need to study material wear, slippery or heavy objects and repeated failures over long periods. The researchers call their design method SimTO-Robust.",
+      "evidence_status": "Author-reported research or demonstration; operation beyond the test conditions remains unverified.",
       "published_at": "2026-10-29",
-      "organization": "Enqiao Lu et al.",
+      "organization": "Kurt Enkera et al.",
       "source_ids": [
-        "src-logiv-2610"
+        "src-simto-robust-grippers-20261029"
+      ],
+      "time_window": "7d",
+      "body": "When you pick up a cup, your fingers adjust a little to its shape. A robot benefits from similar flexibility, especially if its camera estimates the object's position imperfectly. Researchers proposed designing soft grippers for these small errors rather than assuming that every approach will be perfectly aligned.\n\nA soft gripper is the part of a robot that holds an object while changing shape slightly during contact. The team generated 6,646 candidate designs in a computer model. They considered different objects and grasp positions to look for shapes that would not fail after a small shift in alignment. That makes the design question different from finding the best shape for one perfect attempt.\n\nThe researchers then manufactured and physically tested 24 selected designs against alternatives. Real tests matter because a promising simulation does not guarantee that a physical gripper will hold an object. Yet checking 24 examples does not prove that every one of the thousands of computer-generated designs would work equally well.\n\nThis approach might help robots sort products or pick up unfamiliar household items. Before relying on it, engineers still need to study material wear, slippery or heavy objects and repeated failures over long periods. The researchers call their design method SimTO-Robust.",
+      "image": null
+    },
+    {
+      "id": "rlwrld-packing",
+      "title": "A five-finger robot tries packing an online order",
+      "summary": "A Tokyo exhibition showed a robot placing small products into a shipping box. It was a demonstration, not proof that the robot can work without mistakes all day in a warehouse.",
+      "details": "According to the developers, the robot took a cardboard box from a conveyor and packed small products such as smartphone accessories. Its control program is described as a foundation model, meaning a model intended to support more than one kind of task. That label does not mean it can already do every possible job.",
+      "technical_novelty": "Visitors could watch the demonstration, but the company did not publish the number of failed attempts, boxes packed per hour or hours of unattended operation. A short exhibition therefore cannot prove that the system is ready to replace workers at every warehouse.",
+      "engineering_impact": "Further tests should include many product types, unexpected object positions and safe operation around people. It is especially important to know what happens if an item slips from the hand. The company is called RLWRLD, and it named its model RLDX-1.",
+      "limitations": "Further tests should include many product types, unexpected object positions and safe operation around people. It is especially important to know what happens if an item slips from the hand. The company is called RLWRLD, and it named its model RLDX-1.",
+      "evidence_status": "Author-reported research or demonstration; operation beyond the test conditions remains unverified.",
+      "published_at": "2026-10-30",
+      "organization": "RLWRLD",
+      "source_ids": [
+        "src-rlwrld-kddi-summit-20261030"
       ],
       "time_window": "72h",
-      "body": "Imagine following a plan when someone suddenly moves an object you need. It helps to notice the change and repair the plan instead of blindly continuing. Researchers are testing ways for robots to do something similar by checking the conditions required for each action.\n\nLOGIV represents a validated plan as a task graph. One kind of edge records which action supports a condition needed later; another orders actions that compete for resources. Observations are used to verify those relationships during execution. If a disturbance removes a required condition, dependency tracing identifies what needs to be restored. The system then constructs a local repair, preserves still-relevant unfinished actions, and symbolically validates the continuation before execution resumes. This is a supervisory layer above vision-language-action policies, often abbreviated VLA, or world-action models; it does not introduce new trainable parameters into the underlying policy.\n\nThe researchers evaluated 20 dual-arm tasks drawn from RoboTwin V2 and BiCoord using three execution backbones. Without injected disturbances, they report mean task-success gains of 10.67 and 15.33 percentage points on the respective benchmarks. Under predefined disturbances, LOGIV outperformed three adapted recovery baselines in task completion and restoration of necessary conditions. On three physical-robot tasks, successful trials increased from 12 out of 30 to 17 out of 30. That is a measurable improvement, but it also leaves thirteen failures and should not be described as solved autonomy.\n\nThe architectural lesson is that action generation and task-state verification are different responsibilities. A strong manipulation policy cannot guarantee that the world still matches its earlier assumptions. Explicit dependencies provide a place to diagnose and repair those mismatches without restarting everything. The open engineering questions concern perception errors, incomplete condition models, recovery actions that are unavailable, and scaling to longer workflows with multiple simultaneous disturbances. The published evidence supports the value of the layer on tested tasks, not an assurance of reliable operation in arbitrary factories.",
+      "body": "Packing an online order means choosing the correct products, placing them in a box and avoiding damage. At an event in Tokyo, a company demonstrated a robot with a five-finger hand doing similar work. The event took place on October 27 and 28, while the company reported it on October 30.\n\nAccording to the developers, the robot took a cardboard box from a conveyor and packed small products such as smartphone accessories. Its control program is described as a foundation model, meaning a model intended to support more than one kind of task. That label does not mean it can already do every possible job.\n\nVisitors could watch the demonstration, but the company did not publish the number of failed attempts, boxes packed per hour or hours of unattended operation. A short exhibition therefore cannot prove that the system is ready to replace workers at every warehouse.\n\nFurther tests should include many product types, unexpected object positions and safe operation around people. It is especially important to know what happens if an item slips from the hand. The company is called RLWRLD, and it named its model RLDX-1.",
       "image": null
     }
   ],
   "technology_signal": {
-    "title": "Reusable air-powered muscle blocks make a walking robot",
-    "summary": "Researchers developed reusable robot parts with artificial muscles that move under air pressure. They tested an elbow, a gripping hand, fifteen leg arrangements and a four-legged robot that could walk.",
-    "implications": "A computer simulation helps researchers explore designs before building them. It uses measurements from the real artificial muscles, but a successful simulation is not a substitute for a physical test. The authors say hardware designs and software will be released openly in the future; the paper does not confirm that every file is already available. For reference, they call the system MUSBRIC."
+    "title": "From isolated tricks to verifiable work",
+    "summary": "Research and demonstrations expand the range of robot actions, but the strength of the result depends on test conditions.",
+    "implications": "Evaluation should cover failures, repeatability, cost and human intervention as well as successful attempts."
   },
   "glossary": [
     {
-      "term": "artificial muscles",
-      "definition": "Parts moved by air pressure."
+      "term": "model",
+      "definition": "A computational system trained to predict or select actions."
     },
     {
-      "term": "Humanoid",
-      "definition": "A robot with a human-like body layout."
+      "term": "simulat",
+      "definition": "A test in a computer environment rather than on physical hardware."
     },
     {
-      "term": "Robots-as-a-service",
-      "definition": "A commercial arrangement for using supported robot operations as a service."
+      "term": "gripp",
+      "definition": "A device or action used to hold an object."
     },
     {
-      "term": "Digital twin",
-      "definition": "A software representation of physical equipment or a process."
+      "term": "learn",
+      "definition": "Adjusting a model from examples or experience."
     },
     {
-      "term": "VLA",
-      "definition": "A model mapping visual input and language instructions to robot actions."
+      "term": "control",
+      "definition": "Choosing commands that determine a machine's movement."
     },
     {
-      "term": "Force feedback",
-      "definition": "Measured forces used to adjust robot behavior."
+      "term": "sensor",
+      "definition": "A device that measures a condition or contact."
     },
     {
-      "term": "Task graph",
-      "definition": "A representation of actions and the conditions they depend on."
+      "term": "reproducib",
+      "definition": "The ability to repeat an experiment with comparable results."
+    },
+    {
+      "term": "robot",
+      "definition": "A physical machine that performs commanded actions."
+    },
+    {
+      "term": "tool",
+      "definition": "A device selected for a particular operation."
     }
   ],
   "sources": [
     {
-      "id": "src-musbric-pneumatic-bricks-20261029",
-      "title": "MUSBRIC: LEGO-Compatible Pneumatic Muscle Bricks for Reconfigurable Musculoskeletal Robots",
-      "url": "https://arxiv.org/abs/2610.40285",
+      "id": "src-swapbot-tools-20261029",
+      "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+      "url": "https://arxiv.org/abs/2610.40646",
       "domain": "arxiv.org",
-      "organization": "Qiyao Wang et al.",
+      "organization": "Yunchu Zhang et al.",
       "published_at": "2026-10-29"
     },
     {
-      "id": "src-gxo-agility-20261026",
-      "url": "https://www.agilityrobotics.com/content/gxo-and-agility-robotics-expand-partnership-to-accelerate-deployment-of-humanoids-in-u-s-operations",
-      "domain": "agilityrobotics.com",
-      "organization": "GXO Logistics and Agility Robotics",
-      "published_at": "2026-10-26",
-      "title": "GXO and Agility Robotics Expand Partnership to Accelerate Deployment of Humanoids in U.S. Operations"
+      "id": "src-raibo-wagon-2610",
+      "url": "https://arxiv.org/abs/2610.39267",
+      "domain": "arxiv.org",
+      "organization": "Insung Yang et al.",
+      "published_at": "2026-10-29",
+      "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon"
     },
     {
-      "id": "src-elyza-robotics-20261027",
-      "url": "https://prtimes.jp/main/html/rd/p/000000086.000047565.html",
+      "id": "src-roboseed-evaluation-20261029",
+      "title": "RoboSeed: Multidimensional Evaluation of Vision-Language-Action and World-Action Models",
+      "url": "https://arxiv.org/abs/2610.40026",
+      "domain": "arxiv.org",
+      "organization": "Xin Ma et al.",
+      "published_at": "2026-10-29"
+    },
+    {
+      "id": "src-simto-robust-grippers-20261029",
+      "title": "SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry",
+      "url": "https://arxiv.org/abs/2610.39560",
+      "domain": "arxiv.org",
+      "organization": "Kurt Enkera et al.",
+      "published_at": "2026-10-29"
+    },
+    {
+      "id": "src-rlwrld-kddi-summit-20261030",
+      "title": "RLWRLD KDDI SUMMIT 2026 RLDX-1 logistics packing demonstration",
+      "url": "https://prtimes.jp/main/html/rd/p/000000006.000183256.html",
       "domain": "prtimes.jp",
-      "organization": "KDDI and ELYZA",
-      "published_at": "2026-10-27",
-      "title": "フィジカルAIを推進する新会社「ELYZA Robotics」事業開始"
-    },
-    {
-      "id": "src-dawn-unfastening-2610",
-      "url": "https://arxiv.org/abs/2610.40537",
-      "domain": "arxiv.org",
-      "organization": "Hemant Kumar et al.",
-      "published_at": "2026-10-29",
-      "title": "DAWN: Diffusion-based Alignment and unfastening Workflow Network"
-    },
-    {
-      "id": "src-logiv-2610",
-      "url": "https://arxiv.org/abs/2610.40016",
-      "domain": "arxiv.org",
-      "organization": "Enqiao Lu et al.",
-      "published_at": "2026-10-29",
-      "title": "LOGIV: Graph-Verified Execution with Causal Local Repair for Long-Horizon Robot Tasks"
+      "organization": "RLWRLD",
+      "published_at": "2026-10-30"
     }
   ]
 }
