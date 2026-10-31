@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.4",
+  "publication": "pravda_replikanta",
+  "issue_type": "daily",
+  "issue_date": "2026-10-31",
+  "issue_id": "daily-2026-10-31",
+  "edition": "enthusiast",
+  "language": "en",
+  "generated_at": "2026-10-31T21:41:24+09:00",
+  "title": "Pravda Replikanta — Curious Minds Edition",
+  "lead": "How a humanoid switches between motions, and why completing a task is not the whole story.",
+  "news": [
+    {
+      "id": "forge-g1",
+      "title": "FORGE gives Unitree G1 several ways to move",
+      "summary": "A two-stage method connects forward motion, side steps, turns and hopping.",
+      "details": "A simplified physical model generates movement references, and a whole-body controller follows them.",
+      "technical_novelty": "Feasible reference generation is separated from detailed execution.",
+      "engineering_impact": "A shared framework could ease transitions between locomotion modes.",
+      "limitations": "The authors report forward speeds up to 2.8 m/s, lateral speeds of ±1.0 m/s and turning up to ±3.0 rad/s; all-terrain reliability is unproven.",
+      "evidence_status": "Research preprint with author-run Unitree G1 demonstrations; no independent replication reported.",
+      "published_at": "2026-10-27",
+      "organization": "FORGE research authors",
+      "source_ids": [
+        "forge-source"
+      ],
+      "time_window": "7d",
+      "body": "Why is it hard for a humanoid to walk quickly, turn and hop using the same system? Each movement places different demands on balance. FORGE first calculates a motion with a simplified model, then has the robot's whole-body controller execute it.\n\nOn Unitree G1, the researchers report forward motion up to 2.8 m/s, sideways motion up to ±1.0 m/s, turning up to ±3.0 rad/s, and one-legged hops. It is a compelling unified demonstration, not a promise that the robot can handle any surface or unexpected obstacle.",
+      "image": null
+    },
+    {
+      "id": "qcp-quality",
+      "title": "QCP asks whether a task was done well, not merely completed",
+      "summary": "A robot policy can take speed, smoothness and stability as explicit quality goals.",
+      "details": "Successful runs are measured, relabeled and reused for further training.",
+      "technical_novelty": "Execution quality becomes a condition on action selection.",
+      "engineering_impact": "A conveyor rewards speed, while carrying wine glasses rewards stable movement.",
+      "limitations": "The authors report improvements on RoboMimic and RoboEval plus real conveyor and glass-carrying tests, without a universal effect size.",
+      "evidence_status": "Research preprint with author-run experiments; independent industrial validation is not reported.",
+      "published_at": "2026-10-27",
+      "organization": "QCP research authors",
+      "source_ids": [
+        "qcp-source"
+      ],
+      "time_window": "7d",
+      "body": "Imagine two robots carrying a glass. Both arrive, but one moves smoothly while the other almost spills its contents. A simple success-or-failure score treats them alike. QCP instead lets the robot policy take movement quality as a goal.\n\nThe system measures successful attempts and uses their quality labels for further learning. Researchers tested it on benchmarks and physical tasks, including a conveyor and wine glasses. The next question is whether the gains persist with different robots and objects.",
+      "image": null
+    }
+  ],
+  "technology_signal": {
+    "title": "Robots must control how they act, not only what they do",
+    "summary": "FORGE connects locomotion modes; QCP makes execution quality adjustable.",
+    "implications": "Both are research results, not evidence of universal capabilities."
+  },
+  "glossary": [
+    {
+      "term": "humanoid",
+      "definition": "A robot with a broadly human-like body."
+    },
+    {
+      "term": "controller",
+      "definition": "An algorithm that manages machine movement."
+    },
+    {
+      "term": "policy",
+      "definition": "An algorithm selecting actions from observations."
+    },
+    {
+      "term": "model",
+      "definition": "A simplified representation used to calculate behavior."
+    },
+    {
+      "term": "learning",
+      "definition": "Improving an algorithm from examples or experience."
+    }
+  ],
+  "sources": [
+    {
+      "id": "forge-source",
+      "title": "FORGE: Feasible Online Reduced-Order Reference Generation and Whole-Body Execution for Agile Humanoid Locomotion",
+      "url": "https://arxiv.org/abs/2610.37974",
+      "domain": "arxiv.org",
+      "organization": "FORGE research authors",
+      "published_at": "2026-10-27"
+    },
+    {
+      "id": "qcp-source",
+      "title": "Learning Quality-Controllable Robot Policies with Iterative Hindsight Relabeling",
+      "url": "https://arxiv.org/abs/2610.37393",
+      "domain": "arxiv.org",
+      "organization": "QCP research authors",
+      "published_at": "2026-10-27"
+    }
+  ]
+}

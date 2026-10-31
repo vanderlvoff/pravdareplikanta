@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.4",
+  "publication": "pravda_replikanta",
+  "issue_type": "daily",
+  "issue_date": "2026-10-31",
+  "issue_id": "daily-2026-10-31",
+  "edition": "business",
+  "language": "en",
+  "generated_at": "2026-10-31T21:41:24+09:00",
+  "title": "Pravda Replikanta — Business Edition",
+  "lead": "Robot permissions and international sourcing risks shape deployment decisions.",
+  "news": [
+    {
+      "id": "docomo-gateway",
+      "title": "NTT Docomo puts permission checks between agents and robots",
+      "summary": "Its platform checks authorizations, logs actions and considers people nearby.",
+      "details": "An A2A Gateway checks user attributes and usage rules before forwarding commands.",
+      "technical_novelty": "Access control, action logging and context-aware behavior are combined.",
+      "engineering_impact": "Deployments need accountable owners of permissions and audit records.",
+      "limitations": "No independent large-scale deployment or quantified safety results were reported.",
+      "evidence_status": "Official developer announcement, without independent validation.",
+      "published_at": "2026-10-27",
+      "organization": "NTT DOCOMO",
+      "source_ids": [
+        "docomo-source"
+      ],
+      "time_window": "7d",
+      "body": "Understanding a request is not enough: a robot must know who is authorized to give it. NTT Docomo has developed a platform linking personal AI agents to robots through an A2A Gateway. It checks permissions before forwarding instructions.\n\nThe company describes action logs and behavior adapted to nearby people. For buyers, this is a useful governance architecture, not yet proof of safe operation at scale. The release supplies no independent deployment metrics.",
+      "image": null
+    },
+    {
+      "id": "us-robotics-imports",
+      "title": "US opens robotics import talks without an immediate tariff",
+      "summary": "An October 28 proclamation directs talks on imported robots, machinery and parts.",
+      "details": "The Section 232 measure calls for a progress report within 180 days.",
+      "technical_novelty": "Possible future restrictions create sourcing uncertainty.",
+      "engineering_impact": "Procurement teams should assess component origin and contracts.",
+      "limitations": "No new tariff rate is imposed by this proclamation, and future duties are not certain.",
+      "evidence_status": "Primary White House legal document; later economic effects are unknown.",
+      "published_at": "2026-10-28",
+      "organization": "The White House",
+      "source_ids": [
+        "us-imports-source"
+      ],
+      "time_window": "7d",
+      "body": "On October 28, the White House issued a proclamation addressing robotics and industrial machinery imports as a national-security issue. That is a meaningful signal to suppliers, but not a confirmed new cost line.\n\nThe document orders negotiations and a progress report within 180 days. Tariffs are possible future measures, not immediate duties under this text. Buyers should model sourcing scenarios instead of assuming an invented rate.",
+      "image": null
+    }
+  ],
+  "technology_signal": {
+    "title": "Integration and regulation are part of robotics",
+    "summary": "Robot capability alone is not enough without governance and dependable supply.",
+    "implications": "Procurement requires auditability, accountability and cost scenarios."
+  },
+  "glossary": [
+    {
+      "term": "A2A Gateway",
+      "definition": "A gateway for communication between software agents."
+    },
+    {
+      "term": "robot",
+      "definition": "A machine that acts in the physical world."
+    },
+    {
+      "term": "audit",
+      "definition": "A review of recorded actions."
+    },
+    {
+      "term": "Section 232",
+      "definition": "A US trade-law provision concerning imports and national security."
+    },
+    {
+      "term": "tariff",
+      "definition": "A tax or duty on imports."
+    }
+  ],
+  "sources": [
+    {
+      "id": "docomo-source",
+      "title": "AIとロボットが人と安全・快適に共存する世界へ、Physical AI連携基盤を開発",
+      "url": "https://www.docomo.ne.jp/info/news_release/2026/10/27_02.html",
+      "domain": "www.docomo.ne.jp",
+      "organization": "NTT DOCOMO",
+      "published_at": "2026-10-27"
+    },
+    {
+      "id": "us-imports-source",
+      "title": "Adjusting Imports of Robotics, Industrial Machinery, and Their Parts and Components into the United States",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/10/adjusting-imports-of-robotics-industrial-machinery-and-their-parts-and-components-into-the-united-states/",
+      "domain": "www.whitehouse.gov",
+      "organization": "The White House",
+      "published_at": "2026-10-28"
+    }
+  ]
+}

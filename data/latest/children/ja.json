@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.4",
+  "publication": "pravda_replikanta",
+  "issue_type": "daily",
+  "issue_date": "2026-10-31",
+  "issue_id": "daily-2026-10-31",
+  "edition": "children",
+  "language": "ja",
+  "generated_at": "2026-10-31T21:41:24+09:00",
+  "title": "プラウダ・レプリカンタ — 小学6年生版",
+  "lead": "ロボットはなぜ物を落とすのか。だれの命令でも聞いてよいのか。実験から考えよう。",
+  "news": [
+    {
+      "id": "dexsafe-hand",
+      "title": "ロボットの手は、どうすれば物を落とさない？",
+      "summary": "研究チームはLEAPという指の多いロボットの手で、物を持ったまま向きを変える練習をした。",
+      "details": "まずシミュレーションというコンピューターの中の実験で学習（がくしゅう）し、本物の手でも試した。",
+      "technical_novelty": "追加の安全フィルターで物を落とす回数を減らす。",
+      "engineering_impact": "身の回りの物をていねいにあつかうロボットにつながるかもしれない。",
+      "limitations": "13.3時間に4種類の物で4800を超える新しい目標を試し、落下が75%減った。ただしゼロにはなっていない。",
+      "evidence_status": "研究者自身の実験であり、どんな物でも成功する証明ではない。",
+      "published_at": "2026-10-27",
+      "organization": "DexSafe research authors",
+      "source_ids": [
+        "dexsafe-source"
+      ],
+      "time_window": "7d",
+      "body": "えんぴつを指の間で回してみよう。落とさずに動かすのは意外とむずかしい。ロボットの手も同じだ。研究チームはLEAPという指の多い手をシミュレーションで学習（がくしゅう）させ、本物の手でも試した。\n\n13.3時間の実験（じっけん）で、4種類の物と4800を超える新しい目標を調べた。安全フィルターを加えると、物を落とす回数が75%減った。でも、失敗がなくなったわけではない。一回の成功だけでなく、失敗の回数も大切だ。",
+      "image": null
+    },
+    {
+      "id": "docomo-gateway",
+      "title": "ロボットは、だれのお願いでも聞いてよい？",
+      "summary": "NTTドコモは、ロボットに命令してよいかを調べるしくみを開発（かいはつ）した。",
+      "details": "A2A Gatewayという中継（ちゅうけい）のしくみが、AIとロボットをつなぎ、命令の許可（きょか）を確認（かくにん）する。",
+      "technical_novelty": "動いた記録（きろく）を残し、近くの人のようすに合わせた動作も考える。",
+      "engineering_impact": "学校や病院では、人によって使ってよい機能がちがう。",
+      "limitations": "大勢の人が使ったときの安全性を、別の研究者が確かめた数字はまだない。",
+      "evidence_status": "会社による公式発表であり、何でも自動で安全にできる証明ではない。",
+      "published_at": "2026-10-27",
+      "organization": "NTT DOCOMO",
+      "source_ids": [
+        "docomo-source"
+      ],
+      "time_window": "7d",
+      "body": "学校に、ドアを開けられるロボットがいるとしよう。だれに言われても、どのドアでも開けてよいだろうか。そうではない。NTTドコモは、命令の許可（きょか）を先に調べるしくみを開発した。\n\nロボットが何をしたかも記録（きろく）し、近くの人に合わせた動きを考えるという。役立つしくみだが、絶対にまちがえないと証明されたわけではない。どんな命令を許可するか、だれが決めるべきだろう？",
+      "image": null
+    }
+  ],
+  "technology_signal": {
+    "title": "動けることと、安全に動けることは別",
+    "summary": "器用な指と、命令の許可（きょか）を調べるしくみは、別の問題を解いている。",
+    "implications": "成功だけでなく失敗の回数も数えよう。"
+  },
+  "glossary": [
+    {
+      "term": "ロボット",
+      "definition": "周りを調べて動くことができる機械。"
+    },
+    {
+      "term": "シミュレーション",
+      "definition": "コンピューターの中で動きを試すこと。"
+    },
+    {
+      "term": "安全フィルター",
+      "definition": "危険（きけん）な動きを減らす追加のしくみ。"
+    },
+    {
+      "term": "学習（がくしゅう）",
+      "definition": "例や練習から動きを上手にすること。"
+    },
+    {
+      "term": "AI",
+      "definition": "情報をもとに答えや動作を考えるプログラム。"
+    },
+    {
+      "term": "許可（きょか）",
+      "definition": "ある行動をしてよいという決まり。"
+    }
+  ],
+  "sources": [
+    {
+      "id": "dexsafe-source",
+      "title": "Pushing Dexterity and Safety for In-Hand Object Pose Reaching That Works Remarkably Well",
+      "url": "https://arxiv.org/abs/2610.37652",
+      "domain": "arxiv.org",
+      "organization": "DexSafe research authors",
+      "published_at": "2026-10-27"
+    },
+    {
+      "id": "docomo-source",
+      "title": "AIとロボットが人と安全・快適に共存する世界へ、Physical AI連携基盤を開発",
+      "url": "https://www.docomo.ne.jp/info/news_release/2026/10/27_02.html",
+      "domain": "www.docomo.ne.jp",
+      "organization": "NTT DOCOMO",
+      "published_at": "2026-10-27"
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.4",
+  "publication": "pravda_replikanta",
+  "issue_type": "daily",
+  "issue_date": "2026-10-31",
+  "issue_id": "daily-2026-10-31",
+  "edition": "children",
+  "language": "en",
+  "generated_at": "2026-10-31T21:41:24+09:00",
+  "title": "Pravda Replikanta — Young Explorers Edition",
+  "lead": "Why robots drop things and why they should check who is giving instructions.",
+  "news": [
+    {
+      "id": "dexsafe-hand",
+      "title": "How a robot hand learns not to drop things",
+      "summary": "Researchers taught a LEAP hand to turn objects while holding them.",
+      "details": "Training began in simulation, a computer model, and was then tested on a physical hand.",
+      "technical_novelty": "An extra safety filter reduces the chance of dropping an object.",
+      "engineering_impact": "The idea could help robots handle everyday items more carefully.",
+      "limitations": "Across 13.3 hours, the team tested more than 4,800 unseen goals on four objects; the filter cut drops by 75%, but did not eliminate them.",
+      "evidence_status": "Research experiments by the authors, not a test of every possible object.",
+      "published_at": "2026-10-27",
+      "organization": "DexSafe research authors",
+      "source_ids": [
+        "dexsafe-source"
+      ],
+      "time_window": "7d",
+      "body": "Try turning a pencil between your fingers without dropping it. A robot has to coordinate several fingers too. Researchers first trained a LEAP hand in simulation, a computer model, and then tested it on a real hand.\n\nOver 13.3 hours, they tried more than 4,800 new goals with four objects. An extra safety filter reduced drops by 75%, but some still happened. That is why we should count mistakes, not just watch the best-looking demonstration.",
+      "image": null
+    },
+    {
+      "id": "docomo-gateway",
+      "title": "Why a robot should check permission",
+      "summary": "NTT Docomo developed a system that checks whether a robot may follow a command.",
+      "details": "An A2A Gateway connects an AI assistant to a robot and checks rules before passing instructions along.",
+      "technical_novelty": "The system also records actions and considers people nearby.",
+      "engineering_impact": "Different people may have different rights to control robots in schools, hospitals or homes.",
+      "limitations": "The company has not provided independent safety measurements from large-scale use.",
+      "evidence_status": "Official company announcement, not proof of perfect autonomy.",
+      "published_at": "2026-10-27",
+      "organization": "NTT DOCOMO",
+      "source_ids": [
+        "docomo-source"
+      ],
+      "time_window": "7d",
+      "body": "Imagine a robot at school that can open doors. Should it open every door for anyone who asks? No: it first needs to check permission. NTT Docomo developed a system that checks rules before sending a command to a robot.\n\nIt also records what the robot did and is designed to consider people nearby. That is a useful idea, but the announcement does not prove that the system never makes mistakes. Who should decide which instructions are allowed?",
+      "image": null
+    }
+  ],
+  "technology_signal": {
+    "title": "Being able to move is not the same as acting carefully",
+    "summary": "Dexterous fingers and permission checks solve different safety problems.",
+    "implications": "Good experiments count mistakes as well as successes."
+  },
+  "glossary": [
+    {
+      "term": "robot",
+      "definition": "A machine that can move and perform actions."
+    },
+    {
+      "term": "simulation",
+      "definition": "A computer model used to test ideas."
+    },
+    {
+      "term": "filter",
+      "definition": "An extra check or adjustment to an action."
+    },
+    {
+      "term": "object",
+      "definition": "A thing a robot can hold or move."
+    },
+    {
+      "term": "AI",
+      "definition": "Software that processes information to help choose actions."
+    },
+    {
+      "term": "permission",
+      "definition": "A rule allowing someone to perform an action."
+    }
+  ],
+  "sources": [
+    {
+      "id": "dexsafe-source",
+      "title": "Pushing Dexterity and Safety for In-Hand Object Pose Reaching That Works Remarkably Well",
+      "url": "https://arxiv.org/abs/2610.37652",
+      "domain": "arxiv.org",
+      "organization": "DexSafe research authors",
+      "published_at": "2026-10-27"
+    },
+    {
+      "id": "docomo-source",
+      "title": "AIとロボットが人と安全・快適に共存する世界へ、Physical AI連携基盤を開発",
+      "url": "https://www.docomo.ne.jp/info/news_release/2026/10/27_02.html",
+      "domain": "www.docomo.ne.jp",
+      "organization": "NTT DOCOMO",
+      "published_at": "2026-10-27"
+    }
+  ]
+}
