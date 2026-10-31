@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.4",
+  "publication": "pravda_replikanta",
+  "issue_type": "daily",
+  "issue_date": "2026-10-31",
+  "issue_id": "daily-2026-10-31",
+  "edition": "enthusiast",
+  "language": "ja",
+  "generated_at": "2026-10-31T21:41:24+09:00",
+  "title": "プラウダ・レプリカンタ — 好奇心版",
+  "lead": "人型ロボットが動きを切り替える仕組みと、作業の質を考える。",
+  "news": [
+    {
+      "id": "forge-g1",
+      "title": "FORGE、Unitree G1で歩行やジャンプを統合",
+      "summary": "二段階の方法で前進、横移動、旋回、片足ジャンプを扱う。",
+      "details": "簡単な物理モデルで目標の動きを作り、全身のコントローラーで実行する。",
+      "technical_novelty": "実行可能な動作の生成と実際の追従を分ける。",
+      "engineering_impact": "異なる移動方法の切り替えを簡単にできる可能性がある。",
+      "limitations": "前進は最大2.8 m/s、横移動は±1.0 m/s、旋回は±3.0 rad/sまで報告。どんな地面でも安全とは限らない。",
+      "evidence_status": "著者のUnitree G1実験を含むプレプリント。独立再現は未確認。",
+      "published_at": "2026-10-27",
+      "organization": "FORGE research authors",
+      "source_ids": [
+        "forge-source"
+      ],
+      "time_window": "7d",
+      "body": "人型ロボットが速く歩き、曲がり、片足で跳ぶには、それぞれ異なるバランスが必要だ。FORGEは簡単な物理モデルで動きの目標を計算し、全身のコントローラーで実行する方法を提案した。\n\nUnitree G1で前進最大2.8 m/s、横移動±1.0 m/s、回転±3.0 rad/sの動きと片足ジャンプが報告された。面白い実験だが、どんな地面でも安全に動けると証明されたわけではない。",
+      "image": null
+    },
+    {
+      "id": "qcp-quality",
+      "title": "QCP、作業の成功と丁寧さを分けて考える",
+      "summary": "速さ、滑らかさ、安定性を作業の目標として指定できる方策。",
+      "details": "成功した動作を測定し、品質を後から付け直して学習に使う。",
+      "technical_novelty": "作業の品質を動作選択の条件にする。",
+      "engineering_impact": "コンベヤーでは速さ、グラスの運搬では揺れの少なさが大切だ。",
+      "limitations": "RoboMimicとRoboEvalで改善を報告し、実機でも試したが、万能な改善率はない。",
+      "evidence_status": "著者の研究プレプリント。独立した産業評価は未確認。",
+      "published_at": "2026-10-27",
+      "organization": "QCP research authors",
+      "source_ids": [
+        "qcp-source"
+      ],
+      "time_window": "7d",
+      "body": "二台のロボットが同じグラスを運んだとしよう。一台は静かに、もう一台は大きく揺らしながら運んだ。どちらも成功だが、作業の質は違う。QCPは速さや安定性を目標にできる研究だ。\n\n成功した動きを測り、後から品質を記録して学習に使う。研究者はテストと実機で改善を報告したが、別のロボットや物でも同じように動くかはまだ調べる必要がある。",
+      "image": null
+    }
+  ],
+  "technology_signal": {
+    "title": "何をするかだけでなく、どう動くか",
+    "summary": "FORGEは移動方法をつなぎ、QCPは作業の質を調整する。",
+    "implications": "どちらも研究成果であり、万能な能力を証明したわけではない。"
+  },
+  "glossary": [
+    {
+      "term": "人型ロボット",
+      "definition": "人に似た形の体を持つロボット。"
+    },
+    {
+      "term": "コントローラー",
+      "definition": "機械の動きを決める仕組み。"
+    },
+    {
+      "term": "方策",
+      "definition": "見た情報から次の動作を選ぶ仕組み。"
+    },
+    {
+      "term": "モデル",
+      "definition": "現実のしくみを簡単に表したもの。"
+    },
+    {
+      "term": "学習",
+      "definition": "例や経験から動きを改善すること。"
+    }
+  ],
+  "sources": [
+    {
+      "id": "forge-source",
+      "title": "FORGE: Feasible Online Reduced-Order Reference Generation and Whole-Body Execution for Agile Humanoid Locomotion",
+      "url": "https://arxiv.org/abs/2610.37974",
+      "domain": "arxiv.org",
+      "organization": "FORGE research authors",
+      "published_at": "2026-10-27"
+    },
+    {
+      "id": "qcp-source",
+      "title": "Learning Quality-Controllable Robot Policies with Iterative Hindsight Relabeling",
+      "url": "https://arxiv.org/abs/2610.37393",
+      "domain": "arxiv.org",
+      "organization": "QCP research authors",
+      "published_at": "2026-10-27"
+    }
+  ]
+}

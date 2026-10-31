@@ -6,90 +6,90 @@
   "issue_id": "daily-2026-10-31",
   "edition": "enthusiast",
   "language": "en",
-  "generated_at": "2026-10-31T21:41:24+09:00",
-  "title": "Pravda Replikanta — Curious Minds Edition",
-  "lead": "How a humanoid switches between motions, and why completing a task is not the whole story.",
+  "generated_at": "2026-10-31T22:25:32+09:00",
+  "title": "Pravda Replikanta — Enthusiast Edition",
+  "lead": "Robots are learning to coordinate two hands and check whether their movements match their intended plans.",
   "news": [
     {
-      "id": "forge-g1",
-      "title": "FORGE gives Unitree G1 several ways to move",
-      "summary": "A two-stage method connects forward motion, side steps, turns and hopping.",
-      "details": "A simplified physical model generates movement references, and a whole-body controller follows them.",
-      "technical_novelty": "Feasible reference generation is separated from detailed execution.",
-      "engineering_impact": "A shared framework could ease transitions between locomotion modes.",
-      "limitations": "The authors report forward speeds up to 2.8 m/s, lateral speeds of ±1.0 m/s and turning up to ±3.0 rad/s; all-terrain reliability is unproven.",
-      "evidence_status": "Research preprint with author-run Unitree G1 demonstrations; no independent replication reported.",
-      "published_at": "2026-10-27",
-      "organization": "FORGE research authors",
+      "id": "acrossdex-two-hands",
+      "title": "AcrossDEX learns two-handed robot manipulation from human motion",
+      "summary": "AcrossDEX 1.0 uses human-motion pretraining and adapts the result to two different robot hands, Inspire and Allegro, for coordinated object manipulation.",
+      "details": "The system uses images, command history and repeated replanning for lid handling and object reorientation.",
+      "technical_novelty": "Shared wrist representations are combined with separate finger parameters for different hand mechanisms.",
+      "engineering_impact": "Suggests a common training pipeline that can be adapted across robot-hand designs.",
+      "limitations": "Author tests range from 40.6% on opening and returning a lid to 100% on a particular reorientation task; generality remains unproven.",
+      "evidence_status": "Research preprint with author-run experiments, not independently replicated.",
+      "published_at": "2026-10-29",
+      "organization": "AcrossDEX research authors",
       "source_ids": [
-        "forge-source"
+        "acrossdex-source"
       ],
-      "time_window": "7d",
-      "body": "Why is it hard for a humanoid to walk quickly, turn and hop using the same system? Each movement places different demands on balance. FORGE first calculates a motion with a simplified model, then has the robot's whole-body controller execute it.\n\nOn Unitree G1, the researchers report forward motion up to 2.8 m/s, sideways motion up to ±1.0 m/s, turning up to ±3.0 rad/s, and one-legged hops. It is a compelling unified demonstration, not a promise that the robot can handle any surface or unexpected obstacle.",
+      "time_window": "72h",
+      "body": "Opening a box with two hands looks ordinary: one hand holds the base while the other lifts the lid. A robot has to coordinate both wrists and many finger contacts without dropping the object. AcrossDEX 1.0, introduced by its research authors, tackles bimanual dexterous manipulation. That means controlling two articulated robot hands to change an object's position or state while keeping contact.\n\nThe training pipeline begins with recorded human hand motion, then combines simulation-based learning and robot demonstrations. Some wrist-motion representations are shared across robots, while finger commands depend on the hand design. The paper considers six-channel Inspire hands and sixteen-joint Allegro hands. Those mechanisms differ enough that copying the same joint commands between them would not work.\n\nAt execution time, the robot reads camera images and recent commands, predicts a short action sequence, executes part of it and observes again. This is feedback-based replanning rather than blindly replaying a long movement. The researchers compare direct regression with diffusion and flow matching, two methods for generating candidate action sequences from learned distributions.\n\nThe results vary sharply by task. Direct regression succeeds 40.6% of the time on lid opening and return, but reaches 100% on Inspire object reorientation and 93.3% on Allegro reorientation. Flow matching reaches 90% on Allegro reorientation. These are particular experimental settings, not evidence of human-level general dexterity. A natural next question is whether the same approach survives new objects, hand designs and imperfect camera views.",
       "image": null
     },
     {
-      "id": "qcp-quality",
-      "title": "QCP asks whether a task was done well, not merely completed",
-      "summary": "A robot policy can take speed, smoothness and stability as explicit quality goals.",
-      "details": "Successful runs are measured, relabeled and reused for further training.",
-      "technical_novelty": "Execution quality becomes a condition on action selection.",
-      "engineering_impact": "A conveyor rewards speed, while carrying wine glasses rewards stable movement.",
-      "limitations": "The authors report improvements on RoboMimic and RoboEval plus real conveyor and glass-carrying tests, without a universal effect size.",
-      "evidence_status": "Research preprint with author-run experiments; independent industrial validation is not reported.",
-      "published_at": "2026-10-27",
-      "organization": "QCP research authors",
+      "id": "coract-reason-action",
+      "title": "CoRAct asks whether a robot's reasoning matches its actions",
+      "summary": "CoRAct trains vision-language-action models by checking candidate movements against intended motion and predicted spatial consequences.",
+      "details": "Candidate actions receive feedback based on movement consistency and agreement with expected waypoints.",
+      "technical_novelty": "Intermediate spatial reasoning is tied to action optimization rather than treated only as explanatory text.",
+      "engineering_impact": "Could help detect mismatches between a robot's stated plan and the movement it generates.",
+      "limitations": "Authors report gains on RoboCasa, VLABench and physical tasks, without universal safety guarantees.",
+      "evidence_status": "Research preprint with author evaluations, not independently validated in industry.",
+      "published_at": "2026-10-29",
+      "organization": "CoRAct research authors",
       "source_ids": [
-        "qcp-source"
+        "coract-source"
       ],
-      "time_window": "7d",
-      "body": "Imagine two robots carrying a glass. Both arrive, but one moves smoothly while the other almost spills its contents. A simple success-or-failure score treats them alike. QCP instead lets the robot policy take movement quality as a goal.\n\nThe system measures successful attempts and uses their quality labels for further learning. Researchers tested it on benchmarks and physical tasks, including a conveyor and wine glasses. The next question is whether the gains persist with different robots and objects.",
+      "time_window": "72h",
+      "body": "A robot might describe the correct destination for an object and still generate a movement in the wrong direction. CoRAct, a method introduced by its research authors, studies that gap between reasoning and execution. It targets vision-language-action (VLA) models, which connect camera input and language instructions to robot movements. The aim is to make intermediate reasoning accountable to predicted physical consequences.\n\nRather than using reasoning only as text, the method extracts intended movement and waypoints, or expected intermediate positions. It generates candidate actions and scores whether they agree with the intended direction and predicted outcome. Those scores influence the learning process that generates future actions. Here, 'reasoning' does not imply human understanding; it refers to structured predictions that can be checked against movement geometry.\n\nThe authors report improvements on RoboCasa and VLABench, two robotic-action evaluation suites, as well as physical manipulation tasks. They also discuss zero-shot adaptation, meaning applying a learned method to a new setting without task-specific retraining. None of this proves that a robot will always recognize a bad instruction or avoid unsafe contact.\n\nThe next useful question is how reliably plan-execution alignment can be measured when an object slips, a camera misjudges its position or a person changes the task. CoRAct supplies a research mechanism for testing that question. Independent replication and broader hardware trials remain necessary.",
       "image": null
     }
   ],
   "technology_signal": {
-    "title": "Robots must control how they act, not only what they do",
-    "summary": "FORGE connects locomotion modes; QCP makes execution quality adjustable.",
-    "implications": "Both are research results, not evidence of universal capabilities."
+    "title": "Choosing an action is not the same as executing it",
+    "summary": "AcrossDEX studies two-hand coordination; CoRAct connects predicted consequences with generated movements.",
+    "implications": "Evaluate contact stability and plan-execution alignment, not only final task success."
   },
   "glossary": [
     {
-      "term": "humanoid",
-      "definition": "A robot with a broadly human-like body."
+      "term": "bimanual manipulation",
+      "definition": "Using two coordinated robot hands to handle an object."
     },
     {
-      "term": "controller",
-      "definition": "An algorithm that manages machine movement."
+      "term": "feedback",
+      "definition": "Using observed results to guide the next action."
     },
     {
-      "term": "policy",
-      "definition": "An algorithm selecting actions from observations."
+      "term": "VLA",
+      "definition": "A model connecting visual observations, language and physical actions."
     },
     {
-      "term": "model",
-      "definition": "A simplified representation used to calculate behavior."
+      "term": "waypoint",
+      "definition": "An expected intermediate position in a movement."
     },
     {
-      "term": "learning",
-      "definition": "Improving an algorithm from examples or experience."
+      "term": "zero-shot",
+      "definition": "Applying a method to a new task without task-specific retraining."
     }
   ],
   "sources": [
     {
-      "id": "forge-source",
-      "title": "FORGE: Feasible Online Reduced-Order Reference Generation and Whole-Body Execution for Agile Humanoid Locomotion",
-      "url": "https://arxiv.org/abs/2610.37974",
+      "id": "acrossdex-source",
+      "title": "AcrossDEX 1.0: From Human Motion Pretraining to Bimanual Dexterous Manipulation across Hand Embodiments",
+      "url": "https://arxiv.org/abs/2610.40210",
       "domain": "arxiv.org",
-      "organization": "FORGE research authors",
-      "published_at": "2026-10-27"
+      "organization": "AcrossDEX research authors",
+      "published_at": "2026-10-29"
     },
     {
-      "id": "qcp-source",
-      "title": "Learning Quality-Controllable Robot Policies with Iterative Hindsight Relabeling",
-      "url": "https://arxiv.org/abs/2610.37393",
+      "id": "coract-source",
+      "title": "From Reasoning to Action: Consequence-Grounded Alignment for Vision-Language-Action Models",
+      "url": "https://arxiv.org/abs/2610.39543",
       "domain": "arxiv.org",
-      "organization": "QCP research authors",
-      "published_at": "2026-10-27"
+      "organization": "CoRAct research authors",
+      "published_at": "2026-10-29"
     }
   ]
 }
