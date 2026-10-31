@@ -6,94 +6,90 @@
   "issue_id": "daily-2026-10-31",
   "edition": "children",
   "language": "ja",
-  "generated_at": "2026-10-31T21:41:24+09:00",
-  "title": "プラウダ・レプリカンタ — 小学6年生版",
-  "lead": "ロボットはなぜ物を落とすのか。だれの命令でも聞いてよいのか。実験から考えよう。",
+  "generated_at": "2026-10-31T22:25:32+09:00",
+  "title": "レプリカント・プラウダ — 子ども版",
+  "lead": "ロボットは道をどう覚え、いつ人に質問し、建物をどう安全に見回るのだろう。",
   "news": [
     {
-      "id": "dexsafe-hand",
-      "title": "ロボットの手は、どうすれば物を落とさない？",
-      "summary": "研究チームはLEAPという指の多いロボットの手で、物を持ったまま向きを変える練習をした。",
-      "details": "まずシミュレーションというコンピューターの中の実験で学習（がくしゅう）し、本物の手でも試した。",
-      "technical_novelty": "追加の安全フィルターで物を落とす回数を減らす。",
-      "engineering_impact": "身の回りの物をていねいにあつかうロボットにつながるかもしれない。",
-      "limitations": "13.3時間に4種類の物で4800を超える新しい目標を試し、落下が75%減った。ただしゼロにはなっていない。",
-      "evidence_status": "研究者自身の実験であり、どんな物でも成功する証明ではない。",
-      "published_at": "2026-10-27",
-      "organization": "DexSafe research authors",
+      "id": "evolife-robot-memory",
+      "title": "EvoLife、ロボットが道を覚えて人に質問する研究",
+      "summary": "研究チームは、道を探し、場所を覚え、分からないときに人へ質問できる仕組みEvoLifeを発表した。",
+      "details": "前に見た場所や会話の情報を保存し、次に同じ場所へ行くときに利用する。",
+      "technical_novelty": "場所の記憶と質問する機能を、いくつかの移動方法と組み合わせる。",
+      "engineering_impact": "同じ建物を何度も移動するロボットに役立つ可能性がある。",
+      "limitations": "決められた試験での高い成功率は、どんな建物でも失敗しない証拠ではない。",
+      "evidence_status": "研究者による論文と実機での数日間の実験。別の研究者による確認はまだない。",
+      "published_at": "2026-10-29",
+      "organization": "EvoLife research authors",
       "source_ids": [
-        "dexsafe-source"
+        "evolife-source"
       ],
-      "time_window": "7d",
-      "body": "えんぴつを指の間で回してみよう。落とさずに動かすのは意外とむずかしい。ロボットの手も同じだ。研究チームはLEAPという指の多い手をシミュレーションで学習（がくしゅう）させ、本物の手でも試した。\n\n13.3時間の実験（じっけん）で、4種類の物と4800を超える新しい目標を調べた。安全フィルターを加えると、物を落とす回数が75%減った。でも、失敗がなくなったわけではない。一回の成功だけでなく、失敗の回数も大切だ。",
+      "time_window": "72h",
+      "body": "初めて大きな博物館に行くとき、階段の場所を覚えたり、道が分からなければ係の人に聞いたりするだろう。研究チームが発表したEvoLifeは、ロボットにも似た役立つしくみを持たせようとする研究だ。ロボットとは、まわりの様子を調べて、現実の世界で動ける機械のことだ。\n\nEvoLifeは目的地までの道を選び、前に見た場所や会話の情報を保存し、必要なときに人へ質問する。これは人間と同じ思い出ではなく、コンピューターに保存された場所や観測のデータだ。目的地への道を探すことをナビゲーションという。前に通った場所の情報を次の移動に使えるようにしている。\n\n研究者は、物を探したり言葉の指示で進んだりする8種類の評価の集まりで試した。決められた一部の試験では、それぞれ100回の初回移動がすべて成功したと報告している。実際のロボットを数日間使った実験も行った。ただし、どんな建物でも迷わないという意味ではない。家具が動いたり、ドアが閉まったりするかもしれない。\n\nロボットはだれに質問すればよいのだろう。聞いた答えが正しいかはどう確かめるのだろう。「分からないので助けてください」と言えることも大切だ。EvoLifeはまだ研究段階（けんきゅうだんかい）で、どこでも一人で働けることが証明（しょうめい）されたわけではない。",
       "image": null
     },
     {
-      "id": "docomo-gateway",
-      "title": "ロボットは、だれのお願いでも聞いてよい？",
-      "summary": "NTTドコモは、ロボットに命令してよいかを調べるしくみを開発（かいはつ）した。",
-      "details": "A2A Gatewayという中継（ちゅうけい）のしくみが、AIとロボットをつなぎ、命令の許可（きょか）を確認（かくにん）する。",
-      "technical_novelty": "動いた記録（きろく）を残し、近くの人のようすに合わせた動作も考える。",
-      "engineering_impact": "学校や病院では、人によって使ってよい機能がちがう。",
-      "limitations": "大勢の人が使ったときの安全性を、別の研究者が確かめた数字はまだない。",
-      "evidence_status": "会社による公式発表であり、何でも自動で安全にできる証明ではない。",
-      "published_at": "2026-10-27",
-      "organization": "NTT DOCOMO",
+      "id": "kit-go2-patrol",
+      "title": "四本足のGo2、日本の建物を見回る実験へ",
+      "summary": "金沢工業大学と二つの会社は、四本足のロボットUnitree Go2で建物を見回る試作機（しさくき）を作った。24時間の試験はこれからだ。",
+      "details": "100メートル四方の場所を地図にそって移動でき、L1というレーザーのセンサーを使う。",
+      "technical_novelty": "地図、きょりを測るセンサー、自動じゅう電を組み合わせている。",
+      "engineering_impact": "安全に動けると確かめられれば、建物の点検を手伝えるかもしれない。",
+      "limitations": "予定されている24時間の試験結果はまだ発表されていない。",
+      "evidence_status": "大学の発表による試作機と今後の計画で、別の人による確認はない。",
+      "published_at": "2026-10-28",
+      "organization": "Kanazawa Institute of Technology",
       "source_ids": [
-        "docomo-source"
+        "kit-go2-source"
       ],
       "time_window": "7d",
-      "body": "学校に、ドアを開けられるロボットがいるとしよう。だれに言われても、どのドアでも開けてよいだろうか。そうではない。NTTドコモは、命令の許可（きょか）を先に調べるしくみを開発した。\n\nロボットが何をしたかも記録（きろく）し、近くの人に合わせた動きを考えるという。役立つしくみだが、絶対にまちがえないと証明されたわけではない。どんな命令を許可するか、だれが決めるべきだろう？",
+      "body": "夜の大きな建物で、ろうかを見回り、変わったことがないか調べる場面を想像してみよう。日本の金沢工業大学は二つの会社と協力し、Unitree Go2という四本足のロボットを使うしくみを開発している。犬に少し似ているが、生き物ではなく、モーターで動く機械だ。\n\n研究チームによると、試作機（しさくき）という最初の動くモデルは、地図を作り、100メートル四方の場所を自分で見回れる。まわりの物までのきょりを測るため、L1 LiDAR（ライダー）を使う。ライダーはレーザーの光を使って、かべや物までのきょりを調べるセンサーだ。自動でじゅう電するしくみも使う。\n\n大学の建物で、24時間続けて動かす試験が計画されている。でも、その試験はまだ終わっていない。だから、もう一日中安全に見回れると証明（しょうめい）されたわけではない。次には工場やオフィスでも試す予定だ。\n\nとつぜんドアが閉まったらどうするのだろう。電池が少なくなったら、人が近づいたら、どう止まるのだろう。地図どおりに歩けることと、人のそばで安全に働けることは同じではない。これからの試験で確かめる必要がある。",
       "image": null
     }
   ],
   "technology_signal": {
-    "title": "動けることと、安全に動けることは別",
-    "summary": "器用な指と、命令の許可（きょか）を調べるしくみは、別の問題を解いている。",
-    "implications": "成功だけでなく失敗の回数も数えよう。"
+    "title": "分からないときに聞く力",
+    "summary": "EvoLifeは場所を覚えて質問する。日本のGo2は長時間の見回り試験を準備している。",
+    "implications": "道を進むだけでなく、思いがけないことに安全に対応する必要がある。"
   },
   "glossary": [
     {
       "term": "ロボット",
-      "definition": "周りを調べて動くことができる機械。"
+      "definition": "まわりを調べて、現実の世界で動く機械。"
     },
     {
-      "term": "シミュレーション",
-      "definition": "コンピューターの中で動きを試すこと。"
+      "term": "ナビゲーション",
+      "definition": "目的地までの道を探すこと。"
     },
     {
-      "term": "安全フィルター",
-      "definition": "危険（きけん）な動きを減らす追加のしくみ。"
+      "term": "記憶（きおく）",
+      "definition": "前に見た場所などの情報を保存すること。"
     },
     {
-      "term": "学習（がくしゅう）",
-      "definition": "例や練習から動きを上手にすること。"
+      "term": "試作機（しさくき）",
+      "definition": "新しいしくみを試すための最初の動くモデル。"
     },
     {
-      "term": "AI",
-      "definition": "情報をもとに答えや動作を考えるプログラム。"
-    },
-    {
-      "term": "許可（きょか）",
-      "definition": "ある行動をしてよいという決まり。"
+      "term": "ライダー",
+      "definition": "レーザーの光で物までのきょりを測るセンサー。"
     }
   ],
   "sources": [
     {
-      "id": "dexsafe-source",
-      "title": "Pushing Dexterity and Safety for In-Hand Object Pose Reaching That Works Remarkably Well",
-      "url": "https://arxiv.org/abs/2610.37652",
+      "id": "evolife-source",
+      "title": "Ask to Evolve: A Unified Harness for Lifelong Embodied Navigation with Hybrid Action Space and Persistent Memory",
+      "url": "https://arxiv.org/abs/2610.39446",
       "domain": "arxiv.org",
-      "organization": "DexSafe research authors",
-      "published_at": "2026-10-27"
+      "organization": "EvoLife research authors",
+      "published_at": "2026-10-29"
     },
     {
-      "id": "docomo-source",
-      "title": "AIとロボットが人と安全・快適に共存する世界へ、Physical AI連携基盤を開発",
-      "url": "https://www.docomo.ne.jp/info/news_release/2026/10/27_02.html",
-      "domain": "www.docomo.ne.jp",
-      "organization": "NTT DOCOMO",
-      "published_at": "2026-10-27"
+      "id": "kit-go2-source",
+      "title": "四足歩行ロボット「Unitree Go2」を活用した巡回ロボットの社会実装を目指して",
+      "url": "https://www.kanazawa-it.ac.jp/kitnews/2026/1028_unitree-go2.html",
+      "domain": "www.kanazawa-it.ac.jp",
+      "organization": "Kanazawa Institute of Technology",
+      "published_at": "2026-10-28"
     }
   ]
 }
