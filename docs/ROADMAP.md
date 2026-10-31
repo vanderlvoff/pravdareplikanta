@@ -29,7 +29,7 @@
 ## Phase 4 — Automated editorial features
 - [x] API issue generation with researched sources and local validation; live editorial quality remains to be evaluated.
 - [ ] Translation review and hallucination checks.
-- [ ] Optional macOS launchd schedules.
+- [x] Owner-authorized macOS launchd publication at 06:20 JST; isolated build/check/commit/main push, with post-deployment Telegram announcement. See [DAILY_PUBLICATION.md](DAILY_PUBLICATION.md).
 - [ ] Final human review/confirmation integrated into Cloudflare upload. Generated/imported complete issues receive approved status automatically.
 
 ## Future, outside MVP
