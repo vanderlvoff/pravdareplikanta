@@ -1,5 +1,9 @@
 # Editorial data contract (draft)
 
+Four-audience input v1.4 is mapped to `Issue.edition` (default `engineer` for
+legacy JSON); `Issue.languages` still contains language-specific `Edition`
+objects. See [READERS.md](READERS.md) for constraints and compatibility.
+
 The canonical source of each issue is versioned JSON; the website and paper PDF are generated from that same data. The schema below is illustrative, not yet a formal JSON Schema.
 
 ```json

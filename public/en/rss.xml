@@ -7,74 +7,74 @@
     <language>en</language>
     <atom:link href="https://repravda.com/en/rss.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>SwapBot replaces the universal gripper with swappable tactile tools</title>
-      <link>https://repravda.com/en/issues/2026-10-31/articles/swapbot-tools/</link>
-      <guid isPermaLink="false">replicantpravda:2026-10-31:en:swapbot-tools</guid>
-      <description>The search for a single hand that can do everything has an obvious rival: change the tool instead. SwapBot puts a standard coupling on the robot and inexpensive adapters on ordinary utensils. A spatula, brush or articulated tool can become a robot end-effector, while integrated tactile sensing reports contact that cameras alone cannot reliably reveal.</description>
+      <title>Robot model selection needs cost and reproducibility evidence</title>
+      <link>https://repravda.com/en/issues/2026-11-01/articles/roboseed-evaluation/</link>
+      <guid isPermaLink="false">replicantpravda:2026-11-01:en:roboseed-evaluation</guid>
+      <description>A high success rate in a demonstration does not tell a factory buyer whether a robot model is affordable to deploy. Adaptation costs, computing requirements and the credibility of the experiments also matter. Xin Ma and colleagues introduced RoboSeed, a framework for assessing models that turn images and instructions into actions alongside models that predict physical developments.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>LOGIV checks robot task dependencies and repairs broken preconditions</title>
+      <link>https://repravda.com/en/issues/2026-11-01/articles/logiv-task-graph-repair/</link>
+      <guid isPermaLink="false">replicantpravda:2026-11-01:en:logiv-task-graph-repair</guid>
+      <description>Adoption decisions must separate research results from guaranteed operational performance. Separates sequential execution reliability from individual manipulation skills and can sit above existing VLA controllers. Evidence is confined to selected dual-arm tasks; real-robot success was 17 of 30 trials, not full reliability.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>A binary feasibility checker becomes part of learning safe robot actions</title>
+      <link>https://repravda.com/en/issues/2026-11-01/articles/oracle-safe-flow/</link>
+      <guid isPermaLink="false">replicantpravda:2026-11-01:en:oracle-safe-flow</guid>
+      <description>Adoption decisions must separate research results from guaranteed operational performance. Existing collision checkers can potentially constrain generative action policies even when they are not differentiable. One simulation task; per-action-chunk inference time rose from 0.071 to 1.345 seconds.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>Soft grippers can be shaped to forgive positioning errors</title>
+      <link>https://repravda.com/en/issues/2026-11-01/articles/simto-robust-grippers/</link>
+      <guid isPermaLink="false">replicantpravda:2026-11-01:en:simto-robust-grippers</guid>
+      <description>A robot may recognize an object correctly yet place its gripper slightly off target. Rigid fingers can lose contact, while a soft gripper may deform around the object. Researchers led by Kurt Enkera introduced SimTO-Robust, a computer-aided design method intended to make grippers tolerant of such errors through their physical shape.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>A shared humanoid controller supports different skills without retraining</title>
+      <link>https://repravda.com/en/issues/2026-11-01/articles/metatron/</link>
+      <guid isPermaLink="false">replicantpravda:2026-11-01:en:metatron</guid>
+      <description>A humanoid that walks to a table must also stop, bend, reach and recover its balance without switching to an entirely new motor system. Yet many robotics pipelines train separate controllers for each behavior. Chen Tessler and colleagues introduced Metatron, a programmable whole-body execution layer that pairs one trained generative motor policy with software-defined skills. The research was submitted on October 27, 2026; a later listing date should not be mistaken for its original publication date.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>From isolated tricks to verifiable work</title>
+      <link>https://repravda.com/en/issues/2026-11-01/articles/technology-signal/</link>
+      <guid isPermaLink="false">replicantpravda:2026-11-01:en:technology-signal</guid>
+      <description>Research and demonstrations expand the range of robot actions, but the strength of the result depends on test conditions.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>Analysis</category>
+    </item>
+    <item>
+      <title>WorldFlow forecasts video and 3D motion together</title>
+      <link>https://repravda.com/en/issues/2026-10-31/articles/worldflow-video-3d/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:en:worldflow-video-3d</guid>
+      <description>Robots can plan more effectively if they anticipate how a scene will change. WorldFlow, reported on October 29, predicts both future video frames and the movement of selected points in three-dimensional space. This is a predictive world model, not a system that directly commands motors.</description>
       <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
       <category>News</category>
     </item>
     <item>
-      <title>Gym-Anything lets coding agents build the robot training worlds</title>
-      <link>https://repravda.com/en/issues/2026-10-31/articles/gym-anything/</link>
-      <guid isPermaLink="false">replicantpravda:2026-10-31:en:gym-anything</guid>
-      <description>A robot policy can look capable in a familiar simulator and still fail when the world changes. Gym-Anything attacks the supply side of that problem: coding agents create and audit new physical simulations, rather than waiting for experts to hand-build each environment. The resulting RoboWorld benchmark spans 25 simulations and 25 test tasks.</description>
+      <title>Event2Reward learns from setbacks and recovery</title>
+      <link>https://repravda.com/en/issues/2026-10-31/articles/event2reward-progress/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:en:event2reward-progress</guid>
+      <description>A robot may keep moving while making no progress. Event2Reward, introduced on October 29, learns to distinguish stalls, setbacks and recoveries. The estimated progress helps shape rewards for reinforcement learning rather than relying only on final success labels.</description>
       <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
       <category>News</category>
     </item>
     <item>
-      <title>TouchBridge carries human fingertip contact into robot training</title>
-      <link>https://repravda.com/en/issues/2026-10-31/articles/touchbridge-tactile/</link>
-      <guid isPermaLink="false">replicantpravda:2026-10-31:en:touchbridge-tactile</guid>
-      <description>When a person turns an object in the hand, the important information is not just where the fingers went. It is where they touched and how the contact changed. TouchBridge combines a wearable demonstration interface with tactile-conditioned retargeting, preserving fingertip contact relations as examples are converted for a robot hand.</description>
-      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
-      <category>News</category>
-    </item>
-    <item>
-      <title>LOGIV checks whether the world still supports the robot’s plan</title>
-      <link>https://repravda.com/en/issues/2026-10-31/articles/logiv-repair/</link>
-      <guid isPermaLink="false">replicantpravda:2026-10-31:en:logiv-repair</guid>
-      <description>Completing a step is not the same as preserving its result. A robot may place a part correctly, then knock it aside while executing the next instruction. LOGIV introduces an explicit task graph that records which later actions depend on which physical conditions, checks those conditions against observations and repairs the broken links locally.</description>
-      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
-      <category>News</category>
-    </item>
-    <item>
-      <title>Aeon and Mujin put mixed-case palletizing into a live Japanese distribution hub</title>
-      <link>https://repravda.com/en/issues/2026-10-31/articles/aeon-mixed-palletizing/</link>
-      <guid isPermaLink="false">replicantpravda:2026-10-31:en:aeon-mixed-palletizing</guid>
-      <description>Mixed cartons rarely arrive in the neat order that a fixed palletizing script expects. At Aeon’s Kawaguchi East XD, launched on October 29 with Mujin, the system simulates a loading plan for each order, then uses 3D vision to check the evolving stack and adjust the robot’s movements if boxes shift. That feedback loop is the engineering heart of the deployment.</description>
-      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
-      <category>News</category>
-    </item>
-    <item>
-      <title>Agility updates the capital available for scaling Digit 5</title>
-      <link>https://repravda.com/en/issues/2026-10-31/articles/agility-financing/</link>
-      <guid isPermaLink="false">replicantpravda:2026-10-31:en:agility-financing</guid>
-      <description>The distance from a convincing humanoid demonstration to a serviceable fleet is measured partly in capital. Agility Robotics and Churchill XI now expect roughly $465 million in gross proceeds from their proposed combination, according to a filing dated October 30. The companies target closing on November 4 and Nasdaq trading on November 5, subject to approval and other conditions.</description>
-      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
-      <category>News</category>
-    </item>
-    <item>
-      <title>Opentrons raises $40 million to connect AI experiments with physical labs</title>
-      <link>https://repravda.com/en/issues/2026-10-31/articles/opentrons-autonomous-labs/</link>
-      <guid isPermaLink="false">replicantpravda:2026-10-31:en:opentrons-autonomous-labs</guid>
-      <description>A language model can propose a thousand experiments before a human laboratory has finished one. Opentrons is investing in the slower half of that loop: liquid-handling robots, software and structured records of what was actually done. On October 29 it announced a $40 million Series E to expand the infrastructure for AI-directed laboratory work.</description>
-      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
-      <category>News</category>
-    </item>
-    <item>
-      <title>Bleu Robotics bets on few-shot teaching rather than general-purpose hype</title>
-      <link>https://repravda.com/en/issues/2026-10-31/articles/bleu-few-shot/</link>
-      <guid isPermaLink="false">replicantpravda:2026-10-31:en:bleu-few-shot</guid>
-      <description>Industrial robotics has a stubborn problem: the next product variant can invalidate yesterday’s carefully programmed cell. Bleu Robotics, an Inria spinout, has raised €5 million to pursue a narrower alternative to universal robot intelligence. Its few-shot imitation learning approach tries to infer a workstation task from roughly ten operator demonstrations, using existing perception and motion-control tools.</description>
-      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
-      <category>News</category>
-    </item>
-    <item>
-      <title>Physical AI shifts from isolated demonstrations to systems that can be operated</title>
+      <title>WorldFlow forecasts video and 3D motion together</title>
       <link>https://repravda.com/en/issues/2026-10-31/articles/technology-signal/</link>
       <guid isPermaLink="false">replicantpravda:2026-10-31:en:technology-signal</guid>
-      <description>Tool changing, tactile data, verified task dependencies and live warehouse feedback make the surrounding engineering stack as important as the foundation model.</description>
+      <description>The October 29 WorldFlow study predicts future video and 3D point trajectories; average displacement error on SpatialCog was 0.060 m.</description>
       <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
       <category>Analysis</category>
     </item>

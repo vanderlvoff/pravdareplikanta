@@ -5,7 +5,9 @@
     "limitations": "Ограничения",
     "evidence_status": "Статус подтверждения",
     "glossary": "Словарь выпуска",
-    "glossary_dek": "Термины и определения из редакционного набора."
+    "glossary_dek": "Ключевые понятия этого выпуска.",
+    "children_glossary": "Словарь выпуска",
+    "children_glossary_dek": "Что означают слова из этих статей."
   },
   "en": {
     "technical_novelty": "Technical novelty",
@@ -13,7 +15,9 @@
     "limitations": "Limitations",
     "evidence_status": "Evidence status",
     "glossary": "Issue glossary",
-    "glossary_dek": "Terms and definitions from the editorial dataset."
+    "glossary_dek": "Key terms in this issue.",
+    "children_glossary": "Words to know",
+    "children_glossary_dek": "What the terms in these articles mean."
   },
   "ja": {
     "technical_novelty": "技術的な新規性",
@@ -21,6 +25,8 @@
     "limitations": "制約・限界",
     "evidence_status": "根拠の位置付け",
     "glossary": "本号の用語集",
-    "glossary_dek": "編集データに含まれる用語と定義。"
+    "glossary_dek": "この号のキーワードを解説します。",
+    "children_glossary": "ことばの説明",
+    "children_glossary_dek": "記事に出てくることばを説明します。"
   }
 }

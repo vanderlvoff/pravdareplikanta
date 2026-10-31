@@ -1,0 +1,626 @@
+{
+  "edition": "children",
+  "issue_id": "2026-10-31",
+  "number": 3,
+  "publication_date": "2026-10-31",
+  "revision": 2,
+  "status": "approved",
+  "languages": {
+    "ru": {
+      "title": "Правда репликанта",
+      "weather": null,
+      "issue_title": "Правда репликанта — для юных читателей",
+      "editorial_note": "Как сократить паузу в разговоре и зачем роботу несколько камер.",
+      "articles": [
+        {
+          "id": "sota-streamed-dialogue",
+          "slug": "sota-streamed-dialogue",
+          "category": "news",
+          "headline": "Почему говорящий робот может начать отвечать быстрее",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Представь разговор, в котором собеседник долго молчит перед каждым ответом. Даже хороший ответ будет звучать неестественно. Японская компания 30 октября рассказала об обновлении говорящего настольного робота. Теперь он может начать произносить первую часть ответа, пока следующие части ещё готовятся."
+            },
+            {
+              "type": "paragraph",
+              "text": "Компьютер сначала превращает текст в звуки речи. Этот процесс называется синтезом речи. Раньше устройство могло ждать, пока будет готова вся длинная фраза. Теперь в некоторых режимах оно воспроизводит готовые кусочки сразу. Такой способ называется потоковым воспроизведением. Компания также улучшила создание ответов с помощью искусственного интеллекта, но не во всех версиях устройства."
+            },
+            {
+              "type": "paragraph",
+              "text": "Есть ограничения: новая функция не работает одновременно с сохранением готовых звуковых ответов и некоторыми настройками прерывания речи. Скорость зависит от интернета, а независимых измерений улучшения пока нет. Робот не стал понимать любые вопросы без ошибок; разработчики лишь улучшили способ общения. Для справки: модель называется Sota."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000115.000038478.html",
+              "title": "Sota communication robot gains AI dialogue and streamed speech update",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "luxonis-five-camera-board",
+          "slug": "luxonis-five-camera-board",
+          "category": "news",
+          "headline": "Как пять камер помогают машине замечать предметы вокруг",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Когда смотришь на предмет двумя глазами, легче понять, насколько он далеко. Похожий принцип используют две камеры: по различиям изображений программа может оценить расстояние. Разработчики 27 октября представили небольшую плату, к которой подключаются до пяти камер. Их можно разместить в разных частях робота."
+            },
+            {
+              "type": "paragraph",
+              "text": "Плата помогает камерам работать согласованно, чтобы изображения относились к одному моменту времени. Это называется синхронизацией. Затем программа может искать предметы и вычислять расстояния. Важна и калибровка — проверка того, как именно каждая камера измеряет и показывает мир. Новое устройство объединяет несколько таких задач в одной системе."
+            },
+            {
+              "type": "paragraph",
+              "text": "Но пять камер не означают, что робот автоматически сможет ездить по любой комнате или безопасно брать любые вещи. Нужно ещё проверить программу управления, качество измерений и скорость работы. Производитель планирует поставки разных вариантов с ноября 2026 года и в начале 2027 года. Для справки: устройство называется OAK 4 FFC."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://discuss.luxonis.com/d/7072-introducing-oak-4-ffc-build-the-vision-system-your-robot-actually-needs",
+              "title": "Introducing OAK 4 FFC: Build the Vision System Your Robot Actually Needs",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "technology-signal",
+          "slug": "technology-signal",
+          "category": "analysis",
+          "headline": "Почему говорящий робот может начать отвечать быстрее",
+          "dek": "Японская компания Vstone 30 октября сообщила об обновлении настольного робота: он может произносить готовые части ответа, пока остальная речь ещё создаётся.",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Удобство общения зависит не только от ответа, но и от его своевременности."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000115.000038478.html",
+              "title": "Sota communication robot gains AI dialogue and streamed speech update",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://discuss.luxonis.com/d/7072-introducing-oak-4-ffc-build-the-vision-system-your-robot-actually-needs",
+              "title": "Introducing OAK 4 FFC: Build the Vision System Your Robot Actually Needs",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "glossary",
+          "slug": "glossary",
+          "category": "analysis",
+          "headline": "Словарь выпуска",
+          "dek": "Что означают слова из этих статей.",
+          "body": [
+            {
+              "type": "heading",
+              "text": "Потоковое воспроизведение"
+            },
+            {
+              "type": "paragraph",
+              "text": "Готовые части звука звучат до завершения всей записи."
+            },
+            {
+              "type": "heading",
+              "text": "Синтез речи"
+            },
+            {
+              "type": "paragraph",
+              "text": "Превращение текста в звуки голоса."
+            },
+            {
+              "type": "heading",
+              "text": "Искусственный интеллект"
+            },
+            {
+              "type": "paragraph",
+              "text": "Программы, которые используют данные для распознавания и создания ответов."
+            },
+            {
+              "type": "heading",
+              "text": "Синхронизация"
+            },
+            {
+              "type": "paragraph",
+              "text": "Согласование времени работы нескольких камер."
+            },
+            {
+              "type": "heading",
+              "text": "Калибровка"
+            },
+            {
+              "type": "paragraph",
+              "text": "Настройка правильности измерений камеры."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000115.000038478.html",
+              "title": "Sota communication robot gains AI dialogue and streamed speech update",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://discuss.luxonis.com/d/7072-introducing-oak-4-ffc-build-the-vision-system-your-robot-actually-needs",
+              "title": "Introducing OAK 4 FFC: Build the Vision System Your Robot Actually Needs",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        }
+      ]
+    },
+    "en": {
+      "title": "The Replicant Truth",
+      "weather": {
+        "location": "breukelen",
+        "timezone": "Europe/Amsterdam",
+        "forecast_date": "2026-10-31",
+        "retrieved_at": "2026-10-30T18:37:46.659155Z",
+        "kind": "forecast",
+        "source_name": "Open-Meteo",
+        "source_url": "https://api.open-meteo.com/v1/forecast?latitude=52.1742&longitude=5.0014&timezone=Europe%2FAmsterdam&start_date=2026-10-31&end_date=2026-10-31&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+        "temperature_min_c": 5.8,
+        "temperature_max_c": 11.1,
+        "precipitation_probability_max": 0,
+        "slots": [
+          {
+            "hour": 9,
+            "temperature_c": 6.6,
+            "condition": "fog",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 2.6,
+            "wind_direction_deg": 85
+          },
+          {
+            "hour": 12,
+            "temperature_c": 8.1,
+            "condition": "cloudy",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 3.2,
+            "wind_direction_deg": 115
+          },
+          {
+            "hour": 18,
+            "temperature_c": 8.9,
+            "condition": "cloudy",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 2.6,
+            "wind_direction_deg": 75
+          }
+        ]
+      },
+      "issue_title": "Pravda Replikanta — Young Readers",
+      "editorial_note": "How to shorten a pause in conversation and why a robot might need several cameras.",
+      "articles": [
+        {
+          "id": "sota-streamed-dialogue",
+          "slug": "sota-streamed-dialogue",
+          "category": "news",
+          "headline": "Why a talking robot can begin its reply sooner",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Imagine a conversation where the other person stays silent for a long time before every answer. Even a good answer would feel awkward. On October 30, a Japanese company announced an update to a tabletop talking robot. It can now begin speaking the first part of a reply while the rest is still being prepared."
+            },
+            {
+              "type": "paragraph",
+              "text": "A program turns written words into sounds. This is called speech synthesis. Instead of waiting for the whole sentence, the robot can play completed pieces as they arrive. This is streaming playback. The company also improved how some versions generate replies using artificial intelligence, but the change is not available in every version."
+            },
+            {
+              "type": "paragraph",
+              "text": "There are trade-offs: streaming cannot be combined with some saved-audio and interruption settings. Reply speed depends on the internet connection, and no independent timing comparison has been published. The robot has not suddenly learned to understand everything; its conversation timing has improved. For reference, the product is called Sota."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000115.000038478.html",
+              "title": "Sota communication robot gains AI dialogue and streamed speech update",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "luxonis-five-camera-board",
+          "slug": "luxonis-five-camera-board",
+          "category": "news",
+          "headline": "How five cameras can help a machine see its surroundings",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Looking at an object with two eyes helps you judge distance. Two cameras can use a similar clue: their pictures differ slightly, and software can estimate how far away something is. On October 27, developers introduced a small board that connects up to five cameras. The cameras can be placed in different parts of a robot."
+            },
+            {
+              "type": "paragraph",
+              "text": "The board helps the cameras capture images at matching times. This is synchronization. Software can then recognize objects and estimate distance. Calibration means checking how each camera measures its surroundings so the pictures can be compared correctly. Combining these jobs on one board may make building a robot easier."
+            },
+            {
+              "type": "paragraph",
+              "text": "But five cameras do not automatically teach a robot to navigate any room or pick up any object safely. Motion software, measurement accuracy and speed still need testing. Different versions are expected to ship from November 2026 and early 2027. For reference, the board is called OAK 4 FFC."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://discuss.luxonis.com/d/7072-introducing-oak-4-ffc-build-the-vision-system-your-robot-actually-needs",
+              "title": "Introducing OAK 4 FFC: Build the Vision System Your Robot Actually Needs",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "technology-signal",
+          "slug": "technology-signal",
+          "category": "analysis",
+          "headline": "Why a talking robot can begin its reply sooner",
+          "dek": "Japan's Vstone announced an October 30 update allowing a tabletop robot to play the first parts of its spoken reply while later parts are still being prepared.",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Good interaction depends on timing as well as content."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000115.000038478.html",
+              "title": "Sota communication robot gains AI dialogue and streamed speech update",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://discuss.luxonis.com/d/7072-introducing-oak-4-ffc-build-the-vision-system-your-robot-actually-needs",
+              "title": "Introducing OAK 4 FFC: Build the Vision System Your Robot Actually Needs",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "glossary",
+          "slug": "glossary",
+          "category": "analysis",
+          "headline": "Words to know",
+          "dek": "What the terms in these articles mean.",
+          "body": [
+            {
+              "type": "heading",
+              "text": "Streaming playback"
+            },
+            {
+              "type": "paragraph",
+              "text": "Playing ready parts of sound before the full reply is finished."
+            },
+            {
+              "type": "heading",
+              "text": "Speech synthesis"
+            },
+            {
+              "type": "paragraph",
+              "text": "Turning written words into spoken sound."
+            },
+            {
+              "type": "heading",
+              "text": "Artificial intelligence"
+            },
+            {
+              "type": "paragraph",
+              "text": "Software using data to recognize patterns or generate responses."
+            },
+            {
+              "type": "heading",
+              "text": "Synchronization"
+            },
+            {
+              "type": "paragraph",
+              "text": "Matching the timing of multiple cameras."
+            },
+            {
+              "type": "heading",
+              "text": "Calibration"
+            },
+            {
+              "type": "paragraph",
+              "text": "Checking and adjusting how a camera measures."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000115.000038478.html",
+              "title": "Sota communication robot gains AI dialogue and streamed speech update",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://discuss.luxonis.com/d/7072-introducing-oak-4-ffc-build-the-vision-system-your-robot-actually-needs",
+              "title": "Introducing OAK 4 FFC: Build the Vision System Your Robot Actually Needs",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        }
+      ]
+    },
+    "ja": {
+      "title": "レプリカントの真実",
+      "weather": {
+        "location": "smolensk",
+        "timezone": "Europe/Moscow",
+        "forecast_date": "2026-10-31",
+        "retrieved_at": "2026-10-30T18:37:47.556473Z",
+        "kind": "forecast",
+        "source_name": "Open-Meteo",
+        "source_url": "https://api.open-meteo.com/v1/forecast?latitude=54.7826&longitude=32.0453&timezone=Europe%2FMoscow&start_date=2026-10-31&end_date=2026-10-31&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+        "temperature_min_c": 4.7,
+        "temperature_max_c": 9.2,
+        "precipitation_probability_max": 18,
+        "slots": [
+          {
+            "hour": 9,
+            "temperature_c": 4.8,
+            "condition": "cloudy",
+            "precipitation_probability": 13,
+            "wind_speed_ms": 1.3,
+            "wind_direction_deg": 32
+          },
+          {
+            "hour": 12,
+            "temperature_c": 7.4,
+            "condition": "cloudy",
+            "precipitation_probability": 3,
+            "wind_speed_ms": 2.05,
+            "wind_direction_deg": 43
+          },
+          {
+            "hour": 18,
+            "temperature_c": 8.0,
+            "condition": "cloudy",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 1.56,
+            "wind_direction_deg": 40
+          }
+        ]
+      },
+      "issue_title": "レプリカント・プラウダ — 小学校高学年向け",
+      "editorial_note": "返事の待ち時間を短くする工夫と、複数のカメラを使う理由。",
+      "articles": [
+        {
+          "id": "sota-streamed-dialogue",
+          "slug": "sota-streamed-dialogue",
+          "category": "news",
+          "headline": "話すロボットが返事を早く始める工夫",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "質問したあと、相手が毎回長く黙っていたら会話しにくい。日本の会社は10月30日、机の上に置く会話ロボットの更新を発表した。返事の音声が全部できるのを待たず、できた部分から話し始められるようにした。"
+            },
+            {
+              "type": "paragraph",
+              "text": "文字を声に変える技術を音声合成（おんせいごうせい）という。長い文章を最後まで音にしてから話すと、その間は無言になる。できた部分から順番に流す方法はストリーム再生と呼ばれる。人工知能（じんこうちのう）を使った会話も一部の機種で改善したが、すべての機種が対象ではない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "注意点もある。前に作った音声を保存する機能や、話の途中で割り込む設定とは同時に使えない場合がある。返事の速さは通信にも左右され、第三者の速度測定はまだない。何でも理解できるようになったわけではなく、会話のタイミングを改善したのだ。参考までに、名前はSota（ソータ）という。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000115.000038478.html",
+              "title": "Sota communication robot gains AI dialogue and streamed speech update",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "luxonis-five-camera-board",
+          "slug": "luxonis-five-camera-board",
+          "category": "news",
+          "headline": "5台のカメラで周りを見やすくする工夫",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "二つの目で物を見ると、どれくらい遠いか分かりやすい。二つのカメラも、画像の少しのちがいを使って距離を調べられる。開発会社は10月27日、最大5台のカメラをつなげる小さな基板を発表した。ロボットの形に合わせて、別々の場所にカメラを置ける。"
+            },
+            {
+              "type": "paragraph",
+              "text": "カメラが同じタイミングで画像を撮れるように合わせることを同期（どうき）という。さらに、カメラの測り方を調整する校正（こうせい）も大切だ。こうした仕組みをまとめると、物を見つけたり、距離を計算したりしやすくなる。"
+            },
+            {
+              "type": "paragraph",
+              "text": "でも、カメラが5台あっても、どんな部屋でも安全に歩けるとは限らない。動きを決めるプログラムや測定の正しさも試す必要がある。出荷は2026年11月以降と2027年初めに予定されている。参考までに、この基板の名前はOAK 4 FFCという。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://discuss.luxonis.com/d/7072-introducing-oak-4-ffc-build-the-vision-system-your-robot-actually-needs",
+              "title": "Introducing OAK 4 FFC: Build the Vision System Your Robot Actually Needs",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "technology-signal",
+          "slug": "technology-signal",
+          "category": "analysis",
+          "headline": "話すロボットが返事を早く始める工夫",
+          "dek": "日本のヴイストンは10月30日、卓上型の会話ロボットの更新を発表。返事の音声が全部できる前に、できた部分から話せるようにした。",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "会話では答えの内容だけでなく、返事のタイミングも大切だ。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000115.000038478.html",
+              "title": "Sota communication robot gains AI dialogue and streamed speech update",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://discuss.luxonis.com/d/7072-introducing-oak-4-ffc-build-the-vision-system-your-robot-actually-needs",
+              "title": "Introducing OAK 4 FFC: Build the Vision System Your Robot Actually Needs",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "glossary",
+          "slug": "glossary",
+          "category": "analysis",
+          "headline": "ことばの説明",
+          "dek": "記事に出てくることばを説明します。",
+          "body": [
+            {
+              "type": "heading",
+              "text": "ストリーム再生"
+            },
+            {
+              "type": "paragraph",
+              "text": "音声の後半を作っている間に前半から流すこと。"
+            },
+            {
+              "type": "heading",
+              "text": "音声合成（おんせいごうせい）"
+            },
+            {
+              "type": "paragraph",
+              "text": "文字を聞こえる声に変える技術。"
+            },
+            {
+              "type": "heading",
+              "text": "人工知能（じんこうちのう）"
+            },
+            {
+              "type": "paragraph",
+              "text": "データを使って規則を学び、答えなどを作るプログラム。"
+            },
+            {
+              "type": "heading",
+              "text": "同期（どうき）"
+            },
+            {
+              "type": "paragraph",
+              "text": "複数のカメラの撮影時間を合わせること。"
+            },
+            {
+              "type": "heading",
+              "text": "校正（こうせい）"
+            },
+            {
+              "type": "paragraph",
+              "text": "カメラの測り方を調整すること。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000115.000038478.html",
+              "title": "Sota communication robot gains AI dialogue and streamed speech update",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://discuss.luxonis.com/d/7072-introducing-oak-4-ffc-build-the-vision-system-your-robot-actually-needs",
+              "title": "Introducing OAK 4 FFC: Build the Vision System Your Robot Actually Needs",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        }
+      ]
+    }
+  },
+  "weather": {
+    "location": "ichikawa",
+    "timezone": "Asia/Tokyo",
+    "forecast_date": "2026-10-31",
+    "retrieved_at": "2026-10-30T18:37:44.957594Z",
+    "kind": "forecast",
+    "source_name": "Open-Meteo",
+    "source_url": "https://api.open-meteo.com/v1/forecast?latitude=35.72&longitude=139.93&timezone=Asia%2FTokyo&start_date=2026-10-31&end_date=2026-10-31&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+    "temperature_min_c": 14.1,
+    "temperature_max_c": 22.9,
+    "precipitation_probability_max": 34,
+    "slots": [
+      {
+        "hour": 9,
+        "temperature_c": 16.8,
+        "condition": "clear",
+        "precipitation_probability": 0,
+        "wind_speed_ms": 2.64,
+        "wind_direction_deg": 335
+      },
+      {
+        "hour": 12,
+        "temperature_c": 22.1,
+        "condition": "clear",
+        "precipitation_probability": 0,
+        "wind_speed_ms": 3.22,
+        "wind_direction_deg": 330
+      },
+      {
+        "hour": 18,
+        "temperature_c": 19.6,
+        "condition": "cloudy",
+        "precipitation_probability": 0,
+        "wind_speed_ms": 1.81,
+        "wind_direction_deg": 354
+      }
+    ]
+  }
+}

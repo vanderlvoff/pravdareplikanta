@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="archive-intro">
-  <a class="back-link" href="/{{ lang }}/"><span aria-hidden="true">←</span>{{ archive_labels.home }}</a>
+  <a class="back-link" href="{{ reader_base }}"><span aria-hidden="true">←</span>{{ archive_labels.home }}</a>
   <h2>{{ labels.archive }}</h2>
   <p>{{ archive_labels.intro }}</p>
 </div>
@@ -11,7 +11,7 @@
   <ol class="archive-list">
   {% for entry in entries %}
     {% set archived = entry.languages[lang] %}
-    {% set issue_url = '/' ~ lang ~ '/issues/' ~ entry.issue_id ~ '/' %}
+    {% set issue_url = reader_base ~ 'issues/' ~ entry.issue_id ~ '/' %}
     <li class="archive-entry">
       <div class="archive-date">
         <time datetime="{{ entry.publication_date }}">{{ entry.publication_date }}</time>

@@ -2,6 +2,6 @@
 {% set dimensions = illustration_assets[article.image.path] %}
 <figure class="article-illustration">
   <img src="/{{ article.image.path }}" width="{{ dimensions.width }}" height="{{ dimensions.height }}" alt="{{ article.image.alt }}">
-  <figcaption><span class="illustration-kind">{{ labels.generated_illustration }}</span> · {{ article.image.caption }}</figcaption>
+  <figcaption><span class="illustration-kind">{{ labels.generated_illustration }}</span> · {{ annotated_caption if annotated_caption is defined and annotated_caption is not none else article.image.caption }}</figcaption>
 </figure>
 {% endif %}

@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>レプリカントの真実</title>
+    <link>https://repravda.com/ja/enthusiast/</link>
+    <description>フィジカルAIの世界からニュースと分析をお届けします。</description>
+    <language>ja</language>
+    <atom:link href="https://repravda.com/ja/enthusiast/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>工具を交換し、触覚も使うロボットアーム</title>
+      <link>https://repravda.com/ja/enthusiast/issues/2026-11-01/articles/swapbot-tools/</link>
+      <guid isPermaLink="false">replicantpravda:enthusiast:2026-11-01:ja:swapbot-tools</guid>
+      <description>料理では、切る、ぬる、ひっくり返すといった作業ごとに道具が変わり、必要な力のかけ方も違う。Yunchu Zhangらは、ロボットアームが工具を自動交換するSwapBotを発表した。2026年10月29日に公開された研究論文であり、どんな家庭でも料理を完成させる市販ロボットができたという話ではない。</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>四足歩行ロボットが台車を引いて狭い通路を進む</title>
+      <link>https://repravda.com/ja/enthusiast/issues/2026-11-01/articles/raibo-wagon-towing/</link>
+      <guid isPermaLink="false">replicantpravda:enthusiast:2026-11-01:ja:raibo-wagon-towing</guid>
+      <description>技術的な注目点は実演の見た目ではなく、実行方式と制約を検証できることにある。学習による最初の経路候補と、予測モデルを使う反復的な経路修正を組み合わせた。 特定の機体と台車、15メートルのコースでの評価で、失敗も15％あった。</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>ねじを外すロボット、位置合わせと回転を分けて学ぶ</title>
+      <link>https://repravda.com/ja/enthusiast/issues/2026-11-01/articles/dawn-robot-unscrewing/</link>
+      <guid isPermaLink="false">replicantpravda:enthusiast:2026-11-01:ja:dawn-robot-unscrewing</guid>
+      <description>技術的な注目点は実演の見た目ではなく、実行方式と制約を検証できることにある。拡散モデルによる位置合わせと、視覚・力による接触判定、力制御の回転を組み合わせる。 初期のかみ合わせが難しく、斜めのねじや未知の製品全般は検証されていない。</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>一つの全身制御モデルで歩行と物体操作を切り替える</title>
+      <link>https://repravda.com/ja/enthusiast/issues/2026-11-01/articles/metatron/</link>
+      <guid isPermaLink="false">replicantpravda:enthusiast:2026-11-01:ja:metatron</guid>
+      <description>人型ロボットが机まで歩き、止まり、手を伸ばし、姿勢を立て直すには、全身の動きを連続して調整する必要がある。従来は動作ごとに別の制御モデルを学習させる場合が多い。Chen Tesslerらが10月27日に公開したMetatronは、一つの学習済み全身制御モデルと、目的に応じて書き換えられる技能プログラムを組み合わせる研究である。ニュース一覧に掲載された日と、論文が最初に公開された日を混同してはいけない。</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>東京の展示会で五本指のロボットが出荷作業を実演</title>
+      <link>https://repravda.com/ja/enthusiast/issues/2026-11-01/articles/rlwrld-packing/</link>
+      <guid isPermaLink="false">replicantpravda:enthusiast:2026-11-01:ja:rlwrld-packing</guid>
+      <description>物流の出荷作業では、箱を持ち上げるだけでなく、小さな商品を見分け、傷つけずに並べ、包装する必要がある。RLWRLDは2026年10月30日、東京のKDDI SUMMITで自社のロボット基盤モデルRLDX-1を使った実演を行ったと発表した。展示会の開催日は10月27日と28日であり、発表文の公開日とは異なる。基盤モデルとは、個別の動作だけでなく複数の作業に応用することを目指した学習モデルを指す。</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>単発の実演から検証できる作業へ</title>
+      <link>https://repravda.com/ja/enthusiast/issues/2026-11-01/articles/technology-signal/</link>
+      <guid isPermaLink="false">replicantpravda:enthusiast:2026-11-01:ja:technology-signal</guid>
+      <description>研究や実演によってロボットの仕事の幅は広がるが、結果の確かさは試験条件によって変わる。</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>分析</category>
+    </item>
+    <item>
+      <title>ロボットの作業手順を考えるAIがクラウドで利用可能に</title>
+      <link>https://repravda.com/ja/enthusiast/issues/2026-10-31/articles/google-cloud-robotics-er2/</link>
+      <guid isPermaLink="false">replicantpravda:enthusiast:2026-10-31:ja:google-cloud-robotics-er2</guid>
+      <description>「箱を探して持ってきて」と頼むと、ロボットは移動先、つかみ方、作業が終わったかの確認を順番に考える必要がある。Google Cloudは10月27日、こうした手順を考えるGemini Robotics Embodied Reasoning 2のパブリックプレビューを発表した。モーターを直接動かす装置ではなく、別の制御プログラムを呼び出すモデルだ。</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>ロボットは物の未来の動きを予想できるか</title>
+      <link>https://repravda.com/ja/enthusiast/issues/2026-10-31/articles/worldflow-video-3d/</link>
+      <guid isPermaLink="false">replicantpravda:enthusiast:2026-10-31:ja:worldflow-video-3d</guid>
+      <description>動くボールを見ると、少し先の位置を想像できる。ロボットにとっては、映像だけでなく物の立体的な動きを予測する必要がある。10月29日に発表されたWorldFlowは、未来の映像と、選んだ点の3次元の動きを同時に予測する研究モデルだ。</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>ロボットの作業手順を考えるAIがクラウドで利用可能に</title>
+      <link>https://repravda.com/ja/enthusiast/issues/2026-10-31/articles/technology-signal/</link>
+      <guid isPermaLink="false">replicantpravda:enthusiast:2026-10-31:ja:technology-signal</guid>
+      <description>Google Cloudは10月27日、動画を見て複数の手順を考え、ロボット制御機能を呼び出すGemini Robotics ER 2の試用提供を発表した。</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>分析</category>
+    </item>
+  </channel>
+</rss>

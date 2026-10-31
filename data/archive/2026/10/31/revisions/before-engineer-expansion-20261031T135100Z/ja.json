@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.4",
+  "publication": "pravda_replikanta",
+  "issue_type": "daily",
+  "issue_date": "2026-10-31",
+  "issue_id": "daily-2026-10-31",
+  "edition": "engineer",
+  "language": "ja",
+  "generated_at": "2026-10-31T22:25:32+09:00",
+  "title": "レプリカント・プラウダ — 技術者版",
+  "lead": "ドローン搭載VLAとロボットハンドの共通実験環境を、構成と測定値から検証する。",
+  "news": [
+    {
+      "id": "openflyv2-onboard",
+      "title": "OpenFlyV2、ドローン上で画像と言語から飛行動作を決定",
+      "summary": "研究チームはJetson Orin NXで画像・言語・行動を統合し、実環境4種類でナビゲーション成功率48％と報告した。",
+      "details": "機体内で12個の経由点を一組として毎秒10回生成する。",
+      "technical_novelty": "共通の視覚言語表現を、小型の行動生成部と動きの履歴を扱う記憶に接続した。",
+      "engineering_impact": "外部計算機に頼らないVLA制御の具体的な構成例となる。",
+      "limitations": "成功率48％では実用上の信頼性は未証明。コード公開も予告段階。",
+      "evidence_status": "著者のプレプリントと実機飛行試験であり、独立した再現は未確認。",
+      "published_at": "2026-10-29",
+      "organization": "OpenFlyV2 research authors",
+      "source_ids": [
+        "openflyv2-source"
+      ],
+      "time_window": "72h",
+      "body": "VLA（Vision-Language-Action）は、カメラ画像と言葉の指示からロボットの行動を決めるモデルだ。研究チームのOpenFlyV2は、この考え方をドローンに適用した。周囲の状況を理解し、物の位置関係を考え、飛行動作を選ぶ仕組みを機体上でまとめて動かす。画像を説明するだけでなく、新しい観測に合わせて動作を更新することが目的である。\n\n計算にはNVIDIA Jetson Orin NXを使う。小型の行動生成部が経由点12個を一組にして毎秒10回出力する。経由点とは経路の途中に置く目標位置だ。動きの履歴を扱う記憶を利用して計算量を抑え、飛行中も観測し直して次の動作を決める。これは閉ループ制御と呼ばれる。\n\n学習にはシミュレーションで作った約7万本の移動軌跡と約6万組の画像・言語データを用いた。実飛行データで追加学習せずに実機へ移し、4種類の環境で成功率48％と報告した。仮想環境から実機への移行を示すが、安全な運用を保証する数字ではない。遅延、消費電力、照明変化、動く障害物をさらに検証する必要がある。コードは今後公開予定とされる。",
+      "image": null
+    },
+    {
+      "id": "dexsuite-framework",
+      "title": "DexSuite、異なるロボットハンドを共通条件で比較",
+      "summary": "公開された実験環境は30課題、10種類のアーム、12種類の手先装置、成功したシミュレーション4700試行を含む。",
+      "details": "Genesis上で片腕100種類超、両腕では数千通りの構成を扱える。",
+      "technical_novelty": "共通API、遠隔操作、模擬触覚センサーを組み合わせて比較を支える。",
+      "engineering_impact": "実験環境を作り直す負担を減らし、再現性の検討に役立つ。",
+      "limitations": "4700試行は仮想環境の結果であり、実機への一般的な移行性能は未証明。",
+      "evidence_status": "公開研究プロジェクトとプレプリント。報告された試行はシミュレーションに基づく。",
+      "published_at": "2026-10-27",
+      "organization": "DexSuite research authors",
+      "source_ids": [
+        "dexsuite-source"
+      ],
+      "time_window": "7d",
+      "body": "ロボットの物体操作を比べるとき、研究ごとに腕の形や課題、物理計算が違えば結果を直接比較しにくい。研究チームが公開したDexSuiteは、Genesisというシミュレータを使った共通実験環境だ。腕や手先の装置を交換しても、同じ形式で制御と評価を行えるようにしている。\n\n収録されたのは30課題、10種類のアーム、12種類のエンドエフェクタである。エンドエフェクタは腕の先端に付くハンドや工具を指す。組み合わせは片腕で100種類を超え、両腕では数千通りになる。共通API（プログラムから操作する窓口）に加え、遠隔操作と接触を模擬する触覚センサーも備える。比較用のベンチマークは課題と機体の組み合わせ16条件で構成される。\n\n著者らは成功した4700件のシミュレーション試行を公開した。人による遠隔操作、プログラム化した手順、学習した制御方策から集めたデータだ。共通の条件は再現実験に役立つが、仮想空間の摩擦や物体の変形が現実と同じとは限らない。モーターの遅れやセンサーの雑音も異なるため、現場への適用には実機での評価が欠かせない。",
+      "image": null
+    }
+  ],
+  "technology_signal": {
+    "title": "結果を再現できるか",
+    "summary": "OpenFlyV2は機体上の制御の限界を示し、DexSuiteは比較条件を共通化する。",
+    "implications": "成功率だけでなく失敗条件と実機の仕様を記録する必要がある。"
+  },
+  "glossary": [
+    {
+      "term": "VLA",
+      "definition": "画像と言葉から行動を決めるモデル。"
+    },
+    {
+      "term": "閉ループ制御",
+      "definition": "新しい観測で次の命令を更新する制御。"
+    },
+    {
+      "term": "経由点",
+      "definition": "移動経路の途中にある目標位置。"
+    },
+    {
+      "term": "sim-to-real",
+      "definition": "仮想環境から実機への移行。"
+    },
+    {
+      "term": "エンドエフェクタ",
+      "definition": "ロボットの腕の先端にある手や工具。"
+    }
+  ],
+  "sources": [
+    {
+      "id": "openflyv2-source",
+      "title": "OpenFlyV2: An onboard vision-language-action model for aerial perception and navigation",
+      "url": "https://arxiv.org/abs/2610.39287",
+      "domain": "arxiv.org",
+      "organization": "OpenFlyV2 research authors",
+      "published_at": "2026-10-29"
+    },
+    {
+      "id": "dexsuite-source",
+      "title": "DexSuite: An All-in-One Framework for Dexterous Manipulation Across Arms, Hands, and Tasks",
+      "url": "https://arxiv.org/abs/2610.37799",
+      "domain": "arxiv.org",
+      "organization": "DexSuite research authors",
+      "published_at": "2026-10-27"
+    }
+  ]
+}

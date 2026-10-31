@@ -1,0 +1,1315 @@
+{
+  "edition": "enthusiast",
+  "issue_id": "2026-11-01",
+  "number": 4,
+  "publication_date": "2026-11-01",
+  "revision": 2,
+  "status": "approved",
+  "languages": {
+    "ru": {
+      "title": "Правда репликанта",
+      "weather": {
+        "location": "ichikawa",
+        "timezone": "Asia/Tokyo",
+        "forecast_date": "2026-11-01",
+        "retrieved_at": "2026-10-31T16:07:47.112550Z",
+        "kind": "forecast",
+        "source_name": "Open-Meteo",
+        "source_url": "https://api.open-meteo.com/v1/forecast?latitude=35.72&longitude=139.93&timezone=Asia%2FTokyo&start_date=2026-11-01&end_date=2026-11-01&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+        "temperature_min_c": 13.2,
+        "temperature_max_c": 19.0,
+        "precipitation_probability_max": 8,
+        "slots": [
+          {
+            "hour": 9,
+            "temperature_c": 15.3,
+            "condition": "cloudy",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 1.97,
+            "wind_direction_deg": 336
+          },
+          {
+            "hour": 12,
+            "temperature_c": 18.3,
+            "condition": "clear",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 0.67,
+            "wind_direction_deg": 297
+          },
+          {
+            "hour": 18,
+            "temperature_c": 17.9,
+            "condition": "cloudy",
+            "precipitation_probability": 8,
+            "wind_speed_ms": 1.33,
+            "wind_direction_deg": 103
+          }
+        ]
+      },
+      "issue_title": "Данные репликанта — для любознательных",
+      "editorial_note": "Как роботы учатся менять инструменты, двигаться и выполнять последовательности действий.",
+      "articles": [
+        {
+          "id": "swapbot-tools",
+          "slug": "swapbot-tools",
+          "category": "news",
+          "headline": "Робот меняет инструменты и чувствует прикосновения",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Для разных действий нужны разные инструменты: нож разрезает, кисточка наносит жидкость, лопатка переворачивает продукт. Исследователи во главе с Юньчу Чжан предложили SwapBot — систему, в которой роботизированная рука самостоятельно меняет инструменты. Работа опубликована 29 октября 2026 года как препринт, поэтому речь идёт об исследовательском прототипе, а не о готовом домашнем помощнике."
+            },
+            {
+              "type": "paragraph",
+              "text": "В конструкции есть постоянный соединитель на стороне робота и недорогие переходники для обычных инструментов. Это позволяет менять назначение руки без разработки отдельного сложного захвата для каждой задачи. Авторы показали совместимость с разными инструментами, включая инструменты с подвижными частями, и несколькими роботизированными платформами. При этом механическое крепление должно надёжно удерживать инструмент."
+            },
+            {
+              "type": "paragraph",
+              "text": "В переходники встроены компактные тактильные датчики. Камера показывает положение предмета, но не всегда сообщает, с какой силой инструмент касается поверхности. Операторы собирали демонстрации через дистанционное управление, а затем на них обучали политики подражания, выбирающие движения по примерам. Среди испытаний были приготовление тофу, перемешивание салата и переворачивание мяса."
+            },
+            {
+              "type": "paragraph",
+              "text": "В сравнении с обучением только по цветным RGB-изображениям использование прикосновений повысило успешность на 15–25 процентных пунктов. Авторы также сообщили о снижении времени выполнения задач и нагрузки на операторов при дистанционном управлении. Это показатели конкретных лабораторных заданий, а не доказательство одинаковой надёжности со всеми инструментами."
+            },
+            {
+              "type": "paragraph",
+              "text": "Инженерная ценность состоит в общем интерфейсе для смены инструмента, измерения контакта и записи демонстраций. Он облегчает сравнение роли зрения и осязания, а также повторное использование оборудования. Однако допустимые усилия, износ соединителя, скорость переключения, очистка инструментов и восстановление после неудачной стыковки ещё нужно изучать при длительной эксплуатации."
+            },
+            {
+              "type": "paragraph",
+              "text": "Исследование показывает альтернативу универсальной роботизированной кисти: можно подбирать подходящий инструмент. Но робот пока не продемонстрировал приготовление целого обеда в незнакомой кухне без помощи человека. Для практического внедрения нужны испытания с более разнообразными предметами, непредвиденными контактами и независимая проверка результатов."
+            },
+            {
+              "type": "paragraph",
+              "text": "Главный вопрос для читателя — какая часть поведения была действительно проверена, а какая пока остаётся надеждой исследователей. Наблюдать удачную демонстрацию интересно, но для понимания технологии не менее важно знать, что происходило при ошибках и какие условия испытаний не менялись."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "raibo-wagon-towing",
+          "slug": "raibo-wagon-towing",
+          "category": "news",
+          "headline": "Четвероногий робот учится тянуть тележку по узкому проходу",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Четвероногий робот умеет обходить препятствия, пока отвечает только за собственное тело. Стоит прицепить к нему тележку, и задача меняется: задние колёса не могут мгновенно повторить любое движение, а на повороте груз занимает дополнительное пространство. Исследователи во главе с Инсоном Яном описали 29 октября 2026 года систему RAIBO-Wagon, в которой шагающая машина тянет специальную тележку через тесные проходы. Это не просто демонстрация силы робота: главное здесь — управление связанной парой, которая должна двигаться как единая система."
+            },
+            {
+              "type": "paragraph",
+              "text": "Для выбора маршрута команда объединила два подхода. Первый, conditional flow matching, быстро предлагает вероятное движение на основе изученных примеров. Второй, MPPI, или управление с прогнозированием по множеству пробных траекторий, уточняет предложение с учётом того, как робот и тележка будут двигаться дальше. Для такого прогноза используется обученная модель динамики — приближённое описание реакции системы на команды. Благодаря сочетанию первоначального предположения и последующей проверки планировщик может находить варианты, которых не было в обучающих данных."
+            },
+            {
+              "type": "paragraph",
+              "text": "Испытания проходили на улице по маршрутам длиной 15 метров с узкими участками. Все датчики и вычисления находились на самом роботе, без обязательного внешнего компьютера для управления. Авторы сообщают об успешном завершении 85% из 40 попыток и транспортировке груза до 40 кг — почти столько же, сколько весит сам RAIBO. Это заметный результат для задачи буксировки, но пятнадцать процентов попыток закончились неуспехом. Не следует также считать 40 кг универсальной грузоподъёмностью любой четвероногой машины."
+            },
+            {
+              "type": "paragraph",
+              "text": "Такие исследования могут пригодиться на складах, строительных площадках и там, где груз удобнее катить, чем нести на спине робота. Однако реальная тележка меняет поведение на скользком покрытии, уклоне или неровной поверхности, а люди могут неожиданно пересекать путь. В публикации нет доказательства длительной бесперебойной работы в подобных условиях. Интереснее всего следующий вопрос: сможет ли система сохранять точность движения при разных размерах прицепа, скорости, массе и изменяющейся обстановке?"
+            },
+            {
+              "type": "paragraph",
+              "text": "Главный вопрос для читателя — какая часть поведения была действительно проверена, а какая пока остаётся надеждой исследователей. Наблюдать удачную демонстрацию интересно, но для понимания технологии не менее важно знать, что происходило при ошибках и какие условия испытаний не менялись."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.39267",
+              "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "dawn-robot-unscrewing",
+          "slug": "dawn-robot-unscrewing",
+          "category": "news",
+          "headline": "Робот учится откручивать винты, разделяя работу на точное наведение и вращение",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Открутить винт человеку обычно легче, чем роботу. Нужно найти головку, подвести отвёртку точно по оси, почувствовать, что наконечник вошёл в шлиц, и только потом вращать, не срывая контакт. Хемант Кумар и коллеги описали 29 октября 2026 года систему DAWN для автоматизированной разборки. Исследователи разделили задачу на наведение и зацепление, определение момента надёжного контакта и собственно выкручивание. Такая последовательность особенно интересна для переработки электроники, где винты могут находиться в разных местах."
+            },
+            {
+              "type": "paragraph",
+              "text": "На первом этапе используется диффузионная политика: модель, которая по наблюдениям постепенно формирует команду движения, вместо того чтобы просто повторять жёстко заданную траекторию. Затем отдельный классификатор анализирует изображение и усилие, чтобы определить, достаточно ли надёжно наконечник зацепился за винт. Наконец, контроллер выкручивания ориентируется прежде всего на силовую обратную связь и ограничивает реактивное усилие величиной 20 ньютонов. Разделение задач позволяет подобрать подходящий способ управления для каждого физического этапа."
+            },
+            {
+              "type": "paragraph",
+              "text": "Эксперименты проводились с реальной роботизированной рукой Franka Emika и электрической отвёрткой. Авторы собрали 199 демонстраций для наведения и 6000 изображений контакта для обучения определения зацепления. В одном из сравнений успешность наведения и зацепления составила около половины попыток, что было сопоставимо с результатом обученных операторов в этой постановке. Для классификатора контакта указана точность 0,90. При правильно выполненном зацеплении последующий этап выкручивания в выбранных испытаниях работал надёжно, однако это не означает такой же успех всей последовательности."
+            },
+            {
+              "type": "paragraph",
+              "text": "Работа показывает, почему физическое действие нельзя оценивать только по тому, повернулся ли мотор. Ошибка в несколько миллиметров на первом этапе делает остальные вычисления бесполезными. Авторы признают чувствительность к новым типам головок и условиям изображения, а наклонённые винты не проверяли. Для настоящей линии разборки потребуются обнаружение винтов в сложных изделиях, проверка безопасности и восстановление после срыва наконечника. Исследование даёт полезную архитектуру, но пока не готовую универсальную машину для переработки."
+            },
+            {
+              "type": "paragraph",
+              "text": "Главный вопрос для читателя — какая часть поведения была действительно проверена, а какая пока остаётся надеждой исследователей. Наблюдать удачную демонстрацию интересно, но для понимания технологии не менее важно знать, что происходило при ошибках и какие условия испытаний не менялись."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40537",
+              "title": "DAWN: Diffusion-based Alignment and unfastening Workflow Network",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "metatron",
+          "slug": "metatron",
+          "category": "news",
+          "headline": "Один контроллер гуманоидного робота выполняет разные навыки без нового обучения",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Один и тот же гуманоид должен уметь идти, остановиться, нагнуться, поднять предмет и снова сохранить равновесие. Однако многие робототехнические системы требуют отдельного обучения под каждое действие. Чен Тесслер и коллеги предложили Metatron — общий слой исполнения движений, который соединяет обученную генеративную модель всего тела с программируемыми навыками. Исследование опубликовано 27 октября 2026 года, а не в день появления статьи в новостной подборке."
+            },
+            {
+              "type": "paragraph",
+              "text": "Базовая модель принимает частичные цели: положение отдельных частей тела к заданному времени, команды скорости и указания о характере движения. Во время обучения использовались записи движений, синтетические примеры восстановления после нарушения равновесия и движения взаимодействия с предметами, перенесённые на робота. Затем параметры модели фиксируют. Вместо нового обучения для каждого навыка программа на каждом шаге задаёт небольшую геометрическую подсказку, а общий контроллер преобразует её в согласованное движение суставов."
+            },
+            {
+              "type": "paragraph",
+              "text": "Авторы описывают навыки как обычные программы с внутренним состоянием. Они также применяли программных агентов для анализа записанных движений и подбора компактных правил. На реальном Unitree G1 один неизменный набор параметров использовался для ходьбы, восстановления после толчка, посадки на мебель и подъёма предмета под дистанционным управлением. В сравнительных опытах авторы сообщили о более высокой успешности достижения целей рукой и устойчивости к толчкам, чем у проверенных ими схем отслеживания заданной траектории."
+            },
+            {
+              "type": "paragraph",
+              "text": "С инженерной точки зрения важно разделение между общей моторной способностью и логикой отдельного задания. Оно потенциально уменьшает количество циклов обучения при добавлении новых сценариев. Но точные требования к вычислениям, диапазон допустимых контактов и надёжность при неизвестной мебели необходимо проверять отдельно. Дистанционно управляемое подбирание предмета не следует называть самостоятельным пониманием поручения. Акробатические движения и лазание, упомянутые в работе, показаны для симулированного персонажа, а не для физического G1."
+            },
+            {
+              "type": "paragraph",
+              "text": "Главный вопрос для читателя — какая часть поведения была действительно проверена, а какая пока остаётся надеждой исследователей. Наблюдать удачную демонстрацию интересно, но для понимания технологии не менее важно знать, что происходило при ошибках и какие условия испытаний не менялись."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.38027",
+              "title": "METATRON: A Promptable Whole-Body Execution Layer for Humanoids",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "rlwrld-packing",
+          "slug": "rlwrld-packing",
+          "category": "news",
+          "headline": "На выставке в Токио робот с пятью пальцами показал упаковку заказов",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "В логистике робот должен не просто взять коробку, но и различить мелкие товары, положить их в нужную упаковку и не повредить содержимое. Компания RLWRLD сообщила 30 октября 2026 года о показе такой последовательности на мероприятии KDDI SUMMIT в Токио. Само мероприятие проходило 27 и 28 октября: дату пресс-релиза нельзя принимать за дату демонстрации. Разработчик представил систему RLDX-1 как базовую модель для управления действиями робота."
+            },
+            {
+              "type": "paragraph",
+              "text": "В выставочном сценарии использовалась рука с пятью пальцами. По описанию компании, робот забирал картонную коробку с конвейера, распознавал небольшие предметы разной формы и материала, в том числе аксессуары для смартфонов, и укладывал их для отправки. Это демонстрация последовательности операций, а не независимый аудит складского процесса. Пресс-релиз не содержит числа успешных попыток, скорости упаковки, доли ошибок или часов непрерывной работы."
+            },
+            {
+              "type": "paragraph",
+              "text": "Для заказчика важен не только красивый захват предмета. Нужно понять, как система взаимодействует с конвейером, что происходит при неправильной ориентации товара, как обеспечивается безопасность персонала и кто отвечает за исключения. Пятипалая кисть потенциально подходит для разнообразных предметов, но сама по себе не доказывает экономическое преимущество над простым захватом или специализированной линией. Указания на пилотные проекты с промышленными партнёрами также не равнозначны опубликованным результатам коммерческой эксплуатации."
+            },
+            {
+              "type": "paragraph",
+              "text": "Следующий убедительный этап — испытания на реальном ассортименте с заранее определёнными метриками: упаковок в час, повреждений, времени вмешательства оператора и стоимости обработки заказа. Пока доступно заявление самой компании о публичном показе, без независимой проверки. Поэтому новость подтверждает направление разработки и интерес к применению базовых моделей в логистике, но не доказывает готовность полностью автоматизировать произвольный склад."
+            },
+            {
+              "type": "paragraph",
+              "text": "Главный вопрос для читателя — какая часть поведения была действительно проверена, а какая пока остаётся надеждой исследователей. Наблюдать удачную демонстрацию интересно, но для понимания технологии не менее важно знать, что происходило при ошибках и какие условия испытаний не менялись."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000006.000183256.html",
+              "title": "RLWRLD KDDI SUMMIT 2026 RLDX-1 logistics packing demonstration",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "technology-signal",
+          "slug": "technology-signal",
+          "category": "analysis",
+          "headline": "От отдельного трюка к проверяемой работе",
+          "dek": "Новые исследования и демонстрации показывают способы расширить набор действий робота, но качество результата зависит от условий испытания.",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Сравнивать нужно не только удачное выполнение, но и ошибки, повторяемость, стоимость и участие человека."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39267",
+              "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40537",
+              "title": "DAWN: Diffusion-based Alignment and unfastening Workflow Network",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.38027",
+              "title": "METATRON: A Promptable Whole-Body Execution Layer for Humanoids",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000006.000183256.html",
+              "title": "RLWRLD KDDI SUMMIT 2026 RLDX-1 logistics packing demonstration",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "glossary",
+          "slug": "glossary",
+          "category": "analysis",
+          "headline": "Словарь выпуска",
+          "dek": "Ключевые понятия этого выпуска.",
+          "body": [
+            {
+              "type": "heading",
+              "text": "модель"
+            },
+            {
+              "type": "paragraph",
+              "text": "Обученная вычислительная система, которая предсказывает или выбирает действие."
+            },
+            {
+              "type": "heading",
+              "text": "захват"
+            },
+            {
+              "type": "paragraph",
+              "text": "Устройство или действие, позволяющее удерживать предмет."
+            },
+            {
+              "type": "heading",
+              "text": "траектор"
+            },
+            {
+              "type": "paragraph",
+              "text": "Путь движения во времени."
+            },
+            {
+              "type": "heading",
+              "text": "обучени"
+            },
+            {
+              "type": "paragraph",
+              "text": "Настройка модели на примерах или опыте."
+            },
+            {
+              "type": "heading",
+              "text": "управлени"
+            },
+            {
+              "type": "paragraph",
+              "text": "Выбор команд, определяющих движение машины."
+            },
+            {
+              "type": "heading",
+              "text": "датчик"
+            },
+            {
+              "type": "paragraph",
+              "text": "Устройство, измеряющее состояние или контакт."
+            },
+            {
+              "type": "heading",
+              "text": "робот"
+            },
+            {
+              "type": "paragraph",
+              "text": "Механическая система, которая выполняет действия по командам."
+            },
+            {
+              "type": "heading",
+              "text": "инструмент"
+            },
+            {
+              "type": "paragraph",
+              "text": "Сменное приспособление для конкретной операции."
+            },
+            {
+              "type": "heading",
+              "text": "эксперимент"
+            },
+            {
+              "type": "paragraph",
+              "text": "Проверка гипотезы в определённых условиях."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39267",
+              "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40537",
+              "title": "DAWN: Diffusion-based Alignment and unfastening Workflow Network",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.38027",
+              "title": "METATRON: A Promptable Whole-Body Execution Layer for Humanoids",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000006.000183256.html",
+              "title": "RLWRLD KDDI SUMMIT 2026 RLDX-1 logistics packing demonstration",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        }
+      ]
+    },
+    "en": {
+      "title": "The Replicant Truth",
+      "weather": {
+        "location": "breukelen",
+        "timezone": "Europe/Amsterdam",
+        "forecast_date": "2026-11-01",
+        "retrieved_at": "2026-10-31T16:07:46.147436Z",
+        "kind": "forecast",
+        "source_name": "Open-Meteo",
+        "source_url": "https://api.open-meteo.com/v1/forecast?latitude=52.1742&longitude=5.0014&timezone=Europe%2FAmsterdam&start_date=2026-11-01&end_date=2026-11-01&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+        "temperature_min_c": 7.3,
+        "temperature_max_c": 11.3,
+        "precipitation_probability_max": 8,
+        "slots": [
+          {
+            "hour": 9,
+            "temperature_c": 9.2,
+            "condition": "cloudy",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 0.6,
+            "wind_direction_deg": 312
+          },
+          {
+            "hour": 12,
+            "temperature_c": 10.7,
+            "condition": "cloudy",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 1.4,
+            "wind_direction_deg": 357
+          },
+          {
+            "hour": 18,
+            "temperature_c": 10.0,
+            "condition": "cloudy",
+            "precipitation_probability": 4,
+            "wind_speed_ms": 1.2,
+            "wind_direction_deg": 309
+          }
+        ]
+      },
+      "issue_title": "Replicant Data — Curious Minds",
+      "editorial_note": "How robots learn to change tools, move and carry out sequences of actions.",
+      "articles": [
+        {
+          "id": "swapbot-tools",
+          "slug": "swapbot-tools",
+          "category": "news",
+          "headline": "Robot tool swapping gains tactile feedback",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Different kitchen actions require different tools: a knife cuts, a brush spreads liquid and a spatula turns food. Researchers led by Yunchu Zhang introduced SwapBot, a system that lets a robot arm exchange tools autonomously. The October 29, 2026 preprint describes a research prototype rather than a household appliance ready to cook without supervision."
+            },
+            {
+              "type": "paragraph",
+              "text": "The architecture uses a fixed coupling on the robot and inexpensive adapters on ordinary tools. This changes the arm's function without requiring a new sophisticated gripper for every task. The authors describe compatibility with different tools, including articulated ones, and multiple robot platforms. The connection must physically secure the tool; merely bringing it close to the wrist would not work."
+            },
+            {
+              "type": "paragraph",
+              "text": "Compact tactile sensors are built into the adapters. A camera can show where an object is but may not reveal how firmly a tool presses against it. Operators collected demonstrations through teleoperation, then trained imitation-learning policies to select movements from examples. Reported tasks include cooking tofu, stirring salad and flipping meat."
+            },
+            {
+              "type": "paragraph",
+              "text": "Compared with learning from RGB images alone, adding tactile data increased success by 15 to 25 percentage points in the reported experiments. User studies also found shorter task completion times and lower operator workload during teleoperation. These results concern particular laboratory tasks, not a universal reliability guarantee for every tool and material."
+            },
+            {
+              "type": "paragraph",
+              "text": "The engineering contribution is a common interface for changing tools, sensing contact and recording demonstrations. It can make comparisons between vision and touch more systematic and allow hardware to be reused across tasks. However, allowable forces, connector wear, swapping speed, cleaning requirements and recovery from failed coupling still need prolonged testing."
+            },
+            {
+              "type": "paragraph",
+              "text": "The work offers an alternative to building one universal robotic hand: select the tool that suits the action. It does not demonstrate a robot preparing an entire meal autonomously in an unfamiliar kitchen. Wider object sets, unexpected contacts, long duty cycles and independent replication are still necessary before deployment claims become credible."
+            },
+            {
+              "type": "paragraph",
+              "text": "The useful question is which behavior was actually tested and which remains a research ambition. A successful demonstration is exciting, but understanding the technology also means asking what happened during failures and which test conditions stayed fixed."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "raibo-wagon-towing",
+          "slug": "raibo-wagon-towing",
+          "category": "news",
+          "headline": "A quadruped learns to tow a wagon through tight passages",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "The engineering question is how execution works and which constraints were actually tested. A learned initial motion proposal is refined using model-predictive path-integral optimization and learned forward dynamics. A single robot-wagon system, short test routes and a 15% failure rate leave open questions about general deployment."
+            },
+            {
+              "type": "paragraph",
+              "text": "A four-legged robot can navigate around obstacles while controlling only its own body. Attach a wagon, however, and every turn becomes a different problem: the trailer wheels cannot move sideways at will, and the combined machine needs more room than the robot alone. Researchers led by Insung Yang described RAIBO-Wagon on October 29, 2026, a navigation system for a quadruped towing a custom wheeled carrier. The interesting advance is not merely that the robot can pull a load. It is that the controller plans for the linked motion of both bodies in narrow spaces."
+            },
+            {
+              "type": "paragraph",
+              "text": "The system combines two planning ideas. Conditional flow matching produces a fast initial proposal for how the robot and wagon might move. Model Predictive Path Integral control, or MPPI, then tests and refines candidate commands using a learned forward-dynamics model that predicts how the coupled system will respond. The first component helps the search start near a promising solution; the second can adjust when the environment differs from the examples used for learning. This is a practical compromise between fast learned suggestions and slower physical consistency checks."
+            },
+            {
+              "type": "paragraph",
+              "text": "The authors tested the system outdoors on 15-meter courses containing confined passages. Sensing and computation ran fully onboard rather than depending on an external computer to plan the motion. They report an 85% completion rate over 40 trials and loads of up to 40 kilograms, nearly the robot's own body weight. Those are measured results on a particular setup, not a claim that all quadrupeds can tow the same load. Fifteen percent of the attempts still failed, and the reported routes were relatively short."
+            },
+            {
+              "type": "paragraph",
+              "text": "Why pull rather than carry? Wheels can support a heavy payload while legs help a robot negotiate terrain that may be awkward for an ordinary cart mover. The combination might eventually be useful for material handling or inspection support. Yet a real worksite brings slopes, changing friction, people and unexpected obstacles. The paper does not establish months of reliable operation under those conditions. A revealing next test would vary wagon geometry, payload distribution and surface conditions while measuring recovery after a failed turn."
+            },
+            {
+              "type": "paragraph",
+              "text": "The useful question is which behavior was actually tested and which remains a research ambition. A successful demonstration is exciting, but understanding the technology also means asking what happened during failures and which test conditions stayed fixed."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.39267",
+              "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "dawn-robot-unscrewing",
+          "slug": "dawn-robot-unscrewing",
+          "category": "news",
+          "headline": "A robot learns to remove screws by separating alignment from turning",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "The engineering question is how execution works and which constraints were actually tested. A diffusion-based alignment policy is combined with a contact classifier and a force-controlled unfastening controller. The initial engagement stage remains unreliable across variations; angled fasteners were not tested."
+            },
+            {
+              "type": "paragraph",
+              "text": "Removing a screw looks simple until a robot has to do it. The screwdriver must reach the correct point, align with the head, engage the slot and maintain contact while turning. Hemant Kumar and colleagues presented DAWN on October 29, 2026, a research system that breaks this sequence into manageable parts. Their motivation is automated disassembly, including the recovery of components from used products. A robot that merely detects a screw in an image has not yet solved the mechanical problem of getting the tool to work."
+            },
+            {
+              "type": "paragraph",
+              "text": "The first component uses a diffusion-based action policy, a learned method that progressively constructs movements from observations, to position and insert the screwdriver. A second model combines visual and force information to decide whether the tip has engaged securely. A third controller handles turning and removal, relying mainly on force feedback rather than slow image-based action generation. The authors impose a reaction-force limit of 20 newtons during this stage. The separation matters because positioning, recognizing contact and applying torque have different sensing and timing requirements."
+            },
+            {
+              "type": "paragraph",
+              "text": "The experiments used a real Franka Emika robot arm fitted with an electric screwdriver. The researchers collected 199 expert demonstrations for the alignment stage and 6,000 contact images for training the engagement classifier. In a reported comparison, the alignment-and-engagement policy succeeded in roughly half the trials, comparable to trained human teleoperators under that test setup. The contact classifier reached an accuracy of 0.90. Once the tool was properly engaged, the tested removal stage performed much more consistently, showing where the difficult bottleneck actually lies."
+            },
+            {
+              "type": "paragraph",
+              "text": "This is not evidence that a robot can already dismantle arbitrary electronics without supervision. Screw heads with unfamiliar appearances, changes in lighting and small positioning errors can defeat the initial stage. The researchers did not evaluate non-parallel screw orientations, and they identify sensitivity to variation in the paper. A production system would also need to detect screws on complex assemblies, recover from slips and verify that the surrounding components remain undamaged. DAWN offers a useful lesson: the hardest part of a seemingly simple task may be establishing the right contact before the visible action begins."
+            },
+            {
+              "type": "paragraph",
+              "text": "The useful question is which behavior was actually tested and which remains a research ambition. A successful demonstration is exciting, but understanding the technology also means asking what happened during failures and which test conditions stayed fixed."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40537",
+              "title": "DAWN: Diffusion-based Alignment and unfastening Workflow Network",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "metatron",
+          "slug": "metatron",
+          "category": "news",
+          "headline": "A shared humanoid controller supports different skills without retraining",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "A humanoid that walks to a table must also stop, bend, reach and recover its balance without switching to an entirely new motor system. Yet many robotics pipelines train separate controllers for each behavior. Chen Tessler and colleagues introduced Metatron, a programmable whole-body execution layer that pairs one trained generative motor policy with software-defined skills. The research was submitted on October 27, 2026; a later listing date should not be mistaken for its original publication date."
+            },
+            {
+              "type": "paragraph",
+              "text": "The base policy accepts partial goals rather than a complete joint trajectory. These prompts may specify timed targets for body parts, velocity commands and movement-style cues. Training combines captured human motion, synthetic recovery trajectories and retargeted motions involving objects and scenes. After that stage, the base policy is frozen. A small stateful program can then produce a rough geometric sketch at every control step, leaving the common motor model to coordinate the robot's joints and balance."
+            },
+            {
+              "type": "paragraph",
+              "text": "The authors describe skills as ordinary programs, sometimes refined with coding agents that inspect motion data and fit compact rules. On a physical Unitree G1, one unchanged model checkpoint supported walking, recovery, sitting on furniture and object pickup guided by a remote operator. Comparative tests reported better reaching success and resistance to pushes than the reference-tracking systems selected by the authors. The paper also presents climbing and acrobatics, but those results concern a simulated character rather than the physical G1."
+            },
+            {
+              "type": "paragraph",
+              "text": "The engineering distinction is between reusable motor competence and task-specific control logic. If the separation holds across more environments, new behaviors might be specified with code rather than a new policy-training run. That is a research implication, not a proven reduction in commercial integration cost. The authors do not establish unattended operation in arbitrary homes, universal contact safety or reliable object recognition. Teleoperated pickup remains teleoperated, and the reported comparisons are limited to the study's test conditions."
+            },
+            {
+              "type": "paragraph",
+              "text": "The useful question is which behavior was actually tested and which remains a research ambition. A successful demonstration is exciting, but understanding the technology also means asking what happened during failures and which test conditions stayed fixed."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.38027",
+              "title": "METATRON: A Promptable Whole-Body Execution Layer for Humanoids",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "rlwrld-packing",
+          "slug": "rlwrld-packing",
+          "category": "news",
+          "headline": "Five-finger robot demonstrates order packing at a Tokyo event",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Packing an order is not simply a matter of lifting a box. A robot must distinguish small products, position them without damage and handle changes in shape or material. On October 30, 2026, RLWRLD reported a public demonstration of this workflow at KDDI SUMMIT in Tokyo. The event itself took place on October 27 and 28, so the announcement date should not be confused with the demonstration dates. The company described RLDX-1 as its robotics foundation model for controlling physical actions."
+            },
+            {
+              "type": "paragraph",
+              "text": "The exhibit used a robot equipped with a five-finger hand. According to RLWRLD, it removed a cardboard box from a conveyor, recognized small products of different materials and shapes, including smartphone accessories, and packed them for shipment. This is a description of an event demonstration, not an independent warehouse audit. The announcement supplies no comparable figures for items per hour, failed picks, damaged goods or hours of continuous unattended operation."
+            },
+            {
+              "type": "paragraph",
+              "text": "For a logistics operator, the real integration questions concern conveyors, inventory data, recovery from misaligned products, worker safety and responsibility for exceptions. A five-finger hand may provide flexibility for varied objects, but that alone does not establish an advantage over simpler grippers or purpose-built equipment. The company also mentions pilot projects with industrial partners; those statements do not establish completed, economically viable deployments. Cost, maintenance and operator workload remain open questions."
+            },
+            {
+              "type": "paragraph",
+              "text": "A credible next step would be a trial using a representative product mix and predefined measures of throughput, damage, human interventions and cost per order. At present the evidence is a company account of a public demonstration, with no independent verification of sustained performance. The news therefore signals progress toward applying robotics foundation models to fulfillment work, not proof that arbitrary warehouses can now run autonomously."
+            },
+            {
+              "type": "paragraph",
+              "text": "The useful question is which behavior was actually tested and which remains a research ambition. A successful demonstration is exciting, but understanding the technology also means asking what happened during failures and which test conditions stayed fixed."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000006.000183256.html",
+              "title": "RLWRLD KDDI SUMMIT 2026 RLDX-1 logistics packing demonstration",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "technology-signal",
+          "slug": "technology-signal",
+          "category": "analysis",
+          "headline": "From isolated tricks to verifiable work",
+          "dek": "Research and demonstrations expand the range of robot actions, but the strength of the result depends on test conditions.",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Evaluation should cover failures, repeatability, cost and human intervention as well as successful attempts."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39267",
+              "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40537",
+              "title": "DAWN: Diffusion-based Alignment and unfastening Workflow Network",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.38027",
+              "title": "METATRON: A Promptable Whole-Body Execution Layer for Humanoids",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000006.000183256.html",
+              "title": "RLWRLD KDDI SUMMIT 2026 RLDX-1 logistics packing demonstration",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "glossary",
+          "slug": "glossary",
+          "category": "analysis",
+          "headline": "Issue glossary",
+          "dek": "Key terms in this issue.",
+          "body": [
+            {
+              "type": "heading",
+              "text": "tactile"
+            },
+            {
+              "type": "paragraph",
+              "text": "A measurement or signal related to physical touch."
+            },
+            {
+              "type": "heading",
+              "text": "model"
+            },
+            {
+              "type": "paragraph",
+              "text": "A computational system trained to predict or select actions."
+            },
+            {
+              "type": "heading",
+              "text": "simulat"
+            },
+            {
+              "type": "paragraph",
+              "text": "A test in a computer environment rather than on physical hardware."
+            },
+            {
+              "type": "heading",
+              "text": "gripp"
+            },
+            {
+              "type": "paragraph",
+              "text": "A device or action used to hold an object."
+            },
+            {
+              "type": "heading",
+              "text": "trajector"
+            },
+            {
+              "type": "paragraph",
+              "text": "A movement path considered over time."
+            },
+            {
+              "type": "heading",
+              "text": "learn"
+            },
+            {
+              "type": "paragraph",
+              "text": "Adjusting a model from examples or experience."
+            },
+            {
+              "type": "heading",
+              "text": "control"
+            },
+            {
+              "type": "paragraph",
+              "text": "Choosing commands that determine a machine's movement."
+            },
+            {
+              "type": "heading",
+              "text": "sensor"
+            },
+            {
+              "type": "paragraph",
+              "text": "A device that measures a condition or contact."
+            },
+            {
+              "type": "heading",
+              "text": "robot"
+            },
+            {
+              "type": "paragraph",
+              "text": "A physical machine that performs commanded actions."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39267",
+              "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40537",
+              "title": "DAWN: Diffusion-based Alignment and unfastening Workflow Network",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.38027",
+              "title": "METATRON: A Promptable Whole-Body Execution Layer for Humanoids",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000006.000183256.html",
+              "title": "RLWRLD KDDI SUMMIT 2026 RLDX-1 logistics packing demonstration",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        }
+      ]
+    },
+    "ja": {
+      "title": "レプリカントの真実",
+      "weather": {
+        "location": "smolensk",
+        "timezone": "Europe/Moscow",
+        "forecast_date": "2026-11-01",
+        "retrieved_at": "2026-10-31T16:07:47.240840Z",
+        "kind": "forecast",
+        "source_name": "Open-Meteo",
+        "source_url": "https://api.open-meteo.com/v1/forecast?latitude=54.7826&longitude=32.0453&timezone=Europe%2FMoscow&start_date=2026-11-01&end_date=2026-11-01&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+        "temperature_min_c": 2.7,
+        "temperature_max_c": 8.6,
+        "precipitation_probability_max": 8,
+        "slots": [
+          {
+            "hour": 9,
+            "temperature_c": 2.9,
+            "condition": "cloudy",
+            "precipitation_probability": 3,
+            "wind_speed_ms": 2.48,
+            "wind_direction_deg": 43
+          },
+          {
+            "hour": 12,
+            "temperature_c": 5.9,
+            "condition": "cloudy",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 2.33,
+            "wind_direction_deg": 43
+          },
+          {
+            "hour": 18,
+            "temperature_c": 6.0,
+            "condition": "cloudy",
+            "precipitation_probability": 3,
+            "wind_speed_ms": 1.79,
+            "wind_direction_deg": 27
+          }
+        ]
+      },
+      "issue_title": "レプリカント・データ 探究版",
+      "editorial_note": "ロボットが道具を変え、動き、仕事を続ける仕組みを知る。",
+      "articles": [
+        {
+          "id": "swapbot-tools",
+          "slug": "swapbot-tools",
+          "category": "news",
+          "headline": "工具を交換し、触覚も使うロボットアーム",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "料理では、切る、ぬる、ひっくり返すといった作業ごとに道具が変わり、必要な力のかけ方も違う。Yunchu Zhangらは、ロボットアームが工具を自動交換するSwapBotを発表した。2026年10月29日に公開された研究論文であり、どんな家庭でも料理を完成させる市販ロボットができたという話ではない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "設計の中心は、ロボット側に固定する共通の接続部と、各工具に付ける比較的安価なアダプターである。一つの万能なハンドですべてをこなすのではなく、作業に合った工具を選ぶ。可動部分を持つ工具や複数のロボット機種にも対応する。工具は物理的に固定されなければならず、腕の近くに置くだけでは作業できない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "各アダプターには小型の触覚センサーが入っている。カメラで形や位置が分かっても、物にどれほど強く触れているかは十分に分からないことがある。人が遠隔操作して作業例を集め、その例をまねる模倣学習で動作を学習させた。豆腐の調理、サラダを混ぜる作業、肉を返す作業などを扱った。"
+            },
+            {
+              "type": "paragraph",
+              "text": "比較実験では、RGB画像だけの学習より、触覚を加えた学習の成功率が15〜25パーセントポイント高かった。遠隔操作の利用者調査でも、作業時間と操作者の負担が減ったと報告している。ただし、これは特定の条件で得られた著者の結果であり、あらゆる工具や材料で同じ改善が得られると証明したわけではない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "技術的な意義は、機械的な接続、接触計測、学習用の作業例の収集を共通化した点にある。視覚と触覚がどの程度役立つか比較しやすくなり、異なる作業でも装置を再利用できる。一方、接続部の摩耗、許容荷重、工具の清掃、交換時間、失敗した接続からの復旧は長時間の運用で確かめる必要がある。"
+            },
+            {
+              "type": "paragraph",
+              "text": "この研究は、複雑な万能の指を作る以外にも、道具を使い分ける方法があると示す。しかし、知らない台所で料理の全工程を自律的に終えられると証明したものではない。多様な物体、予想外の接触、長い反復運転、第三者による再現実験が今後の課題となる。"
+            },
+            {
+              "type": "paragraph",
+              "text": "読者が注目したいのは、どこまでが実験で確かめられ、どこからが今後の目標なのかという点だ。成功した映像だけでなく、失敗した場合にどうなったか、試験中に変えなかった条件は何かを知ると、技術の意味がより明確になる。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "raibo-wagon-towing",
+          "slug": "raibo-wagon-towing",
+          "category": "news",
+          "headline": "四足歩行ロボットが台車を引いて狭い通路を進む",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "技術的な注目点は実演の見た目ではなく、実行方式と制約を検証できることにある。学習による最初の経路候補と、予測モデルを使う反復的な経路修正を組み合わせた。 特定の機体と台車、15メートルのコースでの評価で、失敗も15％あった。"
+            },
+            {
+              "type": "paragraph",
+              "text": "四本の脚で歩くロボットが、自分だけで障害物を避けるのと、台車を引きながら進むのとでは難しさが違う。台車の車輪は横向きに自由に滑れないため、曲がるときには後ろの荷物が通る場所まで考えなければならない。Insung Yangらが2026年10月29日に公開した研究は、四足歩行ロボットRAIBOに専用の台車をつなぎ、狭い通路を通過するための仕組みを示した。単に重い物を引く力だけでなく、ロボットと台車を一つの動くシステムとして計画する点が中心である。"
+            },
+            {
+              "type": "paragraph",
+              "text": "経路を決める方法には二つの役割がある。条件付きフローマッチングと呼ばれる学習方式が、まず進み方の候補を素早く作る。続いてMPPIという予測型の制御方法が、多数の候補を試算し、より実行しやすい動きへ修正する。その試算には、命令に対してロボットと台車がどう動くかを予測する学習済みの力学モデルを使う。最初の提案だけに頼らず、実際の動きの制約を考えながら改善するので、学習時に見ていない状況にも対応できる可能性がある。ただし万能な経路探索が証明されたわけではない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "実験は屋外の15メートルのコースで行われ、狭い部分を通り抜けることが求められた。必要なセンサーと計算機はすべて機体に搭載されていた。研究チームは40回の試行で85％の成功率を報告し、最大40キログラムの荷物を引いた。これはRAIBO本体の重さにほぼ匹敵する。一方、15％の試行では目的を達成できなかった。数字はこの機体と台車の組み合わせに関するもので、ほかの四足歩行ロボットでも同じ性能になるとは限らない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "車輪は荷物の重さを支え、脚は地面に合わせて移動できるため、この組み合わせには運搬の可能性がある。しかし実際の倉庫や工事現場では、坂道、滑りやすい床、人の往来などが加わる。研究では長期間の連続運用やさまざまな台車での再現性までは確認されていない。今後は荷物の重さだけでなく、重心の位置、台車の大きさ、路面の状態を変えて試す必要がある。失敗したときに安全に止まり、経路を考え直せるかも重要な評価点になる。"
+            },
+            {
+              "type": "paragraph",
+              "text": "読者が注目したいのは、どこまでが実験で確かめられ、どこからが今後の目標なのかという点だ。成功した映像だけでなく、失敗した場合にどうなったか、試験中に変えなかった条件は何かを知ると、技術の意味がより明確になる。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.39267",
+              "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "dawn-robot-unscrewing",
+          "slug": "dawn-robot-unscrewing",
+          "category": "news",
+          "headline": "ねじを外すロボット、位置合わせと回転を分けて学ぶ",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "技術的な注目点は実演の見た目ではなく、実行方式と制約を検証できることにある。拡散モデルによる位置合わせと、視覚・力による接触判定、力制御の回転を組み合わせる。 初期のかみ合わせが難しく、斜めのねじや未知の製品全般は検証されていない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "ねじを外すとき、人はドライバーの先がねじ頭に合っているかを目と手の感覚で確かめる。ロボットには、この最初の作業が意外に難しい。少し位置がずれるだけで先端が滑り、回転してもねじは外れない。Hemant Kumarらが2026年10月29日に発表したDAWNは、ねじ外しを複数の段階に分けて学習させる研究システムだ。使い終わった電子機器などを分解し、部品を取り出す作業への応用を想定している。ねじを画像で見つけるだけでは、実際に外せることにはならない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "まず拡散モデルを使った動作方針が、カメラなどの情報からドライバーの位置合わせと差し込みを行う。拡散モデルは、候補の動作を段階的に整えていく学習方式の一つである。次に別の判定モデルが画像と力の情報を合わせ、先端がしっかりかみ合ったかを確認する。最後は力の変化を主に利用する制御器がねじを回して外す。この段階では反力を20ニュートン未満に保つ制約が設けられている。位置合わせ、接触の判断、回転という異なる問題に、それぞれ適した方法を使う設計である。"
+            },
+            {
+              "type": "paragraph",
+              "text": "実験にはFranka Emikaのロボットアームと電動ドライバーが使われた。研究チームは位置合わせのために199回の専門家の実演を集め、接触判定には6000枚の画像を用意した。ある比較試験では、位置合わせからかみ合わせまでの成功が約半数で、同じ条件で訓練を受けた人の遠隔操作と同程度だった。接触判定モデルの正解率は0.90と報告された。先端が正しくかみ合った後のねじ外しは、対象とした試験ではより安定していた。しかし最初の段階が失敗すれば、全体の作業も完了できない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "この研究から分かるのは、ねじを回す力だけではなく、正しい接触を作ることが重要だという点である。ねじ頭の形や見え方が学習時と違うと、位置合わせは難しくなる。斜めに取り付けられたねじは今回の評価対象ではない。実際の分解工場では、複雑な製品の中からねじを探し、先端が滑ったときに安全にやり直し、周囲の部品を傷つけない必要がある。DAWNはそのための有望な考え方を示すが、何でも分解できる完成品ではない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "読者が注目したいのは、どこまでが実験で確かめられ、どこからが今後の目標なのかという点だ。成功した映像だけでなく、失敗した場合にどうなったか、試験中に変えなかった条件は何かを知ると、技術の意味がより明確になる。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40537",
+              "title": "DAWN: Diffusion-based Alignment and unfastening Workflow Network",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "metatron",
+          "slug": "metatron",
+          "category": "news",
+          "headline": "一つの全身制御モデルで歩行と物体操作を切り替える",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "人型ロボットが机まで歩き、止まり、手を伸ばし、姿勢を立て直すには、全身の動きを連続して調整する必要がある。従来は動作ごとに別の制御モデルを学習させる場合が多い。Chen Tesslerらが10月27日に公開したMetatronは、一つの学習済み全身制御モデルと、目的に応じて書き換えられる技能プログラムを組み合わせる研究である。ニュース一覧に掲載された日と、論文が最初に公開された日を混同してはいけない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "基盤となるモデルには、関節の動きを最初から最後まで細かく指定する代わりに、体の一部をいつどこへ動かすか、どの方向へ進むか、どんな動き方にするかといった部分的な目標を与える。学習には動作計測の記録、バランスを崩した状態から戻る合成データ、物に触れる動作をロボットへ変換したデータを用いた。学習後はモデルの重みを固定し、新しい技能ごとに学習し直さない構成とした。"
+            },
+            {
+              "type": "paragraph",
+              "text": "技能は状態を覚える通常のプログラムとして記述される。プログラムが毎回おおまかな動作目標を示し、共通の制御モデルが全身の関節を協調させる。著者らは記録された動きを解析し、簡潔な規則を調整するプログラミング用のエージェントも使った。実機のUnitree G1では、同じモデルで歩行、姿勢の回復、家具への着座、遠隔操作を伴う物体の持ち上げを実演した。比較試験では、選ばれた従来方式より手を目標へ届ける成功率と押された際の頑健性が高いと報告している。"
+            },
+            {
+              "type": "paragraph",
+              "text": "ただし、物体を持ち上げる実験には人間の遠隔操作が関与しており、未知の部屋で自分だけで作業を理解した証拠ではない。論文にある登坂や曲芸的な動作はシミュレーション上のキャラクターでの結果で、実物のG1で確認した内容とは区別する必要がある。計算資源、未知の接触条件、安全停止、家具の種類による失敗率などは実運用に向けた検証課題である。共通の運動能力と作業ごとの手順を分ける設計が、どこまで再利用できるかが今後の焦点となる。"
+            },
+            {
+              "type": "paragraph",
+              "text": "読者が注目したいのは、どこまでが実験で確かめられ、どこからが今後の目標なのかという点だ。成功した映像だけでなく、失敗した場合にどうなったか、試験中に変えなかった条件は何かを知ると、技術の意味がより明確になる。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.38027",
+              "title": "METATRON: A Promptable Whole-Body Execution Layer for Humanoids",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "rlwrld-packing",
+          "slug": "rlwrld-packing",
+          "category": "news",
+          "headline": "東京の展示会で五本指のロボットが出荷作業を実演",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "物流の出荷作業では、箱を持ち上げるだけでなく、小さな商品を見分け、傷つけずに並べ、包装する必要がある。RLWRLDは2026年10月30日、東京のKDDI SUMMITで自社のロボット基盤モデルRLDX-1を使った実演を行ったと発表した。展示会の開催日は10月27日と28日であり、発表文の公開日とは異なる。基盤モデルとは、個別の動作だけでなく複数の作業に応用することを目指した学習モデルを指す。"
+            },
+            {
+              "type": "paragraph",
+              "text": "展示では五本指のハンドを備えたロボットが使われた。会社の説明によると、コンベヤーから段ボール箱を取り出し、形や材質の異なるスマートフォン関連の小物などを見分け、出荷用に箱詰めする流れを披露した。ただし、これは展示会での実演であり、実際の物流倉庫で長期間連続稼働したことを示す独立した試験ではない。成功回数、時間当たりの処理数、破損率、無人で動ける時間は公表されていない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "企業が導入を検討する場合、ハンドの器用さだけでは判断できない。コンベヤーや在庫管理との接続、商品の向きが違う場合のやり直し、人が近づいたときの安全対策、保守や停止時の対応を確認する必要がある。五本指の手は多様な物を扱える可能性がある一方、単純な二本指のハンドや専用設備より安く速いと証明されたわけではない。会社は産業パートナーとの実証も説明しているが、その成果を比較できる運用データは示していない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "次の評価では、実際の商品の種類を用いて、毎時の処理件数、失敗時の人手介入、商品への損傷、注文一件当たりの費用を測ることが重要になる。現時点で確認できるのは、開発会社が展示内容を報告したという事実である。物流向けのロボット基盤モデルがどのような仕事を狙っているかは分かるが、どんな倉庫でも自律運転できると結論づける段階ではない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "読者が注目したいのは、どこまでが実験で確かめられ、どこからが今後の目標なのかという点だ。成功した映像だけでなく、失敗した場合にどうなったか、試験中に変えなかった条件は何かを知ると、技術の意味がより明確になる。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000006.000183256.html",
+              "title": "RLWRLD KDDI SUMMIT 2026 RLDX-1 logistics packing demonstration",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "technology-signal",
+          "slug": "technology-signal",
+          "category": "analysis",
+          "headline": "単発の実演から検証できる作業へ",
+          "dek": "研究や実演によってロボットの仕事の幅は広がるが、結果の確かさは試験条件によって変わる。",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "成功例だけでなく、失敗、再現性、費用、人の介入も比べる必要がある。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39267",
+              "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40537",
+              "title": "DAWN: Diffusion-based Alignment and unfastening Workflow Network",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.38027",
+              "title": "METATRON: A Promptable Whole-Body Execution Layer for Humanoids",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000006.000183256.html",
+              "title": "RLWRLD KDDI SUMMIT 2026 RLDX-1 logistics packing demonstration",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "glossary",
+          "slug": "glossary",
+          "category": "analysis",
+          "headline": "本号の用語集",
+          "dek": "この号のキーワードを解説します。",
+          "body": [
+            {
+              "type": "heading",
+              "text": "触覚"
+            },
+            {
+              "type": "paragraph",
+              "text": "物にふれたときの情報を測る仕組み。"
+            },
+            {
+              "type": "heading",
+              "text": "モデル"
+            },
+            {
+              "type": "paragraph",
+              "text": "データから動きや結果を予測する計算の仕組み。"
+            },
+            {
+              "type": "heading",
+              "text": "シミュレーション"
+            },
+            {
+              "type": "paragraph",
+              "text": "実物を動かす前にコンピューター内で試すこと。"
+            },
+            {
+              "type": "heading",
+              "text": "ハンド"
+            },
+            {
+              "type": "paragraph",
+              "text": "物をつかむためのロボットの部品。"
+            },
+            {
+              "type": "heading",
+              "text": "学習"
+            },
+            {
+              "type": "paragraph",
+              "text": "例や経験を使ってモデルの働きを調整すること。"
+            },
+            {
+              "type": "heading",
+              "text": "制御"
+            },
+            {
+              "type": "paragraph",
+              "text": "機械をどのように動かすか決めること。"
+            },
+            {
+              "type": "heading",
+              "text": "センサー"
+            },
+            {
+              "type": "paragraph",
+              "text": "物の状態や接触を調べる装置。"
+            },
+            {
+              "type": "heading",
+              "text": "再現性"
+            },
+            {
+              "type": "paragraph",
+              "text": "同じ条件で試したときに近い結果を得られる性質。"
+            },
+            {
+              "type": "heading",
+              "text": "ロボット"
+            },
+            {
+              "type": "paragraph",
+              "text": "命令に従って実際の物を動かす機械。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39267",
+              "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40537",
+              "title": "DAWN: Diffusion-based Alignment and unfastening Workflow Network",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.38027",
+              "title": "METATRON: A Promptable Whole-Body Execution Layer for Humanoids",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000006.000183256.html",
+              "title": "RLWRLD KDDI SUMMIT 2026 RLDX-1 logistics packing demonstration",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        }
+      ]
+    }
+  },
+  "weather": {
+    "location": "ichikawa",
+    "timezone": "Asia/Tokyo",
+    "forecast_date": "2026-11-01",
+    "retrieved_at": "2026-10-31T16:07:47.112550Z",
+    "kind": "forecast",
+    "source_name": "Open-Meteo",
+    "source_url": "https://api.open-meteo.com/v1/forecast?latitude=35.72&longitude=139.93&timezone=Asia%2FTokyo&start_date=2026-11-01&end_date=2026-11-01&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+    "temperature_min_c": 13.2,
+    "temperature_max_c": 19.0,
+    "precipitation_probability_max": 8,
+    "slots": [
+      {
+        "hour": 9,
+        "temperature_c": 15.3,
+        "condition": "cloudy",
+        "precipitation_probability": 0,
+        "wind_speed_ms": 1.97,
+        "wind_direction_deg": 336
+      },
+      {
+        "hour": 12,
+        "temperature_c": 18.3,
+        "condition": "clear",
+        "precipitation_probability": 0,
+        "wind_speed_ms": 0.67,
+        "wind_direction_deg": 297
+      },
+      {
+        "hour": 18,
+        "temperature_c": 17.9,
+        "condition": "cloudy",
+        "precipitation_probability": 8,
+        "wind_speed_ms": 1.33,
+        "wind_direction_deg": 103
+      }
+    ]
+  }
+}

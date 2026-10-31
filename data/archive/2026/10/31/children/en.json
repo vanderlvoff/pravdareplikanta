@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.4",
+  "publication": "pravda_replikanta",
+  "issue_type": "daily",
+  "issue_date": "2026-10-31",
+  "issue_id": "daily-2026-10-31",
+  "edition": "children",
+  "language": "en",
+  "generated_at": "2026-10-31T23:06:42+09:00",
+  "title": "Pravda Replikanta — Young Readers",
+  "lead": "How to shorten a pause in conversation and why a robot might need several cameras.",
+  "news": [
+    {
+      "id": "sota-streamed-dialogue",
+      "title": "Why a talking robot can begin its reply sooner",
+      "summary": "Japan's Vstone announced an October 30 update allowing a tabletop robot to play the first parts of its spoken reply while later parts are still being prepared.",
+      "details": "A program turns written words into sounds. This is called speech synthesis. Instead of waiting for the whole sentence, the robot can play completed pieces as they arrive. This is streaming playback. The company also improved how some versions generate replies using artificial intelligence, but the change is not available in every version.",
+      "technical_novelty": "Streaming playback begins before the full speech file is ready.",
+      "engineering_impact": "Conversation may feel quicker, especially with long replies.",
+      "limitations": "Network conditions matter and some features cannot run together.",
+      "evidence_status": "Manufacturer announcement of a released update.",
+      "published_at": "2026-10-30",
+      "organization": "Vstone",
+      "source_ids": [
+        "vstone-sota"
+      ],
+      "time_window": "72h",
+      "body": "Imagine a conversation where the other person stays silent for a long time before every answer. Even a good answer would feel awkward. On October 30, a Japanese company announced an update to a tabletop talking robot. It can now begin speaking the first part of a reply while the rest is still being prepared.\n\nA program turns written words into sounds. This is called speech synthesis. Instead of waiting for the whole sentence, the robot can play completed pieces as they arrive. This is streaming playback. The company also improved how some versions generate replies using artificial intelligence, but the change is not available in every version.\n\nThere are trade-offs: streaming cannot be combined with some saved-audio and interruption settings. Reply speed depends on the internet connection, and no independent timing comparison has been published. The robot has not suddenly learned to understand everything; its conversation timing has improved. For reference, the product is called Sota.",
+      "image": null
+    },
+    {
+      "id": "luxonis-five-camera-board",
+      "title": "How five cameras can help a machine see its surroundings",
+      "summary": "Developers announced on October 27 a small board that connects up to five cameras, allowing different views and helping estimate distances.",
+      "details": "The board helps the cameras capture images at matching times. This is synchronization. Software can then recognize objects and estimate distance. Calibration means checking how each camera measures its surroundings so the pictures can be compared correctly. Combining these jobs on one board may make building a robot easier.",
+      "technical_novelty": "Several cameras share one system that keeps their images synchronized.",
+      "engineering_impact": "Cameras can be placed where a particular robot needs them.",
+      "limitations": "A hardware announcement does not prove that a robot can operate independently.",
+      "evidence_status": "Official product announcement from the developer.",
+      "published_at": "2026-10-27",
+      "organization": "Luxonis",
+      "source_ids": [
+        "luxonis-launch"
+      ],
+      "time_window": "7d",
+      "body": "Looking at an object with two eyes helps you judge distance. Two cameras can use a similar clue: their pictures differ slightly, and software can estimate how far away something is. On October 27, developers introduced a small board that connects up to five cameras. The cameras can be placed in different parts of a robot.\n\nThe board helps the cameras capture images at matching times. This is synchronization. Software can then recognize objects and estimate distance. Calibration means checking how each camera measures its surroundings so the pictures can be compared correctly. Combining these jobs on one board may make building a robot easier.\n\nBut five cameras do not automatically teach a robot to navigate any room or pick up any object safely. Motion software, measurement accuracy and speed still need testing. Different versions are expected to ship from November 2026 and early 2027. For reference, the board is called OAK 4 FFC.",
+      "image": null
+    }
+  ],
+  "technology_signal": {
+    "title": "Why a talking robot can begin its reply sooner",
+    "summary": "Japan's Vstone announced an October 30 update allowing a tabletop robot to play the first parts of its spoken reply while later parts are still being prepared.",
+    "implications": "Good interaction depends on timing as well as content."
+  },
+  "glossary": [
+    {
+      "term": "Streaming playback",
+      "definition": "Playing ready parts of sound before the full reply is finished."
+    },
+    {
+      "term": "Speech synthesis",
+      "definition": "Turning written words into spoken sound."
+    },
+    {
+      "term": "Artificial intelligence",
+      "definition": "Software using data to recognize patterns or generate responses."
+    },
+    {
+      "term": "Synchronization",
+      "definition": "Matching the timing of multiple cameras."
+    },
+    {
+      "term": "Calibration",
+      "definition": "Checking and adjusting how a camera measures."
+    }
+  ],
+  "sources": [
+    {
+      "id": "vstone-sota",
+      "title": "Sota communication robot gains AI dialogue and streamed speech update",
+      "url": "https://prtimes.jp/main/html/rd/p/000000115.000038478.html",
+      "domain": "prtimes.jp",
+      "organization": "Vstone",
+      "published_at": "2026-10-30"
+    },
+    {
+      "id": "luxonis-launch",
+      "title": "Introducing OAK 4 FFC: Build the Vision System Your Robot Actually Needs",
+      "url": "https://discuss.luxonis.com/d/7072-introducing-oak-4-ffc-build-the-vision-system-your-robot-actually-needs",
+      "domain": "discuss.luxonis.com",
+      "organization": "Luxonis",
+      "published_at": "2026-10-27"
+    }
+  ]
+}

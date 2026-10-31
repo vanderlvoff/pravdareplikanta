@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Правда репликанта</title>
+    <link>https://repravda.com/ru/enthusiast/</link>
+    <description>Новости и анализ из мира физического искусственного интеллекта.</description>
+    <language>ru</language>
+    <atom:link href="https://repravda.com/ru/enthusiast/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Робот меняет инструменты и чувствует прикосновения</title>
+      <link>https://repravda.com/ru/enthusiast/issues/2026-11-01/articles/swapbot-tools/</link>
+      <guid isPermaLink="false">replicantpravda:enthusiast:2026-11-01:ru:swapbot-tools</guid>
+      <description>Для разных действий нужны разные инструменты: нож разрезает, кисточка наносит жидкость, лопатка переворачивает продукт. Исследователи во главе с Юньчу Чжан предложили SwapBot — систему, в которой роботизированная рука самостоятельно меняет инструменты. Работа опубликована 29 октября 2026 года как препринт, поэтому речь идёт об исследовательском прототипе, а не о готовом домашнем помощнике.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>Четвероногий робот учится тянуть тележку по узкому проходу</title>
+      <link>https://repravda.com/ru/enthusiast/issues/2026-11-01/articles/raibo-wagon-towing/</link>
+      <guid isPermaLink="false">replicantpravda:enthusiast:2026-11-01:ru:raibo-wagon-towing</guid>
+      <description>Четвероногий робот умеет обходить препятствия, пока отвечает только за собственное тело. Стоит прицепить к нему тележку, и задача меняется: задние колёса не могут мгновенно повторить любое движение, а на повороте груз занимает дополнительное пространство. Исследователи во главе с Инсоном Яном описали 29 октября 2026 года систему RAIBO-Wagon, в которой шагающая машина тянет специальную тележку через тесные проходы. Это не просто демонстрация силы робота: главное здесь — управление связанной парой, которая должна двигаться как единая система.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>Робот учится откручивать винты, разделяя работу на точное наведение и вращение</title>
+      <link>https://repravda.com/ru/enthusiast/issues/2026-11-01/articles/dawn-robot-unscrewing/</link>
+      <guid isPermaLink="false">replicantpravda:enthusiast:2026-11-01:ru:dawn-robot-unscrewing</guid>
+      <description>Открутить винт человеку обычно легче, чем роботу. Нужно найти головку, подвести отвёртку точно по оси, почувствовать, что наконечник вошёл в шлиц, и только потом вращать, не срывая контакт. Хемант Кумар и коллеги описали 29 октября 2026 года систему DAWN для автоматизированной разборки. Исследователи разделили задачу на наведение и зацепление, определение момента надёжного контакта и собственно выкручивание. Такая последовательность особенно интересна для переработки электроники, где винты могут находиться в разных местах.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>Один контроллер гуманоидного робота выполняет разные навыки без нового обучения</title>
+      <link>https://repravda.com/ru/enthusiast/issues/2026-11-01/articles/metatron/</link>
+      <guid isPermaLink="false">replicantpravda:enthusiast:2026-11-01:ru:metatron</guid>
+      <description>Один и тот же гуманоид должен уметь идти, остановиться, нагнуться, поднять предмет и снова сохранить равновесие. Однако многие робототехнические системы требуют отдельного обучения под каждое действие. Чен Тесслер и коллеги предложили Metatron — общий слой исполнения движений, который соединяет обученную генеративную модель всего тела с программируемыми навыками. Исследование опубликовано 27 октября 2026 года, а не в день появления статьи в новостной подборке.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>На выставке в Токио робот с пятью пальцами показал упаковку заказов</title>
+      <link>https://repravda.com/ru/enthusiast/issues/2026-11-01/articles/rlwrld-packing/</link>
+      <guid isPermaLink="false">replicantpravda:enthusiast:2026-11-01:ru:rlwrld-packing</guid>
+      <description>В логистике робот должен не просто взять коробку, но и различить мелкие товары, положить их в нужную упаковку и не повредить содержимое. Компания RLWRLD сообщила 30 октября 2026 года о показе такой последовательности на мероприятии KDDI SUMMIT в Токио. Само мероприятие проходило 27 и 28 октября: дату пресс-релиза нельзя принимать за дату демонстрации. Разработчик представил систему RLDX-1 как базовую модель для управления действиями робота.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>От отдельного трюка к проверяемой работе</title>
+      <link>https://repravda.com/ru/enthusiast/issues/2026-11-01/articles/technology-signal/</link>
+      <guid isPermaLink="false">replicantpravda:enthusiast:2026-11-01:ru:technology-signal</guid>
+      <description>Новые исследования и демонстрации показывают способы расширить набор действий робота, но качество результата зависит от условий испытания.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>Анализ</category>
+    </item>
+    <item>
+      <title>Google дала разработчикам облачный инструмент для планирования действий роботов</title>
+      <link>https://repravda.com/ru/enthusiast/issues/2026-10-31/articles/google-cloud-robotics-er2/</link>
+      <guid isPermaLink="false">replicantpravda:enthusiast:2026-10-31:ru:google-cloud-robotics-er2</guid>
+      <description>Представь просьбу «найди коробку и принеси её». Роботу нужно не только распознать коробку, но и решить, куда двигаться, как её взять и когда проверить результат. Google Cloud сообщила 27 октября, что открыла предварительный доступ к Gemini Robotics Embodied Reasoning 2. Это программа высокого уровня, которая планирует несколько шагов и вызывает другие программы, управляющие движением.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>Можно ли показать роботу, как будет двигаться мир?</title>
+      <link>https://repravda.com/ru/enthusiast/issues/2026-10-31/articles/worldflow-video-3d/</link>
+      <guid isPermaLink="false">replicantpravda:enthusiast:2026-10-31:ru:worldflow-video-3d</guid>
+      <description>Когда бросаешь мяч, легко представить, где он окажется через мгновение. Роботу такое предсказание даётся сложнее: нужно учитывать не только картинку, но и движение предметов в пространстве. Исследователи 29 октября представили WorldFlow — модель, которая одновременно предсказывает будущие кадры видео и перемещение выбранных точек в трёх измерениях.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>Google дала разработчикам облачный инструмент для планирования действий роботов</title>
+      <link>https://repravda.com/ru/enthusiast/issues/2026-10-31/articles/technology-signal/</link>
+      <guid isPermaLink="false">replicantpravda:enthusiast:2026-10-31:ru:technology-signal</guid>
+      <description>Google Cloud 27 октября открыла публичную предварительную версию Gemini Robotics ER 2 — модели, которая анализирует видео, планирует шаги и вызывает отдельные функции управления роботами.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>Анализ</category>
+    </item>
+  </channel>
+</rss>

@@ -9,6 +9,7 @@ from .weather import Weather
 
 Text = Annotated[str, Field(min_length=1)]
 Slug = Annotated[str, Field(pattern=r"^[a-z0-9]+(?:-[a-z0-9]+)*$")]
+ReaderEdition = Literal["engineer", "business", "enthusiast", "children"]
 
 
 class Record(BaseModel):
@@ -83,6 +84,7 @@ class Edition(Record):
 
 
 class Issue(Record):
+    edition: ReaderEdition = "engineer"
     issue_id: date
     number: int = Field(gt=0)
     publication_date: date

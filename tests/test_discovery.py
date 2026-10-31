@@ -97,8 +97,8 @@ def test_sitemap_contains_canonical_reader_pages_and_no_aliases(issues, tmp_path
     assert root.tag == f"{{{SITEMAP_NS}}}urlset"
     urls = [entry.findtext(f"{{{SITEMAP_NS}}}loc") for entry in root]
     assert (
-        len(urls) == len(set(urls)) == 36
-    )  # Six landing/archive pages + 2 × 3 × (issue + 4 articles).
+        len(urls) == len(set(urls)) == 39
+    )  # Nine landing/archive/about pages + 2 × 3 × (issue + 4 articles).
     assert not any("/print/" in url or url.endswith(".pdf") for url in urls)
     assert ORIGIN + "/" not in urls
     assert not any(f"/{lang}/articles/" in url for lang in ("ru", "en", "ja") for url in urls)

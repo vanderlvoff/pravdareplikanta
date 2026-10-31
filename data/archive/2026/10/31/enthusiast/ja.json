@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.4",
+  "publication": "pravda_replikanta",
+  "issue_type": "daily",
+  "issue_date": "2026-10-31",
+  "issue_id": "daily-2026-10-31",
+  "edition": "enthusiast",
+  "language": "ja",
+  "generated_at": "2026-10-31T23:06:42+09:00",
+  "title": "レプリカント・プラウダ — 好奇心を持つ読者向け",
+  "lead": "ロボットが手順を考え、物の動きを予測する方法。",
+  "news": [
+    {
+      "id": "google-cloud-robotics-er2",
+      "title": "ロボットの作業手順を考えるAIがクラウドで利用可能に",
+      "summary": "Google Cloudは10月27日、動画を見て複数の手順を考え、ロボット制御機能を呼び出すGemini Robotics ER 2の試用提供を発表した。",
+      "details": "プログラム同士の呼び出し口をAPIという。モデルは動画を見て、移動や物体操作の機能を選び、結果を確かめる。複数の機能をまとめて使うことをオーケストレーションと呼ぶ。複数ロボットの協力も想定されるが、実際にできることは各機体によって異なる。",
+      "technical_novelty": "動画理解、進捗確認、制御用プログラムの呼び出しをまとめる。",
+      "engineering_impact": "複雑な仕事を試しやすくなるが、動作制御と安全対策は別に必要。",
+      "limitations": "試用提供は実運用の安全性や信頼性を保証しない。",
+      "evidence_status": "Googleの公式発表と開発元による評価結果。",
+      "published_at": "2026-10-27",
+      "organization": "Google Cloud and Google DeepMind",
+      "source_ids": [
+        "google-cloud-release"
+      ],
+      "time_window": "7d",
+      "body": "「箱を探して持ってきて」と頼むと、ロボットは移動先、つかみ方、作業が終わったかの確認を順番に考える必要がある。Google Cloudは10月27日、こうした手順を考えるGemini Robotics Embodied Reasoning 2のパブリックプレビューを発表した。モーターを直接動かす装置ではなく、別の制御プログラムを呼び出すモデルだ。\n\nプログラム同士の呼び出し口をAPIという。モデルは動画を見て、移動や物体操作の機能を選び、結果を確かめる。複数の機能をまとめて使うことをオーケストレーションと呼ぶ。複数ロボットの協力も想定されるが、実際にできることは各機体によって異なる。\n\nGoogleは動画中の重要な瞬間を見つけるテストで正解率91.3%、時間の平均誤差0.96秒と報告した。これは特定の映像テストの成績で、どんな仕事も91.3%成功する意味ではない。今回の新情報は主にクラウドでの提供開始であり、通信の遅れや緊急停止への対策は現場で必要だ。",
+      "image": null
+    },
+    {
+      "id": "worldflow-video-3d",
+      "title": "ロボットは物の未来の動きを予想できるか",
+      "summary": "10月29日に発表されたWorldFlowは未来の映像と点の3次元移動を予測する研究モデル。SpatialCogでの平均変位誤差は0.060メートル。",
+      "details": "研究チームは現実とシミュレーションから144万件の物体データで学習し、11の情報源から1678件を集めたWorldFlowBenchで評価した。SpatialCogでは平均変位誤差が0.060メートルとなり、著者の比較では最も強い外部手法より54.2%小さかった。",
+      "technical_novelty": "映像と3次元の動きを一緒に予測する。",
+      "engineering_impact": "ロボットが行動を考える助けになる可能性がある。",
+      "limitations": "完成した自律制御システムではない。",
+      "evidence_status": "著者の実験を含むプレプリント。",
+      "published_at": "2026-10-29",
+      "organization": "WorldFlow research authors",
+      "source_ids": [
+        "worldflow-paper"
+      ],
+      "time_window": "72h",
+      "body": "動くボールを見ると、少し先の位置を想像できる。ロボットにとっては、映像だけでなく物の立体的な動きを予測する必要がある。10月29日に発表されたWorldFlowは、未来の映像と、選んだ点の3次元の動きを同時に予測する研究モデルだ。\n\n研究チームは現実とシミュレーションから144万件の物体データで学習し、11の情報源から1678件を集めたWorldFlowBenchで評価した。SpatialCogでは平均変位誤差が0.060メートルとなり、著者の比較では最も強い外部手法より54.2%小さかった。\n\nただし、動きを予想できても、ロボットが必ず安全に物をつかめるわけではない。実際の利用には計算速度、カメラの精度、思いがけない状況での動作を確かめる必要がある。",
+      "image": null
+    }
+  ],
+  "technology_signal": {
+    "title": "ロボットの作業手順を考えるAIがクラウドで利用可能に",
+    "summary": "Google Cloudは10月27日、動画を見て複数の手順を考え、ロボット制御機能を呼び出すGemini Robotics ER 2の試用提供を発表した。",
+    "implications": "クラウドの計画機能だけで現場の安全は守れない。"
+  },
+  "glossary": [
+    {
+      "term": "API",
+      "definition": "別のプログラムの機能を呼び出す窓口。"
+    },
+    {
+      "term": "オーケストレーション",
+      "definition": "複数のプログラムをまとめて動かすこと。"
+    },
+    {
+      "term": "パブリックプレビュー",
+      "definition": "広く試せるが実運用の保証はない提供段階。"
+    },
+    {
+      "term": "世界モデル",
+      "definition": "場面がどう変わるかを予測するモデル。"
+    },
+    {
+      "term": "3次元の軌道",
+      "definition": "空間の中で点が通る道筋。"
+    }
+  ],
+  "sources": [
+    {
+      "id": "google-cloud-release",
+      "title": "Gemini Robotics Embodied Reasoning 2 is now available on Google Cloud",
+      "url": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-robotics-embodied-reasoning-2-is-now-available-on-google-cloud",
+      "domain": "cloud.google.com",
+      "organization": "Google Cloud and Google DeepMind",
+      "published_at": "2026-10-27"
+    },
+    {
+      "id": "worldflow-paper",
+      "title": "WorldFlow: Joint Video and 3D Motion Prediction via Large-Scale Pretraining",
+      "url": "https://arxiv.org/abs/2610.39278",
+      "domain": "arxiv.org",
+      "organization": "WorldFlow research authors",
+      "published_at": "2026-10-29"
+    }
+  ]
+}

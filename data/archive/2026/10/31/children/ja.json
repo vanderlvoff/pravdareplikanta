@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.4",
+  "publication": "pravda_replikanta",
+  "issue_type": "daily",
+  "issue_date": "2026-10-31",
+  "issue_id": "daily-2026-10-31",
+  "edition": "children",
+  "language": "ja",
+  "generated_at": "2026-10-31T23:06:42+09:00",
+  "title": "レプリカント・プラウダ — 小学校高学年向け",
+  "lead": "返事の待ち時間を短くする工夫と、複数のカメラを使う理由。",
+  "news": [
+    {
+      "id": "sota-streamed-dialogue",
+      "title": "話すロボットが返事を早く始める工夫",
+      "summary": "日本のヴイストンは10月30日、卓上型の会話ロボットの更新を発表。返事の音声が全部できる前に、できた部分から話せるようにした。",
+      "details": "文字を声に変える技術を音声合成（おんせいごうせい）という。長い文章を最後まで音にしてから話すと、その間は無言になる。できた部分から順番に流す方法はストリーム再生と呼ばれる。人工知能（じんこうちのう）を使った会話も一部の機種で改善したが、すべての機種が対象ではない。",
+      "technical_novelty": "音声が全部完成する前に、最初の部分から再生する。",
+      "engineering_impact": "長い返事の待ち時間を短く感じられる可能性がある。",
+      "limitations": "通信状態に左右され、同時に使えない機能もある。",
+      "evidence_status": "メーカーによる配信済み更新の発表。",
+      "published_at": "2026-10-30",
+      "organization": "Vstone",
+      "source_ids": [
+        "vstone-sota"
+      ],
+      "time_window": "72h",
+      "body": "質問したあと、相手が毎回長く黙っていたら会話しにくい。日本の会社は10月30日、机の上に置く会話ロボットの更新を発表した。返事の音声が全部できるのを待たず、できた部分から話し始められるようにした。\n\n文字を声に変える技術を音声合成（おんせいごうせい）という。長い文章を最後まで音にしてから話すと、その間は無言になる。できた部分から順番に流す方法はストリーム再生と呼ばれる。人工知能（じんこうちのう）を使った会話も一部の機種で改善したが、すべての機種が対象ではない。\n\n注意点もある。前に作った音声を保存する機能や、話の途中で割り込む設定とは同時に使えない場合がある。返事の速さは通信にも左右され、第三者の速度測定はまだない。何でも理解できるようになったわけではなく、会話のタイミングを改善したのだ。参考までに、名前はSota（ソータ）という。",
+      "image": null
+    },
+    {
+      "id": "luxonis-five-camera-board",
+      "title": "5台のカメラで周りを見やすくする工夫",
+      "summary": "開発会社は10月27日、最大5台のカメラをつなげて、いろいろな方向の画像や物までの距離を調べられる小さな基板を発表した。",
+      "details": "カメラが同じタイミングで画像を撮れるように合わせることを同期（どうき）という。さらに、カメラの測り方を調整する校正（こうせい）も大切だ。こうした仕組みをまとめると、物を見つけたり、距離を計算したりしやすくなる。",
+      "technical_novelty": "複数のカメラを一つの装置で動かし、撮影のタイミングを合わせる。",
+      "engineering_impact": "ロボットの形に合わせてカメラを置ける。",
+      "limitations": "機械の発表だけでロボットの自律能力が上がったとはいえない。",
+      "evidence_status": "開発会社による公式製品発表。",
+      "published_at": "2026-10-27",
+      "organization": "Luxonis",
+      "source_ids": [
+        "luxonis-launch"
+      ],
+      "time_window": "7d",
+      "body": "二つの目で物を見ると、どれくらい遠いか分かりやすい。二つのカメラも、画像の少しのちがいを使って距離を調べられる。開発会社は10月27日、最大5台のカメラをつなげる小さな基板を発表した。ロボットの形に合わせて、別々の場所にカメラを置ける。\n\nカメラが同じタイミングで画像を撮れるように合わせることを同期（どうき）という。さらに、カメラの測り方を調整する校正（こうせい）も大切だ。こうした仕組みをまとめると、物を見つけたり、距離を計算したりしやすくなる。\n\nでも、カメラが5台あっても、どんな部屋でも安全に歩けるとは限らない。動きを決めるプログラムや測定の正しさも試す必要がある。出荷は2026年11月以降と2027年初めに予定されている。参考までに、この基板の名前はOAK 4 FFCという。",
+      "image": null
+    }
+  ],
+  "technology_signal": {
+    "title": "話すロボットが返事を早く始める工夫",
+    "summary": "日本のヴイストンは10月30日、卓上型の会話ロボットの更新を発表。返事の音声が全部できる前に、できた部分から話せるようにした。",
+    "implications": "会話では答えの内容だけでなく、返事のタイミングも大切だ。"
+  },
+  "glossary": [
+    {
+      "term": "ストリーム再生",
+      "definition": "音声の後半を作っている間に前半から流すこと。"
+    },
+    {
+      "term": "音声合成（おんせいごうせい）",
+      "definition": "文字を聞こえる声に変える技術。"
+    },
+    {
+      "term": "人工知能（じんこうちのう）",
+      "definition": "データを使って規則を学び、答えなどを作るプログラム。"
+    },
+    {
+      "term": "同期（どうき）",
+      "definition": "複数のカメラの撮影時間を合わせること。"
+    },
+    {
+      "term": "校正（こうせい）",
+      "definition": "カメラの測り方を調整すること。"
+    }
+  ],
+  "sources": [
+    {
+      "id": "vstone-sota",
+      "title": "Sota communication robot gains AI dialogue and streamed speech update",
+      "url": "https://prtimes.jp/main/html/rd/p/000000115.000038478.html",
+      "domain": "prtimes.jp",
+      "organization": "Vstone",
+      "published_at": "2026-10-30"
+    },
+    {
+      "id": "luxonis-launch",
+      "title": "Introducing OAK 4 FFC: Build the Vision System Your Robot Actually Needs",
+      "url": "https://discuss.luxonis.com/d/7072-introducing-oak-4-ffc-build-the-vision-system-your-robot-actually-needs",
+      "domain": "discuss.luxonis.com",
+      "organization": "Luxonis",
+      "published_at": "2026-10-27"
+    }
+  ]
+}

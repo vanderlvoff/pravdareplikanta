@@ -1,6 +1,7 @@
 {% for block in article.body %}
-{% if block.type == 'list' %}<ul>{% for item in block['items'] %}<li>{{ item }}</li>{% endfor %}</ul>
-{% elif block.type == 'heading' %}<h3>{{ block.text }}</h3>
-{% elif block.type == 'quote' %}<blockquote>{{ block.text }}</blockquote>
-{% else %}<p>{{ block.text }}</p>{% endif %}
+{% set block_index = loop.index0 %}
+{% if block.type == 'list' %}<ul>{% for item in block['items'] %}<li>{{ annotated_body[block_index][loop.index0] if annotated_body is defined else item }}</li>{% endfor %}</ul>
+{% elif block.type == 'heading' %}<h3>{{ annotated_body[block_index] if annotated_body is defined else block.text }}</h3>
+{% elif block.type == 'quote' %}<blockquote>{{ annotated_body[block_index] if annotated_body is defined else block.text }}</blockquote>
+{% else %}<p>{{ annotated_body[block_index] if annotated_body is defined else block.text }}</p>{% endif %}
 {% endfor %}

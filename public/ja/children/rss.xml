@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>レプリカントの真実</title>
+    <link>https://repravda.com/ja/children/</link>
+    <description>フィジカルAIの世界からニュースと分析をお届けします。</description>
+    <language>ja</language>
+    <atom:link href="https://repravda.com/ja/children/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>道具を取りかえるとロボットの仕事はどう変わる？</title>
+      <link>https://repravda.com/ja/children/issues/2026-11-01/articles/swapbot-tools/</link>
+      <guid isPermaLink="false">replicantpravda:children:2026-11-01:ja:swapbot-tools</guid>
+      <description>サラダを混ぜたり、食べ物をひっくり返したり、材料を切ったりするとき、同じ道具だけでは不便だ。研究者は、ロボットの腕そのものを取りかえずに、仕事に合った道具を交換できる仕組みを考えた。10月29日に発表された研究で、まだ家庭向けの完成品ではない。</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>四本足のロボットは台車もぶつけずに曲がれる？</title>
+      <link>https://repravda.com/ja/children/issues/2026-11-01/articles/raibo-wagon-towing/</link>
+      <guid isPermaLink="false">replicantpravda:children:2026-11-01:ja:raibo-wagon-towing</guid>
+      <description>旅行かばんを引いて角を曲がるとき、自分は通れても、後ろのかばんが壁に当たりそうになることがある。四本足のロボットが台車を引くときも同じような問題が起こる。研究者は、ロボットの足だけでなく、後ろの台車が通る場所も考えて進む方法を作った。</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>ロボットの実力は一つの点数で比べられる？</title>
+      <link>https://repravda.com/ja/children/issues/2026-11-01/articles/roboseed-evaluation/</link>
+      <guid isPermaLink="false">replicantpravda:children:2026-11-01:ja:roboseed-evaluation</guid>
+      <description>あるロボットは積み木を速く運び、別のロボットはこわれやすい物をていねいにつかむ。どちらが優れているだろうか。仕事も条件も違うのに、成功した回数だけを比べても答えは出ない。研究者は、実験で何を調べたのかを細かく見直す評価方法を考えた。</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>少しずれても物をつかめるロボットの手を考える</title>
+      <link>https://repravda.com/ja/children/issues/2026-11-01/articles/simto-robust-grippers/</link>
+      <guid isPermaLink="false">replicantpravda:children:2026-11-01:ja:simto-robust-grippers</guid>
+      <description>コップを持つとき、人の指はコップの形に合わせて少し曲がる。ロボットにも同じような工夫が役立つ。カメラが物の位置を少し間違えることがあるからだ。研究者は、いつもぴったり正しい位置からつかむと考えるのではなく、多少ずれても使えるやわらかい手を設計した。</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>五本指のロボットがネット注文の箱づめに挑戦</title>
+      <link>https://repravda.com/ja/children/issues/2026-11-01/articles/rlwrld-packing/</link>
+      <guid isPermaLink="false">replicantpravda:children:2026-11-01:ja:rlwrld-packing</guid>
+      <description>ネットで注文された商品を送るには、正しい品物を選び、箱に入れ、こわれないようにする必要がある。東京の展示会では、五本指の手を持つロボットが、これに似た仕事を見せた。展示会は10月27日と28日に開かれ、会社が内容を発表したのは30日だった。</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>単発の実演から検証できる作業へ</title>
+      <link>https://repravda.com/ja/children/issues/2026-11-01/articles/technology-signal/</link>
+      <guid isPermaLink="false">replicantpravda:children:2026-11-01:ja:technology-signal</guid>
+      <description>研究や実演によってロボットの仕事の幅は広がるが、結果の確かさは試験条件によって変わる。</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>分析</category>
+    </item>
+    <item>
+      <title>話すロボットが返事を早く始める工夫</title>
+      <link>https://repravda.com/ja/children/issues/2026-10-31/articles/sota-streamed-dialogue/</link>
+      <guid isPermaLink="false">replicantpravda:children:2026-10-31:ja:sota-streamed-dialogue</guid>
+      <description>質問したあと、相手が毎回長く黙っていたら会話しにくい。日本の会社は10月30日、机の上に置く会話ロボットの更新を発表した。返事の音声が全部できるのを待たず、できた部分から話し始められるようにした。</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>5台のカメラで周りを見やすくする工夫</title>
+      <link>https://repravda.com/ja/children/issues/2026-10-31/articles/luxonis-five-camera-board/</link>
+      <guid isPermaLink="false">replicantpravda:children:2026-10-31:ja:luxonis-five-camera-board</guid>
+      <description>二つの目で物を見ると、どれくらい遠いか分かりやすい。二つのカメラも、画像の少しのちがいを使って距離を調べられる。開発会社は10月27日、最大5台のカメラをつなげる小さな基板を発表した。ロボットの形に合わせて、別々の場所にカメラを置ける。</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>話すロボットが返事を早く始める工夫</title>
+      <link>https://repravda.com/ja/children/issues/2026-10-31/articles/technology-signal/</link>
+      <guid isPermaLink="false">replicantpravda:children:2026-10-31:ja:technology-signal</guid>
+      <description>日本のヴイストンは10月30日、卓上型の会話ロボットの更新を発表。返事の音声が全部できる前に、できた部分から話せるようにした。</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>分析</category>
+    </item>
+  </channel>
+</rss>

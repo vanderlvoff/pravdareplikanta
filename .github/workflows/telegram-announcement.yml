@@ -1,0 +1,77 @@
+name: Telegram issue announcement
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Preview without sending
+        type: boolean
+        default: true
+      check_bot_only:
+        description: Only verify bot credentials and channel posting rights (no message)
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  actions: read
+  checks: read
+
+concurrency:
+  group: telegram-issue-announcements
+  cancel-in-progress: false
+
+jobs:
+  announce:
+    if: >-
+      (github.event_name == 'workflow_dispatch' && (inputs.dry_run || inputs.check_bot_only)) ||
+      vars.TELEGRAM_ANNOUNCEMENTS_ENABLED == 'true'
+    runs-on: ubuntu-24.04
+    environment: TELEGRAM_BOT_TOKEN
+    timeout-minutes: 15
+    env:
+      PYTHONPATH: src
+      TELEGRAM_ANNOUNCEMENTS_ENABLED: ${{ vars.TELEGRAM_ANNOUNCEMENTS_ENABLED }}
+    steps:
+      - name: Read trusted production code
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: main
+          persist-credentials: false
+      - name: Validate reviewed static release
+        run: node scripts/check-public.mjs
+      - name: Verify bot credentials and channel permissions
+        if: github.event_name != 'workflow_dispatch' || !inputs.dry_run || inputs.check_bot_only
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: python3 scripts/telegram_announce.py check-bot
+      - name: Prepare and check production delivery
+        id: prepare
+        if: github.event_name != 'workflow_dispatch' || !inputs.check_bot_only
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          PREVIEW: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
+        run: |
+          if [ "$PREVIEW" = "true" ]; then
+            python3 scripts/telegram_announce.py prepare --dry-run
+          else
+            python3 scripts/telegram_announce.py prepare
+          fi
+      - name: Reserve this issue before sending
+        if: steps.prepare.outputs.send == 'true'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: ${{ steps.prepare.outputs.artifact_name }}
+          path: .telegram-work/claim.json
+          include-hidden-files: true
+          retention-days: 90
+          if-no-files-found: error
+      - name: Send one Russian announcement
+        if: steps.prepare.outputs.send == 'true'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: python3 scripts/telegram_announce.py send

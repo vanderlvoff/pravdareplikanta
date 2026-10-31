@@ -20,6 +20,9 @@ from .discovery import (
     render_sitemap,
 )
 from .models import Issue
+from .glossary import glossary_entries
+from .annotations import annotate_article
+from .readers import reader_base, reader_choices, reader_groups, reader_issue_key, source_path
 from .illustrations import copy_illustrations
 from .verification import artifact_hashes, verify_discovery, verify_site_links
 
@@ -95,10 +98,14 @@ def build(
     archive_issues: tuple[Issue, ...] = (),
     site_url: str = DEFAULT_SITE_URL,
     publication: bool = False,
+    reader_issues: tuple[Issue, ...] = (),
+    import_report: dict | None = None,
 ) -> None:
     """Build latest and explicitly selected history as one isolated local preview."""
     latest = issue
-    issues = collect_issues(latest, archive_issues)
+    primary_issues = collect_issues(latest, archive_issues)
+    groups = reader_groups([*primary_issues, *reader_issues])
+    issues = [entry for selected in groups.values() for entry in selected]
     if publication and any(entry.status not in {"approved", "published"} for entry in issues):
         raise ValueError("Publication builds require approved/published issues only")
     site_url = normalize_site_url(site_url)
@@ -119,6 +126,10 @@ def build(
         archive_labels = json.loads(env.loader.get_source(env, "archive-labels.json")[0])
         discovery_labels = json.loads(env.loader.get_source(env, "discovery-labels.json")[0])
         weather_labels = json.loads(env.loader.get_source(env, "weather-labels.json")[0])
+        reader_labels = json.loads(env.loader.get_source(env, "reader-labels.json")[0])
+        glossary_labels = json.loads(env.loader.get_source(env, "glossary-labels.json")[0])
+        glossary_aliases = json.loads(env.loader.get_source(env, "glossary-aliases.json")[0])
+        guide = json.loads(env.loader.get_source(env, "guide.json")[0])
 
         def write(path: str, content: str) -> None:
             destination = staging / path
@@ -127,6 +138,10 @@ def build(
 
         if illustration_assets:
             write("illustrations.json", json.dumps(illustration_assets, indent=2) + "\n")
+        if import_report is not None:
+            write(
+                "reader-import.json", json.dumps(import_report, ensure_ascii=False, indent=2) + "\n"
+            )
         style = env.loader.get_source(env, "style.css")[0]
         write("style.css", style)
         style_version = hashlib.sha256(style.encode()).hexdigest()[:12]
@@ -134,8 +149,12 @@ def build(
         sitemap = render_sitemap(issues, site_url)
         if sitemap:
             write("sitemap.xml", sitemap)
-        for lang in ("ru", "en", "ja"):
-            write(f"{lang}/rss.xml", render_rss(issues, site_url, lang, discovery_labels[lang]))
+        for code, selected in groups.items():
+            for lang in ("ru", "en", "ja"):
+                write(
+                    reader_base(lang, code).lstrip("/") + "rss.xml",
+                    render_rss(selected, site_url, lang, discovery_labels[lang]),
+                )
         write(
             "site.json",
             json.dumps(
@@ -150,8 +169,33 @@ def build(
         )
 
         for issue in issues:
-            write(f"sources/{issue.issue_id}.json", issue.model_dump_json(indent=2) + "\n")
+            selected = groups[issue.edition]
+            edition_latest = selected[0]
+            write(source_path(issue), issue.model_dump_json(indent=2) + "\n")
             for lang, edition in sorted(issue.languages.items()):
+                terms = glossary_entries(edition)
+                base = reader_base(lang, issue.edition)
+                words = reader_labels[lang]
+                labels = LABELS[lang] | (
+                    words["children_labels"] if issue.edition == "children" else {}
+                )
+                archive_words = archive_labels[lang] | (
+                    {"intro": words["children_archive_intro"], "home": words["children_home"]}
+                    if issue.edition == "children"
+                    else {}
+                )
+
+                def navigation(page: str, article_id: str | None = None) -> list[dict]:
+                    return reader_choices(
+                        groups,
+                        lang,
+                        issue.edition,
+                        words,
+                        page=page,
+                        issue_date=issue.issue_id,
+                        article_id=article_id,
+                    )
+
                 current_weather = edition.weather or issue.weather
                 location = (
                     current_weather.location
@@ -167,22 +211,31 @@ def build(
                     page_description=edition.editorial_note
                     or discovery_labels[lang]["description"],
                     language_links={
-                        code: f"/{code}/issues/{issue.issue_id}/" for code in issue.languages
+                        code: f"{reader_base(code, issue.edition)}issues/{issue.issue_id}/"
+                        for code in issue.languages
                     },
-                    article_base=f"/{lang}/issues/{issue.issue_id}/articles/",
-                    archive_labels=archive_labels[lang],
+                    reader_base=base,
+                    reader_code=issue.edition,
+                    reader_labels=words,
+                    reader_name=words["editions"][issue.edition],
+                    reader_choices=navigation("issue"),
+                    issue_glossary=terms,
+                    glossary_labels=glossary_labels[lang],
+                    article_base=f"{base}issues/{issue.issue_id}/articles/",
+                    archive_labels=archive_words,
                     lang=lang,
                     edition=edition,
                     illustration_assets=illustration_assets,
-                    labels=LABELS[lang],
+                    labels=labels,
                     brand=brand.get(lang),
                     about=about[lang],
+                    guide=guide[lang],
                     style_version=style_version,
                     print_enabled=pdf,
                     article_sections=[
                         {
                             "key": key,
-                            "title": LABELS[lang]["sections"][key],
+                            "title": labels["sections"][key],
                             "articles": [
                                 a
                                 for a in edition.articles
@@ -219,39 +272,62 @@ def build(
                     },
                 )
                 write(
-                    f"{lang}/issues/{issue.issue_id}/index.html",
+                    f"{base}issues/{issue.issue_id}/index.html".lstrip("/"),
                     env.get_template("edition.html").render(**context),
                 )
-                if issue == latest:
+                if issue == edition_latest:
                     write(
-                        f"{lang}/index.html",
+                        base.lstrip("/") + "about/index.html",
+                        env.get_template("guide.html").render(
+                            **(
+                                context
+                                | {
+                                    "is_guide": True,
+                                    "page_title": f"{guide[lang]['title']} · {edition.title}",
+                                    "page_description": guide[lang]["intro"],
+                                    "language_links": {
+                                        code: reader_base(code, issue.edition) + "about/"
+                                        for code in issue.languages
+                                    },
+                                    "reader_choices": navigation("about"),
+                                    "guide_editions": navigation("home"),
+                                }
+                            )
+                        ),
+                    )
+                    write(
+                        base.lstrip("/") + "index.html",
                         env.get_template("edition.html").render(
                             **(
                                 context
                                 | {
                                     "language_links": {
-                                        code: f"/{code}/" for code in issue.languages
-                                    }
+                                        code: reader_base(code, issue.edition)
+                                        for code in issue.languages
+                                    },
+                                    "reader_choices": navigation("home"),
                                 }
                             )
                         ),
                     )
-                    groups = {}
-                    for entry in issues:
-                        groups.setdefault(entry.publication_date.year, []).append(entry)
+                    groups_by_year = {}
+                    for entry in selected:
+                        groups_by_year.setdefault(entry.publication_date.year, []).append(entry)
                     write(
-                        f"{lang}/archive/index.html",
+                        base.lstrip("/") + "archive/index.html",
                         env.get_template("archive.html").render(
                             **(
                                 context
                                 | {
-                                    "archive_groups": groups,
-                                    "latest_id": latest.issue_id,
-                                    "page_title": f"{LABELS[lang]['archive']} · {edition.title}",
-                                    "page_description": archive_labels[lang]["intro"],
+                                    "archive_groups": groups_by_year,
+                                    "latest_id": edition_latest.issue_id,
+                                    "page_title": f"{labels['archive']} · {words['editions'][issue.edition]} · {edition.title}",
+                                    "page_description": archive_words["intro"],
                                     "language_links": {
-                                        code: f"/{code}/archive/" for code in issue.languages
+                                        code: reader_base(code, issue.edition) + "archive/"
+                                        for code in issue.languages
                                     },
+                                    "reader_choices": navigation("archive"),
                                     "is_archive": True,
                                 }
                             )
@@ -259,7 +335,7 @@ def build(
                     )
                 if pdf:
                     write(
-                        f"{lang}/issues/{issue.issue_id}/print/index.html",
+                        f"{base}issues/{issue.issue_id}/print/index.html".lstrip("/"),
                         env.get_template("print.html").render(**context),
                     )
                 for article in edition.articles:
@@ -272,23 +348,39 @@ def build(
                             context
                             | {
                                 "article": article,
+                                **annotate_article(
+                                    article,
+                                    terms,
+                                    lang,
+                                    glossary_aliases[lang],
+                                    glossary_labels[lang]["reference"],
+                                ),
                                 "page_title": f"{article.headline} · {edition.title}",
                                 "page_description": article_excerpt(article),
                                 "language_links": {
-                                    code: f"/{code}/issues/{issue.issue_id}/articles/{slug}/"
+                                    code: f"{reader_base(code, issue.edition)}issues/{issue.issue_id}/articles/{slug}/"
                                     for code, slug in translations.items()
                                 },
+                                "reader_choices": navigation("article", article.id),
                             }
                         )
                     )
                     write(
-                        f"{lang}/issues/{issue.issue_id}/articles/{article.slug}/index.html", html
+                        f"{base}issues/{issue.issue_id}/articles/{article.slug}/index.html".lstrip(
+                            "/"
+                        ),
+                        html,
                     )
                     # Preserve old bookmarks; a repeated slug resolves to its newest edition.
-                    alias = f"{lang}/articles/{article.slug}/index.html"
+                    alias = f"{base}articles/{article.slug}/index.html".lstrip("/")
                     if not (staging / alias).exists():
                         write(alias, html)
-        write("index.html", (staging / "ru/index.html").read_text(encoding="utf-8"))
+        write(
+            "index.html",
+            (staging / (reader_base("ru", latest.edition).lstrip("/") + "index.html")).read_text(
+                encoding="utf-8"
+            ),
+        )
         write(
             "robots.txt",
             ("User-agent: *\nAllow: /\n" if publication else "User-agent: *\nDisallow: /\n")
@@ -302,9 +394,23 @@ def build(
                 {
                     "latest": str(latest.issue_id),
                     "pdf": pdf,
-                    "issues": [archive_metadata(entry) for entry in issues],
+                    "issues": [archive_metadata(entry) for entry in primary_issues],
                 },
                 ensure_ascii=False,
+                indent=2,
+            )
+            + "\n",
+        )
+        write(
+            "reader-editions.json",
+            json.dumps(
+                {
+                    "primary": latest.edition,
+                    "editions": {
+                        code: [source_path(entry) for entry in selected]
+                        for code, selected in groups.items()
+                    },
+                },
                 indent=2,
             )
             + "\n",
@@ -318,17 +424,24 @@ def build(
             write("print.css", env.loader.get_source(env, "print.css")[0])
             try:
                 for entry in issues:
-                    archive_print_reports[str(entry.issue_id)] = render_pdfs(staging, entry)
-                print_report = archive_print_reports[str(latest.issue_id)]
-                for lang in latest.languages:
-                    write(
-                        f"{lang}/print/index.html",
-                        (
-                            staging / lang / "issues" / str(latest.issue_id) / "print/index.html"
-                        ).read_text(encoding="utf-8"),
-                    )
+                    archive_print_reports[reader_issue_key(entry)] = render_pdfs(staging, entry)
+                print_report = archive_print_reports[reader_issue_key(latest)]
+                for code, selected in groups.items():
+                    for lang in selected[0].languages:
+                        base = reader_base(lang, code).lstrip("/")
+                        write(
+                            base + "print/index.html",
+                            (
+                                staging
+                                / base
+                                / "issues"
+                                / str(selected[0].issue_id)
+                                / "print/index.html"
+                            ).read_text(encoding="utf-8"),
+                        )
             except PrintFailure as error:
                 error.report["issue_id"] = str(entry.issue_id)
+                error.report["reader_edition"] = entry.edition
                 failed_path = output.parent / f"{output.name}.failed.json"
                 failed_path.write_text(
                     json.dumps(error.report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"

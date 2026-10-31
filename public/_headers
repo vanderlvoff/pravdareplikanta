@@ -2,6 +2,24 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
 
+/ru/business/rss.xml
+  Content-Type: application/rss+xml; charset=utf-8
+
+/en/business/rss.xml
+  Content-Type: application/rss+xml; charset=utf-8
+
+/ja/business/rss.xml
+  Content-Type: application/rss+xml; charset=utf-8
+
+/ru/children/rss.xml
+  Content-Type: application/rss+xml; charset=utf-8
+
+/en/children/rss.xml
+  Content-Type: application/rss+xml; charset=utf-8
+
+/ja/children/rss.xml
+  Content-Type: application/rss+xml; charset=utf-8
+
 /ru/rss.xml
   Content-Type: application/rss+xml; charset=utf-8
 
@@ -9,6 +27,15 @@
   Content-Type: application/rss+xml; charset=utf-8
 
 /ja/rss.xml
+  Content-Type: application/rss+xml; charset=utf-8
+
+/ru/enthusiast/rss.xml
+  Content-Type: application/rss+xml; charset=utf-8
+
+/en/enthusiast/rss.xml
+  Content-Type: application/rss+xml; charset=utf-8
+
+/ja/enthusiast/rss.xml
   Content-Type: application/rss+xml; charset=utf-8
 
 https://:worker.:account.workers.dev/*

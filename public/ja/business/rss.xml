@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>レプリカントの真実</title>
+    <link>https://repravda.com/ja/business/</link>
+    <description>フィジカルAIの世界からニュースと分析をお届けします。</description>
+    <language>ja</language>
+    <atom:link href="https://repravda.com/ja/business/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>工具を交換し、触覚も使うロボットアーム</title>
+      <link>https://repravda.com/ja/business/issues/2026-11-01/articles/swapbot-tools/</link>
+      <guid isPermaLink="false">replicantpravda:business:2026-11-01:ja:swapbot-tools</guid>
+      <description>料理では、切る、ぬる、ひっくり返すといった作業ごとに道具が変わり、必要な力のかけ方も違う。Yunchu Zhangらは、ロボットアームが工具を自動交換するSwapBotを発表した。2026年10月29日に公開された研究論文であり、どんな家庭でも料理を完成させる市販ロボットができたという話ではない。</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>GXO、二つの倉庫へ人型ロボットDigitの導入を拡大する計画</title>
+      <link>https://repravda.com/ja/business/issues/2026-11-01/articles/gxo-digit-multisite/</link>
+      <guid isPermaLink="false">replicantpravda:business:2026-11-01:ja:gxo-digit-multisite</guid>
+      <description>技術的な注目点は実演の見た目ではなく、実行方式と制約を検証できることにある。Digit 4で導入を始め、Digit 5の商用化後に移行する予定で、運用管理にはAgility Arcを利用する。 追加拠点は計画段階であり、台数、採算、第三者による性能監査は示されていない。</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>KDDIとELYZA、現場導入まで担うフィジカルAI新会社を始動</title>
+      <link>https://repravda.com/ja/business/issues/2026-11-01/articles/elyza-robotics-japan-scale/</link>
+      <guid isPermaLink="false">replicantpravda:business:2026-11-01:ja:elyza-robotics-japan-scale</guid>
+      <description>技術的な注目点は実演の見た目ではなく、実行方式と制約を検証できることにある。画像・言語・行動モデルと現場データ、デジタルツイン、分散推論、遠隔監視を組み合わせる構想。 実際の稼働台数、採算、独立した自律性能評価は公開されていない。</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>少し位置がずれても物をつかめる柔らかいハンド</title>
+      <link>https://repravda.com/ja/business/issues/2026-11-01/articles/simto-robust-grippers/</link>
+      <guid isPermaLink="false">replicantpravda:business:2026-11-01:ja:simto-robust-grippers</guid>
+      <description>ロボットが物の位置を正しく見つけても、手を近づけるときに少しずれることがある。硬い指では滑ってしまう場面でも、柔らかい指なら物の形に合わせて変形できるかもしれない。Kurt Enkeraらは、そうした失敗への強さを設計段階から考えるSimTO-Robustという方法を発表した。</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>東京の展示会で五本指のロボットが出荷作業を実演</title>
+      <link>https://repravda.com/ja/business/issues/2026-11-01/articles/rlwrld-packing/</link>
+      <guid isPermaLink="false">replicantpravda:business:2026-11-01:ja:rlwrld-packing</guid>
+      <description>物流の出荷作業では、箱を持ち上げるだけでなく、小さな商品を見分け、傷つけずに並べ、包装する必要がある。RLWRLDは2026年10月30日、東京のKDDI SUMMITで自社のロボット基盤モデルRLDX-1を使った実演を行ったと発表した。展示会の開催日は10月27日と28日であり、発表文の公開日とは異なる。基盤モデルとは、個別の動作だけでなく複数の作業に応用することを目指した学習モデルを指す。</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>単発の実演から検証できる作業へ</title>
+      <link>https://repravda.com/ja/business/issues/2026-11-01/articles/technology-signal/</link>
+      <guid isPermaLink="false">replicantpravda:business:2026-11-01:ja:technology-signal</guid>
+      <description>研究や実演によってロボットの仕事の幅は広がるが、結果の確かさは試験条件によって変わる。</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>分析</category>
+    </item>
+    <item>
+      <title>溶接後の検査と補正も行うロボットを実際の工場へ</title>
+      <link>https://repravda.com/ja/business/issues/2026-10-31/articles/yaskawa-gr-welding/</link>
+      <guid isPermaLink="false">replicantpravda:business:2026-10-31:ja:yaskawa-gr-welding</guid>
+      <description>部品の位置が少し違うと、同じ軌道で溶接しても品質は変わる。安川電機とトヨタのGAZOO Racingは10月28日、愛知県蒲郡市のGR KART工房で9月からMOTOMAN NEXTを使ったAI溶接を行っていると発表した。研究室のデモではなく、実際のフレーム製造工程への導入だ。</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>ロボットの台数ではなく役立つ仕事を測れるか</title>
+      <link>https://repravda.com/ja/business/issues/2026-10-31/articles/agibot-worken-measure/</link>
+      <guid isPermaLink="false">replicantpravda:business:2026-10-31:ja:agibot-worken-measure</guid>
+      <description>ロボットを何台買ったかだけでは、現場でどれだけ役立ったかは分からない。AGIBOTは10月29日の上海イベントで、workとtokenを組み合わせたWorkenという考え方を提案した。人の助けをあまり必要とせずに完了した有用な仕事を測ろうという構想で、確立した業界標準ではない。</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>溶接後の検査と補正も行うロボットを実際の工場へ</title>
+      <link>https://repravda.com/ja/business/issues/2026-10-31/articles/technology-signal/</link>
+      <guid isPermaLink="false">replicantpravda:business:2026-10-31:ja:technology-signal</guid>
+      <description>安川電機は10月28日、GR KARTのフレーム製造でMOTOMAN NEXTを9月から使用していると発表。溶接、品質確認、補正を行う。</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>分析</category>
+    </item>
+  </channel>
+</rss>

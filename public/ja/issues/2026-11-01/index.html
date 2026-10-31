@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>レプリカント・データ 技術版 · レプリカントの真実</title>
+  <meta name="description" content="ロボットの制御、評価、再現性に関する研究と、その限界を検証する。">
+    <link rel="canonical" href="https://repravda.com/ja/issues/2026-11-01/">
+  <link rel="alternate" hreflang="ru" href="https://repravda.com/ru/issues/2026-11-01/">
+  <link rel="alternate" hreflang="en" href="https://repravda.com/en/issues/2026-11-01/">
+  <link rel="alternate" hreflang="ja" href="https://repravda.com/ja/issues/2026-11-01/">
+  <link rel="alternate" type="application/rss+xml" title="レプリカントの真実 — RSS" href="https://repravda.com/ja/rss.xml">
+  <link rel="stylesheet" href="/style.css?v=f89fa7a4f1ff">
+</head>
+<body class="reader-engineer" data-reader-edition="engineer">
+  <div class="preview-tools">
+    
+    <nav aria-label="言語"><a lang="ru" hreflang="ru" href="/ru/issues/2026-11-01/">RU</a><a lang="en" hreflang="en" href="/en/issues/2026-11-01/">EN</a><a lang="ja" hreflang="ja" href="/ja/issues/2026-11-01/" aria-current="page">JA</a></nav>
+  </div>
+    <section class="reader-picker" aria-labelledby="reader-picker-title">
+    <p id="reader-picker-title" class="reader-picker-title">読む版を選ぶ</p>
+    <nav class="reader-options" aria-labelledby="reader-picker-title">
+      
+      <a class="reader-option" data-edition="engineer" href="/ja/issues/2026-11-01/" aria-current="page"><svg class="reader-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4a6 6 0 0 0-7 8l-3.5 3.5a2.8 2.8 0 0 0 4 4L12 16a6 6 0 0 0 8-7l-4 4-5-5Z"/></svg><span>エンジニア</span></a>
+      
+      
+      <a class="reader-option" data-edition="business" href="/ja/business/issues/2026-11-01/"><svg class="reader-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V4h8v3M3 12c5 4 13 4 18 0M10 13h4"/></svg><span>ビジネスパーソン</span></a>
+      
+      
+      <a class="reader-option" data-edition="enthusiast" href="/ja/enthusiast/issues/2026-11-01/"><svg class="reader-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m16 8-2 6-6 2 2-6Z"/></svg><span>探究者</span></a>
+      
+      
+      <a class="reader-option" data-edition="children" href="/ja/children/issues/2026-11-01/"><svg class="reader-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 11 18-8-8 18-3-7ZM10 14 21 3"/></svg><span>子ども</span></a>
+      
+      
+    </nav>
+    <p class="reader-description"><strong>版: エンジニア.</strong> 技術のしくみ、実験と限界。</p>
+  </section>
+    <header class="newspaper-header">
+    <p class="kicker">Physical AI — 素晴らしい未来への道。</p>
+    <div class="brand-header">
+      <div class="portrait-medals">
+        <img class="portrait" src="/assets/portrait/ly.png" alt="新聞の主人公">
+        <div class="medals"><img class="medal medal-jupiter" src="/assets/medals/press/jupiter_ja.png" alt="jupiter"><img class="medal medal-tannhauser" src="/assets/medals/press/tannhauser_ja.png" alt="tannhauser"><img class="medal medal-orion" src="/assets/medals/press/orion_ja.png" alt="orion"></div>
+      </div>
+      <div class="title-panel">
+        <h1><a href="/ja/"><img class="masthead" src="/assets/masthead/pcb/masthead_ja.svg" alt="レプリカントの真実"></a></h1>
+        <p class="strapline"><span class="strapline-name">レプリカントの真実</span> - フィジカルAIの新聞</p>
+      </div>
+      <section class="weather" aria-label="天気">
+  
+  <h2>スモレンスク <small class="weather-country">（ロシア）</small></h2>
+  <p class="weather-date">予報 · 2026-11-01 · MSK</p>
+  
+  <div class="weather-slots">
+    
+    <div class="weather-slot">
+      <span class="weather-icon" aria-hidden="true">☁</span>
+      <div class="weather-reading"><p class="weather-period">朝 · 09:00</p>
+        <p class="weather-temperature">2.9°</p>
+      </div>
+      <div class="weather-description">
+        <p class="weather-condition">曇り</p>
+        <p class="weather-detail">風: 北東 2.48 m/s · <span title="降水確率">3%</span></p>
+      </div>
+    </div>
+    
+    <div class="weather-slot">
+      <span class="weather-icon" aria-hidden="true">☁</span>
+      <div class="weather-reading"><p class="weather-period">昼 · 12:00</p>
+        <p class="weather-temperature">5.9°</p>
+      </div>
+      <div class="weather-description">
+        <p class="weather-condition">曇り</p>
+        <p class="weather-detail">風: 北東 2.33 m/s · <span title="降水確率">0%</span></p>
+      </div>
+    </div>
+    
+    <div class="weather-slot">
+      <span class="weather-icon" aria-hidden="true">☁</span>
+      <div class="weather-reading"><p class="weather-period">夕方 · 18:00</p>
+        <p class="weather-temperature">6°</p>
+      </div>
+      <div class="weather-description">
+        <p class="weather-condition">曇り</p>
+        <p class="weather-detail">風: 北東 1.79 m/s · <span title="降水確率">3%</span></p>
+      </div>
+    </div>
+    
+  </div>
+  <p class="weather-summary">一日: 2.7–8.6 °C<br>降水確率: 8%</p>
+  
+</section>
+    </div>
+    
+    <figure class="brand-quote" lang="ja">
+      <blockquote>雨の降るあいだ、私たちにできるのは、人間であることを学ぶことだけ。</blockquote>
+      
+    </figure>
+    
+    <div class="issue-line">
+      <p>号 № 4 · <time datetime="2026-11-01">2026-11-01</time></p>
+      <p>rev. 2 · <a href="/ja/archive/">アーカイブ</a></p>
+    </div>
+  </header>
+  <p class="pdf-link"><a href="/ja/issues/2026-11-01/edition.pdf">PDF版 · A4</a></p>
+  <main>
+<div class="issue-intro">
+  <h2>レプリカント・データ 技術版</h2>
+  <p>ロボットの制御、評価、再現性に関する研究と、その限界を検証する。</p>
+</div>
+
+<section class="editorial-section" aria-labelledby="section-news">
+  <h2 class="section-heading" id="section-news">ニュース</h2>
+  <div class="edition-articles">
+  
+  <article id="article-roboseed-evaluation">
+    
+    <h2><a href="/ja/issues/2026-11-01/articles/roboseed-evaluation/">ロボットAIを性能だけでなく費用と再現性でも比べる</a></h2>
+    
+    <p>ロボットが実験で高い成功率を出しても、企業が安く導入できるとは限らない。追加学習に必要な計算機、運用時に使う装置、試験結果の信頼性も重要になる。Xin Maらは2026年10月29日、画像と指示から動作を作るモデルなどを比較するRoboSeedという評価の枠組みを発表した。</p>
+    <p class="article-actions"><a class="read-more" href="/ja/issues/2026-11-01/articles/roboseed-evaluation/" aria-label="続きを読む… — ロボットAIを性能だけでなく費用と再現性でも比べる">続きを読む… <span aria-hidden="true">→</span></a></p>
+  </article>
+  
+  <article id="article-logiv-task-graph-repair">
+    
+    <h2><a href="/ja/issues/2026-11-01/articles/logiv-task-graph-repair/">LOGIVは作業の依存関係を検証し、崩れた条件を部分的に修復する</a></h2>
+    
+    <p>導入判断では、研究結果と保証された運用性能を区別する必要がある。動作生成と長期計画の信頼性を別の層として評価できる。 対象は限定された双腕作業で、実機の成功は30試行中17回にとどまる。</p>
+    <p class="article-actions"><a class="read-more" href="/ja/issues/2026-11-01/articles/logiv-task-graph-repair/" aria-label="続きを読む… — LOGIVは作業の依存関係を検証し、崩れた条件を部分的に修復する">続きを読む… <span aria-hidden="true">→</span></a></p>
+  </article>
+  
+  <article id="article-oracle-safe-flow">
+    
+    <h2><a href="/ja/issues/2026-11-01/articles/oracle-safe-flow/">可否判定だけでロボットの生成動作に制約を組み込む研究</a></h2>
+    
+    <p>導入判断では、研究結果と保証された運用性能を区別する必要がある。既存の衝突判定器を生成型動作モデルの制約処理に組み込める可能性がある。 評価は一つのシミュレーション課題に限られ、推論時間は0.071秒から1.345秒に増加した。</p>
+    <p class="article-actions"><a class="read-more" href="/ja/issues/2026-11-01/articles/oracle-safe-flow/" aria-label="続きを読む… — 可否判定だけでロボットの生成動作に制約を組み込む研究">続きを読む… <span aria-hidden="true">→</span></a></p>
+  </article>
+  
+  <article id="article-simto-robust-grippers">
+    
+    <h2><a href="/ja/issues/2026-11-01/articles/simto-robust-grippers/">少し位置がずれても物をつかめる柔らかいハンド</a></h2>
+    
+    <p>ロボットが物の位置を正しく見つけても、手を近づけるときに少しずれることがある。硬い指では滑ってしまう場面でも、柔らかい指なら物の形に合わせて変形できるかもしれない。Kurt Enkeraらは、そうした失敗への強さを設計段階から考えるSimTO-Robustという方法を発表した。</p>
+    <p class="article-actions"><a class="read-more" href="/ja/issues/2026-11-01/articles/simto-robust-grippers/" aria-label="続きを読む… — 少し位置がずれても物をつかめる柔らかいハンド">続きを読む… <span aria-hidden="true">→</span></a></p>
+  </article>
+  
+  <article id="article-metatron">
+    
+    <h2><a href="/ja/issues/2026-11-01/articles/metatron/">一つの全身制御モデルで歩行と物体操作を切り替える</a></h2>
+    
+    <p>人型ロボットが机まで歩き、止まり、手を伸ばし、姿勢を立て直すには、全身の動きを連続して調整する必要がある。従来は動作ごとに別の制御モデルを学習させる場合が多い。Chen Tesslerらが10月27日に公開したMetatronは、一つの学習済み全身制御モデルと、目的に応じて書き換えられる技能プログラムを組み合わせる研究である。ニュース一覧に掲載された日と、論文が最初に公開された日を混同してはいけない。</p>
+    <p class="article-actions"><a class="read-more" href="/ja/issues/2026-11-01/articles/metatron/" aria-label="続きを読む… — 一つの全身制御モデルで歩行と物体操作を切り替える">続きを読む… <span aria-hidden="true">→</span></a></p>
+  </article>
+  
+  </div>
+  
+</section>
+
+<section class="editorial-section" aria-labelledby="section-analysis">
+  <h2 class="section-heading" id="section-analysis">分析</h2>
+  <div class="edition-articles">
+  
+  <article id="article-technology-signal">
+    
+    <h2><a href="/ja/issues/2026-11-01/articles/technology-signal/">単発の実演から検証できる作業へ</a></h2>
+    
+    <p>研究や実演によってロボットの仕事の幅は広がるが、結果の確かさは試験条件によって変わる。</p>
+    <p class="article-actions"><a class="read-more" href="/ja/issues/2026-11-01/articles/technology-signal/" aria-label="続きを読む… — 単発の実演から検証できる作業へ">続きを読む… <span aria-hidden="true">→</span></a></p>
+  </article>
+  
+  </div>
+  
+  <article class="glossary-inline" id="article-glossary">
+    
+    <section class="glossary-panel" aria-labelledby="issue-glossary-title">
+  <header class="glossary-header">
+    <p class="glossary-kicker"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4h7a3 3 0 0 1 3 3v14a4 4 0 0 0-4-2H4ZM14 7a3 3 0 0 1 3-3h3v15h-2a4 4 0 0 0-4 2M7 8h3M7 12h3"/></svg>キーワード</p>
+    <h2 id="issue-glossary-title">本号の用語集</h2>
+    <p class="glossary-intro">この号の大切なことばを、簡潔に解説します。</p>
+  </header>
+  <dl class="glossary-list">
+    
+    <div class="glossary-entry">
+      <dt><span class="glossary-index" aria-hidden="true">01</span><span>モデル</span></dt>
+      <dd>データから動きや結果を予測する計算の仕組み。</dd>
+    </div>
+    
+    <div class="glossary-entry">
+      <dt><span class="glossary-index" aria-hidden="true">02</span><span>シミュレーション</span></dt>
+      <dd>実物を動かす前にコンピューター内で試すこと。</dd>
+    </div>
+    
+    <div class="glossary-entry">
+      <dt><span class="glossary-index" aria-hidden="true">03</span><span>ハンド</span></dt>
+      <dd>物をつかむためのロボットの部品。</dd>
+    </div>
+    
+    <div class="glossary-entry">
+      <dt><span class="glossary-index" aria-hidden="true">04</span><span>学習</span></dt>
+      <dd>例や経験を使ってモデルの働きを調整すること。</dd>
+    </div>
+    
+    <div class="glossary-entry">
+      <dt><span class="glossary-index" aria-hidden="true">05</span><span>制御</span></dt>
+      <dd>機械をどのように動かすか決めること。</dd>
+    </div>
+    
+    <div class="glossary-entry">
+      <dt><span class="glossary-index" aria-hidden="true">06</span><span>センサー</span></dt>
+      <dd>物の状態や接触を調べる装置。</dd>
+    </div>
+    
+    <div class="glossary-entry">
+      <dt><span class="glossary-index" aria-hidden="true">07</span><span>再現性</span></dt>
+      <dd>同じ条件で試したときに近い結果を得られる性質。</dd>
+    </div>
+    
+    <div class="glossary-entry">
+      <dt><span class="glossary-index" aria-hidden="true">08</span><span>ロボット</span></dt>
+      <dd>命令に従って実際の物を動かす機械。</dd>
+    </div>
+    
+    <div class="glossary-entry">
+      <dt><span class="glossary-index" aria-hidden="true">09</span><span>実験</span></dt>
+      <dd>決めた条件で考えや方法を試すこと。</dd>
+    </div>
+    
+  </dl>
+  
+</section>
+    
+  </article>
+  
+</section>
+
+</main>
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a class="patreon-link" href="https://patreon.com/PravdaReplikanta" rel="noopener noreferrer">Patreonで応援する</a>
+      <a class="back-link" href="/ja/about/">この新聞について・読み方</a>
+      <p class="rss-link"><a href="/ja/rss.xml">RSS — 最新記事</a></p>
+    </div>
+    <section class="about-newspaper" aria-labelledby="about-newspaper-title">
+      <h2 id="about-newspaper-title">この新聞について</h2>
+      <div class="about-copy">
+        <div class="about-description"><p>『レプリカントの真実』は、フィジカルAIの世界を伝えるダイジェストです。制作のほぼすべてにAIを活用しています。</p><p>このプロジェクトは、『ブレードランナー』のロイ・バッティに捧げるトリビュートです。作者はその姿に、デジタル化が加速する今、ますます切実になる問いを重ねています。人間を人間たらしめるものは何か。そして、技術の変化が雪崩のように押し寄せるなかで、どうすれば人間らしさを失わずにいられるのか。</p></div>
+        <p class="about-disclaimer">ロイ・バッティと彼の有名な独白は、多くの人々と同じように、私にとっても大切なものです。キャラクター、その映画上の姿、独白の文章について、私が権利を主張するものではありません。このサイトの肖像とモットーは、大好きな映画を題材に自由に想像を広げた、原作への敬意の表現です。本サイトは独立したファンプロジェクトであり、『ブレードランナー』の制作者や権利者とは関係ありません。</p>
+      </div>
+    </section>
+  <div class="weather-source">天気の出典: <a href="https://api.open-meteo.com/v1/forecast?latitude=54.7826&amp;longitude=32.0453&amp;timezone=Europe%2FMoscow&amp;start_date=2026-11-01&amp;end_date=2026-11-01&amp;wind_speed_unit=ms&amp;hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&amp;daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max" rel="noopener noreferrer">Open-Meteo</a> · 取得日時: <time datetime="2026-10-31T16:07:47.240840+00:00">2026-10-31 19:07 MSK</time></div>
+  </footer>
+</body>
+</html>

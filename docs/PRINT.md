@@ -88,3 +88,15 @@ for cloned figure images to decode, checks figure bounds/adjacent blocks, and
 records image placement by article/page. Verification compares placements and
 caption extraction with source JSON. `RP_TEST_PDF=1 pytest tests/test_illustrations.py`
 exercises all languages using clearly marked non-final fixture artwork.
+
+## Reader editions
+
+`rp build-readers ... --pdf` renders all available engineer/business/enthusiast/children
+issues in RU/EN/JA using the same A4 templates and font sizes. Each PDF lives below
+its audience base route, for example `/en/business/issues/2026-10-31/edition.pdf`.
+Engineering paths remain unchanged. Print aliases, pagination reports and page
+rasters are isolated by audience as well. See [READERS.md](READERS.md) for commands.
+
+## Glossary cards
+
+The owner requested the web glossary style in print as well. Structured glossary entries now use a subtle grid, rounded frame and numbered term cards. The title and first definition stay together; each remaining definition is an indivisible measured block. Font sizes remain 16pt/11pt/10pt for title/term/definition. Pagination records glossary_cards and verifies complete definition text/order. An oversized card fails with a report; it is never clipped or shrunk. Website footnotes and their back links do not appear in print.

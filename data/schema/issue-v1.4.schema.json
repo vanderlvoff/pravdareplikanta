@@ -1,0 +1,283 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/vanderlvoff/pravdareplikanta/develop/data/schema/issue-v1.4.schema.json",
+  "title": "Pravda Replikanta Daily Issue v1.4",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "publication",
+    "issue_type",
+    "issue_date",
+    "issue_id",
+    "edition",
+    "language",
+    "generated_at",
+    "title",
+    "lead",
+    "news",
+    "technology_signal",
+    "glossary",
+    "sources"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.4"
+    },
+    "publication": {
+      "const": "pravda_replikanta"
+    },
+    "issue_type": {
+      "const": "daily"
+    },
+    "issue_date": {
+      "$ref": "#/$defs/date"
+    },
+    "issue_id": {
+      "type": "string",
+      "pattern": "^daily-[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "language": {
+      "enum": [
+        "ru",
+        "en",
+        "ja"
+      ]
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "title": {
+      "$ref": "#/$defs/text"
+    },
+    "lead": {
+      "$ref": "#/$defs/text"
+    },
+    "news": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/news"
+      },
+      "maxItems": 10
+    },
+    "technology_signal": {
+      "$ref": "#/$defs/signal"
+    },
+    "glossary": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/glossary"
+      },
+      "maxItems": 12
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/source"
+      }
+    },
+    "edition": {
+      "enum": [
+        "engineer",
+        "business",
+        "enthusiast",
+        "children"
+      ]
+    }
+  },
+  "$defs": {
+    "text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://"
+    },
+    "news": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "summary",
+        "details",
+        "technical_novelty",
+        "engineering_impact",
+        "limitations",
+        "evidence_status",
+        "published_at",
+        "organization",
+        "source_ids",
+        "time_window",
+        "body",
+        "image"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "title": {
+          "$ref": "#/$defs/text"
+        },
+        "summary": {
+          "$ref": "#/$defs/text"
+        },
+        "details": {
+          "$ref": "#/$defs/text"
+        },
+        "technical_novelty": {
+          "$ref": "#/$defs/text"
+        },
+        "engineering_impact": {
+          "$ref": "#/$defs/text"
+        },
+        "limitations": {
+          "$ref": "#/$defs/text"
+        },
+        "evidence_status": {
+          "$ref": "#/$defs/text"
+        },
+        "published_at": {
+          "$ref": "#/$defs/date"
+        },
+        "organization": {
+          "$ref": "#/$defs/text"
+        },
+        "source_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "time_window": {
+          "enum": [
+            "24h",
+            "72h",
+            "7d"
+          ]
+        },
+        "body": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[^\\r\\n]+(?:\\n\\n[^\\r\\n]+)+$",
+          "description": "Finished article, at least two paragraphs separated by exactly two newline characters (JSON escaped as \\n\\n). No Markdown or HTML."
+        },
+        "image": {
+          "const": null
+        }
+      }
+    },
+    "signal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "summary",
+        "implications"
+      ],
+      "properties": {
+        "title": {
+          "$ref": "#/$defs/text"
+        },
+        "summary": {
+          "$ref": "#/$defs/text"
+        },
+        "implications": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "glossary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "term",
+        "definition"
+      ],
+      "properties": {
+        "term": {
+          "$ref": "#/$defs/text"
+        },
+        "definition": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "url",
+        "domain",
+        "organization",
+        "published_at",
+        "title"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/text"
+        },
+        "url": {
+          "$ref": "#/$defs/url"
+        },
+        "domain": {
+          "$ref": "#/$defs/text"
+        },
+        "organization": {
+          "$ref": "#/$defs/text"
+        },
+        "published_at": {
+          "$ref": "#/$defs/date"
+        },
+        "title": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "image": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "One AI-generated editorial illustration for a selected article, shared across RU/EN/JA. Null for all other articles. Captions and alt text are localized.",
+      "required": [
+        "url",
+        "path",
+        "type",
+        "caption",
+        "alt"
+      ],
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://raw\\.githubusercontent\\.com/vanderlvoff/pravdareplikanta/main/data/images/[0-9]{4}-[0-9]{2}-[0-9]{2}/[a-z0-9]+(?:-[a-z0-9]+)*\\.webp$"
+        },
+        "path": {
+          "type": "string",
+          "pattern": "^data/images/[0-9]{4}-[0-9]{2}-[0-9]{2}/[a-z0-9]+(?:-[a-z0-9]+)*\\.webp$"
+        },
+        "type": {
+          "const": "generated"
+        },
+        "caption": {
+          "$ref": "#/$defs/text"
+        },
+        "alt": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    }
+  }
+}

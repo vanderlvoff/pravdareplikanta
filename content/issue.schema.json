@@ -441,6 +441,17 @@
   },
   "additionalProperties": false,
   "properties": {
+    "edition": {
+      "default": "engineer",
+      "enum": [
+        "engineer",
+        "business",
+        "enthusiast",
+        "children"
+      ],
+      "title": "Edition",
+      "type": "string"
+    },
     "issue_id": {
       "format": "date",
       "title": "Issue Id",

@@ -1,0 +1,1199 @@
+{
+  "edition": "children",
+  "issue_id": "2026-11-01",
+  "number": 4,
+  "publication_date": "2026-11-01",
+  "revision": 2,
+  "status": "approved",
+  "languages": {
+    "ru": {
+      "title": "Правда репликанта",
+      "weather": {
+        "location": "ichikawa",
+        "timezone": "Asia/Tokyo",
+        "forecast_date": "2026-11-01",
+        "retrieved_at": "2026-10-31T16:07:47.112550Z",
+        "kind": "forecast",
+        "source_name": "Open-Meteo",
+        "source_url": "https://api.open-meteo.com/v1/forecast?latitude=35.72&longitude=139.93&timezone=Asia%2FTokyo&start_date=2026-11-01&end_date=2026-11-01&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+        "temperature_min_c": 13.2,
+        "temperature_max_c": 19.0,
+        "precipitation_probability_max": 8,
+        "slots": [
+          {
+            "hour": 9,
+            "temperature_c": 15.3,
+            "condition": "cloudy",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 1.97,
+            "wind_direction_deg": 336
+          },
+          {
+            "hour": 12,
+            "temperature_c": 18.3,
+            "condition": "clear",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 0.67,
+            "wind_direction_deg": 297
+          },
+          {
+            "hour": 18,
+            "temperature_c": 17.9,
+            "condition": "cloudy",
+            "precipitation_probability": 8,
+            "wind_speed_ms": 1.33,
+            "wind_direction_deg": 103
+          }
+        ]
+      },
+      "issue_title": "Данные репликанта — юным исследователям",
+      "editorial_note": "Пять историй о том, как роботы берут вещи, перевозят груз и учатся на испытаниях.",
+      "articles": [
+        {
+          "id": "swapbot-tools",
+          "slug": "swapbot-tools",
+          "category": "news",
+          "headline": "Почему роботу удобнее менять инструменты, чем пользоваться одной рукой",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Представь, что нужно перемешать салат, перевернуть еду и что-нибудь разрезать. Одной ложкой выполнять все эти действия неудобно. Исследователи придумали, как робот может менять подходящие инструменты, не заменяя всю руку. Работа опубликована 29 октября, и пока это лабораторный опыт."
+            },
+            {
+              "type": "paragraph",
+              "text": "У робота есть соединение, к которому можно прикрепить разные инструменты. В их крепления встроены датчики прикосновения: они сообщают, что инструмент коснулся предмета. Камера видит форму и положение, но не всегда помогает понять, насколько сильно что-то прижато. Поэтому исследователи добавили информацию о контакте."
+            },
+            {
+              "type": "paragraph",
+              "text": "Чтобы обучить движениям, люди сначала управляли роботом и показывали примеры действий. Затем программа училась повторять такие движения в похожих ситуациях. В испытаниях использование датчиков повысило долю удачных попыток на 15–25 процентных пунктов по сравнению с обучением только по изображениям. Это сравнение в конкретных опытах, а не обещание успеха в любой кухне."
+            },
+            {
+              "type": "paragraph",
+              "text": "Остаётся проверить, сможет ли робот надёжно закреплять инструменты, работать с незнакомыми продуктами и справляться с ошибками. Он пока не готов самостоятельно приготовить любой обед. Для справки: исследователи назвали систему SwapBot."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "raibo-wagon-towing",
+          "slug": "raibo-wagon-towing",
+          "category": "news",
+          "headline": "Как четвероногий робот учится вести за собой тележку",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Тянуть чемодан на колёсиках не всегда просто: на повороте он может задеть угол, даже если человек прошёл свободно. У четвероногого робота с тележкой возникает похожая задача. Исследователи разработали способ учитывать путь не только самого робота, но и того, что движется за ним."
+            },
+            {
+              "type": "paragraph",
+              "text": "Тележка меняет то, как робот может поворачивать и проходить узкие места. Поэтому системе нужно заранее оценивать, где окажется груз после каждого движения. Такое планирование маршрута отличается от обычного поиска свободной дорожки для одного робота. Важны также положение сцепки и расстояние до препятствий."
+            },
+            {
+              "type": "paragraph",
+              "text": "Авторы испытали систему на настоящем четвероногом роботе. На маршрутах длиной 15 метров она успешно завершила 85% из 40 попыток; в опытах перевозили груз до 40 килограммов. Эти числа показывают результат конкретных испытаний, а не способность перевозить любой груз по любому городу."
+            },
+            {
+              "type": "paragraph",
+              "text": "Чтобы пользоваться такой машиной в реальном складе или на улице, нужно проверить длинные маршруты, неровный пол, неожиданных прохожих и застрявшие колёса. Пока исследование объясняет важный принцип: планировать движение нужно для всей связки, а не только для того, кто тянет. Для справки: в работе использовали робота RAIBO."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.39267",
+              "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "roboseed-evaluation",
+          "slug": "roboseed-evaluation",
+          "category": "news",
+          "headline": "Как сравнить роботов, если каждый показывает свой лучший трюк",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Один робот быстро переносит кубики, другой аккуратно берёт хрупкий предмет. Как понять, какой из них лучше? Сравнить только число удачных попыток недостаточно, если задания и условия разные. Исследователи предложили подход, который заставляет внимательнее смотреть на то, что именно измеряли."
+            },
+            {
+              "type": "paragraph",
+              "text": "Вместо одной оценки они рассматривают пять направлений сравнения моделей, управляющих действиями роботов. Среди важных вопросов — насколько убедительно проверен результат, сколько стоит подготовка к новой задаче и сможет ли другая команда повторить опыт. Повторяемость означает, что при известных условиях другие исследователи могут получить сопоставимые результаты."
+            },
+            {
+              "type": "paragraph",
+              "text": "Авторы подчёркивают, что в публикациях не всегда достаточно данных для честного сравнения. Если сведения о стоимости или повторяемости отсутствуют, нельзя просто придумать числа и сложить всё в одну таблицу. Поэтому предложенный подход иногда отказывается от общего рейтинга, вместо того чтобы объявить победителя без доказательств."
+            },
+            {
+              "type": "paragraph",
+              "text": "Это полезно и зрителю робототехнических видео. Прежде чем восхищаться результатом, стоит спросить: сколько раз пробовали, какие попытки не получились и что пришлось настроить заранее? Метод оценки сам по себе не делает робота умнее. Для справки: авторы назвали систему сравнения RoboSeed."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40026",
+              "title": "RoboSeed: Multidimensional Evaluation of Vision-Language-Action and World-Action Models",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "simto-robust-grippers",
+          "slug": "simto-robust-grippers",
+          "category": "news",
+          "headline": "Почему мягкая рука робота должна терпеть небольшие ошибки",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Когда берёшь чашку, пальцы немного подстраиваются под её форму. Роботу тоже полезно уметь приспосабливаться, особенно если камера ошиблась в положении предмета на несколько миллиметров. Исследователи предложили проектировать мягкие захваты с учётом таких неточностей, а не только идеального положения руки."
+            },
+            {
+              "type": "paragraph",
+              "text": "Мягкий захват — это часть робота, которая сжимает предмет и немного меняет форму при контакте. В компьютерной модели авторы рассмотрели 6646 вариантов конструкции. Они проверяли, насколько разные формы подходят для нескольких предметов и положений захвата. Так можно искать решения, которые не слишком чувствительны к небольшому смещению."
+            },
+            {
+              "type": "paragraph",
+              "text": "Затем 24 выбранных варианта изготовили и испытали физически, сравнивая с другими конструкциями. Это важный шаг: красивая компьютерная картинка ещё не означает, что настоящий предмет будет удержан. Однако 24 проверки не подтверждают, что любая из тысяч рассчитанных форм одинаково надёжна."
+            },
+            {
+              "type": "paragraph",
+              "text": "Подобные исследования могут помочь роботам брать предметы на складе или сортировать вещи. Но перед использованием нужно узнать, как материал изнашивается, что происходит с мокрыми или тяжёлыми предметами и насколько часто захват ошибается. Для справки: метод проектирования авторы назвали SimTO-Robust."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.39560",
+              "title": "SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "rlwrld-packing",
+          "slug": "rlwrld-packing",
+          "category": "news",
+          "headline": "Робот с пятью пальцами попробовал упаковать покупки",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Когда собирают интернет-заказ, нужно выбрать правильные вещи, положить их в коробку и ничего не повредить. На выставке в Токио компания показала робота с кистью из пяти пальцев, который выполнял похожие действия. Выставка проходила 27 и 28 октября, а сообщение о ней появилось 30 октября."
+            },
+            {
+              "type": "paragraph",
+              "text": "По рассказу разработчиков, робот снимал коробку с конвейера и укладывал туда небольшие товары, например аксессуары для смартфонов. Его управляющая программа относится к базовым моделям: такие модели пытаются использовать выученные способы действия в нескольких разных заданиях. Но название технологии само по себе не означает, что она умеет всё."
+            },
+            {
+              "type": "paragraph",
+              "text": "Посетители видели демонстрацию. Однако компания не сообщила, сколько раз робот ошибался, сколько коробок собирал за час и как долго мог работать без человека. Поэтому нельзя по одному показу решить, что он уже готов заменить сотрудников на любом складе."
+            },
+            {
+              "type": "paragraph",
+              "text": "Следующие испытания должны проверить разные товары, неожиданные положения предметов и безопасную работу рядом с людьми. Особенно важно узнать, что робот делает, если предмет выскользнул. Для справки: компания RLWRLD назвала свою модель RLDX-1."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000006.000183256.html",
+              "title": "RLWRLD KDDI SUMMIT 2026 RLDX-1 logistics packing demonstration",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "technology-signal",
+          "slug": "technology-signal",
+          "category": "analysis",
+          "headline": "От отдельного трюка к проверяемой работе",
+          "dek": "Новые исследования и демонстрации показывают способы расширить набор действий робота, но качество результата зависит от условий испытания.",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Сравнивать нужно не только удачное выполнение, но и ошибки, повторяемость, стоимость и участие человека."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39267",
+              "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40026",
+              "title": "RoboSeed: Multidimensional Evaluation of Vision-Language-Action and World-Action Models",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39560",
+              "title": "SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000006.000183256.html",
+              "title": "RLWRLD KDDI SUMMIT 2026 RLDX-1 logistics packing demonstration",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "glossary",
+          "slug": "glossary",
+          "category": "analysis",
+          "headline": "Словарь выпуска",
+          "dek": "Что означают слова из этих статей.",
+          "body": [
+            {
+              "type": "heading",
+              "text": "модель"
+            },
+            {
+              "type": "paragraph",
+              "text": "Обученная вычислительная система, которая предсказывает или выбирает действие."
+            },
+            {
+              "type": "heading",
+              "text": "захват"
+            },
+            {
+              "type": "paragraph",
+              "text": "Устройство или действие, позволяющее удерживать предмет."
+            },
+            {
+              "type": "heading",
+              "text": "обучени"
+            },
+            {
+              "type": "paragraph",
+              "text": "Настройка модели на примерах или опыте."
+            },
+            {
+              "type": "heading",
+              "text": "управлени"
+            },
+            {
+              "type": "paragraph",
+              "text": "Выбор команд, определяющих движение машины."
+            },
+            {
+              "type": "heading",
+              "text": "датчик"
+            },
+            {
+              "type": "paragraph",
+              "text": "Устройство, измеряющее состояние или контакт."
+            },
+            {
+              "type": "heading",
+              "text": "робот"
+            },
+            {
+              "type": "paragraph",
+              "text": "Механическая система, которая выполняет действия по командам."
+            },
+            {
+              "type": "heading",
+              "text": "инструмент"
+            },
+            {
+              "type": "paragraph",
+              "text": "Сменное приспособление для конкретной операции."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39267",
+              "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40026",
+              "title": "RoboSeed: Multidimensional Evaluation of Vision-Language-Action and World-Action Models",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39560",
+              "title": "SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000006.000183256.html",
+              "title": "RLWRLD KDDI SUMMIT 2026 RLDX-1 logistics packing demonstration",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        }
+      ]
+    },
+    "en": {
+      "title": "The Replicant Truth",
+      "weather": {
+        "location": "breukelen",
+        "timezone": "Europe/Amsterdam",
+        "forecast_date": "2026-11-01",
+        "retrieved_at": "2026-10-31T16:07:46.147436Z",
+        "kind": "forecast",
+        "source_name": "Open-Meteo",
+        "source_url": "https://api.open-meteo.com/v1/forecast?latitude=52.1742&longitude=5.0014&timezone=Europe%2FAmsterdam&start_date=2026-11-01&end_date=2026-11-01&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+        "temperature_min_c": 7.3,
+        "temperature_max_c": 11.3,
+        "precipitation_probability_max": 8,
+        "slots": [
+          {
+            "hour": 9,
+            "temperature_c": 9.2,
+            "condition": "cloudy",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 0.6,
+            "wind_direction_deg": 312
+          },
+          {
+            "hour": 12,
+            "temperature_c": 10.7,
+            "condition": "cloudy",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 1.4,
+            "wind_direction_deg": 357
+          },
+          {
+            "hour": 18,
+            "temperature_c": 10.0,
+            "condition": "cloudy",
+            "precipitation_probability": 4,
+            "wind_speed_ms": 1.2,
+            "wind_direction_deg": 309
+          }
+        ]
+      },
+      "issue_title": "Replicant Data — Young Explorers",
+      "editorial_note": "Five stories about how robots pick things up, pull loads and learn from tests.",
+      "articles": [
+        {
+          "id": "swapbot-tools",
+          "slug": "swapbot-tools",
+          "category": "news",
+          "headline": "Why changing tools can help a robot handle different jobs",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Imagine stirring a salad, turning food in a pan and cutting an ingredient. One tool would be awkward for all three jobs. Researchers designed a robot interface that changes ordinary tools without replacing the whole arm. The work appeared on October 29 and describes a laboratory system rather than a ready-made kitchen assistant."
+            },
+            {
+              "type": "paragraph",
+              "text": "A connector stays on the robot while adapters attach to different tools. Small touch sensors in the adapters report physical contact. A camera shows where objects are, but an image alone does not always reveal whether a tool is pressing against something. That is why the researchers added touch information."
+            },
+            {
+              "type": "paragraph",
+              "text": "People first demonstrated actions by remotely controlling the robot. A learning program then used those examples to choose movements. In the reported tests, touch increased success by 15 to 25 percentage points compared with learning from images alone. The number describes the authors' selected tasks, not every possible tool or food."
+            },
+            {
+              "type": "paragraph",
+              "text": "The robot still needs reliable attachments, safe contact and ways to recover when a tool slips or a task changes. It has not shown that it can cook a complete meal by itself in an unfamiliar kitchen. The researchers call their system SwapBot."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "raibo-wagon-towing",
+          "slug": "raibo-wagon-towing",
+          "category": "news",
+          "headline": "How a four-legged robot learns to pull a wagon around obstacles",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Pulling a suitcase around a corner can be harder than walking around the corner yourself. The wheels may catch an obstacle even when you pass safely. A four-legged robot pulling a wagon faces a similar problem. Researchers built a navigation system that considers the path of both the robot and its trailer."
+            },
+            {
+              "type": "paragraph",
+              "text": "The wagon changes how sharply the robot can turn and how much space it needs. The planning program must predict where the load will travel after each movement. That is different from finding an empty path for a robot traveling alone. The connection between the robot and the wagon also matters."
+            },
+            {
+              "type": "paragraph",
+              "text": "In tests with a real quadruped, the researchers used routes 15 meters long. The system completed 85 percent of 40 trials and handled loads of up to 40 kilograms. Those figures describe the tested setup, not every possible wagon, surface or route. Some attempts still failed."
+            },
+            {
+              "type": "paragraph",
+              "text": "Before a system like this works reliably in warehouses or public places, it needs tests with longer journeys, uneven ground, moving people and wheels that become stuck. The lesson is that the robot must plan for everything it is pulling, not just its own feet. The robot in this research was called RAIBO."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.39267",
+              "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "roboseed-evaluation",
+          "slug": "roboseed-evaluation",
+          "category": "news",
+          "headline": "How can we compare robots that demonstrate different tricks?",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "One robot moves blocks quickly while another carefully lifts a delicate object. Which is better? A single success number cannot answer that when the tasks and testing conditions differ. Researchers proposed a framework that asks readers to look more closely at what each experiment actually measured."
+            },
+            {
+              "type": "paragraph",
+              "text": "The approach considers five dimensions of evaluation for models that control robot actions. Important questions include how convincingly a result was tested, what it costs to adapt the system to another task, and whether another team could repeat the experiment. Reproducibility means that others can obtain comparable results when the procedure and conditions are clear."
+            },
+            {
+              "type": "paragraph",
+              "text": "The authors point out that published studies do not always provide enough information for a fair comparison. If cost or reproducibility evidence is missing, a reviewer should not invent a number and combine everything into one score. Their framework can therefore decline to produce an overall ranking instead of declaring a winner without enough support."
+            },
+            {
+              "type": "paragraph",
+              "text": "This matters when watching robot demonstration videos too. How many attempts were made? Which ones failed? How much preparation was needed before filming? The framework does not make any robot smarter; it helps people judge claims about robots more carefully. The researchers call the evaluation approach RoboSeed."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40026",
+              "title": "RoboSeed: Multidimensional Evaluation of Vision-Language-Action and World-Action Models",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "simto-robust-grippers",
+          "slug": "simto-robust-grippers",
+          "category": "news",
+          "headline": "Why a soft robot gripper should tolerate small mistakes",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "When you pick up a cup, your fingers adjust a little to its shape. A robot benefits from similar flexibility, especially if its camera estimates the object's position imperfectly. Researchers proposed designing soft grippers for these small errors rather than assuming that every approach will be perfectly aligned."
+            },
+            {
+              "type": "paragraph",
+              "text": "A soft gripper is the part of a robot that holds an object while changing shape slightly during contact. The team generated 6,646 candidate designs in a computer model. They considered different objects and grasp positions to look for shapes that would not fail after a small shift in alignment. That makes the design question different from finding the best shape for one perfect attempt."
+            },
+            {
+              "type": "paragraph",
+              "text": "The researchers then manufactured and physically tested 24 selected designs against alternatives. Real tests matter because a promising simulation does not guarantee that a physical gripper will hold an object. Yet checking 24 examples does not prove that every one of the thousands of computer-generated designs would work equally well."
+            },
+            {
+              "type": "paragraph",
+              "text": "This approach might help robots sort products or pick up unfamiliar household items. Before relying on it, engineers still need to study material wear, slippery or heavy objects and repeated failures over long periods. The researchers call their design method SimTO-Robust."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.39560",
+              "title": "SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "rlwrld-packing",
+          "slug": "rlwrld-packing",
+          "category": "news",
+          "headline": "A five-finger robot tries packing an online order",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Packing an online order means choosing the correct products, placing them in a box and avoiding damage. At an event in Tokyo, a company demonstrated a robot with a five-finger hand doing similar work. The event took place on October 27 and 28, while the company reported it on October 30."
+            },
+            {
+              "type": "paragraph",
+              "text": "According to the developers, the robot took a cardboard box from a conveyor and packed small products such as smartphone accessories. Its control program is described as a foundation model, meaning a model intended to support more than one kind of task. That label does not mean it can already do every possible job."
+            },
+            {
+              "type": "paragraph",
+              "text": "Visitors could watch the demonstration, but the company did not publish the number of failed attempts, boxes packed per hour or hours of unattended operation. A short exhibition therefore cannot prove that the system is ready to replace workers at every warehouse."
+            },
+            {
+              "type": "paragraph",
+              "text": "Further tests should include many product types, unexpected object positions and safe operation around people. It is especially important to know what happens if an item slips from the hand. The company is called RLWRLD, and it named its model RLDX-1."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000006.000183256.html",
+              "title": "RLWRLD KDDI SUMMIT 2026 RLDX-1 logistics packing demonstration",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "technology-signal",
+          "slug": "technology-signal",
+          "category": "analysis",
+          "headline": "From isolated tricks to verifiable work",
+          "dek": "Research and demonstrations expand the range of robot actions, but the strength of the result depends on test conditions.",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Evaluation should cover failures, repeatability, cost and human intervention as well as successful attempts."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39267",
+              "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40026",
+              "title": "RoboSeed: Multidimensional Evaluation of Vision-Language-Action and World-Action Models",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39560",
+              "title": "SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000006.000183256.html",
+              "title": "RLWRLD KDDI SUMMIT 2026 RLDX-1 logistics packing demonstration",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "glossary",
+          "slug": "glossary",
+          "category": "analysis",
+          "headline": "Words to know",
+          "dek": "What the terms in these articles mean.",
+          "body": [
+            {
+              "type": "heading",
+              "text": "model"
+            },
+            {
+              "type": "paragraph",
+              "text": "A computational system trained to predict or select actions."
+            },
+            {
+              "type": "heading",
+              "text": "simulat"
+            },
+            {
+              "type": "paragraph",
+              "text": "A test in a computer environment rather than on physical hardware."
+            },
+            {
+              "type": "heading",
+              "text": "gripp"
+            },
+            {
+              "type": "paragraph",
+              "text": "A device or action used to hold an object."
+            },
+            {
+              "type": "heading",
+              "text": "learn"
+            },
+            {
+              "type": "paragraph",
+              "text": "Adjusting a model from examples or experience."
+            },
+            {
+              "type": "heading",
+              "text": "control"
+            },
+            {
+              "type": "paragraph",
+              "text": "Choosing commands that determine a machine's movement."
+            },
+            {
+              "type": "heading",
+              "text": "sensor"
+            },
+            {
+              "type": "paragraph",
+              "text": "A device that measures a condition or contact."
+            },
+            {
+              "type": "heading",
+              "text": "reproducib"
+            },
+            {
+              "type": "paragraph",
+              "text": "The ability to repeat an experiment with comparable results."
+            },
+            {
+              "type": "heading",
+              "text": "robot"
+            },
+            {
+              "type": "paragraph",
+              "text": "A physical machine that performs commanded actions."
+            },
+            {
+              "type": "heading",
+              "text": "tool"
+            },
+            {
+              "type": "paragraph",
+              "text": "A device selected for a particular operation."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39267",
+              "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40026",
+              "title": "RoboSeed: Multidimensional Evaluation of Vision-Language-Action and World-Action Models",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39560",
+              "title": "SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000006.000183256.html",
+              "title": "RLWRLD KDDI SUMMIT 2026 RLDX-1 logistics packing demonstration",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        }
+      ]
+    },
+    "ja": {
+      "title": "レプリカントの真実",
+      "weather": {
+        "location": "smolensk",
+        "timezone": "Europe/Moscow",
+        "forecast_date": "2026-11-01",
+        "retrieved_at": "2026-10-31T16:07:47.240840Z",
+        "kind": "forecast",
+        "source_name": "Open-Meteo",
+        "source_url": "https://api.open-meteo.com/v1/forecast?latitude=54.7826&longitude=32.0453&timezone=Europe%2FMoscow&start_date=2026-11-01&end_date=2026-11-01&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+        "temperature_min_c": 2.7,
+        "temperature_max_c": 8.6,
+        "precipitation_probability_max": 8,
+        "slots": [
+          {
+            "hour": 9,
+            "temperature_c": 2.9,
+            "condition": "cloudy",
+            "precipitation_probability": 3,
+            "wind_speed_ms": 2.48,
+            "wind_direction_deg": 43
+          },
+          {
+            "hour": 12,
+            "temperature_c": 5.9,
+            "condition": "cloudy",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 2.33,
+            "wind_direction_deg": 43
+          },
+          {
+            "hour": 18,
+            "temperature_c": 6.0,
+            "condition": "cloudy",
+            "precipitation_probability": 3,
+            "wind_speed_ms": 1.79,
+            "wind_direction_deg": 27
+          }
+        ]
+      },
+      "issue_title": "レプリカント・データ 子ども版",
+      "editorial_note": "物をつかみ、荷物を運び、実験から学ぶロボットの五つの話。",
+      "articles": [
+        {
+          "id": "swapbot-tools",
+          "slug": "swapbot-tools",
+          "category": "news",
+          "headline": "道具を取りかえるとロボットの仕事はどう変わる？",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "サラダを混ぜたり、食べ物をひっくり返したり、材料を切ったりするとき、同じ道具だけでは不便だ。研究者は、ロボットの腕そのものを取りかえずに、仕事に合った道具を交換できる仕組みを考えた。10月29日に発表された研究で、まだ家庭向けの完成品ではない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "腕には共通のつなぎ目があり、道具の側には取り付け用の部品がある。その部品には、物にふれたことを調べる小さなセンサーも入っている。カメラでは物の位置や形が分かるが、道具がどれくらい強く当たっているかは画像だけでは分かりにくい。そこで研究者は、ふれたときの情報も利用した。"
+            },
+            {
+              "type": "paragraph",
+              "text": "最初は人が遠くからロボットを操作し、動きの例を集めた。その記録を使って、似た場面でどう動くかを学習させた。研究者の実験では、画像だけを使った場合より、触覚の情報を加えた場合の成功率が15〜25ポイント高かった。ただし、これは限られた道具と作業での比較だ。"
+            },
+            {
+              "type": "paragraph",
+              "text": "道具が外れないか、初めて見る食べ物にも対応できるか、失敗したときにやり直せるかは、これから調べる必要がある。知らない台所で夕食を全部作れると示した研究ではない。参考として、開発者はこの仕組みをSwapBotと名付けた。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "raibo-wagon-towing",
+          "slug": "raibo-wagon-towing",
+          "category": "news",
+          "headline": "四本足のロボットは台車もぶつけずに曲がれる？",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "旅行かばんを引いて角を曲がるとき、自分は通れても、後ろのかばんが壁に当たりそうになることがある。四本足のロボットが台車を引くときも同じような問題が起こる。研究者は、ロボットの足だけでなく、後ろの台車が通る場所も考えて進む方法を作った。"
+            },
+            {
+              "type": "paragraph",
+              "text": "台車をつなぐと、曲がれる角度や必要な通路の広さが変わる。そこで、次の動きによって荷物がどこへ進むかを予測する。ロボット一台だけの道を探す場合とは違い、つなぎ目の向きや障害物との距離にも注意しなければならない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "実物の四本足ロボットを使った実験では、15メートルのコースで40回試し、成功率は85％だった。最大40キログラムの荷物を運んだことも報告された。ただし、決められた条件での結果であり、どんな道や荷物でも同じように成功するという意味ではない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "長い道のり、でこぼこした地面、人が急に現れる場所、車輪が引っかかる場面でも試す必要がある。この研究で大切なのは、引っぱる側だけでなく、後ろについてくる物の動きもいっしょに考えることだ。参考として、実験のロボットはRAIBOと呼ばれている。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.39267",
+              "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "roboseed-evaluation",
+          "slug": "roboseed-evaluation",
+          "category": "news",
+          "headline": "ロボットの実力は一つの点数で比べられる？",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "あるロボットは積み木を速く運び、別のロボットはこわれやすい物をていねいにつかむ。どちらが優れているだろうか。仕事も条件も違うのに、成功した回数だけを比べても答えは出ない。研究者は、実験で何を調べたのかを細かく見直す評価方法を考えた。"
+            },
+            {
+              "type": "paragraph",
+              "text": "この方法では、ロボットの動きを決める学習モデルを五つの観点から比べる。結果がどれほど確かか、新しい仕事に合わせるのにどれくらい費用がかかるか、別の研究チームでも同じような実験ができるか、といった点が重要になる。再現性とは、条件と手順をそろえて実験をくり返したとき、近い結果が得られることだ。"
+            },
+            {
+              "type": "paragraph",
+              "text": "論文には、費用や再現性について十分な情報が書かれていないこともある。そんなとき、分からない数値を勝手に作って合計点を出してはいけない。研究者の方法は、根拠が足りなければ無理に総合順位を付けない。順位を決めないことも、正しい評価の一つなのである。"
+            },
+            {
+              "type": "paragraph",
+              "text": "ロボットの動画を見るときにも、この考え方は役に立つ。何回試したのか、失敗した場面はあるのか、撮影前にどれほど準備したのかを聞いてみよう。評価方法そのものがロボットを賢くするわけではない。参考として、研究者はこの評価の仕組みをRoboSeedと呼んでいる。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40026",
+              "title": "RoboSeed: Multidimensional Evaluation of Vision-Language-Action and World-Action Models",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "simto-robust-grippers",
+          "slug": "simto-robust-grippers",
+          "category": "news",
+          "headline": "少しずれても物をつかめるロボットの手を考える",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "コップを持つとき、人の指はコップの形に合わせて少し曲がる。ロボットにも同じような工夫が役立つ。カメラが物の位置を少し間違えることがあるからだ。研究者は、いつもぴったり正しい位置からつかむと考えるのではなく、多少ずれても使えるやわらかい手を設計した。"
+            },
+            {
+              "type": "paragraph",
+              "text": "やわらかいハンドは、物にふれたときに少し形を変えながらつかむ部品である。研究者はコンピューターの中で6646種類の形を作り、いろいろな物やつかむ位置について調べた。少しずれただけで物を落としてしまう形より、いくつかの条件で安定する形を探すのが目的だ。"
+            },
+            {
+              "type": "paragraph",
+              "text": "計算した形のうち24種類を実際に作り、別の設計と比べながら試した。画面の中でうまくいっても、本物の物を必ず持てるとは限らないため、実物での試験は大切だ。ただし、24種類の実験で、計算した6646種類すべての性能が確かめられたわけではない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "こうした方法は、倉庫でいろいろな商品をつかむ仕事などに役立つかもしれない。長く使ったときの材料の傷み、ぬれた物や重い物への対応、失敗したときの動きは、さらに調べる必要がある。参考として、研究者はこの設計方法をSimTO-Robustと名付けた。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.39560",
+              "title": "SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "rlwrld-packing",
+          "slug": "rlwrld-packing",
+          "category": "news",
+          "headline": "五本指のロボットがネット注文の箱づめに挑戦",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "ネットで注文された商品を送るには、正しい品物を選び、箱に入れ、こわれないようにする必要がある。東京の展示会では、五本指の手を持つロボットが、これに似た仕事を見せた。展示会は10月27日と28日に開かれ、会社が内容を発表したのは30日だった。"
+            },
+            {
+              "type": "paragraph",
+              "text": "開発会社の説明では、ロボットはコンベヤーから段ボール箱を取り、小さな商品を箱に入れた。スマートフォンの付属品のように、形や材質が違う物も扱ったという。動きを決めるプログラムは、複数の仕事に応用することを目指す基盤モデルと呼ばれている。ただし、名前だけで何でもできると考えてはいけない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "来場者は実演を見ることができた。しかし、何回失敗したのか、一時間に何箱できたのか、人の助けなしで何時間動けたのかは発表されていない。短い実演だけで、どんな倉庫でもすぐに使えると判断することはできない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "これからは、いろいろな商品や思いがけない置き方でも試す必要がある。物を落としたときにどうやり直すか、人の近くで安全に動けるかも大切だ。参考として、開発会社RLWRLDは、この制御モデルをRLDX-1と名付けた。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000006.000183256.html",
+              "title": "RLWRLD KDDI SUMMIT 2026 RLDX-1 logistics packing demonstration",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "technology-signal",
+          "slug": "technology-signal",
+          "category": "analysis",
+          "headline": "単発の実演から検証できる作業へ",
+          "dek": "研究や実演によってロボットの仕事の幅は広がるが、結果の確かさは試験条件によって変わる。",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "成功例だけでなく、失敗、再現性、費用、人の介入も比べる必要がある。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39267",
+              "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40026",
+              "title": "RoboSeed: Multidimensional Evaluation of Vision-Language-Action and World-Action Models",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39560",
+              "title": "SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000006.000183256.html",
+              "title": "RLWRLD KDDI SUMMIT 2026 RLDX-1 logistics packing demonstration",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "glossary",
+          "slug": "glossary",
+          "category": "analysis",
+          "headline": "ことばの説明",
+          "dek": "記事に出てくることばを説明します。",
+          "body": [
+            {
+              "type": "heading",
+              "text": "触覚"
+            },
+            {
+              "type": "paragraph",
+              "text": "物にふれたときの情報を測る仕組み。"
+            },
+            {
+              "type": "heading",
+              "text": "モデル"
+            },
+            {
+              "type": "paragraph",
+              "text": "データから動きや結果を予測する計算の仕組み。"
+            },
+            {
+              "type": "heading",
+              "text": "ハンド"
+            },
+            {
+              "type": "paragraph",
+              "text": "物をつかむためのロボットの部品。"
+            },
+            {
+              "type": "heading",
+              "text": "学習"
+            },
+            {
+              "type": "paragraph",
+              "text": "例や経験を使ってモデルの働きを調整すること。"
+            },
+            {
+              "type": "heading",
+              "text": "制御"
+            },
+            {
+              "type": "paragraph",
+              "text": "機械をどのように動かすか決めること。"
+            },
+            {
+              "type": "heading",
+              "text": "センサー"
+            },
+            {
+              "type": "paragraph",
+              "text": "物の状態や接触を調べる装置。"
+            },
+            {
+              "type": "heading",
+              "text": "再現性"
+            },
+            {
+              "type": "paragraph",
+              "text": "同じ条件で試したときに近い結果を得られる性質。"
+            },
+            {
+              "type": "heading",
+              "text": "ロボット"
+            },
+            {
+              "type": "paragraph",
+              "text": "命令に従って実際の物を動かす機械。"
+            },
+            {
+              "type": "heading",
+              "text": "道具"
+            },
+            {
+              "type": "paragraph",
+              "text": "特定の作業のために使う物。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39267",
+              "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40026",
+              "title": "RoboSeed: Multidimensional Evaluation of Vision-Language-Action and World-Action Models",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39560",
+              "title": "SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000006.000183256.html",
+              "title": "RLWRLD KDDI SUMMIT 2026 RLDX-1 logistics packing demonstration",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        }
+      ]
+    }
+  },
+  "weather": {
+    "location": "ichikawa",
+    "timezone": "Asia/Tokyo",
+    "forecast_date": "2026-11-01",
+    "retrieved_at": "2026-10-31T16:07:47.112550Z",
+    "kind": "forecast",
+    "source_name": "Open-Meteo",
+    "source_url": "https://api.open-meteo.com/v1/forecast?latitude=35.72&longitude=139.93&timezone=Asia%2FTokyo&start_date=2026-11-01&end_date=2026-11-01&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+    "temperature_min_c": 13.2,
+    "temperature_max_c": 19.0,
+    "precipitation_probability_max": 8,
+    "slots": [
+      {
+        "hour": 9,
+        "temperature_c": 15.3,
+        "condition": "cloudy",
+        "precipitation_probability": 0,
+        "wind_speed_ms": 1.97,
+        "wind_direction_deg": 336
+      },
+      {
+        "hour": 12,
+        "temperature_c": 18.3,
+        "condition": "clear",
+        "precipitation_probability": 0,
+        "wind_speed_ms": 0.67,
+        "wind_direction_deg": 297
+      },
+      {
+        "hour": 18,
+        "temperature_c": 17.9,
+        "condition": "cloudy",
+        "precipitation_probability": 8,
+        "wind_speed_ms": 1.33,
+        "wind_direction_deg": 103
+      }
+    ]
+  }
+}

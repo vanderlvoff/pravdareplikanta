@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.4",
+  "publication": "pravda_replikanta",
+  "issue_type": "daily",
+  "issue_date": "2026-11-01",
+  "issue_id": "daily-2026-11-01",
+  "edition": "business",
+  "language": "en",
+  "generated_at": "2026-10-31T15:58:39.667Z",
+  "title": "Replicant Data — Business Edition",
+  "lead": "Commercial physical AI now faces a harder test than demonstrations: repeatable operations, service obligations and measurable economics.",
+  "news": [
+    {
+      "id": "gxo-digit-multisite",
+      "title": "GXO plans to expand Digit humanoid operations to two more warehouses",
+      "summary": "GXO Logistics and Agility Robotics announced plans to deploy Digit humanoids at sites in North Carolina and Tennessee beginning in 2027. The companies report more than 100,000 totes moved at their existing warehouse, but have not disclosed the new fleet size or contract economics.",
+      "details": "A commercial warehouse deployment is moving toward a multi-site rollout under a robots-as-a-service arrangement.",
+      "technical_novelty": "The expansion is expected to start with Digit 4 and later migrate to Digit 5, supported by Agility Arc fleet software.",
+      "engineering_impact": "Integration must account for conveyors, safety procedures, support, uptime and changes between sites.",
+      "limitations": "The additional sites are planned rather than operating; unit economics and independently audited performance are unavailable.",
+      "evidence_status": "Joint company announcement, with operating figures supplied by the partners rather than independent verification.",
+      "published_at": "2026-10-26",
+      "organization": "GXO Logistics and Agility Robotics",
+      "source_ids": [
+        "src-gxo-agility-20261026"
+      ],
+      "time_window": "7d",
+      "body": "A repeatable warehouse operation matters more to a customer than an impressive one-off robot demonstration. On October 26, 2026, GXO Logistics and Agility Robotics announced an expansion of their Digit humanoid partnership to two more US sites, in Statesville, North Carolina, and Lebanon, Tennessee. Deployments are expected to start in early 2027. The announcement is a plan for additional operations, not evidence that those two sites are already running. It builds on the existing GXO facility in Flowery Branch, Georgia, where Digit handles repetitive tote movement and places containers onto conveyors.\n\nThe partners say Digit has moved more than 100,000 totes at the Georgia facility. That cumulative figure establishes that work has occurred in a live logistics environment, but it does not reveal throughput per hour, human intervention rates, operating cost or total robot-hours. The arrangement is described as robots-as-a-service, meaning the customer obtains robotic capability and ongoing service rather than simply buying machines outright. Agility Arc is the cloud-based fleet-management and integration platform associated with the existing agreement.\n\nThe next sites will support e-commerce fulfillment and are expected to start with Digit 4, then transition to Digit 5 once the newer model is commercially available. For an implementation team, a multi-site rollout raises questions about conveyor interfaces, workspace safety, maintenance coverage, spare units, shift schedules and software change management. A skill that works in one warehouse does not automatically reproduce its economics in another building with different layouts and demand patterns. The new deployment is an opportunity to test operational transfer, not proof that transfer has already succeeded.\n\nNeither company disclosed the number of robots for the additional sites, contract value, payback period or independently audited productivity figures. The evidence therefore supports two narrower conclusions: a customer has decided to expand a live commercial relationship, and the original site has accumulated substantial tote-handling activity. A purchasing decision elsewhere should still require a measured baseline, uptime and exception logs, labor and integration costs, and an agreed method for calculating value. The commercial signal is credible, but the return on investment remains unquantified in this release.",
+      "image": null
+    },
+    {
+      "id": "elyza-robotics-japan-scale",
+      "title": "KDDI and ELYZA form a Japanese vehicle for deploying physical AI",
+      "summary": "KDDI and ELYZA announced that ELYZA Robotics has begun operations to combine robot-model research with enterprise integration. Their targets include ¥30 billion in research investment, more than 300 specialists and over 1,000 deployed robots by fiscal 2030, all of which are plans rather than achieved outcomes.",
+      "details": "The company began operating on October 1 and was publicly announced on October 27 with separate research and operations platforms.",
+      "technical_novelty": "The roadmap combines vision-language-action models, site data, digital twins, distributed inference and remote supervision.",
+      "engineering_impact": "Enterprise integration is proposed across retail, logistics, manufacturing and services using multiple robot types.",
+      "limitations": "No independently verified deployments, autonomy metrics or unit economics were provided.",
+      "evidence_status": "Corporate strategy and investment announcement, not an independent technical evaluation.",
+      "published_at": "2026-10-27",
+      "organization": "KDDI and ELYZA",
+      "source_ids": [
+        "src-elyza-robotics-20261027"
+      ],
+      "time_window": "7d",
+      "body": "Japan's KDDI telecommunications group and AI developer ELYZA are establishing a dedicated organization for physical AI rather than treating robot intelligence as an isolated research product. Their October 27, 2026 announcement says ELYZA Robotics began operating on October 1. The group targets ¥30 billion of research and development investment, a specialist organization of more than 300 people, and more than 1,000 robots introduced into workplaces by fiscal 2030. These figures are forward-looking commitments and should not be mistaken for robots already deployed or capital already spent.\n\nThe proposed architecture spans three levels. Research teams plan to develop vision-language models that interpret images and text, and vision-language-action models that additionally produce robot actions. Implementation teams will collect data from workplaces and use digital twins, which are software representations of real equipment and processes, to support testing. Operations platforms are intended to provide distributed model execution, remote monitoring and coordination between machines. The combination recognizes a familiar deployment problem: an impressive robot skill does not become a business service until it can interact reliably with the customer's systems and procedures.\n\nKDDI identifies retail, logistics, manufacturing and services as early areas of application, with partners from its wider group including Lawson and Soracom. The company also expects to source different categories of robots, including industrial arms, quadrupeds and humanoids, according to the task. That could reduce dependence on one mechanical design, but creates integration demands around interfaces, training data, security, maintenance and responsibility for failures. Proof-of-concept projects are planned from 2026, with adoption expected to progress in stages.\n\nThe release contains no audited installed-base figure, measured autonomy rate, cost per completed task or customer payback calculation. The business case is therefore a strategic hypothesis, not an independently demonstrated result. A prospective customer should ask how safety validation is performed, how site-specific data is governed, which party supports a malfunctioning robot, and whether model updates require renewed acceptance testing. The meaningful milestone will be repeated, supportable operation in real workplaces rather than the announced size of the investment program.",
+      "image": null
+    }
+  ],
+  "technology_signal": {
+    "title": "From demonstration to operating contract",
+    "summary": "Commercial physical AI now faces a harder test than demonstrations: repeatable operations, service obligations and measurable economics.",
+    "implications": "Distinguish operating evidence from targets and request cost, intervention and support data."
+  },
+  "glossary": [
+    {
+      "term": "Humanoid",
+      "definition": "A robot with a human-like body layout."
+    },
+    {
+      "term": "Robots-as-a-service",
+      "definition": "A commercial arrangement for using supported robot operations as a service."
+    },
+    {
+      "term": "Digital twin",
+      "definition": "A software representation of physical equipment or a process."
+    },
+    {
+      "term": "VLA",
+      "definition": "A model mapping visual input and language instructions to robot actions."
+    },
+    {
+      "term": "Proof of concept",
+      "definition": "A limited trial to test a proposed application."
+    },
+    {
+      "term": "Unit economics",
+      "definition": "Costs and benefits measured per completed operation."
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-gxo-agility-20261026",
+      "url": "https://www.agilityrobotics.com/content/gxo-and-agility-robotics-expand-partnership-to-accelerate-deployment-of-humanoids-in-u-s-operations",
+      "domain": "agilityrobotics.com",
+      "organization": "GXO Logistics and Agility Robotics",
+      "published_at": "2026-10-26",
+      "title": "GXO and Agility Robotics Expand Partnership to Accelerate Deployment of Humanoids in U.S. Operations"
+    },
+    {
+      "id": "src-elyza-robotics-20261027",
+      "url": "https://prtimes.jp/main/html/rd/p/000000086.000047565.html",
+      "domain": "prtimes.jp",
+      "organization": "KDDI and ELYZA",
+      "published_at": "2026-10-27",
+      "title": "フィジカルAIを推進する新会社「ELYZA Robotics」事業開始"
+    }
+  ]
+}

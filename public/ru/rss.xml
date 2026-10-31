@@ -7,74 +7,74 @@
     <language>ru</language>
     <atom:link href="https://repravda.com/ru/rss.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>SwapBot: вместо универсального захвата — сменные инструменты с тактильной обратной связью</title>
-      <link>https://repravda.com/ru/issues/2026-10-31/articles/swapbot-tools/</link>
-      <guid isPermaLink="false">replicantpravda:2026-10-31:ru:swapbot-tools</guid>
-      <description>В поисках универсальной роботизированной кисти есть очевидная альтернатива: не делать одну руку на все случаи, а менять инструмент. SwapBot предлагает единое крепление на роботе и недорогие адаптеры для привычных предметов. Встроенная тактильная обратная связь сообщает о контакте, который камера не всегда способна надёжно распознать.</description>
+      <title>Модели роботов предлагают сравнивать по цене адаптации и доказательствам</title>
+      <link>https://repravda.com/ru/issues/2026-11-01/articles/roboseed-evaluation/</link>
+      <guid isPermaLink="false">replicantpravda:2026-11-01:ru:roboseed-evaluation</guid>
+      <description>Высокий процент успешных действий на демонстрации ещё не означает, что модель робота выгодно внедрять на предприятии. Заказчику важно знать стоимость дообучения, требования к вычислительному оборудованию и возможность повторить эксперимент. Синь Ма и соавторы предложили RoboSeed — систему оценки моделей, связывающих изображения и команды с действиями робота, и моделей, прогнозирующих физические изменения.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>LOGIV проверяет зависимости между действиями робота и восстанавливает нарушенные условия</title>
+      <link>https://repravda.com/ru/issues/2026-11-01/articles/logiv-task-graph-repair/</link>
+      <guid isPermaLink="false">replicantpravda:2026-11-01:ru:logiv-task-graph-repair</guid>
+      <description>Для внедрения важно отделять исследовательские результаты от гарантированных эксплуатационных характеристик. Позволяет исследовать слой над VLA и моделями действий, отделяя надёжность последовательности от качества отдельного навыка. Проверено на ограниченных наборах двухручных задач; реальных успешных попыток 17 из 30, а не 30 из 30.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>Проверка допустимости действий встроена в обучение генеративной политики робота</title>
+      <link>https://repravda.com/ru/issues/2026-11-01/articles/oracle-safe-flow/</link>
+      <guid isPermaLink="false">replicantpravda:2026-11-01:ru:oracle-safe-flow</guid>
+      <description>Для внедрения важно отделять исследовательские результаты от гарантированных эксплуатационных характеристик. Подход позволяет использовать существующий collision checker без аналитической модели всей допустимой области. Эксперимент один, в симуляции; время вывода выросло с 0,071 до 1,345 секунды на блок действий.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>Мягкие захваты проектируют с запасом на ошибки наведения</title>
+      <link>https://repravda.com/ru/issues/2026-11-01/articles/simto-robust-grippers/</link>
+      <guid isPermaLink="false">replicantpravda:2026-11-01:ru:simto-robust-grippers</guid>
+      <description>Робот может правильно распознать предмет, но подвести захват немного не туда. Жёсткие пальцы иногда теряют контакт, а мягкий материал способен подстроиться под форму вещи. Исследователи во главе с Куртом Энкерой представили SimTO-Robust — метод компьютерного проектирования мягких захватов, учитывающий такие ошибки заранее.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>Один контроллер гуманоидного робота выполняет разные навыки без нового обучения</title>
+      <link>https://repravda.com/ru/issues/2026-11-01/articles/metatron/</link>
+      <guid isPermaLink="false">replicantpravda:2026-11-01:ru:metatron</guid>
+      <description>Один и тот же гуманоид должен уметь идти, остановиться, нагнуться, поднять предмет и снова сохранить равновесие. Однако многие робототехнические системы требуют отдельного обучения под каждое действие. Чен Тесслер и коллеги предложили Metatron — общий слой исполнения движений, который соединяет обученную генеративную модель всего тела с программируемыми навыками. Исследование опубликовано 27 октября 2026 года, а не в день появления статьи в новостной подборке.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>От отдельного трюка к проверяемой работе</title>
+      <link>https://repravda.com/ru/issues/2026-11-01/articles/technology-signal/</link>
+      <guid isPermaLink="false">replicantpravda:2026-11-01:ru:technology-signal</guid>
+      <description>Новые исследования и демонстрации показывают способы расширить набор действий робота, но качество результата зависит от условий испытания.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>Анализ</category>
+    </item>
+    <item>
+      <title>WorldFlow предсказывает будущие кадры и движение точек в 3D</title>
+      <link>https://repravda.com/ru/issues/2026-10-31/articles/worldflow-video-3d/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:ru:worldflow-video-3d</guid>
+      <description>Чтобы выбрать действие, роботу полезно предсказывать, как изменится окружающая сцена. WorldFlow — исследовательская модель от 29 октября, которая одновременно строит будущие кадры видео и прогнозирует движение выбранных точек в трёхмерном пространстве. Она описывает возможные изменения, но не выдаёт команды двигателям.</description>
       <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
       <category>Новости</category>
     </item>
     <item>
-      <title>Gym-Anything: агенты-программисты создают полигоны для обучения роботов</title>
-      <link>https://repravda.com/ru/issues/2026-10-31/articles/gym-anything/</link>
-      <guid isPermaLink="false">replicantpravda:2026-10-31:ru:gym-anything</guid>
-      <description>Робот может блестяще выглядеть в знакомом симуляторе и растеряться при первом изменении условий. Gym-Anything атакует проблему со стороны инфраструктуры: цифровые агенты сами создают и проверяют физические среды, вместо того чтобы ждать ручной работы специалистов. Так появился RoboWorld — 25 симуляций и 25 тестовых задач.</description>
+      <title>Event2Reward учит робота замечать откаты и исправления</title>
+      <link>https://repravda.com/ru/issues/2026-10-31/articles/event2reward-progress/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:ru:event2reward-progress</guid>
+      <description>Если робот уронил предмет, время прошло, но работа не продвинулась. Event2Reward — метод, представленный 29 октября, который различает остановку, ухудшение и восстановление прогресса. Эти события помогают формировать промежуточную награду для обучения с подкреплением.</description>
       <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
       <category>Новости</category>
     </item>
     <item>
-      <title>TouchBridge переносит человеческие касания в обучение ловкой роботизированной кисти</title>
-      <link>https://repravda.com/ru/issues/2026-10-31/articles/touchbridge-tactile/</link>
-      <guid isPermaLink="false">replicantpravda:2026-10-31:ru:touchbridge-tactile</guid>
-      <description>Когда человек поворачивает предмет в руке, важно не только положение пальцев. Важно, где они касаются поверхности и как меняется контакт. TouchBridge сочетает носимый интерфейс с переносом тактильных данных между разными кистями, сохраняя пространственные отношения зон контакта при преобразовании демонстраций для робота.</description>
-      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
-      <category>Новости</category>
-    </item>
-    <item>
-      <title>LOGIV проверяет, сохранились ли физические условия плана</title>
-      <link>https://repravda.com/ru/issues/2026-10-31/articles/logiv-repair/</link>
-      <guid isPermaLink="false">replicantpravda:2026-10-31:ru:logiv-repair</guid>
-      <description>Выполнить шаг — ещё не значит сохранить его результат. Робот может правильно поставить деталь, а затем задеть её следующим движением. LOGIV использует явный граф задач: он хранит зависимости будущих действий от физических условий, проверяет эти условия по наблюдениям и восстанавливает только нарушенные связи.</description>
-      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
-      <category>Новости</category>
-    </item>
-    <item>
-      <title>Aeon и Mujin запустили в Японии логистический центр со смешанной роботизированной укладкой</title>
-      <link>https://repravda.com/ru/issues/2026-10-31/articles/aeon-mixed-palletizing/</link>
-      <guid isPermaLink="false">replicantpravda:2026-10-31:ru:aeon-mixed-palletizing</guid>
-      <description>Коробки разных размеров и массы редко приходят в порядке, удобном для заранее записанной траектории. На центре Aeon Kawaguchi East XD, запущенном 29 октября совместно с Mujin, система рассчитывает план укладки по заказу, а затем проверяет формирующийся штабель с помощью 3D-зрения. Если груз смещается, робот корректирует действия. Именно эта обратная связь отличает решение от жёсткого сценария.</description>
-      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
-      <category>Новости</category>
-    </item>
-    <item>
-      <title>Agility уточнила финансирование масштабирования Digit 5</title>
-      <link>https://repravda.com/ru/issues/2026-10-31/articles/agility-financing/</link>
-      <guid isPermaLink="false">replicantpravda:2026-10-31:ru:agility-financing</guid>
-      <description>Между эффектной демонстрацией гуманоида и обслуживаемым парком машин лежит не только алгоритм, но и капитал. Agility Robotics и Churchill XI теперь ожидают около 465 млн долларов валовых поступлений от предполагаемого объединения, говорится в документе от 30 октября. Закрытие намечено на 4 ноября, торги на Nasdaq — на 5 ноября, но оба события зависят от выполнения условий.</description>
-      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
-      <category>Новости</category>
-    </item>
-    <item>
-      <title>Opentrons привлекла 40 млн долларов для соединения ИИ с физической лабораторией</title>
-      <link>https://repravda.com/ru/issues/2026-10-31/articles/opentrons-autonomous-labs/</link>
-      <guid isPermaLink="false">replicantpravda:2026-10-31:ru:opentrons-autonomous-labs</guid>
-      <description>Языковая модель может предложить тысячу экспериментов раньше, чем лаборатория закончит один. Opentrons инвестирует в медленную половину этого цикла: роботы дозируют жидкости, выполняют протоколы и фиксируют структурированные результаты. 29 октября компания объявила о раунде Series E на 40 млн долларов для расширения этой инфраструктуры.</description>
-      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
-      <category>Новости</category>
-    </item>
-    <item>
-      <title>Bleu Robotics делает ставку на обучение за несколько демонстраций</title>
-      <link>https://repravda.com/ru/issues/2026-10-31/articles/bleu-few-shot/</link>
-      <guid isPermaLink="false">replicantpravda:2026-10-31:ru:bleu-few-shot</guid>
-      <description>У промышленной робототехники упрямая проблема: следующая модификация изделия способна обесценить вчерашнюю тщательно запрограммированную ячейку. Французская Bleu Robotics, выросшая из Inria, привлекла 5 млн евро на более узкий подход, чем мечта о всеобщем интеллекте. Её few-shot imitation learning пытается восстановить смысл операции примерно по десяти демонстрациям, используя готовые средства восприятия и управления.</description>
-      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
-      <category>Новости</category>
-    </item>
-    <item>
-      <title>Physical AI переходит от отдельных демонстраций к управляемым системам</title>
+      <title>WorldFlow предсказывает будущие кадры и движение точек в 3D</title>
       <link>https://repravda.com/ru/issues/2026-10-31/articles/technology-signal/</link>
       <guid isPermaLink="false">replicantpravda:2026-10-31:ru:technology-signal</guid>
-      <description>Смена инструментов, тактильные данные, проверка зависимостей и обратная связь реального склада делают инженерную обвязку не менее важной, чем базовую модель.</description>
+      <description>Исследователи 29 октября сообщили о модели WorldFlow, которая прогнозирует видео и трёхмерные перемещения; средняя ошибка на SpatialCog составила 0,060 м.</description>
       <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
       <category>Анализ</category>
     </item>

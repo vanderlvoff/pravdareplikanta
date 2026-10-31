@@ -12,3 +12,4 @@ previews/
 drafts/
 node_modules/
 .wrangler/
+.telegram-work/

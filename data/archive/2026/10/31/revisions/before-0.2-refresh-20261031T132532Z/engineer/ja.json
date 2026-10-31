@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.4",
+  "publication": "pravda_replikanta",
+  "issue_type": "daily",
+  "issue_date": "2026-10-31",
+  "issue_id": "daily-2026-10-31",
+  "edition": "engineer",
+  "language": "ja",
+  "generated_at": "2026-10-31T21:41:24+09:00",
+  "title": "プラウダ・レプリカンタ — 技術者版",
+  "lead": "動作の安全性と把持の信頼性を扱う二つの研究。数値は研究室の試験によるものだ。",
+  "news": [
+    {
+      "id": "vla-stem",
+      "title": "VLA-Stem、障害物回避をVLA本体から分離",
+      "summary": "基盤のVLAを再学習せず、障害物に対応する局所制御を追加する。",
+      "details": "動作列を参照軌道に変え、ロボットの状態と近くの障害物に応じて補正する。",
+      "technical_novelty": "教師・生徒型の学習と段階的な課題で補正方策を訓練する。",
+      "engineering_impact": "元の作業能力と衝突回避を分けて評価できる。",
+      "limitations": "6種類のシミュレーションで衝突のない成功率は52.8%。比較手法の最良値23.7%を上回るが、産業用の信頼性は未証明。",
+      "evidence_status": "著者によるシミュレーションと実機実験を含むプレプリント。独立再現は未確認。",
+      "published_at": "2026-10-27",
+      "organization": "VLA-Stem research authors",
+      "source_ids": [
+        "vla-stem-source"
+      ],
+      "time_window": "7d",
+      "body": "VLAは作業の目的を選べても、急な障害物への対応が苦手な場合がある。VLA-Stemは基本モデルを再学習せず、参照軌道とロボットの状態を使って動きを修正する局所制御を加える。\n\n6種類のシミュレーションで衝突せずに成功した割合は52.8%で、比較対象の23.7%を上回った。実機でも衝突の減少が報告されている。ただし再現にはセンサー条件や制御設定の確認が必要で、安全認証を意味しない。",
+      "image": null
+    },
+    {
+      "id": "dexsafe-hand",
+      "title": "DexSafe、多指ハンドの器用さと落下を同時に評価",
+      "summary": "LEAPハンドが指の中で物を動かし、追加フィルターが落下を減らす。",
+      "details": "人の実演なしでシミュレーション学習し、位置計測や手首の深度カメラを使って実機へ移す。",
+      "technical_novelty": "残差型の安全フィルターが目標到達と接触維持のバランスを調整する。",
+      "engineering_impact": "目標の正確さだけでなく、物を落とす頻度も評価する必要がある。",
+      "limitations": "13.3時間、4種類の物と4800超の未知目標を評価。基本方策は2 cm、0.4 rad以内で95.2%に到達し、フィルターで落下が75%減り、到達率は91.5%。",
+      "evidence_status": "著者の実機試験を含むプレプリント。他のハンドや物への一般化は未確認。",
+      "published_at": "2026-10-27",
+      "organization": "DexSafe research authors",
+      "source_ids": [
+        "dexsafe-source"
+      ],
+      "time_window": "7d",
+      "body": "器用なロボットハンドは、物を持ち上げるだけでなく、指の間で動かしても落としてはいけない。研究チームはLEAPハンドをシミュレーションで学習し、実機に移してから落下を防ぐ追加フィルターを使った。\n\n13.3時間の試験で、4種類の物に対して4800を超える未知の目標を試した。基本方策は許容範囲内で95.2%に到達し、フィルターは落下を75%減らして91.5%の到達率を保った。再現にはセンサーや指の形の違いを考える必要がある。",
+      "image": null
+    }
+  ],
+  "technology_signal": {
+    "title": "安全性を別の学習対象として扱う",
+    "summary": "VLA-StemとDexSafeは、基本の作業方策に追加の補正機能を組み合わせる。",
+    "implications": "成功率だけでなく、衝突、落下、評価条件を測ることが重要だ。"
+  },
+  "glossary": [
+    {
+      "term": "VLA",
+      "definition": "画像と言葉からロボットの動作を考えるモデル。"
+    },
+    {
+      "term": "方策",
+      "definition": "観測から次の動きを選ぶ仕組み。"
+    },
+    {
+      "term": "シミュレーション",
+      "definition": "コンピューター内で動作を試すこと。"
+    },
+    {
+      "term": "フィルター",
+      "definition": "動作を追加で補正する仕組み。"
+    },
+    {
+      "term": "センサー",
+      "definition": "周囲や機械の状態を測る部品。"
+    }
+  ],
+  "sources": [
+    {
+      "id": "vla-stem-source",
+      "url": "https://arxiv.org/abs/2610.37378",
+      "domain": "arxiv.org",
+      "organization": "VLA-Stem research authors",
+      "published_at": "2026-10-27",
+      "title": "VLA-Stem: A Lightweight Safety Mechanism for Vision-Language-Action Models via Reinforcement Learning"
+    },
+    {
+      "id": "dexsafe-source",
+      "url": "https://arxiv.org/abs/2610.37652",
+      "domain": "arxiv.org",
+      "organization": "DexSafe research authors",
+      "published_at": "2026-10-27",
+      "title": "Pushing Dexterity and Safety for In-Hand Object Pose Reaching That Works Remarkably Well"
+    }
+  ]
+}

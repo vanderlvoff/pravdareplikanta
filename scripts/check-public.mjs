@@ -21,7 +21,7 @@ async function walk(directory) {
     if (info.isSymbolicLink()) throw new Error(`Symlink in release: ${name}`);
     if (info.isDirectory()) { await walk(path); continue; }
     if (!info.isFile() || info.size > 25 * 1024 * 1024) throw new Error(`Invalid asset: ${name}`);
-    if (name.endsWith('.json') || name.split('/').some(part => part.startsWith('.'))) {
+    if ((name.endsWith('.json') && name !== 'announcement.json') || name.split('/').some(part => part.startsWith('.'))) {
       throw new Error(`Internal file in public release: ${name}`);
     }
     const bytes = await readFile(path);
@@ -43,7 +43,11 @@ for (const name of ['index.html', '404.html', 'style.css', 'robots.txt', 'sitema
 for (const lang of ['ru', 'en', 'ja']) {
   if (!actual[`${lang}/rss.xml`]) throw new Error(`Missing ${lang} RSS`);
   for (const issue of manifest.issues) {
-    if (!actual[`${lang}/issues/${issue.issue_id}/edition.pdf`]) throw new Error(`Missing ${lang} issue PDF`);
+    const edition = issue.edition || 'engineer';
+    if (!['engineer', 'business', 'enthusiast', 'children'].includes(edition)) throw new Error('Unknown reader edition');
+    const base = edition === 'engineer' ? lang : `${lang}/${edition}`;
+    if (!actual[`${base}/rss.xml`]) throw new Error(`Missing ${base} RSS`);
+    if (!actual[`${base}/issues/${issue.issue_id}/edition.pdf`]) throw new Error(`Missing ${base} issue PDF`);
   }
 }
 const robots = await readFile(resolve(root, 'robots.txt'), 'utf8');

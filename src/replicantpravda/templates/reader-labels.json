@@ -1,0 +1,26 @@
+{
+  "ru": {
+    "selector": "Выберите редакцию", "current": "Редакция", "soon": "Скоро", "languages": "Язык",
+    "editions": {"engineer": "Инженер", "business": "Бизнесмен", "enthusiast": "Энтузиаст", "children": "Отрок"},
+    "descriptions": {"engineer": "Устройство технологий, эксперименты и ограничения.", "business": "Применение, затраты и решения для бизнеса.", "enthusiast": "Как работают новые технологии и что они меняют.", "children": "Роботы и ИИ: разбираемся, задаём вопросы, проверяем факты."},
+    "children_labels": {"sections": {"news": "Новости", "analysis": "Разбираемся"}, "sources": "Откуда мы это знаем", "back_to_issue": "К новостям выпуска", "read_more": "Читать статью", "archive": "Все выпуски"},
+    "children_archive_intro": "Здесь собраны прошлые выпуски. Выберите дату, чтобы прочитать новости того дня.",
+    "children_home": "К свежему выпуску"
+  },
+  "en": {
+    "selector": "Choose an edition", "current": "Edition", "soon": "Coming soon", "languages": "Language",
+    "editions": {"engineer": "Engineer", "business": "Business Professional", "enthusiast": "Enthusiast", "children": "Kids"},
+    "descriptions": {"engineer": "Technology, experiments and limitations.", "business": "Applications, costs and business decisions.", "enthusiast": "How new technologies work and what they change.", "children": "Robots and AI: explore, ask questions and check the facts."},
+    "children_labels": {"sections": {"news": "News", "analysis": "A closer look"}, "sources": "How we know", "back_to_issue": "Back to this issue’s news", "read_more": "Read the article", "archive": "All issues"},
+    "children_archive_intro": "Explore earlier issues. Choose a date to read the news from that day.",
+    "children_home": "Back to the latest issue"
+  },
+  "ja": {
+    "selector": "読む版を選ぶ", "current": "版", "soon": "近日公開", "languages": "言語",
+    "editions": {"engineer": "エンジニア", "business": "ビジネスパーソン", "enthusiast": "探究者", "children": "子ども"},
+    "descriptions": {"engineer": "技術のしくみ、実験と限界。", "business": "活用方法、費用とビジネスの判断。", "enthusiast": "新しい技術のしくみと、社会にもたらす変化。", "children": "ロボットとAIを知り、問いを立て、事実を確かめよう。"},
+    "children_labels": {"sections": {"news": "ニュース", "analysis": "もっと知ろう"}, "sources": "情報の出どころ", "back_to_issue": "この号のニュースに戻る", "read_more": "記事を読む", "archive": "これまでの号"},
+    "children_archive_intro": "これまでの号を集めました。日付を選ぶと、その日のニュースを読めます。",
+    "children_home": "最新号に戻る"
+  }
+}

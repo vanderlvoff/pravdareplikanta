@@ -10,6 +10,7 @@ from zoneinfo import ZoneInfo
 from pydantic import HttpUrl
 
 from .models import Article, Issue
+from .readers import reader_base, reader_groups
 
 DEFAULT_SITE_URL = "https://repravda.com"
 SITEMAP_NS = "http://www.sitemaps.org/schemas/sitemap/0.9"
@@ -43,11 +44,12 @@ def normalize_site_url(value: str) -> str:
 
 
 def article_path(issue: Issue, lang: str, article: Article) -> str:
-    return f"/{lang}/issues/{issue.issue_id}/articles/{article.slug}/"
+    return f"{reader_base(lang, issue.edition)}issues/{issue.issue_id}/articles/{article.slug}/"
 
 
 def article_guid(issue: Issue, lang: str, article: Article) -> str:
-    return f"replicantpravda:{issue.issue_id}:{lang}:{article.id}"
+    audience = "" if issue.edition == "engineer" else f"{issue.edition}:"
+    return f"replicantpravda:{audience}{issue.issue_id}:{lang}:{article.id}"
 
 
 def article_excerpt(article: Article) -> str:
@@ -59,18 +61,21 @@ def article_excerpt(article: Article) -> str:
 
 def sitemap_paths(issues: list[Issue]) -> list[str]:
     """Exclude aliases, print proofs, and pages containing unapproved issue content."""
-    eligible = [issue for issue in issues if issue.status in PUBLIC_STATUSES]
     paths = []
-    for lang in ("ru", "en", "ja"):
-        if issues[0].status in PUBLIC_STATUSES:
-            paths.append(f"/{lang}/")
-        if len(eligible) == len(issues):
-            paths.append(f"/{lang}/archive/")
-        for issue in eligible:
-            paths.append(f"/{lang}/issues/{issue.issue_id}/")
-            paths.extend(
-                article_path(issue, lang, article) for article in issue.languages[lang].articles
-            )
+    for code, selected in reader_groups(issues).items():
+        eligible = [issue for issue in selected if issue.status in PUBLIC_STATUSES]
+        for lang in ("ru", "en", "ja"):
+            base = reader_base(lang, code)
+            if selected[0].status in PUBLIC_STATUSES:
+                paths.append(base)
+                paths.append(base + "about/")
+            if len(eligible) == len(selected):
+                paths.append(base + "archive/")
+            for issue in eligible:
+                paths.append(f"{base}issues/{issue.issue_id}/")
+                paths.extend(
+                    article_path(issue, lang, article) for article in issue.languages[lang].articles
+                )
     return sorted(paths)
 
 
@@ -97,16 +102,17 @@ def render_sitemap(issues: list[Issue], origin: str) -> str | None:
 
 
 def render_rss(issues: list[Issue], origin: str, lang: str, labels: dict) -> str:
+    base = reader_base(lang, issues[0].edition)
     root = ET.Element("rss", version="2.0")
     channel = ET.SubElement(root, "channel")
     ET.SubElement(channel, "title").text = issues[0].languages[lang].title
-    ET.SubElement(channel, "link").text = f"{origin}/{lang}/"
+    ET.SubElement(channel, "link").text = origin + base
     ET.SubElement(channel, "description").text = labels["description"]
     ET.SubElement(channel, "language").text = lang
     ET.SubElement(
         channel,
         f"{{{ATOM_NS}}}link",
-        href=f"{origin}/{lang}/rss.xml",
+        href=f"{origin}{base}rss.xml",
         rel="self",
         type="application/rss+xml",
     )

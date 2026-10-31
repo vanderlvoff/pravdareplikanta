@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.4",
+  "publication": "pravda_replikanta",
+  "issue_type": "daily",
+  "issue_date": "2026-10-31",
+  "issue_id": "daily-2026-10-31",
+  "edition": "business",
+  "language": "ja",
+  "generated_at": "2026-10-31T23:06:42+09:00",
+  "title": "レプリカント・プラウダ — ビジネス版",
+  "lead": "工場での導入と、ロボットの成果をどう測るか。",
+  "news": [
+    {
+      "id": "yaskawa-gr-welding",
+      "title": "溶接後の検査と補正も行うロボットを実際の工場へ",
+      "summary": "安川電機は10月28日、GR KARTのフレーム製造でMOTOMAN NEXTを9月から使用していると発表。溶接、品質確認、補正を行う。",
+      "details": "ロボットはパイプフレームの状態を調べ、溶接し、仕上がりを確認して必要な補正を行う。画像に加えて溶接音などのデータを分析する。以前のSFA工法（Sequence Freezing Arc Welding）では、競技車両のロールケージ製作を2～3週間から3日に短縮したとされるが、その数字は今回の新設備の改善率ではない。",
+      "technical_novelty": "画像・溶接音・工程データを使って作業と検査を判断する。",
+      "engineering_impact": "実際の生産工程で、決められた軌道の繰り返しを超える自動化を試みる。",
+      "limitations": "新設備の不良率、時間短縮、費用対効果の独立した数値はない。",
+      "evidence_status": "メーカーによる導入発表で、効果は企業側の主張。",
+      "published_at": "2026-10-28",
+      "organization": "Yaskawa Electric and GAZOO Racing",
+      "source_ids": [
+        "yaskawa-release"
+      ],
+      "time_window": "7d",
+      "body": "部品の位置が少し違うと、同じ軌道で溶接しても品質は変わる。安川電機とトヨタのGAZOO Racingは10月28日、愛知県蒲郡市のGR KART工房で9月からMOTOMAN NEXTを使ったAI溶接を行っていると発表した。研究室のデモではなく、実際のフレーム製造工程への導入だ。\n\nロボットはパイプフレームの状態を調べ、溶接し、仕上がりを確認して必要な補正を行う。画像に加えて溶接音などのデータを分析する。以前のSFA工法（Sequence Freezing Arc Welding）では、競技車両のロールケージ製作を2～3週間から3日に短縮したとされるが、その数字は今回の新設備の改善率ではない。\n\n導入企業が知りたいのは、不良率、手直し時間、保守費用、安全性、品種変更への対応だ。メーカーは生産性と品質の改善を主張するものの、独立した費用対効果の数値はない。検査と補正を含めた実運用という点が重要である。",
+      "image": null
+    },
+    {
+      "id": "agibot-worken-measure",
+      "title": "ロボットの台数ではなく役立つ仕事を測れるか",
+      "summary": "AGIBOTは10月29日の上海イベントで有用な自律作業量を測る構想Workenを提案。G2 Maxは両腕合計最大40kgの運搬能力を公称する。",
+      "details": "同社はAHA3というハードウェア構成、GO-3 Previewという動作モデル、WITA-Omniという対話モデル、産業用G2 Maxも発表した。G2 Maxは21自由度、両腕合計最大40キログラムの運搬能力、0.1～2.5メートルの作業高さを公称する。これらはメーカーの仕様であり、独立した生産性試験ではない。",
+      "technical_novelty": "仕事の成果を測る考え方と新しい機体・モデル群を発表した。",
+      "engineering_impact": "導入判断には作業量、停止時間、人の介入を測ることが必要。",
+      "limitations": "Workenは独立した標準ではなく、異なる作業の比較方法は未検証。",
+      "evidence_status": "メーカーの公式発表で、第三者監査はない。",
+      "published_at": "2026-10-29",
+      "organization": "AGIBOT",
+      "source_ids": [
+        "agibot-release"
+      ],
+      "time_window": "72h",
+      "body": "ロボットを何台買ったかだけでは、現場でどれだけ役立ったかは分からない。AGIBOTは10月29日の上海イベントで、workとtokenを組み合わせたWorkenという考え方を提案した。人の助けをあまり必要とせずに完了した有用な仕事を測ろうという構想で、確立した業界標準ではない。\n\n同社はAHA3というハードウェア構成、GO-3 Previewという動作モデル、WITA-Omniという対話モデル、産業用G2 Maxも発表した。G2 Maxは21自由度、両腕合計最大40キログラムの運搬能力、0.1～2.5メートルの作業高さを公称する。これらはメーカーの仕様であり、独立した生産性試験ではない。\n\n導入企業には、完成した仕事の数、停止時間、人の介入、安全性、費用の測定が必要だ。荷物を運ぶ一時間と精密な組立の一時間を単純に同じ単位では比べられない。Workenの計算方法が公開・検証されるまでは、成果を重視するための問題提起として捉えるべきだ。",
+      "image": null
+    }
+  ],
+  "technology_signal": {
+    "title": "溶接後の検査と補正も行うロボットを実際の工場へ",
+    "summary": "安川電機は10月28日、GR KARTのフレーム製造でMOTOMAN NEXTを9月から使用していると発表。溶接、品質確認、補正を行う。",
+    "implications": "品質、費用、生産性の独立した測定が必要だ。"
+  },
+  "glossary": [
+    {
+      "term": "適応的な溶接",
+      "definition": "部品の状態に合わせて条件を変える溶接。"
+    },
+    {
+      "term": "品質検査",
+      "definition": "完成品が必要な条件を満たすか調べること。"
+    },
+    {
+      "term": "自律作業",
+      "definition": "人が常に指示しなくても進める作業。"
+    },
+    {
+      "term": "可搬重量",
+      "definition": "機械が運べる重さ。"
+    },
+    {
+      "term": "自由度",
+      "definition": "機械が独立して動ける方向や関節の数え方。"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yaskawa-release",
+      "title": "AI-enabled robotic welding introduced at GR KART workshop",
+      "url": "https://www.yaskawa.co.jp/newsrelease/news/1682029",
+      "domain": "www.yaskawa.co.jp",
+      "organization": "Yaskawa Electric and GAZOO Racing",
+      "published_at": "2026-10-28"
+    },
+    {
+      "id": "agibot-release",
+      "title": "AGIBOT Introduces Worken to Measure Productive Robot Work at AGIBOT Innovation Day 2026",
+      "url": "https://agibot.com/article/231/detail/131.html",
+      "domain": "agibot.com",
+      "organization": "AGIBOT",
+      "published_at": "2026-10-29"
+    }
+  ]
+}

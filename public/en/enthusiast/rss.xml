@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>The Replicant Truth</title>
+    <link>https://repravda.com/en/enthusiast/</link>
+    <description>News and analysis from the world of physical artificial intelligence.</description>
+    <language>en</language>
+    <atom:link href="https://repravda.com/en/enthusiast/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Robot tool swapping gains tactile feedback</title>
+      <link>https://repravda.com/en/enthusiast/issues/2026-11-01/articles/swapbot-tools/</link>
+      <guid isPermaLink="false">replicantpravda:enthusiast:2026-11-01:en:swapbot-tools</guid>
+      <description>Different kitchen actions require different tools: a knife cuts, a brush spreads liquid and a spatula turns food. Researchers led by Yunchu Zhang introduced SwapBot, a system that lets a robot arm exchange tools autonomously. The October 29, 2026 preprint describes a research prototype rather than a household appliance ready to cook without supervision.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>A quadruped learns to tow a wagon through tight passages</title>
+      <link>https://repravda.com/en/enthusiast/issues/2026-11-01/articles/raibo-wagon-towing/</link>
+      <guid isPermaLink="false">replicantpravda:enthusiast:2026-11-01:en:raibo-wagon-towing</guid>
+      <description>The engineering question is how execution works and which constraints were actually tested. A learned initial motion proposal is refined using model-predictive path-integral optimization and learned forward dynamics. A single robot-wagon system, short test routes and a 15% failure rate leave open questions about general deployment.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>A robot learns to remove screws by separating alignment from turning</title>
+      <link>https://repravda.com/en/enthusiast/issues/2026-11-01/articles/dawn-robot-unscrewing/</link>
+      <guid isPermaLink="false">replicantpravda:enthusiast:2026-11-01:en:dawn-robot-unscrewing</guid>
+      <description>The engineering question is how execution works and which constraints were actually tested. A diffusion-based alignment policy is combined with a contact classifier and a force-controlled unfastening controller. The initial engagement stage remains unreliable across variations; angled fasteners were not tested.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>A shared humanoid controller supports different skills without retraining</title>
+      <link>https://repravda.com/en/enthusiast/issues/2026-11-01/articles/metatron/</link>
+      <guid isPermaLink="false">replicantpravda:enthusiast:2026-11-01:en:metatron</guid>
+      <description>A humanoid that walks to a table must also stop, bend, reach and recover its balance without switching to an entirely new motor system. Yet many robotics pipelines train separate controllers for each behavior. Chen Tessler and colleagues introduced Metatron, a programmable whole-body execution layer that pairs one trained generative motor policy with software-defined skills. The research was submitted on October 27, 2026; a later listing date should not be mistaken for its original publication date.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>Five-finger robot demonstrates order packing at a Tokyo event</title>
+      <link>https://repravda.com/en/enthusiast/issues/2026-11-01/articles/rlwrld-packing/</link>
+      <guid isPermaLink="false">replicantpravda:enthusiast:2026-11-01:en:rlwrld-packing</guid>
+      <description>Packing an order is not simply a matter of lifting a box. A robot must distinguish small products, position them without damage and handle changes in shape or material. On October 30, 2026, RLWRLD reported a public demonstration of this workflow at KDDI SUMMIT in Tokyo. The event itself took place on October 27 and 28, so the announcement date should not be confused with the demonstration dates. The company described RLDX-1 as its robotics foundation model for controlling physical actions.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>From isolated tricks to verifiable work</title>
+      <link>https://repravda.com/en/enthusiast/issues/2026-11-01/articles/technology-signal/</link>
+      <guid isPermaLink="false">replicantpravda:enthusiast:2026-11-01:en:technology-signal</guid>
+      <description>Research and demonstrations expand the range of robot actions, but the strength of the result depends on test conditions.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>Analysis</category>
+    </item>
+    <item>
+      <title>Google opens a cloud planning layer for robot tasks</title>
+      <link>https://repravda.com/en/enthusiast/issues/2026-10-31/articles/google-cloud-robotics-er2/</link>
+      <guid isPermaLink="false">replicantpravda:enthusiast:2026-10-31:en:google-cloud-robotics-er2</guid>
+      <description>A request like &amp;#x27;find the box and bring it here&amp;#x27; hides many decisions. A robot must choose a route, pick up the object and check whether each step succeeded. On October 27, Google Cloud announced public-preview access to Gemini Robotics Embodied Reasoning 2, a high-level model that plans these steps and calls separate robot-control programs.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>Can a robot predict how the scene will move?</title>
+      <link>https://repravda.com/en/enthusiast/issues/2026-10-31/articles/worldflow-video-3d/</link>
+      <guid isPermaLink="false">replicantpravda:enthusiast:2026-10-31:en:worldflow-video-3d</guid>
+      <description>When you watch a ball move, you can imagine where it will be a moment later. A robot has a harder version of that problem: it needs to anticipate both the image and the geometry of motion. WorldFlow, introduced on October 29, predicts future video frames and the trajectories of selected points in three-dimensional space.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>Google opens a cloud planning layer for robot tasks</title>
+      <link>https://repravda.com/en/enthusiast/issues/2026-10-31/articles/technology-signal/</link>
+      <guid isPermaLink="false">replicantpravda:enthusiast:2026-10-31:en:technology-signal</guid>
+      <description>On October 27 Google Cloud opened public-preview access to Gemini Robotics ER 2, a model that interprets video, plans steps and calls separate robot-control tools.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>Analysis</category>
+    </item>
+  </channel>
+</rss>

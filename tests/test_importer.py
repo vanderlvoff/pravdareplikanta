@@ -90,6 +90,15 @@ def test_jp_alias(feed_folder, template):
     assert report["sources"]["ja"]["file"].endswith("jp.json")
 
 
+def test_legacy_glossary_count_mismatch_still_fails(feed_folder, template):
+    path = feed_folder / "en.json"
+    data = json.loads(path.read_text())
+    data["glossary"].pop()
+    path.write_text(json.dumps(data))
+    with pytest.raises(ValueError, match="Glossary entries missing"):
+        import_feed(feed_folder, template, number=2, revision=1)
+
+
 @pytest.mark.parametrize(
     "fault",
     [

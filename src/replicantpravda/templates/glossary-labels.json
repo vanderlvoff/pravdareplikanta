@@ -1,0 +1,32 @@
+{
+  "ru": {
+    "reference": "Определение", "back_to_text": "К тексту",
+    "kicker": "Понятия и термины",
+    "issue_intro": "Ключевые понятия этого выпуска — коротко и по существу.",
+    "article_title": "Термины этой статьи",
+    "article_intro": "Короткие объяснения понятий, упомянутых в тексте.",
+    "children_title": "Слова из этой статьи",
+    "children_intro": "Что означают эти слова и выражения.",
+    "all_terms": "Весь словарь выпуска"
+  },
+  "en": {
+    "reference": "Definition", "back_to_text": "Back to text",
+    "kicker": "Concepts & terms",
+    "issue_intro": "The key ideas in this issue, explained briefly.",
+    "article_title": "Terms in this article",
+    "article_intro": "Short explanations of concepts mentioned in the text.",
+    "children_title": "Words in this article",
+    "children_intro": "What these words and phrases mean.",
+    "all_terms": "Full issue glossary"
+  },
+  "ja": {
+    "reference": "ことばの説明", "back_to_text": "本文に戻る",
+    "kicker": "キーワード",
+    "issue_intro": "この号の大切なことばを、簡潔に解説します。",
+    "article_title": "この記事の用語",
+    "article_intro": "本文に出てくることばの意味を解説します。",
+    "children_title": "この記事のことば",
+    "children_intro": "ことばや表現の意味を確かめよう。",
+    "all_terms": "この号の用語集へ"
+  }
+}

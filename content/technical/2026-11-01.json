@@ -1,0 +1,1303 @@
+{
+  "edition": "engineer",
+  "issue_id": "2026-11-01",
+  "number": 4,
+  "publication_date": "2026-11-01",
+  "revision": 2,
+  "status": "approved",
+  "languages": {
+    "ru": {
+      "title": "Правда репликанта",
+      "weather": {
+        "location": "ichikawa",
+        "timezone": "Asia/Tokyo",
+        "forecast_date": "2026-11-01",
+        "retrieved_at": "2026-10-31T16:07:47.112550Z",
+        "kind": "forecast",
+        "source_name": "Open-Meteo",
+        "source_url": "https://api.open-meteo.com/v1/forecast?latitude=35.72&longitude=139.93&timezone=Asia%2FTokyo&start_date=2026-11-01&end_date=2026-11-01&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+        "temperature_min_c": 13.2,
+        "temperature_max_c": 19.0,
+        "precipitation_probability_max": 8,
+        "slots": [
+          {
+            "hour": 9,
+            "temperature_c": 15.3,
+            "condition": "cloudy",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 1.97,
+            "wind_direction_deg": 336
+          },
+          {
+            "hour": 12,
+            "temperature_c": 18.3,
+            "condition": "clear",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 0.67,
+            "wind_direction_deg": 297
+          },
+          {
+            "hour": 18,
+            "temperature_c": 17.9,
+            "condition": "cloudy",
+            "precipitation_probability": 8,
+            "wind_speed_ms": 1.33,
+            "wind_direction_deg": 103
+          }
+        ]
+      },
+      "issue_title": "Данные репликанта — инженерная редакция",
+      "editorial_note": "Интерфейсы инструментов, управление и проверяемость роботов.",
+      "articles": [
+        {
+          "id": "swapbot-tools",
+          "slug": "swapbot-tools",
+          "category": "news",
+          "headline": "Робот меняет инструменты и чувствует прикосновения",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Для разных действий нужны разные инструменты: нож разрезает, кисточка наносит жидкость, лопатка переворачивает продукт. Исследователи во главе с Юньчу Чжан предложили SwapBot — систему, в которой роботизированная рука самостоятельно меняет инструменты. Работа опубликована 29 октября 2026 года как препринт, поэтому речь идёт об исследовательском прототипе, а не о готовом домашнем помощнике."
+            },
+            {
+              "type": "paragraph",
+              "text": "В конструкции есть постоянный соединитель на стороне робота и недорогие переходники для обычных инструментов. Это позволяет менять назначение руки без разработки отдельного сложного захвата для каждой задачи. Авторы показали совместимость с разными инструментами, включая инструменты с подвижными частями, и несколькими роботизированными платформами. При этом механическое крепление должно надёжно удерживать инструмент."
+            },
+            {
+              "type": "paragraph",
+              "text": "В переходники встроены компактные тактильные датчики. Камера показывает положение предмета, но не всегда сообщает, с какой силой инструмент касается поверхности. Операторы собирали демонстрации через дистанционное управление, а затем на них обучали политики подражания, выбирающие движения по примерам. Среди испытаний были приготовление тофу, перемешивание салата и переворачивание мяса."
+            },
+            {
+              "type": "paragraph",
+              "text": "В сравнении с обучением только по цветным RGB-изображениям использование прикосновений повысило успешность на 15–25 процентных пунктов. Авторы также сообщили о снижении времени выполнения задач и нагрузки на операторов при дистанционном управлении. Это показатели конкретных лабораторных заданий, а не доказательство одинаковой надёжности со всеми инструментами."
+            },
+            {
+              "type": "paragraph",
+              "text": "Инженерная ценность состоит в общем интерфейсе для смены инструмента, измерения контакта и записи демонстраций. Он облегчает сравнение роли зрения и осязания, а также повторное использование оборудования. Однако допустимые усилия, износ соединителя, скорость переключения, очистка инструментов и восстановление после неудачной стыковки ещё нужно изучать при длительной эксплуатации."
+            },
+            {
+              "type": "paragraph",
+              "text": "Исследование показывает альтернативу универсальной роботизированной кисти: можно подбирать подходящий инструмент. Но робот пока не продемонстрировал приготовление целого обеда в незнакомой кухне без помощи человека. Для практического внедрения нужны испытания с более разнообразными предметами, непредвиденными контактами и независимая проверка результатов."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "raibo-wagon-towing",
+          "slug": "raibo-wagon-towing",
+          "category": "news",
+          "headline": "Четвероногий робот учится тянуть тележку по узкому проходу",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "技術的な注目点は実験の派手さではなく、実行方式と制約を検証できることにある。 Быстрое начальное предположение о движении сочетается с многократной оптимизацией по обученной модели динамики. Оценка проведена на конкретном роботе и тележке, маршруты были длиной 15 метров, успех 85%, а не 100%."
+            },
+            {
+              "type": "paragraph",
+              "text": "Четвероногий робот умеет обходить препятствия, пока отвечает только за собственное тело. Стоит прицепить к нему тележку, и задача меняется: задние колёса не могут мгновенно повторить любое движение, а на повороте груз занимает дополнительное пространство. Исследователи во главе с Инсоном Яном описали 29 октября 2026 года систему RAIBO-Wagon, в которой шагающая машина тянет специальную тележку через тесные проходы. Это не просто демонстрация силы робота: главное здесь — управление связанной парой, которая должна двигаться как единая система."
+            },
+            {
+              "type": "paragraph",
+              "text": "Для выбора маршрута команда объединила два подхода. Первый, conditional flow matching, быстро предлагает вероятное движение на основе изученных примеров. Второй, MPPI, или управление с прогнозированием по множеству пробных траекторий, уточняет предложение с учётом того, как робот и тележка будут двигаться дальше. Для такого прогноза используется обученная модель динамики — приближённое описание реакции системы на команды. Благодаря сочетанию первоначального предположения и последующей проверки планировщик может находить варианты, которых не было в обучающих данных."
+            },
+            {
+              "type": "paragraph",
+              "text": "Испытания проходили на улице по маршрутам длиной 15 метров с узкими участками. Все датчики и вычисления находились на самом роботе, без обязательного внешнего компьютера для управления. Авторы сообщают об успешном завершении 85% из 40 попыток и транспортировке груза до 40 кг — почти столько же, сколько весит сам RAIBO. Это заметный результат для задачи буксировки, но пятнадцать процентов попыток закончились неуспехом. Не следует также считать 40 кг универсальной грузоподъёмностью любой четвероногой машины."
+            },
+            {
+              "type": "paragraph",
+              "text": "Такие исследования могут пригодиться на складах, строительных площадках и там, где груз удобнее катить, чем нести на спине робота. Однако реальная тележка меняет поведение на скользком покрытии, уклоне или неровной поверхности, а люди могут неожиданно пересекать путь. В публикации нет доказательства длительной бесперебойной работы в подобных условиях. Интереснее всего следующий вопрос: сможет ли система сохранять точность движения при разных размерах прицепа, скорости, массе и изменяющейся обстановке?"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.39267",
+              "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "dawn-robot-unscrewing",
+          "slug": "dawn-robot-unscrewing",
+          "category": "news",
+          "headline": "Робот учится откручивать винты, разделяя работу на точное наведение и вращение",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "技術的な注目点は実験の派手さではなく、実行方式と制約を検証できることにある。 Отдельная диффузионная политика для наведения, классификатор устойчивого контакта и контроллер выкручивания. Наведение остаётся узким местом; испытания не доказывают универсальной разборки изделий или работы с произвольным наклоном винтов."
+            },
+            {
+              "type": "paragraph",
+              "text": "Открутить винт человеку обычно легче, чем роботу. Нужно найти головку, подвести отвёртку точно по оси, почувствовать, что наконечник вошёл в шлиц, и только потом вращать, не срывая контакт. Хемант Кумар и коллеги описали 29 октября 2026 года систему DAWN для автоматизированной разборки. Исследователи разделили задачу на наведение и зацепление, определение момента надёжного контакта и собственно выкручивание. Такая последовательность особенно интересна для переработки электроники, где винты могут находиться в разных местах."
+            },
+            {
+              "type": "paragraph",
+              "text": "На первом этапе используется диффузионная политика: модель, которая по наблюдениям постепенно формирует команду движения, вместо того чтобы просто повторять жёстко заданную траекторию. Затем отдельный классификатор анализирует изображение и усилие, чтобы определить, достаточно ли надёжно наконечник зацепился за винт. Наконец, контроллер выкручивания ориентируется прежде всего на силовую обратную связь и ограничивает реактивное усилие величиной 20 ньютонов. Разделение задач позволяет подобрать подходящий способ управления для каждого физического этапа."
+            },
+            {
+              "type": "paragraph",
+              "text": "Эксперименты проводились с реальной роботизированной рукой Franka Emika и электрической отвёрткой. Авторы собрали 199 демонстраций для наведения и 6000 изображений контакта для обучения определения зацепления. В одном из сравнений успешность наведения и зацепления составила около половины попыток, что было сопоставимо с результатом обученных операторов в этой постановке. Для классификатора контакта указана точность 0,90. При правильно выполненном зацеплении последующий этап выкручивания в выбранных испытаниях работал надёжно, однако это не означает такой же успех всей последовательности."
+            },
+            {
+              "type": "paragraph",
+              "text": "Работа показывает, почему физическое действие нельзя оценивать только по тому, повернулся ли мотор. Ошибка в несколько миллиметров на первом этапе делает остальные вычисления бесполезными. Авторы признают чувствительность к новым типам головок и условиям изображения, а наклонённые винты не проверяли. Для настоящей линии разборки потребуются обнаружение винтов в сложных изделиях, проверка безопасности и восстановление после срыва наконечника. Исследование даёт полезную архитектуру, но пока не готовую универсальную машину для переработки."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40537",
+              "title": "DAWN: Diffusion-based Alignment and unfastening Workflow Network",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "gxo-digit-multisite",
+          "slug": "gxo-digit-multisite",
+          "category": "news",
+          "headline": "GXO расширяет коммерческую эксплуатацию гуманоидов Digit ещё на два склада",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "技術的な注目点は実験の派手さではなく、実行方式と制約を検証できることにある。 Планируется внедрение Digit 4 с последующим переходом на Digit 5; применяется платформа управления парком Agility Arc. Новые площадки ещё не введены в эксплуатацию; объём парка, стоимость и независимые показатели эффективности не опубликованы."
+            },
+            {
+              "type": "paragraph",
+              "text": "В складской робототехнике важнее повторяемость результата, чем эффектная демонстрация. 26 октября 2026 года GXO Logistics и Agility Robotics объявили, что гуманоиды Digit будут работать ещё на двух американских площадках GXO — в Стейтсвилле, Северная Каролина, и Лебаноне, Теннесси. Начало развёртывания запланировано на начало 2027 года. Речь идёт о расширении существующего коммерческого сотрудничества, а не о завершённом внедрении на новых складах. На первом объекте в Джорджии роботы уже выполняют повторяющуюся задачу перемещения контейнеров к конвейеру."
+            },
+            {
+              "type": "paragraph",
+              "text": "По совместному сообщению компаний, на действующей площадке Digit переместил более 100 тысяч контейнеров. Это полезная накопленная метрика реальной работы, но она не сообщает, сколько времени потребовалось, какова доля вмешательств оператора и какова стоимость одного перемещения. Сотрудничество оформлено как Robots-as-a-Service — предоставление роботизированной системы как услуги, где клиент получает эксплуатацию и поддержку вместо простой покупки оборудования. Для управления парком и связью с операциями используется программная платформа Agility Arc."
+            },
+            {
+              "type": "paragraph",
+              "text": "На двух новых площадках Digit должен поддерживать выполнение заказов электронной торговли. Сначала планируется версия Digit 4, затем переход на Digit 5 после её коммерческой доступности. С точки зрения интегратора это означает необходимость заранее согласовать интерфейсы с конвейерами, правила безопасности рядом с персоналом, обслуживание и порядок обновления оборудования. Масштабирование на другой склад проверяет не только саму способность поднимать контейнер, но и устойчивость процесса при иной планировке, нагрузке и графике смен."
+            },
+            {
+              "type": "paragraph",
+              "text": "Компании не назвали число роботов на новых площадках, цену договора, окупаемость или независимые показатели производительности. Поэтому заявление подтверждает намерение клиента расширить использование технологии и накопленный объём одной операции, но не доказывает универсальную экономическую эффективность гуманоидов. Для решения о внедрении нужны измерения производительности за смену, простоев, вмешательств человека, стоимости поддержки и последствий отказа. Именно эти показатели определят, превратится ли успешная первая площадка в повторяемую бизнес-модель."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.agilityrobotics.com/content/gxo-and-agility-robotics-expand-partnership-to-accelerate-deployment-of-humanoids-in-u-s-operations",
+              "title": "GXO and Agility Robotics Expand Partnership to Accelerate Deployment of Humanoids in U.S. Operations",
+              "published_at": "2026-10-26",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "elyza-robotics-japan-scale",
+          "slug": "elyza-robotics-japan-scale",
+          "category": "news",
+          "headline": "KDDI и ELYZA создают в Японии отдельную структуру для внедрения Physical AI",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "技術的な注目点は実験の派手さではなく、実行方式と制約を検証できることにある。 Планируется совместить VLM/VLA, данные с площадок, цифровые двойники, распределённый вывод и удалённый контроль. Не опубликованы стоимость одного внедрения, показатели автономности, фактические установки или независимые испытания."
+            },
+            {
+              "type": "paragraph",
+              "text": "Японская телекоммуникационная группа KDDI вместе с разработчиком искусственного интеллекта ELYZA выделяет физический ИИ в отдельный бизнес. В сообщении от 27 октября 2026 года компании рассказали, что ELYZA Robotics начала работу 1 октября. Задача структуры — соединить исследования моделей, управляющих действиями роботов, с их внедрением в реальные процессы. Группа обозначила ориентиры до 2030 финансового года: 30 млрд иен на исследования и разработки, команда более 300 специалистов и более тысячи роботов на рабочих площадках. Эти цифры описывают намерения, а не уже поставленные машины."
+            },
+            {
+              "type": "paragraph",
+              "text": "План разделён на несколько взаимосвязанных направлений. Первое — модели, которые интерпретируют изображение и язык, а также модели VLA, связывающие зрительное восприятие, текстовую команду и действие робота. Второе — сбор данных на площадках и цифровые двойники, то есть программные представления оборудования и рабочих условий для проверки решений. Третье — инфраструктура эксплуатации: распределённое выполнение моделей, дистанционный контроль и координация нескольких машин. Важный практический тезис компании состоит в том, что успешная модель без связей с учётом, безопасностью и рабочими процедурами ещё не является готовой услугой."
+            },
+            {
+              "type": "paragraph",
+              "text": "В планах названы магазины, логистические центры, производство и сервисные площадки. KDDI намерена привлекать связанные компании, включая Lawson и Soracom, и закупать разные классы роботов, а не делать ставку только на один гуманоид. Для заказчика такая схема потенциально снижает риск зависимости от единственной платформы, но одновременно создаёт сложную задачу стандартизации интерфейсов, данных и обслуживания. Пилотные проекты предусмотрены с 2026 года, а расширение должно идти постепенно после проверок на местах."
+            },
+            {
+              "type": "paragraph",
+              "text": "Пресс-релиз не раскрывает подтверждённую экономику внедрения, фактическое количество уже работающих машин, показатели автономности и результаты независимых тестов. Поэтому инвестиционные обещания нельзя превращать в утверждение о готовой масштабной системе. Для потенциального клиента главные вопросы — кто отвечает за интеграцию, безопасность, хранение рабочих данных, обновления моделей и поддержку при отказах. Если компания сможет объединить эти функции, её вклад будет измеряться не количеством презентаций, а устойчивой работой роботов на предприятиях."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000086.000047565.html",
+              "title": "フィジカルAIを推進する新会社「ELYZA Robotics」事業開始",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "technology-signal",
+          "slug": "technology-signal",
+          "category": "analysis",
+          "headline": "Робот меняет инструменты и чувствует прикосновения",
+          "dek": "Юньчу Чжан и соавторы представили SwapBot — сменные инструменты для роботизированной руки с датчиками контакта. В испытаниях добавление тактильной информации повысило успешность действий на 15–25 процентных пунктов по сравнению с использованием только изображений.",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Исследование показывает альтернативу универсальной роботизированной кисти: можно подбирать подходящий инструмент. Но робот пока не продемонстрировал приготовление целого обеда в незнакомой кухне без помощи человека. Для практического внедрения нужны испытания с более разнообразными предметами, непредвиденными контактами и независимая проверка результатов."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39267",
+              "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40537",
+              "title": "DAWN: Diffusion-based Alignment and unfastening Workflow Network",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.agilityrobotics.com/content/gxo-and-agility-robotics-expand-partnership-to-accelerate-deployment-of-humanoids-in-u-s-operations",
+              "title": "GXO and Agility Robotics Expand Partnership to Accelerate Deployment of Humanoids in U.S. Operations",
+              "published_at": "2026-10-26",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000086.000047565.html",
+              "title": "フィジカルAIを推進する新会社「ELYZA Robotics」事業開始",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "glossary",
+          "slug": "glossary",
+          "category": "analysis",
+          "headline": "Словарь выпуска",
+          "dek": "Ключевые понятия этого выпуска.",
+          "body": [
+            {
+              "type": "heading",
+              "text": "тактильный датчик"
+            },
+            {
+              "type": "paragraph",
+              "text": "Датчик физического контакта."
+            },
+            {
+              "type": "heading",
+              "text": "Модель динамики"
+            },
+            {
+              "type": "paragraph",
+              "text": "Приближённое описание того, как система изменит движение после команды."
+            },
+            {
+              "type": "heading",
+              "text": "MPPI"
+            },
+            {
+              "type": "paragraph",
+              "text": "Метод управления, который сравнивает множество прогнозируемых траекторий."
+            },
+            {
+              "type": "heading",
+              "text": "Flow matching"
+            },
+            {
+              "type": "paragraph",
+              "text": "Обучаемый способ постепенно формировать действие или траекторию."
+            },
+            {
+              "type": "heading",
+              "text": "Диффузионная политика"
+            },
+            {
+              "type": "paragraph",
+              "text": "Модель, создающая команды движения путём последовательного уточнения."
+            },
+            {
+              "type": "heading",
+              "text": "Зацепление"
+            },
+            {
+              "type": "paragraph",
+              "text": "Устойчивый контакт наконечника инструмента с рабочей деталью."
+            },
+            {
+              "type": "heading",
+              "text": "Гуманоид"
+            },
+            {
+              "type": "paragraph",
+              "text": "Робот с человекоподобной компоновкой тела."
+            },
+            {
+              "type": "heading",
+              "text": "VLA"
+            },
+            {
+              "type": "paragraph",
+              "text": "Модель, преобразующая визуальные данные и команду в действие робота."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39267",
+              "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40537",
+              "title": "DAWN: Diffusion-based Alignment and unfastening Workflow Network",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.agilityrobotics.com/content/gxo-and-agility-robotics-expand-partnership-to-accelerate-deployment-of-humanoids-in-u-s-operations",
+              "title": "GXO and Agility Robotics Expand Partnership to Accelerate Deployment of Humanoids in U.S. Operations",
+              "published_at": "2026-10-26",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000086.000047565.html",
+              "title": "フィジカルAIを推進する新会社「ELYZA Robotics」事業開始",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        }
+      ]
+    },
+    "en": {
+      "title": "The Replicant Truth",
+      "weather": {
+        "location": "breukelen",
+        "timezone": "Europe/Amsterdam",
+        "forecast_date": "2026-11-01",
+        "retrieved_at": "2026-10-31T16:07:46.147436Z",
+        "kind": "forecast",
+        "source_name": "Open-Meteo",
+        "source_url": "https://api.open-meteo.com/v1/forecast?latitude=52.1742&longitude=5.0014&timezone=Europe%2FAmsterdam&start_date=2026-11-01&end_date=2026-11-01&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+        "temperature_min_c": 7.3,
+        "temperature_max_c": 11.3,
+        "precipitation_probability_max": 8,
+        "slots": [
+          {
+            "hour": 9,
+            "temperature_c": 9.2,
+            "condition": "cloudy",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 0.6,
+            "wind_direction_deg": 312
+          },
+          {
+            "hour": 12,
+            "temperature_c": 10.7,
+            "condition": "cloudy",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 1.4,
+            "wind_direction_deg": 357
+          },
+          {
+            "hour": 18,
+            "temperature_c": 10.0,
+            "condition": "cloudy",
+            "precipitation_probability": 4,
+            "wind_speed_ms": 1.2,
+            "wind_direction_deg": 309
+          }
+        ]
+      },
+      "issue_title": "Replicant Data — Engineering",
+      "editorial_note": "Tool interfaces, control and verifiable robot performance.",
+      "articles": [
+        {
+          "id": "swapbot-tools",
+          "slug": "swapbot-tools",
+          "category": "news",
+          "headline": "Robot tool swapping gains tactile feedback",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Different kitchen actions require different tools: a knife cuts, a brush spreads liquid and a spatula turns food. Researchers led by Yunchu Zhang introduced SwapBot, a system that lets a robot arm exchange tools autonomously. The October 29, 2026 preprint describes a research prototype rather than a household appliance ready to cook without supervision."
+            },
+            {
+              "type": "paragraph",
+              "text": "The architecture uses a fixed coupling on the robot and inexpensive adapters on ordinary tools. This changes the arm's function without requiring a new sophisticated gripper for every task. The authors describe compatibility with different tools, including articulated ones, and multiple robot platforms. The connection must physically secure the tool; merely bringing it close to the wrist would not work."
+            },
+            {
+              "type": "paragraph",
+              "text": "Compact tactile sensors are built into the adapters. A camera can show where an object is but may not reveal how firmly a tool presses against it. Operators collected demonstrations through teleoperation, then trained imitation-learning policies to select movements from examples. Reported tasks include cooking tofu, stirring salad and flipping meat."
+            },
+            {
+              "type": "paragraph",
+              "text": "Compared with learning from RGB images alone, adding tactile data increased success by 15 to 25 percentage points in the reported experiments. User studies also found shorter task completion times and lower operator workload during teleoperation. These results concern particular laboratory tasks, not a universal reliability guarantee for every tool and material."
+            },
+            {
+              "type": "paragraph",
+              "text": "The engineering contribution is a common interface for changing tools, sensing contact and recording demonstrations. It can make comparisons between vision and touch more systematic and allow hardware to be reused across tasks. However, allowable forces, connector wear, swapping speed, cleaning requirements and recovery from failed coupling still need prolonged testing."
+            },
+            {
+              "type": "paragraph",
+              "text": "The work offers an alternative to building one universal robotic hand: select the tool that suits the action. It does not demonstrate a robot preparing an entire meal autonomously in an unfamiliar kitchen. Wider object sets, unexpected contacts, long duty cycles and independent replication are still necessary before deployment claims become credible."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "raibo-wagon-towing",
+          "slug": "raibo-wagon-towing",
+          "category": "news",
+          "headline": "A quadruped learns to tow a wagon through tight passages",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "The engineering question is how execution works and which constraints were actually tested. A learned initial motion proposal is refined using model-predictive path-integral optimization and learned forward dynamics. A single robot-wagon system, short test routes and a 15% failure rate leave open questions about general deployment."
+            },
+            {
+              "type": "paragraph",
+              "text": "A four-legged robot can navigate around obstacles while controlling only its own body. Attach a wagon, however, and every turn becomes a different problem: the trailer wheels cannot move sideways at will, and the combined machine needs more room than the robot alone. Researchers led by Insung Yang described RAIBO-Wagon on October 29, 2026, a navigation system for a quadruped towing a custom wheeled carrier. The interesting advance is not merely that the robot can pull a load. It is that the controller plans for the linked motion of both bodies in narrow spaces."
+            },
+            {
+              "type": "paragraph",
+              "text": "The system combines two planning ideas. Conditional flow matching produces a fast initial proposal for how the robot and wagon might move. Model Predictive Path Integral control, or MPPI, then tests and refines candidate commands using a learned forward-dynamics model that predicts how the coupled system will respond. The first component helps the search start near a promising solution; the second can adjust when the environment differs from the examples used for learning. This is a practical compromise between fast learned suggestions and slower physical consistency checks."
+            },
+            {
+              "type": "paragraph",
+              "text": "The authors tested the system outdoors on 15-meter courses containing confined passages. Sensing and computation ran fully onboard rather than depending on an external computer to plan the motion. They report an 85% completion rate over 40 trials and loads of up to 40 kilograms, nearly the robot's own body weight. Those are measured results on a particular setup, not a claim that all quadrupeds can tow the same load. Fifteen percent of the attempts still failed, and the reported routes were relatively short."
+            },
+            {
+              "type": "paragraph",
+              "text": "Why pull rather than carry? Wheels can support a heavy payload while legs help a robot negotiate terrain that may be awkward for an ordinary cart mover. The combination might eventually be useful for material handling or inspection support. Yet a real worksite brings slopes, changing friction, people and unexpected obstacles. The paper does not establish months of reliable operation under those conditions. A revealing next test would vary wagon geometry, payload distribution and surface conditions while measuring recovery after a failed turn."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.39267",
+              "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "dawn-robot-unscrewing",
+          "slug": "dawn-robot-unscrewing",
+          "category": "news",
+          "headline": "A robot learns to remove screws by separating alignment from turning",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "The engineering question is how execution works and which constraints were actually tested. A diffusion-based alignment policy is combined with a contact classifier and a force-controlled unfastening controller. The initial engagement stage remains unreliable across variations; angled fasteners were not tested."
+            },
+            {
+              "type": "paragraph",
+              "text": "Removing a screw looks simple until a robot has to do it. The screwdriver must reach the correct point, align with the head, engage the slot and maintain contact while turning. Hemant Kumar and colleagues presented DAWN on October 29, 2026, a research system that breaks this sequence into manageable parts. Their motivation is automated disassembly, including the recovery of components from used products. A robot that merely detects a screw in an image has not yet solved the mechanical problem of getting the tool to work."
+            },
+            {
+              "type": "paragraph",
+              "text": "The first component uses a diffusion-based action policy, a learned method that progressively constructs movements from observations, to position and insert the screwdriver. A second model combines visual and force information to decide whether the tip has engaged securely. A third controller handles turning and removal, relying mainly on force feedback rather than slow image-based action generation. The authors impose a reaction-force limit of 20 newtons during this stage. The separation matters because positioning, recognizing contact and applying torque have different sensing and timing requirements."
+            },
+            {
+              "type": "paragraph",
+              "text": "The experiments used a real Franka Emika robot arm fitted with an electric screwdriver. The researchers collected 199 expert demonstrations for the alignment stage and 6,000 contact images for training the engagement classifier. In a reported comparison, the alignment-and-engagement policy succeeded in roughly half the trials, comparable to trained human teleoperators under that test setup. The contact classifier reached an accuracy of 0.90. Once the tool was properly engaged, the tested removal stage performed much more consistently, showing where the difficult bottleneck actually lies."
+            },
+            {
+              "type": "paragraph",
+              "text": "This is not evidence that a robot can already dismantle arbitrary electronics without supervision. Screw heads with unfamiliar appearances, changes in lighting and small positioning errors can defeat the initial stage. The researchers did not evaluate non-parallel screw orientations, and they identify sensitivity to variation in the paper. A production system would also need to detect screws on complex assemblies, recover from slips and verify that the surrounding components remain undamaged. DAWN offers a useful lesson: the hardest part of a seemingly simple task may be establishing the right contact before the visible action begins."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40537",
+              "title": "DAWN: Diffusion-based Alignment and unfastening Workflow Network",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "gxo-digit-multisite",
+          "slug": "gxo-digit-multisite",
+          "category": "news",
+          "headline": "GXO plans to expand Digit humanoid operations to two more warehouses",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "The engineering question is how execution works and which constraints were actually tested. The expansion is expected to start with Digit 4 and later migrate to Digit 5, supported by Agility Arc fleet software. The additional sites are planned rather than operating; unit economics and independently audited performance are unavailable."
+            },
+            {
+              "type": "paragraph",
+              "text": "A repeatable warehouse operation matters more to a customer than an impressive one-off robot demonstration. On October 26, 2026, GXO Logistics and Agility Robotics announced an expansion of their Digit humanoid partnership to two more US sites, in Statesville, North Carolina, and Lebanon, Tennessee. Deployments are expected to start in early 2027. The announcement is a plan for additional operations, not evidence that those two sites are already running. It builds on the existing GXO facility in Flowery Branch, Georgia, where Digit handles repetitive tote movement and places containers onto conveyors."
+            },
+            {
+              "type": "paragraph",
+              "text": "The partners say Digit has moved more than 100,000 totes at the Georgia facility. That cumulative figure establishes that work has occurred in a live logistics environment, but it does not reveal throughput per hour, human intervention rates, operating cost or total robot-hours. The arrangement is described as robots-as-a-service, meaning the customer obtains robotic capability and ongoing service rather than simply buying machines outright. Agility Arc is the cloud-based fleet-management and integration platform associated with the existing agreement."
+            },
+            {
+              "type": "paragraph",
+              "text": "The next sites will support e-commerce fulfillment and are expected to start with Digit 4, then transition to Digit 5 once the newer model is commercially available. For an implementation team, a multi-site rollout raises questions about conveyor interfaces, workspace safety, maintenance coverage, spare units, shift schedules and software change management. A skill that works in one warehouse does not automatically reproduce its economics in another building with different layouts and demand patterns. The new deployment is an opportunity to test operational transfer, not proof that transfer has already succeeded."
+            },
+            {
+              "type": "paragraph",
+              "text": "Neither company disclosed the number of robots for the additional sites, contract value, payback period or independently audited productivity figures. The evidence therefore supports two narrower conclusions: a customer has decided to expand a live commercial relationship, and the original site has accumulated substantial tote-handling activity. A purchasing decision elsewhere should still require a measured baseline, uptime and exception logs, labor and integration costs, and an agreed method for calculating value. The commercial signal is credible, but the return on investment remains unquantified in this release."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.agilityrobotics.com/content/gxo-and-agility-robotics-expand-partnership-to-accelerate-deployment-of-humanoids-in-u-s-operations",
+              "title": "GXO and Agility Robotics Expand Partnership to Accelerate Deployment of Humanoids in U.S. Operations",
+              "published_at": "2026-10-26",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "elyza-robotics-japan-scale",
+          "slug": "elyza-robotics-japan-scale",
+          "category": "news",
+          "headline": "KDDI and ELYZA form a Japanese vehicle for deploying physical AI",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "The engineering question is how execution works and which constraints were actually tested. The roadmap combines vision-language-action models, site data, digital twins, distributed inference and remote supervision. No independently verified deployments, autonomy metrics or unit economics were provided."
+            },
+            {
+              "type": "paragraph",
+              "text": "Japan's KDDI telecommunications group and AI developer ELYZA are establishing a dedicated organization for physical AI rather than treating robot intelligence as an isolated research product. Their October 27, 2026 announcement says ELYZA Robotics began operating on October 1. The group targets ¥30 billion of research and development investment, a specialist organization of more than 300 people, and more than 1,000 robots introduced into workplaces by fiscal 2030. These figures are forward-looking commitments and should not be mistaken for robots already deployed or capital already spent."
+            },
+            {
+              "type": "paragraph",
+              "text": "The proposed architecture spans three levels. Research teams plan to develop vision-language models that interpret images and text, and vision-language-action models that additionally produce robot actions. Implementation teams will collect data from workplaces and use digital twins, which are software representations of real equipment and processes, to support testing. Operations platforms are intended to provide distributed model execution, remote monitoring and coordination between machines. The combination recognizes a familiar deployment problem: an impressive robot skill does not become a business service until it can interact reliably with the customer's systems and procedures."
+            },
+            {
+              "type": "paragraph",
+              "text": "KDDI identifies retail, logistics, manufacturing and services as early areas of application, with partners from its wider group including Lawson and Soracom. The company also expects to source different categories of robots, including industrial arms, quadrupeds and humanoids, according to the task. That could reduce dependence on one mechanical design, but creates integration demands around interfaces, training data, security, maintenance and responsibility for failures. Proof-of-concept projects are planned from 2026, with adoption expected to progress in stages."
+            },
+            {
+              "type": "paragraph",
+              "text": "The release contains no audited installed-base figure, measured autonomy rate, cost per completed task or customer payback calculation. The business case is therefore a strategic hypothesis, not an independently demonstrated result. A prospective customer should ask how safety validation is performed, how site-specific data is governed, which party supports a malfunctioning robot, and whether model updates require renewed acceptance testing. The meaningful milestone will be repeated, supportable operation in real workplaces rather than the announced size of the investment program."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000086.000047565.html",
+              "title": "フィジカルAIを推進する新会社「ELYZA Robotics」事業開始",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "technology-signal",
+          "slug": "technology-signal",
+          "category": "analysis",
+          "headline": "Robot tool swapping gains tactile feedback",
+          "dek": "Yunchu Zhang and colleagues introduced SwapBot, a tool-changing robot interface with tactile sensors. Adding touch data improved task success by 15–25 percentage points over vision-only learning in their experiments.",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "The work offers an alternative to building one universal robotic hand: select the tool that suits the action. It does not demonstrate a robot preparing an entire meal autonomously in an unfamiliar kitchen. Wider object sets, unexpected contacts, long duty cycles and independent replication are still necessary before deployment claims become credible."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39267",
+              "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40537",
+              "title": "DAWN: Diffusion-based Alignment and unfastening Workflow Network",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.agilityrobotics.com/content/gxo-and-agility-robotics-expand-partnership-to-accelerate-deployment-of-humanoids-in-u-s-operations",
+              "title": "GXO and Agility Robotics Expand Partnership to Accelerate Deployment of Humanoids in U.S. Operations",
+              "published_at": "2026-10-26",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000086.000047565.html",
+              "title": "フィジカルAIを推進する新会社「ELYZA Robotics」事業開始",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "glossary",
+          "slug": "glossary",
+          "category": "analysis",
+          "headline": "Issue glossary",
+          "dek": "Key terms in this issue.",
+          "body": [
+            {
+              "type": "heading",
+              "text": "tactile sensor"
+            },
+            {
+              "type": "paragraph",
+              "text": "A sensor measuring physical contact."
+            },
+            {
+              "type": "heading",
+              "text": "Dynamics model"
+            },
+            {
+              "type": "paragraph",
+              "text": "A prediction of how a system responds to commands."
+            },
+            {
+              "type": "heading",
+              "text": "MPPI"
+            },
+            {
+              "type": "paragraph",
+              "text": "A controller that compares many predicted action sequences."
+            },
+            {
+              "type": "heading",
+              "text": "Flow matching"
+            },
+            {
+              "type": "paragraph",
+              "text": "A learned method for constructing trajectories through successive updates."
+            },
+            {
+              "type": "heading",
+              "text": "Force feedback"
+            },
+            {
+              "type": "paragraph",
+              "text": "Measured forces used to adjust robot behavior."
+            },
+            {
+              "type": "heading",
+              "text": "Humanoid"
+            },
+            {
+              "type": "paragraph",
+              "text": "A robot with a human-like body layout."
+            },
+            {
+              "type": "heading",
+              "text": "Robots-as-a-service"
+            },
+            {
+              "type": "paragraph",
+              "text": "A commercial arrangement for using supported robot operations as a service."
+            },
+            {
+              "type": "heading",
+              "text": "Digital twin"
+            },
+            {
+              "type": "paragraph",
+              "text": "A software representation of physical equipment or a process."
+            },
+            {
+              "type": "heading",
+              "text": "Unit economics"
+            },
+            {
+              "type": "paragraph",
+              "text": "Costs and benefits measured per completed operation."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39267",
+              "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40537",
+              "title": "DAWN: Diffusion-based Alignment and unfastening Workflow Network",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.agilityrobotics.com/content/gxo-and-agility-robotics-expand-partnership-to-accelerate-deployment-of-humanoids-in-u-s-operations",
+              "title": "GXO and Agility Robotics Expand Partnership to Accelerate Deployment of Humanoids in U.S. Operations",
+              "published_at": "2026-10-26",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000086.000047565.html",
+              "title": "フィジカルAIを推進する新会社「ELYZA Robotics」事業開始",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        }
+      ]
+    },
+    "ja": {
+      "title": "レプリカントの真実",
+      "weather": {
+        "location": "smolensk",
+        "timezone": "Europe/Moscow",
+        "forecast_date": "2026-11-01",
+        "retrieved_at": "2026-10-31T16:07:47.240840Z",
+        "kind": "forecast",
+        "source_name": "Open-Meteo",
+        "source_url": "https://api.open-meteo.com/v1/forecast?latitude=54.7826&longitude=32.0453&timezone=Europe%2FMoscow&start_date=2026-11-01&end_date=2026-11-01&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+        "temperature_min_c": 2.7,
+        "temperature_max_c": 8.6,
+        "precipitation_probability_max": 8,
+        "slots": [
+          {
+            "hour": 9,
+            "temperature_c": 2.9,
+            "condition": "cloudy",
+            "precipitation_probability": 3,
+            "wind_speed_ms": 2.48,
+            "wind_direction_deg": 43
+          },
+          {
+            "hour": 12,
+            "temperature_c": 5.9,
+            "condition": "cloudy",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 2.33,
+            "wind_direction_deg": 43
+          },
+          {
+            "hour": 18,
+            "temperature_c": 6.0,
+            "condition": "cloudy",
+            "precipitation_probability": 3,
+            "wind_speed_ms": 1.79,
+            "wind_direction_deg": 27
+          }
+        ]
+      },
+      "issue_title": "レプリカント・データ 技術者版",
+      "editorial_note": "工具の接続、制御、実機の検証結果を考える。",
+      "articles": [
+        {
+          "id": "swapbot-tools",
+          "slug": "swapbot-tools",
+          "category": "news",
+          "headline": "工具を交換し、触覚も使うロボットアーム",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "料理では、切る、ぬる、ひっくり返すといった作業ごとに道具が変わり、必要な力のかけ方も違う。Yunchu Zhangらは、ロボットアームが工具を自動交換するSwapBotを発表した。2026年10月29日に公開された研究論文であり、どんな家庭でも料理を完成させる市販ロボットができたという話ではない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "設計の中心は、ロボット側に固定する共通の接続部と、各工具に付ける比較的安価なアダプターである。一つの万能なハンドですべてをこなすのではなく、作業に合った工具を選ぶ。可動部分を持つ工具や複数のロボット機種にも対応する。工具は物理的に固定されなければならず、腕の近くに置くだけでは作業できない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "各アダプターには小型の触覚センサーが入っている。カメラで形や位置が分かっても、物にどれほど強く触れているかは十分に分からないことがある。人が遠隔操作して作業例を集め、その例をまねる模倣学習で動作を学習させた。豆腐の調理、サラダを混ぜる作業、肉を返す作業などを扱った。"
+            },
+            {
+              "type": "paragraph",
+              "text": "比較実験では、RGB画像だけの学習より、触覚を加えた学習の成功率が15〜25パーセントポイント高かった。遠隔操作の利用者調査でも、作業時間と操作者の負担が減ったと報告している。ただし、これは特定の条件で得られた著者の結果であり、あらゆる工具や材料で同じ改善が得られると証明したわけではない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "技術的な意義は、機械的な接続、接触計測、学習用の作業例の収集を共通化した点にある。視覚と触覚がどの程度役立つか比較しやすくなり、異なる作業でも装置を再利用できる。一方、接続部の摩耗、許容荷重、工具の清掃、交換時間、失敗した接続からの復旧は長時間の運用で確かめる必要がある。"
+            },
+            {
+              "type": "paragraph",
+              "text": "この研究は、複雑な万能の指を作る以外にも、道具を使い分ける方法があると示す。しかし、知らない台所で料理の全工程を自律的に終えられると証明したものではない。多様な物体、予想外の接触、長い反復運転、第三者による再現実験が今後の課題となる。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "raibo-wagon-towing",
+          "slug": "raibo-wagon-towing",
+          "category": "news",
+          "headline": "四足歩行ロボットが台車を引いて狭い通路を進む",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "技術的な注目点は実演の見た目ではなく、実行方式と制約を検証できることにある。学習による最初の経路候補と、予測モデルを使う反復的な経路修正を組み合わせた。 特定の機体と台車、15メートルのコースでの評価で、失敗も15％あった。"
+            },
+            {
+              "type": "paragraph",
+              "text": "四本の脚で歩くロボットが、自分だけで障害物を避けるのと、台車を引きながら進むのとでは難しさが違う。台車の車輪は横向きに自由に滑れないため、曲がるときには後ろの荷物が通る場所まで考えなければならない。Insung Yangらが2026年10月29日に公開した研究は、四足歩行ロボットRAIBOに専用の台車をつなぎ、狭い通路を通過するための仕組みを示した。単に重い物を引く力だけでなく、ロボットと台車を一つの動くシステムとして計画する点が中心である。"
+            },
+            {
+              "type": "paragraph",
+              "text": "経路を決める方法には二つの役割がある。条件付きフローマッチングと呼ばれる学習方式が、まず進み方の候補を素早く作る。続いてMPPIという予測型の制御方法が、多数の候補を試算し、より実行しやすい動きへ修正する。その試算には、命令に対してロボットと台車がどう動くかを予測する学習済みの力学モデルを使う。最初の提案だけに頼らず、実際の動きの制約を考えながら改善するので、学習時に見ていない状況にも対応できる可能性がある。ただし万能な経路探索が証明されたわけではない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "実験は屋外の15メートルのコースで行われ、狭い部分を通り抜けることが求められた。必要なセンサーと計算機はすべて機体に搭載されていた。研究チームは40回の試行で85％の成功率を報告し、最大40キログラムの荷物を引いた。これはRAIBO本体の重さにほぼ匹敵する。一方、15％の試行では目的を達成できなかった。数字はこの機体と台車の組み合わせに関するもので、ほかの四足歩行ロボットでも同じ性能になるとは限らない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "車輪は荷物の重さを支え、脚は地面に合わせて移動できるため、この組み合わせには運搬の可能性がある。しかし実際の倉庫や工事現場では、坂道、滑りやすい床、人の往来などが加わる。研究では長期間の連続運用やさまざまな台車での再現性までは確認されていない。今後は荷物の重さだけでなく、重心の位置、台車の大きさ、路面の状態を変えて試す必要がある。失敗したときに安全に止まり、経路を考え直せるかも重要な評価点になる。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.39267",
+              "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "dawn-robot-unscrewing",
+          "slug": "dawn-robot-unscrewing",
+          "category": "news",
+          "headline": "ねじを外すロボット、位置合わせと回転を分けて学ぶ",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "技術的な注目点は実演の見た目ではなく、実行方式と制約を検証できることにある。拡散モデルによる位置合わせと、視覚・力による接触判定、力制御の回転を組み合わせる。 初期のかみ合わせが難しく、斜めのねじや未知の製品全般は検証されていない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "ねじを外すとき、人はドライバーの先がねじ頭に合っているかを目と手の感覚で確かめる。ロボットには、この最初の作業が意外に難しい。少し位置がずれるだけで先端が滑り、回転してもねじは外れない。Hemant Kumarらが2026年10月29日に発表したDAWNは、ねじ外しを複数の段階に分けて学習させる研究システムだ。使い終わった電子機器などを分解し、部品を取り出す作業への応用を想定している。ねじを画像で見つけるだけでは、実際に外せることにはならない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "まず拡散モデルを使った動作方針が、カメラなどの情報からドライバーの位置合わせと差し込みを行う。拡散モデルは、候補の動作を段階的に整えていく学習方式の一つである。次に別の判定モデルが画像と力の情報を合わせ、先端がしっかりかみ合ったかを確認する。最後は力の変化を主に利用する制御器がねじを回して外す。この段階では反力を20ニュートン未満に保つ制約が設けられている。位置合わせ、接触の判断、回転という異なる問題に、それぞれ適した方法を使う設計である。"
+            },
+            {
+              "type": "paragraph",
+              "text": "実験にはFranka Emikaのロボットアームと電動ドライバーが使われた。研究チームは位置合わせのために199回の専門家の実演を集め、接触判定には6000枚の画像を用意した。ある比較試験では、位置合わせからかみ合わせまでの成功が約半数で、同じ条件で訓練を受けた人の遠隔操作と同程度だった。接触判定モデルの正解率は0.90と報告された。先端が正しくかみ合った後のねじ外しは、対象とした試験ではより安定していた。しかし最初の段階が失敗すれば、全体の作業も完了できない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "この研究から分かるのは、ねじを回す力だけではなく、正しい接触を作ることが重要だという点である。ねじ頭の形や見え方が学習時と違うと、位置合わせは難しくなる。斜めに取り付けられたねじは今回の評価対象ではない。実際の分解工場では、複雑な製品の中からねじを探し、先端が滑ったときに安全にやり直し、周囲の部品を傷つけない必要がある。DAWNはそのための有望な考え方を示すが、何でも分解できる完成品ではない。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40537",
+              "title": "DAWN: Diffusion-based Alignment and unfastening Workflow Network",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "gxo-digit-multisite",
+          "slug": "gxo-digit-multisite",
+          "category": "news",
+          "headline": "GXO、二つの倉庫へ人型ロボットDigitの導入を拡大する計画",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "技術的な注目点は実演の見た目ではなく、実行方式と制約を検証できることにある。Digit 4で導入を始め、Digit 5の商用化後に移行する予定で、運用管理にはAgility Arcを利用する。 追加拠点は計画段階であり、台数、採算、第三者による性能監査は示されていない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "倉庫でロボットを使う企業にとって重要なのは、一度だけ作業できることではなく、毎日の業務として安定して繰り返せることだ。GXO LogisticsとAgility Roboticsは2026年10月26日、米国ノースカロライナ州とテネシー州にある二つのGXO拠点へ、人型ロボットDigitの利用を広げると発表した。導入開始は2027年初めを予定している。したがって新しい二拠点で既に運用が始まったというニュースではない。基盤となるのはジョージア州の既存倉庫で、Digitが容器を運び、コンベヤーへ載せる反復作業を行ってきた実績である。"
+            },
+            {
+              "type": "paragraph",
+              "text": "両社によれば、既存拠点で運んだ容器は累計10万個を超えた。この数字は実際の業務で作業量を積み上げたことを示すが、時間当たりの処理数、停止時間、人による介入の割合、容器一個当たりの費用までは分からない。契約はロボット・アズ・ア・サービスと呼ばれる形態で、機械の単純な売買ではなく、運用や支援を含む能力をサービスとして利用する考え方だ。既存の協業ではAgility Arcというクラウド型のロボット群管理ソフトも使われる。"
+            },
+            {
+              "type": "paragraph",
+              "text": "追加拠点では電子商取引の注文処理を支援し、まずDigit 4を使い、Digit 5が商用利用可能になった後に切り替える計画だ。導入担当者はコンベヤーとの接続だけでなく、人と同じ空間で働く際の安全手順、故障時の代替手段、保守担当者、ソフト更新の管理を考える必要がある。倉庫の通路幅や作業量、交代勤務の条件が変われば、同じ動作でも成果は変わる。複数拠点への拡張は、その再現性を確かめる機会となる。"
+            },
+            {
+              "type": "paragraph",
+              "text": "今回の発表では追加台数、契約金額、投資回収期間、独立した第三者による生産性評価は示されていない。確認できるのは、顧客が既存の商用協業を拡大すると決めたことと、最初の倉庫で累計作業量が報告されていることだ。別の企業が採用を判断するなら、稼働率、例外処理、人手による支援、保守費用、作業一件当たりの総費用を比較すべきである。人型であること自体より、現場の工程に組み込んだときに価値を生むかが問われる。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.agilityrobotics.com/content/gxo-and-agility-robotics-expand-partnership-to-accelerate-deployment-of-humanoids-in-u-s-operations",
+              "title": "GXO and Agility Robotics Expand Partnership to Accelerate Deployment of Humanoids in U.S. Operations",
+              "published_at": "2026-10-26",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "elyza-robotics-japan-scale",
+          "slug": "elyza-robotics-japan-scale",
+          "category": "news",
+          "headline": "KDDIとELYZA、現場導入まで担うフィジカルAI新会社を始動",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "技術的な注目点は実演の見た目ではなく、実行方式と制約を検証できることにある。画像・言語・行動モデルと現場データ、デジタルツイン、分散推論、遠隔監視を組み合わせる構想。 実際の稼働台数、採算、独立した自律性能評価は公開されていない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "通信大手KDDIとAI開発企業ELYZAは、ロボットの知能を研究するだけでなく、企業の現場で使える仕組みにするための新会社を立ち上げた。2026年10月27日の発表によると、ELYZA Roboticsは10月1日に事業を開始した。KDDIグループは2030年度までに研究開発へ300億円を投じ、300人を超える専門組織を作り、1000台以上のロボットを実際の現場に導入することを目指す。これらは将来の計画であり、現在すでに1000台が稼働しているという意味ではない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "構想には研究、現場への組み込み、継続運用という三つの要素がある。研究では画像と言語を理解するモデルに加え、指示に応じてロボットの行動を出力するVLAモデルの開発を進める。現場では作業データを集め、デジタルツインと呼ばれる設備や工程の仮想的な表現を利用する。運用では複数の計算拠点でモデルを動かす分散推論、遠隔監視、複数ロボットの協調を扱う。単に動作ができるモデルを作るだけでなく、企業の業務システムと安全手順に接続することが狙いだ。"
+            },
+            {
+              "type": "paragraph",
+              "text": "対象として小売、物流、製造、サービス業が挙げられ、KDDIグループのLawsonやSoracomなどとの連携も示された。用途に応じて産業用ロボット、四足歩行機、人型ロボットなどを調達する方針で、一種類の機械に限定しない。顧客にとっては選択肢が広がる一方、異なる機種の通信方式、データ形式、保守体制をそろえる必要がある。2026年から概念実証を行い、現場で確認しながら段階的に導入する計画だ。"
+            },
+            {
+              "type": "paragraph",
+              "text": "発表には既に稼働している台数の独立した検証、作業当たりの費用、自律運転の割合、投資回収期間は示されていない。したがって大きな投資額だけで技術の完成度を判断することはできない。導入を検討する企業は、安全評価を誰が担当するか、現場データをどう保護するか、故障時の責任や更新後の再試験をどう扱うかを確認する必要がある。事業の成否を決めるのは目標台数よりも、異なる現場で安定して使い続けられるかどうかだ。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000086.000047565.html",
+              "title": "フィジカルAIを推進する新会社「ELYZA Robotics」事業開始",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "technology-signal",
+          "slug": "technology-signal",
+          "category": "analysis",
+          "headline": "工具を交換し、触覚も使うロボットアーム",
+          "dek": "Yunchu Zhangらは、工具を自動交換できる触覚センサー付きのSwapBotを発表した。実験では、画像だけで学習した場合より成功率が15〜25ポイント高かった。",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "この研究は、複雑な万能の指を作る以外にも、道具を使い分ける方法があると示す。しかし、知らない台所で料理の全工程を自律的に終えられると証明したものではない。多様な物体、予想外の接触、長い反復運転、第三者による再現実験が今後の課題となる。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39267",
+              "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40537",
+              "title": "DAWN: Diffusion-based Alignment and unfastening Workflow Network",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.agilityrobotics.com/content/gxo-and-agility-robotics-expand-partnership-to-accelerate-deployment-of-humanoids-in-u-s-operations",
+              "title": "GXO and Agility Robotics Expand Partnership to Accelerate Deployment of Humanoids in U.S. Operations",
+              "published_at": "2026-10-26",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000086.000047565.html",
+              "title": "フィジカルAIを推進する新会社「ELYZA Robotics」事業開始",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "glossary",
+          "slug": "glossary",
+          "category": "analysis",
+          "headline": "本号の用語集",
+          "dek": "この号のキーワードを解説します。",
+          "body": [
+            {
+              "type": "heading",
+              "text": "触覚センサー"
+            },
+            {
+              "type": "paragraph",
+              "text": "接触を測るセンサー。"
+            },
+            {
+              "type": "heading",
+              "text": "力学モデル"
+            },
+            {
+              "type": "paragraph",
+              "text": "命令に対して機械がどう動くかを予測するモデル。"
+            },
+            {
+              "type": "heading",
+              "text": "MPPI"
+            },
+            {
+              "type": "paragraph",
+              "text": "多くの動作候補を予測して比較する制御方式。"
+            },
+            {
+              "type": "heading",
+              "text": "フローマッチング"
+            },
+            {
+              "type": "paragraph",
+              "text": "段階的な更新によって動作を作る学習方式。"
+            },
+            {
+              "type": "heading",
+              "text": "拡散モデル"
+            },
+            {
+              "type": "paragraph",
+              "text": "候補を少しずつ整えて生成する学習モデル。"
+            },
+            {
+              "type": "heading",
+              "text": "かみ合わせ"
+            },
+            {
+              "type": "paragraph",
+              "text": "工具の先端が対象物と安定して接触した状態。"
+            },
+            {
+              "type": "heading",
+              "text": "人型ロボット"
+            },
+            {
+              "type": "paragraph",
+              "text": "人に似た体の構成を持つロボット。"
+            },
+            {
+              "type": "heading",
+              "text": "ロボット・アズ・ア・サービス"
+            },
+            {
+              "type": "paragraph",
+              "text": "保守などを含めてロボットの能力をサービスとして利用する契約形態。"
+            },
+            {
+              "type": "heading",
+              "text": "デジタルツイン"
+            },
+            {
+              "type": "paragraph",
+              "text": "現実の設備や工程をソフト上で表現したもの。"
+            },
+            {
+              "type": "heading",
+              "text": "VLA"
+            },
+            {
+              "type": "paragraph",
+              "text": "画像と言語の指示をロボットの行動へ結びつけるモデル。"
+            },
+            {
+              "type": "heading",
+              "text": "概念実証"
+            },
+            {
+              "type": "paragraph",
+              "text": "技術が目的の用途に使えるかを限定的に確かめる試験。"
+            },
+            {
+              "type": "heading",
+              "text": "稼働率"
+            },
+            {
+              "type": "paragraph",
+              "text": "利用可能な時間に対して実際に働けた時間の割合。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39267",
+              "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40537",
+              "title": "DAWN: Diffusion-based Alignment and unfastening Workflow Network",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.agilityrobotics.com/content/gxo-and-agility-robotics-expand-partnership-to-accelerate-deployment-of-humanoids-in-u-s-operations",
+              "title": "GXO and Agility Robotics Expand Partnership to Accelerate Deployment of Humanoids in U.S. Operations",
+              "published_at": "2026-10-26",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000086.000047565.html",
+              "title": "フィジカルAIを推進する新会社「ELYZA Robotics」事業開始",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        }
+      ]
+    }
+  },
+  "weather": {
+    "location": "ichikawa",
+    "timezone": "Asia/Tokyo",
+    "forecast_date": "2026-11-01",
+    "retrieved_at": "2026-10-31T16:07:47.112550Z",
+    "kind": "forecast",
+    "source_name": "Open-Meteo",
+    "source_url": "https://api.open-meteo.com/v1/forecast?latitude=35.72&longitude=139.93&timezone=Asia%2FTokyo&start_date=2026-11-01&end_date=2026-11-01&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+    "temperature_min_c": 13.2,
+    "temperature_max_c": 19.0,
+    "precipitation_probability_max": 8,
+    "slots": [
+      {
+        "hour": 9,
+        "temperature_c": 15.3,
+        "condition": "cloudy",
+        "precipitation_probability": 0,
+        "wind_speed_ms": 1.97,
+        "wind_direction_deg": 336
+      },
+      {
+        "hour": 12,
+        "temperature_c": 18.3,
+        "condition": "clear",
+        "precipitation_probability": 0,
+        "wind_speed_ms": 0.67,
+        "wind_direction_deg": 297
+      },
+      {
+        "hour": 18,
+        "temperature_c": 17.9,
+        "condition": "cloudy",
+        "precipitation_probability": 8,
+        "wind_speed_ms": 1.33,
+        "wind_direction_deg": 103
+      }
+    ]
+  }
+}

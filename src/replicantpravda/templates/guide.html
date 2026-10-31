@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="guide-page">
+  <div class="guide-hero">
+    <a class="back-link" href="{{ reader_base }}"><span aria-hidden="true">←</span>{{ archive_labels.home }}</a>
+    <h2>{{ guide.title }}</h2>
+    <p class="guide-lead">{{ guide.intro }}</p>
+  </div>
+  <section class="guide-section" aria-labelledby="guide-story">
+    <h3 id="guide-story">{{ guide.story_title }}</h3>
+    {% for paragraph in guide.story %}<p>{{ paragraph }}</p>{% endfor %}
+  </section>
+  <section class="guide-section" aria-labelledby="guide-editions">
+    <h3 id="guide-editions">{{ guide.editions_title }}</h3>
+    <p>{{ guide.editions_intro }}</p>
+    <div class="guide-editions">
+      {% for choice in guide_editions %}<div class="guide-edition">
+        <h4>{% if choice.url %}<a href="{{ choice.url }}">{% include 'reader-icon.html' %}{{ choice.label }}</a>{% else %}{{ choice.label }} · {{ reader_labels.soon }}{% endif %}</h4>
+        <p>{{ guide.editions[choice.code] }}</p>
+      </div>{% endfor %}
+    </div>
+  </section>
+  <section class="guide-section" aria-labelledby="guide-reading">
+    <h3 id="guide-reading">{{ guide.how_title }}</h3>
+    <ol>{% for step in guide.how_steps %}<li>{{ step }}</li>{% endfor %}</ol>
+  </section>
+  <section class="guide-section" aria-labelledby="guide-pdf">
+    <h3 id="guide-pdf">{{ guide.pdf_title }}</h3>
+    {% for paragraph in guide.pdf_text %}<p>{{ paragraph }}</p>{% endfor %}
+    {% if print_enabled %}<a class="back-link" href="{{ reader_base }}issues/{{ issue.issue_id }}/edition.pdf">{{ labels.pdf }} <span aria-hidden="true">↓</span></a>{% endif %}
+  </section>
+  <section class="guide-section" aria-labelledby="guide-mail">
+    <h3 id="guide-mail">{{ guide.mail_title }}</h3>
+    <p>{{ guide.mail_intro }}</p>
+    <ol>{% for step in guide.mail_steps %}<li>{{ step }}</li>{% endfor %}</ol>
+    <p class="guide-status">{{ guide.mail_status }}</p>
+  </section>
+  <section class="guide-section" aria-labelledby="guide-tribute">
+    <h3 id="guide-tribute">{{ guide.tribute_title }}</h3>
+    <p>{{ guide.tribute }}</p>
+  </section>
+</div>
+{% endblock %}

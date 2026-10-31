@@ -1,1 +1,25 @@
-{% extends 'base.html' %}{% block content %}<div class="article-navigation"><a class="back-link" href="/{{ lang }}/issues/{{ issue.issue_id }}/#article-{{ article.id }}"><span aria-hidden="true">←</span>{{ labels.back_to_issue }}</a></div><p class="article-section">{{ labels.sections['news' if article.category == 'news' else 'analysis'] }}</p><article class="article-detail">{% if article.category in labels.article_kinds %}<p class="article-kind">{{ labels.article_kinds[article.category] }}</p>{% endif %}<h2>{{ article.headline }}</h2>{% if article.dek %}<p>{{ article.dek }}</p>{% endif %}{% include "illustration.html" %}<div class="article-text">{% include "article-body.html" %}</div><footer><h3>{{ labels.sources }}</h3><ul>{% for source in article.sources %}<li><a href="{{ source.url }}" rel="noopener noreferrer">{{ source.title }}</a> · <time>{{ source.published_at }}</time></li>{% endfor %}</ul></footer></article>{% endblock %}
+{% extends 'base.html' %}
+{% block content %}
+<div class="article-navigation"><a class="back-link" href="{{ reader_base }}issues/{{ issue.issue_id }}/#article-{{ article.id }}"><span aria-hidden="true">←</span>{{ labels.back_to_issue }}</a></div>
+{% if article.id == 'glossary' and issue_glossary %}
+<article class="article-detail glossary-page">
+  {% with glossary_id='issue-glossary-title', glossary_level=2, glossary_title=article.headline, glossary_intro=glossary_labels.issue_intro, glossary_items=issue_glossary, glossary_full_link=false %}{% include 'glossary.html' %}{% endwith %}
+  <footer><h3>{{ labels.sources }}</h3><ul>{% for source in article.sources %}<li><a href="{{ source.url }}" rel="noopener noreferrer">{{ source.title }}</a> · <time>{{ source.published_at }}</time></li>{% endfor %}</ul></footer>
+</article>
+{% else %}
+<p class="article-section">{{ labels.sections['news' if article.category == 'news' else 'analysis'] }}</p>
+<article class="article-detail">
+  {% if article.category in labels.article_kinds %}<p class="article-kind">{{ labels.article_kinds[article.category] }}</p>{% endif %}
+  <h2>{{ annotated_headline }}</h2>
+  {% if article.dek %}<p>{{ annotated_dek }}</p>{% endif %}
+  {% include "illustration.html" %}
+  <div class="article-text">{% include "article-body.html" %}</div>
+  <footer><h3>{{ labels.sources }}</h3><ul>{% for source in article.sources %}<li><a href="{{ source.url }}" rel="noopener noreferrer">{{ source.title }}</a> · <time>{{ source.published_at }}</time></li>{% endfor %}</ul></footer>
+  {% if article_glossary %}
+  <aside class="article-glossary">
+    {% with glossary_id='article-glossary-title', glossary_level=3, glossary_title=glossary_labels.children_title if reader_code == 'children' else glossary_labels.article_title, glossary_intro=glossary_labels.children_intro if reader_code == 'children' else glossary_labels.article_intro, glossary_items=article_glossary, glossary_full_link=true %}{% include 'glossary.html' %}{% endwith %}
+  </aside>
+  {% endif %}
+</article>
+{% endif %}
+{% endblock %}

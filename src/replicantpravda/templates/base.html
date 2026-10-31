@@ -9,18 +9,20 @@
   {% include "metadata.html" %}
   <link rel="stylesheet" href="/style.css?v={{ style_version }}">
 </head>
-<body>
+<body class="reader-{{ reader_code }}" data-reader-edition="{{ reader_code }}">
   <div class="preview-tools">
     {% if preview_only %}<small>{{ labels.notice }}</small>{% endif %}
-    <nav aria-label="Languages">{% for code in ['ru','en','ja'] %}<a lang="{{ code }}" hreflang="{{ code }}" href="{{ language_links[code] }}">{{ code|upper }}</a>{% endfor %}</nav>
+    <nav aria-label="{{ reader_labels.languages }}">{% for code in ['ru','en','ja'] %}<a lang="{{ code }}" hreflang="{{ code }}" href="{{ language_links[code] }}"{% if code == lang %} aria-current="page"{% endif %}>{{ code|upper }}</a>{% endfor %}</nav>
   </div>
+  {% include "reader-navigation.html" %}
   {% include "header.html" %}
-  {% if print_enabled and not is_archive %}<p class="pdf-link"><a href="/{{ lang }}/issues/{{ issue.issue_id }}/edition.pdf">{{ labels.pdf }}</a></p>{% endif %}
+  {% if print_enabled and not is_archive and not is_guide %}<p class="pdf-link"><a href="{{ reader_base }}issues/{{ issue.issue_id }}/edition.pdf">{{ labels.pdf }}</a></p>{% endif %}
   <main>{% block content %}{% endblock %}</main>
   <footer class="site-footer">
     <div class="footer-links">
       <a class="patreon-link" href="https://patreon.com/PravdaReplikanta" rel="noopener noreferrer">{{ about.support_label }}</a>
-      <p class="rss-link"><a href="/{{ lang }}/rss.xml">{{ discovery_labels.rss }}</a></p>
+      <a class="back-link" href="{{ reader_base }}about/"{% if is_guide %} aria-current="page"{% endif %}>{{ guide.link }}</a>
+      <p class="rss-link"><a href="{{ reader_base }}rss.xml">{{ discovery_labels.rss }}</a></p>
     </div>
     <section class="about-newspaper" aria-labelledby="about-newspaper-title">
       <h2 id="about-newspaper-title">{{ about.title }}</h2>

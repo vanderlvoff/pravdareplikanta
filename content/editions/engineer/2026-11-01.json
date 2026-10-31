@@ -1,0 +1,1319 @@
+{
+  "edition": "engineer",
+  "issue_id": "2026-11-01",
+  "number": 4,
+  "publication_date": "2026-11-01",
+  "revision": 2,
+  "status": "approved",
+  "languages": {
+    "ru": {
+      "title": "Правда репликанта",
+      "weather": {
+        "location": "ichikawa",
+        "timezone": "Asia/Tokyo",
+        "forecast_date": "2026-11-01",
+        "retrieved_at": "2026-10-31T16:07:47.112550Z",
+        "kind": "forecast",
+        "source_name": "Open-Meteo",
+        "source_url": "https://api.open-meteo.com/v1/forecast?latitude=35.72&longitude=139.93&timezone=Asia%2FTokyo&start_date=2026-11-01&end_date=2026-11-01&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+        "temperature_min_c": 13.2,
+        "temperature_max_c": 19.0,
+        "precipitation_probability_max": 8,
+        "slots": [
+          {
+            "hour": 9,
+            "temperature_c": 15.3,
+            "condition": "cloudy",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 1.97,
+            "wind_direction_deg": 336
+          },
+          {
+            "hour": 12,
+            "temperature_c": 18.3,
+            "condition": "clear",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 0.67,
+            "wind_direction_deg": 297
+          },
+          {
+            "hour": 18,
+            "temperature_c": 17.9,
+            "condition": "cloudy",
+            "precipitation_probability": 8,
+            "wind_speed_ms": 1.33,
+            "wind_direction_deg": 103
+          }
+        ]
+      },
+      "issue_title": "Данные репликанта — инженерная редакция",
+      "editorial_note": "Методы оценки, управления и проверки робототехнических систем: что измерено и где остаются ограничения.",
+      "articles": [
+        {
+          "id": "roboseed-evaluation",
+          "slug": "roboseed-evaluation",
+          "category": "news",
+          "headline": "Модели роботов предлагают сравнивать по цене адаптации и доказательствам",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Высокий процент успешных действий на демонстрации ещё не означает, что модель робота выгодно внедрять на предприятии. Заказчику важно знать стоимость дообучения, требования к вычислительному оборудованию и возможность повторить эксперимент. Синь Ма и соавторы предложили RoboSeed — систему оценки моделей, связывающих изображения и команды с действиями робота, и моделей, прогнозирующих физические изменения."
+            },
+            {
+              "type": "paragraph",
+              "text": "Авторы выделили пять направлений: способность решать задачи, доступность дополнительного обучения, стоимость развёртывания, локально проверенную исследовательскую ценность и доказательства воспроизводимости. Измерения переводятся в профили по шкале от нуля до ста. Можно выбрать сбалансированное сравнение либо сильнее учитывать ограничения на обучение или эксплуатацию."
+            },
+            {
+              "type": "paragraph",
+              "text": "Особенность метода — честное обращение с отсутствующими данными. Если доказательств не хватает, общий рейтинг не рассчитывают, а пробелы показывают явно. Дополнительно проверяется, допустимо ли сравнивать системы с разными интерфейсами и протоколами. Иначе разница в условиях испытаний может выглядеть как превосходство одной модели."
+            },
+            {
+              "type": "paragraph",
+              "text": "Исследователи применили подход к нескольким моделям, используя локальное обучение, опубликованные веса и аудит задач. Они обнаружили зависимость выбора модели от бюджета и способа адаптации. Но неполные сведения о работе моделей и неодинаковые протоколы не позволили честно выстроить все системы в единый числовой ряд."
+            },
+            {
+              "type": "paragraph",
+              "text": "Для бизнеса метод помогает сформулировать вопросы перед пилотом: какие действия проверены, сколько вычислений нужно для настройки, каковы задержки на целевом оборудовании и можно ли повторить результаты. Ответы влияют на стоимость владения и риск интеграции. Сам RoboSeed не гарантирует безопасность, экономию труда или окупаемость внедрения."
+            },
+            {
+              "type": "paragraph",
+              "text": "Для воспроизводимости важно отделить измеренное в эксперименте от предполагаемой пользы в других условиях. Следующий инженерный шаг — проверить чувствительность результата к настройкам, составу тестовых сцен и способу регистрации ошибок."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40026",
+              "title": "RoboSeed: Multidimensional Evaluation of Vision-Language-Action and World-Action Models",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "logiv-task-graph-repair",
+          "slug": "logiv-task-graph-repair",
+          "category": "news",
+          "headline": "LOGIV проверяет зависимости между действиями робота и восстанавливает нарушенные условия",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Для внедрения важно отделять исследовательские результаты от гарантированных эксплуатационных характеристик. Позволяет исследовать слой над VLA и моделями действий, отделяя надёжность последовательности от качества отдельного навыка. Проверено на ограниченных наборах двухручных задач; реальных успешных попыток 17 из 30, а не 30 из 30."
+            },
+            {
+              "type": "paragraph",
+              "text": "Робот может успешно поставить предмет на стол, но следующая операция всё равно сорвётся: кто-то сдвинул предмет, и прежнее условие больше не выполняется. Исследователи во главе с Энцяо Лу предложили LOGIV, программный слой для выполнения длинных последовательностей действий. Он не заменяет модель, которая управляет руками, а следит за тем, остаются ли истинными условия, на которых строится план. Работа размещена на arXiv 29 октября 2026 года и рассматривает исполнение задач с несколькими зависимыми этапами."
+            },
+            {
+              "type": "paragraph",
+              "text": "Ключевая структура — граф задачи. Его связи показывают, какое действие создаёт необходимое условие для другого и в каком порядке нужны общие ресурсы. После выполнения шага система использует наблюдения, чтобы проверить состояние, а не просто отмечает команду как завершённую. Если условие нарушено, LOGIV прослеживает зависимость назад, выбирает необходимые восстановительные действия и проверяет продолжение плана на символическом уровне. Подход рассчитан на работу поверх существующих моделей зрения, языка и действий, известных как VLA, а также моделей мировых действий; новые обучаемые параметры для этой надстройки не требуются."
+            },
+            {
+              "type": "paragraph",
+              "text": "Авторы сравнили подход на 20 задачах для двух роботизированных рук из наборов RoboTwin V2 и BiCoord с тремя вариантами базового исполнения. Для двух наборов они сообщают прирост среднего успеха без специально внесённых помех на 10,67 и 15,33 процентного пункта соответственно. При заранее заданных нарушениях условий метод превосходил три адаптированных варианта восстановления на обоих наборах. В трёх задачах с физическими роботами число успешных испытаний увеличилось с 12 до 17 из 30. Это важное уточнение: улучшение измерено, но надёжность ещё далека от промышленной гарантии."
+            },
+            {
+              "type": "paragraph",
+              "text": "Инженерный интерес состоит в разделении двух причин отказа: исполнительный навык может работать правильно, а логика последовательности — опираться на устаревшее состояние. Граф делает такую ошибку наблюдаемой и позволяет чинить только затронутую часть плана. Однако результат зависит от качества восприятия, правильности описания условий и доступных действий восстановления. Пока неизвестно, как система поведёт себя на существенно более длинных производственных циклах, при ошибках датчиков и при нескольких одновременно изменяющихся объектах."
+            },
+            {
+              "type": "paragraph",
+              "text": "Для воспроизводимости важно отделить измеренное в эксперименте от предполагаемой пользы в других условиях. Следующий инженерный шаг — проверить чувствительность результата к настройкам, составу тестовых сцен и способу регистрации ошибок."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40016",
+              "title": "LOGIV: Graph-Verified Execution with Causal Local Repair for Long-Horizon Robot Tasks",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "oracle-safe-flow",
+          "slug": "oracle-safe-flow",
+          "category": "news",
+          "headline": "Проверка допустимости действий встроена в обучение генеративной политики робота",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Для внедрения важно отделять исследовательские результаты от гарантированных эксплуатационных характеристик. Подход позволяет использовать существующий collision checker без аналитической модели всей допустимой области. Эксперимент один, в симуляции; время вывода выросло с 0,071 до 1,345 секунды на блок действий."
+            },
+            {
+              "type": "paragraph",
+              "text": "Генеративная модель может предложить манипулятору движение, которое выглядит разумным по обучающим данным, но пересекает препятствие или выходит за пределы суставов. Работа Цзяньмина Ма и коллег от 29 октября 2026 года исследует способ встроить проверку таких ограничений прямо в процесс формирования действия. Их метод рассчитан на генерацию траекторий через flow matching — последовательное преобразование начального набора команд в итоговое движение. Важная предпосылка: доступна проверяющая функция, отвечающая только «можно» или «нельзя», но не предоставляющая формулу допустимой области."
+            },
+            {
+              "type": "paragraph",
+              "text": "Авторы называют такую функцию двоичным оракулом допустимости. При прямом проходе алгоритм проверяет предлагаемый шаг и сокращает его до границы разрешённой области, используя поиск вдоль направления движения. При обратном проходе, когда модель обучается, дополнительные запросы около границы помогают оценить направление изменения ограничения и передать приближённый градиент. В результате одна и та же защитная процедура действует и во время обучения, и при применении политики. Это отличается от простой проверки готовой траектории в конце: модель получает сигнал о тех исправлениях, с которыми встретится на практике."
+            },
+            {
+              "type": "paragraph",
+              "text": "Испытание выполнено в симуляторе RoboTwin 2.0 на задаче переноса бутылки с обходом другой бутылки и поверхности стола. Авторы дообучали модель π0.5 на 150 экспертных траекториях, используя один ускоритель H100, и оценивали 30 эпизодов. Защищённая версия дала 11 успешных эпизодов из 30 и 100% допустимых проверенных шагов; исходная версия — 13 из 30 и 78,25% допустимых шагов. Цена проверки заметна: время вывода одного блока действий выросло с 0,071 до 1,345 секунды. Это не бесплатная гарантия безопасности, а измеримый обмен скорости на соблюдение заданных ограничений."
+            },
+            {
+              "type": "paragraph",
+              "text": "Для инженерного применения привлекательна возможность повторно использовать существующий механизм проверки столкновений, даже если он не дифференцируем. Но оракул в эксперименте получал привилегированную информацию симулятора, а не шумные показания реальных датчиков. Метод также предполагает допустимую начальную конфигурацию и может испытывать трудности в сложных невыпуклых пространствах, где прямой путь пересекает препятствие. Стопроцентный показатель относится только к проверенным шагам конкретного симуляционного теста; его нельзя переносить на безопасность физического манипулятора без отдельной оценки."
+            },
+            {
+              "type": "paragraph",
+              "text": "Для воспроизводимости важно отделить измеренное в эксперименте от предполагаемой пользы в других условиях. Следующий инженерный шаг — проверить чувствительность результата к настройкам, составу тестовых сцен и способу регистрации ошибок."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40075",
+              "title": "Learning Safe Flow Matching Robot Policies from Binary Feasibility Oracles",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "simto-robust-grippers",
+          "slug": "simto-robust-grippers",
+          "category": "news",
+          "headline": "Мягкие захваты проектируют с запасом на ошибки наведения",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Робот может правильно распознать предмет, но подвести захват немного не туда. Жёсткие пальцы иногда теряют контакт, а мягкий материал способен подстроиться под форму вещи. Исследователи во главе с Куртом Энкерой представили SimTO-Robust — метод компьютерного проектирования мягких захватов, учитывающий такие ошибки заранее."
+            },
+            {
+              "type": "paragraph",
+              "text": "Вместо расчёта под один идеальный предмет метод моделирует контакт с несколькими геометриями и положениями руки. Полученные контактные силы используются для улучшения формы захвата. Часть надёжности таким образом переносится из сложного программного управления в механические свойства детали. Это не отменяет датчиков, но может уменьшить последствия ошибок позиционирования."
+            },
+            {
+              "type": "paragraph",
+              "text": "Команда рассчитала 6646 конструкций и изготовила 24 для физических испытаний. В сравнении участвовали десять специализированных мягких вариантов, два жёстких захвата и один универсальный мягкий. Всего 37 устройств проверили на пяти предметах с выраженными особенностями формы, при шести положениях и с внешними воздействиями возрастающей силы."
+            },
+            {
+              "type": "paragraph",
+              "text": "В среднем новые конструкции успешнее переносили предметы, чем специализированные и жёсткие базовые варианты. Лучшие выдерживали более сильные возмущения, чем остальные участники испытаний. Однако результат относится к конкретным материалам и условиям; он не доказывает, что любой мягкий захват всегда лучше жёсткого или удерживает любую нагрузку."
+            },
+            {
+              "type": "paragraph",
+              "text": "Здесь интересна сама идея: иногда лучше сделать механику терпимой к ошибкам, чем бесконечно усложнять алгоритм. Это может пригодиться при сортировке, сборке и обращении с предметами необычной формы. Для реального применения ещё нужны данные об износе, загрязнении, скорости циклов и работе с тяжёлыми или незнакомыми предметами."
+            },
+            {
+              "type": "paragraph",
+              "text": "Для воспроизводимости важно отделить измеренное в эксперименте от предполагаемой пользы в других условиях. Следующий инженерный шаг — проверить чувствительность результата к настройкам, составу тестовых сцен и способу регистрации ошибок."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.39560",
+              "title": "SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "metatron",
+          "slug": "metatron",
+          "category": "news",
+          "headline": "Один контроллер гуманоидного робота выполняет разные навыки без нового обучения",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Один и тот же гуманоид должен уметь идти, остановиться, нагнуться, поднять предмет и снова сохранить равновесие. Однако многие робототехнические системы требуют отдельного обучения под каждое действие. Чен Тесслер и коллеги предложили Metatron — общий слой исполнения движений, который соединяет обученную генеративную модель всего тела с программируемыми навыками. Исследование опубликовано 27 октября 2026 года, а не в день появления статьи в новостной подборке."
+            },
+            {
+              "type": "paragraph",
+              "text": "Базовая модель принимает частичные цели: положение отдельных частей тела к заданному времени, команды скорости и указания о характере движения. Во время обучения использовались записи движений, синтетические примеры восстановления после нарушения равновесия и движения взаимодействия с предметами, перенесённые на робота. Затем параметры модели фиксируют. Вместо нового обучения для каждого навыка программа на каждом шаге задаёт небольшую геометрическую подсказку, а общий контроллер преобразует её в согласованное движение суставов."
+            },
+            {
+              "type": "paragraph",
+              "text": "Авторы описывают навыки как обычные программы с внутренним состоянием. Они также применяли программных агентов для анализа записанных движений и подбора компактных правил. На реальном Unitree G1 один неизменный набор параметров использовался для ходьбы, восстановления после толчка, посадки на мебель и подъёма предмета под дистанционным управлением. В сравнительных опытах авторы сообщили о более высокой успешности достижения целей рукой и устойчивости к толчкам, чем у проверенных ими схем отслеживания заданной траектории."
+            },
+            {
+              "type": "paragraph",
+              "text": "С инженерной точки зрения важно разделение между общей моторной способностью и логикой отдельного задания. Оно потенциально уменьшает количество циклов обучения при добавлении новых сценариев. Но точные требования к вычислениям, диапазон допустимых контактов и надёжность при неизвестной мебели необходимо проверять отдельно. Дистанционно управляемое подбирание предмета не следует называть самостоятельным пониманием поручения. Акробатические движения и лазание, упомянутые в работе, показаны для симулированного персонажа, а не для физического G1."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.38027",
+              "title": "METATRON: A Promptable Whole-Body Execution Layer for Humanoids",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "technology-signal",
+          "slug": "technology-signal",
+          "category": "analysis",
+          "headline": "От отдельного трюка к проверяемой работе",
+          "dek": "Новые исследования и демонстрации показывают способы расширить набор действий робота, но качество результата зависит от условий испытания.",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Сравнивать нужно не только удачное выполнение, но и ошибки, повторяемость, стоимость и участие человека."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40026",
+              "title": "RoboSeed: Multidimensional Evaluation of Vision-Language-Action and World-Action Models",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40016",
+              "title": "LOGIV: Graph-Verified Execution with Causal Local Repair for Long-Horizon Robot Tasks",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40075",
+              "title": "Learning Safe Flow Matching Robot Policies from Binary Feasibility Oracles",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39560",
+              "title": "SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.38027",
+              "title": "METATRON: A Promptable Whole-Body Execution Layer for Humanoids",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "glossary",
+          "slug": "glossary",
+          "category": "analysis",
+          "headline": "Словарь выпуска",
+          "dek": "Ключевые понятия этого выпуска.",
+          "body": [
+            {
+              "type": "heading",
+              "text": "модель"
+            },
+            {
+              "type": "paragraph",
+              "text": "Обученная вычислительная система, которая предсказывает или выбирает действие."
+            },
+            {
+              "type": "heading",
+              "text": "симуляц"
+            },
+            {
+              "type": "paragraph",
+              "text": "Испытание в компьютерной модели, а не на реальном оборудовании."
+            },
+            {
+              "type": "heading",
+              "text": "захват"
+            },
+            {
+              "type": "paragraph",
+              "text": "Устройство или действие, позволяющее удерживать предмет."
+            },
+            {
+              "type": "heading",
+              "text": "траектор"
+            },
+            {
+              "type": "paragraph",
+              "text": "Путь движения во времени."
+            },
+            {
+              "type": "heading",
+              "text": "обучени"
+            },
+            {
+              "type": "paragraph",
+              "text": "Настройка модели на примерах или опыте."
+            },
+            {
+              "type": "heading",
+              "text": "управлени"
+            },
+            {
+              "type": "paragraph",
+              "text": "Выбор команд, определяющих движение машины."
+            },
+            {
+              "type": "heading",
+              "text": "датчик"
+            },
+            {
+              "type": "paragraph",
+              "text": "Устройство, измеряющее состояние или контакт."
+            },
+            {
+              "type": "heading",
+              "text": "воспроизводим"
+            },
+            {
+              "type": "paragraph",
+              "text": "Возможность повторить испытание и получить сопоставимые результаты."
+            },
+            {
+              "type": "heading",
+              "text": "робот"
+            },
+            {
+              "type": "paragraph",
+              "text": "Механическая система, которая выполняет действия по командам."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40026",
+              "title": "RoboSeed: Multidimensional Evaluation of Vision-Language-Action and World-Action Models",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40016",
+              "title": "LOGIV: Graph-Verified Execution with Causal Local Repair for Long-Horizon Robot Tasks",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40075",
+              "title": "Learning Safe Flow Matching Robot Policies from Binary Feasibility Oracles",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39560",
+              "title": "SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.38027",
+              "title": "METATRON: A Promptable Whole-Body Execution Layer for Humanoids",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        }
+      ]
+    },
+    "en": {
+      "title": "The Replicant Truth",
+      "weather": {
+        "location": "breukelen",
+        "timezone": "Europe/Amsterdam",
+        "forecast_date": "2026-11-01",
+        "retrieved_at": "2026-10-31T16:07:46.147436Z",
+        "kind": "forecast",
+        "source_name": "Open-Meteo",
+        "source_url": "https://api.open-meteo.com/v1/forecast?latitude=52.1742&longitude=5.0014&timezone=Europe%2FAmsterdam&start_date=2026-11-01&end_date=2026-11-01&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+        "temperature_min_c": 7.3,
+        "temperature_max_c": 11.3,
+        "precipitation_probability_max": 8,
+        "slots": [
+          {
+            "hour": 9,
+            "temperature_c": 9.2,
+            "condition": "cloudy",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 0.6,
+            "wind_direction_deg": 312
+          },
+          {
+            "hour": 12,
+            "temperature_c": 10.7,
+            "condition": "cloudy",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 1.4,
+            "wind_direction_deg": 357
+          },
+          {
+            "hour": 18,
+            "temperature_c": 10.0,
+            "condition": "cloudy",
+            "precipitation_probability": 4,
+            "wind_speed_ms": 1.2,
+            "wind_direction_deg": 309
+          }
+        ]
+      },
+      "issue_title": "Replicant Data — Engineering Edition",
+      "editorial_note": "New robot control methods, evaluation protocols and their reproducibility limits.",
+      "articles": [
+        {
+          "id": "roboseed-evaluation",
+          "slug": "roboseed-evaluation",
+          "category": "news",
+          "headline": "Robot model selection needs cost and reproducibility evidence",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "A high success rate in a demonstration does not tell a factory buyer whether a robot model is affordable to deploy. Adaptation costs, computing requirements and the credibility of the experiments also matter. Xin Ma and colleagues introduced RoboSeed, a framework for assessing models that turn images and instructions into actions alongside models that predict physical developments."
+            },
+            {
+              "type": "paragraph",
+              "text": "The October 29 paper defines five dimensions: capability, affordability of downstream training, affordability of deployment, locally verified research value and reproduction evidence. Measurements become profiles on a zero-to-one-hundred scale. Teams can use balanced preferences or emphasize limits on training and operating resources."
+            },
+            {
+              "type": "paragraph",
+              "text": "Missing measurements are not silently replaced by invented estimates. When evidence is insufficient, the authors withhold an aggregate ranking and show which information is absent. They also check whether models with different task interfaces and testing protocols can fairly be compared. Otherwise, a difference in experimental conditions may be mistaken for a difference in model quality."
+            },
+            {
+              "type": "paragraph",
+              "text": "The researchers applied the framework to representative systems using local training, evaluations of released weights and task-level audits. They found that preferred backbones depend on computing budgets and adaptation methods. However, incomplete serving measurements and heterogeneous protocols prevent a defensible universal numerical ranking."
+            },
+            {
+              "type": "paragraph",
+              "text": "For a commercial pilot, the practical questions concern which tasks were tested, how success was defined, how much adaptation costs, how quickly inference runs on intended hardware and whether results can be repeated. These answers affect total ownership cost and integration risk. RoboSeed does not itself guarantee safety, return on investment or actual labor savings."
+            },
+            {
+              "type": "paragraph",
+              "text": "Reproducibility requires separating what the experiment measured from the benefits anticipated in other settings. The next engineering step is to test sensitivity to configuration, scene selection and failure logging."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40026",
+              "title": "RoboSeed: Multidimensional Evaluation of Vision-Language-Action and World-Action Models",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "logiv-task-graph-repair",
+          "slug": "logiv-task-graph-repair",
+          "category": "news",
+          "headline": "LOGIV checks robot task dependencies and repairs broken preconditions",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Adoption decisions must separate research results from guaranteed operational performance. Separates sequential execution reliability from individual manipulation skills and can sit above existing VLA controllers. Evidence is confined to selected dual-arm tasks; real-robot success was 17 of 30 trials, not full reliability."
+            },
+            {
+              "type": "paragraph",
+              "text": "A robot may complete a placement correctly and still fail at the next step because someone has moved the object it needs. Researchers led by Enqiao Lu propose LOGIV, an execution framework for long-horizon robot tasks that treats this as a dependency problem rather than automatically blaming the motor controller. Their paper appeared on arXiv on October 29, 2026. The method monitors whether the physical conditions assumed by a multi-step plan remain true as the robot works, even after an earlier action has been marked complete."
+            },
+            {
+              "type": "paragraph",
+              "text": "LOGIV represents a validated plan as a task graph. One kind of edge records which action supports a condition needed later; another orders actions that compete for resources. Observations are used to verify those relationships during execution. If a disturbance removes a required condition, dependency tracing identifies what needs to be restored. The system then constructs a local repair, preserves still-relevant unfinished actions, and symbolically validates the continuation before execution resumes. This is a supervisory layer above vision-language-action policies, often abbreviated VLA, or world-action models; it does not introduce new trainable parameters into the underlying policy."
+            },
+            {
+              "type": "paragraph",
+              "text": "The researchers evaluated 20 dual-arm tasks drawn from RoboTwin V2 and BiCoord using three execution backbones. Without injected disturbances, they report mean task-success gains of 10.67 and 15.33 percentage points on the respective benchmarks. Under predefined disturbances, LOGIV outperformed three adapted recovery baselines in task completion and restoration of necessary conditions. On three physical-robot tasks, successful trials increased from 12 out of 30 to 17 out of 30. That is a measurable improvement, but it also leaves thirteen failures and should not be described as solved autonomy."
+            },
+            {
+              "type": "paragraph",
+              "text": "The architectural lesson is that action generation and task-state verification are different responsibilities. A strong manipulation policy cannot guarantee that the world still matches its earlier assumptions. Explicit dependencies provide a place to diagnose and repair those mismatches without restarting everything. The open engineering questions concern perception errors, incomplete condition models, recovery actions that are unavailable, and scaling to longer workflows with multiple simultaneous disturbances. The published evidence supports the value of the layer on tested tasks, not an assurance of reliable operation in arbitrary factories."
+            },
+            {
+              "type": "paragraph",
+              "text": "Reproducibility requires separating what the experiment measured from the benefits anticipated in other settings. The next engineering step is to test sensitivity to configuration, scene selection and failure logging."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40016",
+              "title": "LOGIV: Graph-Verified Execution with Causal Local Repair for Long-Horizon Robot Tasks",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "oracle-safe-flow",
+          "slug": "oracle-safe-flow",
+          "category": "news",
+          "headline": "A binary feasibility checker becomes part of learning safe robot actions",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Adoption decisions must separate research results from guaranteed operational performance. Existing collision checkers can potentially constrain generative action policies even when they are not differentiable. One simulation task; per-action-chunk inference time rose from 0.071 to 1.345 seconds."
+            },
+            {
+              "type": "paragraph",
+              "text": "A generative robot policy can produce an apparently plausible movement that crosses an obstacle or violates a joint limit. Jianming Ma and coauthors addressed this problem in a paper posted on October 29, 2026. Their approach works with flow matching, a method that constructs an action trajectory through successive updates. The distinctive assumption is that the system can ask a checker whether a proposed robot configuration is feasible, but cannot obtain a convenient equation or gradient describing the entire safe region. That makes the interface closer to many practical collision-checking systems."
+            },
+            {
+              "type": "paragraph",
+              "text": "The checker is called a binary feasibility oracle because it returns only an allowed-or-disallowed answer. During the forward generation process, the safeguard searches along a proposed update and truncates it before leaving the feasible region. During training, additional queries around the detected boundary estimate its local direction and supply an approximate gradient to the policy. Consequently, the model learns while experiencing the same type of intervention it will face at inference time. The method does not require differentiating through the collision checker itself, although it does require feasible starting samples and enough oracle queries to detect boundaries."
+            },
+            {
+              "type": "paragraph",
+              "text": "The authors evaluated a simulated RoboTwin 2.0 pick-and-place task in which an arm moved a bottle while avoiding another bottle, the tabletop, and joint limits. They fine-tuned a pretrained π0.5 action model on 150 expert trajectories with a single H100 GPU and tested 30 episodes. The safeguarded model succeeded in 11 of 30 episodes with a 100% checked-step safety rate. The original Gaussian-initialized baseline succeeded in 13 of 30 episodes but recorded only 78.25% safe steps. Inference time per action chunk increased from 0.071 to 1.345 seconds, a material latency penalty for a real control stack."
+            },
+            {
+              "type": "paragraph",
+              "text": "The engineering result is therefore narrower and more useful than a headline claiming perfectly safe robots. The experiment demonstrates constraint compliance under the simulator's checker, not physical safety around people. The oracle used privileged simulation information, and a checker built from noisy sensors might miss hazards. Straight interpolation can also fail in highly non-convex spaces where a detour is needed. A deployment evaluation would have to measure checker fidelity, worst-case latency, recovery from infeasible starts, and the effect of moving obstacles before treating the safeguard as a production safety mechanism."
+            },
+            {
+              "type": "paragraph",
+              "text": "Reproducibility requires separating what the experiment measured from the benefits anticipated in other settings. The next engineering step is to test sensitivity to configuration, scene selection and failure logging."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40075",
+              "title": "Learning Safe Flow Matching Robot Policies from Binary Feasibility Oracles",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "simto-robust-grippers",
+          "slug": "simto-robust-grippers",
+          "category": "news",
+          "headline": "Soft grippers can be shaped to forgive positioning errors",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "A robot may recognize an object correctly yet place its gripper slightly off target. Rigid fingers can lose contact, while a soft gripper may deform around the object. Researchers led by Kurt Enkera introduced SimTO-Robust, a computer-aided design method intended to make grippers tolerant of such errors through their physical shape."
+            },
+            {
+              "type": "paragraph",
+              "text": "Instead of optimizing for one ideal object and pose, the method simulates contact with several geometries and grasp positions. The resulting forces guide improvements to the compliant structure. Part of the robustness problem therefore moves from complicated control software into mechanical design. Cameras still matter, but small positioning errors may become less damaging."
+            },
+            {
+              "type": "paragraph",
+              "text": "The team generated 6,646 candidate designs and physically evaluated 24. Comparisons included ten specialized soft designs, two rigid baseline grippers and one conventional general-purpose soft gripper. In total, 37 devices were tested with five objects featuring distinctive shapes, six grasp poses and progressively stronger external disturbances during pick-and-place operations."
+            },
+            {
+              "type": "paragraph",
+              "text": "On average, SimTO-Robust designs transferred objects more reliably than specialized soft designs and rigid baselines. The strongest candidates tolerated larger disturbances than the other tested devices. These findings apply to the reported materials, objects and conditions, not to every possible gripper or load."
+            },
+            {
+              "type": "paragraph",
+              "text": "The broader lesson is that useful mechanical design can make a robot forgiving before the controller intervenes. That may matter in sorting, assembly and handling irregular objects. Long-term wear, contamination, cycle speed and performance with heavier or unfamiliar items remain open questions for practical deployment."
+            },
+            {
+              "type": "paragraph",
+              "text": "Reproducibility requires separating what the experiment measured from the benefits anticipated in other settings. The next engineering step is to test sensitivity to configuration, scene selection and failure logging."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.39560",
+              "title": "SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "metatron",
+          "slug": "metatron",
+          "category": "news",
+          "headline": "A shared humanoid controller supports different skills without retraining",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "A humanoid that walks to a table must also stop, bend, reach and recover its balance without switching to an entirely new motor system. Yet many robotics pipelines train separate controllers for each behavior. Chen Tessler and colleagues introduced Metatron, a programmable whole-body execution layer that pairs one trained generative motor policy with software-defined skills. The research was submitted on October 27, 2026; a later listing date should not be mistaken for its original publication date."
+            },
+            {
+              "type": "paragraph",
+              "text": "The base policy accepts partial goals rather than a complete joint trajectory. These prompts may specify timed targets for body parts, velocity commands and movement-style cues. Training combines captured human motion, synthetic recovery trajectories and retargeted motions involving objects and scenes. After that stage, the base policy is frozen. A small stateful program can then produce a rough geometric sketch at every control step, leaving the common motor model to coordinate the robot's joints and balance."
+            },
+            {
+              "type": "paragraph",
+              "text": "The authors describe skills as ordinary programs, sometimes refined with coding agents that inspect motion data and fit compact rules. On a physical Unitree G1, one unchanged model checkpoint supported walking, recovery, sitting on furniture and object pickup guided by a remote operator. Comparative tests reported better reaching success and resistance to pushes than the reference-tracking systems selected by the authors. The paper also presents climbing and acrobatics, but those results concern a simulated character rather than the physical G1."
+            },
+            {
+              "type": "paragraph",
+              "text": "The engineering distinction is between reusable motor competence and task-specific control logic. If the separation holds across more environments, new behaviors might be specified with code rather than a new policy-training run. That is a research implication, not a proven reduction in commercial integration cost. The authors do not establish unattended operation in arbitrary homes, universal contact safety or reliable object recognition. Teleoperated pickup remains teleoperated, and the reported comparisons are limited to the study's test conditions."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.38027",
+              "title": "METATRON: A Promptable Whole-Body Execution Layer for Humanoids",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "technology-signal",
+          "slug": "technology-signal",
+          "category": "analysis",
+          "headline": "From isolated tricks to verifiable work",
+          "dek": "Research and demonstrations expand the range of robot actions, but the strength of the result depends on test conditions.",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Evaluation should cover failures, repeatability, cost and human intervention as well as successful attempts."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40026",
+              "title": "RoboSeed: Multidimensional Evaluation of Vision-Language-Action and World-Action Models",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40016",
+              "title": "LOGIV: Graph-Verified Execution with Causal Local Repair for Long-Horizon Robot Tasks",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40075",
+              "title": "Learning Safe Flow Matching Robot Policies from Binary Feasibility Oracles",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39560",
+              "title": "SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.38027",
+              "title": "METATRON: A Promptable Whole-Body Execution Layer for Humanoids",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "glossary",
+          "slug": "glossary",
+          "category": "analysis",
+          "headline": "Issue glossary",
+          "dek": "Key terms in this issue.",
+          "body": [
+            {
+              "type": "heading",
+              "text": "model"
+            },
+            {
+              "type": "paragraph",
+              "text": "A computational system trained to predict or select actions."
+            },
+            {
+              "type": "heading",
+              "text": "simulat"
+            },
+            {
+              "type": "paragraph",
+              "text": "A test in a computer environment rather than on physical hardware."
+            },
+            {
+              "type": "heading",
+              "text": "gripp"
+            },
+            {
+              "type": "paragraph",
+              "text": "A device or action used to hold an object."
+            },
+            {
+              "type": "heading",
+              "text": "trajector"
+            },
+            {
+              "type": "paragraph",
+              "text": "A movement path considered over time."
+            },
+            {
+              "type": "heading",
+              "text": "learn"
+            },
+            {
+              "type": "paragraph",
+              "text": "Adjusting a model from examples or experience."
+            },
+            {
+              "type": "heading",
+              "text": "control"
+            },
+            {
+              "type": "paragraph",
+              "text": "Choosing commands that determine a machine's movement."
+            },
+            {
+              "type": "heading",
+              "text": "sensor"
+            },
+            {
+              "type": "paragraph",
+              "text": "A device that measures a condition or contact."
+            },
+            {
+              "type": "heading",
+              "text": "reproducib"
+            },
+            {
+              "type": "paragraph",
+              "text": "The ability to repeat an experiment with comparable results."
+            },
+            {
+              "type": "heading",
+              "text": "robot"
+            },
+            {
+              "type": "paragraph",
+              "text": "A physical machine that performs commanded actions."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40026",
+              "title": "RoboSeed: Multidimensional Evaluation of Vision-Language-Action and World-Action Models",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40016",
+              "title": "LOGIV: Graph-Verified Execution with Causal Local Repair for Long-Horizon Robot Tasks",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40075",
+              "title": "Learning Safe Flow Matching Robot Policies from Binary Feasibility Oracles",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39560",
+              "title": "SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.38027",
+              "title": "METATRON: A Promptable Whole-Body Execution Layer for Humanoids",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        }
+      ]
+    },
+    "ja": {
+      "title": "レプリカントの真実",
+      "weather": {
+        "location": "smolensk",
+        "timezone": "Europe/Moscow",
+        "forecast_date": "2026-11-01",
+        "retrieved_at": "2026-10-31T16:07:47.240840Z",
+        "kind": "forecast",
+        "source_name": "Open-Meteo",
+        "source_url": "https://api.open-meteo.com/v1/forecast?latitude=54.7826&longitude=32.0453&timezone=Europe%2FMoscow&start_date=2026-11-01&end_date=2026-11-01&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+        "temperature_min_c": 2.7,
+        "temperature_max_c": 8.6,
+        "precipitation_probability_max": 8,
+        "slots": [
+          {
+            "hour": 9,
+            "temperature_c": 2.9,
+            "condition": "cloudy",
+            "precipitation_probability": 3,
+            "wind_speed_ms": 2.48,
+            "wind_direction_deg": 43
+          },
+          {
+            "hour": 12,
+            "temperature_c": 5.9,
+            "condition": "cloudy",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 2.33,
+            "wind_direction_deg": 43
+          },
+          {
+            "hour": 18,
+            "temperature_c": 6.0,
+            "condition": "cloudy",
+            "precipitation_probability": 3,
+            "wind_speed_ms": 1.79,
+            "wind_direction_deg": 27
+          }
+        ]
+      },
+      "issue_title": "レプリカント・データ 技術版",
+      "editorial_note": "ロボットの制御、評価、再現性に関する研究と、その限界を検証する。",
+      "articles": [
+        {
+          "id": "roboseed-evaluation",
+          "slug": "roboseed-evaluation",
+          "category": "news",
+          "headline": "ロボットAIを性能だけでなく費用と再現性でも比べる",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "ロボットが実験で高い成功率を出しても、企業が安く導入できるとは限らない。追加学習に必要な計算機、運用時に使う装置、試験結果の信頼性も重要になる。Xin Maらは2026年10月29日、画像と指示から動作を作るモデルなどを比較するRoboSeedという評価の枠組みを発表した。"
+            },
+            {
+              "type": "paragraph",
+              "text": "評価するのは五つの観点である。課題をこなす能力、追加学習の負担、実際の配備に必要な資源、手元で検証された研究上の価値、結果を再現できる証拠だ。各項目を固定した基準で0から100の尺度に変換し、学習費用を重視する場合と運用費用を重視する場合など、条件を変えて比較できる。"
+            },
+            {
+              "type": "paragraph",
+              "text": "重要なのは、測定値がないところを勝手に埋めないことだ。証拠が足りなければ総合点を算出せず、何が不明なのかを明示する。さらに、異なるロボットや課題の結果を同じ条件で比べてよいのか、入力形式や評価手順も確認する。見かけの順位だけで製品を選ぶ危険を減らす考え方だ。"
+            },
+            {
+              "type": "paragraph",
+              "text": "研究者は公開モデルの重みを使う試験、現地での追加学習、課題ごとの監査にこの方法を適用した。適切な基盤モデルは計算予算や学習方法によって変わるという結果が得られた。一方、実行時の計測が不十分で試験手順も統一されていないため、すべてを並べた数値の総合順位は提示していない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "企業が試験導入するなら、どの作業で成功したのか、成功をどう数えたのか、追加学習にどれほどの時間と計算資源が必要かを確かめたい。現場の装置での応答速度や再現実験の結果も必要だ。この研究は質問を整理する助けになるが、費用対効果や安全性、実際の省人化を保証するものではない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "再現性を確かめるには、論文で実際に測った結果と、別の環境で期待される利点を分けて考える必要がある。次の技術的な検証では、設定値、試験場面の選び方、失敗の記録方法を変えたときの結果を調べることが重要だ。"
+            },
+            {
+              "type": "paragraph",
+              "text": "特に重要なのは、研究で選ばれた比較対象と評価指標が何を意味するかを明示することだ。実機の試験と計算上の試験を分け、対象物や初期位置が変わった場合にも同じ結果になるかを調べなければ、一般的な性能向上とは言えない。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40026",
+              "title": "RoboSeed: Multidimensional Evaluation of Vision-Language-Action and World-Action Models",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "logiv-task-graph-repair",
+          "slug": "logiv-task-graph-repair",
+          "category": "news",
+          "headline": "LOGIVは作業の依存関係を検証し、崩れた条件を部分的に修復する",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "導入判断では、研究結果と保証された運用性能を区別する必要がある。動作生成と長期計画の信頼性を別の層として評価できる。 対象は限定された双腕作業で、実機の成功は30試行中17回にとどまる。"
+            },
+            {
+              "type": "paragraph",
+              "text": "ロボットが物を正しく置いたとしても、その後で誰かが物を動かせば、次の作業は失敗する可能性がある。Enqiao Luらが2026年10月29日に公開したLOGIVは、この問題を個々の腕の動作ではなく、作業間の依存関係として扱う仕組みだ。長い手順を実行するとき、以前に成立した条件が現在も保たれているかを確認する。単に命令が終了したという記録だけを信用しない点が重要である。ロボットの動作モデルそのものを置き換える提案ではなく、その上位で実行を管理する研究である。"
+            },
+            {
+              "type": "paragraph",
+              "text": "中心になるのは作業グラフという表現だ。ある動作が次の動作に必要な状態を作る関係や、同じ資源を使う作業の順序を、明示的なつながりとして保存する。実行中にはカメラなどの観測結果から条件を確かめる。外部の変化で前提が崩れた場合、どの依存関係が壊れたかをたどり、必要な部分だけを回復する手順を選ぶ。残っている作業との整合性も記号的な計画検証によって確認してから再開する。画像、言語、行動を結びつけるVLAモデルなどの上に置ける構成で、新しい学習パラメータを追加しない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "研究ではRoboTwin V2とBiCoordという二つの双腕作業評価環境から計20課題を用い、三種類の実行基盤で比較した。人為的な妨害を入れない条件では、平均成功率がそれぞれ10.67ポイントと15.33ポイント改善したと報告する。決められた妨害を加えた実験でも、比較した三つの復旧方式より作業完了と条件回復が良好だった。さらに実物のロボットを使った三課題では、30試行中の成功が12回から17回に増えた。改善は確認できる一方、13回は失敗しており、完全な自律運転が実証されたわけではない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "実装上の意味は、動作の上手さと作業全体の信頼性を切り分けられることにある。腕が正確に動いても、計画が古い環境状態を前提にしていれば失敗する。依存関係を明示すれば、その原因を特定して部分的に修復しやすい。ただし観測が誤っている場合、必要条件の定義が不完全な場合、あるいは回復に使う動作が用意されていない場合には限界がある。より長い工場工程や同時に起こる複数の変化については、追加の検証が必要である。"
+            },
+            {
+              "type": "paragraph",
+              "text": "再現性を確かめるには、論文で実際に測った結果と、別の環境で期待される利点を分けて考える必要がある。次の技術的な検証では、設定値、試験場面の選び方、失敗の記録方法を変えたときの結果を調べることが重要だ。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40016",
+              "title": "LOGIV: Graph-Verified Execution with Causal Local Repair for Long-Horizon Robot Tasks",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "oracle-safe-flow",
+          "slug": "oracle-safe-flow",
+          "category": "news",
+          "headline": "可否判定だけでロボットの生成動作に制約を組み込む研究",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "導入判断では、研究結果と保証された運用性能を区別する必要がある。既存の衝突判定器を生成型動作モデルの制約処理に組み込める可能性がある。 評価は一つのシミュレーション課題に限られ、推論時間は0.071秒から1.345秒に増加した。"
+            },
+            {
+              "type": "paragraph",
+              "text": "生成型のロボット制御モデルは、学習した動きに似た指令を作れても、その指令が障害物にぶつからないとは限らない。Jianming Maらが2026年10月29日に発表した研究は、この問題を動作生成の途中で扱う。対象はフローマッチングという方式で、初期状態から何回かの更新を重ねて行動列を作る。必要なのは、候補の関節姿勢が許されるかを「はい」「いいえ」で返す判定器だけだ。許される姿勢の範囲を完全な数式として記述する必要はない。衝突判定器が利用できても、その内部を微分できない場合を想定している。"
+            },
+            {
+              "type": "paragraph",
+              "text": "この二値の判定器を研究では実行可能性オラクルと呼ぶ。動作生成の順方向では、提案された移動方向に沿って判定を繰り返し、許容範囲から出る直前まで更新量を短くする。学習時には境界の近くを追加で調べ、どちら側が許されない領域かを推定する。その情報から近似的な勾配を作り、モデルの更新に反映する。つまり完成した行動だけを最後に検査するのではなく、学習と実行の両方に同じ保護処理を置く設計だ。ただし安全な初期姿勢が得られることなど、重要な前提条件が存在する。"
+            },
+            {
+              "type": "paragraph",
+              "text": "実験はRoboTwin 2.0というシミュレーション環境で行われた。ロボットアームが瓶を移動させる際に、別の瓶や机、関節の可動範囲を避ける課題である。研究チームは150本の専門家による動作軌跡を使い、H100を1基用いて既存モデルを追加学習した。30回の評価では、保護付きモデルの課題成功は11回で、検査した動作段階の制約遵守率は100％だった。元のモデルは13回成功したが、遵守率は78.25％だった。一方で行動ブロック当たりの推論時間は0.071秒から1.345秒に増えた。安全側への修正には計算上の費用が伴う。"
+            },
+            {
+              "type": "paragraph",
+              "text": "この結果は、実物のロボットがどんな環境でも安全になったことを意味しない。判定器はシミュレータ内部の正確な情報を使っており、現実のセンサー誤差は評価されていない。また障害物を大きく迂回しなければならない複雑な領域では、提案方向を短くするだけでは適切な経路を見つけられない可能性がある。実用化には判定器の見落とし、処理遅延、動く障害物、初期状態が不適切な場合の対応を調べる必要がある。100％という数字は今回検査したシミュレーション上の段階に限定して読むべきだ。"
+            },
+            {
+              "type": "paragraph",
+              "text": "再現性を確かめるには、論文で実際に測った結果と、別の環境で期待される利点を分けて考える必要がある。次の技術的な検証では、設定値、試験場面の選び方、失敗の記録方法を変えたときの結果を調べることが重要だ。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40075",
+              "title": "Learning Safe Flow Matching Robot Policies from Binary Feasibility Oracles",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "simto-robust-grippers",
+          "slug": "simto-robust-grippers",
+          "category": "news",
+          "headline": "少し位置がずれても物をつかめる柔らかいハンド",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "ロボットが物の位置を正しく見つけても、手を近づけるときに少しずれることがある。硬い指では滑ってしまう場面でも、柔らかい指なら物の形に合わせて変形できるかもしれない。Kurt Enkeraらは、そうした失敗への強さを設計段階から考えるSimTO-Robustという方法を発表した。"
+            },
+            {
+              "type": "paragraph",
+              "text": "一つの物を理想的な位置でつかむ条件だけを使うのではなく、複数の形の物と異なるつかみ方をコンピューター内で試す。接触した場所に働く力をまとめて調べ、柔らかいハンドの形を改良する。制御プログラムだけでなく、部品の形そのものに失敗しにくさを持たせようとする。"
+            },
+            {
+              "type": "paragraph",
+              "text": "研究者は6646種類の候補を計算で作り、そのうち24種類を実際に製作した。比較相手には、特定の物に合わせた柔らかいハンド10種類、硬いハンド2種類、一般的な設計法による柔らかいハンド1種類を使った。合計37種類を、形に特徴のある五つの物、六つのつかむ位置、外から加える力を変えた条件で試した。"
+            },
+            {
+              "type": "paragraph",
+              "text": "平均すると、新方式のハンドは専用設計のものや硬い比較用ハンドより安定して物を移動できた。最も良い候補は、ほかの装置より大きな外乱にも耐えた。ただし、これは論文で選んだ物と条件での結果であり、どんな材質でもどんな重さでも必ず優れていると証明したわけではない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "この研究が示すのは、ロボットの賢さは計算機の中だけにあるわけではないということだ。部品の形や柔らかさを工夫すれば、多少の位置ずれを機械的に吸収できる。実用化には、繰り返し使ったときの摩耗、汚れ、動作速度、より重い物や未知の形への対応を確かめる必要がある。"
+            },
+            {
+              "type": "paragraph",
+              "text": "再現性を確かめるには、論文で実際に測った結果と、別の環境で期待される利点を分けて考える必要がある。次の技術的な検証では、設定値、試験場面の選び方、失敗の記録方法を変えたときの結果を調べることが重要だ。"
+            },
+            {
+              "type": "paragraph",
+              "text": "特に重要なのは、研究で選ばれた比較対象と評価指標が何を意味するかを明示することだ。実機の試験と計算上の試験を分け、対象物や初期位置が変わった場合にも同じ結果になるかを調べなければ、一般的な性能向上とは言えない。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.39560",
+              "title": "SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "metatron",
+          "slug": "metatron",
+          "category": "news",
+          "headline": "一つの全身制御モデルで歩行と物体操作を切り替える",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "人型ロボットが机まで歩き、止まり、手を伸ばし、姿勢を立て直すには、全身の動きを連続して調整する必要がある。従来は動作ごとに別の制御モデルを学習させる場合が多い。Chen Tesslerらが10月27日に公開したMetatronは、一つの学習済み全身制御モデルと、目的に応じて書き換えられる技能プログラムを組み合わせる研究である。ニュース一覧に掲載された日と、論文が最初に公開された日を混同してはいけない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "基盤となるモデルには、関節の動きを最初から最後まで細かく指定する代わりに、体の一部をいつどこへ動かすか、どの方向へ進むか、どんな動き方にするかといった部分的な目標を与える。学習には動作計測の記録、バランスを崩した状態から戻る合成データ、物に触れる動作をロボットへ変換したデータを用いた。学習後はモデルの重みを固定し、新しい技能ごとに学習し直さない構成とした。"
+            },
+            {
+              "type": "paragraph",
+              "text": "技能は状態を覚える通常のプログラムとして記述される。プログラムが毎回おおまかな動作目標を示し、共通の制御モデルが全身の関節を協調させる。著者らは記録された動きを解析し、簡潔な規則を調整するプログラミング用のエージェントも使った。実機のUnitree G1では、同じモデルで歩行、姿勢の回復、家具への着座、遠隔操作を伴う物体の持ち上げを実演した。比較試験では、選ばれた従来方式より手を目標へ届ける成功率と押された際の頑健性が高いと報告している。"
+            },
+            {
+              "type": "paragraph",
+              "text": "ただし、物体を持ち上げる実験には人間の遠隔操作が関与しており、未知の部屋で自分だけで作業を理解した証拠ではない。論文にある登坂や曲芸的な動作はシミュレーション上のキャラクターでの結果で、実物のG1で確認した内容とは区別する必要がある。計算資源、未知の接触条件、安全停止、家具の種類による失敗率などは実運用に向けた検証課題である。共通の運動能力と作業ごとの手順を分ける設計が、どこまで再利用できるかが今後の焦点となる。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.38027",
+              "title": "METATRON: A Promptable Whole-Body Execution Layer for Humanoids",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "technology-signal",
+          "slug": "technology-signal",
+          "category": "analysis",
+          "headline": "単発の実演から検証できる作業へ",
+          "dek": "研究や実演によってロボットの仕事の幅は広がるが、結果の確かさは試験条件によって変わる。",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "成功例だけでなく、失敗、再現性、費用、人の介入も比べる必要がある。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40026",
+              "title": "RoboSeed: Multidimensional Evaluation of Vision-Language-Action and World-Action Models",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40016",
+              "title": "LOGIV: Graph-Verified Execution with Causal Local Repair for Long-Horizon Robot Tasks",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40075",
+              "title": "Learning Safe Flow Matching Robot Policies from Binary Feasibility Oracles",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39560",
+              "title": "SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.38027",
+              "title": "METATRON: A Promptable Whole-Body Execution Layer for Humanoids",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "glossary",
+          "slug": "glossary",
+          "category": "analysis",
+          "headline": "本号の用語集",
+          "dek": "この号のキーワードを解説します。",
+          "body": [
+            {
+              "type": "heading",
+              "text": "モデル"
+            },
+            {
+              "type": "paragraph",
+              "text": "データから動きや結果を予測する計算の仕組み。"
+            },
+            {
+              "type": "heading",
+              "text": "シミュレーション"
+            },
+            {
+              "type": "paragraph",
+              "text": "実物を動かす前にコンピューター内で試すこと。"
+            },
+            {
+              "type": "heading",
+              "text": "ハンド"
+            },
+            {
+              "type": "paragraph",
+              "text": "物をつかむためのロボットの部品。"
+            },
+            {
+              "type": "heading",
+              "text": "学習"
+            },
+            {
+              "type": "paragraph",
+              "text": "例や経験を使ってモデルの働きを調整すること。"
+            },
+            {
+              "type": "heading",
+              "text": "制御"
+            },
+            {
+              "type": "paragraph",
+              "text": "機械をどのように動かすか決めること。"
+            },
+            {
+              "type": "heading",
+              "text": "センサー"
+            },
+            {
+              "type": "paragraph",
+              "text": "物の状態や接触を調べる装置。"
+            },
+            {
+              "type": "heading",
+              "text": "再現性"
+            },
+            {
+              "type": "paragraph",
+              "text": "同じ条件で試したときに近い結果を得られる性質。"
+            },
+            {
+              "type": "heading",
+              "text": "ロボット"
+            },
+            {
+              "type": "paragraph",
+              "text": "命令に従って実際の物を動かす機械。"
+            },
+            {
+              "type": "heading",
+              "text": "実験"
+            },
+            {
+              "type": "paragraph",
+              "text": "決めた条件で考えや方法を試すこと。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40026",
+              "title": "RoboSeed: Multidimensional Evaluation of Vision-Language-Action and World-Action Models",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40016",
+              "title": "LOGIV: Graph-Verified Execution with Causal Local Repair for Long-Horizon Robot Tasks",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.40075",
+              "title": "Learning Safe Flow Matching Robot Policies from Binary Feasibility Oracles",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39560",
+              "title": "SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.38027",
+              "title": "METATRON: A Promptable Whole-Body Execution Layer for Humanoids",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        }
+      ]
+    }
+  },
+  "weather": {
+    "location": "ichikawa",
+    "timezone": "Asia/Tokyo",
+    "forecast_date": "2026-11-01",
+    "retrieved_at": "2026-10-31T16:07:47.112550Z",
+    "kind": "forecast",
+    "source_name": "Open-Meteo",
+    "source_url": "https://api.open-meteo.com/v1/forecast?latitude=35.72&longitude=139.93&timezone=Asia%2FTokyo&start_date=2026-11-01&end_date=2026-11-01&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+    "temperature_min_c": 13.2,
+    "temperature_max_c": 19.0,
+    "precipitation_probability_max": 8,
+    "slots": [
+      {
+        "hour": 9,
+        "temperature_c": 15.3,
+        "condition": "cloudy",
+        "precipitation_probability": 0,
+        "wind_speed_ms": 1.97,
+        "wind_direction_deg": 336
+      },
+      {
+        "hour": 12,
+        "temperature_c": 18.3,
+        "condition": "clear",
+        "precipitation_probability": 0,
+        "wind_speed_ms": 0.67,
+        "wind_direction_deg": 297
+      },
+      {
+        "hour": 18,
+        "temperature_c": 17.9,
+        "condition": "cloudy",
+        "precipitation_probability": 8,
+        "wind_speed_ms": 1.33,
+        "wind_direction_deg": 103
+      }
+    ]
+  }
+}

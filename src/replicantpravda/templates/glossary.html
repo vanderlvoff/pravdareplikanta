@@ -1,0 +1,16 @@
+<section class="glossary-panel" aria-labelledby="{{ glossary_id }}">
+  <header class="glossary-header">
+    <p class="glossary-kicker"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4h7a3 3 0 0 1 3 3v14a4 4 0 0 0-4-2H4ZM14 7a3 3 0 0 1 3-3h3v15h-2a4 4 0 0 0-4 2M7 8h3M7 12h3"/></svg>{{ glossary_labels.kicker }}</p>
+    {% if glossary_level == 3 %}<h3 id="{{ glossary_id }}">{{ glossary_title }}</h3>{% else %}<h2 id="{{ glossary_id }}">{{ glossary_title }}</h2>{% endif %}
+    {% if glossary_intro %}<p class="glossary-intro">{{ glossary_intro }}</p>{% endif %}
+  </header>
+  <dl class="glossary-list">
+    {% for entry in glossary_items %}
+    <div class="glossary-entry"{% if entry.number is defined %} id="term-{{ entry.number }}" tabindex="-1"{% endif %}>
+      <dt><span class="glossary-index" aria-hidden="true">{{ '%02d'|format(entry.number if entry.number is defined else loop.index) }}</span><span>{{ entry.term }}</span></dt>
+      <dd>{{ entry.definition }}{% if entry.number is defined %}<a class="glossary-backlink" href="#term-ref-{{ entry.number }}" aria-label="{{ glossary_labels.back_to_text }} [{{ entry.number }}]">↩ {{ glossary_labels.back_to_text }} <span aria-hidden="true">[{{ entry.number }}]</span></a>{% endif %}</dd>
+    </div>
+    {% endfor %}
+  </dl>
+  {% if glossary_full_link %}<a class="glossary-all-link" href="{{ reader_base }}issues/{{ issue.issue_id }}/#article-glossary">{{ glossary_labels.all_terms }} <span aria-hidden="true">→</span></a>{% endif %}
+</section>

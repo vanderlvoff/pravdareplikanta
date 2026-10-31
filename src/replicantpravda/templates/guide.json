@@ -1,0 +1,128 @@
+{
+  "ru": {
+    "link": "О газете и как её читать",
+    "title": "Зачем эта газета и как её читать",
+    "intro": "Сначала я просто хотел получать утреннюю газету о Physical AI. Сделал её для себя, а потом решил поделиться с миром.",
+    "story_title": "Утренняя газета для себя",
+    "story": [
+      "Мне хотелось получать по утрам газету о физическом искусственном интеллекте: о роботах, которые видят, учатся, двигаются и действуют в нашем мире. Собранный выпуск, который можно спокойно прочитать за завтраком.",
+      "Поэтому я сделал такую газету для себя. А потом решил поделиться ею с миром: возможно, кому-то ещё нужен именно такой способ начинать день.",
+      "Отсюда и устройство сайта: выпуски с датами, разные редакции для разных читателей, словарь, ссылки на источники и отдельная версия для бумаги. Газетная форма здесь — часть первоначального замысла."
+    ],
+    "editions_title": "Одна тема — четыре редакции",
+    "editions_intro": "Инженеру, руководителю и любознательному школьнику важны разные вопросы. Редакции меняют акценты и объяснения; состав новостей тоже может отличаться.",
+    "editions": {
+      "engineer": "Как устроена технология, что измеряли в экспериментах, где ограничения и что потребуется для воспроизведения результата.",
+      "business": "Где технологию можно применить, что учитывать при внедрении, какие затраты и риски пока остаются неизвестными.",
+      "enthusiast": "Что придумали исследователи, как это работает и почему за этим интересно наблюдать — без обязательной инженерной подготовки.",
+      "children": "Для читателей примерно 11–12 лет: понятные объяснения, примеры и вопросы, которые помогают разобраться в сложной теме."
+    },
+    "how_title": "Как пользоваться сайтом",
+    "how_steps": [
+      "Выберите редакцию кнопками наверху. Затем выберите русский, английский или японский язык. Язык и редакция сохраняются при переключении.",
+      "На главной — свежий выпуск и начала статей. Ссылка чтения на карточке открывает полный текст статьи. Переключение редакции по возможности оставит вас в той же статье; иначе откроется соответствующий выпуск или главная выбранной версии.",
+      "Номера в квадратных скобках рядом с терминами ведут к объяснениям под статьёй. Ссылка «К тексту» возвращает к упоминанию. Полный словарь есть внизу выпуска.",
+      "Через архив можно открыть прошлый номер. RSS позволяет следить за новыми материалами в своей программе для чтения новостей. Пометка «Скоро» означает, что готового выпуска этой редакции пока нет."
+    ],
+    "pdf_title": "Почему здесь вообще есть PDF",
+    "pdf_text": [
+      "Мне хотелось, чтобы газета могла выйти из браузера. PDF сохраняет композицию полосы и две колонки: его удобно читать отдельно, хранить, пересылать или распечатать.",
+      "Скачайте PDF выбранной редакции и языка по ссылке возле шапки выпуска или в архиве. У каждой версии свой файл. Количество страниц зависит от объёма текста.",
+      "Для домашней печати выберите бумагу A4 и масштаб 100% («Фактический размер»). Двустороннюю печать можно включить, если её поддерживает ваш принтер."
+    ],
+    "mail_title": "Газета из почты — на домашний принтер",
+    "mail_intro": "Продолжение этой идеи я представляю так: утренний номер приходит письмом, а бумажная газета оказывается на домашнем принтере к началу дня.",
+    "mail_steps": [
+      "Рассылка доставляет письмо с PDF-выпуском выбранной редакции и языка.",
+      "Если принтер или подключённый к нему сервис умеет печатать PDF из электронной почты, письмо можно направить на его адрес. Другой вариант — открыть вложение и отправить его на печать вручную.",
+      "Совместимость, время печати и разрешённые отправители настраиваются для конкретного принтера. Печать по почте подходит не каждой модели."
+    ],
+    "mail_status": "Это сценарий дальнейшего развития. Почтовая рассылка и автоматическая печать пока не подключены. Сейчас можно скачать PDF с сайта и распечатать его самостоятельно.",
+    "tribute_title": "Почему «репликанта»",
+    "tribute": "Этот проект — личное посвящение Рою Батти из «Бегущего по лезвию» и вопросу о том, что делает нас людьми. Газета почти полностью создаётся с помощью ИИ: он помогает с материалами, переводами, кодом и оформлением. Ссылки на первоисточники оставлены рядом со статьями, чтобы читатель мог проверить заявления и увидеть ограничения результатов."
+  },
+  "en": {
+    "link": "About the newspaper & how to read it",
+    "title": "Why this newspaper exists — and how to read it",
+    "intro": "I originally just wanted a morning newspaper about Physical AI. I made one for myself, then decided to share it with the world.",
+    "story_title": "A morning newspaper for myself",
+    "story": [
+      "I wanted a morning newspaper about physical artificial intelligence: robots that see, learn, move and act in our world. A complete issue to read at breakfast, at my own pace.",
+      "So I made that newspaper for myself. Then I decided to share it with the world. Perhaps someone else would like to start their day this way, too.",
+      "That original idea explains the dated issues, the different reader editions, the glossary, the source links and the separate version for paper. The newspaper format has been part of the project from the beginning."
+    ],
+    "editions_title": "One subject, four editions",
+    "editions_intro": "An engineer, a business professional and a curious young reader ask different questions. Each edition adjusts its focus and explanations; its selection of stories may also differ.",
+    "editions": {
+      "engineer": "How the technology works, what the experiments measured, its limitations and what reproducing the results would require.",
+      "business": "Possible applications, deployment questions, and the costs and risks that remain uncertain.",
+      "enthusiast": "What researchers have created, how it works and why it is interesting, without requiring an engineering background.",
+      "children": "For readers around 11–12: clear explanations, examples and questions that help make sense of a complex subject."
+    },
+    "how_title": "How to use the website",
+    "how_steps": [
+      "Choose an edition using the buttons at the top, then choose Russian, English or Japanese. Switching one keeps your choice of the other.",
+      "The homepage shows the latest issue and article openings. Use a story’s reading link to open its full text. Changing edition keeps the same article when available; otherwise it opens that issue or the selected edition’s homepage.",
+      "Bracketed numbers beside terms jump to explanations below the article. Back to text returns to the mention. The complete glossary is at the bottom of the issue.",
+      "Use the archive to open an earlier issue. RSS lets you follow new stories in a feed reader. Coming soon means that edition does not yet have a ready issue."
+    ],
+    "pdf_title": "Why offer a PDF at all?",
+    "pdf_text": [
+      "I wanted the newspaper to travel beyond the browser. The PDF preserves its page composition and two columns, making it easy to read separately, keep, share or print.",
+      "Download the PDF for your edition and language beside the issue header or from the archive. Each version has its own file. The number of pages depends on the amount of text.",
+      "For home printing, choose A4 paper and 100% scale (Actual size). You can enable double-sided printing if your printer supports it."
+    ],
+    "mail_title": "From the inbox to the home printer",
+    "mail_intro": "I imagine taking the idea further: a morning issue arrives by email, and a paper newspaper is waiting on the home printer as the day begins.",
+    "mail_steps": [
+      "A mailing list delivers an email with the PDF for your chosen edition and language.",
+      "If the printer or a connected service supports printing PDF email attachments, the email can be sent to its address. Alternatively, open the attachment and print it manually.",
+      "Compatibility, printing time and permitted senders depend on the particular printer’s setup. Email printing is not available on every model."
+    ],
+    "mail_status": "This is a possible next step. Email delivery and automatic printing are not connected yet. For now, you can download a PDF from the website and print it yourself.",
+    "tribute_title": "Why a replicant?",
+    "tribute": "This project is a personal tribute to Roy Batty from Blade Runner and the question of what makes us human. The newspaper is created almost entirely with AI assistance, including material preparation, translation, code and design. Primary sources remain linked beside the articles so readers can check the claims and understand the limits of the results."
+  },
+  "ja": {
+    "link": "この新聞について・読み方",
+    "title": "この新聞ができた理由と読み方",
+    "intro": "最初は、フィジカルAIの朝刊が欲しかっただけでした。自分のために作り、それから世界のみなさんにも読んでもらおうと思いました。",
+    "story_title": "自分のための朝刊から",
+    "story": [
+      "見て、学んで、動き、現実の世界で働くロボット。そんなフィジカルAIのニュースを、朝に落ち着いて読める新聞が欲しいと思っていました。朝食の時間に、自分のペースで読める一つの号です。",
+      "そこで、自分で作ることにしました。そして、同じような朝の過ごし方を求めている人がほかにもいるかもしれないと思い、世界に公開することにしました。",
+      "日付のある各号、読者に合わせた版、用語集、情報源へのリンク、紙のためのPDF。このサイトの形は、その最初の思いから生まれています。"
+    ],
+    "editions_title": "一つのテーマを、四つの視点で",
+    "editions_intro": "エンジニア、仕事で活用を考える人、好奇心のある若い読者では、知りたいことが違います。各版は説明や着目点を変えており、扱うニュースの組み合わせも異なる場合があります。",
+    "editions": {
+      "engineer": "技術のしくみ、実験で測ったこと、限界、結果を再現するために必要な条件を詳しく読みます。",
+      "business": "活用方法、導入時の課題、まだ明らかでない費用やリスクに注目します。",
+      "enthusiast": "専門的な工学知識がなくても、研究者が作ったもの、そのしくみ、おもしろさを理解できるように説明します。",
+      "children": "11〜12歳くらいの読者に向けて、わかりやすい説明、身近な例、考えるための問いを用意しています。"
+    },
+    "how_title": "サイトの使い方",
+    "how_steps": [
+      "上のボタンで読む版を選び、ロシア語・英語・日本語を選択します。言語を変えても版は保たれ、版を変えても言語は保たれます。",
+      "トップページには最新号と記事の冒頭があります。記事のリンクから全文を開けます。別の版に同じ記事があればそこへ移動し、なければ同じ日付の号か、その版のトップページを開きます。",
+      "用語のそばの角括弧付き番号を押すと、記事の下にある説明へ移動します。「本文に戻る」で元の箇所に戻れます。号の最後には用語集全体があります。",
+      "過去の号はアーカイブから読めます。RSSを使うと、ニュースリーダーで新しい記事を追えます。「近日公開」は、まだ読める号がない版を示しています。"
+    ],
+    "pdf_title": "なぜPDFもあるのか",
+    "pdf_text": [
+      "この新聞を、ブラウザーの外でも読めるようにしたかったからです。PDFは紙面の構成と二段組みを保ちます。保存したり、人に送ったり、印刷したりするのに便利です。",
+      "紙面の見出し付近、またはアーカイブのリンクから、版と言語に合ったPDFをダウンロードできます。各版には別のファイルがあり、ページ数は文章の量によって変わります。",
+      "家庭で印刷する場合は、用紙をA4、倍率を100％（実際のサイズ）にします。プリンターが対応していれば、両面印刷も使えます。"
+    ],
+    "mail_title": "メールから家庭のプリンターへ",
+    "mail_intro": "このアイデアの先に思い描いているのは、朝の号がメールで届き、一日の始まりには家庭のプリンターに紙の新聞が用意されている、という風景です。",
+    "mail_steps": [
+      "選んだ版と言語のPDFが、メール配信の添付ファイルとして届きます。",
+      "プリンターや接続サービスがメール添付PDFの印刷に対応していれば、その印刷用アドレスにメールを送れます。添付ファイルを開いて手動で印刷する方法もあります。",
+      "対応機種、印刷する時刻、受け付ける送信者は、個々のプリンターの設定によります。すべての機種でメール印刷ができるわけではありません。"
+    ],
+    "mail_status": "これは今後の展開として考えている使い方です。メール配信と自動印刷は、まだ接続していません。今はサイトからPDFをダウンロードし、自分で印刷できます。",
+    "tribute_title": "なぜレプリカントなのか",
+    "tribute": "このプロジェクトは、『ブレードランナー』のロイ・バッティと、人間を人間たらしめるものは何かという問いへの、個人的なトリビュートです。記事の準備、翻訳、コード、デザインなど、制作のほぼすべてにAIを活用しています。記事のそばには一次情報へのリンクを残し、主張や結果の限界を読者自身で確かめられるようにしています。"
+  }
+}

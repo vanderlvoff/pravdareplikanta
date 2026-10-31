@@ -20,9 +20,13 @@
   </div>
   {% for article in section.articles if article.id == "glossary" %}
   <article class="glossary-inline" id="article-{{ article.id }}">
+    {% if issue_glossary %}
+    {% with glossary_id='issue-glossary-title', glossary_level=2, glossary_title=article.headline, glossary_intro=glossary_labels.issue_intro, glossary_items=issue_glossary, glossary_full_link=false %}{% include 'glossary.html' %}{% endwith %}
+    {% else %}
     <h2>{{ article.headline }}</h2>
     {% if article.dek %}<p>{{ article.dek }}</p>{% endif %}
     <div class="glossary-terms">{% include "article-body.html" %}</div>
+    {% endif %}
   </article>
   {% endfor %}
 </section>

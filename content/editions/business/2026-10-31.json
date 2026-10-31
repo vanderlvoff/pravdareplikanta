@@ -1,0 +1,626 @@
+{
+  "edition": "business",
+  "issue_id": "2026-10-31",
+  "number": 3,
+  "publication_date": "2026-10-31",
+  "revision": 2,
+  "status": "approved",
+  "languages": {
+    "ru": {
+      "title": "Правда репликанта",
+      "weather": null,
+      "issue_title": "Правда репликанта — деловая редакция",
+      "editorial_note": "Внедрение в производстве и измерение полезного труда роботов.",
+      "articles": [
+        {
+          "id": "yaskawa-gr-welding",
+          "slug": "yaskawa-gr-welding",
+          "category": "news",
+          "headline": "Yaskawa и GAZOO Racing внедрили роботизированную сварку с проверкой качества",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Сварка по заранее заданной траектории не гарантирует одинакового качества, если детали установлены с небольшими отклонениями. Японская Yaskawa Electric и подразделение Toyota GAZOO Racing 28 октября сообщили о системе на базе MOTOMAN NEXT, работающей с сентября в мастерской GR KART в Гамагори. Это внедрение в реальное производство рам, а не только лабораторная демонстрация."
+            },
+            {
+              "type": "paragraph",
+              "text": "Робот оценивает положение трубчатой конструкции, выполняет сварку, проверяет качество и при необходимости корректирует работу. Для анализа используются изображения, звук сварки и другие данные. Проект развивает более ранний метод SFA, или Sequence Freezing Arc Welding. Заявленное ранее сокращение изготовления защитного каркаса с двух-трёх недель до трёх дней относится к прежнему процессу, а не является измерением эффекта нового робота."
+            },
+            {
+              "type": "paragraph",
+              "text": "Заказчику нужны конкретные показатели: доля ручных исправлений, стабильность качества, время цикла, затраты на обслуживание и безопасность. Компании говорят о росте производительности и снижении себестоимости, но независимых расчётов пока нет. Ценность новости — в объединении сварки и проверки на действующем участке."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.yaskawa.co.jp/newsrelease/news/1682029",
+              "title": "AI-enabled robotic welding introduced at GR KART workshop",
+              "published_at": "2026-10-28",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "agibot-worken-measure",
+          "slug": "agibot-worken-measure",
+          "category": "news",
+          "headline": "AGIBOT предлагает считать полезную работу, а не число роботов",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Покупатель робота платит не за количество установленных гуманоидов, а за выполненную работу. На мероприятии 29 октября в Шанхае AGIBOT представила концепцию Worken, объединяющую английские слова work и token. Компания предлагает оценивать объём полезных автономных операций вместо одного лишь числа произведённых машин. Пока это предложение производителя, а не отраслевой стандарт."
+            },
+            {
+              "type": "paragraph",
+              "text": "Одновременно показаны аппаратная архитектура AHA3, модель действий GO-3 Preview, система взаимодействия WITA-Omni и промышленный робот G2 Max. Для G2 Max заявлены 21 степень свободы, грузоподъёмность двух рук до 40 килограммов и регулируемая рабочая высота от 0,1 до 2,5 метра. Эти характеристики и оценки моделей не прошли независимую проверку в рамках анонса."
+            },
+            {
+              "type": "paragraph",
+              "text": "Для руководителя внедрения необходимы измерения завершённых операций, времени простоя, вмешательств оператора, безопасности и затрат. Один час переноски коробок нельзя напрямую приравнять к часу точной сборки. Пока AGIBOT не показала проверяемую методику такого сравнения, Worken следует воспринимать как постановку правильного вопроса, а не готовую бухгалтерию производительности."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://agibot.com/article/231/detail/131.html",
+              "title": "AGIBOT Introduces Worken to Measure Productive Robot Work at AGIBOT Innovation Day 2026",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "technology-signal",
+          "slug": "technology-signal",
+          "category": "analysis",
+          "headline": "Yaskawa и GAZOO Racing внедрили роботизированную сварку с проверкой качества",
+          "dek": "28 октября Yaskawa сообщила, что с сентября в мастерской GR KART работает робот MOTOMAN NEXT, который сваривает рамы, проверяет результат и выполняет корректировку.",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Нужны независимые показатели качества, затрат и производительности."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.yaskawa.co.jp/newsrelease/news/1682029",
+              "title": "AI-enabled robotic welding introduced at GR KART workshop",
+              "published_at": "2026-10-28",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://agibot.com/article/231/detail/131.html",
+              "title": "AGIBOT Introduces Worken to Measure Productive Robot Work at AGIBOT Innovation Day 2026",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "glossary",
+          "slug": "glossary",
+          "category": "analysis",
+          "headline": "Словарь выпуска",
+          "dek": "Ключевые понятия этого выпуска.",
+          "body": [
+            {
+              "type": "heading",
+              "text": "Адаптивная сварка"
+            },
+            {
+              "type": "paragraph",
+              "text": "Сварка с учётом наблюдаемого состояния детали."
+            },
+            {
+              "type": "heading",
+              "text": "Контроль качества"
+            },
+            {
+              "type": "paragraph",
+              "text": "Проверка соответствия результата требованиям."
+            },
+            {
+              "type": "heading",
+              "text": "Автономная работа"
+            },
+            {
+              "type": "paragraph",
+              "text": "Действия без постоянных команд оператора."
+            },
+            {
+              "type": "heading",
+              "text": "Грузоподъёмность"
+            },
+            {
+              "type": "paragraph",
+              "text": "Масса, которую механизм может перемещать."
+            },
+            {
+              "type": "heading",
+              "text": "Степень свободы"
+            },
+            {
+              "type": "paragraph",
+              "text": "Независимое направление движения механизма."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.yaskawa.co.jp/newsrelease/news/1682029",
+              "title": "AI-enabled robotic welding introduced at GR KART workshop",
+              "published_at": "2026-10-28",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://agibot.com/article/231/detail/131.html",
+              "title": "AGIBOT Introduces Worken to Measure Productive Robot Work at AGIBOT Innovation Day 2026",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        }
+      ]
+    },
+    "en": {
+      "title": "The Replicant Truth",
+      "weather": {
+        "location": "breukelen",
+        "timezone": "Europe/Amsterdam",
+        "forecast_date": "2026-10-31",
+        "retrieved_at": "2026-10-30T18:37:46.659155Z",
+        "kind": "forecast",
+        "source_name": "Open-Meteo",
+        "source_url": "https://api.open-meteo.com/v1/forecast?latitude=52.1742&longitude=5.0014&timezone=Europe%2FAmsterdam&start_date=2026-10-31&end_date=2026-10-31&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+        "temperature_min_c": 5.8,
+        "temperature_max_c": 11.1,
+        "precipitation_probability_max": 0,
+        "slots": [
+          {
+            "hour": 9,
+            "temperature_c": 6.6,
+            "condition": "fog",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 2.6,
+            "wind_direction_deg": 85
+          },
+          {
+            "hour": 12,
+            "temperature_c": 8.1,
+            "condition": "cloudy",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 3.2,
+            "wind_direction_deg": 115
+          },
+          {
+            "hour": 18,
+            "temperature_c": 8.9,
+            "condition": "cloudy",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 2.6,
+            "wind_direction_deg": 75
+          }
+        ]
+      },
+      "issue_title": "Pravda Replikanta — Business Edition",
+      "editorial_note": "Production deployment and how to measure useful robot work.",
+      "articles": [
+        {
+          "id": "yaskawa-gr-welding",
+          "slug": "yaskawa-gr-welding",
+          "category": "news",
+          "headline": "Yaskawa and GAZOO Racing bring adaptive welding into production",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Following a programmed welding path is not enough when workpieces vary. On October 28, Yaskawa Electric and Toyota's GAZOO Racing reported that an AI-assisted MOTOMAN NEXT system had entered production in September at a GR KART frame workshop in Gamagori, Japan. The announcement describes a working manufacturing process, not merely a laboratory demonstration."
+            },
+            {
+              "type": "paragraph",
+              "text": "The robot assesses pipe-frame conditions, performs welding, inspects the result and makes corrections. The companies describe analysis of images, welding sound and other process data. The work builds on an earlier SFA process, short for Sequence Freezing Arc Welding. A previously reported reduction in roll-cage fabrication from two or three weeks to three days concerns that earlier process; it is not a measured improvement from the new robot installation."
+            },
+            {
+              "type": "paragraph",
+              "text": "For a purchaser, the missing figures are manual rework, defect rates, cycle-time variation, maintenance cost and safety performance. The manufacturers claim productivity and cost benefits without independent financial validation. The important advance is the integration of inspection and correction into a production operation."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.yaskawa.co.jp/newsrelease/news/1682029",
+              "title": "AI-enabled robotic welding introduced at GR KART workshop",
+              "published_at": "2026-10-28",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "agibot-worken-measure",
+          "slug": "agibot-worken-measure",
+          "category": "news",
+          "headline": "AGIBOT wants to measure useful robot work, not just fleet size",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "A robot buyer needs useful output, not an impressive shipment count. At its October 29 event in Shanghai, AGIBOT introduced Worken, a proposed concept combining the words 'work' and 'token'. It aims to measure productive autonomous robot activity. The proposal has not become an independently established industry standard."
+            },
+            {
+              "type": "paragraph",
+              "text": "The company also announced AHA3 hardware, the GO-3 Preview embodied model, WITA-Omni for interaction and the G2 Max industrial robot. For G2 Max it claims 21 degrees of freedom, up to 40 kilograms of combined dual-arm handling capacity and an adjustable working height from 0.1 to 2.5 metres. These are vendor specifications, not independently measured throughput."
+            },
+            {
+              "type": "paragraph",
+              "text": "A deployment decision should consider completed cycles, uptime, operator interventions, quality, safety and total cost. An hour of box transport is not directly equivalent to an hour of precision assembly. Until AGIBOT publishes a transparent method for comparing different tasks, Worken is best treated as a useful question for procurement rather than a finished productivity standard."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://agibot.com/article/231/detail/131.html",
+              "title": "AGIBOT Introduces Worken to Measure Productive Robot Work at AGIBOT Innovation Day 2026",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "technology-signal",
+          "slug": "technology-signal",
+          "category": "analysis",
+          "headline": "Yaskawa and GAZOO Racing bring adaptive welding into production",
+          "dek": "On October 28 Yaskawa reported that a MOTOMAN NEXT system began operating in September at a GR KART frame workshop, combining welding, inspection and correction.",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Independent quality, cost and output metrics remain essential."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.yaskawa.co.jp/newsrelease/news/1682029",
+              "title": "AI-enabled robotic welding introduced at GR KART workshop",
+              "published_at": "2026-10-28",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://agibot.com/article/231/detail/131.html",
+              "title": "AGIBOT Introduces Worken to Measure Productive Robot Work at AGIBOT Innovation Day 2026",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "glossary",
+          "slug": "glossary",
+          "category": "analysis",
+          "headline": "Issue glossary",
+          "dek": "Key terms in this issue.",
+          "body": [
+            {
+              "type": "heading",
+              "text": "Adaptive welding"
+            },
+            {
+              "type": "paragraph",
+              "text": "Welding that responds to workpiece conditions."
+            },
+            {
+              "type": "heading",
+              "text": "Quality inspection"
+            },
+            {
+              "type": "paragraph",
+              "text": "Checking an output against requirements."
+            },
+            {
+              "type": "heading",
+              "text": "Autonomous work"
+            },
+            {
+              "type": "paragraph",
+              "text": "Work without continuous operator commands."
+            },
+            {
+              "type": "heading",
+              "text": "Payload"
+            },
+            {
+              "type": "paragraph",
+              "text": "Mass a mechanism can carry."
+            },
+            {
+              "type": "heading",
+              "text": "Degree of freedom"
+            },
+            {
+              "type": "paragraph",
+              "text": "An independent coordinate of motion."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.yaskawa.co.jp/newsrelease/news/1682029",
+              "title": "AI-enabled robotic welding introduced at GR KART workshop",
+              "published_at": "2026-10-28",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://agibot.com/article/231/detail/131.html",
+              "title": "AGIBOT Introduces Worken to Measure Productive Robot Work at AGIBOT Innovation Day 2026",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        }
+      ]
+    },
+    "ja": {
+      "title": "レプリカントの真実",
+      "weather": {
+        "location": "smolensk",
+        "timezone": "Europe/Moscow",
+        "forecast_date": "2026-10-31",
+        "retrieved_at": "2026-10-30T18:37:47.556473Z",
+        "kind": "forecast",
+        "source_name": "Open-Meteo",
+        "source_url": "https://api.open-meteo.com/v1/forecast?latitude=54.7826&longitude=32.0453&timezone=Europe%2FMoscow&start_date=2026-10-31&end_date=2026-10-31&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+        "temperature_min_c": 4.7,
+        "temperature_max_c": 9.2,
+        "precipitation_probability_max": 18,
+        "slots": [
+          {
+            "hour": 9,
+            "temperature_c": 4.8,
+            "condition": "cloudy",
+            "precipitation_probability": 13,
+            "wind_speed_ms": 1.3,
+            "wind_direction_deg": 32
+          },
+          {
+            "hour": 12,
+            "temperature_c": 7.4,
+            "condition": "cloudy",
+            "precipitation_probability": 3,
+            "wind_speed_ms": 2.05,
+            "wind_direction_deg": 43
+          },
+          {
+            "hour": 18,
+            "temperature_c": 8.0,
+            "condition": "cloudy",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 1.56,
+            "wind_direction_deg": 40
+          }
+        ]
+      },
+      "issue_title": "レプリカント・プラウダ — ビジネス版",
+      "editorial_note": "工場での導入と、ロボットの成果をどう測るか。",
+      "articles": [
+        {
+          "id": "yaskawa-gr-welding",
+          "slug": "yaskawa-gr-welding",
+          "category": "news",
+          "headline": "溶接後の検査と補正も行うロボットを実際の工場へ",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "部品の位置が少し違うと、同じ軌道で溶接しても品質は変わる。安川電機とトヨタのGAZOO Racingは10月28日、愛知県蒲郡市のGR KART工房で9月からMOTOMAN NEXTを使ったAI溶接を行っていると発表した。研究室のデモではなく、実際のフレーム製造工程への導入だ。"
+            },
+            {
+              "type": "paragraph",
+              "text": "ロボットはパイプフレームの状態を調べ、溶接し、仕上がりを確認して必要な補正を行う。画像に加えて溶接音などのデータを分析する。以前のSFA工法（Sequence Freezing Arc Welding）では、競技車両のロールケージ製作を2～3週間から3日に短縮したとされるが、その数字は今回の新設備の改善率ではない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "導入企業が知りたいのは、不良率、手直し時間、保守費用、安全性、品種変更への対応だ。メーカーは生産性と品質の改善を主張するものの、独立した費用対効果の数値はない。検査と補正を含めた実運用という点が重要である。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.yaskawa.co.jp/newsrelease/news/1682029",
+              "title": "AI-enabled robotic welding introduced at GR KART workshop",
+              "published_at": "2026-10-28",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "agibot-worken-measure",
+          "slug": "agibot-worken-measure",
+          "category": "news",
+          "headline": "ロボットの台数ではなく役立つ仕事を測れるか",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "ロボットを何台買ったかだけでは、現場でどれだけ役立ったかは分からない。AGIBOTは10月29日の上海イベントで、workとtokenを組み合わせたWorkenという考え方を提案した。人の助けをあまり必要とせずに完了した有用な仕事を測ろうという構想で、確立した業界標準ではない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "同社はAHA3というハードウェア構成、GO-3 Previewという動作モデル、WITA-Omniという対話モデル、産業用G2 Maxも発表した。G2 Maxは21自由度、両腕合計最大40キログラムの運搬能力、0.1～2.5メートルの作業高さを公称する。これらはメーカーの仕様であり、独立した生産性試験ではない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "導入企業には、完成した仕事の数、停止時間、人の介入、安全性、費用の測定が必要だ。荷物を運ぶ一時間と精密な組立の一時間を単純に同じ単位では比べられない。Workenの計算方法が公開・検証されるまでは、成果を重視するための問題提起として捉えるべきだ。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://agibot.com/article/231/detail/131.html",
+              "title": "AGIBOT Introduces Worken to Measure Productive Robot Work at AGIBOT Innovation Day 2026",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "technology-signal",
+          "slug": "technology-signal",
+          "category": "analysis",
+          "headline": "溶接後の検査と補正も行うロボットを実際の工場へ",
+          "dek": "安川電機は10月28日、GR KARTのフレーム製造でMOTOMAN NEXTを9月から使用していると発表。溶接、品質確認、補正を行う。",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "品質、費用、生産性の独立した測定が必要だ。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.yaskawa.co.jp/newsrelease/news/1682029",
+              "title": "AI-enabled robotic welding introduced at GR KART workshop",
+              "published_at": "2026-10-28",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://agibot.com/article/231/detail/131.html",
+              "title": "AGIBOT Introduces Worken to Measure Productive Robot Work at AGIBOT Innovation Day 2026",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "glossary",
+          "slug": "glossary",
+          "category": "analysis",
+          "headline": "本号の用語集",
+          "dek": "この号のキーワードを解説します。",
+          "body": [
+            {
+              "type": "heading",
+              "text": "適応的な溶接"
+            },
+            {
+              "type": "paragraph",
+              "text": "部品の状態に合わせて条件を変える溶接。"
+            },
+            {
+              "type": "heading",
+              "text": "品質検査"
+            },
+            {
+              "type": "paragraph",
+              "text": "完成品が必要な条件を満たすか調べること。"
+            },
+            {
+              "type": "heading",
+              "text": "自律作業"
+            },
+            {
+              "type": "paragraph",
+              "text": "人が常に指示しなくても進める作業。"
+            },
+            {
+              "type": "heading",
+              "text": "可搬重量"
+            },
+            {
+              "type": "paragraph",
+              "text": "機械が運べる重さ。"
+            },
+            {
+              "type": "heading",
+              "text": "自由度"
+            },
+            {
+              "type": "paragraph",
+              "text": "機械が独立して動ける方向や関節の数え方。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.yaskawa.co.jp/newsrelease/news/1682029",
+              "title": "AI-enabled robotic welding introduced at GR KART workshop",
+              "published_at": "2026-10-28",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://agibot.com/article/231/detail/131.html",
+              "title": "AGIBOT Introduces Worken to Measure Productive Robot Work at AGIBOT Innovation Day 2026",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        }
+      ]
+    }
+  },
+  "weather": {
+    "location": "ichikawa",
+    "timezone": "Asia/Tokyo",
+    "forecast_date": "2026-10-31",
+    "retrieved_at": "2026-10-30T18:37:44.957594Z",
+    "kind": "forecast",
+    "source_name": "Open-Meteo",
+    "source_url": "https://api.open-meteo.com/v1/forecast?latitude=35.72&longitude=139.93&timezone=Asia%2FTokyo&start_date=2026-10-31&end_date=2026-10-31&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+    "temperature_min_c": 14.1,
+    "temperature_max_c": 22.9,
+    "precipitation_probability_max": 34,
+    "slots": [
+      {
+        "hour": 9,
+        "temperature_c": 16.8,
+        "condition": "clear",
+        "precipitation_probability": 0,
+        "wind_speed_ms": 2.64,
+        "wind_direction_deg": 335
+      },
+      {
+        "hour": 12,
+        "temperature_c": 22.1,
+        "condition": "clear",
+        "precipitation_probability": 0,
+        "wind_speed_ms": 3.22,
+        "wind_direction_deg": 330
+      },
+      {
+        "hour": 18,
+        "temperature_c": 19.6,
+        "condition": "cloudy",
+        "precipitation_probability": 0,
+        "wind_speed_ms": 1.81,
+        "wind_direction_deg": 354
+      }
+    ]
+  }
+}

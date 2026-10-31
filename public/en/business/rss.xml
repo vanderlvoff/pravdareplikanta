@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>The Replicant Truth</title>
+    <link>https://repravda.com/en/business/</link>
+    <description>News and analysis from the world of physical artificial intelligence.</description>
+    <language>en</language>
+    <atom:link href="https://repravda.com/en/business/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Robot tool swapping gains tactile feedback</title>
+      <link>https://repravda.com/en/business/issues/2026-11-01/articles/swapbot-tools/</link>
+      <guid isPermaLink="false">replicantpravda:business:2026-11-01:en:swapbot-tools</guid>
+      <description>Different kitchen actions require different tools: a knife cuts, a brush spreads liquid and a spatula turns food. Researchers led by Yunchu Zhang introduced SwapBot, a system that lets a robot arm exchange tools autonomously. The October 29, 2026 preprint describes a research prototype rather than a household appliance ready to cook without supervision.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>GXO plans to expand Digit humanoid operations to two more warehouses</title>
+      <link>https://repravda.com/en/business/issues/2026-11-01/articles/gxo-digit-multisite/</link>
+      <guid isPermaLink="false">replicantpravda:business:2026-11-01:en:gxo-digit-multisite</guid>
+      <description>The engineering question is how execution works and which constraints were actually tested. The expansion is expected to start with Digit 4 and later migrate to Digit 5, supported by Agility Arc fleet software. The additional sites are planned rather than operating; unit economics and independently audited performance are unavailable.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>KDDI and ELYZA form a Japanese vehicle for deploying physical AI</title>
+      <link>https://repravda.com/en/business/issues/2026-11-01/articles/elyza-robotics-japan-scale/</link>
+      <guid isPermaLink="false">replicantpravda:business:2026-11-01:en:elyza-robotics-japan-scale</guid>
+      <description>The engineering question is how execution works and which constraints were actually tested. The roadmap combines vision-language-action models, site data, digital twins, distributed inference and remote supervision. No independently verified deployments, autonomy metrics or unit economics were provided.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>Soft grippers can be shaped to forgive positioning errors</title>
+      <link>https://repravda.com/en/business/issues/2026-11-01/articles/simto-robust-grippers/</link>
+      <guid isPermaLink="false">replicantpravda:business:2026-11-01:en:simto-robust-grippers</guid>
+      <description>A robot may recognize an object correctly yet place its gripper slightly off target. Rigid fingers can lose contact, while a soft gripper may deform around the object. Researchers led by Kurt Enkera introduced SimTO-Robust, a computer-aided design method intended to make grippers tolerant of such errors through their physical shape.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>Five-finger robot demonstrates order packing at a Tokyo event</title>
+      <link>https://repravda.com/en/business/issues/2026-11-01/articles/rlwrld-packing/</link>
+      <guid isPermaLink="false">replicantpravda:business:2026-11-01:en:rlwrld-packing</guid>
+      <description>Packing an order is not simply a matter of lifting a box. A robot must distinguish small products, position them without damage and handle changes in shape or material. On October 30, 2026, RLWRLD reported a public demonstration of this workflow at KDDI SUMMIT in Tokyo. The event itself took place on October 27 and 28, so the announcement date should not be confused with the demonstration dates. The company described RLDX-1 as its robotics foundation model for controlling physical actions.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>From isolated tricks to verifiable work</title>
+      <link>https://repravda.com/en/business/issues/2026-11-01/articles/technology-signal/</link>
+      <guid isPermaLink="false">replicantpravda:business:2026-11-01:en:technology-signal</guid>
+      <description>Research and demonstrations expand the range of robot actions, but the strength of the result depends on test conditions.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>Analysis</category>
+    </item>
+    <item>
+      <title>Yaskawa and GAZOO Racing bring adaptive welding into production</title>
+      <link>https://repravda.com/en/business/issues/2026-10-31/articles/yaskawa-gr-welding/</link>
+      <guid isPermaLink="false">replicantpravda:business:2026-10-31:en:yaskawa-gr-welding</guid>
+      <description>Following a programmed welding path is not enough when workpieces vary. On October 28, Yaskawa Electric and Toyota&amp;#x27;s GAZOO Racing reported that an AI-assisted MOTOMAN NEXT system had entered production in September at a GR KART frame workshop in Gamagori, Japan. The announcement describes a working manufacturing process, not merely a laboratory demonstration.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>AGIBOT wants to measure useful robot work, not just fleet size</title>
+      <link>https://repravda.com/en/business/issues/2026-10-31/articles/agibot-worken-measure/</link>
+      <guid isPermaLink="false">replicantpravda:business:2026-10-31:en:agibot-worken-measure</guid>
+      <description>A robot buyer needs useful output, not an impressive shipment count. At its October 29 event in Shanghai, AGIBOT introduced Worken, a proposed concept combining the words &amp;#x27;work&amp;#x27; and &amp;#x27;token&amp;#x27;. It aims to measure productive autonomous robot activity. The proposal has not become an independently established industry standard.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>News</category>
+    </item>
+    <item>
+      <title>Yaskawa and GAZOO Racing bring adaptive welding into production</title>
+      <link>https://repravda.com/en/business/issues/2026-10-31/articles/technology-signal/</link>
+      <guid isPermaLink="false">replicantpravda:business:2026-10-31:en:technology-signal</guid>
+      <description>On October 28 Yaskawa reported that a MOTOMAN NEXT system began operating in September at a GR KART frame workshop, combining welding, inspection and correction.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>Analysis</category>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,22 @@
+{
+  "ru": {
+    "Модель окружающего мира": ["модель мира", "предсказывает будущие кадры"],
+    "Трёхмерная траектория": ["движение выбранных точек в трёхмерном пространстве", "перемещение выбранных точек в трёх измерениях", "траектория в 3D"],
+    "Контроль качества": ["проверка качества"],
+    "Автономная работа": ["автономные операции"]
+  },
+  "en": {
+    "World model": ["predicts future video frames"],
+    "3D trajectory": ["movement of selected points in three-dimensional space", "trajectories of selected points in three-dimensional space"],
+    "Average error": ["average displacement error"],
+    "Quality inspection": ["quality control", "inspects the result"],
+    "Autonomous work": ["autonomous robot activity"]
+  },
+  "ja": {
+    "世界モデル": ["未来の映像"],
+    "3次元の軌道": ["3次元の動き", "3次元空間でどう動く"],
+    "平均誤差": ["平均変位誤差"],
+    "品質検査": ["品質の検査", "仕上がりを確認"],
+    "自律作業": ["自律的な作業"]
+  }
+}

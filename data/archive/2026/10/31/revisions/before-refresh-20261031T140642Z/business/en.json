@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.4",
+  "publication": "pravda_replikanta",
+  "issue_type": "daily",
+  "issue_date": "2026-10-31",
+  "issue_id": "daily-2026-10-31",
+  "edition": "business",
+  "language": "en",
+  "generated_at": "2026-10-31T13:48:50.995Z",
+  "title": "Pravda Replikanta — Business Edition",
+  "lead": "Two Japanese initiatives raise deployment questions: improving VLA data and making patrol robots reliable in real buildings.",
+  "news": [
+    {
+      "id": "fastlabel-data-competition",
+      "title": "FastLabel puts VLA data quality to a physical test",
+      "summary": "Japan's FastLabel announced a GENIAC-PRIZE student competition to improve robot datasets, retrain VLA models and evaluate them on a real SO-ARM101 arm.",
+      "details": "The proposed cycle of curation, training and hardware testing is planned for January–February 2027.",
+      "technical_novelty": "It focuses on repeatable data-quality improvements followed by physical evaluation, rather than model ranking alone.",
+      "engineering_impact": "Offers customers a process model for managing and auditing robotics training data.",
+      "limitations": "The contest has not taken place; performance gains and process costs are unknown.",
+      "evidence_status": "Company announcement of an accepted competition proposal, not a model performance result.",
+      "published_at": "2026-10-30",
+      "organization": "FastLabel",
+      "source_ids": [
+        "fastlabel-source"
+      ],
+      "time_window": "72h",
+      "body": "Choosing a larger model does not automatically solve a robot deployment's data problem. On October 30, FastLabel, a Japanese company specializing in artificial-intelligence datasets, announced that its proposal had been accepted into the GENIAC-PRIZE 2026 initiative involving Japan's METI and NEDO. The proposal targets Physical AI, systems that sense and act in the world, through VLA models. Vision-language-action (VLA) models connect camera input and language instructions to robot commands.\n\nStudent participants are expected to curate robot-operation recordings, correct labels and add examples before training models and testing them on a physical SO-ARM101 arm at FastLabel's office. The loop is intended to repeat. The planned contest runs for roughly two and a half weeks in January–February 2027. Submissions include code, the trained model, the dataset and a report; evaluation combines hardware trials with the written analysis.\n\nFor an integrator, the interesting issue is the operating model: data collection, review, traceability and repeated physical tests may become substantial project costs alongside compute. But acceptance into a contest is not evidence that any VLA has improved. The release does not establish accuracy gains, return on investment or deployment readiness. Those questions require the future evaluation results and a clear account of the cost of improving the data.",
+      "image": null
+    },
+    {
+      "id": "kit-go2-patrol",
+      "title": "Japan's Go2 patrol prototype moves toward proof-of-concept testing",
+      "summary": "Kanazawa Institute of Technology and partners have developed a Unitree Go2 patrol prototype; a continuous 24-hour test is still planned, not completed.",
+      "details": "The prototype maps and patrols an area of 100 by 100 metres, using an L1 lidar and automatic charging.",
+      "technical_novelty": "It combines autonomous routes, ranging sensors and charging infrastructure for building patrols.",
+      "engineering_impact": "Customers should assess uptime, incident procedures, operator interventions and operating costs.",
+      "limitations": "The proposed 24-hour operation is not yet backed by completed continuous-run results.",
+      "evidence_status": "Official university announcement about a prototype and planned PoC, not independent field statistics.",
+      "published_at": "2026-10-28",
+      "organization": "Kanazawa Institute of Technology",
+      "source_ids": [
+        "kit-go2-source"
+      ],
+      "time_window": "7d",
+      "body": "A patrol robot's commercial value depends less on a polished demonstration than on whether it can reliably finish its rounds overnight. On October 28, Kanazawa Institute of Technology announced joint work with Kanazawa Kiko and AI Robot Systems on a patrol system based on the Unitree Go2 quadruped. The university says a prototype is complete and the project has entered a proof-of-concept (PoC) stage: testing whether an idea works under realistic conditions.\n\nThe team reports autonomous map-based patrol over a 100-by-100-metre area. An L1 lidar, a laser ranging sensor that measures distances to surrounding objects, provides a stated field of view of 360 degrees horizontally and 90 degrees vertically. Automatic charging is part of the proposed long-duration operation. A continuous 24-hour campus test is planned, followed by trials in factories and office buildings.\n\nPotential duties include routine rounds, equipment checks and remote observation of hazardous areas. A buyer still needs evidence about people crossing the route, locked doors, network failures, charging interruptions and escalation to human staff. Useful procurement metrics include completed patrols, uptime, operator interventions and maintenance costs. The university announcement contains no results from the planned 24-hour run and does not demonstrate a labor-saving return on investment.",
+      "image": null
+    }
+  ],
+  "technology_signal": {
+    "title": "Hardware tests matter more than promises",
+    "summary": "FastLabel plans physical evaluation of data improvements; the Go2 patrol project is preparing continuous trials.",
+    "implications": "Deployment decisions need measured reliability, ownership costs and clear failure procedures."
+  },
+  "glossary": [
+    {
+      "term": "VLA",
+      "definition": "A model connecting visual observations and instructions to robot actions."
+    },
+    {
+      "term": "data labeling",
+      "definition": "Adding annotations that help a model learn from examples."
+    },
+    {
+      "term": "PoC",
+      "definition": "A proof-of-concept test of whether an idea works in realistic conditions."
+    },
+    {
+      "term": "lidar",
+      "definition": "A laser-based sensor measuring distances to surrounding objects."
+    },
+    {
+      "term": "uptime",
+      "definition": "The proportion of time a system is available for use."
+    }
+  ],
+  "sources": [
+    {
+      "id": "fastlabel-source",
+      "title": "FastLabel、GENIAC-PRIZE 2026 テーマ２に採択：データセントリックVLAモデル開発コンペ",
+      "url": "https://prtimes.jp/main/html/rd/p/000000215.000065427.html",
+      "domain": "prtimes.jp",
+      "organization": "FastLabel",
+      "published_at": "2026-10-30"
+    },
+    {
+      "id": "kit-go2-source",
+      "title": "四足歩行ロボット「Unitree Go2」を活用した巡回ロボットの社会実装を目指して",
+      "url": "https://www.kanazawa-it.ac.jp/kitnews/2026/1028_unitree-go2.html",
+      "domain": "www.kanazawa-it.ac.jp",
+      "organization": "Kanazawa Institute of Technology",
+      "published_at": "2026-10-28"
+    }
+  ]
+}

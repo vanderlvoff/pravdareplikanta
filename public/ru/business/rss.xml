@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Правда репликанта</title>
+    <link>https://repravda.com/ru/business/</link>
+    <description>Новости и анализ из мира физического искусственного интеллекта.</description>
+    <language>ru</language>
+    <atom:link href="https://repravda.com/ru/business/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Робот меняет инструменты и чувствует прикосновения</title>
+      <link>https://repravda.com/ru/business/issues/2026-11-01/articles/swapbot-tools/</link>
+      <guid isPermaLink="false">replicantpravda:business:2026-11-01:ru:swapbot-tools</guid>
+      <description>Для разных действий нужны разные инструменты: нож разрезает, кисточка наносит жидкость, лопатка переворачивает продукт. Исследователи во главе с Юньчу Чжан предложили SwapBot — систему, в которой роботизированная рука самостоятельно меняет инструменты. Работа опубликована 29 октября 2026 года как препринт, поэтому речь идёт об исследовательском прототипе, а не о готовом домашнем помощнике.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>GXO расширяет коммерческую эксплуатацию гуманоидов Digit ещё на два склада</title>
+      <link>https://repravda.com/ru/business/issues/2026-11-01/articles/gxo-digit-multisite/</link>
+      <guid isPermaLink="false">replicantpravda:business:2026-11-01:ru:gxo-digit-multisite</guid>
+      <description>В складской робототехнике важнее повторяемость результата, чем эффектная демонстрация. 26 октября 2026 года GXO Logistics и Agility Robotics объявили, что гуманоиды Digit будут работать ещё на двух американских площадках GXO — в Стейтсвилле, Северная Каролина, и Лебаноне, Теннесси. Начало развёртывания запланировано на начало 2027 года. Речь идёт о расширении существующего коммерческого сотрудничества, а не о завершённом внедрении на новых складах. На первом объекте в Джорджии роботы уже выполняют повторяющуюся задачу перемещения контейнеров к конвейеру.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>KDDI и ELYZA создают в Японии отдельную структуру для внедрения Physical AI</title>
+      <link>https://repravda.com/ru/business/issues/2026-11-01/articles/elyza-robotics-japan-scale/</link>
+      <guid isPermaLink="false">replicantpravda:business:2026-11-01:ru:elyza-robotics-japan-scale</guid>
+      <description>Японская телекоммуникационная группа KDDI вместе с разработчиком искусственного интеллекта ELYZA выделяет физический ИИ в отдельный бизнес. В сообщении от 27 октября 2026 года компании рассказали, что ELYZA Robotics начала работу 1 октября. Задача структуры — соединить исследования моделей, управляющих действиями роботов, с их внедрением в реальные процессы. Группа обозначила ориентиры до 2030 финансового года: 30 млрд иен на исследования и разработки, команда более 300 специалистов и более тысячи роботов на рабочих площадках. Эти цифры описывают намерения, а не уже поставленные машины.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>Мягкие захваты проектируют с запасом на ошибки наведения</title>
+      <link>https://repravda.com/ru/business/issues/2026-11-01/articles/simto-robust-grippers/</link>
+      <guid isPermaLink="false">replicantpravda:business:2026-11-01:ru:simto-robust-grippers</guid>
+      <description>Робот может правильно распознать предмет, но подвести захват немного не туда. Жёсткие пальцы иногда теряют контакт, а мягкий материал способен подстроиться под форму вещи. Исследователи во главе с Куртом Энкерой представили SimTO-Robust — метод компьютерного проектирования мягких захватов, учитывающий такие ошибки заранее.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>На выставке в Токио робот с пятью пальцами показал упаковку заказов</title>
+      <link>https://repravda.com/ru/business/issues/2026-11-01/articles/rlwrld-packing/</link>
+      <guid isPermaLink="false">replicantpravda:business:2026-11-01:ru:rlwrld-packing</guid>
+      <description>В логистике робот должен не просто взять коробку, но и различить мелкие товары, положить их в нужную упаковку и не повредить содержимое. Компания RLWRLD сообщила 30 октября 2026 года о показе такой последовательности на мероприятии KDDI SUMMIT в Токио. Само мероприятие проходило 27 и 28 октября: дату пресс-релиза нельзя принимать за дату демонстрации. Разработчик представил систему RLDX-1 как базовую модель для управления действиями робота.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>От отдельного трюка к проверяемой работе</title>
+      <link>https://repravda.com/ru/business/issues/2026-11-01/articles/technology-signal/</link>
+      <guid isPermaLink="false">replicantpravda:business:2026-11-01:ru:technology-signal</guid>
+      <description>Новые исследования и демонстрации показывают способы расширить набор действий робота, но качество результата зависит от условий испытания.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>Анализ</category>
+    </item>
+    <item>
+      <title>Yaskawa и GAZOO Racing внедрили роботизированную сварку с проверкой качества</title>
+      <link>https://repravda.com/ru/business/issues/2026-10-31/articles/yaskawa-gr-welding/</link>
+      <guid isPermaLink="false">replicantpravda:business:2026-10-31:ru:yaskawa-gr-welding</guid>
+      <description>Сварка по заранее заданной траектории не гарантирует одинакового качества, если детали установлены с небольшими отклонениями. Японская Yaskawa Electric и подразделение Toyota GAZOO Racing 28 октября сообщили о системе на базе MOTOMAN NEXT, работающей с сентября в мастерской GR KART в Гамагори. Это внедрение в реальное производство рам, а не только лабораторная демонстрация.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>AGIBOT предлагает считать полезную работу, а не число роботов</title>
+      <link>https://repravda.com/ru/business/issues/2026-10-31/articles/agibot-worken-measure/</link>
+      <guid isPermaLink="false">replicantpravda:business:2026-10-31:ru:agibot-worken-measure</guid>
+      <description>Покупатель робота платит не за количество установленных гуманоидов, а за выполненную работу. На мероприятии 29 октября в Шанхае AGIBOT представила концепцию Worken, объединяющую английские слова work и token. Компания предлагает оценивать объём полезных автономных операций вместо одного лишь числа произведённых машин. Пока это предложение производителя, а не отраслевой стандарт.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>Yaskawa и GAZOO Racing внедрили роботизированную сварку с проверкой качества</title>
+      <link>https://repravda.com/ru/business/issues/2026-10-31/articles/technology-signal/</link>
+      <guid isPermaLink="false">replicantpravda:business:2026-10-31:ru:technology-signal</guid>
+      <description>28 октября Yaskawa сообщила, что с сентября в мастерской GR KART работает робот MOTOMAN NEXT, который сваривает рамы, проверяет результат и выполняет корректировку.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>Анализ</category>
+    </item>
+  </channel>
+</rss>

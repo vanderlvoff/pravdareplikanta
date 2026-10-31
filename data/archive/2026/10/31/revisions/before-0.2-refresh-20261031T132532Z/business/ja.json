@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.4",
+  "publication": "pravda_replikanta",
+  "issue_type": "daily",
+  "issue_date": "2026-10-31",
+  "issue_id": "daily-2026-10-31",
+  "edition": "business",
+  "language": "ja",
+  "generated_at": "2026-10-31T21:41:24+09:00",
+  "title": "プラウダ・レプリカンタ — ビジネス版",
+  "lead": "ロボットの権限管理と国際的な部品調達のリスクを考える。",
+  "news": [
+    {
+      "id": "docomo-gateway",
+      "title": "NTTドコモ、AIとロボットの間で権限を確認",
+      "summary": "指示の許可を調べ、履歴を残し、近くの人に配慮する基盤を開発。",
+      "details": "A2A Gatewayで利用者の属性と利用場面の規則を確認してから指示を送る。",
+      "technical_novelty": "権限制御、動作履歴、周囲に合わせた行動を統合する。",
+      "engineering_impact": "導入時には権限や監査記録の責任者が必要だ。",
+      "limitations": "大規模導入の独立した結果や安全性の数値は示されていない。",
+      "evidence_status": "開発企業の公式発表。独立検証は未確認。",
+      "published_at": "2026-10-27",
+      "organization": "NTT DOCOMO",
+      "source_ids": [
+        "docomo-source"
+      ],
+      "time_window": "7d",
+      "body": "ロボットが指示を理解しても、誰の命令でも実行してよいわけではない。NTTドコモは個人向けAIとロボットをA2A Gatewayでつなぎ、権限を調べる基盤を開発した。\n\n動作を記録し、近くの人に合わせて動きを変える仕組みも説明された。企業には役立つ考え方だが、大規模な運用で安全だと証明されたわけではない。",
+      "image": null
+    },
+    {
+      "id": "us-robotics-imports",
+      "title": "米国、ロボット輸入の交渉を指示。新関税はまだない",
+      "summary": "10月28日の布告は輸入について交渉を求めたが、新しい関税を直ちに課していない。",
+      "details": "通商拡大法232条に基づき、180日以内の交渉報告を求める。",
+      "technical_novelty": "将来の措置は調達に影響し得るが、具体的な税率は未定だ。",
+      "engineering_impact": "部品の原産地と契約上の負担を確認したい。",
+      "limitations": "新税率は設定されず、将来の関税導入も決定していない。",
+      "evidence_status": "ホワイトハウスの一次資料。将来の影響は不明。",
+      "published_at": "2026-10-28",
+      "organization": "The White House",
+      "source_ids": [
+        "us-imports-source"
+      ],
+      "time_window": "7d",
+      "body": "10月28日、米国政府はロボットや産業機械の輸入を安全保障の問題として扱う布告を出した。企業にとって重要だが、すぐに新しい費用が発生するという意味ではない。\n\n政府は交渉を進め、180日以内に報告する。関税は将来の選択肢であり、今すぐ導入されたものではない。企業は決まっていない税率を使わず、調達先を確認する必要がある。",
+      "image": null
+    }
+  ],
+  "technology_signal": {
+    "title": "統合と規制もロボット導入の条件",
+    "summary": "ロボットの能力だけでなく、権限と安定した調達が重要になる。",
+    "implications": "購入前に監査方法、責任、費用のシナリオを確認したい。"
+  },
+  "glossary": [
+    {
+      "term": "A2A Gateway",
+      "definition": "AI同士の連携を中継する仕組み。"
+    },
+    {
+      "term": "ロボット",
+      "definition": "現実の世界で動く機械。"
+    },
+    {
+      "term": "権限",
+      "definition": "誰が何をしてよいかという許可。"
+    },
+    {
+      "term": "監査",
+      "definition": "行動の記録を調べること。"
+    },
+    {
+      "term": "関税",
+      "definition": "海外から入る品物にかかる税金。"
+    }
+  ],
+  "sources": [
+    {
+      "id": "docomo-source",
+      "title": "AIとロボットが人と安全・快適に共存する世界へ、Physical AI連携基盤を開発",
+      "url": "https://www.docomo.ne.jp/info/news_release/2026/10/27_02.html",
+      "domain": "www.docomo.ne.jp",
+      "organization": "NTT DOCOMO",
+      "published_at": "2026-10-27"
+    },
+    {
+      "id": "us-imports-source",
+      "title": "Adjusting Imports of Robotics, Industrial Machinery, and Their Parts and Components into the United States",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/10/adjusting-imports-of-robotics-industrial-machinery-and-their-parts-and-components-into-the-united-states/",
+      "domain": "www.whitehouse.gov",
+      "organization": "The White House",
+      "published_at": "2026-10-28"
+    }
+  ]
+}

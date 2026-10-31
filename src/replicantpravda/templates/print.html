@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="/style.css?v={{ style_version }}">
   <link rel="stylesheet" href="/print.css">
 </head>
-<body class="print-edition">
+<body class="print-edition" data-reader-edition="{{ reader_code }}">
 <section class="sheet" data-page="1">{% include "header.html" %}
   {% if weather %}<p class="print-weather-source">{{ weather_labels.source }}: <a href="{{ weather.source_url }}">{{ weather.source_name }}</a> · {{ weather_labels.retrieved }}: {{ weather_retrieved }}{% if weather.kind == 'demo' %} · {{ weather_labels.demo }}{% endif %}</p>{% endif %}
   {% if edition.issue_title %}<div class="print-issue-intro"><h2>{{ edition.issue_title }}</h2><p>{{ edition.editorial_note }}</p></div>{% endif %}
@@ -19,11 +19,19 @@
       <section class="editorial-section"><h2 class="section-heading">{{ section.title }}</h2>
     {% for article in page_articles %}
       <article data-article="{{ article.id }}">
+        {% if article.id == 'glossary' and issue_glossary %}
+        {% for entry in issue_glossary %}
+        {% if loop.first %}<div class="print-glossary-start"><h2>{{ article.headline }}</h2>{% if article.dek %}<p class="dek">{{ article.dek }}</p>{% endif %}{% endif %}
+        <div class="print-glossary-card" data-glossary-index="{{ loop.index }}"><h3><span class="print-glossary-index">{{ '%02d'|format(loop.index) }}</span>{{ entry.term }}</h3><p>{{ entry.definition }}</p></div>
+        {% if loop.first %}</div>{% endif %}
+        {% endfor %}
+        {% else %}
         {% if article.category in labels.article_kinds %}<p class="article-kind">{{ labels.article_kinds[article.category] }}</p>{% endif %}
         <h2>{{ article.headline }}</h2>
         {% if article.dek %}<p class="dek">{{ article.dek }}</p>{% endif %}
         {% include "illustration.html" %}
         {% include "article-body.html" %}
+        {% endif %}
         <footer class="article-sources"><h3>{{ labels.sources }}</h3>{% for source in article.sources %}<p><a href="{{ source.url }}">{{ source.title }}</a> · {{ source.published_at }}</p>{% endfor %}</footer>
       </article>
     {% endfor %}

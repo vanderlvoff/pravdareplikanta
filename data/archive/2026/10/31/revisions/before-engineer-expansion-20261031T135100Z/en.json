@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.4",
+  "publication": "pravda_replikanta",
+  "issue_type": "daily",
+  "issue_date": "2026-10-31",
+  "issue_id": "daily-2026-10-31",
+  "edition": "engineer",
+  "language": "en",
+  "generated_at": "2026-10-31T22:25:32+09:00",
+  "title": "Pravda Replikanta — Engineering Edition",
+  "lead": "Onboard drone VLA and a shared robot-hand testbed: architecture, metrics and reproducibility.",
+  "news": [
+    {
+      "id": "openflyv2-onboard",
+      "title": "OpenFlyV2 puts a vision-language-action flight loop onboard",
+      "summary": "Researchers combined vision, language instructions and flight control on a Jetson Orin NX, reporting 48% navigation success across four physical environments.",
+      "details": "The model generates 12-waypoint action chunks at 10 Hz entirely onboard.",
+      "technical_novelty": "A shared vision-language representation feeds a compact action expert with motion-aware memory.",
+      "engineering_impact": "Offers a concrete architecture for testing VLA without offboard action computation.",
+      "limitations": "48% success is insufficient for dependable operation; code was promised, not yet released.",
+      "evidence_status": "Author-reported preprint with physical flight tests, without independent replication.",
+      "published_at": "2026-10-29",
+      "organization": "OpenFlyV2 research authors",
+      "source_ids": [
+        "openflyv2-source"
+      ],
+      "time_window": "72h",
+      "body": "A vision-language-action (VLA) model turns camera observations and language instructions into physical actions. OpenFlyV2 applies that idea to a quadrotor. Its research authors connect scene understanding, spatial reasoning and flight decisions within one onboard control loop. Unlike a model that merely describes a photograph, it must repeatedly observe its surroundings and update the next movement.\n\nAn NVIDIA Jetson Orin NX handles the onboard computation. A compact action expert produces chunks of 12 waypoints at 10 Hz; a waypoint is an intermediate target position along a route. Motion-aware temporal memory reduces the computational burden. After executing part of a plan, the aircraft observes again and revises its next action. This is closed-loop control rather than playback of a fixed flight path.\n\nTraining uses approximately 70,000 simulated navigation trajectories and 60,000 vision-language instruction-response pairs. Without training on physical flight data, the authors report 48% navigation success across four real environments. The result supports a limited simulation-to-reality transfer, not operational safety. Engineers still need latency, power, lighting and moving-obstacle tests. The paper describes source-code release as forthcoming, leaving independent reproduction unresolved.",
+      "image": null
+    },
+    {
+      "id": "dexsuite-framework",
+      "title": "DexSuite standardizes dexterous-manipulation experiments",
+      "summary": "The open framework includes 30 tasks, 10 arms, 12 end-effectors and 4,700 successful simulated episodes.",
+      "details": "Built on Genesis, it combines more than 100 single-arm robots and thousands of two-arm pairings.",
+      "technical_novelty": "A shared API, teleoperation and simulated tactile sensing support cross-embodiment evaluation.",
+      "engineering_impact": "May reduce the setup burden of comparable manipulation experiments.",
+      "limitations": "All 4,700 episodes are simulated; general physical transfer is unproven.",
+      "evidence_status": "Open-source research project and preprint with simulation-based results.",
+      "published_at": "2026-10-27",
+      "organization": "DexSuite research authors",
+      "source_ids": [
+        "dexsuite-source"
+      ],
+      "time_window": "7d",
+      "body": "Comparing dexterous-manipulation algorithms is difficult when every paper uses a different hand, task set and physics engine. DexSuite, an open research framework built on the Genesis simulator, aims to provide a common experimental environment. Researchers can change the arm, the end-effector and the task while keeping a standardized software interface.\n\nThe release contains 30 tasks, 10 arms and 12 end-effectors, meaning tools or grippers attached to the arm. Those combinations produce more than 100 single-arm configurations and thousands of bimanual pairings. A shared API, or programming interface, is supplemented by teleoperation and simulated touch sensors. The authors define a benchmark of 16 task-and-embodiment pairs to compare methods under more consistent conditions.\n\nThe dataset includes 4,700 successful simulated episodes collected through human teleoperation, scripted experts and learned policies. An episode is a completed attempt; a policy is an algorithm choosing actions from observations. Shared infrastructure helps replication, but does not guarantee that virtual contact mechanics resemble reality. Friction, object deformation, actuator delay and sensor noise may all differ on hardware. Physical trials remain necessary before interpreting simulator scores as factory performance.",
+      "image": null
+    }
+  ],
+  "technology_signal": {
+    "title": "Results must be reproducible",
+    "summary": "OpenFlyV2 exposes onboard-control limitations while DexSuite provides common comparison conditions.",
+    "implications": "Failure cases and physical hardware parameters must accompany success scores."
+  },
+  "glossary": [
+    {
+      "term": "VLA",
+      "definition": "A model connecting visual input and language to actions."
+    },
+    {
+      "term": "closed-loop control",
+      "definition": "Control that updates commands from fresh observations."
+    },
+    {
+      "term": "waypoint",
+      "definition": "An intermediate target position on a route."
+    },
+    {
+      "term": "sim-to-real",
+      "definition": "Transfer from simulation to physical hardware."
+    },
+    {
+      "term": "end-effector",
+      "definition": "A gripper or tool attached to a robot arm."
+    }
+  ],
+  "sources": [
+    {
+      "id": "openflyv2-source",
+      "title": "OpenFlyV2: An onboard vision-language-action model for aerial perception and navigation",
+      "url": "https://arxiv.org/abs/2610.39287",
+      "domain": "arxiv.org",
+      "organization": "OpenFlyV2 research authors",
+      "published_at": "2026-10-29"
+    },
+    {
+      "id": "dexsuite-source",
+      "title": "DexSuite: An All-in-One Framework for Dexterous Manipulation Across Arms, Hands, and Tasks",
+      "url": "https://arxiv.org/abs/2610.37799",
+      "domain": "arxiv.org",
+      "organization": "DexSuite research authors",
+      "published_at": "2026-10-27"
+    }
+  ]
+}

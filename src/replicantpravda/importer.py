@@ -10,7 +10,7 @@ from urllib.parse import urlsplit
 
 from pydantic import AwareDatetime, Field, HttpUrl, model_validator
 
-from .models import Article, ArticleImage, Edition, Issue, Record, Slug, Source, Text
+from .models import Article, ArticleImage, Edition, Issue, ReaderEdition, Record, Slug, Source, Text
 
 
 class FeedSource(Record):
@@ -60,7 +60,8 @@ class GlossaryEntry(Record):
 
 
 class FeedEdition(Record):
-    schema_version: Literal["1.0", "1.2", "1.3"]
+    schema_version: Literal["1.0", "1.2", "1.3", "1.4"]
+    edition: ReaderEdition | None = None
     publication: Literal["pravda_replikanta"]
     issue_type: Literal["daily"]
     issue_date: date
@@ -78,6 +79,38 @@ class FeedEdition(Record):
     def consistent(self) -> "FeedEdition":
         if self.issue_id != f"daily-{self.issue_date}":
             raise ValueError("Feed issue_id differs from issue_date")
+        if self.schema_version == "1.4":
+            if self.edition is None or self.language == "jp":
+                raise ValueError("Feed v1.4 requires edition and language ru/en/ja")
+            if len(self.news) > 10 or len(self.glossary) > 12:
+                raise ValueError("Feed v1.4 exceeds news/glossary limits")
+            required = {
+                "image",
+                "summary",
+                "details",
+                "technical_novelty",
+                "engineering_impact",
+                "limitations",
+                "evidence_status",
+                "time_window",
+            }
+            for item in self.news:
+                if not required <= item.model_fields_set:
+                    raise ValueError("Feed v1.4 news is missing required schema fields")
+                if item.image is not None:
+                    raise ValueError("Feed v1.4 requires image: null")
+                if not isinstance(item.body, str) or not re.fullmatch(
+                    r"[^\r\n]+(?:\n\n[^\r\n]+)+", item.body
+                ):
+                    raise ValueError("Feed v1.4 body requires two or more plain-text paragraphs")
+                if item.time_window is None or any(
+                    not getattr(item, key).strip() for key in required - {"image", "time_window"}
+                ):
+                    raise ValueError("Feed v1.4 required editorial fields must be nonempty")
+            if any(source.url.scheme != "https" for source in self.sources):
+                raise ValueError("Feed v1.4 source URLs require HTTPS")
+        elif self.edition is not None:
+            raise ValueError("Explicit reader editions require feed v1.4")
         if self.schema_version == "1.3":
             if sum(item.image is not None for item in self.news) != 2:
                 raise ValueError("Feed v1.3 requires exactly two illustrated news articles")
@@ -137,11 +170,13 @@ def import_feed(folder: Path, template: Issue, *, number: int, revision: int) ->
     reference = feeds["ru"]
     reference_ids = {item.id for item in reference.news}
     for feed in feeds.values():
+        if feed.edition != reference.edition or feed.schema_version != reference.schema_version:
+            raise ValueError("Reader editions/schema versions differ across languages")
         if feed.issue_date != reference.issue_date or feed.issue_id != reference.issue_id:
             raise ValueError("Language editions have different issue dates/IDs")
         if {item.id for item in feed.news} != reference_ids:
             raise ValueError("News IDs differ across language editions")
-        if len(feed.glossary) != len(reference.glossary):
+        if feed.schema_version != "1.4" and len(feed.glossary) != len(reference.glossary):
             raise ValueError("Glossary entries missing in a language edition")
         if {n.id: (n.image.path, str(n.image.url)) for n in feed.news if n.image} != {
             n.id: (n.image.path, str(n.image.url)) for n in reference.news if n.image
@@ -206,8 +241,10 @@ def import_feed(folder: Path, template: Issue, *, number: int, revision: int) ->
                 id="glossary",
                 slug="glossary",
                 category="analysis",
-                headline=words["glossary"],
-                dek=words["glossary_dek"],
+                headline=words["children_glossary" if feed.edition == "children" else "glossary"],
+                dek=words[
+                    "children_glossary_dek" if feed.edition == "children" else "glossary_dek"
+                ],
                 body=blocks,
                 sources=list(sources.values()),
             )
@@ -230,6 +267,7 @@ def import_feed(folder: Path, template: Issue, *, number: int, revision: int) ->
         else None
     )
     issue = Issue(
+        edition=reference.edition or "engineer",
         issue_id=reference.issue_date,
         publication_date=reference.issue_date,
         number=number,

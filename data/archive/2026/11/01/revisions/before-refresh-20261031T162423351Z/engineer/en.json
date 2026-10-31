@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.4",
+  "publication": "pravda_replikanta",
+  "issue_type": "daily",
+  "issue_date": "2026-11-01",
+  "issue_id": "daily-2026-11-01",
+  "edition": "engineer",
+  "language": "en",
+  "generated_at": "2026-10-31T15:57:38.889Z",
+  "title": "Replicant Data — Engineering Edition",
+  "lead": "New work on long-horizon execution and physical constraints shows why a capable action policy is not yet a reliable robot system.",
+  "news": [
+    {
+      "id": "logiv-task-graph-repair",
+      "title": "LOGIV checks robot task dependencies and repairs broken preconditions",
+      "summary": "Researchers led by Enqiao Lu introduced LOGIV, an execution layer that verifies the conditions required by successive robot actions. Tests on two simulated benchmarks and three real-robot tasks improved completion rates, although failures remained.",
+      "details": "An explicit task graph represents condition support and resource ordering; observations verify those dependencies during execution.",
+      "technical_novelty": "Causal local repair of invalidated task conditions without retraining the underlying robot policy.",
+      "engineering_impact": "Separates sequential execution reliability from individual manipulation skills and can sit above existing VLA controllers.",
+      "limitations": "Evidence is confined to selected dual-arm tasks; real-robot success was 17 of 30 trials, not full reliability.",
+      "evidence_status": "Research preprint with simulated benchmarks and limited real-robot trials.",
+      "published_at": "2026-10-29",
+      "organization": "Enqiao Lu et al.",
+      "source_ids": [
+        "src-logiv-2610"
+      ],
+      "time_window": "72h",
+      "body": "A robot may complete a placement correctly and still fail at the next step because someone has moved the object it needs. Researchers led by Enqiao Lu propose LOGIV, an execution framework for long-horizon robot tasks that treats this as a dependency problem rather than automatically blaming the motor controller. Their paper appeared on arXiv on October 29, 2026. The method monitors whether the physical conditions assumed by a multi-step plan remain true as the robot works, even after an earlier action has been marked complete.\n\nLOGIV represents a validated plan as a task graph. One kind of edge records which action supports a condition needed later; another orders actions that compete for resources. Observations are used to verify those relationships during execution. If a disturbance removes a required condition, dependency tracing identifies what needs to be restored. The system then constructs a local repair, preserves still-relevant unfinished actions, and symbolically validates the continuation before execution resumes. This is a supervisory layer above vision-language-action policies, often abbreviated VLA, or world-action models; it does not introduce new trainable parameters into the underlying policy.\n\nThe researchers evaluated 20 dual-arm tasks drawn from RoboTwin V2 and BiCoord using three execution backbones. Without injected disturbances, they report mean task-success gains of 10.67 and 15.33 percentage points on the respective benchmarks. Under predefined disturbances, LOGIV outperformed three adapted recovery baselines in task completion and restoration of necessary conditions. On three physical-robot tasks, successful trials increased from 12 out of 30 to 17 out of 30. That is a measurable improvement, but it also leaves thirteen failures and should not be described as solved autonomy.\n\nThe architectural lesson is that action generation and task-state verification are different responsibilities. A strong manipulation policy cannot guarantee that the world still matches its earlier assumptions. Explicit dependencies provide a place to diagnose and repair those mismatches without restarting everything. The open engineering questions concern perception errors, incomplete condition models, recovery actions that are unavailable, and scaling to longer workflows with multiple simultaneous disturbances. The published evidence supports the value of the layer on tested tasks, not an assurance of reliable operation in arbitrary factories.",
+      "image": null
+    },
+    {
+      "id": "oracle-safe-flow",
+      "title": "A binary feasibility checker becomes part of learning safe robot actions",
+      "summary": "Jianming Ma and colleagues proposed a safeguard that needs only yes-or-no feasibility answers while a robot policy generates motions. It achieved 100% checked-step feasibility in a simulated manipulation task, at a substantial inference-time cost and without a real-world safety guarantee.",
+      "details": "The system clips proposed flow updates to feasible regions and estimates boundary information for learning from binary checker responses.",
+      "technical_novelty": "A shared oracle-guided correction is used during both policy training and inference without an analytical constraint model.",
+      "engineering_impact": "Existing collision checkers can potentially constrain generative action policies even when they are not differentiable.",
+      "limitations": "One simulation task; per-action-chunk inference time rose from 0.071 to 1.345 seconds.",
+      "evidence_status": "Research preprint with simulated measurements; no physical-robot safety certification.",
+      "published_at": "2026-10-29",
+      "organization": "Jianming Ma et al.",
+      "source_ids": [
+        "src-safe-flow-2610"
+      ],
+      "time_window": "72h",
+      "body": "A generative robot policy can produce an apparently plausible movement that crosses an obstacle or violates a joint limit. Jianming Ma and coauthors addressed this problem in a paper posted on October 29, 2026. Their approach works with flow matching, a method that constructs an action trajectory through successive updates. The distinctive assumption is that the system can ask a checker whether a proposed robot configuration is feasible, but cannot obtain a convenient equation or gradient describing the entire safe region. That makes the interface closer to many practical collision-checking systems.\n\nThe checker is called a binary feasibility oracle because it returns only an allowed-or-disallowed answer. During the forward generation process, the safeguard searches along a proposed update and truncates it before leaving the feasible region. During training, additional queries around the detected boundary estimate its local direction and supply an approximate gradient to the policy. Consequently, the model learns while experiencing the same type of intervention it will face at inference time. The method does not require differentiating through the collision checker itself, although it does require feasible starting samples and enough oracle queries to detect boundaries.\n\nThe authors evaluated a simulated RoboTwin 2.0 pick-and-place task in which an arm moved a bottle while avoiding another bottle, the tabletop, and joint limits. They fine-tuned a pretrained π0.5 action model on 150 expert trajectories with a single H100 GPU and tested 30 episodes. The safeguarded model succeeded in 11 of 30 episodes with a 100% checked-step safety rate. The original Gaussian-initialized baseline succeeded in 13 of 30 episodes but recorded only 78.25% safe steps. Inference time per action chunk increased from 0.071 to 1.345 seconds, a material latency penalty for a real control stack.\n\nThe engineering result is therefore narrower and more useful than a headline claiming perfectly safe robots. The experiment demonstrates constraint compliance under the simulator's checker, not physical safety around people. The oracle used privileged simulation information, and a checker built from noisy sensors might miss hazards. Straight interpolation can also fail in highly non-convex spaces where a detour is needed. A deployment evaluation would have to measure checker fidelity, worst-case latency, recovery from infeasible starts, and the effect of moving obstacles before treating the safeguard as a production safety mechanism.",
+      "image": null
+    }
+  ],
+  "technology_signal": {
+    "title": "Reliability needs a verification layer",
+    "summary": "New work on long-horizon execution and physical constraints shows why a capable action policy is not yet a reliable robot system.",
+    "implications": "Evaluate task dependencies, constraint-checker accuracy and latency, not only skill success."
+  },
+  "glossary": [
+    {
+      "term": "Task graph",
+      "definition": "A representation of actions and the conditions they depend on."
+    },
+    {
+      "term": "VLA",
+      "definition": "A model linking visual input, language instructions and robot actions."
+    },
+    {
+      "term": "Flow matching",
+      "definition": "A method generating actions through successive transformations."
+    },
+    {
+      "term": "Feasibility oracle",
+      "definition": "A function that says whether a proposed configuration is allowed."
+    },
+    {
+      "term": "Gradient",
+      "definition": "A direction of change used to optimize a model."
+    },
+    {
+      "term": "Preprint",
+      "definition": "A research paper posted before final journal peer review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-logiv-2610",
+      "url": "https://arxiv.org/abs/2610.40016",
+      "domain": "arxiv.org",
+      "organization": "Enqiao Lu et al.",
+      "published_at": "2026-10-29",
+      "title": "LOGIV: Graph-Verified Execution with Causal Local Repair for Long-Horizon Robot Tasks"
+    },
+    {
+      "id": "src-safe-flow-2610",
+      "url": "https://arxiv.org/abs/2610.40075",
+      "domain": "arxiv.org",
+      "organization": "Jianming Ma et al.",
+      "published_at": "2026-10-29",
+      "title": "Learning Safe Flow Matching Robot Policies from Binary Feasibility Oracles"
+    }
+  ]
+}

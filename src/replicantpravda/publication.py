@@ -10,6 +10,7 @@ from pathlib import Path
 from .archive import archive_metadata
 from .render import load_issue
 from .verification import artifact_hashes, verify_site_links, verify_snapshot
+from .telegram import make_announcement
 
 MAX_ASSET_BYTES = 25 * 1024 * 1024
 
@@ -29,7 +30,7 @@ def reader_file(relative: str) -> bool:
         return True
     return bool(
         re.fullmatch(
-            r"(?:ru|en|ja)/(?:index\.html|rss\.xml|archive/index\.html|"
+            r"(?:ru|en|ja)/(?:(?:business|enthusiast|children)/)?(?:index\.html|rss\.xml|archive/index\.html|about/index\.html|"
             r"articles/[a-z0-9-]+/index\.html|issues/\d{4}-\d{2}-\d{2}/"
             r"(?:index\.html|edition\.pdf|articles/[a-z0-9-]+/index\.html))",
             relative,
@@ -61,6 +62,15 @@ def prepare_release(snapshot: Path, output: Path) -> dict:
     report = verify_snapshot(snapshot, str(source.issue_id))
     if not report["passed"]:
         raise ValueError("Publication snapshot verification failed")
+    registry = snapshot / "reader-editions.json"
+    if registry.exists():
+        issues = [
+            load_issue(snapshot / path)
+            for paths in json.loads(registry.read_text())["editions"].values()
+            for path in paths
+        ]
+    if any(entry.status not in {"approved", "published"} for entry in issues):
+        raise ValueError("Release contains an unapproved issue")
     output.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(dir=output.parent, prefix=".rp-release-") as directory:
         staging = Path(directory) / "public"
@@ -88,19 +98,34 @@ def prepare_release(snapshot: Path, output: Path) -> dict:
             encoding="utf-8",
         )
         headers = "/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n"
-        for lang in ("ru", "en", "ja"):
-            headers += f"\n/{lang}/rss.xml\n  Content-Type: application/rss+xml; charset=utf-8\n"
+        for edition in sorted({entry.edition for entry in issues}):
+            for lang in ("ru", "en", "ja"):
+                scope = lang if edition == "engineer" else f"{lang}/{edition}"
+                headers += (
+                    f"\n/{scope}/rss.xml\n  Content-Type: application/rss+xml; charset=utf-8\n"
+                )
         headers += (
             "\nhttps://:worker.:account.workers.dev/*\n  X-Robots-Tag: noindex\n"
             "\nhttps://:version.:worker.:account.workers.dev/*\n  X-Robots-Tag: noindex\n"
         )
         (staging / "_headers").write_text(headers, encoding="utf-8")
+        (staging / "announcement.json").write_text(
+            json.dumps(
+                make_announcement(
+                    source, json.loads((snapshot / "site.json").read_text())["site_url"]
+                ),
+                ensure_ascii=False,
+                indent=2,
+            )
+            + "\n",
+            encoding="utf-8",
+        )
         link_errors = verify_site_links(staging)
         if link_errors:
             raise ValueError("Release has missing reader links: " + "; ".join(link_errors[:5]))
         release = {
             "site_url": json.loads((snapshot / "site.json").read_text())["site_url"],
-            "issues": [archive_metadata(issue) for issue in issues],
+            "issues": [archive_metadata(issue) | {"edition": issue.edition} for issue in issues],
             "upload_review_required": True,
             "files": artifact_hashes(staging),
         }

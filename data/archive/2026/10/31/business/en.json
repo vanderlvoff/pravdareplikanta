@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.4",
+  "publication": "pravda_replikanta",
+  "issue_type": "daily",
+  "issue_date": "2026-10-31",
+  "issue_id": "daily-2026-10-31",
+  "edition": "business",
+  "language": "en",
+  "generated_at": "2026-10-31T23:06:42+09:00",
+  "title": "Pravda Replikanta — Business Edition",
+  "lead": "Production deployment and how to measure useful robot work.",
+  "news": [
+    {
+      "id": "yaskawa-gr-welding",
+      "title": "Yaskawa and GAZOO Racing bring adaptive welding into production",
+      "summary": "On October 28 Yaskawa reported that a MOTOMAN NEXT system began operating in September at a GR KART frame workshop, combining welding, inspection and correction.",
+      "details": "The robot assesses pipe-frame conditions, performs welding, inspects the result and makes corrections. The companies describe analysis of images, welding sound and other process data. The work builds on an earlier SFA process, short for Sequence Freezing Arc Welding. A previously reported reduction in roll-cage fabrication from two or three weeks to three days concerns that earlier process; it is not a measured improvement from the new robot installation.",
+      "technical_novelty": "Image, welding-sound and process-data analysis informs actions and quality checks.",
+      "engineering_impact": "A production installation extends automation beyond repeating a programmed weld path.",
+      "limitations": "Independent defect-rate, cycle-time and cost data for the new system are not disclosed.",
+      "evidence_status": "Official deployment report; benefits remain manufacturer claims.",
+      "published_at": "2026-10-28",
+      "organization": "Yaskawa Electric and GAZOO Racing",
+      "source_ids": [
+        "yaskawa-release"
+      ],
+      "time_window": "7d",
+      "body": "Following a programmed welding path is not enough when workpieces vary. On October 28, Yaskawa Electric and Toyota's GAZOO Racing reported that an AI-assisted MOTOMAN NEXT system had entered production in September at a GR KART frame workshop in Gamagori, Japan. The announcement describes a working manufacturing process, not merely a laboratory demonstration.\n\nThe robot assesses pipe-frame conditions, performs welding, inspects the result and makes corrections. The companies describe analysis of images, welding sound and other process data. The work builds on an earlier SFA process, short for Sequence Freezing Arc Welding. A previously reported reduction in roll-cage fabrication from two or three weeks to three days concerns that earlier process; it is not a measured improvement from the new robot installation.\n\nFor a purchaser, the missing figures are manual rework, defect rates, cycle-time variation, maintenance cost and safety performance. The manufacturers claim productivity and cost benefits without independent financial validation. The important advance is the integration of inspection and correction into a production operation.",
+      "image": null
+    },
+    {
+      "id": "agibot-worken-measure",
+      "title": "AGIBOT wants to measure useful robot work, not just fleet size",
+      "summary": "At its October 29 Shanghai event, AGIBOT proposed Worken as a measure of productive autonomous work and unveiled G2 Max with a claimed combined dual-arm payload of up to 40 kg.",
+      "details": "The company also announced AHA3 hardware, the GO-3 Preview embodied model, WITA-Omni for interaction and the G2 Max industrial robot. For G2 Max it claims 21 degrees of freedom, up to 40 kilograms of combined dual-arm handling capacity and an adjustable working height from 0.1 to 2.5 metres. These are vendor specifications, not independently measured throughput.",
+      "technical_novelty": "A proposed output metric accompanies new robot hardware and embodied models.",
+      "engineering_impact": "Buyers need reliable output and intervention rates rather than deployment counts alone.",
+      "limitations": "Worken is not an independently validated standard; cross-task accounting remains unclear.",
+      "evidence_status": "Official vendor announcement without independent audit.",
+      "published_at": "2026-10-29",
+      "organization": "AGIBOT",
+      "source_ids": [
+        "agibot-release"
+      ],
+      "time_window": "72h",
+      "body": "A robot buyer needs useful output, not an impressive shipment count. At its October 29 event in Shanghai, AGIBOT introduced Worken, a proposed concept combining the words 'work' and 'token'. It aims to measure productive autonomous robot activity. The proposal has not become an independently established industry standard.\n\nThe company also announced AHA3 hardware, the GO-3 Preview embodied model, WITA-Omni for interaction and the G2 Max industrial robot. For G2 Max it claims 21 degrees of freedom, up to 40 kilograms of combined dual-arm handling capacity and an adjustable working height from 0.1 to 2.5 metres. These are vendor specifications, not independently measured throughput.\n\nA deployment decision should consider completed cycles, uptime, operator interventions, quality, safety and total cost. An hour of box transport is not directly equivalent to an hour of precision assembly. Until AGIBOT publishes a transparent method for comparing different tasks, Worken is best treated as a useful question for procurement rather than a finished productivity standard.",
+      "image": null
+    }
+  ],
+  "technology_signal": {
+    "title": "Yaskawa and GAZOO Racing bring adaptive welding into production",
+    "summary": "On October 28 Yaskawa reported that a MOTOMAN NEXT system began operating in September at a GR KART frame workshop, combining welding, inspection and correction.",
+    "implications": "Independent quality, cost and output metrics remain essential."
+  },
+  "glossary": [
+    {
+      "term": "Adaptive welding",
+      "definition": "Welding that responds to workpiece conditions."
+    },
+    {
+      "term": "Quality inspection",
+      "definition": "Checking an output against requirements."
+    },
+    {
+      "term": "Autonomous work",
+      "definition": "Work without continuous operator commands."
+    },
+    {
+      "term": "Payload",
+      "definition": "Mass a mechanism can carry."
+    },
+    {
+      "term": "Degree of freedom",
+      "definition": "An independent coordinate of motion."
+    }
+  ],
+  "sources": [
+    {
+      "id": "yaskawa-release",
+      "title": "AI-enabled robotic welding introduced at GR KART workshop",
+      "url": "https://www.yaskawa.co.jp/newsrelease/news/1682029",
+      "domain": "www.yaskawa.co.jp",
+      "organization": "Yaskawa Electric and GAZOO Racing",
+      "published_at": "2026-10-28"
+    },
+    {
+      "id": "agibot-release",
+      "title": "AGIBOT Introduces Worken to Measure Productive Robot Work at AGIBOT Innovation Day 2026",
+      "url": "https://agibot.com/article/231/detail/131.html",
+      "domain": "agibot.com",
+      "organization": "AGIBOT",
+      "published_at": "2026-10-29"
+    }
+  ]
+}

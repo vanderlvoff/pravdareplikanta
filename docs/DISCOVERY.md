@@ -1,5 +1,10 @@
 # RSS и поисковые метаданные
 
+В многоредакционном preview каждой аудитории соответствует собственный RSS по
+её базовому маршруту. Canonical/hreflang сохраняют аудиторию; sitemap проверяется
+для всех выбранных редакций вместе. Прежние инженерные URL и GUID не меняются.
+См. [READERS.md](READERS.md).
+
 Основной адрес по выбору владельца: `https://repravda.com`. Сборщик использует его
 в RSS, canonical, hreflang и sitemap. Это настройка адресов, не публикация сайта.
 
@@ -84,3 +89,5 @@ hreflang, XML, состав RSS/GUID и соответствие карты са
 - [RSS 2.0 specification](https://www.rssboard.org/rss-specification).
 - [Google: localized versions](https://developers.google.com/search/docs/specialty/international/localized-versions).
 - [Sitemaps XML protocol](https://www.sitemaps.org/protocol.html).
+
+Страница о газете по маршруту about/ сохраняет языковую и читательскую редакцию, имеет canonical/hreflang и включается в sitemap при готовом текущем выпуске. Для инженерного сайта упаковщик допускает about/index.html. Многоредакционная публикация остаётся отдельной будущей настройкой; текущий просмотр локальный.

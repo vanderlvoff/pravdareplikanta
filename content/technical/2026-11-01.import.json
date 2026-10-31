@@ -1,0 +1,61 @@
+{
+  "status": "approved",
+  "review_stage": "cloudflare_upload",
+  "sources": {
+    "ru": {
+      "file": "data/latest/engineer/ru.json",
+      "sha256": "be850ee7bb260744959a4ccc17875f5f83edf5b10163bdcfcc8221f791c9cd37",
+      "metadata": {
+        "schema_version": "1.4",
+        "edition": "engineer",
+        "publication": "pravda_replikanta",
+        "issue_type": "daily",
+        "issue_date": "2026-11-01",
+        "issue_id": "daily-2026-11-01",
+        "language": "ru",
+        "generated_at": "2026-10-31T16:24:23.341000Z",
+        "title": "Данные репликанта — инженерная редакция",
+        "lead": "Интерфейсы инструментов, управление и проверяемость роботов."
+      }
+    },
+    "en": {
+      "file": "data/latest/engineer/en.json",
+      "sha256": "dbc20a4cf9aabaec06ce934a57512123142a99b36ec00e0c26f9001b42d57556",
+      "metadata": {
+        "schema_version": "1.4",
+        "edition": "engineer",
+        "publication": "pravda_replikanta",
+        "issue_type": "daily",
+        "issue_date": "2026-11-01",
+        "issue_id": "daily-2026-11-01",
+        "language": "en",
+        "generated_at": "2026-10-31T16:24:23.342000Z",
+        "title": "Replicant Data — Engineering",
+        "lead": "Tool interfaces, control and verifiable robot performance."
+      }
+    },
+    "ja": {
+      "file": "data/latest/engineer/ja.json",
+      "sha256": "ae15e06962f57ca119f7390c22441665160ee57d95826ef483d192ee3b61ee34",
+      "metadata": {
+        "schema_version": "1.4",
+        "edition": "engineer",
+        "publication": "pravda_replikanta",
+        "issue_type": "daily",
+        "issue_date": "2026-11-01",
+        "issue_id": "daily-2026-11-01",
+        "language": "ja",
+        "generated_at": "2026-10-31T16:24:23.342000Z",
+        "title": "レプリカント・データ 技術者版",
+        "lead": "工具の接続、制御、実機の検証結果を考える。"
+      }
+    }
+  },
+  "pagination": "automatic",
+  "review_required": [
+    "facts and source claims",
+    "translations",
+    "print overflow",
+    "visual review"
+  ]
+}

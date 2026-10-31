@@ -21,6 +21,22 @@ a { color: inherit; text-underline-offset: .2em; }
 .preview-tools { display: flex; align-items: center; justify-content: space-between; gap: 1rem; color: #666; border-bottom: 1px solid #ddd; padding-bottom: 10px; margin-bottom: 18px; }
 .preview-tools small { font-size: 11px; }
 nav { display: flex; gap: 14px; font-size: 12px; }
+.reader-picker { margin: 0 0 22px; padding-bottom: 16px; border-bottom: 1px solid #aaa; }
+.reader-picker-title { margin: 0 0 8px; font-size: 13px; font-weight: 700; }
+.reader-options { display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px; }
+.reader-option, .back-link, .patreon-link { display: inline-flex; align-items: center; gap: 8px; min-height: 36px; max-width: 100%; padding: 6px 12px; border: 1px solid #aaa; border-radius: 9px; color: #111; font-size: 14px; line-height: 1.3; }
+.reader-option:hover, .back-link:hover { border-color: #111; background: #f0f2f1; color: #111; }
+.reader-icon { display: block; flex: none; width: 16px; height: 16px; }
+.reader-option[aria-current="page"] { background: #111; color: #fff; border-color: #111; font-weight: 700; }
+.reader-option:focus-visible, .back-link:focus-visible, .patreon-link:focus-visible { outline: 3px solid #111; outline-offset: 3px; }
+.reader-option[aria-current="page"]:hover, .reader-option[aria-current="page"]:focus-visible { background: #222; color: #fff; }
+.reader-unavailable { color: #666; background: #f4f4f4; border-color: #ddd; }
+.reader-soon { font-size: 11px; }
+.reader-description { margin: 10px 0 0; font-size: 13px; line-height: 1.6; color: #444; }
+@media screen {
+  .reader-children main { font-size: 18px; line-height: 1.7; }
+  .reader-children .reader-options, .reader-children .reader-option, .reader-children .back-link, .reader-children .read-more { font-size: 16px; }
+}
 .kicker { margin: 0 0 10px; font-size: clamp(15px, 1.8vw, 25px); font-weight: 700; }
 .brand-header { display: grid; grid-template-columns: 20% minmax(0, 1fr) 23%; gap: 18px; align-items: stretch; }
 .portrait-medals { display: flex; flex-direction: column; justify-content: flex-end; min-width: 0; width: 80%; justify-self: center; align-self: start; }
@@ -136,7 +152,6 @@ p, li, blockquote { white-space: pre-line; overflow-wrap: anywhere; }
 .article-detail > .article-illustration { max-width: 760px; margin-inline: auto; }
 
 .article-navigation { margin: 0 0 14px; }
-.back-link { display: inline-flex; align-items: center; gap: .45em; padding: .45em .75em; border: 1px solid #b7cbc4; font-size: 14px; font-weight: 700; }
 .glossary-inline { margin-top: 20px; }
 .glossary-terms h3 { break-after: avoid; margin-bottom: 4px; }
 .glossary-terms p { break-inside: avoid; margin-top: 0; }
@@ -149,11 +164,52 @@ p, li, blockquote { white-space: pre-line; overflow-wrap: anywhere; }
 .read-more { display: inline-flex; align-items: center; gap: .45em; padding: 3px 0; font-size: 13px; font-weight: 700; }
 .site-footer { margin-top: 36px; padding-top: 20px; border-top: 3px double; }
 .footer-links { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-bottom: 22px; }
-.patreon-link { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; max-width: 100%; padding: 10px 18px; border: 1px solid #111; border-radius: 0; background: #111; color: #fff; font-size: 14px; font-weight: 700; text-align: center; overflow-wrap: anywhere; }
-.patreon-link:hover, .patreon-link:focus-visible { background: #fff; color: #111; }
-.patreon-link:focus-visible { outline: 2px solid #111; outline-offset: 3px; }
+.patreon-link { justify-content: center; border-color: #111; background: #111; color: #fff; font-weight: 700; text-align: center; overflow-wrap: anywhere; }
+.patreon-link:hover, .patreon-link:focus-visible { background: #222; color: #fff; }
 .rss-link { margin: 0; font-size: 12px; }
 .rss-link a { color: #155e59; }
+.article-glossary { margin-top: 28px; }
+.glossary-inline { border-bottom: 0; }
+.glossary-page { padding-top: 0; border-bottom: 0; }
+.glossary-panel { padding: 24px; border: 1px solid #d8d8d8; border-top: 2px solid #111; border-radius: 12px; background-color: #f8f8f8; background-image: linear-gradient(#11111105 1px, transparent 1px), linear-gradient(90deg, #11111105 1px, transparent 1px); background-size: 24px 24px; }
+.glossary-kicker { display: flex; align-items: center; gap: 8px; margin: 0 0 10px; color: #606060; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.glossary-kicker svg { flex: none; }
+.glossary-panel .glossary-header h2, .glossary-panel .glossary-header h3 { margin: 0; font-size: 24px; line-height: 1.3; }
+.glossary-panel .glossary-intro { margin: 8px 0 0; color: #555; font-size: 14px; line-height: 1.6; }
+.glossary-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; margin: 20px 0 0; }
+.glossary-entry { min-width: 0; padding: 18px 0; border-top: 1px solid #d8d8d8; }
+.glossary-entry:only-child { grid-column: 1 / -1; }
+.glossary-entry dt { display: flex; align-items: baseline; gap: 10px; font-size: 17px; font-weight: 700; line-height: 1.45; overflow-wrap: anywhere; }
+.glossary-index { flex: none; color: #777; font-size: 10px; font-weight: 400; font-variant-numeric: tabular-nums; }
+.glossary-entry dd { margin: 8px 0 0 24px; max-width: 72ch; color: #373737; font-size: 14px; line-height: 1.7; white-space: pre-line; overflow-wrap: anywhere; }
+.reader-children .glossary-entry dd { font-size: 16px; }
+.glossary-all-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; font-size: 13px; font-weight: 700; }
+.term-reference { margin-left: .12em; font-size: .65em; line-height: 0; vertical-align: super; font-weight: 400; }
+.term-reference a { padding: 2px; scroll-margin-block: 100px; }
+.glossary-entry[id] { scroll-margin-block: 80px; }
+.glossary-entry:target, .term-reference a:target { outline: 2px solid #777; outline-offset: 4px; background-color: #fff; }
+.glossary-backlink { display: block; width: fit-content; margin-top: 8px; font-size: 12px; font-weight: 700; white-space: normal; }
+.guide-page { max-width: 1040px; margin-inline: auto; }
+.guide-hero { padding-bottom: 28px; border-bottom: 2px solid #111; }
+.guide-hero h2 { margin: 24px 0 16px; font-size: clamp(28px, 3.4vw, 42px); line-height: 1.2; }
+.guide-lead { margin: 0; max-width: 64ch; font-size: 20px; line-height: 1.65; }
+.guide-section { margin-top: 32px; font-size: 17px; line-height: 1.75; }
+.guide-section h3 { margin: 0 0 16px; font-size: 25px; line-height: 1.3; }
+.guide-section p { max-width: 80ch; margin: 0 0 16px; }
+.guide-section li { margin-bottom: 12px; padding-left: 6px; }
+.guide-section ol { padding-left: 24px; }
+.guide-editions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 20px; }
+.guide-edition { padding: 20px; border: 1px solid #ddd; border-radius: 12px; background: #fafafa; }
+.guide-edition h4 { margin: 0 0 12px; font-size: 19px; }
+.guide-edition h4 a { display: flex; align-items: center; gap: 10px; color: #111; }
+.guide-edition p { margin: 0; font-size: 15px; }
+.guide-section .guide-status { max-width: none; padding: 18px 20px; border-left: 3px solid #111; background: #f4f4f4; }
+@media (max-width: 700px) { .guide-editions { grid-template-columns: 1fr; } .guide-lead { font-size: 18px; } }
+@media (max-width: 700px) {
+  .glossary-panel { padding: 18px 16px; }
+  .glossary-panel .glossary-header h2, .glossary-panel .glossary-header h3 { font-size: 21px; }
+  .glossary-list { grid-template-columns: 1fr; }
+}
 .about-newspaper h2 { margin: 0 0 16px; font-size: 20px; line-height: 1.3; }
 .about-copy { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; font-size: 14px; line-height: 1.65; }
 .about-copy p { margin: 0 0 10px; }

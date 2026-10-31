@@ -1,0 +1,189 @@
+{
+  "schema_version": "1.4",
+  "publication": "pravda_replikanta",
+  "issue_type": "daily",
+  "issue_date": "2026-11-01",
+  "issue_id": "daily-2026-11-01",
+  "edition": "children",
+  "language": "en",
+  "generated_at": "2026-10-31T16:51:31Z",
+  "title": "Replicant Data — Young Explorers",
+  "lead": "Five stories about how robots pick things up, pull loads and learn from tests.",
+  "news": [
+    {
+      "id": "swapbot-tools",
+      "title": "Why changing tools can help a robot handle different jobs",
+      "summary": "Researchers built a way for a robot to swap tools and sense when they touch an object. Touch information improved results in laboratory tests, but the system is not an independent household cook.",
+      "details": "A connector stays on the robot while adapters attach to different tools. Small touch sensors in the adapters report physical contact. A camera shows where objects are, but an image alone does not always reveal whether a tool is pressing against something. That is why the researchers added touch information.",
+      "technical_novelty": "People first demonstrated actions by remotely controlling the robot. A learning program then used those examples to choose movements. In the reported tests, touch increased success by 15 to 25 percentage points compared with learning from images alone. The number describes the authors' selected tasks, not every possible tool or food.",
+      "engineering_impact": "The robot still needs reliable attachments, safe contact and ways to recover when a tool slips or a task changes. It has not shown that it can cook a complete meal by itself in an unfamiliar kitchen. The researchers call their system SwapBot.",
+      "limitations": "The robot still needs reliable attachments, safe contact and ways to recover when a tool slips or a task changes. It has not shown that it can cook a complete meal by itself in an unfamiliar kitchen. The researchers call their system SwapBot.",
+      "evidence_status": "Author-reported research or demonstration; operation beyond the test conditions remains unverified.",
+      "published_at": "2026-10-29",
+      "organization": "Yunchu Zhang et al.",
+      "source_ids": [
+        "src-swapbot-tools-20261029"
+      ],
+      "time_window": "7d",
+      "body": "Imagine stirring a salad, turning food in a pan and cutting an ingredient. One tool would be awkward for all three jobs. Researchers designed a robot interface that changes ordinary tools without replacing the whole arm. The work appeared on October 29 and describes a laboratory system rather than a ready-made kitchen assistant.\n\nA connector stays on the robot while adapters attach to different tools. Small touch sensors in the adapters report physical contact. A camera shows where objects are, but an image alone does not always reveal whether a tool is pressing against something. That is why the researchers added touch information.\n\nPeople first demonstrated actions by remotely controlling the robot. A learning program then used those examples to choose movements. In the reported tests, touch increased success by 15 to 25 percentage points compared with learning from images alone. The number describes the authors' selected tasks, not every possible tool or food.\n\nThe robot still needs reliable attachments, safe contact and ways to recover when a tool slips or a task changes. It has not shown that it can cook a complete meal by itself in an unfamiliar kitchen. The researchers call their system SwapBot.",
+      "image": null
+    },
+    {
+      "id": "raibo-wagon-towing",
+      "title": "How a four-legged robot learns to pull a wagon around obstacles",
+      "summary": "Researchers tested navigation for a four-legged robot pulling a loaded wagon. It completed 85 percent of trials on short routes, but that does not mean it can handle every road or load.",
+      "details": "The wagon changes how sharply the robot can turn and how much space it needs. The planning program must predict where the load will travel after each movement. That is different from finding an empty path for a robot traveling alone. The connection between the robot and the wagon also matters.",
+      "technical_novelty": "In tests with a real quadruped, the researchers used routes 15 meters long. The system completed 85 percent of 40 trials and handled loads of up to 40 kilograms. Those figures describe the tested setup, not every possible wagon, surface or route. Some attempts still failed.",
+      "engineering_impact": "Before a system like this works reliably in warehouses or public places, it needs tests with longer journeys, uneven ground, moving people and wheels that become stuck. The lesson is that the robot must plan for everything it is pulling, not just its own feet. The robot in this research was called RAIBO.",
+      "limitations": "Before a system like this works reliably in warehouses or public places, it needs tests with longer journeys, uneven ground, moving people and wheels that become stuck. The lesson is that the robot must plan for everything it is pulling, not just its own feet. The robot in this research was called RAIBO.",
+      "evidence_status": "Author-reported research or demonstration; operation beyond the test conditions remains unverified.",
+      "published_at": "2026-10-29",
+      "organization": "Insung Yang et al.",
+      "source_ids": [
+        "src-raibo-wagon-2610"
+      ],
+      "time_window": "7d",
+      "body": "Pulling a suitcase around a corner can be harder than walking around the corner yourself. The wheels may catch an obstacle even when you pass safely. A four-legged robot pulling a wagon faces a similar problem. Researchers built a navigation system that considers the path of both the robot and its trailer.\n\nThe wagon changes how sharply the robot can turn and how much space it needs. The planning program must predict where the load will travel after each movement. That is different from finding an empty path for a robot traveling alone. The connection between the robot and the wagon also matters.\n\nIn tests with a real quadruped, the researchers used routes 15 meters long. The system completed 85 percent of 40 trials and handled loads of up to 40 kilograms. Those figures describe the tested setup, not every possible wagon, surface or route. Some attempts still failed.\n\nBefore a system like this works reliably in warehouses or public places, it needs tests with longer journeys, uneven ground, moving people and wheels that become stuck. The lesson is that the robot must plan for everything it is pulling, not just its own feet. The robot in this research was called RAIBO.",
+      "image": null
+    },
+    {
+      "id": "roboseed-evaluation",
+      "title": "How can we compare robots that demonstrate different tricks?",
+      "summary": "Researchers proposed judging robot action models across several separate dimensions. They warn that a single ranking can be misleading when cost and repeatability data are missing.",
+      "details": "The approach considers five dimensions of evaluation for models that control robot actions. Important questions include how convincingly a result was tested, what it costs to adapt the system to another task, and whether another team could repeat the experiment. Reproducibility means that others can obtain comparable results when the procedure and conditions are clear.",
+      "technical_novelty": "The authors point out that published studies do not always provide enough information for a fair comparison. If cost or reproducibility evidence is missing, a reviewer should not invent a number and combine everything into one score. Their framework can therefore decline to produce an overall ranking instead of declaring a winner without enough support.",
+      "engineering_impact": "This matters when watching robot demonstration videos too. How many attempts were made? Which ones failed? How much preparation was needed before filming? The framework does not make any robot smarter; it helps people judge claims about robots more carefully. The researchers call the evaluation approach RoboSeed.",
+      "limitations": "This matters when watching robot demonstration videos too. How many attempts were made? Which ones failed? How much preparation was needed before filming? The framework does not make any robot smarter; it helps people judge claims about robots more carefully. The researchers call the evaluation approach RoboSeed.",
+      "evidence_status": "Author-reported research or demonstration; operation beyond the test conditions remains unverified.",
+      "published_at": "2026-10-29",
+      "organization": "Xin Ma et al.",
+      "source_ids": [
+        "src-roboseed-evaluation-20261029"
+      ],
+      "time_window": "7d",
+      "body": "One robot moves blocks quickly while another carefully lifts a delicate object. Which is better? A single success number cannot answer that when the tasks and testing conditions differ. Researchers proposed a framework that asks readers to look more closely at what each experiment actually measured.\n\nThe approach considers five dimensions of evaluation for models that control robot actions. Important questions include how convincingly a result was tested, what it costs to adapt the system to another task, and whether another team could repeat the experiment. Reproducibility means that others can obtain comparable results when the procedure and conditions are clear.\n\nThe authors point out that published studies do not always provide enough information for a fair comparison. If cost or reproducibility evidence is missing, a reviewer should not invent a number and combine everything into one score. Their framework can therefore decline to produce an overall ranking instead of declaring a winner without enough support.\n\nThis matters when watching robot demonstration videos too. How many attempts were made? Which ones failed? How much preparation was needed before filming? The framework does not make any robot smarter; it helps people judge claims about robots more carefully. The researchers call the evaluation approach RoboSeed.",
+      "image": null
+    },
+    {
+      "id": "simto-robust-grippers",
+      "title": "Why a soft robot gripper should tolerate small mistakes",
+      "summary": "Researchers calculated thousands of soft gripper designs and tested a smaller group on real hardware. They wanted grippers that still work when the robot approaches an object slightly off target.",
+      "details": "A soft gripper is the part of a robot that holds an object while changing shape slightly during contact. The team generated 6,646 candidate designs in a computer model. They considered different objects and grasp positions to look for shapes that would not fail after a small shift in alignment. That makes the design question different from finding the best shape for one perfect attempt.",
+      "technical_novelty": "The researchers then manufactured and physically tested 24 selected designs against alternatives. Real tests matter because a promising simulation does not guarantee that a physical gripper will hold an object. Yet checking 24 examples does not prove that every one of the thousands of computer-generated designs would work equally well.",
+      "engineering_impact": "This approach might help robots sort products or pick up unfamiliar household items. Before relying on it, engineers still need to study material wear, slippery or heavy objects and repeated failures over long periods. The researchers call their design method SimTO-Robust.",
+      "limitations": "This approach might help robots sort products or pick up unfamiliar household items. Before relying on it, engineers still need to study material wear, slippery or heavy objects and repeated failures over long periods. The researchers call their design method SimTO-Robust.",
+      "evidence_status": "Author-reported research or demonstration; operation beyond the test conditions remains unverified.",
+      "published_at": "2026-10-29",
+      "organization": "Kurt Enkera et al.",
+      "source_ids": [
+        "src-simto-robust-grippers-20261029"
+      ],
+      "time_window": "7d",
+      "body": "When you pick up a cup, your fingers adjust a little to its shape. A robot benefits from similar flexibility, especially if its camera estimates the object's position imperfectly. Researchers proposed designing soft grippers for these small errors rather than assuming that every approach will be perfectly aligned.\n\nA soft gripper is the part of a robot that holds an object while changing shape slightly during contact. The team generated 6,646 candidate designs in a computer model. They considered different objects and grasp positions to look for shapes that would not fail after a small shift in alignment. That makes the design question different from finding the best shape for one perfect attempt.\n\nThe researchers then manufactured and physically tested 24 selected designs against alternatives. Real tests matter because a promising simulation does not guarantee that a physical gripper will hold an object. Yet checking 24 examples does not prove that every one of the thousands of computer-generated designs would work equally well.\n\nThis approach might help robots sort products or pick up unfamiliar household items. Before relying on it, engineers still need to study material wear, slippery or heavy objects and repeated failures over long periods. The researchers call their design method SimTO-Robust.",
+      "image": null
+    },
+    {
+      "id": "rlwrld-packing",
+      "title": "A five-finger robot tries packing an online order",
+      "summary": "A Tokyo exhibition showed a robot placing small products into a shipping box. It was a demonstration, not proof that the robot can work without mistakes all day in a warehouse.",
+      "details": "According to the developers, the robot took a cardboard box from a conveyor and packed small products such as smartphone accessories. Its control program is described as a foundation model, meaning a model intended to support more than one kind of task. That label does not mean it can already do every possible job.",
+      "technical_novelty": "Visitors could watch the demonstration, but the company did not publish the number of failed attempts, boxes packed per hour or hours of unattended operation. A short exhibition therefore cannot prove that the system is ready to replace workers at every warehouse.",
+      "engineering_impact": "Further tests should include many product types, unexpected object positions and safe operation around people. It is especially important to know what happens if an item slips from the hand. The company is called RLWRLD, and it named its model RLDX-1.",
+      "limitations": "Further tests should include many product types, unexpected object positions and safe operation around people. It is especially important to know what happens if an item slips from the hand. The company is called RLWRLD, and it named its model RLDX-1.",
+      "evidence_status": "Author-reported research or demonstration; operation beyond the test conditions remains unverified.",
+      "published_at": "2026-10-30",
+      "organization": "RLWRLD",
+      "source_ids": [
+        "src-rlwrld-kddi-summit-20261030"
+      ],
+      "time_window": "72h",
+      "body": "Packing an online order means choosing the correct products, placing them in a box and avoiding damage. At an event in Tokyo, a company demonstrated a robot with a five-finger hand doing similar work. The event took place on October 27 and 28, while the company reported it on October 30.\n\nAccording to the developers, the robot took a cardboard box from a conveyor and packed small products such as smartphone accessories. Its control program is described as a foundation model, meaning a model intended to support more than one kind of task. That label does not mean it can already do every possible job.\n\nVisitors could watch the demonstration, but the company did not publish the number of failed attempts, boxes packed per hour or hours of unattended operation. A short exhibition therefore cannot prove that the system is ready to replace workers at every warehouse.\n\nFurther tests should include many product types, unexpected object positions and safe operation around people. It is especially important to know what happens if an item slips from the hand. The company is called RLWRLD, and it named its model RLDX-1.",
+      "image": null
+    }
+  ],
+  "technology_signal": {
+    "title": "From isolated tricks to verifiable work",
+    "summary": "Research and demonstrations expand the range of robot actions, but the strength of the result depends on test conditions.",
+    "implications": "Evaluation should cover failures, repeatability, cost and human intervention as well as successful attempts."
+  },
+  "glossary": [
+    {
+      "term": "model",
+      "definition": "A computational system trained to predict or select actions."
+    },
+    {
+      "term": "simulat",
+      "definition": "A test in a computer environment rather than on physical hardware."
+    },
+    {
+      "term": "gripp",
+      "definition": "A device or action used to hold an object."
+    },
+    {
+      "term": "learn",
+      "definition": "Adjusting a model from examples or experience."
+    },
+    {
+      "term": "control",
+      "definition": "Choosing commands that determine a machine's movement."
+    },
+    {
+      "term": "sensor",
+      "definition": "A device that measures a condition or contact."
+    },
+    {
+      "term": "reproducib",
+      "definition": "The ability to repeat an experiment with comparable results."
+    },
+    {
+      "term": "robot",
+      "definition": "A physical machine that performs commanded actions."
+    },
+    {
+      "term": "tool",
+      "definition": "A device selected for a particular operation."
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-swapbot-tools-20261029",
+      "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+      "url": "https://arxiv.org/abs/2610.40646",
+      "domain": "arxiv.org",
+      "organization": "Yunchu Zhang et al.",
+      "published_at": "2026-10-29"
+    },
+    {
+      "id": "src-raibo-wagon-2610",
+      "url": "https://arxiv.org/abs/2610.39267",
+      "domain": "arxiv.org",
+      "organization": "Insung Yang et al.",
+      "published_at": "2026-10-29",
+      "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon"
+    },
+    {
+      "id": "src-roboseed-evaluation-20261029",
+      "title": "RoboSeed: Multidimensional Evaluation of Vision-Language-Action and World-Action Models",
+      "url": "https://arxiv.org/abs/2610.40026",
+      "domain": "arxiv.org",
+      "organization": "Xin Ma et al.",
+      "published_at": "2026-10-29"
+    },
+    {
+      "id": "src-simto-robust-grippers-20261029",
+      "title": "SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry",
+      "url": "https://arxiv.org/abs/2610.39560",
+      "domain": "arxiv.org",
+      "organization": "Kurt Enkera et al.",
+      "published_at": "2026-10-29"
+    },
+    {
+      "id": "src-rlwrld-kddi-summit-20261030",
+      "title": "RLWRLD KDDI SUMMIT 2026 RLDX-1 logistics packing demonstration",
+      "url": "https://prtimes.jp/main/html/rd/p/000000006.000183256.html",
+      "domain": "prtimes.jp",
+      "organization": "RLWRLD",
+      "published_at": "2026-10-30"
+    }
+  ]
+}

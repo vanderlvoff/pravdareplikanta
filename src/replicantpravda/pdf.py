@@ -8,6 +8,7 @@ from importlib.metadata import version
 from pathlib import Path
 
 from .models import Issue
+from .readers import reader_base
 from .preview import PreviewServer
 from .verification import normalize_pdf, verify_pdf
 
@@ -38,7 +39,7 @@ GEOMETRY_CHECK = """() => {
     const bounds = sheet.getBoundingClientRect();
     const body = sheet.querySelector('.page-body');
     const region = body.getBoundingClientRect();
-    for (const element of sheet.querySelectorAll('p,h1,h2,h3,li,blockquote,img,figure,figcaption,.page-footer,.running-title')) {
+    for (const element of sheet.querySelectorAll('p,h1,h2,h3,li,blockquote,img,figure,figcaption,.print-glossary-card,.page-footer,.running-title')) {
       const insideArticle = element.closest('[data-article]');
       const limit = insideArticle ? region : bounds;
       for (const rect of element.getClientRects()) {
@@ -101,6 +102,7 @@ def render_pdfs(site: Path, issue: Issue) -> dict:
                 raise ValueError(f"Expected Chromium {CHROMIUM_VERSION}, found {browser.version}")
             origin = f"http://127.0.0.1:{server.server_port}"
             for lang in ("ru", "en", "ja"):
+                base = reader_base(lang, issue.edition)
                 page = browser.new_page(viewport={"width": 1280, "height": 1200})
                 errors: list[str] = []
                 page.route(
@@ -117,9 +119,7 @@ def render_pdfs(site: Path, issue: Issue) -> dict:
                     else None,
                 )
                 page.emulate_media(media="print")
-                page.goto(
-                    f"{origin}/{lang}/issues/{issue.issue_id}/print/", wait_until="networkidle"
-                )
+                page.goto(f"{origin}{base}issues/{issue.issue_id}/print/", wait_until="networkidle")
                 page.evaluate("document.fonts.ready")
                 font_loads = page.evaluate(ARTICLE_FONT_LOAD)
                 if not all(result["loaded"] for result in font_loads):
@@ -188,7 +188,7 @@ def render_pdfs(site: Path, issue: Issue) -> dict:
                     or not current["article_family_matches_footer"]
                 ):
                     raise PrintFailure(report)
-                pdf_path = site / lang / "issues" / str(issue.issue_id) / "edition.pdf"
+                pdf_path = site / base.lstrip("/") / "issues" / str(issue.issue_id) / "edition.pdf"
                 pdf_path.with_name("pagination.json").write_text(
                     json.dumps(pagination, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
                 )

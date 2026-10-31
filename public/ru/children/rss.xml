@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Правда репликанта</title>
+    <link>https://repravda.com/ru/children/</link>
+    <description>Новости и анализ из мира физического искусственного интеллекта.</description>
+    <language>ru</language>
+    <atom:link href="https://repravda.com/ru/children/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Почему роботу удобнее менять инструменты, чем пользоваться одной рукой</title>
+      <link>https://repravda.com/ru/children/issues/2026-11-01/articles/swapbot-tools/</link>
+      <guid isPermaLink="false">replicantpravda:children:2026-11-01:ru:swapbot-tools</guid>
+      <description>Представь, что нужно перемешать салат, перевернуть еду и что-нибудь разрезать. Одной ложкой выполнять все эти действия неудобно. Исследователи придумали, как робот может менять подходящие инструменты, не заменяя всю руку. Работа опубликована 29 октября, и пока это лабораторный опыт.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>Как четвероногий робот учится вести за собой тележку</title>
+      <link>https://repravda.com/ru/children/issues/2026-11-01/articles/raibo-wagon-towing/</link>
+      <guid isPermaLink="false">replicantpravda:children:2026-11-01:ru:raibo-wagon-towing</guid>
+      <description>Тянуть чемодан на колёсиках не всегда просто: на повороте он может задеть угол, даже если человек прошёл свободно. У четвероногого робота с тележкой возникает похожая задача. Исследователи разработали способ учитывать путь не только самого робота, но и того, что движется за ним.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>Как сравнить роботов, если каждый показывает свой лучший трюк</title>
+      <link>https://repravda.com/ru/children/issues/2026-11-01/articles/roboseed-evaluation/</link>
+      <guid isPermaLink="false">replicantpravda:children:2026-11-01:ru:roboseed-evaluation</guid>
+      <description>Один робот быстро переносит кубики, другой аккуратно берёт хрупкий предмет. Как понять, какой из них лучше? Сравнить только число удачных попыток недостаточно, если задания и условия разные. Исследователи предложили подход, который заставляет внимательнее смотреть на то, что именно измеряли.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>Почему мягкая рука робота должна терпеть небольшие ошибки</title>
+      <link>https://repravda.com/ru/children/issues/2026-11-01/articles/simto-robust-grippers/</link>
+      <guid isPermaLink="false">replicantpravda:children:2026-11-01:ru:simto-robust-grippers</guid>
+      <description>Когда берёшь чашку, пальцы немного подстраиваются под её форму. Роботу тоже полезно уметь приспосабливаться, особенно если камера ошиблась в положении предмета на несколько миллиметров. Исследователи предложили проектировать мягкие захваты с учётом таких неточностей, а не только идеального положения руки.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>Робот с пятью пальцами попробовал упаковать покупки</title>
+      <link>https://repravda.com/ru/children/issues/2026-11-01/articles/rlwrld-packing/</link>
+      <guid isPermaLink="false">replicantpravda:children:2026-11-01:ru:rlwrld-packing</guid>
+      <description>Когда собирают интернет-заказ, нужно выбрать правильные вещи, положить их в коробку и ничего не повредить. На выставке в Токио компания показала робота с кистью из пяти пальцев, который выполнял похожие действия. Выставка проходила 27 и 28 октября, а сообщение о ней появилось 30 октября.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>От отдельного трюка к проверяемой работе</title>
+      <link>https://repravda.com/ru/children/issues/2026-11-01/articles/technology-signal/</link>
+      <guid isPermaLink="false">replicantpravda:children:2026-11-01:ru:technology-signal</guid>
+      <description>Новые исследования и демонстрации показывают способы расширить набор действий робота, но качество результата зависит от условий испытания.</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>Анализ</category>
+    </item>
+    <item>
+      <title>Почему говорящий робот может начать отвечать быстрее</title>
+      <link>https://repravda.com/ru/children/issues/2026-10-31/articles/sota-streamed-dialogue/</link>
+      <guid isPermaLink="false">replicantpravda:children:2026-10-31:ru:sota-streamed-dialogue</guid>
+      <description>Представь разговор, в котором собеседник долго молчит перед каждым ответом. Даже хороший ответ будет звучать неестественно. Японская компания 30 октября рассказала об обновлении говорящего настольного робота. Теперь он может начать произносить первую часть ответа, пока следующие части ещё готовятся.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>Как пять камер помогают машине замечать предметы вокруг</title>
+      <link>https://repravda.com/ru/children/issues/2026-10-31/articles/luxonis-five-camera-board/</link>
+      <guid isPermaLink="false">replicantpravda:children:2026-10-31:ru:luxonis-five-camera-board</guid>
+      <description>Когда смотришь на предмет двумя глазами, легче понять, насколько он далеко. Похожий принцип используют две камеры: по различиям изображений программа может оценить расстояние. Разработчики 27 октября представили небольшую плату, к которой подключаются до пяти камер. Их можно разместить в разных частях робота.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>Новости</category>
+    </item>
+    <item>
+      <title>Почему говорящий робот может начать отвечать быстрее</title>
+      <link>https://repravda.com/ru/children/issues/2026-10-31/articles/technology-signal/</link>
+      <guid isPermaLink="false">replicantpravda:children:2026-10-31:ru:technology-signal</guid>
+      <description>Японская компания Vstone 30 октября сообщила об обновлении настольного робота: он может произносить готовые части ответа, пока остальная речь ещё создаётся.</description>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
+      <category>Анализ</category>
+    </item>
+  </channel>
+</rss>

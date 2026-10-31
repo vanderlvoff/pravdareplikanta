@@ -47,10 +47,14 @@ def test_publication_is_explicit_and_rejects_drafts(issue, tmp_path):
         "style.css",
         "ru/rss.xml",
         "ru/archive/index.html",
+        "ru/about/index.html",
         "ja/issues/2026-10-31/edition.pdf",
         "en/issues/2026-10-30/articles/robot/index.html",
         "assets/fonts/Caveat/OFL.txt",
         "data/images/2026-10-31/robot.webp",
+        "ru/business/index.html",
+        "ja/children/issues/2026-11-01/edition.pdf",
+        "en/enthusiast/rss.xml",
     ],
 )
 def test_reader_files_are_selected(name):
@@ -70,6 +74,9 @@ def test_reader_files_are_selected(name):
         "ru/issues/2026-10-31/print/index.html",
         "ru/print/index.html",
         "data/latest/ru.json",
+        "ru/business/issues/2026-11-01/print/index.html",
+        "ja/children/issues/2026-11-01/pagination.json",
+        "en/unknown/index.html",
     ],
 )
 def test_internal_files_are_not_selected(name):
@@ -83,7 +90,12 @@ def test_release_and_cloudflare_guard_reject_changed_files(issue, tmp_path):
     report = prepare_release(snapshot, public)
     assert report["uploaded"] is False
     assert not (public / "source.json").exists()
-    assert not list(public.rglob("*.json"))
+    assert list(public.rglob("*.json")) == [public / "announcement.json"]
+    from replicantpravda.telegram import validate_announcement
+
+    assert validate_announcement(json.loads((public / "announcement.json").read_text()))[
+        "issue_id"
+    ] == str(issue.issue_id)
     assert not list(public.glob("*/issues/*/page-*.png"))
     assert not list(public.glob("*/issues/*/print/index.html"))
     assert not (public / "print.css").exists()

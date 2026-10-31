@@ -2,6 +2,32 @@
 
 ## Unreleased
 
+- Added owner-authorized daily macOS publication at 06:20 JST, using an isolated checkout, strict twelve-feed/date validation, saved archive/weather, verified four-audience public exports and non-forced main pushes. Added launchd installation/logging and regression tests; Telegram remains gated by successful deployment/live-file verification.
+
+- Refreshed develop to 0ca6a63: five stories per edition for November 1, local issue № 4 revision 2 with website/PDFs and preserved history. Accepted independent localized glossary lengths in v1.4 while retaining every term and legacy validation; added regression coverage. No deployment or Telegram sending.
+
+- Refreshed develop to 2e43f58 with the November 1 issue across all four RU/EN/JA editions; imported issue № 4, refreshed the three saved city forecasts, and rebuilt the local website/PDFs with October 30/31 history. Preserved local changes, previous snapshots and public output.
+
+- Prepared opt-in Russian Telegram issue announcements for @pravdareplicanta, with a local preview command, release-hashed public announcement metadata, verified Cloudflare/live-file checks and durable reservation before a single send attempt. Connected the local workflow to the owner's TELEGRAM_BOT_TOKEN environment secret; production activation remains separate and no messages were sent.
+
+- Applied indexed glossary cards with whole-definition pagination to PDFs and added first-mention numbered web footnotes with native definition/back links, preserving source text and Japanese readings.
+- Added a localized newspaper story/reader guide explaining the morning-paper origin, four editions, PDFs and the future email-to-home-printer scenario; kept current email/automatic-printing availability explicit.
+
+- Refreshed reader data from develop 8c2580a; styled web glossaries as indexed term cards and added issue-local article glossaries selected by text mentions, preserving kana readings and print layout.
+- Unified back-navigation and Patreon buttons with the compact rounded edition controls.
+
+- Renamed the Russian children edition selector to «Отрок»; made audience buttons shorter with rounded corners and added monochrome inline SVG icons, retaining text labels and keyboard focus.
+
+- Refreshed local reader/PDF preview from develop a2222e0, including six engineering stories and updated children terminology; preserved previous snapshots and public output.
+
+- Restored PDF download links in multi-edition previews via build-readers --pdf; generated and verified independent PDFs/print aliases for all audiences and languages using unchanged A4 design.
+
+- Refreshed all four v1.4 reader editions from develop 05ded87 (0.2 data), preserving the previous local snapshot and pinning reader tests to the archived input revision.
+
+- Added a local four-audience RU/EN/JA reader preview, keyboard-accessible edition navigation, valid-feed availability/Coming soon states, scoped archives/articles/RSS and compatible engineering routes.
+- Mapped daily schema 1.4 edition/body/null images to the internal issue model while preserving legacy illustrated feeds and Japanese parenthesized readings; added clear children navigation without changing approved branding or print templates.
+- Added build-readers, multi-audience snapshot verification, reader documentation and tests; kept public/ and deployment unchanged.
+
 - Added a localized, monochrome Patreon support button to all web footers, linking to the owner's public creator page without tracking parameters.
 
 - Added local publication proofs and reader-only release packaging for Cloudflare Workers Static Assets via GitHub, with a checksum guard and pinned Wrangler configuration. Kept PDF generation on the Mac and diagnostic/source files outside public/.

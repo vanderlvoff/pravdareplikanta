@@ -155,10 +155,15 @@ window.paginateNewspaper = () => {
   }
   const articles = {};
   const images = [];
+  const glossary_cards = [];
   sheets.forEach((page, index) => {
     page.dataset.page = index + 1;
     page.querySelector('.page-number').textContent = `${index + 1} / ${sheets.length}`;
     page.querySelectorAll('[data-article]').forEach(article => {
+      article.querySelectorAll('.print-glossary-card').forEach(card => {
+        glossary_cards.push({index: Number(card.dataset.glossaryIndex), page: index + 1,
+          term: card.querySelector('h3').textContent, definition: card.querySelector('p').textContent});
+      });
       article.querySelectorAll('.article-illustration img').forEach(image => {
         images.push({article: article.dataset.article, page: index + 1, src: image.getAttribute('src')});
       });
@@ -173,5 +178,5 @@ window.paginateNewspaper = () => {
         col.getBoundingClientRect().top) / col.clientHeight) / 1000 : 0;
     })
   }));
-  return {page_count: sheets.length, articles, images, columns, errors};
+  return {page_count: sheets.length, articles, images, glossary_cards, columns, errors};
 };

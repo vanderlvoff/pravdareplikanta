@@ -1,0 +1,10 @@
+  <section class="reader-picker" aria-labelledby="reader-picker-title">
+    <p id="reader-picker-title" class="reader-picker-title">{{ reader_labels.selector }}</p>
+    <nav class="reader-options" aria-labelledby="reader-picker-title">
+      {% for choice in reader_choices %}
+      {% if choice.url %}<a class="reader-option" data-edition="{{ choice.code }}" href="{{ choice.url }}"{% if choice.active %} aria-current="page"{% endif %}>{% include "reader-icon.html" %}<span>{{ choice.label }}</span></a>
+      {% else %}<span class="reader-option reader-unavailable" data-edition="{{ choice.code }}" aria-disabled="true">{% include "reader-icon.html" %}<span>{{ choice.label }}</span><span class="reader-soon">{{ reader_labels.soon }}</span></span>{% endif %}
+      {% endfor %}
+    </nav>
+    <p class="reader-description"><strong>{{ reader_labels.current }}: {{ reader_name }}.</strong> {{ reader_labels.descriptions[reader_code] }}</p>
+  </section>

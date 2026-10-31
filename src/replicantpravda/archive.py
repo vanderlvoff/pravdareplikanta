@@ -6,6 +6,8 @@ from .models import Issue
 def collect_issues(latest: Issue, history: tuple[Issue, ...]) -> list[Issue]:
     """Select one revision per date for a local, non-public review snapshot."""
     issues = [latest, *history]
+    if any(issue.edition != latest.edition for issue in issues):
+        raise ValueError("Archive history must belong to the same reader edition")
     ids = [issue.issue_id for issue in issues]
     if len(ids) != len(set(ids)):
         raise ValueError("Duplicate archive issue date; select one revision per issue")

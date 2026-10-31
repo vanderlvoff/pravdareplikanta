@@ -7,74 +7,74 @@
     <language>ja</language>
     <atom:link href="https://repravda.com/ja/rss.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>SwapBot：万能グリッパーではなく触覚付き工具を交換する</title>
-      <link>https://repravda.com/ja/issues/2026-10-31/articles/swapbot-tools/</link>
-      <guid isPermaLink="false">replicantpravda:2026-10-31:ja:swapbot-tools</guid>
-      <description>あらゆる作業をこなす万能の手を作る代わりに、道具そのものを交換する。SwapBotはロボット側の共通結合部と、身近な道具に取り付ける低コストのアダプターを組み合わせる。アダプターには触覚センシングがあり、カメラだけでは捉えにくい接触状態を扱える。</description>
+      <title>ロボットAIを性能だけでなく費用と再現性でも比べる</title>
+      <link>https://repravda.com/ja/issues/2026-11-01/articles/roboseed-evaluation/</link>
+      <guid isPermaLink="false">replicantpravda:2026-11-01:ja:roboseed-evaluation</guid>
+      <description>ロボットが実験で高い成功率を出しても、企業が安く導入できるとは限らない。追加学習に必要な計算機、運用時に使う装置、試験結果の信頼性も重要になる。Xin Maらは2026年10月29日、画像と指示から動作を作るモデルなどを比較するRoboSeedという評価の枠組みを発表した。</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>LOGIVは作業の依存関係を検証し、崩れた条件を部分的に修復する</title>
+      <link>https://repravda.com/ja/issues/2026-11-01/articles/logiv-task-graph-repair/</link>
+      <guid isPermaLink="false">replicantpravda:2026-11-01:ja:logiv-task-graph-repair</guid>
+      <description>導入判断では、研究結果と保証された運用性能を区別する必要がある。動作生成と長期計画の信頼性を別の層として評価できる。 対象は限定された双腕作業で、実機の成功は30試行中17回にとどまる。</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>可否判定だけでロボットの生成動作に制約を組み込む研究</title>
+      <link>https://repravda.com/ja/issues/2026-11-01/articles/oracle-safe-flow/</link>
+      <guid isPermaLink="false">replicantpravda:2026-11-01:ja:oracle-safe-flow</guid>
+      <description>導入判断では、研究結果と保証された運用性能を区別する必要がある。既存の衝突判定器を生成型動作モデルの制約処理に組み込める可能性がある。 評価は一つのシミュレーション課題に限られ、推論時間は0.071秒から1.345秒に増加した。</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>少し位置がずれても物をつかめる柔らかいハンド</title>
+      <link>https://repravda.com/ja/issues/2026-11-01/articles/simto-robust-grippers/</link>
+      <guid isPermaLink="false">replicantpravda:2026-11-01:ja:simto-robust-grippers</guid>
+      <description>ロボットが物の位置を正しく見つけても、手を近づけるときに少しずれることがある。硬い指では滑ってしまう場面でも、柔らかい指なら物の形に合わせて変形できるかもしれない。Kurt Enkeraらは、そうした失敗への強さを設計段階から考えるSimTO-Robustという方法を発表した。</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>一つの全身制御モデルで歩行と物体操作を切り替える</title>
+      <link>https://repravda.com/ja/issues/2026-11-01/articles/metatron/</link>
+      <guid isPermaLink="false">replicantpravda:2026-11-01:ja:metatron</guid>
+      <description>人型ロボットが机まで歩き、止まり、手を伸ばし、姿勢を立て直すには、全身の動きを連続して調整する必要がある。従来は動作ごとに別の制御モデルを学習させる場合が多い。Chen Tesslerらが10月27日に公開したMetatronは、一つの学習済み全身制御モデルと、目的に応じて書き換えられる技能プログラムを組み合わせる研究である。ニュース一覧に掲載された日と、論文が最初に公開された日を混同してはいけない。</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>ニュース</category>
+    </item>
+    <item>
+      <title>単発の実演から検証できる作業へ</title>
+      <link>https://repravda.com/ja/issues/2026-11-01/articles/technology-signal/</link>
+      <guid isPermaLink="false">replicantpravda:2026-11-01:ja:technology-signal</guid>
+      <description>研究や実演によってロボットの仕事の幅は広がるが、結果の確かさは試験条件によって変わる。</description>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 +0900</pubDate>
+      <category>分析</category>
+    </item>
+    <item>
+      <title>未来の映像と3次元の動きを予測するWorldFlow</title>
+      <link>https://repravda.com/ja/issues/2026-10-31/articles/worldflow-video-3d/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:ja:worldflow-video-3d</guid>
+      <description>ロボットが動く前に、物がどう動くか予測できれば役に立つ。10月29日に発表されたWorldFlowは、未来の映像と、指定した点が3次元空間でどう動くかを同時に予測する世界モデルだ。モーターを直接動かす装置ではない。</description>
       <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
       <category>ニュース</category>
     </item>
     <item>
-      <title>Gym-Anything：コーディングエージェントがロボット用シミュレーターを作る</title>
-      <link>https://repravda.com/ja/issues/2026-10-31/articles/gym-anything/</link>
-      <guid isPermaLink="false">replicantpravda:2026-10-31:ja:gym-anything</guid>
-      <description>慣れたシミュレーターでは優秀なロボット方策も、条件が変わると簡単に失敗する。Gym-Anythingは環境を作る側の問題に取り組む。専門家の手作業だけに頼らず、コーディングエージェントが物理環境を生成し、別の検査工程で妥当性を確かめる。その成果が25種類のシミュレーションを含むRoboWorldだ。</description>
+      <title>失敗からも進み具合を学ぶEvent2Reward</title>
+      <link>https://repravda.com/ja/issues/2026-10-31/articles/event2reward-progress/</link>
+      <guid isPermaLink="false">replicantpravda:2026-10-31:ja:event2reward-progress</guid>
+      <description>ロボットが物を落としたら、時間は進んでも仕事は進んでいない。10月29日に発表されたEvent2Rewardは、停滞や後戻り、回復を区別して強化学習の報酬を作る方法だ。報酬は、行動が目標に近づいたかを伝える信号である。</description>
       <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
       <category>ニュース</category>
     </item>
     <item>
-      <title>TouchBridge：人の指先の接触情報をロボット学習へ移す</title>
-      <link>https://repravda.com/ja/issues/2026-10-31/articles/touchbridge-tactile/</link>
-      <guid isPermaLink="false">replicantpravda:2026-10-31:ja:touchbridge-tactile</guid>
-      <description>人が手の中で物を回すとき、重要なのは指の位置だけではない。どこに触れ、接触がどう変化したかも欠かせない。TouchBridgeは装着型インターフェースと触覚情報に基づく動作変換を組み合わせ、人とロボットの異なる手の間で接触関係を保った実演データを作る。</description>
-      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
-      <category>ニュース</category>
-    </item>
-    <item>
-      <title>LOGIV：計画の前提条件が現実に残っているかを確認</title>
-      <link>https://repravda.com/ja/issues/2026-10-31/articles/logiv-repair/</link>
-      <guid isPermaLink="false">replicantpravda:2026-10-31:ja:logiv-repair</guid>
-      <description>ある工程が成功しても、その結果が次の工程まで保たれるとは限らない。部品を正しく置いたロボットが、次の動作でその部品を動かしてしまうこともある。LOGIVはタスクグラフに後続工程の物理的な前提条件を記録し、観測によって検証して、壊れた依存関係だけを修復する。</description>
-      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
-      <category>ニュース</category>
-    </item>
-    <item>
-      <title>イオンとMujin、混載積み付けを自動化した物流拠点を本格稼働</title>
-      <link>https://repravda.com/ja/issues/2026-10-31/articles/aeon-mixed-palletizing/</link>
-      <guid isPermaLink="false">replicantpravda:2026-10-31:ja:aeon-mixed-palletizing</guid>
-      <description>大きさも重さも異なる箱は、固定された積み付け手順に都合よく並んではくれない。イオンとMujinが10月29日に本格稼働させた川口東XDでは、注文ごとに積載計画を計算し、3Dビジョンで積み上がる荷物の状態を確認する。箱がずれればロボットの動作を補正する。現実の状態を見ながら計画を修正する点が重要だ。</description>
-      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
-      <category>ニュース</category>
-    </item>
-    <item>
-      <title>Agility、Digit 5量産に向けた資金調達見通しを更新</title>
-      <link>https://repravda.com/ja/issues/2026-10-31/articles/agility-financing/</link>
-      <guid isPermaLink="false">replicantpravda:2026-10-31:ja:agility-financing</guid>
-      <description>人型ロボットの華やかなデモから、顧客が安心して使える機体群へ進むには資金も要る。Agility RoboticsとChurchill XIは10月30日、予定する企業統合で約4億6500万ドルの総調達額を見込むと開示した。11月4日の取引完了と5日のNasdaq取引開始を目指すが、承認などの条件が残る。</description>
-      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
-      <category>ニュース</category>
-    </item>
-    <item>
-      <title>Opentrons、AI主導の実験を支えるため4000万ドル調達</title>
-      <link>https://repravda.com/ja/issues/2026-10-31/articles/opentrons-autonomous-labs/</link>
-      <guid isPermaLink="false">replicantpravda:2026-10-31:ja:opentrons-autonomous-labs</guid>
-      <description>AIが大量の実験仮説を提案しても、実験室での実行には時間がかかる。Opentronsが投資するのは、この物理的なボトルネックだ。液体操作ロボット、実験手順のソフトウェア、結果を記録するデータ基盤を拡充するため、10月29日に4000万ドルのシリーズE調達を発表した。</description>
-      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
-      <category>ニュース</category>
-    </item>
-    <item>
-      <title>Bleu Robotics、少数実演による工場作業学習に500万ユーロ</title>
-      <link>https://repravda.com/ja/issues/2026-10-31/articles/bleu-few-shot/</link>
-      <guid isPermaLink="false">replicantpravda:2026-10-31:ja:bleu-few-shot</guid>
-      <description>製造ラインでは、製品が変わるたびにロボットの設定をやり直す負担が大きい。Inria発のBleu Roboticsは、この課題に向けて500万ユーロを調達した。万能モデルを一から学習するのではなく、既存の認識・運動制御を使い、約10回の実演から作業の構造を推定するfew-shot模倣学習を重視する。</description>
-      <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
-      <category>ニュース</category>
-    </item>
-    <item>
-      <title>Physical AIは単発のデモから運用可能なシステムへ</title>
+      <title>未来の映像と3次元の動きを予測するWorldFlow</title>
       <link>https://repravda.com/ja/issues/2026-10-31/articles/technology-signal/</link>
       <guid isPermaLink="false">replicantpravda:2026-10-31:ja:technology-signal</guid>
-      <description>工具交換、触覚データ、タスク依存関係の検証、実物流現場でのフィードバックが基盤モデルと同じくらい重要になっている。</description>
+      <description>10月29日の研究は、未来の映像と点の3次元移動を予測するモデルを報告。SpatialCogでの平均変位誤差は0.060メートル。</description>
       <pubDate>Sat, 31 Oct 2026 00:00:00 +0900</pubDate>
       <category>分析</category>
     </item>

@@ -30,6 +30,26 @@ ruff format --check .
 
 ## Scope and review
 
+Local four-edition reader preview (engineer/business/enthusiast/children × RU/EN/JA):
+
+```sh
+.venv/bin/rp build-readers --input data/latest \
+  --template content/technical/2026-11-01.json --number 4 --revision 2 --pdf \
+  --archive-input data/archive/2026/10/31 \
+  --legacy-issue content/technical/2026-10-31.json \
+  --legacy-issue content/technical/2026-10-30.json \
+  --output previews/readers-2026-11-01-2
+.venv/bin/rp preview --output previews/readers-2026-11-01-2 --port 8001
+```
+
+The preview has already been built locally; run only the second command to view it.
+Use a fresh output directory for a rebuild. Open http://127.0.0.1:8001/ru/.
+Missing/invalid editions stay visible as Coming soon, without empty pages.
+The footer links to the newspaper story/reader guide at `/ru/about/` (also EN/JA and audience variants). Article footnotes jump to glossary definitions and back without JavaScript; PDFs include the styled issue glossary. Email delivery and automatic printer delivery are a future scenario, not a connected service.
+Routes, schema mapping, archive inputs and validation: [docs/READERS.md](docs/READERS.md).
+With `--pdf`, the preview includes a verified PDF for each available audience/language.
+Install [PDF dependencies](docs/PRINT.md) first. The command does not publish or change `public/`.
+
 The sample is a fictional editorial exercise with an explicitly marked placeholder
 citation, not reporting. Ordinary builds are local NON-FINAL review snapshots,
 including explicitly selected drafts; do not upload those snapshots to public hosting.
@@ -60,6 +80,22 @@ implemented; see [docs/DISCOVERY.md](docs/DISCOVERY.md). Publication proofs and 
 reader-only GitHub/Cloudflare release bundle are implemented; actual uploads require review.
 
 ## Cloudflare through GitHub
+
+Daily publication from this Mac at **06:20 JST** is owner-authorized: fetch data
+from develop, verify all website/PDF editions in an isolated checkout, commit and
+push main, then announce the deployed issue in Telegram. Setup, logs and stop
+commands: [docs/DAILY_PUBLICATION.md](docs/DAILY_PUBLICATION.md).
+
+Russian Telegram announcements for [@pravdareplicanta](https://t.me/pravdareplicanta)
+are prepared locally and disabled by default. Preview without a bot or network:
+
+```sh
+.venv/bin/rp telegram --issue previews/readers-2026-11-01-2/source.json
+```
+
+Bot setup, GitHub secret, explicit activation and duplicate prevention:
+[docs/TELEGRAM.md](docs/TELEGRAM.md). After activation, announcements wait for a
+successful production deployment and verify the live issue/PDF before sending.
 
 The current hosting setup uses Workers Static Assets, serving the locally prepared
 `public/` directory. PDF rendering remains on the Mac. Cloudflare settings:

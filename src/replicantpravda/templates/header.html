@@ -6,7 +6,7 @@
         <div class="medals">{% for name, ext in [('jupiter','jpeg'),('tannhauser','png'),('orion','jpeg')] %}<img class="medal medal-{{ name }}" src="/assets/medals/press/{{ name }}_{{ lang }}.png" alt="{{ name }}">{% endfor %}</div>
       </div>
       <div class="title-panel">
-        <h1><a href="/{{ lang }}/"><img class="masthead" src="/assets/masthead/pcb/masthead_{{ lang }}.svg" alt="{{ edition.title }}"></a></h1>
+        <h1><a href="{{ reader_base }}"><img class="masthead" src="/assets/masthead/pcb/masthead_{{ lang }}.svg" alt="{{ edition.title }}"></a></h1>
         <p class="strapline">{% if labels.translated_title %}<span class="strapline-name">{{ labels.translated_title }}</span>{% if lang == "ja" %} - {% endif %}{% endif %}{{ labels.strapline }}</p>
       </div>
       {% include "weather.html" %}
@@ -19,6 +19,6 @@
     {% endif %}
     <div class="issue-line">
       <p>{{ labels.issue }} № {{ issue.number }} · <time datetime="{{ issue.publication_date }}">{{ issue.publication_date }}</time></p>
-      <p>rev. {{ issue.revision }}{% if preview_only %} · {{ issue.status }}{% endif %} · <a href="/{{ lang }}/archive/">{{ labels.archive }}</a></p>
+      <p>rev. {{ issue.revision }}{% if preview_only %} · {{ issue.status }}{% endif %} · <a href="{{ reader_base }}archive/">{{ labels.archive }}</a></p>
     </div>
   </header>

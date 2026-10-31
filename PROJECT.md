@@ -23,6 +23,7 @@ The masthead and its adornments must preserve the user's **already approved desi
 - Cloudflare hosts only static HTML/CSS/images/PDF/RSS; its build checks the release manifest and uploads prebuilt files. It does not generate issues/PDFs or need API access to the model.
 - Domain and DNS configured separately by owner. Do not assume it has been purchased.
 - Local scheduler may be added later via macOS `launchd`; manual `build`, `verify`, and `publish` commands must work first.
+- Owner update (2026-11-01): daily Mac launchd publication is authorized at 06:20 Asia/Tokyo. Fetch editorial data from develop in an isolated checkout, verify all four audiences × three languages and PDFs, commit/push the prepared main release, then announce the successfully deployed Russian issue in Telegram. This supersedes the earlier per-upload confirmation requirement only for this explicitly authorized scheduled workflow.
 
 **Agentic development tools:** Codex in VS Code is the default implementation workflow; OpenHands is optional. Neither must be a runtime dependency for publishing.
 

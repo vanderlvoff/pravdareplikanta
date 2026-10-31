@@ -1,0 +1,1299 @@
+{
+  "edition": "business",
+  "issue_id": "2026-11-01",
+  "number": 4,
+  "publication_date": "2026-11-01",
+  "revision": 2,
+  "status": "approved",
+  "languages": {
+    "ru": {
+      "title": "Правда репликанта",
+      "weather": {
+        "location": "ichikawa",
+        "timezone": "Asia/Tokyo",
+        "forecast_date": "2026-11-01",
+        "retrieved_at": "2026-10-31T16:07:47.112550Z",
+        "kind": "forecast",
+        "source_name": "Open-Meteo",
+        "source_url": "https://api.open-meteo.com/v1/forecast?latitude=35.72&longitude=139.93&timezone=Asia%2FTokyo&start_date=2026-11-01&end_date=2026-11-01&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+        "temperature_min_c": 13.2,
+        "temperature_max_c": 19.0,
+        "precipitation_probability_max": 8,
+        "slots": [
+          {
+            "hour": 9,
+            "temperature_c": 15.3,
+            "condition": "cloudy",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 1.97,
+            "wind_direction_deg": 336
+          },
+          {
+            "hour": 12,
+            "temperature_c": 18.3,
+            "condition": "clear",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 0.67,
+            "wind_direction_deg": 297
+          },
+          {
+            "hour": 18,
+            "temperature_c": 17.9,
+            "condition": "cloudy",
+            "precipitation_probability": 8,
+            "wind_speed_ms": 1.33,
+            "wind_direction_deg": 103
+          }
+        ]
+      },
+      "issue_title": "Данные репликанта — деловая редакция",
+      "editorial_note": "Роботизация между демонстрацией и внедрением: интеграция, экономика и доказательства.",
+      "articles": [
+        {
+          "id": "swapbot-tools",
+          "slug": "swapbot-tools",
+          "category": "news",
+          "headline": "Робот меняет инструменты и чувствует прикосновения",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Для разных действий нужны разные инструменты: нож разрезает, кисточка наносит жидкость, лопатка переворачивает продукт. Исследователи во главе с Юньчу Чжан предложили SwapBot — систему, в которой роботизированная рука самостоятельно меняет инструменты. Работа опубликована 29 октября 2026 года как препринт, поэтому речь идёт об исследовательском прототипе, а не о готовом домашнем помощнике."
+            },
+            {
+              "type": "paragraph",
+              "text": "В конструкции есть постоянный соединитель на стороне робота и недорогие переходники для обычных инструментов. Это позволяет менять назначение руки без разработки отдельного сложного захвата для каждой задачи. Авторы показали совместимость с разными инструментами, включая инструменты с подвижными частями, и несколькими роботизированными платформами. При этом механическое крепление должно надёжно удерживать инструмент."
+            },
+            {
+              "type": "paragraph",
+              "text": "В переходники встроены компактные тактильные датчики. Камера показывает положение предмета, но не всегда сообщает, с какой силой инструмент касается поверхности. Операторы собирали демонстрации через дистанционное управление, а затем на них обучали политики подражания, выбирающие движения по примерам. Среди испытаний были приготовление тофу, перемешивание салата и переворачивание мяса."
+            },
+            {
+              "type": "paragraph",
+              "text": "В сравнении с обучением только по цветным RGB-изображениям использование прикосновений повысило успешность на 15–25 процентных пунктов. Авторы также сообщили о снижении времени выполнения задач и нагрузки на операторов при дистанционном управлении. Это показатели конкретных лабораторных заданий, а не доказательство одинаковой надёжности со всеми инструментами."
+            },
+            {
+              "type": "paragraph",
+              "text": "Инженерная ценность состоит в общем интерфейсе для смены инструмента, измерения контакта и записи демонстраций. Он облегчает сравнение роли зрения и осязания, а также повторное использование оборудования. Однако допустимые усилия, износ соединителя, скорость переключения, очистка инструментов и восстановление после неудачной стыковки ещё нужно изучать при длительной эксплуатации."
+            },
+            {
+              "type": "paragraph",
+              "text": "Исследование показывает альтернативу универсальной роботизированной кисти: можно подбирать подходящий инструмент. Но робот пока не продемонстрировал приготовление целого обеда в незнакомой кухне без помощи человека. Для практического внедрения нужны испытания с более разнообразными предметами, непредвиденными контактами и независимая проверка результатов."
+            },
+            {
+              "type": "paragraph",
+              "text": "При внедрении полезно заранее определить критерии приёмки: результат на реальном ассортименте, время восстановления после ошибки, участие оператора и стоимость поддержки. Демонстрация технической возможности не заменяет измерения этих показателей у заказчика."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "gxo-digit-multisite",
+          "slug": "gxo-digit-multisite",
+          "category": "news",
+          "headline": "GXO расширяет коммерческую эксплуатацию гуманоидов Digit ещё на два склада",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "В складской робототехнике важнее повторяемость результата, чем эффектная демонстрация. 26 октября 2026 года GXO Logistics и Agility Robotics объявили, что гуманоиды Digit будут работать ещё на двух американских площадках GXO — в Стейтсвилле, Северная Каролина, и Лебаноне, Теннесси. Начало развёртывания запланировано на начало 2027 года. Речь идёт о расширении существующего коммерческого сотрудничества, а не о завершённом внедрении на новых складах. На первом объекте в Джорджии роботы уже выполняют повторяющуюся задачу перемещения контейнеров к конвейеру."
+            },
+            {
+              "type": "paragraph",
+              "text": "По совместному сообщению компаний, на действующей площадке Digit переместил более 100 тысяч контейнеров. Это полезная накопленная метрика реальной работы, но она не сообщает, сколько времени потребовалось, какова доля вмешательств оператора и какова стоимость одного перемещения. Сотрудничество оформлено как Robots-as-a-Service — предоставление роботизированной системы как услуги, где клиент получает эксплуатацию и поддержку вместо простой покупки оборудования. Для управления парком и связью с операциями используется программная платформа Agility Arc."
+            },
+            {
+              "type": "paragraph",
+              "text": "На двух новых площадках Digit должен поддерживать выполнение заказов электронной торговли. Сначала планируется версия Digit 4, затем переход на Digit 5 после её коммерческой доступности. С точки зрения интегратора это означает необходимость заранее согласовать интерфейсы с конвейерами, правила безопасности рядом с персоналом, обслуживание и порядок обновления оборудования. Масштабирование на другой склад проверяет не только саму способность поднимать контейнер, но и устойчивость процесса при иной планировке, нагрузке и графике смен."
+            },
+            {
+              "type": "paragraph",
+              "text": "Компании не назвали число роботов на новых площадках, цену договора, окупаемость или независимые показатели производительности. Поэтому заявление подтверждает намерение клиента расширить использование технологии и накопленный объём одной операции, но не доказывает универсальную экономическую эффективность гуманоидов. Для решения о внедрении нужны измерения производительности за смену, простоев, вмешательств человека, стоимости поддержки и последствий отказа. Именно эти показатели определят, превратится ли успешная первая площадка в повторяемую бизнес-модель."
+            },
+            {
+              "type": "paragraph",
+              "text": "При внедрении полезно заранее определить критерии приёмки: результат на реальном ассортименте, время восстановления после ошибки, участие оператора и стоимость поддержки. Демонстрация технической возможности не заменяет измерения этих показателей у заказчика."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.agilityrobotics.com/content/gxo-and-agility-robotics-expand-partnership-to-accelerate-deployment-of-humanoids-in-u-s-operations",
+              "title": "GXO and Agility Robotics Expand Partnership to Accelerate Deployment of Humanoids in U.S. Operations",
+              "published_at": "2026-10-26",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "elyza-robotics-japan-scale",
+          "slug": "elyza-robotics-japan-scale",
+          "category": "news",
+          "headline": "KDDI и ELYZA создают в Японии отдельную структуру для внедрения Physical AI",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Японская телекоммуникационная группа KDDI вместе с разработчиком искусственного интеллекта ELYZA выделяет физический ИИ в отдельный бизнес. В сообщении от 27 октября 2026 года компании рассказали, что ELYZA Robotics начала работу 1 октября. Задача структуры — соединить исследования моделей, управляющих действиями роботов, с их внедрением в реальные процессы. Группа обозначила ориентиры до 2030 финансового года: 30 млрд иен на исследования и разработки, команда более 300 специалистов и более тысячи роботов на рабочих площадках. Эти цифры описывают намерения, а не уже поставленные машины."
+            },
+            {
+              "type": "paragraph",
+              "text": "План разделён на несколько взаимосвязанных направлений. Первое — модели, которые интерпретируют изображение и язык, а также модели VLA, связывающие зрительное восприятие, текстовую команду и действие робота. Второе — сбор данных на площадках и цифровые двойники, то есть программные представления оборудования и рабочих условий для проверки решений. Третье — инфраструктура эксплуатации: распределённое выполнение моделей, дистанционный контроль и координация нескольких машин. Важный практический тезис компании состоит в том, что успешная модель без связей с учётом, безопасностью и рабочими процедурами ещё не является готовой услугой."
+            },
+            {
+              "type": "paragraph",
+              "text": "В планах названы магазины, логистические центры, производство и сервисные площадки. KDDI намерена привлекать связанные компании, включая Lawson и Soracom, и закупать разные классы роботов, а не делать ставку только на один гуманоид. Для заказчика такая схема потенциально снижает риск зависимости от единственной платформы, но одновременно создаёт сложную задачу стандартизации интерфейсов, данных и обслуживания. Пилотные проекты предусмотрены с 2026 года, а расширение должно идти постепенно после проверок на местах."
+            },
+            {
+              "type": "paragraph",
+              "text": "Пресс-релиз не раскрывает подтверждённую экономику внедрения, фактическое количество уже работающих машин, показатели автономности и результаты независимых тестов. Поэтому инвестиционные обещания нельзя превращать в утверждение о готовой масштабной системе. Для потенциального клиента главные вопросы — кто отвечает за интеграцию, безопасность, хранение рабочих данных, обновления моделей и поддержку при отказах. Если компания сможет объединить эти функции, её вклад будет измеряться не количеством презентаций, а устойчивой работой роботов на предприятиях."
+            },
+            {
+              "type": "paragraph",
+              "text": "При внедрении полезно заранее определить критерии приёмки: результат на реальном ассортименте, время восстановления после ошибки, участие оператора и стоимость поддержки. Демонстрация технической возможности не заменяет измерения этих показателей у заказчика."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000086.000047565.html",
+              "title": "フィジカルAIを推進する新会社「ELYZA Robotics」事業開始",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "simto-robust-grippers",
+          "slug": "simto-robust-grippers",
+          "category": "news",
+          "headline": "Мягкие захваты проектируют с запасом на ошибки наведения",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Робот может правильно распознать предмет, но подвести захват немного не туда. Жёсткие пальцы иногда теряют контакт, а мягкий материал способен подстроиться под форму вещи. Исследователи во главе с Куртом Энкерой представили SimTO-Robust — метод компьютерного проектирования мягких захватов, учитывающий такие ошибки заранее."
+            },
+            {
+              "type": "paragraph",
+              "text": "Вместо расчёта под один идеальный предмет метод моделирует контакт с несколькими геометриями и положениями руки. Полученные контактные силы используются для улучшения формы захвата. Часть надёжности таким образом переносится из сложного программного управления в механические свойства детали. Это не отменяет датчиков, но может уменьшить последствия ошибок позиционирования."
+            },
+            {
+              "type": "paragraph",
+              "text": "Команда рассчитала 6646 конструкций и изготовила 24 для физических испытаний. В сравнении участвовали десять специализированных мягких вариантов, два жёстких захвата и один универсальный мягкий. Всего 37 устройств проверили на пяти предметах с выраженными особенностями формы, при шести положениях и с внешними воздействиями возрастающей силы."
+            },
+            {
+              "type": "paragraph",
+              "text": "В среднем новые конструкции успешнее переносили предметы, чем специализированные и жёсткие базовые варианты. Лучшие выдерживали более сильные возмущения, чем остальные участники испытаний. Однако результат относится к конкретным материалам и условиям; он не доказывает, что любой мягкий захват всегда лучше жёсткого или удерживает любую нагрузку."
+            },
+            {
+              "type": "paragraph",
+              "text": "Здесь интересна сама идея: иногда лучше сделать механику терпимой к ошибкам, чем бесконечно усложнять алгоритм. Это может пригодиться при сортировке, сборке и обращении с предметами необычной формы. Для реального применения ещё нужны данные об износе, загрязнении, скорости циклов и работе с тяжёлыми или незнакомыми предметами."
+            },
+            {
+              "type": "paragraph",
+              "text": "При внедрении полезно заранее определить критерии приёмки: результат на реальном ассортименте, время восстановления после ошибки, участие оператора и стоимость поддержки. Демонстрация технической возможности не заменяет измерения этих показателей у заказчика."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.39560",
+              "title": "SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "rlwrld-packing",
+          "slug": "rlwrld-packing",
+          "category": "news",
+          "headline": "На выставке в Токио робот с пятью пальцами показал упаковку заказов",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "В логистике робот должен не просто взять коробку, но и различить мелкие товары, положить их в нужную упаковку и не повредить содержимое. Компания RLWRLD сообщила 30 октября 2026 года о показе такой последовательности на мероприятии KDDI SUMMIT в Токио. Само мероприятие проходило 27 и 28 октября: дату пресс-релиза нельзя принимать за дату демонстрации. Разработчик представил систему RLDX-1 как базовую модель для управления действиями робота."
+            },
+            {
+              "type": "paragraph",
+              "text": "В выставочном сценарии использовалась рука с пятью пальцами. По описанию компании, робот забирал картонную коробку с конвейера, распознавал небольшие предметы разной формы и материала, в том числе аксессуары для смартфонов, и укладывал их для отправки. Это демонстрация последовательности операций, а не независимый аудит складского процесса. Пресс-релиз не содержит числа успешных попыток, скорости упаковки, доли ошибок или часов непрерывной работы."
+            },
+            {
+              "type": "paragraph",
+              "text": "Для заказчика важен не только красивый захват предмета. Нужно понять, как система взаимодействует с конвейером, что происходит при неправильной ориентации товара, как обеспечивается безопасность персонала и кто отвечает за исключения. Пятипалая кисть потенциально подходит для разнообразных предметов, но сама по себе не доказывает экономическое преимущество над простым захватом или специализированной линией. Указания на пилотные проекты с промышленными партнёрами также не равнозначны опубликованным результатам коммерческой эксплуатации."
+            },
+            {
+              "type": "paragraph",
+              "text": "Следующий убедительный этап — испытания на реальном ассортименте с заранее определёнными метриками: упаковок в час, повреждений, времени вмешательства оператора и стоимости обработки заказа. Пока доступно заявление самой компании о публичном показе, без независимой проверки. Поэтому новость подтверждает направление разработки и интерес к применению базовых моделей в логистике, но не доказывает готовность полностью автоматизировать произвольный склад."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000006.000183256.html",
+              "title": "RLWRLD KDDI SUMMIT 2026 RLDX-1 logistics packing demonstration",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "technology-signal",
+          "slug": "technology-signal",
+          "category": "analysis",
+          "headline": "От отдельного трюка к проверяемой работе",
+          "dek": "Новые исследования и демонстрации показывают способы расширить набор действий робота, но качество результата зависит от условий испытания.",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Сравнивать нужно не только удачное выполнение, но и ошибки, повторяемость, стоимость и участие человека."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.agilityrobotics.com/content/gxo-and-agility-robotics-expand-partnership-to-accelerate-deployment-of-humanoids-in-u-s-operations",
+              "title": "GXO and Agility Robotics Expand Partnership to Accelerate Deployment of Humanoids in U.S. Operations",
+              "published_at": "2026-10-26",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000086.000047565.html",
+              "title": "フィジカルAIを推進する新会社「ELYZA Robotics」事業開始",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39560",
+              "title": "SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000006.000183256.html",
+              "title": "RLWRLD KDDI SUMMIT 2026 RLDX-1 logistics packing demonstration",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "glossary",
+          "slug": "glossary",
+          "category": "analysis",
+          "headline": "Словарь выпуска",
+          "dek": "Ключевые понятия этого выпуска.",
+          "body": [
+            {
+              "type": "heading",
+              "text": "модель"
+            },
+            {
+              "type": "paragraph",
+              "text": "Обученная вычислительная система, которая предсказывает или выбирает действие."
+            },
+            {
+              "type": "heading",
+              "text": "захват"
+            },
+            {
+              "type": "paragraph",
+              "text": "Устройство или действие, позволяющее удерживать предмет."
+            },
+            {
+              "type": "heading",
+              "text": "обучени"
+            },
+            {
+              "type": "paragraph",
+              "text": "Настройка модели на примерах или опыте."
+            },
+            {
+              "type": "heading",
+              "text": "управлени"
+            },
+            {
+              "type": "paragraph",
+              "text": "Выбор команд, определяющих движение машины."
+            },
+            {
+              "type": "heading",
+              "text": "датчик"
+            },
+            {
+              "type": "paragraph",
+              "text": "Устройство, измеряющее состояние или контакт."
+            },
+            {
+              "type": "heading",
+              "text": "робот"
+            },
+            {
+              "type": "paragraph",
+              "text": "Механическая система, которая выполняет действия по командам."
+            },
+            {
+              "type": "heading",
+              "text": "инструмент"
+            },
+            {
+              "type": "paragraph",
+              "text": "Сменное приспособление для конкретной операции."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.agilityrobotics.com/content/gxo-and-agility-robotics-expand-partnership-to-accelerate-deployment-of-humanoids-in-u-s-operations",
+              "title": "GXO and Agility Robotics Expand Partnership to Accelerate Deployment of Humanoids in U.S. Operations",
+              "published_at": "2026-10-26",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000086.000047565.html",
+              "title": "フィジカルAIを推進する新会社「ELYZA Robotics」事業開始",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39560",
+              "title": "SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000006.000183256.html",
+              "title": "RLWRLD KDDI SUMMIT 2026 RLDX-1 logistics packing demonstration",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        }
+      ]
+    },
+    "en": {
+      "title": "The Replicant Truth",
+      "weather": {
+        "location": "breukelen",
+        "timezone": "Europe/Amsterdam",
+        "forecast_date": "2026-11-01",
+        "retrieved_at": "2026-10-31T16:07:46.147436Z",
+        "kind": "forecast",
+        "source_name": "Open-Meteo",
+        "source_url": "https://api.open-meteo.com/v1/forecast?latitude=52.1742&longitude=5.0014&timezone=Europe%2FAmsterdam&start_date=2026-11-01&end_date=2026-11-01&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+        "temperature_min_c": 7.3,
+        "temperature_max_c": 11.3,
+        "precipitation_probability_max": 8,
+        "slots": [
+          {
+            "hour": 9,
+            "temperature_c": 9.2,
+            "condition": "cloudy",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 0.6,
+            "wind_direction_deg": 312
+          },
+          {
+            "hour": 12,
+            "temperature_c": 10.7,
+            "condition": "cloudy",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 1.4,
+            "wind_direction_deg": 357
+          },
+          {
+            "hour": 18,
+            "temperature_c": 10.0,
+            "condition": "cloudy",
+            "precipitation_probability": 4,
+            "wind_speed_ms": 1.2,
+            "wind_direction_deg": 309
+          }
+        ]
+      },
+      "issue_title": "Replicant Data — Business Edition",
+      "editorial_note": "Robotics from demonstrations to deployment: integration, economics and evidence.",
+      "articles": [
+        {
+          "id": "swapbot-tools",
+          "slug": "swapbot-tools",
+          "category": "news",
+          "headline": "Robot tool swapping gains tactile feedback",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Different kitchen actions require different tools: a knife cuts, a brush spreads liquid and a spatula turns food. Researchers led by Yunchu Zhang introduced SwapBot, a system that lets a robot arm exchange tools autonomously. The October 29, 2026 preprint describes a research prototype rather than a household appliance ready to cook without supervision."
+            },
+            {
+              "type": "paragraph",
+              "text": "The architecture uses a fixed coupling on the robot and inexpensive adapters on ordinary tools. This changes the arm's function without requiring a new sophisticated gripper for every task. The authors describe compatibility with different tools, including articulated ones, and multiple robot platforms. The connection must physically secure the tool; merely bringing it close to the wrist would not work."
+            },
+            {
+              "type": "paragraph",
+              "text": "Compact tactile sensors are built into the adapters. A camera can show where an object is but may not reveal how firmly a tool presses against it. Operators collected demonstrations through teleoperation, then trained imitation-learning policies to select movements from examples. Reported tasks include cooking tofu, stirring salad and flipping meat."
+            },
+            {
+              "type": "paragraph",
+              "text": "Compared with learning from RGB images alone, adding tactile data increased success by 15 to 25 percentage points in the reported experiments. User studies also found shorter task completion times and lower operator workload during teleoperation. These results concern particular laboratory tasks, not a universal reliability guarantee for every tool and material."
+            },
+            {
+              "type": "paragraph",
+              "text": "The engineering contribution is a common interface for changing tools, sensing contact and recording demonstrations. It can make comparisons between vision and touch more systematic and allow hardware to be reused across tasks. However, allowable forces, connector wear, swapping speed, cleaning requirements and recovery from failed coupling still need prolonged testing."
+            },
+            {
+              "type": "paragraph",
+              "text": "The work offers an alternative to building one universal robotic hand: select the tool that suits the action. It does not demonstrate a robot preparing an entire meal autonomously in an unfamiliar kitchen. Wider object sets, unexpected contacts, long duty cycles and independent replication are still necessary before deployment claims become credible."
+            },
+            {
+              "type": "paragraph",
+              "text": "An implementation team should define acceptance criteria in advance: results on representative workloads, recovery time after failures, operator intervention and support cost. A demonstration of feasibility is not a substitute for measuring these outcomes at a customer site."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "gxo-digit-multisite",
+          "slug": "gxo-digit-multisite",
+          "category": "news",
+          "headline": "GXO plans to expand Digit humanoid operations to two more warehouses",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "The engineering question is how execution works and which constraints were actually tested. The expansion is expected to start with Digit 4 and later migrate to Digit 5, supported by Agility Arc fleet software. The additional sites are planned rather than operating; unit economics and independently audited performance are unavailable."
+            },
+            {
+              "type": "paragraph",
+              "text": "A repeatable warehouse operation matters more to a customer than an impressive one-off robot demonstration. On October 26, 2026, GXO Logistics and Agility Robotics announced an expansion of their Digit humanoid partnership to two more US sites, in Statesville, North Carolina, and Lebanon, Tennessee. Deployments are expected to start in early 2027. The announcement is a plan for additional operations, not evidence that those two sites are already running. It builds on the existing GXO facility in Flowery Branch, Georgia, where Digit handles repetitive tote movement and places containers onto conveyors."
+            },
+            {
+              "type": "paragraph",
+              "text": "The partners say Digit has moved more than 100,000 totes at the Georgia facility. That cumulative figure establishes that work has occurred in a live logistics environment, but it does not reveal throughput per hour, human intervention rates, operating cost or total robot-hours. The arrangement is described as robots-as-a-service, meaning the customer obtains robotic capability and ongoing service rather than simply buying machines outright. Agility Arc is the cloud-based fleet-management and integration platform associated with the existing agreement."
+            },
+            {
+              "type": "paragraph",
+              "text": "The next sites will support e-commerce fulfillment and are expected to start with Digit 4, then transition to Digit 5 once the newer model is commercially available. For an implementation team, a multi-site rollout raises questions about conveyor interfaces, workspace safety, maintenance coverage, spare units, shift schedules and software change management. A skill that works in one warehouse does not automatically reproduce its economics in another building with different layouts and demand patterns. The new deployment is an opportunity to test operational transfer, not proof that transfer has already succeeded."
+            },
+            {
+              "type": "paragraph",
+              "text": "Neither company disclosed the number of robots for the additional sites, contract value, payback period or independently audited productivity figures. The evidence therefore supports two narrower conclusions: a customer has decided to expand a live commercial relationship, and the original site has accumulated substantial tote-handling activity. A purchasing decision elsewhere should still require a measured baseline, uptime and exception logs, labor and integration costs, and an agreed method for calculating value. The commercial signal is credible, but the return on investment remains unquantified in this release."
+            },
+            {
+              "type": "paragraph",
+              "text": "An implementation team should define acceptance criteria in advance: results on representative workloads, recovery time after failures, operator intervention and support cost. A demonstration of feasibility is not a substitute for measuring these outcomes at a customer site."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.agilityrobotics.com/content/gxo-and-agility-robotics-expand-partnership-to-accelerate-deployment-of-humanoids-in-u-s-operations",
+              "title": "GXO and Agility Robotics Expand Partnership to Accelerate Deployment of Humanoids in U.S. Operations",
+              "published_at": "2026-10-26",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "elyza-robotics-japan-scale",
+          "slug": "elyza-robotics-japan-scale",
+          "category": "news",
+          "headline": "KDDI and ELYZA form a Japanese vehicle for deploying physical AI",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "The engineering question is how execution works and which constraints were actually tested. The roadmap combines vision-language-action models, site data, digital twins, distributed inference and remote supervision. No independently verified deployments, autonomy metrics or unit economics were provided."
+            },
+            {
+              "type": "paragraph",
+              "text": "Japan's KDDI telecommunications group and AI developer ELYZA are establishing a dedicated organization for physical AI rather than treating robot intelligence as an isolated research product. Their October 27, 2026 announcement says ELYZA Robotics began operating on October 1. The group targets ¥30 billion of research and development investment, a specialist organization of more than 300 people, and more than 1,000 robots introduced into workplaces by fiscal 2030. These figures are forward-looking commitments and should not be mistaken for robots already deployed or capital already spent."
+            },
+            {
+              "type": "paragraph",
+              "text": "The proposed architecture spans three levels. Research teams plan to develop vision-language models that interpret images and text, and vision-language-action models that additionally produce robot actions. Implementation teams will collect data from workplaces and use digital twins, which are software representations of real equipment and processes, to support testing. Operations platforms are intended to provide distributed model execution, remote monitoring and coordination between machines. The combination recognizes a familiar deployment problem: an impressive robot skill does not become a business service until it can interact reliably with the customer's systems and procedures."
+            },
+            {
+              "type": "paragraph",
+              "text": "KDDI identifies retail, logistics, manufacturing and services as early areas of application, with partners from its wider group including Lawson and Soracom. The company also expects to source different categories of robots, including industrial arms, quadrupeds and humanoids, according to the task. That could reduce dependence on one mechanical design, but creates integration demands around interfaces, training data, security, maintenance and responsibility for failures. Proof-of-concept projects are planned from 2026, with adoption expected to progress in stages."
+            },
+            {
+              "type": "paragraph",
+              "text": "The release contains no audited installed-base figure, measured autonomy rate, cost per completed task or customer payback calculation. The business case is therefore a strategic hypothesis, not an independently demonstrated result. A prospective customer should ask how safety validation is performed, how site-specific data is governed, which party supports a malfunctioning robot, and whether model updates require renewed acceptance testing. The meaningful milestone will be repeated, supportable operation in real workplaces rather than the announced size of the investment program."
+            },
+            {
+              "type": "paragraph",
+              "text": "An implementation team should define acceptance criteria in advance: results on representative workloads, recovery time after failures, operator intervention and support cost. A demonstration of feasibility is not a substitute for measuring these outcomes at a customer site."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000086.000047565.html",
+              "title": "フィジカルAIを推進する新会社「ELYZA Robotics」事業開始",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "simto-robust-grippers",
+          "slug": "simto-robust-grippers",
+          "category": "news",
+          "headline": "Soft grippers can be shaped to forgive positioning errors",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "A robot may recognize an object correctly yet place its gripper slightly off target. Rigid fingers can lose contact, while a soft gripper may deform around the object. Researchers led by Kurt Enkera introduced SimTO-Robust, a computer-aided design method intended to make grippers tolerant of such errors through their physical shape."
+            },
+            {
+              "type": "paragraph",
+              "text": "Instead of optimizing for one ideal object and pose, the method simulates contact with several geometries and grasp positions. The resulting forces guide improvements to the compliant structure. Part of the robustness problem therefore moves from complicated control software into mechanical design. Cameras still matter, but small positioning errors may become less damaging."
+            },
+            {
+              "type": "paragraph",
+              "text": "The team generated 6,646 candidate designs and physically evaluated 24. Comparisons included ten specialized soft designs, two rigid baseline grippers and one conventional general-purpose soft gripper. In total, 37 devices were tested with five objects featuring distinctive shapes, six grasp poses and progressively stronger external disturbances during pick-and-place operations."
+            },
+            {
+              "type": "paragraph",
+              "text": "On average, SimTO-Robust designs transferred objects more reliably than specialized soft designs and rigid baselines. The strongest candidates tolerated larger disturbances than the other tested devices. These findings apply to the reported materials, objects and conditions, not to every possible gripper or load."
+            },
+            {
+              "type": "paragraph",
+              "text": "The broader lesson is that useful mechanical design can make a robot forgiving before the controller intervenes. That may matter in sorting, assembly and handling irregular objects. Long-term wear, contamination, cycle speed and performance with heavier or unfamiliar items remain open questions for practical deployment."
+            },
+            {
+              "type": "paragraph",
+              "text": "An implementation team should define acceptance criteria in advance: results on representative workloads, recovery time after failures, operator intervention and support cost. A demonstration of feasibility is not a substitute for measuring these outcomes at a customer site."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.39560",
+              "title": "SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "rlwrld-packing",
+          "slug": "rlwrld-packing",
+          "category": "news",
+          "headline": "Five-finger robot demonstrates order packing at a Tokyo event",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Packing an order is not simply a matter of lifting a box. A robot must distinguish small products, position them without damage and handle changes in shape or material. On October 30, 2026, RLWRLD reported a public demonstration of this workflow at KDDI SUMMIT in Tokyo. The event itself took place on October 27 and 28, so the announcement date should not be confused with the demonstration dates. The company described RLDX-1 as its robotics foundation model for controlling physical actions."
+            },
+            {
+              "type": "paragraph",
+              "text": "The exhibit used a robot equipped with a five-finger hand. According to RLWRLD, it removed a cardboard box from a conveyor, recognized small products of different materials and shapes, including smartphone accessories, and packed them for shipment. This is a description of an event demonstration, not an independent warehouse audit. The announcement supplies no comparable figures for items per hour, failed picks, damaged goods or hours of continuous unattended operation."
+            },
+            {
+              "type": "paragraph",
+              "text": "For a logistics operator, the real integration questions concern conveyors, inventory data, recovery from misaligned products, worker safety and responsibility for exceptions. A five-finger hand may provide flexibility for varied objects, but that alone does not establish an advantage over simpler grippers or purpose-built equipment. The company also mentions pilot projects with industrial partners; those statements do not establish completed, economically viable deployments. Cost, maintenance and operator workload remain open questions."
+            },
+            {
+              "type": "paragraph",
+              "text": "A credible next step would be a trial using a representative product mix and predefined measures of throughput, damage, human interventions and cost per order. At present the evidence is a company account of a public demonstration, with no independent verification of sustained performance. The news therefore signals progress toward applying robotics foundation models to fulfillment work, not proof that arbitrary warehouses can now run autonomously."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000006.000183256.html",
+              "title": "RLWRLD KDDI SUMMIT 2026 RLDX-1 logistics packing demonstration",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "technology-signal",
+          "slug": "technology-signal",
+          "category": "analysis",
+          "headline": "From isolated tricks to verifiable work",
+          "dek": "Research and demonstrations expand the range of robot actions, but the strength of the result depends on test conditions.",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "Evaluation should cover failures, repeatability, cost and human intervention as well as successful attempts."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.agilityrobotics.com/content/gxo-and-agility-robotics-expand-partnership-to-accelerate-deployment-of-humanoids-in-u-s-operations",
+              "title": "GXO and Agility Robotics Expand Partnership to Accelerate Deployment of Humanoids in U.S. Operations",
+              "published_at": "2026-10-26",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000086.000047565.html",
+              "title": "フィジカルAIを推進する新会社「ELYZA Robotics」事業開始",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39560",
+              "title": "SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000006.000183256.html",
+              "title": "RLWRLD KDDI SUMMIT 2026 RLDX-1 logistics packing demonstration",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "glossary",
+          "slug": "glossary",
+          "category": "analysis",
+          "headline": "Issue glossary",
+          "dek": "Key terms in this issue.",
+          "body": [
+            {
+              "type": "heading",
+              "text": "tactile"
+            },
+            {
+              "type": "paragraph",
+              "text": "A measurement or signal related to physical touch."
+            },
+            {
+              "type": "heading",
+              "text": "model"
+            },
+            {
+              "type": "paragraph",
+              "text": "A computational system trained to predict or select actions."
+            },
+            {
+              "type": "heading",
+              "text": "simulat"
+            },
+            {
+              "type": "paragraph",
+              "text": "A test in a computer environment rather than on physical hardware."
+            },
+            {
+              "type": "heading",
+              "text": "gripp"
+            },
+            {
+              "type": "paragraph",
+              "text": "A device or action used to hold an object."
+            },
+            {
+              "type": "heading",
+              "text": "learn"
+            },
+            {
+              "type": "paragraph",
+              "text": "Adjusting a model from examples or experience."
+            },
+            {
+              "type": "heading",
+              "text": "control"
+            },
+            {
+              "type": "paragraph",
+              "text": "Choosing commands that determine a machine's movement."
+            },
+            {
+              "type": "heading",
+              "text": "sensor"
+            },
+            {
+              "type": "paragraph",
+              "text": "A device that measures a condition or contact."
+            },
+            {
+              "type": "heading",
+              "text": "robot"
+            },
+            {
+              "type": "paragraph",
+              "text": "A physical machine that performs commanded actions."
+            },
+            {
+              "type": "heading",
+              "text": "tool"
+            },
+            {
+              "type": "paragraph",
+              "text": "A device selected for a particular operation."
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.agilityrobotics.com/content/gxo-and-agility-robotics-expand-partnership-to-accelerate-deployment-of-humanoids-in-u-s-operations",
+              "title": "GXO and Agility Robotics Expand Partnership to Accelerate Deployment of Humanoids in U.S. Operations",
+              "published_at": "2026-10-26",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000086.000047565.html",
+              "title": "フィジカルAIを推進する新会社「ELYZA Robotics」事業開始",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39560",
+              "title": "SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000006.000183256.html",
+              "title": "RLWRLD KDDI SUMMIT 2026 RLDX-1 logistics packing demonstration",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        }
+      ]
+    },
+    "ja": {
+      "title": "レプリカントの真実",
+      "weather": {
+        "location": "smolensk",
+        "timezone": "Europe/Moscow",
+        "forecast_date": "2026-11-01",
+        "retrieved_at": "2026-10-31T16:07:47.240840Z",
+        "kind": "forecast",
+        "source_name": "Open-Meteo",
+        "source_url": "https://api.open-meteo.com/v1/forecast?latitude=54.7826&longitude=32.0453&timezone=Europe%2FMoscow&start_date=2026-11-01&end_date=2026-11-01&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+        "temperature_min_c": 2.7,
+        "temperature_max_c": 8.6,
+        "precipitation_probability_max": 8,
+        "slots": [
+          {
+            "hour": 9,
+            "temperature_c": 2.9,
+            "condition": "cloudy",
+            "precipitation_probability": 3,
+            "wind_speed_ms": 2.48,
+            "wind_direction_deg": 43
+          },
+          {
+            "hour": 12,
+            "temperature_c": 5.9,
+            "condition": "cloudy",
+            "precipitation_probability": 0,
+            "wind_speed_ms": 2.33,
+            "wind_direction_deg": 43
+          },
+          {
+            "hour": 18,
+            "temperature_c": 6.0,
+            "condition": "cloudy",
+            "precipitation_probability": 3,
+            "wind_speed_ms": 1.79,
+            "wind_direction_deg": 27
+          }
+        ]
+      },
+      "issue_title": "レプリカント・データ ビジネス版",
+      "editorial_note": "実演から導入へ進むロボット技術の費用、統合、根拠を考える。",
+      "articles": [
+        {
+          "id": "swapbot-tools",
+          "slug": "swapbot-tools",
+          "category": "news",
+          "headline": "工具を交換し、触覚も使うロボットアーム",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "料理では、切る、ぬる、ひっくり返すといった作業ごとに道具が変わり、必要な力のかけ方も違う。Yunchu Zhangらは、ロボットアームが工具を自動交換するSwapBotを発表した。2026年10月29日に公開された研究論文であり、どんな家庭でも料理を完成させる市販ロボットができたという話ではない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "設計の中心は、ロボット側に固定する共通の接続部と、各工具に付ける比較的安価なアダプターである。一つの万能なハンドですべてをこなすのではなく、作業に合った工具を選ぶ。可動部分を持つ工具や複数のロボット機種にも対応する。工具は物理的に固定されなければならず、腕の近くに置くだけでは作業できない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "各アダプターには小型の触覚センサーが入っている。カメラで形や位置が分かっても、物にどれほど強く触れているかは十分に分からないことがある。人が遠隔操作して作業例を集め、その例をまねる模倣学習で動作を学習させた。豆腐の調理、サラダを混ぜる作業、肉を返す作業などを扱った。"
+            },
+            {
+              "type": "paragraph",
+              "text": "比較実験では、RGB画像だけの学習より、触覚を加えた学習の成功率が15〜25パーセントポイント高かった。遠隔操作の利用者調査でも、作業時間と操作者の負担が減ったと報告している。ただし、これは特定の条件で得られた著者の結果であり、あらゆる工具や材料で同じ改善が得られると証明したわけではない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "技術的な意義は、機械的な接続、接触計測、学習用の作業例の収集を共通化した点にある。視覚と触覚がどの程度役立つか比較しやすくなり、異なる作業でも装置を再利用できる。一方、接続部の摩耗、許容荷重、工具の清掃、交換時間、失敗した接続からの復旧は長時間の運用で確かめる必要がある。"
+            },
+            {
+              "type": "paragraph",
+              "text": "この研究は、複雑な万能の指を作る以外にも、道具を使い分ける方法があると示す。しかし、知らない台所で料理の全工程を自律的に終えられると証明したものではない。多様な物体、予想外の接触、長い反復運転、第三者による再現実験が今後の課題となる。"
+            },
+            {
+              "type": "paragraph",
+              "text": "導入を判断する企業は、実際の対象物での成功率、失敗後の復旧時間、人の介入回数、保守費用などを事前に評価項目として決める必要がある。技術の実演だけで、顧客の現場で同じ成果が得られると判断することはできない。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "gxo-digit-multisite",
+          "slug": "gxo-digit-multisite",
+          "category": "news",
+          "headline": "GXO、二つの倉庫へ人型ロボットDigitの導入を拡大する計画",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "技術的な注目点は実演の見た目ではなく、実行方式と制約を検証できることにある。Digit 4で導入を始め、Digit 5の商用化後に移行する予定で、運用管理にはAgility Arcを利用する。 追加拠点は計画段階であり、台数、採算、第三者による性能監査は示されていない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "倉庫でロボットを使う企業にとって重要なのは、一度だけ作業できることではなく、毎日の業務として安定して繰り返せることだ。GXO LogisticsとAgility Roboticsは2026年10月26日、米国ノースカロライナ州とテネシー州にある二つのGXO拠点へ、人型ロボットDigitの利用を広げると発表した。導入開始は2027年初めを予定している。したがって新しい二拠点で既に運用が始まったというニュースではない。基盤となるのはジョージア州の既存倉庫で、Digitが容器を運び、コンベヤーへ載せる反復作業を行ってきた実績である。"
+            },
+            {
+              "type": "paragraph",
+              "text": "両社によれば、既存拠点で運んだ容器は累計10万個を超えた。この数字は実際の業務で作業量を積み上げたことを示すが、時間当たりの処理数、停止時間、人による介入の割合、容器一個当たりの費用までは分からない。契約はロボット・アズ・ア・サービスと呼ばれる形態で、機械の単純な売買ではなく、運用や支援を含む能力をサービスとして利用する考え方だ。既存の協業ではAgility Arcというクラウド型のロボット群管理ソフトも使われる。"
+            },
+            {
+              "type": "paragraph",
+              "text": "追加拠点では電子商取引の注文処理を支援し、まずDigit 4を使い、Digit 5が商用利用可能になった後に切り替える計画だ。導入担当者はコンベヤーとの接続だけでなく、人と同じ空間で働く際の安全手順、故障時の代替手段、保守担当者、ソフト更新の管理を考える必要がある。倉庫の通路幅や作業量、交代勤務の条件が変われば、同じ動作でも成果は変わる。複数拠点への拡張は、その再現性を確かめる機会となる。"
+            },
+            {
+              "type": "paragraph",
+              "text": "今回の発表では追加台数、契約金額、投資回収期間、独立した第三者による生産性評価は示されていない。確認できるのは、顧客が既存の商用協業を拡大すると決めたことと、最初の倉庫で累計作業量が報告されていることだ。別の企業が採用を判断するなら、稼働率、例外処理、人手による支援、保守費用、作業一件当たりの総費用を比較すべきである。人型であること自体より、現場の工程に組み込んだときに価値を生むかが問われる。"
+            },
+            {
+              "type": "paragraph",
+              "text": "導入を判断する企業は、実際の対象物での成功率、失敗後の復旧時間、人の介入回数、保守費用などを事前に評価項目として決める必要がある。技術の実演だけで、顧客の現場で同じ成果が得られると判断することはできない。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://www.agilityrobotics.com/content/gxo-and-agility-robotics-expand-partnership-to-accelerate-deployment-of-humanoids-in-u-s-operations",
+              "title": "GXO and Agility Robotics Expand Partnership to Accelerate Deployment of Humanoids in U.S. Operations",
+              "published_at": "2026-10-26",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "elyza-robotics-japan-scale",
+          "slug": "elyza-robotics-japan-scale",
+          "category": "news",
+          "headline": "KDDIとELYZA、現場導入まで担うフィジカルAI新会社を始動",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "技術的な注目点は実演の見た目ではなく、実行方式と制約を検証できることにある。画像・言語・行動モデルと現場データ、デジタルツイン、分散推論、遠隔監視を組み合わせる構想。 実際の稼働台数、採算、独立した自律性能評価は公開されていない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "通信大手KDDIとAI開発企業ELYZAは、ロボットの知能を研究するだけでなく、企業の現場で使える仕組みにするための新会社を立ち上げた。2026年10月27日の発表によると、ELYZA Roboticsは10月1日に事業を開始した。KDDIグループは2030年度までに研究開発へ300億円を投じ、300人を超える専門組織を作り、1000台以上のロボットを実際の現場に導入することを目指す。これらは将来の計画であり、現在すでに1000台が稼働しているという意味ではない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "構想には研究、現場への組み込み、継続運用という三つの要素がある。研究では画像と言語を理解するモデルに加え、指示に応じてロボットの行動を出力するVLAモデルの開発を進める。現場では作業データを集め、デジタルツインと呼ばれる設備や工程の仮想的な表現を利用する。運用では複数の計算拠点でモデルを動かす分散推論、遠隔監視、複数ロボットの協調を扱う。単に動作ができるモデルを作るだけでなく、企業の業務システムと安全手順に接続することが狙いだ。"
+            },
+            {
+              "type": "paragraph",
+              "text": "対象として小売、物流、製造、サービス業が挙げられ、KDDIグループのLawsonやSoracomなどとの連携も示された。用途に応じて産業用ロボット、四足歩行機、人型ロボットなどを調達する方針で、一種類の機械に限定しない。顧客にとっては選択肢が広がる一方、異なる機種の通信方式、データ形式、保守体制をそろえる必要がある。2026年から概念実証を行い、現場で確認しながら段階的に導入する計画だ。"
+            },
+            {
+              "type": "paragraph",
+              "text": "発表には既に稼働している台数の独立した検証、作業当たりの費用、自律運転の割合、投資回収期間は示されていない。したがって大きな投資額だけで技術の完成度を判断することはできない。導入を検討する企業は、安全評価を誰が担当するか、現場データをどう保護するか、故障時の責任や更新後の再試験をどう扱うかを確認する必要がある。事業の成否を決めるのは目標台数よりも、異なる現場で安定して使い続けられるかどうかだ。"
+            },
+            {
+              "type": "paragraph",
+              "text": "導入を判断する企業は、実際の対象物での成功率、失敗後の復旧時間、人の介入回数、保守費用などを事前に評価項目として決める必要がある。技術の実演だけで、顧客の現場で同じ成果が得られると判断することはできない。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000086.000047565.html",
+              "title": "フィジカルAIを推進する新会社「ELYZA Robotics」事業開始",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "simto-robust-grippers",
+          "slug": "simto-robust-grippers",
+          "category": "news",
+          "headline": "少し位置がずれても物をつかめる柔らかいハンド",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "ロボットが物の位置を正しく見つけても、手を近づけるときに少しずれることがある。硬い指では滑ってしまう場面でも、柔らかい指なら物の形に合わせて変形できるかもしれない。Kurt Enkeraらは、そうした失敗への強さを設計段階から考えるSimTO-Robustという方法を発表した。"
+            },
+            {
+              "type": "paragraph",
+              "text": "一つの物を理想的な位置でつかむ条件だけを使うのではなく、複数の形の物と異なるつかみ方をコンピューター内で試す。接触した場所に働く力をまとめて調べ、柔らかいハンドの形を改良する。制御プログラムだけでなく、部品の形そのものに失敗しにくさを持たせようとする。"
+            },
+            {
+              "type": "paragraph",
+              "text": "研究者は6646種類の候補を計算で作り、そのうち24種類を実際に製作した。比較相手には、特定の物に合わせた柔らかいハンド10種類、硬いハンド2種類、一般的な設計法による柔らかいハンド1種類を使った。合計37種類を、形に特徴のある五つの物、六つのつかむ位置、外から加える力を変えた条件で試した。"
+            },
+            {
+              "type": "paragraph",
+              "text": "平均すると、新方式のハンドは専用設計のものや硬い比較用ハンドより安定して物を移動できた。最も良い候補は、ほかの装置より大きな外乱にも耐えた。ただし、これは論文で選んだ物と条件での結果であり、どんな材質でもどんな重さでも必ず優れていると証明したわけではない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "この研究が示すのは、ロボットの賢さは計算機の中だけにあるわけではないということだ。部品の形や柔らかさを工夫すれば、多少の位置ずれを機械的に吸収できる。実用化には、繰り返し使ったときの摩耗、汚れ、動作速度、より重い物や未知の形への対応を確かめる必要がある。"
+            },
+            {
+              "type": "paragraph",
+              "text": "導入を判断する企業は、実際の対象物での成功率、失敗後の復旧時間、人の介入回数、保守費用などを事前に評価項目として決める必要がある。技術の実演だけで、顧客の現場で同じ成果が得られると判断することはできない。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.39560",
+              "title": "SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "rlwrld-packing",
+          "slug": "rlwrld-packing",
+          "category": "news",
+          "headline": "東京の展示会で五本指のロボットが出荷作業を実演",
+          "dek": "",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "物流の出荷作業では、箱を持ち上げるだけでなく、小さな商品を見分け、傷つけずに並べ、包装する必要がある。RLWRLDは2026年10月30日、東京のKDDI SUMMITで自社のロボット基盤モデルRLDX-1を使った実演を行ったと発表した。展示会の開催日は10月27日と28日であり、発表文の公開日とは異なる。基盤モデルとは、個別の動作だけでなく複数の作業に応用することを目指した学習モデルを指す。"
+            },
+            {
+              "type": "paragraph",
+              "text": "展示では五本指のハンドを備えたロボットが使われた。会社の説明によると、コンベヤーから段ボール箱を取り出し、形や材質の異なるスマートフォン関連の小物などを見分け、出荷用に箱詰めする流れを披露した。ただし、これは展示会での実演であり、実際の物流倉庫で長期間連続稼働したことを示す独立した試験ではない。成功回数、時間当たりの処理数、破損率、無人で動ける時間は公表されていない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "企業が導入を検討する場合、ハンドの器用さだけでは判断できない。コンベヤーや在庫管理との接続、商品の向きが違う場合のやり直し、人が近づいたときの安全対策、保守や停止時の対応を確認する必要がある。五本指の手は多様な物を扱える可能性がある一方、単純な二本指のハンドや専用設備より安く速いと証明されたわけではない。会社は産業パートナーとの実証も説明しているが、その成果を比較できる運用データは示していない。"
+            },
+            {
+              "type": "paragraph",
+              "text": "次の評価では、実際の商品の種類を用いて、毎時の処理件数、失敗時の人手介入、商品への損傷、注文一件当たりの費用を測ることが重要になる。現時点で確認できるのは、開発会社が展示内容を報告したという事実である。物流向けのロボット基盤モデルがどのような仕事を狙っているかは分かるが、どんな倉庫でも自律運転できると結論づける段階ではない。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000006.000183256.html",
+              "title": "RLWRLD KDDI SUMMIT 2026 RLDX-1 logistics packing demonstration",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "technology-signal",
+          "slug": "technology-signal",
+          "category": "analysis",
+          "headline": "単発の実演から検証できる作業へ",
+          "dek": "研究や実演によってロボットの仕事の幅は広がるが、結果の確かさは試験条件によって変わる。",
+          "body": [
+            {
+              "type": "paragraph",
+              "text": "成功例だけでなく、失敗、再現性、費用、人の介入も比べる必要がある。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.agilityrobotics.com/content/gxo-and-agility-robotics-expand-partnership-to-accelerate-deployment-of-humanoids-in-u-s-operations",
+              "title": "GXO and Agility Robotics Expand Partnership to Accelerate Deployment of Humanoids in U.S. Operations",
+              "published_at": "2026-10-26",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000086.000047565.html",
+              "title": "フィジカルAIを推進する新会社「ELYZA Robotics」事業開始",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39560",
+              "title": "SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000006.000183256.html",
+              "title": "RLWRLD KDDI SUMMIT 2026 RLDX-1 logistics packing demonstration",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        },
+        {
+          "id": "glossary",
+          "slug": "glossary",
+          "category": "analysis",
+          "headline": "本号の用語集",
+          "dek": "この号のキーワードを解説します。",
+          "body": [
+            {
+              "type": "heading",
+              "text": "触覚"
+            },
+            {
+              "type": "paragraph",
+              "text": "物にふれたときの情報を測る仕組み。"
+            },
+            {
+              "type": "heading",
+              "text": "モデル"
+            },
+            {
+              "type": "paragraph",
+              "text": "データから動きや結果を予測する計算の仕組み。"
+            },
+            {
+              "type": "heading",
+              "text": "ハンド"
+            },
+            {
+              "type": "paragraph",
+              "text": "物をつかむためのロボットの部品。"
+            },
+            {
+              "type": "heading",
+              "text": "学習"
+            },
+            {
+              "type": "paragraph",
+              "text": "例や経験を使ってモデルの働きを調整すること。"
+            },
+            {
+              "type": "heading",
+              "text": "制御"
+            },
+            {
+              "type": "paragraph",
+              "text": "機械をどのように動かすか決めること。"
+            },
+            {
+              "type": "heading",
+              "text": "センサー"
+            },
+            {
+              "type": "paragraph",
+              "text": "物の状態や接触を調べる装置。"
+            },
+            {
+              "type": "heading",
+              "text": "再現性"
+            },
+            {
+              "type": "paragraph",
+              "text": "同じ条件で試したときに近い結果を得られる性質。"
+            },
+            {
+              "type": "heading",
+              "text": "ロボット"
+            },
+            {
+              "type": "paragraph",
+              "text": "命令に従って実際の物を動かす機械。"
+            },
+            {
+              "type": "heading",
+              "text": "道具"
+            },
+            {
+              "type": "paragraph",
+              "text": "特定の作業のために使う物。"
+            }
+          ],
+          "sources": [
+            {
+              "url": "https://arxiv.org/abs/2610.40646",
+              "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://www.agilityrobotics.com/content/gxo-and-agility-robotics-expand-partnership-to-accelerate-deployment-of-humanoids-in-u-s-operations",
+              "title": "GXO and Agility Robotics Expand Partnership to Accelerate Deployment of Humanoids in U.S. Operations",
+              "published_at": "2026-10-26",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000086.000047565.html",
+              "title": "フィジカルAIを推進する新会社「ELYZA Robotics」事業開始",
+              "published_at": "2026-10-27",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://arxiv.org/abs/2610.39560",
+              "title": "SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry",
+              "published_at": "2026-10-29",
+              "retrieved_at": null
+            },
+            {
+              "url": "https://prtimes.jp/main/html/rd/p/000000006.000183256.html",
+              "title": "RLWRLD KDDI SUMMIT 2026 RLDX-1 logistics packing demonstration",
+              "published_at": "2026-10-30",
+              "retrieved_at": null
+            }
+          ],
+          "image": null,
+          "image_asset_id": null,
+          "print_page": 1
+        }
+      ]
+    }
+  },
+  "weather": {
+    "location": "ichikawa",
+    "timezone": "Asia/Tokyo",
+    "forecast_date": "2026-11-01",
+    "retrieved_at": "2026-10-31T16:07:47.112550Z",
+    "kind": "forecast",
+    "source_name": "Open-Meteo",
+    "source_url": "https://api.open-meteo.com/v1/forecast?latitude=35.72&longitude=139.93&timezone=Asia%2FTokyo&start_date=2026-11-01&end_date=2026-11-01&wind_speed_unit=ms&hourly=temperature_2m%2Cprecipitation_probability%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&daily=temperature_2m_min%2Ctemperature_2m_max%2Cprecipitation_probability_max",
+    "temperature_min_c": 13.2,
+    "temperature_max_c": 19.0,
+    "precipitation_probability_max": 8,
+    "slots": [
+      {
+        "hour": 9,
+        "temperature_c": 15.3,
+        "condition": "cloudy",
+        "precipitation_probability": 0,
+        "wind_speed_ms": 1.97,
+        "wind_direction_deg": 336
+      },
+      {
+        "hour": 12,
+        "temperature_c": 18.3,
+        "condition": "clear",
+        "precipitation_probability": 0,
+        "wind_speed_ms": 0.67,
+        "wind_direction_deg": 297
+      },
+      {
+        "hour": 18,
+        "temperature_c": 17.9,
+        "condition": "cloudy",
+        "precipitation_probability": 8,
+        "wind_speed_ms": 1.33,
+        "wind_direction_deg": 103
+      }
+    ]
+  }
+}

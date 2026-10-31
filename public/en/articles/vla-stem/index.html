@@ -11,13 +11,32 @@
   <link rel="alternate" hreflang="en" href="https://repravda.com/en/issues/2026-10-30/articles/vla-stem/">
   <link rel="alternate" hreflang="ja" href="https://repravda.com/ja/issues/2026-10-30/articles/vla-stem/">
   <link rel="alternate" type="application/rss+xml" title="The Replicant Truth — RSS" href="https://repravda.com/en/rss.xml">
-  <link rel="stylesheet" href="/style.css?v=99d9fa981b89">
+  <link rel="stylesheet" href="/style.css?v=f89fa7a4f1ff">
 </head>
-<body>
+<body class="reader-engineer" data-reader-edition="engineer">
   <div class="preview-tools">
     
-    <nav aria-label="Languages"><a lang="ru" hreflang="ru" href="/ru/issues/2026-10-30/articles/vla-stem/">RU</a><a lang="en" hreflang="en" href="/en/issues/2026-10-30/articles/vla-stem/">EN</a><a lang="ja" hreflang="ja" href="/ja/issues/2026-10-30/articles/vla-stem/">JA</a></nav>
+    <nav aria-label="Language"><a lang="ru" hreflang="ru" href="/ru/issues/2026-10-30/articles/vla-stem/">RU</a><a lang="en" hreflang="en" href="/en/issues/2026-10-30/articles/vla-stem/" aria-current="page">EN</a><a lang="ja" hreflang="ja" href="/ja/issues/2026-10-30/articles/vla-stem/">JA</a></nav>
   </div>
+    <section class="reader-picker" aria-labelledby="reader-picker-title">
+    <p id="reader-picker-title" class="reader-picker-title">Choose an edition</p>
+    <nav class="reader-options" aria-labelledby="reader-picker-title">
+      
+      <a class="reader-option" data-edition="engineer" href="/en/issues/2026-10-30/articles/vla-stem/" aria-current="page"><svg class="reader-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4a6 6 0 0 0-7 8l-3.5 3.5a2.8 2.8 0 0 0 4 4L12 16a6 6 0 0 0 8-7l-4 4-5-5Z"/></svg><span>Engineer</span></a>
+      
+      
+      <a class="reader-option" data-edition="business" href="/en/business/"><svg class="reader-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V4h8v3M3 12c5 4 13 4 18 0M10 13h4"/></svg><span>Business Professional</span></a>
+      
+      
+      <a class="reader-option" data-edition="enthusiast" href="/en/enthusiast/"><svg class="reader-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m16 8-2 6-6 2 2-6Z"/></svg><span>Enthusiast</span></a>
+      
+      
+      <a class="reader-option" data-edition="children" href="/en/children/"><svg class="reader-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 11 18-8-8 18-3-7ZM10 14 21 3"/></svg><span>Kids</span></a>
+      
+      
+    </nav>
+    <p class="reader-description"><strong>Edition: Engineer.</strong> Technology, experiments and limitations.</p>
+  </section>
     <header class="newspaper-header">
     <p class="kicker">Physical AI — the path to a beautiful tomorrow.</p>
     <div class="brand-header">
@@ -86,20 +105,61 @@
     </div>
   </header>
   <p class="pdf-link"><a href="/en/issues/2026-10-30/edition.pdf">PDF edition · A4</a></p>
-  <main><div class="article-navigation"><a class="back-link" href="/en/issues/2026-10-30/#article-vla-stem"><span aria-hidden="true">←</span>Back to issue</a></div><p class="article-section">News</p><article class="article-detail"><h2>VLA-Stem adds reflex-like safety control without retraining the base VLA</h2>
+  <main>
+<div class="article-navigation"><a class="back-link" href="/en/issues/2026-10-30/#article-vla-stem"><span aria-hidden="true">←</span>Back to issue</a></div>
+
+<p class="article-section">News</p>
+<article class="article-detail">
+  
+  <h2>VLA<sup class="term-reference"><a id="term-ref-1" href="#term-1" role="doc-noteref" aria-label="Definition 1: VLA">[1]</a></sup>-Stem adds reflex-like safety control without retraining the base VLA</h2>
+  
+  
 
 <figure class="article-illustration">
   <img src="/data/images/2026-10-30/vla-stem.webp" width="1600" height="900" alt="Robot arm and obstacle, with a red reference path and green corrected path; below, a camera-to-action-to-safety-controller-to-actuator flow.">
   <figcaption><span class="illustration-kind">AI-generated illustration</span> · AI-generated technical diagram: a local safety controller adjusts a VLA reference trajectory to avoid an obstacle. This illustrates a general principle, not a specific experimental result.</figcaption>
 </figure>
-<div class="article-text">
-<p>A VLA can understand a command and still drive an arm into an obstacle. VLA-Stem addresses that gap without retraining the base model. It turns predicted action chunks into motion references and adds a faster local controller that adjusts execution using robot-state and obstacle observations.</p>
+
+  <div class="article-text">
+
+<p>A VLA can understand a command and still drive an arm into an obstacle. VLA-Stem addresses that gap without retraining the base model. It turns predicted action chunks<sup class="term-reference"><a id="term-ref-2" href="#term-2" role="doc-noteref" aria-label="Definition 2: Action chunk">[2]</a></sup> into motion references and adds a faster local controller that adjusts execution using robot-state and obstacle observations.</p>
+
 
 <p>Across six constrained simulation settings, the researchers report 52.8% collision-free success, versus 23.7% for their strongest safety baseline. Physical tests also show fewer collisions. The architecture is promising for existing policies, but these limited experiments are not a general safety certification or independent replication.</p>
-</div><footer><h3>Sources</h3><ul><li><a href="https://arxiv.org/abs/2610.37378" rel="noopener noreferrer">VLA-Stem: A Lightweight Safety Mechanism for Vision-Language-Action Models via Reinforcement Learning</a> · <time>2026-10-27</time></li></ul></footer></article></main>
+</div>
+  <footer><h3>Sources</h3><ul><li><a href="https://arxiv.org/abs/2610.37378" rel="noopener noreferrer">VLA-Stem: A Lightweight Safety Mechanism for Vision-Language-Action Models via Reinforcement Learning</a> · <time>2026-10-27</time></li></ul></footer>
+  
+  <aside class="article-glossary">
+    <section class="glossary-panel" aria-labelledby="article-glossary-title">
+  <header class="glossary-header">
+    <p class="glossary-kicker"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4h7a3 3 0 0 1 3 3v14a4 4 0 0 0-4-2H4ZM14 7a3 3 0 0 1 3-3h3v15h-2a4 4 0 0 0-4 2M7 8h3M7 12h3"/></svg>Concepts &amp; terms</p>
+    <h3 id="article-glossary-title">Terms in this article</h3>
+    <p class="glossary-intro">Short explanations of concepts mentioned in the text.</p>
+  </header>
+  <dl class="glossary-list">
+    
+    <div class="glossary-entry" id="term-1" tabindex="-1">
+      <dt><span class="glossary-index" aria-hidden="true">01</span><span>VLA</span></dt>
+      <dd>Vision-Language-Action model: maps visual observations and language instructions to robot actions.<a class="glossary-backlink" href="#term-ref-1" aria-label="Back to text [1]">↩ Back to text <span aria-hidden="true">[1]</span></a></dd>
+    </div>
+    
+    <div class="glossary-entry" id="term-2" tabindex="-1">
+      <dt><span class="glossary-index" aria-hidden="true">02</span><span>Action chunk</span></dt>
+      <dd>A short sequence of future motor commands predicted in one policy invocation.<a class="glossary-backlink" href="#term-ref-2" aria-label="Back to text [2]">↩ Back to text <span aria-hidden="true">[2]</span></a></dd>
+    </div>
+    
+  </dl>
+  <a class="glossary-all-link" href="/en/issues/2026-10-30/#article-glossary">Full issue glossary <span aria-hidden="true">→</span></a>
+</section>
+  </aside>
+  
+</article>
+
+</main>
   <footer class="site-footer">
     <div class="footer-links">
       <a class="patreon-link" href="https://patreon.com/PravdaReplikanta" rel="noopener noreferrer">Support on Patreon</a>
+      <a class="back-link" href="/en/about/">About the newspaper &amp; how to read it</a>
       <p class="rss-link"><a href="/en/rss.xml">RSS — latest articles</a></p>
     </div>
     <section class="about-newspaper" aria-labelledby="about-newspaper-title">

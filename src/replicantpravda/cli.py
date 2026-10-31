@@ -46,6 +46,18 @@ def main() -> int:
         help="Absolute site origin for canonical, hreflang, RSS and sitemap URLs",
     )
     generate.add_argument("--weather", type=Path, help="Saved weather JSON; must match issue date")
+    readers = commands.add_parser("build-readers", help="Build a local four-edition web preview")
+    readers.add_argument("--input", type=Path, default=Path("data/latest"))
+    readers.add_argument("--template", type=Path, required=True)
+    readers.add_argument("--number", type=int, required=True)
+    readers.add_argument("--revision", type=int, default=1)
+    readers.add_argument("--archive-input", type=Path, action="append", default=[])
+    readers.add_argument("--legacy-issue", type=Path, action="append", default=[])
+    readers.add_argument("--output", type=Path, required=True)
+    readers.add_argument("--site-url", default=DEFAULT_SITE_URL)
+    readers.add_argument(
+        "--pdf", action="store_true", help="Generate PDFs for every reader edition"
+    )
     generate.add_argument(
         "--edition-weather",
         action="append",
@@ -78,6 +90,12 @@ def main() -> int:
     importer.add_argument("--revision", type=int, default=1)
     importer.add_argument("--output", type=Path, required=True)
     preview = commands.add_parser("preview")
+    telegram = commands.add_parser(
+        "telegram", help="Preview a Russian issue announcement; never sends"
+    )
+    telegram.add_argument("--issue", type=Path, required=True)
+    telegram.add_argument("--site-url", default=DEFAULT_SITE_URL)
+    telegram.add_argument("--output", type=Path)
     preview.add_argument("--output", type=Path, default=Path("dist"))
     preview.add_argument("--port", type=int, default=8000)
     release = commands.add_parser(
@@ -90,6 +108,15 @@ def main() -> int:
         if args.command == "validate":
             issue = load_issue(args.path)
             print(f"Valid issue {issue.issue_id} ({issue.status}); publication disabled")
+        elif args.command == "telegram":
+            from .telegram import make_announcement
+
+            packet = make_announcement(load_issue(args.issue), args.site_url)
+            if args.output:
+                with args.output.open("x", encoding="utf-8") as stream:
+                    stream.write(json.dumps(packet, ensure_ascii=False, indent=2) + "\n")
+            print(packet["text"])
+            print("\nPREVIEW ONLY · No Telegram request was made")
         elif args.command == "weather":
             if args.output.exists():
                 raise ValueError("Weather output exists; choose a new snapshot path")
@@ -102,6 +129,33 @@ def main() -> int:
             with args.output.open("x", encoding="utf-8") as stream:
                 stream.write(snapshot.model_dump_json(indent=2) + "\n")
             print(f"Saved {args.location} forecast: {args.output}")
+        elif args.command == "build-readers":
+            from .reader_import import import_readers
+
+            issues, report = import_readers(
+                args.input,
+                load_issue(args.template),
+                number=args.number,
+                revision=args.revision,
+                archives=tuple(args.archive_input),
+                legacy_issues=tuple(load_issue(path) for path in args.legacy_issue),
+            )
+            primary = issues[0]
+            build(
+                primary,
+                args.output,
+                site_url=args.site_url,
+                archive_issues=tuple(i for i in issues[1:] if i.edition == primary.edition),
+                reader_issues=tuple(i for i in issues if i.edition != primary.edition),
+                import_report=report,
+                pdf=args.pdf,
+            )
+            print(f"Built local reader preview: {args.output}")
+            for entry in report["inputs"]:
+                if entry["status"] == "invalid":
+                    print(f"Skipped invalid feed {entry['folder']}: {entry['reason']}")
+            if report["unavailable"]:
+                print("Coming soon: " + ", ".join(report["unavailable"]))
         elif args.command == "build":
             issue_id = date.fromisoformat(args.issue)
             issue = load_issue(args.content_dir / f"{issue_id}.json")

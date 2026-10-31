@@ -9,6 +9,7 @@ from urllib.parse import unquote, urlsplit
 from xml.etree import ElementTree as ET
 
 from .models import Issue
+from .readers import reader_base, reader_groups, reader_issue_key, source_path
 
 
 def normalized(text: str) -> str:
@@ -131,6 +132,19 @@ def verify_pdf(
                 ):
                     errors.append(f"Missing illustration caption ({article.id})")
         # Verify source coverage independently of page assignments and fragment boundaries.
+        if layout and "glossary_cards" in layout:
+            from .glossary import glossary_entries
+
+            entries = glossary_entries(issue.languages[lang])
+            cards = layout["glossary_cards"]
+            if [card["index"] for card in cards] != list(range(1, len(entries) + 1)):
+                errors.append("Glossary cards differ from source term order/count")
+            elif any(
+                normalized(entry.term) not in normalized(card["term"])
+                or normalized(entry.definition) != normalized(card["definition"])
+                for entry, card in zip(entries, cards, strict=True)
+            ):
+                errors.append("Glossary card text differs from source")
         all_text = normalized("".join(page.get_text() for page in document))
         expected_ids = {article.id for article in issue.languages[lang].articles}
         if layout and set(layout["articles"]) != expected_ids:
@@ -183,12 +197,15 @@ class PageLinks(HTMLParser):
         self.ids: set[str] = set()
         self.head_links: list[dict[str, str | None]] = []
         self.language: str | None = None
+        self.reader_edition: str = "engineer"
         self.feed(html)
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         values = dict(attrs)
         if tag == "html":
             self.language = values.get("lang")
+        if tag == "body":
+            self.reader_edition = values.get("data-reader-edition") or "engineer"
         if tag == "link":
             self.head_links.append(values)
         if values.get("id"):
@@ -267,7 +284,7 @@ def verify_discovery(site: Path, issues: list[Issue]) -> list[str]:
             len(canonical) != 1
             or set(alternates) != {"ru", "en", "ja"}
             or canonical[0] != alternates.get(page.language)
-            or feeds != [f"{origin}/{page.language}/rss.xml"]
+            or feeds != [f"{origin}{reader_base(page.language, page.reader_edition)}rss.xml"]
             or any(not url or not url.startswith(origin + "/") for url in alternates.values())
         ):
             errors.append(f"{path.relative_to(site)}: inconsistent canonical/hreflang/RSS metadata")
@@ -279,38 +296,42 @@ def verify_discovery(site: Path, issues: list[Issue]) -> list[str]:
             target = (site / url.removeprefix(origin).lstrip("/") / "index.html").resolve()
             if pages.get(target) != alternates:
                 errors.append(f"{path.relative_to(site.resolve())}: nonreciprocal hreflang {url}")
-    for lang in ("ru", "en", "ja"):
-        try:
-            rss = ET.parse(site / lang / "rss.xml").getroot()
-        except (ET.ParseError, OSError):
-            errors.append(f"{lang}/rss.xml: missing or invalid XML")
-            continue
-        expected = [
-            origin + article_path(issue, lang, article)
-            for issue in issues
-            if issue.status in PUBLIC_STATUSES
-            for article in issue.languages[lang].articles
-            if article.id != "glossary"
-        ]
-        expected_guids = [
-            article_guid(issue, lang, article)
-            for issue in issues
-            if issue.status in PUBLIC_STATUSES
-            for article in issue.languages[lang].articles
-            if article.id != "glossary"
-        ]
-        items = rss.findall("channel/item")
-        self_link = rss.find(f"channel/{{{ATOM_NS}}}link")
-        if (
-            rss.tag != "rss"
-            or rss.get("version") != "2.0"
-            or rss.findtext("channel/language") != lang
-            or self_link is None
-            or self_link.get("href") != f"{origin}/{lang}/rss.xml"
-            or [item.findtext("link") for item in items] != expected
-            or [item.findtext("guid") for item in items] != expected_guids
-        ):
-            errors.append(f"{lang}/rss.xml: RSS destinations differ from eligible source articles")
+    for code, selected in reader_groups(issues).items():
+        for lang in ("ru", "en", "ja"):
+            base = reader_base(lang, code)
+            try:
+                rss = ET.parse(site / (base.lstrip("/") + "rss.xml")).getroot()
+            except (ET.ParseError, OSError):
+                errors.append(f"{base}rss.xml: missing or invalid XML")
+                continue
+            expected = [
+                origin + article_path(issue, lang, article)
+                for issue in selected
+                if issue.status in PUBLIC_STATUSES
+                for article in issue.languages[lang].articles
+                if article.id != "glossary"
+            ]
+            expected_guids = [
+                article_guid(issue, lang, article)
+                for issue in selected
+                if issue.status in PUBLIC_STATUSES
+                for article in issue.languages[lang].articles
+                if article.id != "glossary"
+            ]
+            items = rss.findall("channel/item")
+            self_link = rss.find(f"channel/{{{ATOM_NS}}}link")
+            if (
+                rss.tag != "rss"
+                or rss.get("version") != "2.0"
+                or rss.findtext("channel/language") != lang
+                or self_link is None
+                or self_link.get("href") != f"{origin}{base}rss.xml"
+                or [item.findtext("link") for item in items] != expected
+                or [item.findtext("guid") for item in items] != expected_guids
+            ):
+                errors.append(
+                    f"{base}rss.xml: RSS destinations differ from eligible source articles"
+                )
     sitemap = site / "sitemap.xml"
     expected_urls = [origin + path for path in sitemap_paths(issues)]
     if not expected_urls:
@@ -346,9 +367,12 @@ def verify_snapshot(site: Path, issue_id: str) -> dict:
             raise ValueError("Archive latest issue differs from requested issue")
         issues = [
             Issue.model_validate_json(
-                (site / "sources" / f"{date.fromisoformat(entry['issue_id'])}.json").read_text(
-                    encoding="utf-8"
-                )
+                (
+                    site
+                    / "sources"
+                    / ("" if issue.edition == "engineer" else issue.edition)
+                    / f"{date.fromisoformat(entry['issue_id'])}.json"
+                ).read_text(encoding="utf-8")
             )
             for entry in archive["issues"]
         ]
@@ -360,13 +384,38 @@ def verify_snapshot(site: Path, issue_id: str) -> dict:
             entry == issue for entry in issues
         ):
             raise ValueError("Archive sources differ from the selected issue metadata")
+    registry_path = site / "reader-editions.json"
+    if registry_path.exists():
+        registry = json.loads(registry_path.read_text(encoding="utf-8"))
+        if registry["primary"] != issue.edition:
+            raise ValueError("Reader registry primary edition differs from snapshot source")
+        all_issues = []
+        for code, paths in registry["editions"].items():
+            for path in paths:
+                target = (site / path).resolve()
+                if not target.is_relative_to(site.resolve()):
+                    raise ValueError("Unsafe reader source path")
+                entry = Issue.model_validate_json(target.read_text(encoding="utf-8"))
+                if entry.edition != code or source_path(entry) != path:
+                    raise ValueError("Reader registry/source edition mismatch")
+                all_issues.append(entry)
+        selected_groups = reader_groups(all_issues)
+        if selected_groups.get(issue.edition) != issues:
+            raise ValueError("Reader registry differs from primary archive")
+        issues = [entry for selected in selected_groups.values() for entry in selected]
     report = {"issue_id": issue_id, "editions": {}, "archive": {}}
     pdf = archive["pdf"] if archive else True
     for entry in issues:
         editions = {}
         if pdf:
             for lang in ("ru", "en", "ja"):
-                path = site / lang / "issues" / str(entry.issue_id) / "edition.pdf"
+                path = (
+                    site
+                    / reader_base(lang, entry.edition).lstrip("/")
+                    / "issues"
+                    / str(entry.issue_id)
+                    / "edition.pdf"
+                )
                 editions[lang] = verify_pdf(
                     path,
                     entry,
@@ -375,8 +424,8 @@ def verify_snapshot(site: Path, issue_id: str) -> dict:
                         site / "assets/fonts/PTSerif/PTSerif-Regular.ttf"
                     ).is_file(),
                 )
-        report["archive"][str(entry.issue_id)] = editions
-        if str(entry.issue_id) == issue_id:
+        report["archive"][reader_issue_key(entry)] = editions
+        if str(entry.issue_id) == issue_id and entry.edition == issue.edition:
             report["editions"] = editions
     report["link_errors"] = verify_site_links(site)
     report["metadata_errors"] = verify_discovery(site, issues)

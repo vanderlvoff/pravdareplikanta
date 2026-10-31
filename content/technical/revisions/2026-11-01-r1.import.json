@@ -1,0 +1,61 @@
+{
+  "status": "approved",
+  "review_stage": "cloudflare_upload",
+  "sources": {
+    "ru": {
+      "file": "data/latest/engineer/ru.json",
+      "sha256": "051effb4a273ecc27cf8544d1b4b8f54d8ec67eba633bc334939a523fe3c0124",
+      "metadata": {
+        "schema_version": "1.4",
+        "edition": "engineer",
+        "publication": "pravda_replikanta",
+        "issue_type": "daily",
+        "issue_date": "2026-11-01",
+        "issue_id": "daily-2026-11-01",
+        "language": "ru",
+        "generated_at": "2026-10-31T15:57:38.889000Z",
+        "title": "Данные репликанта — инженерная редакция",
+        "lead": "Исследования исполнения длинных задач и соблюдения физических ограничений показывают, что качество отдельной модели управления ещё не равно надёжности всей системы."
+      }
+    },
+    "en": {
+      "file": "data/latest/engineer/en.json",
+      "sha256": "d43f336bb6e2d00f27361c15eca4ce50eff45e425ee159c56655578f1926eab9",
+      "metadata": {
+        "schema_version": "1.4",
+        "edition": "engineer",
+        "publication": "pravda_replikanta",
+        "issue_type": "daily",
+        "issue_date": "2026-11-01",
+        "issue_id": "daily-2026-11-01",
+        "language": "en",
+        "generated_at": "2026-10-31T15:57:38.889000Z",
+        "title": "Replicant Data — Engineering Edition",
+        "lead": "New work on long-horizon execution and physical constraints shows why a capable action policy is not yet a reliable robot system."
+      }
+    },
+    "ja": {
+      "file": "data/latest/engineer/ja.json",
+      "sha256": "2756a2155c9c98ec86d288afcf2fa5c434c8a9b3f3cba49b0a949111d09b4186",
+      "metadata": {
+        "schema_version": "1.4",
+        "edition": "engineer",
+        "publication": "pravda_replikanta",
+        "issue_type": "daily",
+        "issue_date": "2026-11-01",
+        "issue_id": "daily-2026-11-01",
+        "language": "ja",
+        "generated_at": "2026-10-31T15:57:38.890000Z",
+        "title": "レプリカント・データ 技術者向け版",
+        "lead": "長い作業の実行管理と物理的制約の研究から、動作モデルの性能だけではシステム全体の信頼性が決まらないことが見えてくる。"
+      }
+    }
+  },
+  "pagination": "automatic",
+  "review_required": [
+    "facts and source claims",
+    "translations",
+    "print overflow",
+    "visual review"
+  ]
+}
