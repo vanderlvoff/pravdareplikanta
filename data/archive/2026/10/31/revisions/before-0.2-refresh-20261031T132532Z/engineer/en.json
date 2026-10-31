@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.4",
+  "publication": "pravda_replikanta",
+  "issue_type": "daily",
+  "issue_date": "2026-10-31",
+  "issue_id": "daily-2026-10-31",
+  "edition": "engineer",
+  "language": "en",
+  "generated_at": "2026-10-31T21:41:24+09:00",
+  "title": "Pravda Replikanta — Engineering Edition",
+  "lead": "Two research results on motion safety and grasp reliability, with laboratory metrics rather than production claims.",
+  "news": [
+    {
+      "id": "vla-stem",
+      "title": "VLA-Stem separates obstacle response from the VLA policy",
+      "summary": "A local obstacle-response controller augments a VLA without retraining its base model.",
+      "details": "Action chunks become reference trajectories; a local policy adjusts them using robot state and nearby obstacles.",
+      "technical_novelty": "Teacher–student distillation and curriculum learning train the corrective layer.",
+      "engineering_impact": "Safety response can be tested separately from task-selection capability.",
+      "limitations": "Across six constrained simulations, collision-free success reached 52.8% versus 23.7% for the strongest safety baseline; industrial reliability is not established.",
+      "evidence_status": "Research preprint with author-run simulation and hardware tests; no independent replication reported.",
+      "published_at": "2026-10-27",
+      "organization": "VLA-Stem research authors",
+      "source_ids": [
+        "vla-stem-source"
+      ],
+      "time_window": "7d",
+      "body": "A VLA model may select a sensible task yet respond poorly to a sudden obstacle. VLA-Stem leaves the base model intact and adds a fast local controller. It receives a motion reference and adapts it using robot state and nearby obstacles.\n\nAcross six simulated settings, 52.8% of tasks finished without collision versus 23.7% for the strongest safety comparison. The authors also report fewer collisions in hardware tests. Reproduction requires detailed sensor, controller and scenario settings; this is not a safety certification.",
+      "image": null
+    },
+    {
+      "id": "dexsafe-hand",
+      "title": "DexSafe measures object drops alongside dexterity",
+      "summary": "A LEAP hand learns to reposition objects within its fingers; an additional filter reduces drops.",
+      "details": "Training takes place in simulation without human demonstrations, followed by transfer to a real hand with pose sensing or wrist depth vision.",
+      "technical_novelty": "A residual safety filter trades off target-pose accuracy against preserving contact.",
+      "engineering_impact": "Grasp benchmarks should track dropped objects as well as target accuracy.",
+      "limitations": "Over 13.3 hours and more than 4,800 unseen goals on four objects, the base policy reached 95.2% within 2 cm and 0.4 rad; the filter reduced drops by 75% while reaching 91.5%.",
+      "evidence_status": "Preprint with author-run physical experiments; transfer to other hands and objects is not established.",
+      "published_at": "2026-10-27",
+      "organization": "DexSafe research authors",
+      "source_ids": [
+        "dexsafe-source"
+      ],
+      "time_window": "7d",
+      "body": "Dexterous grasping means more than picking something up: the fingers must move it without letting go. Researchers trained a LEAP hand in simulation, transferred the policy to hardware, and added a safety filter that can favor holding the object over a risky maneuver.\n\nOver 13.3 hours of testing, more than 4,800 unseen target poses were attempted on four objects. The base policy reached 95.2% within tolerance, while the filter cut drops by 75% and retained 91.5% goal attainment. Sensor choices, hand geometry and object distribution remain important to reproducibility.",
+      "image": null
+    }
+  ],
+  "technology_signal": {
+    "title": "Safety becomes a separately trained capability",
+    "summary": "Both VLA-Stem and DexSafe add corrective logic around a base task policy.",
+    "implications": "Engineers should measure collisions, drops and test conditions alongside task success."
+  },
+  "glossary": [
+    {
+      "term": "VLA",
+      "definition": "A model that connects images and language to robot actions."
+    },
+    {
+      "term": "policy",
+      "definition": "An algorithm choosing actions from observations."
+    },
+    {
+      "term": "simulation",
+      "definition": "A computer-based experiment using a model."
+    },
+    {
+      "term": "filter",
+      "definition": "An additional layer that checks or adjusts actions."
+    },
+    {
+      "term": "sensor",
+      "definition": "A device measuring a robot or its surroundings."
+    }
+  ],
+  "sources": [
+    {
+      "id": "vla-stem-source",
+      "url": "https://arxiv.org/abs/2610.37378",
+      "domain": "arxiv.org",
+      "organization": "VLA-Stem research authors",
+      "published_at": "2026-10-27",
+      "title": "VLA-Stem: A Lightweight Safety Mechanism for Vision-Language-Action Models via Reinforcement Learning"
+    },
+    {
+      "id": "dexsafe-source",
+      "url": "https://arxiv.org/abs/2610.37652",
+      "domain": "arxiv.org",
+      "organization": "DexSafe research authors",
+      "published_at": "2026-10-27",
+      "title": "Pushing Dexterity and Safety for In-Hand Object Pose Reaching That Works Remarkably Well"
+    }
+  ]
+}
