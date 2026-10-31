@@ -6,89 +6,89 @@
   "issue_id": "daily-2026-10-31",
   "edition": "business",
   "language": "en",
-  "generated_at": "2026-10-31T21:41:24+09:00",
+  "generated_at": "2026-10-31T22:25:32+09:00",
   "title": "Pravda Replikanta — Business Edition",
-  "lead": "Robot permissions and international sourcing risks shape deployment decisions.",
+  "lead": "Two Japanese initiatives raise deployment questions: improving VLA data and making patrol robots reliable in real buildings.",
   "news": [
     {
-      "id": "docomo-gateway",
-      "title": "NTT Docomo puts permission checks between agents and robots",
-      "summary": "Its platform checks authorizations, logs actions and considers people nearby.",
-      "details": "An A2A Gateway checks user attributes and usage rules before forwarding commands.",
-      "technical_novelty": "Access control, action logging and context-aware behavior are combined.",
-      "engineering_impact": "Deployments need accountable owners of permissions and audit records.",
-      "limitations": "No independent large-scale deployment or quantified safety results were reported.",
-      "evidence_status": "Official developer announcement, without independent validation.",
-      "published_at": "2026-10-27",
-      "organization": "NTT DOCOMO",
+      "id": "fastlabel-data-competition",
+      "title": "FastLabel puts VLA data quality to a physical test",
+      "summary": "Japan's FastLabel announced a GENIAC-PRIZE student competition to improve robot datasets, retrain VLA models and evaluate them on a real SO-ARM101 arm.",
+      "details": "The proposed cycle of curation, training and hardware testing is planned for January–February 2027.",
+      "technical_novelty": "It focuses on repeatable data-quality improvements followed by physical evaluation, rather than model ranking alone.",
+      "engineering_impact": "Offers customers a process model for managing and auditing robotics training data.",
+      "limitations": "The contest has not taken place; performance gains and process costs are unknown.",
+      "evidence_status": "Company announcement of an accepted competition proposal, not a model performance result.",
+      "published_at": "2026-10-30",
+      "organization": "FastLabel",
       "source_ids": [
-        "docomo-source"
+        "fastlabel-source"
       ],
-      "time_window": "7d",
-      "body": "Understanding a request is not enough: a robot must know who is authorized to give it. NTT Docomo has developed a platform linking personal AI agents to robots through an A2A Gateway. It checks permissions before forwarding instructions.\n\nThe company describes action logs and behavior adapted to nearby people. For buyers, this is a useful governance architecture, not yet proof of safe operation at scale. The release supplies no independent deployment metrics.",
+      "time_window": "72h",
+      "body": "Choosing a larger model does not automatically solve a robot deployment's data problem. On October 30, FastLabel, a Japanese company specializing in artificial-intelligence datasets, announced that its proposal had been accepted into the GENIAC-PRIZE 2026 initiative involving Japan's METI and NEDO. The proposal targets Physical AI, systems that sense and act in the world, through VLA models. Vision-language-action (VLA) models connect camera input and language instructions to robot commands.\n\nStudent participants are expected to curate robot-operation recordings, correct labels and add examples before training models and testing them on a physical SO-ARM101 arm at FastLabel's office. The loop is intended to repeat. The planned contest runs for roughly two and a half weeks in January–February 2027. Submissions include code, the trained model, the dataset and a report; evaluation combines hardware trials with the written analysis.\n\nFor an integrator, the interesting issue is the operating model: data collection, review, traceability and repeated physical tests may become substantial project costs alongside compute. But acceptance into a contest is not evidence that any VLA has improved. The release does not establish accuracy gains, return on investment or deployment readiness. Those questions require the future evaluation results and a clear account of the cost of improving the data.",
       "image": null
     },
     {
-      "id": "us-robotics-imports",
-      "title": "US opens robotics import talks without an immediate tariff",
-      "summary": "An October 28 proclamation directs talks on imported robots, machinery and parts.",
-      "details": "The Section 232 measure calls for a progress report within 180 days.",
-      "technical_novelty": "Possible future restrictions create sourcing uncertainty.",
-      "engineering_impact": "Procurement teams should assess component origin and contracts.",
-      "limitations": "No new tariff rate is imposed by this proclamation, and future duties are not certain.",
-      "evidence_status": "Primary White House legal document; later economic effects are unknown.",
+      "id": "kit-go2-patrol",
+      "title": "Japan's Go2 patrol prototype moves toward proof-of-concept testing",
+      "summary": "Kanazawa Institute of Technology and partners have developed a Unitree Go2 patrol prototype; a continuous 24-hour test is still planned, not completed.",
+      "details": "The prototype maps and patrols an area of 100 by 100 metres, using an L1 lidar and automatic charging.",
+      "technical_novelty": "It combines autonomous routes, ranging sensors and charging infrastructure for building patrols.",
+      "engineering_impact": "Customers should assess uptime, incident procedures, operator interventions and operating costs.",
+      "limitations": "The proposed 24-hour operation is not yet backed by completed continuous-run results.",
+      "evidence_status": "Official university announcement about a prototype and planned PoC, not independent field statistics.",
       "published_at": "2026-10-28",
-      "organization": "The White House",
+      "organization": "Kanazawa Institute of Technology",
       "source_ids": [
-        "us-imports-source"
+        "kit-go2-source"
       ],
       "time_window": "7d",
-      "body": "On October 28, the White House issued a proclamation addressing robotics and industrial machinery imports as a national-security issue. That is a meaningful signal to suppliers, but not a confirmed new cost line.\n\nThe document orders negotiations and a progress report within 180 days. Tariffs are possible future measures, not immediate duties under this text. Buyers should model sourcing scenarios instead of assuming an invented rate.",
+      "body": "A patrol robot's commercial value depends less on a polished demonstration than on whether it can reliably finish its rounds overnight. On October 28, Kanazawa Institute of Technology announced joint work with Kanazawa Kiko and AI Robot Systems on a patrol system based on the Unitree Go2 quadruped. The university says a prototype is complete and the project has entered a proof-of-concept (PoC) stage: testing whether an idea works under realistic conditions.\n\nThe team reports autonomous map-based patrol over a 100-by-100-metre area. An L1 lidar, a laser ranging sensor that measures distances to surrounding objects, provides a stated field of view of 360 degrees horizontally and 90 degrees vertically. Automatic charging is part of the proposed long-duration operation. A continuous 24-hour campus test is planned, followed by trials in factories and office buildings.\n\nPotential duties include routine rounds, equipment checks and remote observation of hazardous areas. A buyer still needs evidence about people crossing the route, locked doors, network failures, charging interruptions and escalation to human staff. Useful procurement metrics include completed patrols, uptime, operator interventions and maintenance costs. The university announcement contains no results from the planned 24-hour run and does not demonstrate a labor-saving return on investment.",
       "image": null
     }
   ],
   "technology_signal": {
-    "title": "Integration and regulation are part of robotics",
-    "summary": "Robot capability alone is not enough without governance and dependable supply.",
-    "implications": "Procurement requires auditability, accountability and cost scenarios."
+    "title": "Hardware tests matter more than promises",
+    "summary": "FastLabel plans physical evaluation of data improvements; the Go2 patrol project is preparing continuous trials.",
+    "implications": "Deployment decisions need measured reliability, ownership costs and clear failure procedures."
   },
   "glossary": [
     {
-      "term": "A2A Gateway",
-      "definition": "A gateway for communication between software agents."
+      "term": "VLA",
+      "definition": "A model connecting visual observations and instructions to robot actions."
     },
     {
-      "term": "robot",
-      "definition": "A machine that acts in the physical world."
+      "term": "data labeling",
+      "definition": "Adding annotations that help a model learn from examples."
     },
     {
-      "term": "audit",
-      "definition": "A review of recorded actions."
+      "term": "PoC",
+      "definition": "A proof-of-concept test of whether an idea works in realistic conditions."
     },
     {
-      "term": "Section 232",
-      "definition": "A US trade-law provision concerning imports and national security."
+      "term": "lidar",
+      "definition": "A laser-based sensor measuring distances to surrounding objects."
     },
     {
-      "term": "tariff",
-      "definition": "A tax or duty on imports."
+      "term": "uptime",
+      "definition": "The proportion of time a system is available for use."
     }
   ],
   "sources": [
     {
-      "id": "docomo-source",
-      "title": "AIとロボットが人と安全・快適に共存する世界へ、Physical AI連携基盤を開発",
-      "url": "https://www.docomo.ne.jp/info/news_release/2026/10/27_02.html",
-      "domain": "www.docomo.ne.jp",
-      "organization": "NTT DOCOMO",
-      "published_at": "2026-10-27"
+      "id": "fastlabel-source",
+      "title": "FastLabel、GENIAC-PRIZE 2026 テーマ２に採択：データセントリックVLAモデル開発コンペ",
+      "url": "https://prtimes.jp/main/html/rd/p/000000215.000065427.html",
+      "domain": "prtimes.jp",
+      "organization": "FastLabel",
+      "published_at": "2026-10-30"
     },
     {
-      "id": "us-imports-source",
-      "title": "Adjusting Imports of Robotics, Industrial Machinery, and Their Parts and Components into the United States",
-      "url": "https://www.whitehouse.gov/presidential-actions/2026/10/adjusting-imports-of-robotics-industrial-machinery-and-their-parts-and-components-into-the-united-states/",
-      "domain": "www.whitehouse.gov",
-      "organization": "The White House",
+      "id": "kit-go2-source",
+      "title": "四足歩行ロボット「Unitree Go2」を活用した巡回ロボットの社会実装を目指して",
+      "url": "https://www.kanazawa-it.ac.jp/kitnews/2026/1028_unitree-go2.html",
+      "domain": "www.kanazawa-it.ac.jp",
+      "organization": "Kanazawa Institute of Technology",
       "published_at": "2026-10-28"
     }
   ]
