@@ -6,89 +6,89 @@
   "issue_id": "daily-2026-10-31",
   "edition": "enthusiast",
   "language": "en",
-  "generated_at": "2026-10-31T13:48:50.995Z",
-  "title": "Pravda Replikanta — Enthusiast Edition",
-  "lead": "Robots are learning to coordinate two hands and check whether their movements match their intended plans.",
+  "generated_at": "2026-10-31T23:06:42+09:00",
+  "title": "Pravda Replikanta — Curious Readers",
+  "lead": "How robots plan steps and try to anticipate physical motion.",
   "news": [
     {
-      "id": "acrossdex-two-hands",
-      "title": "AcrossDEX learns two-handed robot manipulation from human motion",
-      "summary": "AcrossDEX 1.0 uses human-motion pretraining and adapts the result to two different robot hands, Inspire and Allegro, for coordinated object manipulation.",
-      "details": "The system uses images, command history and repeated replanning for lid handling and object reorientation.",
-      "technical_novelty": "Shared wrist representations are combined with separate finger parameters for different hand mechanisms.",
-      "engineering_impact": "Suggests a common training pipeline that can be adapted across robot-hand designs.",
-      "limitations": "Author tests range from 40.6% on opening and returning a lid to 100% on a particular reorientation task; generality remains unproven.",
-      "evidence_status": "Research preprint with author-run experiments, not independently replicated.",
-      "published_at": "2026-10-29",
-      "organization": "AcrossDEX research authors",
+      "id": "google-cloud-robotics-er2",
+      "title": "Google opens a cloud planning layer for robot tasks",
+      "summary": "On October 27 Google Cloud opened public-preview access to Gemini Robotics ER 2, a model that interprets video, plans steps and calls separate robot-control tools.",
+      "details": "The calls use APIs, defined interfaces between software components. The model can interpret video, choose a navigation or manipulation function and check progress. Coordinating specialized components in this way is called orchestration. Google also describes cooperation between robots, but the actual behavior still depends on their hardware and control systems.",
+      "technical_novelty": "High-level reasoning coordinates perception, progress checks and robot software interfaces.",
+      "engineering_impact": "Useful for experimenting with multi-step tasks, but not a replacement for local motion control.",
+      "limitations": "Cloud preview is not a guarantee of safe or reliable autonomous deployment.",
+      "evidence_status": "Official availability announcement with developer-reported metrics.",
+      "published_at": "2026-10-27",
+      "organization": "Google Cloud and Google DeepMind",
       "source_ids": [
-        "acrossdex-source"
+        "google-cloud-release"
       ],
-      "time_window": "72h",
-      "body": "Opening a box with two hands looks ordinary: one hand holds the base while the other lifts the lid. A robot has to coordinate both wrists and many finger contacts without dropping the object. AcrossDEX 1.0, introduced by its research authors, tackles bimanual dexterous manipulation. That means controlling two articulated robot hands to change an object's position or state while keeping contact.\n\nThe training pipeline begins with recorded human hand motion, then combines simulation-based learning and robot demonstrations. Some wrist-motion representations are shared across robots, while finger commands depend on the hand design. The paper considers six-channel Inspire hands and sixteen-joint Allegro hands. Those mechanisms differ enough that copying the same joint commands between them would not work.\n\nAt execution time, the robot reads camera images and recent commands, predicts a short action sequence, executes part of it and observes again. This is feedback-based replanning rather than blindly replaying a long movement. The researchers compare direct regression with diffusion and flow matching, two methods for generating candidate action sequences from learned distributions.\n\nThe results vary sharply by task. Direct regression succeeds 40.6% of the time on lid opening and return, but reaches 100% on Inspire object reorientation and 93.3% on Allegro reorientation. Flow matching reaches 90% on Allegro reorientation. These are particular experimental settings, not evidence of human-level general dexterity. A natural next question is whether the same approach survives new objects, hand designs and imperfect camera views.",
+      "time_window": "7d",
+      "body": "A request like 'find the box and bring it here' hides many decisions. A robot must choose a route, pick up the object and check whether each step succeeded. On October 27, Google Cloud announced public-preview access to Gemini Robotics Embodied Reasoning 2, a high-level model that plans these steps and calls separate robot-control programs.\n\nThe calls use APIs, defined interfaces between software components. The model can interpret video, choose a navigation or manipulation function and check progress. Coordinating specialized components in this way is called orchestration. Google also describes cooperation between robots, but the actual behavior still depends on their hardware and control systems.\n\nGoogle reports 91.3% accuracy for locating a critical moment in video, with a mean timing error of 0.96 seconds. That is a specific video-understanding benchmark, not a general robot task-success rate. The model existed before October; the new event is its cloud availability. Network delays, disconnections and emergency stops remain practical engineering responsibilities.",
       "image": null
     },
     {
-      "id": "coract-reason-action",
-      "title": "CoRAct asks whether a robot's reasoning matches its actions",
-      "summary": "CoRAct trains vision-language-action models by checking candidate movements against intended motion and predicted spatial consequences.",
-      "details": "Candidate actions receive feedback based on movement consistency and agreement with expected waypoints.",
-      "technical_novelty": "Intermediate spatial reasoning is tied to action optimization rather than treated only as explanatory text.",
-      "engineering_impact": "Could help detect mismatches between a robot's stated plan and the movement it generates.",
-      "limitations": "Authors report gains on RoboCasa, VLABench and physical tasks, without universal safety guarantees.",
-      "evidence_status": "Research preprint with author evaluations, not independently validated in industry.",
+      "id": "worldflow-video-3d",
+      "title": "Can a robot predict how the scene will move?",
+      "summary": "Researchers introduced WorldFlow on October 29, predicting future video and 3D point motion; average displacement error on SpatialCog was 0.060 m.",
+      "details": "The researchers trained the model on 1.44 million object-level samples from simulated and real scenes. WorldFlowBench, their evaluation collection, contains 1,678 samples from 11 sources. On SpatialCog, average displacement error was 0.060 metres, a 54.2% reduction relative to the strongest external method in the authors' comparison.",
+      "technical_novelty": "Video prediction and three-dimensional motion forecasting are learned jointly.",
+      "engineering_impact": "Such forecasts could help robots choose actions.",
+      "limitations": "This is not a demonstrated general-purpose robot controller.",
+      "evidence_status": "Research preprint with author-run experiments.",
       "published_at": "2026-10-29",
-      "organization": "CoRAct research authors",
+      "organization": "WorldFlow research authors",
       "source_ids": [
-        "coract-source"
+        "worldflow-paper"
       ],
       "time_window": "72h",
-      "body": "A robot might describe the correct destination for an object and still generate a movement in the wrong direction. CoRAct, a method introduced by its research authors, studies that gap between reasoning and execution. It targets vision-language-action (VLA) models, which connect camera input and language instructions to robot movements. The aim is to make intermediate reasoning accountable to predicted physical consequences.\n\nRather than using reasoning only as text, the method extracts intended movement and waypoints, or expected intermediate positions. It generates candidate actions and scores whether they agree with the intended direction and predicted outcome. Those scores influence the learning process that generates future actions. Here, 'reasoning' does not imply human understanding; it refers to structured predictions that can be checked against movement geometry.\n\nThe authors report improvements on RoboCasa and VLABench, two robotic-action evaluation suites, as well as physical manipulation tasks. They also discuss zero-shot adaptation, meaning applying a learned method to a new setting without task-specific retraining. None of this proves that a robot will always recognize a bad instruction or avoid unsafe contact.\n\nThe next useful question is how reliably plan-execution alignment can be measured when an object slips, a camera misjudges its position or a person changes the task. CoRAct supplies a research mechanism for testing that question. Independent replication and broader hardware trials remain necessary.",
+      "body": "When you watch a ball move, you can imagine where it will be a moment later. A robot has a harder version of that problem: it needs to anticipate both the image and the geometry of motion. WorldFlow, introduced on October 29, predicts future video frames and the trajectories of selected points in three-dimensional space.\n\nThe researchers trained the model on 1.44 million object-level samples from simulated and real scenes. WorldFlowBench, their evaluation collection, contains 1,678 samples from 11 sources. On SpatialCog, average displacement error was 0.060 metres, a 54.2% reduction relative to the strongest external method in the authors' comparison.\n\nThat does not mean a robot will always catch a ball or move an object safely. Predicting motion and selecting safe physical actions are different tasks. Real use would require checks on computation speed, camera accuracy and behavior in unexpected environments.",
       "image": null
     }
   ],
   "technology_signal": {
-    "title": "Choosing an action is not the same as executing it",
-    "summary": "AcrossDEX studies two-hand coordination; CoRAct connects predicted consequences with generated movements.",
-    "implications": "Evaluate contact stability and plan-execution alignment, not only final task success."
+    "title": "Google opens a cloud planning layer for robot tasks",
+    "summary": "On October 27 Google Cloud opened public-preview access to Gemini Robotics ER 2, a model that interprets video, plans steps and calls separate robot-control tools.",
+    "implications": "Cloud planning cannot replace local safety controls."
   },
   "glossary": [
     {
-      "term": "bimanual manipulation",
-      "definition": "Using two coordinated robot hands to handle an object."
+      "term": "API",
+      "definition": "An interface for one program to call another."
     },
     {
-      "term": "feedback",
-      "definition": "Using observed results to guide the next action."
+      "term": "Orchestration",
+      "definition": "Coordinating multiple programs within a task."
     },
     {
-      "term": "VLA",
-      "definition": "A model connecting visual observations, language and physical actions."
+      "term": "Public preview",
+      "definition": "Test availability without a production guarantee."
     },
     {
-      "term": "waypoint",
-      "definition": "An expected intermediate position in a movement."
+      "term": "World model",
+      "definition": "A model predicting how a scene changes."
     },
     {
-      "term": "zero-shot",
-      "definition": "Applying a method to a new task without task-specific retraining."
+      "term": "3D trajectory",
+      "definition": "A point's path in space."
     }
   ],
   "sources": [
     {
-      "id": "acrossdex-source",
-      "title": "AcrossDEX 1.0: From Human Motion Pretraining to Bimanual Dexterous Manipulation across Hand Embodiments",
-      "url": "https://arxiv.org/abs/2610.40210",
-      "domain": "arxiv.org",
-      "organization": "AcrossDEX research authors",
-      "published_at": "2026-10-29"
+      "id": "google-cloud-release",
+      "title": "Gemini Robotics Embodied Reasoning 2 is now available on Google Cloud",
+      "url": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-robotics-embodied-reasoning-2-is-now-available-on-google-cloud",
+      "domain": "cloud.google.com",
+      "organization": "Google Cloud and Google DeepMind",
+      "published_at": "2026-10-27"
     },
     {
-      "id": "coract-source",
-      "title": "From Reasoning to Action: Consequence-Grounded Alignment for Vision-Language-Action Models",
-      "url": "https://arxiv.org/abs/2610.39543",
+      "id": "worldflow-paper",
+      "title": "WorldFlow: Joint Video and 3D Motion Prediction via Large-Scale Pretraining",
+      "url": "https://arxiv.org/abs/2610.39278",
       "domain": "arxiv.org",
-      "organization": "CoRAct research authors",
+      "organization": "WorldFlow research authors",
       "published_at": "2026-10-29"
     }
   ]
