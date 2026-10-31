@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.4",
+  "publication": "pravda_replikanta",
+  "issue_type": "daily",
+  "issue_date": "2026-10-31",
+  "issue_id": "daily-2026-10-31",
+  "edition": "enthusiast",
+  "language": "ja",
+  "generated_at": "2026-10-31T13:48:50.995Z",
+  "title": "レプリカント・プラウダ — 好奇心版",
+  "lead": "二つの手を協調させる研究と、考えた動きが実際の行動と合うかを確かめる研究を紹介する。",
+  "news": [
+    {
+      "id": "acrossdex-two-hands",
+      "title": "AcrossDEX、人の手の動きを学び2本のロボットハンドを協調",
+      "summary": "AcrossDEX 1.0は人の手の動きで事前学習し、InspireとAllegroという異なるロボットハンドで物体操作を試した。",
+      "details": "画像と過去の指令を使って動作を短く計画し直し、ふたの開閉や物の向きの変更を行う。",
+      "technical_novelty": "手首の動きの表現を共有しながら、指の制御は各ハンドの構造に合わせる。",
+      "engineering_impact": "異なる機械構造へ同じ学習手順を適用する可能性を示す。",
+      "limitations": "成功率は課題によって40.6％から100％まで異なり、どんな物にも使えるとは示されていない。",
+      "evidence_status": "著者のプレプリントと実験。独立した再現は未確認。",
+      "published_at": "2026-10-29",
+      "organization": "AcrossDEX research authors",
+      "source_ids": [
+        "acrossdex-source"
+      ],
+      "time_window": "72h",
+      "body": "箱のふたを両手で開けるとき、人は片手で箱を押さえ、もう片方でふたを動かす。ロボットには、二つの手首と多数の指を同時に動かし、物を落とさない工夫が必要だ。研究チームが発表したAcrossDEX 1.0は、二つのロボットハンドで物を扱う「双腕の器用な操作」を学習する仕組みである。\n\n最初に人の手の動きを記録したデータで学び、次にシミュレーションやロボットの実演データを利用する。手首の動きを表す情報は共有する一方、指の命令はハンドごとに変える。研究では6つの制御チャンネルを持つInspireと、16関節のAllegroを使用した。構造が違うため、同じ関節角度をそのままコピーすることはできない。\n\n動作時にはカメラ画像と過去の指令から短い動作列を予測し、その一部を実行してから再び観測する。これは結果を見ながら計画を更新する方法だ。著者らは、直接数値を予測する方法と、diffusionやflow matchingと呼ばれる確率的な動作生成方法を比較した。\n\n成功率は課題によって大きく違う。直接予測では、ふたを開けて戻す課題が40.6％、Inspireによる物体の向きの変更が100％、Allegroでは93.3％だった。flow matchingによるAllegroの向き変更は90％。これは特定の試験結果であり、どんな物も人間のように扱える証拠ではない。未知の物体でも使えるかが次の問いになる。",
+      "image": null
+    },
+    {
+      "id": "coract-reason-action",
+      "title": "CoRAct、ロボットの説明と実際の動作の一致を学習",
+      "summary": "CoRActはVLAモデルが考えた動きと、生成した行動の予測結果が合うかを評価して学習する方法だ。",
+      "details": "動く方向と経由点を使い、候補の行動が予測した結果に近いかを採点する。",
+      "technical_novelty": "途中の空間的な予測を、文章の説明だけでなく行動生成の改善に利用する。",
+      "engineering_impact": "計画と実行のずれを調べる方法として応用が考えられる。",
+      "limitations": "RoboCasa、VLABench、実機課題での改善は著者報告であり、一般的な安全性は未証明。",
+      "evidence_status": "著者のプレプリントと評価実験。独立した産業実証はない。",
+      "published_at": "2026-10-29",
+      "organization": "CoRAct research authors",
+      "source_ids": [
+        "coract-source"
+      ],
+      "time_window": "72h",
+      "body": "ロボットが物を置く場所を正しく説明しても、実際には違う方向へ動かすことがある。研究チームのCoRActは、こうした説明と行動のずれを減らす方法だ。対象はVLA（Vision-Language-Action）モデルで、カメラ画像と言葉の指示からロボットの動作を作る。途中の予測を、実際の動きの結果と結び付けようとしている。\n\nCoRActは意図した移動方向と経由点を使う。経由点は途中で通ると予想した位置である。複数の動作候補を作り、それぞれが意図した方向や予測結果にどれほど合うかを評価する。その評価を次の学習に利用する。ここでいう「推論」は人間と同じ理解を意味せず、位置や動きについて検証可能な予測を作ることを指す。\n\n著者らはRoboCasaとVLABenchというロボット動作の評価環境や、実機の物体操作で改善を報告した。別の課題に専用の追加学習なしで適用するzero-shotについても検討している。ただし、誤った指示を必ず見抜ける、危険な接触を必ず防げるという証明ではない。\n\n物が滑ったとき、カメラが位置を読み違えたとき、人が目標を変えたときにも計画と動作は一致するだろうか。CoRActはその問いを具体的な実験に変える方法を示す。幅広い機体での独立した再現評価はこれからだ。",
+      "image": null
+    }
+  ],
+  "technology_signal": {
+    "title": "行動を選ぶことと実行することは違う",
+    "summary": "AcrossDEXは両手の協調を学び、CoRActは予測した結果と動作を結び付ける。",
+    "implications": "成功したかだけでなく、接触の安定性と計画どおりに動いたかを調べたい。"
+  },
+  "glossary": [
+    {
+      "term": "双腕操作",
+      "definition": "二つのロボットの手を協調させて物を扱うこと。"
+    },
+    {
+      "term": "フィードバック",
+      "definition": "動いた結果を見て次の動きを変えること。"
+    },
+    {
+      "term": "VLA",
+      "definition": "画像と言葉をロボットの行動につなぐモデル。"
+    },
+    {
+      "term": "経由点",
+      "definition": "移動途中に通ると予想する位置。"
+    },
+    {
+      "term": "zero-shot",
+      "definition": "新しい課題に専用の追加学習なしで適用すること。"
+    }
+  ],
+  "sources": [
+    {
+      "id": "acrossdex-source",
+      "title": "AcrossDEX 1.0: From Human Motion Pretraining to Bimanual Dexterous Manipulation across Hand Embodiments",
+      "url": "https://arxiv.org/abs/2610.40210",
+      "domain": "arxiv.org",
+      "organization": "AcrossDEX research authors",
+      "published_at": "2026-10-29"
+    },
+    {
+      "id": "coract-source",
+      "title": "From Reasoning to Action: Consequence-Grounded Alignment for Vision-Language-Action Models",
+      "url": "https://arxiv.org/abs/2610.39543",
+      "domain": "arxiv.org",
+      "organization": "CoRAct research authors",
+      "published_at": "2026-10-29"
+    }
+  ]
+}
