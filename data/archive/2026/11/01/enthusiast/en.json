@@ -6,94 +6,188 @@
   "issue_id": "daily-2026-11-01",
   "edition": "enthusiast",
   "language": "en",
-  "generated_at": "2026-10-31T15:59:36.688Z",
-  "title": "Replicant Data — Enthusiast Edition",
-  "lead": "Two studies reveal how ordinary-looking robot actions become difficult when trailers and precise tool contact enter the picture.",
+  "generated_at": "2026-10-31T16:24:23.345Z",
+  "title": "Replicant Data — Enthusiast",
+  "lead": "How design and learning make robot actions more reliable.",
   "news": [
     {
-      "id": "raibo-wagon-towing",
-      "title": "A quadruped learns to tow a wagon through tight passages",
-      "summary": "Researchers led by Insung Yang introduced a navigation system for a RAIBO quadruped pulling a custom wagon. Outdoor tests on 15-meter routes reported an 85% success rate across 40 trials with loads up to 40 kilograms, but the evidence covers a specific setup.",
-      "details": "The planner accounts for the coupled motion of a legged robot and a wheeled wagon in confined spaces.",
-      "technical_novelty": "A learned initial motion proposal is refined using model-predictive path-integral optimization and learned forward dynamics.",
-      "engineering_impact": "Towing can extend legged robots from self-locomotion to moving heavier payloads.",
-      "limitations": "A single robot-wagon system, short test routes and a 15% failure rate leave open questions about general deployment.",
-      "evidence_status": "Research preprint with outdoor physical-robot experiments.",
+      "id": "simto-robust-grippers",
+      "title": "Soft grippers can be shaped to forgive positioning errors",
+      "summary": "Kurt Enkera and colleagues developed a simulation-driven method for designing soft grippers across objects and grasp poses. They generated 6,646 designs and physically tested 24 against conventional alternatives.",
+      "details": "Instead of optimizing for one ideal object and pose, the method simulates contact with several geometries and grasp positions. The resulting forces guide improvements to the compliant structure. Part of the robustness problem therefore moves from complicated control software into mechanical design. Cameras still matter, but small positioning errors may become less damaging.",
+      "technical_novelty": "The team generated 6,646 candidate designs and physically evaluated 24. Comparisons included ten specialized soft designs, two rigid baseline grippers and one conventional general-purpose soft gripper. In total, 37 devices were tested with five objects featuring distinctive shapes, six grasp poses and progressively stronger external disturbances during pick-and-place operations.",
+      "engineering_impact": "The broader lesson is that useful mechanical design can make a robot forgiving before the controller intervenes. That may matter in sorting, assembly and handling irregular objects. Long-term wear, contamination, cycle speed and performance with heavier or unfamiliar items remain open questions for practical deployment.",
+      "limitations": "On average, SimTO-Robust designs transferred objects more reliably than specialized soft designs and rigid baselines. The strongest candidates tolerated larger disturbances than the other tested devices. These findings apply to the reported materials, objects and conditions, not to every possible gripper or load.",
+      "evidence_status": "Research preprint; results are author-reported, without independent replication.",
       "published_at": "2026-10-29",
-      "organization": "Insung Yang et al.",
+      "organization": "Kurt Enkera et al.",
       "source_ids": [
-        "src-raibo-wagon-2610"
+        "src-simto-robust-grippers-20261029"
       ],
       "time_window": "72h",
-      "body": "A four-legged robot can navigate around obstacles while controlling only its own body. Attach a wagon, however, and every turn becomes a different problem: the trailer wheels cannot move sideways at will, and the combined machine needs more room than the robot alone. Researchers led by Insung Yang described RAIBO-Wagon on October 29, 2026, a navigation system for a quadruped towing a custom wheeled carrier. The interesting advance is not merely that the robot can pull a load. It is that the controller plans for the linked motion of both bodies in narrow spaces.\n\nThe system combines two planning ideas. Conditional flow matching produces a fast initial proposal for how the robot and wagon might move. Model Predictive Path Integral control, or MPPI, then tests and refines candidate commands using a learned forward-dynamics model that predicts how the coupled system will respond. The first component helps the search start near a promising solution; the second can adjust when the environment differs from the examples used for learning. This is a practical compromise between fast learned suggestions and slower physical consistency checks.\n\nThe authors tested the system outdoors on 15-meter courses containing confined passages. Sensing and computation ran fully onboard rather than depending on an external computer to plan the motion. They report an 85% completion rate over 40 trials and loads of up to 40 kilograms, nearly the robot's own body weight. Those are measured results on a particular setup, not a claim that all quadrupeds can tow the same load. Fifteen percent of the attempts still failed, and the reported routes were relatively short.\n\nWhy pull rather than carry? Wheels can support a heavy payload while legs help a robot negotiate terrain that may be awkward for an ordinary cart mover. The combination might eventually be useful for material handling or inspection support. Yet a real worksite brings slopes, changing friction, people and unexpected obstacles. The paper does not establish months of reliable operation under those conditions. A revealing next test would vary wagon geometry, payload distribution and surface conditions while measuring recovery after a failed turn.",
+      "body": "A robot may recognize an object correctly yet place its gripper slightly off target. Rigid fingers can lose contact, while a soft gripper may deform around the object. Researchers led by Kurt Enkera introduced SimTO-Robust, a computer-aided design method intended to make grippers tolerant of such errors through their physical shape.\n\nInstead of optimizing for one ideal object and pose, the method simulates contact with several geometries and grasp positions. The resulting forces guide improvements to the compliant structure. Part of the robustness problem therefore moves from complicated control software into mechanical design. Cameras still matter, but small positioning errors may become less damaging.\n\nThe team generated 6,646 candidate designs and physically evaluated 24. Comparisons included ten specialized soft designs, two rigid baseline grippers and one conventional general-purpose soft gripper. In total, 37 devices were tested with five objects featuring distinctive shapes, six grasp poses and progressively stronger external disturbances during pick-and-place operations.\n\nOn average, SimTO-Robust designs transferred objects more reliably than specialized soft designs and rigid baselines. The strongest candidates tolerated larger disturbances than the other tested devices. These findings apply to the reported materials, objects and conditions, not to every possible gripper or load.\n\nThe broader lesson is that useful mechanical design can make a robot forgiving before the controller intervenes. That may matter in sorting, assembly and handling irregular objects. Long-term wear, contamination, cycle speed and performance with heavier or unfamiliar items remain open questions for practical deployment.",
       "image": null
     },
     {
-      "id": "dawn-robot-unscrewing",
-      "title": "A robot learns to remove screws by separating alignment from turning",
-      "summary": "Hemant Kumar and colleagues introduced DAWN, a research system that first aligns a screwdriver with a screw and then uses sensor feedback to control removal. Experiments with a real robot arm demonstrate the stages, but reliable initial engagement remains the main obstacle to full automation.",
-      "details": "Vision, robot position and force feedback feed separate models for alignment, contact detection and removal.",
-      "technical_novelty": "A diffusion-based alignment policy is combined with a contact classifier and a force-controlled unfastening controller.",
-      "engineering_impact": "The staged architecture could support automated disassembly if alignment robustness improves.",
-      "limitations": "The initial engagement stage remains unreliable across variations; angled fasteners were not tested.",
-      "evidence_status": "Research preprint with Franka Emika robot-arm experiments.",
+      "id": "logiv-task-graph-repair",
+      "title": "LOGIV checks robot task dependencies and repairs broken preconditions",
+      "summary": "Researchers led by Enqiao Lu introduced LOGIV, an execution layer that verifies the conditions required by successive robot actions. Tests on two simulated benchmarks and three real-robot tasks improved completion rates, although failures remained.",
+      "details": "An explicit task graph represents condition support and resource ordering; observations verify those dependencies during execution.",
+      "technical_novelty": "Causal local repair of invalidated task conditions without retraining the underlying robot policy.",
+      "engineering_impact": "Separates sequential execution reliability from individual manipulation skills and can sit above existing VLA controllers.",
+      "limitations": "Evidence is confined to selected dual-arm tasks; real-robot success was 17 of 30 trials, not full reliability.",
+      "evidence_status": "Research preprint with simulated benchmarks and limited real-robot trials.",
       "published_at": "2026-10-29",
-      "organization": "Hemant Kumar et al.",
+      "organization": "Enqiao Lu et al.",
       "source_ids": [
-        "src-dawn-unfastening-2610"
+        "src-logiv-2610"
       ],
       "time_window": "72h",
-      "body": "Removing a screw looks simple until a robot has to do it. The screwdriver must reach the correct point, align with the head, engage the slot and maintain contact while turning. Hemant Kumar and colleagues presented DAWN on October 29, 2026, a research system that breaks this sequence into manageable parts. Their motivation is automated disassembly, including the recovery of components from used products. A robot that merely detects a screw in an image has not yet solved the mechanical problem of getting the tool to work.\n\nThe first component uses a diffusion-based action policy, a learned method that progressively constructs movements from observations, to position and insert the screwdriver. A second model combines visual and force information to decide whether the tip has engaged securely. A third controller handles turning and removal, relying mainly on force feedback rather than slow image-based action generation. The authors impose a reaction-force limit of 20 newtons during this stage. The separation matters because positioning, recognizing contact and applying torque have different sensing and timing requirements.\n\nThe experiments used a real Franka Emika robot arm fitted with an electric screwdriver. The researchers collected 199 expert demonstrations for the alignment stage and 6,000 contact images for training the engagement classifier. In a reported comparison, the alignment-and-engagement policy succeeded in roughly half the trials, comparable to trained human teleoperators under that test setup. The contact classifier reached an accuracy of 0.90. Once the tool was properly engaged, the tested removal stage performed much more consistently, showing where the difficult bottleneck actually lies.\n\nThis is not evidence that a robot can already dismantle arbitrary electronics without supervision. Screw heads with unfamiliar appearances, changes in lighting and small positioning errors can defeat the initial stage. The researchers did not evaluate non-parallel screw orientations, and they identify sensitivity to variation in the paper. A production system would also need to detect screws on complex assemblies, recover from slips and verify that the surrounding components remain undamaged. DAWN offers a useful lesson: the hardest part of a seemingly simple task may be establishing the right contact before the visible action begins.",
+      "body": "The interesting question is what actually changed and where the tested capability ends. An explicit task graph represents condition support and resource ordering; observations verify those dependencies during execution. Evidence is confined to selected dual-arm tasks; real-robot success was 17 of 30 trials, not full reliability.\n\nA robot may complete a placement correctly and still fail at the next step because someone has moved the object it needs. Researchers led by Enqiao Lu propose LOGIV, an execution framework for long-horizon robot tasks that treats this as a dependency problem rather than automatically blaming the motor controller. Their paper appeared on arXiv on October 29, 2026. The method monitors whether the physical conditions assumed by a multi-step plan remain true as the robot works, even after an earlier action has been marked complete.\n\nLOGIV represents a validated plan as a task graph. One kind of edge records which action supports a condition needed later; another orders actions that compete for resources. Observations are used to verify those relationships during execution. If a disturbance removes a required condition, dependency tracing identifies what needs to be restored. The system then constructs a local repair, preserves still-relevant unfinished actions, and symbolically validates the continuation before execution resumes. This is a supervisory layer above vision-language-action policies, often abbreviated VLA, or world-action models; it does not introduce new trainable parameters into the underlying policy.\n\nThe researchers evaluated 20 dual-arm tasks drawn from RoboTwin V2 and BiCoord using three execution backbones. Without injected disturbances, they report mean task-success gains of 10.67 and 15.33 percentage points on the respective benchmarks. Under predefined disturbances, LOGIV outperformed three adapted recovery baselines in task completion and restoration of necessary conditions. On three physical-robot tasks, successful trials increased from 12 out of 30 to 17 out of 30. That is a measurable improvement, but it also leaves thirteen failures and should not be described as solved autonomy.\n\nThe architectural lesson is that action generation and task-state verification are different responsibilities. A strong manipulation policy cannot guarantee that the world still matches its earlier assumptions. Explicit dependencies provide a place to diagnose and repair those mismatches without restarting everything. The open engineering questions concern perception errors, incomplete condition models, recovery actions that are unavailable, and scaling to longer workflows with multiple simultaneous disturbances. The published evidence supports the value of the layer on tested tasks, not an assurance of reliable operation in arbitrary factories.",
+      "image": null
+    },
+    {
+      "id": "oracle-safe-flow",
+      "title": "A binary feasibility checker becomes part of learning safe robot actions",
+      "summary": "Jianming Ma and colleagues proposed a safeguard that needs only yes-or-no feasibility answers while a robot policy generates motions. It achieved 100% checked-step feasibility in a simulated manipulation task, at a substantial inference-time cost and without a real-world safety guarantee.",
+      "details": "The system clips proposed flow updates to feasible regions and estimates boundary information for learning from binary checker responses.",
+      "technical_novelty": "A shared oracle-guided correction is used during both policy training and inference without an analytical constraint model.",
+      "engineering_impact": "Existing collision checkers can potentially constrain generative action policies even when they are not differentiable.",
+      "limitations": "One simulation task; per-action-chunk inference time rose from 0.071 to 1.345 seconds.",
+      "evidence_status": "Research preprint with simulated measurements; no physical-robot safety certification.",
+      "published_at": "2026-10-29",
+      "organization": "Jianming Ma et al.",
+      "source_ids": [
+        "src-safe-flow-2610"
+      ],
+      "time_window": "72h",
+      "body": "The interesting question is what actually changed and where the tested capability ends. The system clips proposed flow updates to feasible regions and estimates boundary information for learning from binary checker responses. One simulation task; per-action-chunk inference time rose from 0.071 to 1.345 seconds.\n\nA generative robot policy can produce an apparently plausible movement that crosses an obstacle or violates a joint limit. Jianming Ma and coauthors addressed this problem in a paper posted on October 29, 2026. Their approach works with flow matching, a method that constructs an action trajectory through successive updates. The distinctive assumption is that the system can ask a checker whether a proposed robot configuration is feasible, but cannot obtain a convenient equation or gradient describing the entire safe region. That makes the interface closer to many practical collision-checking systems.\n\nThe checker is called a binary feasibility oracle because it returns only an allowed-or-disallowed answer. During the forward generation process, the safeguard searches along a proposed update and truncates it before leaving the feasible region. During training, additional queries around the detected boundary estimate its local direction and supply an approximate gradient to the policy. Consequently, the model learns while experiencing the same type of intervention it will face at inference time. The method does not require differentiating through the collision checker itself, although it does require feasible starting samples and enough oracle queries to detect boundaries.\n\nThe authors evaluated a simulated RoboTwin 2.0 pick-and-place task in which an arm moved a bottle while avoiding another bottle, the tabletop, and joint limits. They fine-tuned a pretrained π0.5 action model on 150 expert trajectories with a single H100 GPU and tested 30 episodes. The safeguarded model succeeded in 11 of 30 episodes with a 100% checked-step safety rate. The original Gaussian-initialized baseline succeeded in 13 of 30 episodes but recorded only 78.25% safe steps. Inference time per action chunk increased from 0.071 to 1.345 seconds, a material latency penalty for a real control stack.\n\nThe engineering result is therefore narrower and more useful than a headline claiming perfectly safe robots. The experiment demonstrates constraint compliance under the simulator's checker, not physical safety around people. The oracle used privileged simulation information, and a checker built from noisy sensors might miss hazards. Straight interpolation can also fail in highly non-convex spaces where a detour is needed. A deployment evaluation would have to measure checker fidelity, worst-case latency, recovery from infeasible starts, and the effect of moving obstacles before treating the safeguard as a production safety mechanism.",
+      "image": null
+    },
+    {
+      "id": "gxo-digit-multisite",
+      "title": "GXO plans to expand Digit humanoid operations to two more warehouses",
+      "summary": "GXO Logistics and Agility Robotics announced plans to deploy Digit humanoids at sites in North Carolina and Tennessee beginning in 2027. The companies report more than 100,000 totes moved at their existing warehouse, but have not disclosed the new fleet size or contract economics.",
+      "details": "A commercial warehouse deployment is moving toward a multi-site rollout under a robots-as-a-service arrangement.",
+      "technical_novelty": "The expansion is expected to start with Digit 4 and later migrate to Digit 5, supported by Agility Arc fleet software.",
+      "engineering_impact": "Integration must account for conveyors, safety procedures, support, uptime and changes between sites.",
+      "limitations": "The additional sites are planned rather than operating; unit economics and independently audited performance are unavailable.",
+      "evidence_status": "Joint company announcement, with operating figures supplied by the partners rather than independent verification.",
+      "published_at": "2026-10-26",
+      "organization": "GXO Logistics and Agility Robotics",
+      "source_ids": [
+        "src-gxo-agility-20261026"
+      ],
+      "time_window": "7d",
+      "body": "The interesting question is what actually changed and where the tested capability ends. A commercial warehouse deployment is moving toward a multi-site rollout under a robots-as-a-service arrangement. The additional sites are planned rather than operating; unit economics and independently audited performance are unavailable.\n\nA repeatable warehouse operation matters more to a customer than an impressive one-off robot demonstration. On October 26, 2026, GXO Logistics and Agility Robotics announced an expansion of their Digit humanoid partnership to two more US sites, in Statesville, North Carolina, and Lebanon, Tennessee. Deployments are expected to start in early 2027. The announcement is a plan for additional operations, not evidence that those two sites are already running. It builds on the existing GXO facility in Flowery Branch, Georgia, where Digit handles repetitive tote movement and places containers onto conveyors.\n\nThe partners say Digit has moved more than 100,000 totes at the Georgia facility. That cumulative figure establishes that work has occurred in a live logistics environment, but it does not reveal throughput per hour, human intervention rates, operating cost or total robot-hours. The arrangement is described as robots-as-a-service, meaning the customer obtains robotic capability and ongoing service rather than simply buying machines outright. Agility Arc is the cloud-based fleet-management and integration platform associated with the existing agreement.\n\nThe next sites will support e-commerce fulfillment and are expected to start with Digit 4, then transition to Digit 5 once the newer model is commercially available. For an implementation team, a multi-site rollout raises questions about conveyor interfaces, workspace safety, maintenance coverage, spare units, shift schedules and software change management. A skill that works in one warehouse does not automatically reproduce its economics in another building with different layouts and demand patterns. The new deployment is an opportunity to test operational transfer, not proof that transfer has already succeeded.\n\nNeither company disclosed the number of robots for the additional sites, contract value, payback period or independently audited productivity figures. The evidence therefore supports two narrower conclusions: a customer has decided to expand a live commercial relationship, and the original site has accumulated substantial tote-handling activity. A purchasing decision elsewhere should still require a measured baseline, uptime and exception logs, labor and integration costs, and an agreed method for calculating value. The commercial signal is credible, but the return on investment remains unquantified in this release.",
+      "image": null
+    },
+    {
+      "id": "elyza-robotics-japan-scale",
+      "title": "KDDI and ELYZA form a Japanese vehicle for deploying physical AI",
+      "summary": "KDDI and ELYZA announced that ELYZA Robotics has begun operations to combine robot-model research with enterprise integration. Their targets include ¥30 billion in research investment, more than 300 specialists and over 1,000 deployed robots by fiscal 2030, all of which are plans rather than achieved outcomes.",
+      "details": "The company began operating on October 1 and was publicly announced on October 27 with separate research and operations platforms.",
+      "technical_novelty": "The roadmap combines vision-language-action models, site data, digital twins, distributed inference and remote supervision.",
+      "engineering_impact": "Enterprise integration is proposed across retail, logistics, manufacturing and services using multiple robot types.",
+      "limitations": "No independently verified deployments, autonomy metrics or unit economics were provided.",
+      "evidence_status": "Corporate strategy and investment announcement, not an independent technical evaluation.",
+      "published_at": "2026-10-27",
+      "organization": "KDDI and ELYZA",
+      "source_ids": [
+        "src-elyza-robotics-20261027"
+      ],
+      "time_window": "7d",
+      "body": "The interesting question is what actually changed and where the tested capability ends. The company began operating on October 1 and was publicly announced on October 27 with separate research and operations platforms. No independently verified deployments, autonomy metrics or unit economics were provided.\n\nJapan's KDDI telecommunications group and AI developer ELYZA are establishing a dedicated organization for physical AI rather than treating robot intelligence as an isolated research product. Their October 27, 2026 announcement says ELYZA Robotics began operating on October 1. The group targets ¥30 billion of research and development investment, a specialist organization of more than 300 people, and more than 1,000 robots introduced into workplaces by fiscal 2030. These figures are forward-looking commitments and should not be mistaken for robots already deployed or capital already spent.\n\nThe proposed architecture spans three levels. Research teams plan to develop vision-language models that interpret images and text, and vision-language-action models that additionally produce robot actions. Implementation teams will collect data from workplaces and use digital twins, which are software representations of real equipment and processes, to support testing. Operations platforms are intended to provide distributed model execution, remote monitoring and coordination between machines. The combination recognizes a familiar deployment problem: an impressive robot skill does not become a business service until it can interact reliably with the customer's systems and procedures.\n\nKDDI identifies retail, logistics, manufacturing and services as early areas of application, with partners from its wider group including Lawson and Soracom. The company also expects to source different categories of robots, including industrial arms, quadrupeds and humanoids, according to the task. That could reduce dependence on one mechanical design, but creates integration demands around interfaces, training data, security, maintenance and responsibility for failures. Proof-of-concept projects are planned from 2026, with adoption expected to progress in stages.\n\nThe release contains no audited installed-base figure, measured autonomy rate, cost per completed task or customer payback calculation. The business case is therefore a strategic hypothesis, not an independently demonstrated result. A prospective customer should ask how safety validation is performed, how site-specific data is governed, which party supports a malfunctioning robot, and whether model updates require renewed acceptance testing. The meaningful milestone will be repeated, supportable operation in real workplaces rather than the announced size of the investment program.",
       "image": null
     }
   ],
   "technology_signal": {
-    "title": "Movement is also interaction with the world",
-    "summary": "Two studies reveal how ordinary-looking robot actions become difficult when trailers and precise tool contact enter the picture.",
-    "implications": "Evaluate contact, payload and the boundaries of each experiment before generalizing."
+    "title": "Soft grippers can be shaped to forgive positioning errors",
+    "summary": "Kurt Enkera and colleagues developed a simulation-driven method for designing soft grippers across objects and grasp poses. They generated 6,646 designs and physically tested 24 against conventional alternatives.",
+    "implications": "The broader lesson is that useful mechanical design can make a robot forgiving before the controller intervenes. That may matter in sorting, assembly and handling irregular objects. Long-term wear, contamination, cycle speed and performance with heavier or unfamiliar items remain open questions for practical deployment."
   },
   "glossary": [
     {
-      "term": "Dynamics model",
-      "definition": "A prediction of how a system responds to commands."
+      "term": "soft gripper",
+      "definition": "A deformable robotic gripper."
     },
     {
-      "term": "MPPI",
-      "definition": "A controller that compares many predicted action sequences."
+      "term": "Task graph",
+      "definition": "A representation of actions and the conditions they depend on."
+    },
+    {
+      "term": "VLA",
+      "definition": "A model linking visual input, language instructions and robot actions."
     },
     {
       "term": "Flow matching",
-      "definition": "A learned method for constructing trajectories through successive updates."
+      "definition": "A method generating actions through successive transformations."
     },
     {
-      "term": "Diffusion policy",
-      "definition": "A model that progressively refines candidate actions."
+      "term": "Feasibility oracle",
+      "definition": "A function that says whether a proposed configuration is allowed."
     },
     {
-      "term": "Force feedback",
-      "definition": "Measured forces used to adjust robot behavior."
+      "term": "Gradient",
+      "definition": "A direction of change used to optimize a model."
     },
     {
-      "term": "Tool engagement",
-      "definition": "A stable mechanical contact between a tool and its target."
+      "term": "Humanoid",
+      "definition": "A robot with a human-like body layout."
+    },
+    {
+      "term": "Robots-as-a-service",
+      "definition": "A commercial arrangement for using supported robot operations as a service."
+    },
+    {
+      "term": "Digital twin",
+      "definition": "A software representation of physical equipment or a process."
+    },
+    {
+      "term": "Unit economics",
+      "definition": "Costs and benefits measured per completed operation."
     }
   ],
   "sources": [
     {
-      "id": "src-raibo-wagon-2610",
-      "url": "https://arxiv.org/abs/2610.39267",
+      "id": "src-simto-robust-grippers-20261029",
+      "title": "SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry",
+      "url": "https://arxiv.org/abs/2610.39560",
       "domain": "arxiv.org",
-      "organization": "Insung Yang et al.",
-      "published_at": "2026-10-29",
-      "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon"
+      "organization": "Kurt Enkera et al.",
+      "published_at": "2026-10-29"
     },
     {
-      "id": "src-dawn-unfastening-2610",
-      "url": "https://arxiv.org/abs/2610.40537",
+      "id": "src-logiv-2610",
+      "url": "https://arxiv.org/abs/2610.40016",
       "domain": "arxiv.org",
-      "organization": "Hemant Kumar et al.",
+      "organization": "Enqiao Lu et al.",
       "published_at": "2026-10-29",
-      "title": "DAWN: Diffusion-based Alignment and unfastening Workflow Network"
+      "title": "LOGIV: Graph-Verified Execution with Causal Local Repair for Long-Horizon Robot Tasks"
+    },
+    {
+      "id": "src-safe-flow-2610",
+      "url": "https://arxiv.org/abs/2610.40075",
+      "domain": "arxiv.org",
+      "organization": "Jianming Ma et al.",
+      "published_at": "2026-10-29",
+      "title": "Learning Safe Flow Matching Robot Policies from Binary Feasibility Oracles"
+    },
+    {
+      "id": "src-gxo-agility-20261026",
+      "url": "https://www.agilityrobotics.com/content/gxo-and-agility-robotics-expand-partnership-to-accelerate-deployment-of-humanoids-in-u-s-operations",
+      "domain": "agilityrobotics.com",
+      "organization": "GXO Logistics and Agility Robotics",
+      "published_at": "2026-10-26",
+      "title": "GXO and Agility Robotics Expand Partnership to Accelerate Deployment of Humanoids in U.S. Operations"
+    },
+    {
+      "id": "src-elyza-robotics-20261027",
+      "url": "https://prtimes.jp/main/html/rd/p/000000086.000047565.html",
+      "domain": "prtimes.jp",
+      "organization": "KDDI and ELYZA",
+      "published_at": "2026-10-27",
+      "title": "フィジカルAIを推進する新会社「ELYZA Robotics」事業開始"
     }
   ]
 }
