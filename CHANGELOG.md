@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Added a localized, monochrome Patreon support button to all web footers, linking to the owner's public creator page without tracking parameters.
+
 - Added local publication proofs and reader-only release packaging for Cloudflare Workers Static Assets via GitHub, with a checksum guard and pinned Wrangler configuration. Kept PDF generation on the Mac and diagnostic/source files outside public/.
 - Removed preview labels/status from publication HTML/PDF, enabled public sitemap/robots output, and corrected the prepared Japanese edition name to the previously selected レプリカントの真実.
 

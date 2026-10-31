@@ -18,7 +18,10 @@
   {% if print_enabled and not is_archive %}<p class="pdf-link"><a href="/{{ lang }}/issues/{{ issue.issue_id }}/edition.pdf">{{ labels.pdf }}</a></p>{% endif %}
   <main>{% block content %}{% endblock %}</main>
   <footer class="site-footer">
-    <p class="rss-link"><a href="/{{ lang }}/rss.xml">{{ discovery_labels.rss }}</a></p>
+    <div class="footer-links">
+      <a class="patreon-link" href="https://patreon.com/PravdaReplikanta" rel="noopener noreferrer">{{ about.support_label }}</a>
+      <p class="rss-link"><a href="/{{ lang }}/rss.xml">{{ discovery_labels.rss }}</a></p>
+    </div>
     <section class="about-newspaper" aria-labelledby="about-newspaper-title">
       <h2 id="about-newspaper-title">{{ about.title }}</h2>
       <div class="about-copy">
