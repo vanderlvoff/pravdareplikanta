@@ -2,94 +2,98 @@
   "schema_version": "1.4",
   "publication": "pravda_replikanta",
   "issue_type": "daily",
-  "issue_date": "2026-10-31",
-  "issue_id": "daily-2026-10-31",
+  "issue_date": "2026-11-01",
+  "issue_id": "daily-2026-11-01",
   "edition": "children",
   "language": "en",
-  "generated_at": "2026-10-31T23:06:42+09:00",
-  "title": "Pravda Replikanta — Young Readers",
-  "lead": "How to shorten a pause in conversation and why a robot might need several cameras.",
+  "generated_at": "2026-10-31T16:00:23.878Z",
+  "title": "Replicant Data — Young Readers Edition",
+  "lead": "Two stories explore how robots must account for connected parts and objects moving with them.",
   "news": [
     {
-      "id": "sota-streamed-dialogue",
-      "title": "Why a talking robot can begin its reply sooner",
-      "summary": "Japan's Vstone announced an October 30 update allowing a tabletop robot to play the first parts of its spoken reply while later parts are still being prepared.",
-      "details": "A program turns written words into sounds. This is called speech synthesis. Instead of waiting for the whole sentence, the robot can play completed pieces as they arrive. This is streaming playback. The company also improved how some versions generate replies using artificial intelligence, but the change is not available in every version.",
-      "technical_novelty": "Streaming playback begins before the full speech file is ready.",
-      "engineering_impact": "Conversation may feel quicker, especially with long replies.",
-      "limitations": "Network conditions matter and some features cannot run together.",
-      "evidence_status": "Manufacturer announcement of a released update.",
-      "published_at": "2026-10-30",
-      "organization": "Vstone",
+      "id": "cubot-rearrange-blocks",
+      "title": "A robot rearranges cubes and locks them into a new structure",
+      "summary": "Researchers built a system in which a small robot moves matching cube-shaped modules and fastens them together. It automatically rearranged a structure of 11 modules in a test, but this remains a laboratory technology rather than a machine for building real houses.",
+      "details": "A mobile mechanism moves cubes and tightens connectors on their faces.",
+      "technical_novelty": "One external robot performs both module transport and mechanical fastening.",
+      "engineering_impact": "Reconfigurable modules could eventually let machines change shape without being rebuilt by hand.",
+      "limitations": "The experiments used a small controlled structure and do not demonstrate full-scale construction.",
+      "evidence_status": "Research preprint reporting an 11-module reconfiguration experiment.",
+      "published_at": "2026-10-29",
+      "organization": "Chongxi Meng et al.",
       "source_ids": [
-        "vstone-sota"
+        "src-cubot-2610"
       ],
       "time_window": "72h",
-      "body": "Imagine a conversation where the other person stays silent for a long time before every answer. Even a good answer would feel awkward. On October 30, a Japanese company announced an update to a tabletop talking robot. It can now begin speaking the first part of a reply while the rest is still being prepared.\n\nA program turns written words into sounds. This is called speech synthesis. Instead of waiting for the whole sentence, the robot can play completed pieces as they arrive. This is streaming playback. The company also improved how some versions generate replies using artificial intelligence, but the change is not available in every version.\n\nThere are trade-offs: streaming cannot be combined with some saved-audio and interruption settings. Reply speed depends on the internet connection, and no independent timing comparison has been published. The robot has not suddenly learned to understand everything; its conversation timing has improved. For reference, the product is called Sota.",
+      "body": "Imagine a structure made of matching cubes. What if you wanted to change its shape without taking everything apart by hand? Researchers have developed a system in which a small robot moves the cubes and fastens them in new positions. Each cube is called a module, meaning a part designed to join other parts. In one experiment, the system automatically rearranged a structure containing 11 modules.\n\nMoving a cube is only half the job. The new connection must be strong enough to keep the structure together. The cubes have connectors on their faces, and a tool on the robot can tighten them from outside. The robot also has to keep itself supported while moving between positions. It cannot simply let go of every attachment at once, because then it might fall before completing the next step.\n\nThe researchers measured how strongly the connections resisted forces in different directions. They reported 300 newtons in one direction and 490 newtons in another, and showed electrical continuity across six connected modules. A newton is a unit used to measure force. Those results describe the tested connectors; they do not mean the cubes could safely support a building or an unlimited load.\n\nMachines that change their shape might one day be useful when a single fixed design cannot handle every task. This experiment is an early step, not a ready-made construction worker. A good question for future tests is whether the robot can rearrange many more modules without losing support or making connection errors. For reference, the researchers call the system CuBot-STT.",
       "image": null
     },
     {
-      "id": "luxonis-five-camera-board",
-      "title": "How five cameras can help a machine see its surroundings",
-      "summary": "Developers announced on October 27 a small board that connects up to five cameras, allowing different views and helping estimate distances.",
-      "details": "The board helps the cameras capture images at matching times. This is synchronization. Software can then recognize objects and estimate distance. Calibration means checking how each camera measures its surroundings so the pictures can be compared correctly. Combining these jobs on one board may make building a robot easier.",
-      "technical_novelty": "Several cameras share one system that keeps their images synchronized.",
-      "engineering_impact": "Cameras can be placed where a particular robot needs them.",
-      "limitations": "A hardware announcement does not prove that a robot can operate independently.",
-      "evidence_status": "Official product announcement from the developer.",
-      "published_at": "2026-10-27",
-      "organization": "Luxonis",
+      "id": "raibo-wagon-towing",
+      "title": "A four-legged robot learns to pull a heavy wagon carefully",
+      "summary": "Researchers tested how a four-legged robot can tow a wagon through narrow passages. On 15-meter routes it completed 85% of 40 attempts and carried loads up to 40 kilograms, but it still failed sometimes.",
+      "details": "The controller plans for the robot and its attached wagon together, especially around turns.",
+      "technical_novelty": "A quick proposed route is checked and refined using a learned prediction of motion.",
+      "engineering_impact": "Wheeled loads could let legged robots transport more than they can carry on their backs.",
+      "limitations": "Only one robot-and-wagon arrangement and short routes were tested.",
+      "evidence_status": "Research preprint including real outdoor robot trials.",
+      "published_at": "2026-10-29",
+      "organization": "Insung Yang et al.",
       "source_ids": [
-        "luxonis-launch"
+        "src-raibo-wagon-2610"
       ],
-      "time_window": "7d",
-      "body": "Looking at an object with two eyes helps you judge distance. Two cameras can use a similar clue: their pictures differ slightly, and software can estimate how far away something is. On October 27, developers introduced a small board that connects up to five cameras. The cameras can be placed in different parts of a robot.\n\nThe board helps the cameras capture images at matching times. This is synchronization. Software can then recognize objects and estimate distance. Calibration means checking how each camera measures its surroundings so the pictures can be compared correctly. Combining these jobs on one board may make building a robot easier.\n\nBut five cameras do not automatically teach a robot to navigate any room or pick up any object safely. Motion software, measurement accuracy and speed still need testing. Different versions are expected to ship from November 2026 and early 2027. For reference, the board is called OAK 4 FFC.",
+      "time_window": "72h",
+      "body": "Imagine pulling a wheeled suitcase through a narrow doorway. You might fit through easily while the suitcase bumps the frame behind you. A four-legged robot pulling a wagon faces a similar problem. It must think about where the wagon wheels and load will go, not only where its own feet can step. A turn that is safe for the robot alone may be too tight for the whole pair.\n\nThe researchers developed software that first suggests a possible route and then checks how the robot and wagon are likely to move together. It uses a motion model, which is a program that predicts what happens after a command. If the proposed turn is unsuitable, the system adjusts the plan. This matters because a wagon cannot move sideways in any direction like a piece on a board game.\n\nOutdoor experiments used routes that were 15 meters long. The robot carried its own sensors and computer, so it did not need another machine to calculate every move. Across 40 attempts, it finished 85% of the routes and towed loads up to 40 kilograms, nearly as much as the robot itself weighed. The remaining failures are important: the system did not solve every difficult turn.\n\nPulling a load on wheels could help robots carry supplies without supporting all the weight on their backs. But slippery floors, slopes and people crossing the route would require further tests. The researchers have not shown that the method works reliably everywhere. For reference, they call their robot-and-wagon system RAIBO-Wagon and use a route-refining method called MPPI.",
       "image": null
     }
   ],
   "technology_signal": {
-    "title": "Why a talking robot can begin its reply sooner",
-    "summary": "Japan's Vstone announced an October 30 update allowing a tabletop robot to play the first parts of its spoken reply while later parts are still being prepared.",
-    "implications": "Good interaction depends on timing as well as content."
+    "title": "A robot must plan for what moves with it",
+    "summary": "Two stories explore how robots must account for connected parts and objects moving with them.",
+    "implications": "Moving a block or towing a wagon requires planning for attachments and support."
   },
   "glossary": [
     {
-      "term": "Streaming playback",
-      "definition": "Playing ready parts of sound before the full reply is finished."
+      "term": "Module",
+      "definition": "A standard part designed to join other parts."
     },
     {
-      "term": "Speech synthesis",
-      "definition": "Turning written words into spoken sound."
+      "term": "Connector",
+      "definition": "A mechanism holding two pieces together."
     },
     {
-      "term": "Artificial intelligence",
-      "definition": "Software using data to recognize patterns or generate responses."
+      "term": "Newton",
+      "definition": "A unit used to measure force."
     },
     {
-      "term": "Synchronization",
-      "definition": "Matching the timing of multiple cameras."
+      "term": "Motion model",
+      "definition": "A program predicting movement after a command."
     },
     {
-      "term": "Calibration",
-      "definition": "Checking and adjusting how a camera measures."
+      "term": "Route",
+      "definition": "The path a machine is supposed to follow."
+    },
+    {
+      "term": "Sensor",
+      "definition": "A device that measures something about its surroundings or state."
     }
   ],
   "sources": [
     {
-      "id": "vstone-sota",
-      "title": "Sota communication robot gains AI dialogue and streamed speech update",
-      "url": "https://prtimes.jp/main/html/rd/p/000000115.000038478.html",
-      "domain": "prtimes.jp",
-      "organization": "Vstone",
-      "published_at": "2026-10-30"
+      "id": "src-cubot-2610",
+      "url": "https://arxiv.org/abs/2610.39279",
+      "domain": "arxiv.org",
+      "organization": "Chongxi Meng et al.",
+      "published_at": "2026-10-29",
+      "title": "CuBot-STT: Simultaneously Transport and Tighten for Lattice-type Modular Reconfiguration Robot"
     },
     {
-      "id": "luxonis-launch",
-      "title": "Introducing OAK 4 FFC: Build the Vision System Your Robot Actually Needs",
-      "url": "https://discuss.luxonis.com/d/7072-introducing-oak-4-ffc-build-the-vision-system-your-robot-actually-needs",
-      "domain": "discuss.luxonis.com",
-      "organization": "Luxonis",
-      "published_at": "2026-10-27"
+      "id": "src-raibo-wagon-2610",
+      "url": "https://arxiv.org/abs/2610.39267",
+      "domain": "arxiv.org",
+      "organization": "Insung Yang et al.",
+      "published_at": "2026-10-29",
+      "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon"
     }
   ]
 }

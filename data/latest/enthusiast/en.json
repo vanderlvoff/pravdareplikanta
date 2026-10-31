@@ -2,94 +2,98 @@
   "schema_version": "1.4",
   "publication": "pravda_replikanta",
   "issue_type": "daily",
-  "issue_date": "2026-10-31",
-  "issue_id": "daily-2026-10-31",
+  "issue_date": "2026-11-01",
+  "issue_id": "daily-2026-11-01",
   "edition": "enthusiast",
   "language": "en",
-  "generated_at": "2026-10-31T23:06:42+09:00",
-  "title": "Pravda Replikanta — Curious Readers",
-  "lead": "How robots plan steps and try to anticipate physical motion.",
+  "generated_at": "2026-10-31T15:59:36.688Z",
+  "title": "Replicant Data — Enthusiast Edition",
+  "lead": "Two studies reveal how ordinary-looking robot actions become difficult when trailers and precise tool contact enter the picture.",
   "news": [
     {
-      "id": "google-cloud-robotics-er2",
-      "title": "Google opens a cloud planning layer for robot tasks",
-      "summary": "On October 27 Google Cloud opened public-preview access to Gemini Robotics ER 2, a model that interprets video, plans steps and calls separate robot-control tools.",
-      "details": "The calls use APIs, defined interfaces between software components. The model can interpret video, choose a navigation or manipulation function and check progress. Coordinating specialized components in this way is called orchestration. Google also describes cooperation between robots, but the actual behavior still depends on their hardware and control systems.",
-      "technical_novelty": "High-level reasoning coordinates perception, progress checks and robot software interfaces.",
-      "engineering_impact": "Useful for experimenting with multi-step tasks, but not a replacement for local motion control.",
-      "limitations": "Cloud preview is not a guarantee of safe or reliable autonomous deployment.",
-      "evidence_status": "Official availability announcement with developer-reported metrics.",
-      "published_at": "2026-10-27",
-      "organization": "Google Cloud and Google DeepMind",
+      "id": "raibo-wagon-towing",
+      "title": "A quadruped learns to tow a wagon through tight passages",
+      "summary": "Researchers led by Insung Yang introduced a navigation system for a RAIBO quadruped pulling a custom wagon. Outdoor tests on 15-meter routes reported an 85% success rate across 40 trials with loads up to 40 kilograms, but the evidence covers a specific setup.",
+      "details": "The planner accounts for the coupled motion of a legged robot and a wheeled wagon in confined spaces.",
+      "technical_novelty": "A learned initial motion proposal is refined using model-predictive path-integral optimization and learned forward dynamics.",
+      "engineering_impact": "Towing can extend legged robots from self-locomotion to moving heavier payloads.",
+      "limitations": "A single robot-wagon system, short test routes and a 15% failure rate leave open questions about general deployment.",
+      "evidence_status": "Research preprint with outdoor physical-robot experiments.",
+      "published_at": "2026-10-29",
+      "organization": "Insung Yang et al.",
       "source_ids": [
-        "google-cloud-release"
+        "src-raibo-wagon-2610"
       ],
-      "time_window": "7d",
-      "body": "A request like 'find the box and bring it here' hides many decisions. A robot must choose a route, pick up the object and check whether each step succeeded. On October 27, Google Cloud announced public-preview access to Gemini Robotics Embodied Reasoning 2, a high-level model that plans these steps and calls separate robot-control programs.\n\nThe calls use APIs, defined interfaces between software components. The model can interpret video, choose a navigation or manipulation function and check progress. Coordinating specialized components in this way is called orchestration. Google also describes cooperation between robots, but the actual behavior still depends on their hardware and control systems.\n\nGoogle reports 91.3% accuracy for locating a critical moment in video, with a mean timing error of 0.96 seconds. That is a specific video-understanding benchmark, not a general robot task-success rate. The model existed before October; the new event is its cloud availability. Network delays, disconnections and emergency stops remain practical engineering responsibilities.",
+      "time_window": "72h",
+      "body": "A four-legged robot can navigate around obstacles while controlling only its own body. Attach a wagon, however, and every turn becomes a different problem: the trailer wheels cannot move sideways at will, and the combined machine needs more room than the robot alone. Researchers led by Insung Yang described RAIBO-Wagon on October 29, 2026, a navigation system for a quadruped towing a custom wheeled carrier. The interesting advance is not merely that the robot can pull a load. It is that the controller plans for the linked motion of both bodies in narrow spaces.\n\nThe system combines two planning ideas. Conditional flow matching produces a fast initial proposal for how the robot and wagon might move. Model Predictive Path Integral control, or MPPI, then tests and refines candidate commands using a learned forward-dynamics model that predicts how the coupled system will respond. The first component helps the search start near a promising solution; the second can adjust when the environment differs from the examples used for learning. This is a practical compromise between fast learned suggestions and slower physical consistency checks.\n\nThe authors tested the system outdoors on 15-meter courses containing confined passages. Sensing and computation ran fully onboard rather than depending on an external computer to plan the motion. They report an 85% completion rate over 40 trials and loads of up to 40 kilograms, nearly the robot's own body weight. Those are measured results on a particular setup, not a claim that all quadrupeds can tow the same load. Fifteen percent of the attempts still failed, and the reported routes were relatively short.\n\nWhy pull rather than carry? Wheels can support a heavy payload while legs help a robot negotiate terrain that may be awkward for an ordinary cart mover. The combination might eventually be useful for material handling or inspection support. Yet a real worksite brings slopes, changing friction, people and unexpected obstacles. The paper does not establish months of reliable operation under those conditions. A revealing next test would vary wagon geometry, payload distribution and surface conditions while measuring recovery after a failed turn.",
       "image": null
     },
     {
-      "id": "worldflow-video-3d",
-      "title": "Can a robot predict how the scene will move?",
-      "summary": "Researchers introduced WorldFlow on October 29, predicting future video and 3D point motion; average displacement error on SpatialCog was 0.060 m.",
-      "details": "The researchers trained the model on 1.44 million object-level samples from simulated and real scenes. WorldFlowBench, their evaluation collection, contains 1,678 samples from 11 sources. On SpatialCog, average displacement error was 0.060 metres, a 54.2% reduction relative to the strongest external method in the authors' comparison.",
-      "technical_novelty": "Video prediction and three-dimensional motion forecasting are learned jointly.",
-      "engineering_impact": "Such forecasts could help robots choose actions.",
-      "limitations": "This is not a demonstrated general-purpose robot controller.",
-      "evidence_status": "Research preprint with author-run experiments.",
+      "id": "dawn-robot-unscrewing",
+      "title": "A robot learns to remove screws by separating alignment from turning",
+      "summary": "Hemant Kumar and colleagues introduced DAWN, a research system that first aligns a screwdriver with a screw and then uses sensor feedback to control removal. Experiments with a real robot arm demonstrate the stages, but reliable initial engagement remains the main obstacle to full automation.",
+      "details": "Vision, robot position and force feedback feed separate models for alignment, contact detection and removal.",
+      "technical_novelty": "A diffusion-based alignment policy is combined with a contact classifier and a force-controlled unfastening controller.",
+      "engineering_impact": "The staged architecture could support automated disassembly if alignment robustness improves.",
+      "limitations": "The initial engagement stage remains unreliable across variations; angled fasteners were not tested.",
+      "evidence_status": "Research preprint with Franka Emika robot-arm experiments.",
       "published_at": "2026-10-29",
-      "organization": "WorldFlow research authors",
+      "organization": "Hemant Kumar et al.",
       "source_ids": [
-        "worldflow-paper"
+        "src-dawn-unfastening-2610"
       ],
       "time_window": "72h",
-      "body": "When you watch a ball move, you can imagine where it will be a moment later. A robot has a harder version of that problem: it needs to anticipate both the image and the geometry of motion. WorldFlow, introduced on October 29, predicts future video frames and the trajectories of selected points in three-dimensional space.\n\nThe researchers trained the model on 1.44 million object-level samples from simulated and real scenes. WorldFlowBench, their evaluation collection, contains 1,678 samples from 11 sources. On SpatialCog, average displacement error was 0.060 metres, a 54.2% reduction relative to the strongest external method in the authors' comparison.\n\nThat does not mean a robot will always catch a ball or move an object safely. Predicting motion and selecting safe physical actions are different tasks. Real use would require checks on computation speed, camera accuracy and behavior in unexpected environments.",
+      "body": "Removing a screw looks simple until a robot has to do it. The screwdriver must reach the correct point, align with the head, engage the slot and maintain contact while turning. Hemant Kumar and colleagues presented DAWN on October 29, 2026, a research system that breaks this sequence into manageable parts. Their motivation is automated disassembly, including the recovery of components from used products. A robot that merely detects a screw in an image has not yet solved the mechanical problem of getting the tool to work.\n\nThe first component uses a diffusion-based action policy, a learned method that progressively constructs movements from observations, to position and insert the screwdriver. A second model combines visual and force information to decide whether the tip has engaged securely. A third controller handles turning and removal, relying mainly on force feedback rather than slow image-based action generation. The authors impose a reaction-force limit of 20 newtons during this stage. The separation matters because positioning, recognizing contact and applying torque have different sensing and timing requirements.\n\nThe experiments used a real Franka Emika robot arm fitted with an electric screwdriver. The researchers collected 199 expert demonstrations for the alignment stage and 6,000 contact images for training the engagement classifier. In a reported comparison, the alignment-and-engagement policy succeeded in roughly half the trials, comparable to trained human teleoperators under that test setup. The contact classifier reached an accuracy of 0.90. Once the tool was properly engaged, the tested removal stage performed much more consistently, showing where the difficult bottleneck actually lies.\n\nThis is not evidence that a robot can already dismantle arbitrary electronics without supervision. Screw heads with unfamiliar appearances, changes in lighting and small positioning errors can defeat the initial stage. The researchers did not evaluate non-parallel screw orientations, and they identify sensitivity to variation in the paper. A production system would also need to detect screws on complex assemblies, recover from slips and verify that the surrounding components remain undamaged. DAWN offers a useful lesson: the hardest part of a seemingly simple task may be establishing the right contact before the visible action begins.",
       "image": null
     }
   ],
   "technology_signal": {
-    "title": "Google opens a cloud planning layer for robot tasks",
-    "summary": "On October 27 Google Cloud opened public-preview access to Gemini Robotics ER 2, a model that interprets video, plans steps and calls separate robot-control tools.",
-    "implications": "Cloud planning cannot replace local safety controls."
+    "title": "Movement is also interaction with the world",
+    "summary": "Two studies reveal how ordinary-looking robot actions become difficult when trailers and precise tool contact enter the picture.",
+    "implications": "Evaluate contact, payload and the boundaries of each experiment before generalizing."
   },
   "glossary": [
     {
-      "term": "API",
-      "definition": "An interface for one program to call another."
+      "term": "Dynamics model",
+      "definition": "A prediction of how a system responds to commands."
     },
     {
-      "term": "Orchestration",
-      "definition": "Coordinating multiple programs within a task."
+      "term": "MPPI",
+      "definition": "A controller that compares many predicted action sequences."
     },
     {
-      "term": "Public preview",
-      "definition": "Test availability without a production guarantee."
+      "term": "Flow matching",
+      "definition": "A learned method for constructing trajectories through successive updates."
     },
     {
-      "term": "World model",
-      "definition": "A model predicting how a scene changes."
+      "term": "Diffusion policy",
+      "definition": "A model that progressively refines candidate actions."
     },
     {
-      "term": "3D trajectory",
-      "definition": "A point's path in space."
+      "term": "Force feedback",
+      "definition": "Measured forces used to adjust robot behavior."
+    },
+    {
+      "term": "Tool engagement",
+      "definition": "A stable mechanical contact between a tool and its target."
     }
   ],
   "sources": [
     {
-      "id": "google-cloud-release",
-      "title": "Gemini Robotics Embodied Reasoning 2 is now available on Google Cloud",
-      "url": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-robotics-embodied-reasoning-2-is-now-available-on-google-cloud",
-      "domain": "cloud.google.com",
-      "organization": "Google Cloud and Google DeepMind",
-      "published_at": "2026-10-27"
+      "id": "src-raibo-wagon-2610",
+      "url": "https://arxiv.org/abs/2610.39267",
+      "domain": "arxiv.org",
+      "organization": "Insung Yang et al.",
+      "published_at": "2026-10-29",
+      "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon"
     },
     {
-      "id": "worldflow-paper",
-      "title": "WorldFlow: Joint Video and 3D Motion Prediction via Large-Scale Pretraining",
-      "url": "https://arxiv.org/abs/2610.39278",
+      "id": "src-dawn-unfastening-2610",
+      "url": "https://arxiv.org/abs/2610.40537",
       "domain": "arxiv.org",
-      "organization": "WorldFlow research authors",
-      "published_at": "2026-10-29"
+      "organization": "Hemant Kumar et al.",
+      "published_at": "2026-10-29",
+      "title": "DAWN: Diffusion-based Alignment and unfastening Workflow Network"
     }
   ]
 }

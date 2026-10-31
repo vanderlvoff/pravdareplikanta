@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.4",
+  "publication": "pravda_replikanta",
+  "issue_type": "daily",
+  "issue_date": "2026-11-01",
+  "issue_id": "daily-2026-11-01",
+  "edition": "children",
+  "language": "en",
+  "generated_at": "2026-10-31T16:00:23.878Z",
+  "title": "Replicant Data — Young Readers Edition",
+  "lead": "Two stories explore how robots must account for connected parts and objects moving with them.",
+  "news": [
+    {
+      "id": "cubot-rearrange-blocks",
+      "title": "A robot rearranges cubes and locks them into a new structure",
+      "summary": "Researchers built a system in which a small robot moves matching cube-shaped modules and fastens them together. It automatically rearranged a structure of 11 modules in a test, but this remains a laboratory technology rather than a machine for building real houses.",
+      "details": "A mobile mechanism moves cubes and tightens connectors on their faces.",
+      "technical_novelty": "One external robot performs both module transport and mechanical fastening.",
+      "engineering_impact": "Reconfigurable modules could eventually let machines change shape without being rebuilt by hand.",
+      "limitations": "The experiments used a small controlled structure and do not demonstrate full-scale construction.",
+      "evidence_status": "Research preprint reporting an 11-module reconfiguration experiment.",
+      "published_at": "2026-10-29",
+      "organization": "Chongxi Meng et al.",
+      "source_ids": [
+        "src-cubot-2610"
+      ],
+      "time_window": "72h",
+      "body": "Imagine a structure made of matching cubes. What if you wanted to change its shape without taking everything apart by hand? Researchers have developed a system in which a small robot moves the cubes and fastens them in new positions. Each cube is called a module, meaning a part designed to join other parts. In one experiment, the system automatically rearranged a structure containing 11 modules.\n\nMoving a cube is only half the job. The new connection must be strong enough to keep the structure together. The cubes have connectors on their faces, and a tool on the robot can tighten them from outside. The robot also has to keep itself supported while moving between positions. It cannot simply let go of every attachment at once, because then it might fall before completing the next step.\n\nThe researchers measured how strongly the connections resisted forces in different directions. They reported 300 newtons in one direction and 490 newtons in another, and showed electrical continuity across six connected modules. A newton is a unit used to measure force. Those results describe the tested connectors; they do not mean the cubes could safely support a building or an unlimited load.\n\nMachines that change their shape might one day be useful when a single fixed design cannot handle every task. This experiment is an early step, not a ready-made construction worker. A good question for future tests is whether the robot can rearrange many more modules without losing support or making connection errors. For reference, the researchers call the system CuBot-STT.",
+      "image": null
+    },
+    {
+      "id": "raibo-wagon-towing",
+      "title": "A four-legged robot learns to pull a heavy wagon carefully",
+      "summary": "Researchers tested how a four-legged robot can tow a wagon through narrow passages. On 15-meter routes it completed 85% of 40 attempts and carried loads up to 40 kilograms, but it still failed sometimes.",
+      "details": "The controller plans for the robot and its attached wagon together, especially around turns.",
+      "technical_novelty": "A quick proposed route is checked and refined using a learned prediction of motion.",
+      "engineering_impact": "Wheeled loads could let legged robots transport more than they can carry on their backs.",
+      "limitations": "Only one robot-and-wagon arrangement and short routes were tested.",
+      "evidence_status": "Research preprint including real outdoor robot trials.",
+      "published_at": "2026-10-29",
+      "organization": "Insung Yang et al.",
+      "source_ids": [
+        "src-raibo-wagon-2610"
+      ],
+      "time_window": "72h",
+      "body": "Imagine pulling a wheeled suitcase through a narrow doorway. You might fit through easily while the suitcase bumps the frame behind you. A four-legged robot pulling a wagon faces a similar problem. It must think about where the wagon wheels and load will go, not only where its own feet can step. A turn that is safe for the robot alone may be too tight for the whole pair.\n\nThe researchers developed software that first suggests a possible route and then checks how the robot and wagon are likely to move together. It uses a motion model, which is a program that predicts what happens after a command. If the proposed turn is unsuitable, the system adjusts the plan. This matters because a wagon cannot move sideways in any direction like a piece on a board game.\n\nOutdoor experiments used routes that were 15 meters long. The robot carried its own sensors and computer, so it did not need another machine to calculate every move. Across 40 attempts, it finished 85% of the routes and towed loads up to 40 kilograms, nearly as much as the robot itself weighed. The remaining failures are important: the system did not solve every difficult turn.\n\nPulling a load on wheels could help robots carry supplies without supporting all the weight on their backs. But slippery floors, slopes and people crossing the route would require further tests. The researchers have not shown that the method works reliably everywhere. For reference, they call their robot-and-wagon system RAIBO-Wagon and use a route-refining method called MPPI.",
+      "image": null
+    }
+  ],
+  "technology_signal": {
+    "title": "A robot must plan for what moves with it",
+    "summary": "Two stories explore how robots must account for connected parts and objects moving with them.",
+    "implications": "Moving a block or towing a wagon requires planning for attachments and support."
+  },
+  "glossary": [
+    {
+      "term": "Module",
+      "definition": "A standard part designed to join other parts."
+    },
+    {
+      "term": "Connector",
+      "definition": "A mechanism holding two pieces together."
+    },
+    {
+      "term": "Newton",
+      "definition": "A unit used to measure force."
+    },
+    {
+      "term": "Motion model",
+      "definition": "A program predicting movement after a command."
+    },
+    {
+      "term": "Route",
+      "definition": "The path a machine is supposed to follow."
+    },
+    {
+      "term": "Sensor",
+      "definition": "A device that measures something about its surroundings or state."
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-cubot-2610",
+      "url": "https://arxiv.org/abs/2610.39279",
+      "domain": "arxiv.org",
+      "organization": "Chongxi Meng et al.",
+      "published_at": "2026-10-29",
+      "title": "CuBot-STT: Simultaneously Transport and Tighten for Lattice-type Modular Reconfiguration Robot"
+    },
+    {
+      "id": "src-raibo-wagon-2610",
+      "url": "https://arxiv.org/abs/2610.39267",
+      "domain": "arxiv.org",
+      "organization": "Insung Yang et al.",
+      "published_at": "2026-10-29",
+      "title": "RAIBO-Wagon: Real-Time Navigation System for a Legged Robot Towing a Wagon"
+    }
+  ]
+}
