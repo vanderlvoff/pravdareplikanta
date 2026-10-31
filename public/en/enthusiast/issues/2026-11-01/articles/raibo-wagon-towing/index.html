@@ -101,7 +101,7 @@
     
     <div class="issue-line">
       <p>Issue № 4 · <time datetime="2026-11-01">2026-11-01</time></p>
-      <p>rev. 2 · <a href="/en/enthusiast/archive/">Archive</a></p>
+      <p>rev. 3 · <a href="/en/enthusiast/archive/">Archive</a></p>
     </div>
   </header>
   <p class="pdf-link"><a href="/en/enthusiast/issues/2026-11-01/edition.pdf">PDF edition · A4</a></p>
@@ -111,18 +111,18 @@
 <p class="article-section">News</p>
 <article class="article-detail">
   
-  <h2>A quadruped learns<sup class="term-reference"><a id="term-ref-1" href="#term-1" role="doc-noteref" aria-label="Definition 1: learn">[1]</a></sup> to tow a wagon through tight passages</h2>
+  <h2>A quadruped learns to tow a wagon through tight passages</h2>
   
   
   <div class="article-text">
 
-<p>The engineering question is how execution works and which constraints were actually tested. A learned initial motion proposal is refined using model<sup class="term-reference"><a id="term-ref-2" href="#term-2" role="doc-noteref" aria-label="Definition 2: model">[2]</a></sup>-predictive path-integral optimization and learned forward dynamics. A single robot<sup class="term-reference"><a id="term-ref-3" href="#term-3" role="doc-noteref" aria-label="Definition 3: robot">[3]</a></sup>-wagon system, short test routes and a 15% failure rate leave open questions about general deployment.</p>
+<p>The engineering question is how execution works and which constraints were actually tested. A learned initial motion proposal is refined using model-predictive path-integral optimization and learned forward dynamics. A single robot-wagon system, short test routes and a 15% failure rate leave open questions about general deployment.</p>
 
 
 <p>A four-legged robot can navigate around obstacles while controlling only its own body. Attach a wagon, however, and every turn becomes a different problem: the trailer wheels cannot move sideways at will, and the combined machine needs more room than the robot alone. Researchers led by Insung Yang described RAIBO-Wagon on October 29, 2026, a navigation system for a quadruped towing a custom wheeled carrier. The interesting advance is not merely that the robot can pull a load. It is that the controller plans for the linked motion of both bodies in narrow spaces.</p>
 
 
-<p>The system combines two planning ideas. Conditional flow matching produces a fast initial proposal for how the robot and wagon might move. Model Predictive Path Integral control<sup class="term-reference"><a id="term-ref-4" href="#term-4" role="doc-noteref" aria-label="Definition 4: control">[4]</a></sup>, or MPPI, then tests and refines candidate commands using a learned forward-dynamics model that predicts how the coupled system will respond. The first component helps the search start near a promising solution; the second can adjust when the environment differs from the examples used for learning. This is a practical compromise between fast learned suggestions and slower physical consistency checks.</p>
+<p>The system combines two planning ideas. Conditional flow matching produces a fast initial proposal for how the robot and wagon might move. Model Predictive Path Integral control, or MPPI, then tests and refines candidate commands using a learned forward-dynamics model<sup class="term-reference"><a id="term-ref-1" href="#term-1" role="doc-noteref" aria-label="Definition 1: dynamics model">[1]</a></sup> that predicts how the coupled system will respond. The first component helps the search start near a promising solution; the second can adjust when the environment differs from the examples used for learning. This is a practical compromise between fast learned suggestions and slower physical consistency checks.</p>
 
 
 <p>The authors tested the system outdoors on 15-meter courses containing confined passages. Sensing and computation ran fully onboard rather than depending on an external computer to plan the motion. They report an 85% completion rate over 40 trials and loads of up to 40 kilograms, nearly the robot&#39;s own body weight. Those are measured results on a particular setup, not a claim that all quadrupeds can tow the same load. Fifteen percent of the attempts still failed, and the reported routes were relatively short.</p>
@@ -145,23 +145,8 @@
   <dl class="glossary-list">
     
     <div class="glossary-entry" id="term-1" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">01</span><span>learn</span></dt>
-      <dd>Adjusting a model from examples or experience.<a class="glossary-backlink" href="#term-ref-1" aria-label="Back to text [1]">↩ Back to text <span aria-hidden="true">[1]</span></a></dd>
-    </div>
-    
-    <div class="glossary-entry" id="term-2" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">02</span><span>model</span></dt>
-      <dd>A computational system trained to predict or select actions.<a class="glossary-backlink" href="#term-ref-2" aria-label="Back to text [2]">↩ Back to text <span aria-hidden="true">[2]</span></a></dd>
-    </div>
-    
-    <div class="glossary-entry" id="term-3" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">03</span><span>robot</span></dt>
-      <dd>A physical machine that performs commanded actions.<a class="glossary-backlink" href="#term-ref-3" aria-label="Back to text [3]">↩ Back to text <span aria-hidden="true">[3]</span></a></dd>
-    </div>
-    
-    <div class="glossary-entry" id="term-4" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">04</span><span>control</span></dt>
-      <dd>Choosing commands that determine a machine&#39;s movement.<a class="glossary-backlink" href="#term-ref-4" aria-label="Back to text [4]">↩ Back to text <span aria-hidden="true">[4]</span></a></dd>
+      <dt><span class="glossary-index" aria-hidden="true">01</span><span>dynamics model</span></dt>
+      <dd>An approximation of how a robot or coupled system moves in response to commands.<a class="glossary-backlink" href="#term-ref-1" aria-label="Back to text [1]">↩ Back to text <span aria-hidden="true">[1]</span></a></dd>
     </div>
     
   </dl>

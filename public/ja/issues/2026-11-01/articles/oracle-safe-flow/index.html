@@ -101,7 +101,7 @@
     
     <div class="issue-line">
       <p>号 № 4 · <time datetime="2026-11-01">2026-11-01</time></p>
-      <p>rev. 2 · <a href="/ja/archive/">アーカイブ</a></p>
+      <p>rev. 3 · <a href="/ja/archive/">アーカイブ</a></p>
     </div>
   </header>
   <p class="pdf-link"><a href="/ja/issues/2026-11-01/edition.pdf">PDF版 · A4</a></p>
@@ -111,27 +111,27 @@
 <p class="article-section">ニュース</p>
 <article class="article-detail">
   
-  <h2>可否判定だけでロボット<sup class="term-reference"><a id="term-ref-1" href="#term-1" role="doc-noteref" aria-label="ことばの説明 1: ロボット">[1]</a></sup>の生成動作に制約を組み込む研究</h2>
+  <h2>可否判定だけでロボットの生成動作に制約を組み込む研究</h2>
   
   
   <div class="article-text">
 
-<p>導入判断では、研究結果と保証された運用性能を区別する必要がある。既存の衝突判定器を生成型動作モデル<sup class="term-reference"><a id="term-ref-2" href="#term-2" role="doc-noteref" aria-label="ことばの説明 2: モデル">[2]</a></sup>の制約処理に組み込める可能性がある。 評価は一つのシミュレーション<sup class="term-reference"><a id="term-ref-3" href="#term-3" role="doc-noteref" aria-label="ことばの説明 3: シミュレーション">[3]</a></sup>課題に限られ、推論時間は0.071秒から1.345秒に増加した。</p>
+<p>導入判断では、研究結果と保証された運用性能を区別する必要がある。既存の衝突判定<sup class="term-reference"><a id="term-ref-1" href="#term-1" role="doc-noteref" aria-label="ことばの説明 1: 衝突判定">[1]</a></sup>器を生成型動作モデルの制約処理に組み込める可能性がある。 評価は一つのシミュレーション課題に限られ、推論時間は0.071秒から1.345秒に増加した。</p>
 
 
-<p>生成型のロボット制御<sup class="term-reference"><a id="term-ref-4" href="#term-4" role="doc-noteref" aria-label="ことばの説明 4: 制御">[4]</a></sup>モデルは、学習<sup class="term-reference"><a id="term-ref-5" href="#term-5" role="doc-noteref" aria-label="ことばの説明 5: 学習">[5]</a></sup>した動きに似た指令を作れても、その指令が障害物にぶつからないとは限らない。Jianming Maらが2026年10月29日に発表した研究は、この問題を動作生成の途中で扱う。対象はフローマッチングという方式で、初期状態から何回かの更新を重ねて行動列を作る。必要なのは、候補の関節姿勢が許されるかを「はい」「いいえ」で返す判定器だけだ。許される姿勢の範囲を完全な数式として記述する必要はない。衝突判定器が利用できても、その内部を微分できない場合を想定している。</p>
+<p>生成型のロボット制御モデルは、学習した動きに似た指令を作れても、その指令が障害物にぶつからないとは限らない。Jianming Maらが2026年10月29日に発表した研究は、この問題を動作生成の途中で扱う。対象はフローマッチングという方式で、初期状態から何回かの更新を重ねて行動列を作る。必要なのは、候補の関節姿勢が許されるかを「はい」「いいえ」で返す判定器だけだ。許される姿勢の範囲を完全な数式として記述する必要はない。衝突判定器が利用できても、その内部を微分できない場合を想定している。</p>
 
 
 <p>この二値の判定器を研究では実行可能性オラクルと呼ぶ。動作生成の順方向では、提案された移動方向に沿って判定を繰り返し、許容範囲から出る直前まで更新量を短くする。学習時には境界の近くを追加で調べ、どちら側が許されない領域かを推定する。その情報から近似的な勾配を作り、モデルの更新に反映する。つまり完成した行動だけを最後に検査するのではなく、学習と実行の両方に同じ保護処理を置く設計だ。ただし安全な初期姿勢が得られることなど、重要な前提条件が存在する。</p>
 
 
-<p>実験<sup class="term-reference"><a id="term-ref-6" href="#term-6" role="doc-noteref" aria-label="ことばの説明 6: 実験">[6]</a></sup>はRoboTwin 2.0というシミュレーション環境で行われた。ロボットアームが瓶を移動させる際に、別の瓶や机、関節の可動範囲を避ける課題である。研究チームは150本の専門家による動作軌跡を使い、H100を1基用いて既存モデルを追加学習した。30回の評価では、保護付きモデルの課題成功は11回で、検査した動作段階の制約遵守率は100％だった。元のモデルは13回成功したが、遵守率は78.25％だった。一方で行動ブロック当たりの推論時間は0.071秒から1.345秒に増えた。安全側への修正には計算上の費用が伴う。</p>
+<p>実験はRoboTwin 2.0というシミュレーション環境で行われた。ロボットアームが瓶を移動させる際に、別の瓶や机、関節の可動範囲を避ける課題である。研究チームは150本の専門家による動作軌跡を使い、H100を1基用いて既存モデルを追加学習した。30回の評価では、保護付きモデルの課題成功は11回で、検査した動作段階の制約遵守率は100％だった。元のモデルは13回成功したが、遵守率は78.25％だった。一方で行動ブロック当たりの推論時間は0.071秒から1.345秒に増えた。安全側への修正には計算上の費用が伴う。</p>
 
 
-<p>この結果は、実物のロボットがどんな環境でも安全になったことを意味しない。判定器はシミュレータ内部の正確な情報を使っており、現実のセンサー<sup class="term-reference"><a id="term-ref-7" href="#term-7" role="doc-noteref" aria-label="ことばの説明 7: センサー">[7]</a></sup>誤差は評価されていない。また障害物を大きく迂回しなければならない複雑な領域では、提案方向を短くするだけでは適切な経路を見つけられない可能性がある。実用化には判定器の見落とし、処理遅延、動く障害物、初期状態が不適切な場合の対応を調べる必要がある。100％という数字は今回検査したシミュレーション上の段階に限定して読むべきだ。</p>
+<p>この結果は、実物のロボットがどんな環境でも安全になったことを意味しない。判定器はシミュレータ内部の正確な情報を使っており、現実のセンサー誤差は評価されていない。また障害物を大きく迂回しなければならない複雑な領域では、提案方向を短くするだけでは適切な経路を見つけられない可能性がある。実用化には判定器の見落とし、処理遅延、動く障害物、初期状態が不適切な場合の対応を調べる必要がある。100％という数字は今回検査したシミュレーション上の段階に限定して読むべきだ。</p>
 
 
-<p>再現性<sup class="term-reference"><a id="term-ref-8" href="#term-8" role="doc-noteref" aria-label="ことばの説明 8: 再現性">[8]</a></sup>を確かめるには、論文で実際に測った結果と、別の環境で期待される利点を分けて考える必要がある。次の技術的な検証では、設定値、試験場面の選び方、失敗の記録方法を変えたときの結果を調べることが重要だ。</p>
+<p>再現性を確かめるには、論文で実際に測った結果と、別の環境で期待される利点を分けて考える必要がある。次の技術的な検証では、設定値、試験場面の選び方、失敗の記録方法を変えたときの結果を調べることが重要だ。</p>
 </div>
   <footer><h3>出典</h3><ul><li><a href="https://arxiv.org/abs/2610.40075" rel="noopener noreferrer">Learning Safe Flow Matching Robot Policies from Binary Feasibility Oracles</a> · <time>2026-10-29</time></li></ul></footer>
   
@@ -145,43 +145,8 @@
   <dl class="glossary-list">
     
     <div class="glossary-entry" id="term-1" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">01</span><span>ロボット</span></dt>
-      <dd>命令に従って実際の物を動かす機械。<a class="glossary-backlink" href="#term-ref-1" aria-label="本文に戻る [1]">↩ 本文に戻る <span aria-hidden="true">[1]</span></a></dd>
-    </div>
-    
-    <div class="glossary-entry" id="term-2" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">02</span><span>モデル</span></dt>
-      <dd>データから動きや結果を予測する計算の仕組み。<a class="glossary-backlink" href="#term-ref-2" aria-label="本文に戻る [2]">↩ 本文に戻る <span aria-hidden="true">[2]</span></a></dd>
-    </div>
-    
-    <div class="glossary-entry" id="term-3" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">03</span><span>シミュレーション</span></dt>
-      <dd>実物を動かす前にコンピューター内で試すこと。<a class="glossary-backlink" href="#term-ref-3" aria-label="本文に戻る [3]">↩ 本文に戻る <span aria-hidden="true">[3]</span></a></dd>
-    </div>
-    
-    <div class="glossary-entry" id="term-4" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">04</span><span>制御</span></dt>
-      <dd>機械をどのように動かすか決めること。<a class="glossary-backlink" href="#term-ref-4" aria-label="本文に戻る [4]">↩ 本文に戻る <span aria-hidden="true">[4]</span></a></dd>
-    </div>
-    
-    <div class="glossary-entry" id="term-5" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">05</span><span>学習</span></dt>
-      <dd>例や経験を使ってモデルの働きを調整すること。<a class="glossary-backlink" href="#term-ref-5" aria-label="本文に戻る [5]">↩ 本文に戻る <span aria-hidden="true">[5]</span></a></dd>
-    </div>
-    
-    <div class="glossary-entry" id="term-6" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">06</span><span>実験</span></dt>
-      <dd>決めた条件で考えや方法を試すこと。<a class="glossary-backlink" href="#term-ref-6" aria-label="本文に戻る [6]">↩ 本文に戻る <span aria-hidden="true">[6]</span></a></dd>
-    </div>
-    
-    <div class="glossary-entry" id="term-7" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">07</span><span>センサー</span></dt>
-      <dd>物の状態や接触を調べる装置。<a class="glossary-backlink" href="#term-ref-7" aria-label="本文に戻る [7]">↩ 本文に戻る <span aria-hidden="true">[7]</span></a></dd>
-    </div>
-    
-    <div class="glossary-entry" id="term-8" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">08</span><span>再現性</span></dt>
-      <dd>同じ条件で試したときに近い結果を得られる性質。<a class="glossary-backlink" href="#term-ref-8" aria-label="本文に戻る [8]">↩ 本文に戻る <span aria-hidden="true">[8]</span></a></dd>
+      <dt><span class="glossary-index" aria-hidden="true">01</span><span>衝突判定</span></dt>
+      <dd>予定した動きが障害物にぶつからないか調べる処理。<a class="glossary-backlink" href="#term-ref-1" aria-label="本文に戻る [1]">↩ 本文に戻る <span aria-hidden="true">[1]</span></a></dd>
     </div>
     
   </dl>

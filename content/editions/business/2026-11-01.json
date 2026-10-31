@@ -3,7 +3,7 @@
   "issue_id": "2026-11-01",
   "number": 4,
   "publication_date": "2026-11-01",
-  "revision": 2,
+  "revision": 3,
   "status": "approved",
   "languages": {
     "ru": {
@@ -314,59 +314,43 @@
           "body": [
             {
               "type": "heading",
-              "text": "модель"
+              "text": "Robots-as-a-Service (RaaS)"
             },
             {
               "type": "paragraph",
-              "text": "Обученная вычислительная система, которая предсказывает или выбирает действие."
+              "text": "Модель, при которой заказчик получает робота и обслуживание как услугу, а не просто покупает машину."
             },
             {
               "type": "heading",
-              "text": "захват"
+              "text": "пилотное внедрение"
             },
             {
               "type": "paragraph",
-              "text": "Устройство или действие, позволяющее удерживать предмет."
+              "text": "Ограниченное испытание технологии в рабочем процессе перед расширением."
             },
             {
               "type": "heading",
-              "text": "обучени"
+              "text": "интеграция"
             },
             {
               "type": "paragraph",
-              "text": "Настройка модели на примерах или опыте."
+              "text": "Подключение робота к оборудованию, правилам безопасности и операциям предприятия."
             },
             {
               "type": "heading",
-              "text": "управлени"
+              "text": "окупаемость"
             },
             {
               "type": "paragraph",
-              "text": "Выбор команд, определяющих движение машины."
+              "text": "Соотношение затрат на внедрение с экономическим эффектом за выбранный период."
             },
             {
               "type": "heading",
-              "text": "датчик"
+              "text": "базовая модель"
             },
             {
               "type": "paragraph",
-              "text": "Устройство, измеряющее состояние или контакт."
-            },
-            {
-              "type": "heading",
-              "text": "робот"
-            },
-            {
-              "type": "paragraph",
-              "text": "Механическая система, которая выполняет действия по командам."
-            },
-            {
-              "type": "heading",
-              "text": "инструмент"
-            },
-            {
-              "type": "paragraph",
-              "text": "Сменное приспособление для конкретной операции."
+              "text": "Обученная модель общего назначения, которую затем приспосабливают к отдельным задачам."
             }
           ],
           "sources": [
@@ -723,75 +707,43 @@
           "body": [
             {
               "type": "heading",
-              "text": "tactile"
+              "text": "Robots-as-a-Service (RaaS)"
             },
             {
               "type": "paragraph",
-              "text": "A measurement or signal related to physical touch."
+              "text": "A service model in which a customer receives robot capability and support rather than simply buying the machine."
             },
             {
               "type": "heading",
-              "text": "model"
+              "text": "pilot deployment"
             },
             {
               "type": "paragraph",
-              "text": "A computational system trained to predict or select actions."
+              "text": "A limited trial of a technology in a real workflow before wider rollout."
             },
             {
               "type": "heading",
-              "text": "simulat"
+              "text": "system integration"
             },
             {
               "type": "paragraph",
-              "text": "A test in a computer environment rather than on physical hardware."
+              "text": "Connecting a robot with site equipment, safety procedures and business operations."
             },
             {
               "type": "heading",
-              "text": "gripp"
+              "text": "return on investment"
             },
             {
               "type": "paragraph",
-              "text": "A device or action used to hold an object."
+              "text": "A comparison between deployment costs and the value gained over time."
             },
             {
               "type": "heading",
-              "text": "learn"
+              "text": "foundation model"
             },
             {
               "type": "paragraph",
-              "text": "Adjusting a model from examples or experience."
-            },
-            {
-              "type": "heading",
-              "text": "control"
-            },
-            {
-              "type": "paragraph",
-              "text": "Choosing commands that determine a machine's movement."
-            },
-            {
-              "type": "heading",
-              "text": "sensor"
-            },
-            {
-              "type": "paragraph",
-              "text": "A device that measures a condition or contact."
-            },
-            {
-              "type": "heading",
-              "text": "robot"
-            },
-            {
-              "type": "paragraph",
-              "text": "A physical machine that performs commanded actions."
-            },
-            {
-              "type": "heading",
-              "text": "tool"
-            },
-            {
-              "type": "paragraph",
-              "text": "A device selected for a particular operation."
+              "text": "A broadly trained model that can be adapted for more specific tasks."
             }
           ],
           "sources": [
@@ -1148,75 +1100,43 @@
           "body": [
             {
               "type": "heading",
-              "text": "触覚"
+              "text": "触覚センシング"
             },
             {
               "type": "paragraph",
-              "text": "物にふれたときの情報を測る仕組み。"
+              "text": "物に触れたときの力や接触を測り、ロボットの動きに反映すること。"
             },
             {
               "type": "heading",
-              "text": "モデル"
+              "text": "実証導入"
             },
             {
               "type": "paragraph",
-              "text": "データから動きや結果を予測する計算の仕組み。"
+              "text": "本格展開の前に、実際の現場で小さく試すこと。"
             },
             {
               "type": "heading",
-              "text": "ハンド"
+              "text": "運用"
             },
             {
               "type": "paragraph",
-              "text": "物をつかむためのロボットの部品。"
+              "text": "ロボットを現場で動かし、保守や人の対応も含めて使い続けること。"
             },
             {
               "type": "heading",
-              "text": "学習"
+              "text": "投資回収"
             },
             {
               "type": "paragraph",
-              "text": "例や経験を使ってモデルの働きを調整すること。"
+              "text": "導入にかけた費用を、その後の効果で取り戻せるかを見ること。"
             },
             {
               "type": "heading",
-              "text": "制御"
+              "text": "基盤モデル"
             },
             {
               "type": "paragraph",
-              "text": "機械をどのように動かすか決めること。"
-            },
-            {
-              "type": "heading",
-              "text": "センサー"
-            },
-            {
-              "type": "paragraph",
-              "text": "物の状態や接触を調べる装置。"
-            },
-            {
-              "type": "heading",
-              "text": "再現性"
-            },
-            {
-              "type": "paragraph",
-              "text": "同じ条件で試したときに近い結果を得られる性質。"
-            },
-            {
-              "type": "heading",
-              "text": "ロボット"
-            },
-            {
-              "type": "paragraph",
-              "text": "命令に従って実際の物を動かす機械。"
-            },
-            {
-              "type": "heading",
-              "text": "道具"
-            },
-            {
-              "type": "paragraph",
-              "text": "特定の作業のために使う物。"
+              "text": "多くのデータで学習し、複数の仕事に応用できる土台のモデル。"
             }
           ],
           "sources": [

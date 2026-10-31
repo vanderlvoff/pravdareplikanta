@@ -3,7 +3,7 @@
   "issue_id": "2026-11-01",
   "number": 4,
   "publication_date": "2026-11-01",
-  "revision": 2,
+  "revision": 3,
   "status": "approved",
   "languages": {
     "ru": {
@@ -318,75 +318,43 @@
           "body": [
             {
               "type": "heading",
-              "text": "модель"
+              "text": "VLA-модель"
             },
             {
               "type": "paragraph",
-              "text": "Обученная вычислительная система, которая предсказывает или выбирает действие."
+              "text": "Модель, которая связывает зрительное восприятие, языковую команду и действие робота."
             },
             {
               "type": "heading",
-              "text": "симуляц"
+              "text": "граф задач"
             },
             {
               "type": "paragraph",
-              "text": "Испытание в компьютерной модели, а не на реальном оборудовании."
+              "text": "Представление задачи как шагов и зависимостей между ними."
             },
             {
               "type": "heading",
-              "text": "захват"
+              "text": "мягкий захват"
             },
             {
               "type": "paragraph",
-              "text": "Устройство или действие, позволяющее удерживать предмет."
+              "text": "Гибкий захват, который подстраивается под форму предмета и терпит небольшую ошибку наведения."
             },
             {
               "type": "heading",
-              "text": "траектор"
+              "text": "проверка коллизий"
             },
             {
               "type": "paragraph",
-              "text": "Путь движения во времени."
+              "text": "Проверка, не пересечётся ли запланированное движение робота с препятствием."
             },
             {
               "type": "heading",
-              "text": "обучени"
+              "text": "управление всем телом"
             },
             {
               "type": "paragraph",
-              "text": "Настройка модели на примерах или опыте."
-            },
-            {
-              "type": "heading",
-              "text": "управлени"
-            },
-            {
-              "type": "paragraph",
-              "text": "Выбор команд, определяющих движение машины."
-            },
-            {
-              "type": "heading",
-              "text": "датчик"
-            },
-            {
-              "type": "paragraph",
-              "text": "Устройство, измеряющее состояние или контакт."
-            },
-            {
-              "type": "heading",
-              "text": "воспроизводим"
-            },
-            {
-              "type": "paragraph",
-              "text": "Возможность повторить испытание и получить сопоставимые результаты."
-            },
-            {
-              "type": "heading",
-              "text": "робот"
-            },
-            {
-              "type": "paragraph",
-              "text": "Механическая система, которая выполняет действия по командам."
+              "text": "Координация движений корпуса, рук и ног гуманоидного робота."
             }
           ],
           "sources": [
@@ -739,75 +707,43 @@
           "body": [
             {
               "type": "heading",
-              "text": "model"
+              "text": "VLA model"
             },
             {
               "type": "paragraph",
-              "text": "A computational system trained to predict or select actions."
+              "text": "A model that connects visual input, language instructions and robot actions."
             },
             {
               "type": "heading",
-              "text": "simulat"
+              "text": "task graph"
             },
             {
               "type": "paragraph",
-              "text": "A test in a computer environment rather than on physical hardware."
+              "text": "A representation of task steps and the dependencies between them."
             },
             {
               "type": "heading",
-              "text": "gripp"
+              "text": "compliant gripper"
             },
             {
               "type": "paragraph",
-              "text": "A device or action used to hold an object."
+              "text": "A flexible gripper designed to tolerate small positioning errors while holding an object."
             },
             {
               "type": "heading",
-              "text": "trajector"
+              "text": "collision checking"
             },
             {
               "type": "paragraph",
-              "text": "A movement path considered over time."
+              "text": "A test of whether a planned robot motion intersects an obstacle."
             },
             {
               "type": "heading",
-              "text": "learn"
+              "text": "whole-body control"
             },
             {
               "type": "paragraph",
-              "text": "Adjusting a model from examples or experience."
-            },
-            {
-              "type": "heading",
-              "text": "control"
-            },
-            {
-              "type": "paragraph",
-              "text": "Choosing commands that determine a machine's movement."
-            },
-            {
-              "type": "heading",
-              "text": "sensor"
-            },
-            {
-              "type": "paragraph",
-              "text": "A device that measures a condition or contact."
-            },
-            {
-              "type": "heading",
-              "text": "reproducib"
-            },
-            {
-              "type": "paragraph",
-              "text": "The ability to repeat an experiment with comparable results."
-            },
-            {
-              "type": "heading",
-              "text": "robot"
-            },
-            {
-              "type": "paragraph",
-              "text": "A physical machine that performs commanded actions."
+              "text": "Coordination of a humanoid robot's torso, arms and legs as one system."
             }
           ],
           "sources": [
@@ -1168,75 +1104,43 @@
           "body": [
             {
               "type": "heading",
-              "text": "モデル"
+              "text": "VLAモデル"
             },
             {
               "type": "paragraph",
-              "text": "データから動きや結果を予測する計算の仕組み。"
+              "text": "視覚情報と言葉の指示を、ロボットの動作につなげるモデル。"
             },
             {
               "type": "heading",
-              "text": "シミュレーション"
+              "text": "タスクグラフ"
             },
             {
               "type": "paragraph",
-              "text": "実物を動かす前にコンピューター内で試すこと。"
+              "text": "作業の手順と、先に満たす条件を表す構造。"
             },
             {
               "type": "heading",
-              "text": "ハンド"
+              "text": "柔軟な把持具"
             },
             {
               "type": "paragraph",
-              "text": "物をつかむためのロボットの部品。"
+              "text": "少し位置がずれても物をつかめる、しなる指を持つ道具。"
             },
             {
               "type": "heading",
-              "text": "学習"
+              "text": "衝突判定"
             },
             {
               "type": "paragraph",
-              "text": "例や経験を使ってモデルの働きを調整すること。"
+              "text": "予定した動きが障害物にぶつからないか調べる処理。"
             },
             {
               "type": "heading",
-              "text": "制御"
+              "text": "全身制御"
             },
             {
               "type": "paragraph",
-              "text": "機械をどのように動かすか決めること。"
-            },
-            {
-              "type": "heading",
-              "text": "センサー"
-            },
-            {
-              "type": "paragraph",
-              "text": "物の状態や接触を調べる装置。"
-            },
-            {
-              "type": "heading",
-              "text": "再現性"
-            },
-            {
-              "type": "paragraph",
-              "text": "同じ条件で試したときに近い結果を得られる性質。"
-            },
-            {
-              "type": "heading",
-              "text": "ロボット"
-            },
-            {
-              "type": "paragraph",
-              "text": "命令に従って実際の物を動かす機械。"
-            },
-            {
-              "type": "heading",
-              "text": "実験"
-            },
-            {
-              "type": "paragraph",
-              "text": "決めた条件で考えや方法を試すこと。"
+              "text": "胴体・腕・脚の動きをまとめて調整する方法。"
             }
           ],
           "sources": [

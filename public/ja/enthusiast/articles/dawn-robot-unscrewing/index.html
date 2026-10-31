@@ -101,7 +101,7 @@
     
     <div class="issue-line">
       <p>号 № 4 · <time datetime="2026-11-01">2026-11-01</time></p>
-      <p>rev. 2 · <a href="/ja/enthusiast/archive/">アーカイブ</a></p>
+      <p>rev. 3 · <a href="/ja/enthusiast/archive/">アーカイブ</a></p>
     </div>
   </header>
   <p class="pdf-link"><a href="/ja/enthusiast/issues/2026-11-01/edition.pdf">PDF版 · A4</a></p>
@@ -111,21 +111,21 @@
 <p class="article-section">ニュース</p>
 <article class="article-detail">
   
-  <h2>ねじを外すロボット<sup class="term-reference"><a id="term-ref-1" href="#term-1" role="doc-noteref" aria-label="ことばの説明 1: ロボット">[1]</a></sup>、位置合わせと回転を分けて学ぶ</h2>
+  <h2>ねじを外すロボット、位置合わせと回転を分けて学ぶ</h2>
   
   
   <div class="article-text">
 
-<p>技術的な注目点は実演の見た目ではなく、実行方式と制約を検証できることにある。拡散モデル<sup class="term-reference"><a id="term-ref-2" href="#term-2" role="doc-noteref" aria-label="ことばの説明 2: モデル">[2]</a></sup>による位置合わせと、視覚・力による接触判定、力制御<sup class="term-reference"><a id="term-ref-3" href="#term-3" role="doc-noteref" aria-label="ことばの説明 3: 制御">[3]</a></sup>の回転を組み合わせる。 初期のかみ合わせが難しく、斜めのねじや未知の製品全般は検証されていない。</p>
+<p>技術的な注目点は実演の見た目ではなく、実行方式と制約を検証できることにある。拡散モデルによる位置合わせと、視覚・力による接触判定、力制御の回転を組み合わせる。 初期のかみ合わせが難しく、斜めのねじや未知の製品全般は検証されていない。</p>
 
 
-<p>ねじを外すとき、人はドライバーの先がねじ頭に合っているかを目と手の感覚で確かめる。ロボットには、この最初の作業が意外に難しい。少し位置がずれるだけで先端が滑り、回転してもねじは外れない。Hemant Kumarらが2026年10月29日に発表したDAWNは、ねじ外しを複数の段階に分けて学習<sup class="term-reference"><a id="term-ref-4" href="#term-4" role="doc-noteref" aria-label="ことばの説明 4: 学習">[4]</a></sup>させる研究システムだ。使い終わった電子機器などを分解し、部品を取り出す作業への応用を想定している。ねじを画像で見つけるだけでは、実際に外せることにはならない。</p>
+<p>ねじを外すとき、人はドライバーの先がねじ頭に合っているかを目と手の感覚で確かめる。ロボットには、この最初の作業が意外に難しい。少し位置がずれるだけで先端が滑り、回転してもねじは外れない。Hemant Kumarらが2026年10月29日に発表したDAWNは、ねじ外しを複数の段階に分けて学習させる研究システムだ。使い終わった電子機器などを分解し、部品を取り出す作業への応用を想定している。ねじを画像で見つけるだけでは、実際に外せることにはならない。</p>
 
 
 <p>まず拡散モデルを使った動作方針が、カメラなどの情報からドライバーの位置合わせと差し込みを行う。拡散モデルは、候補の動作を段階的に整えていく学習方式の一つである。次に別の判定モデルが画像と力の情報を合わせ、先端がしっかりかみ合ったかを確認する。最後は力の変化を主に利用する制御器がねじを回して外す。この段階では反力を20ニュートン未満に保つ制約が設けられている。位置合わせ、接触の判断、回転という異なる問題に、それぞれ適した方法を使う設計である。</p>
 
 
-<p>実験にはFranka Emikaのロボットアームと電動ドライバーが使われた。研究チームは位置合わせのために199回の専門家の実演を集め、接触判定には6000枚の画像を用意した。ある比較試験では、位置合わせからかみ合わせまでの成功が約半数で、同じ条件で訓練を受けた人の遠隔操作と同程度だった。接触判定モデルの正解率は0.90と報告された。先端が正しくかみ合った後のねじ外しは、対象とした試験ではより安定していた。しかし最初の段階が失敗すれば、全体の作業も完了できない。</p>
+<p>実験にはFranka Emikaのロボットアームと電動ドライバーが使われた。研究チームは位置合わせのために199回の専門家の実演を集め、接触判定には6000枚の画像を用意した。ある比較試験では、位置合わせからかみ合わせまでの成功が約半数で、同じ条件で訓練を受けた人の遠隔操作<sup class="term-reference"><a id="term-ref-1" href="#term-1" role="doc-noteref" aria-label="ことばの説明 1: 遠隔操作">[1]</a></sup>と同程度だった。接触判定モデルの正解率は0.90と報告された。先端が正しくかみ合った後のねじ外しは、対象とした試験ではより安定していた。しかし最初の段階が失敗すれば、全体の作業も完了できない。</p>
 
 
 <p>この研究から分かるのは、ねじを回す力だけではなく、正しい接触を作ることが重要だという点である。ねじ頭の形や見え方が学習時と違うと、位置合わせは難しくなる。斜めに取り付けられたねじは今回の評価対象ではない。実際の分解工場では、複雑な製品の中からねじを探し、先端が滑ったときに安全にやり直し、周囲の部品を傷つけない必要がある。DAWNはそのための有望な考え方を示すが、何でも分解できる完成品ではない。</p>
@@ -145,23 +145,8 @@
   <dl class="glossary-list">
     
     <div class="glossary-entry" id="term-1" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">01</span><span>ロボット</span></dt>
-      <dd>命令に従って実際の物を動かす機械。<a class="glossary-backlink" href="#term-ref-1" aria-label="本文に戻る [1]">↩ 本文に戻る <span aria-hidden="true">[1]</span></a></dd>
-    </div>
-    
-    <div class="glossary-entry" id="term-2" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">02</span><span>モデル</span></dt>
-      <dd>データから動きや結果を予測する計算の仕組み。<a class="glossary-backlink" href="#term-ref-2" aria-label="本文に戻る [2]">↩ 本文に戻る <span aria-hidden="true">[2]</span></a></dd>
-    </div>
-    
-    <div class="glossary-entry" id="term-3" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">03</span><span>制御</span></dt>
-      <dd>機械をどのように動かすか決めること。<a class="glossary-backlink" href="#term-ref-3" aria-label="本文に戻る [3]">↩ 本文に戻る <span aria-hidden="true">[3]</span></a></dd>
-    </div>
-    
-    <div class="glossary-entry" id="term-4" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">04</span><span>学習</span></dt>
-      <dd>例や経験を使ってモデルの働きを調整すること。<a class="glossary-backlink" href="#term-ref-4" aria-label="本文に戻る [4]">↩ 本文に戻る <span aria-hidden="true">[4]</span></a></dd>
+      <dt><span class="glossary-index" aria-hidden="true">01</span><span>遠隔操作</span></dt>
+      <dd>人が離れた場所からロボットを動かすこと。<a class="glossary-backlink" href="#term-ref-1" aria-label="本文に戻る [1]">↩ 本文に戻る <span aria-hidden="true">[1]</span></a></dd>
     </div>
     
   </dl>

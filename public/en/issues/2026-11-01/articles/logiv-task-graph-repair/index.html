@@ -101,7 +101,7 @@
     
     <div class="issue-line">
       <p>Issue № 4 · <time datetime="2026-11-01">2026-11-01</time></p>
-      <p>rev. 2 · <a href="/en/archive/">Archive</a></p>
+      <p>rev. 3 · <a href="/en/archive/">Archive</a></p>
     </div>
   </header>
   <p class="pdf-link"><a href="/en/issues/2026-11-01/edition.pdf">PDF edition · A4</a></p>
@@ -111,7 +111,7 @@
 <p class="article-section">News</p>
 <article class="article-detail">
   
-  <h2>LOGIV checks robot<sup class="term-reference"><a id="term-ref-1" href="#term-1" role="doc-noteref" aria-label="Definition 1: robot">[1]</a></sup> task dependencies and repairs broken preconditions</h2>
+  <h2>LOGIV checks robot task dependencies and repairs broken preconditions</h2>
   
   
   <div class="article-text">
@@ -122,7 +122,7 @@
 <p>A robot may complete a placement correctly and still fail at the next step because someone has moved the object it needs. Researchers led by Enqiao Lu propose LOGIV, an execution framework for long-horizon robot tasks that treats this as a dependency problem rather than automatically blaming the motor controller. Their paper appeared on arXiv on October 29, 2026. The method monitors whether the physical conditions assumed by a multi-step plan remain true as the robot works, even after an earlier action has been marked complete.</p>
 
 
-<p>LOGIV represents a validated plan as a task graph. One kind of edge records which action supports a condition needed later; another orders actions that compete for resources. Observations are used to verify those relationships during execution. If a disturbance removes a required condition, dependency tracing identifies what needs to be restored. The system then constructs a local repair, preserves still-relevant unfinished actions, and symbolically validates the continuation before execution resumes. This is a supervisory layer above vision-language-action policies, often abbreviated VLA, or world-action models<sup class="term-reference"><a id="term-ref-2" href="#term-2" role="doc-noteref" aria-label="Definition 2: model">[2]</a></sup>; it does not introduce new trainable parameters into the underlying policy.</p>
+<p>LOGIV represents a validated plan as a task graph<sup class="term-reference"><a id="term-ref-1" href="#term-1" role="doc-noteref" aria-label="Definition 1: task graph">[1]</a></sup>. One kind of edge records which action supports a condition needed later; another orders actions that compete for resources. Observations are used to verify those relationships during execution. If a disturbance removes a required condition, dependency tracing identifies what needs to be restored. The system then constructs a local repair, preserves still-relevant unfinished actions, and symbolically validates the continuation before execution resumes. This is a supervisory layer above vision-language-action policies, often abbreviated VLA, or world-action models; it does not introduce new trainable parameters into the underlying policy.</p>
 
 
 <p>The researchers evaluated 20 dual-arm tasks drawn from RoboTwin V2 and BiCoord using three execution backbones. Without injected disturbances, they report mean task-success gains of 10.67 and 15.33 percentage points on the respective benchmarks. Under predefined disturbances, LOGIV outperformed three adapted recovery baselines in task completion and restoration of necessary conditions. On three physical-robot tasks, successful trials increased from 12 out of 30 to 17 out of 30. That is a measurable improvement, but it also leaves thirteen failures and should not be described as solved autonomy.</p>
@@ -145,13 +145,8 @@
   <dl class="glossary-list">
     
     <div class="glossary-entry" id="term-1" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">01</span><span>robot</span></dt>
-      <dd>A physical machine that performs commanded actions.<a class="glossary-backlink" href="#term-ref-1" aria-label="Back to text [1]">↩ Back to text <span aria-hidden="true">[1]</span></a></dd>
-    </div>
-    
-    <div class="glossary-entry" id="term-2" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">02</span><span>model</span></dt>
-      <dd>A computational system trained to predict or select actions.<a class="glossary-backlink" href="#term-ref-2" aria-label="Back to text [2]">↩ Back to text <span aria-hidden="true">[2]</span></a></dd>
+      <dt><span class="glossary-index" aria-hidden="true">01</span><span>task graph</span></dt>
+      <dd>A representation of task steps and the dependencies between them.<a class="glossary-backlink" href="#term-ref-1" aria-label="Back to text [1]">↩ Back to text <span aria-hidden="true">[1]</span></a></dd>
     </div>
     
   </dl>

@@ -101,7 +101,7 @@
     
     <div class="issue-line">
       <p>号 № 4 · <time datetime="2026-11-01">2026-11-01</time></p>
-      <p>rev. 2 · <a href="/ja/archive/">アーカイブ</a></p>
+      <p>rev. 3 · <a href="/ja/archive/">アーカイブ</a></p>
     </div>
   </header>
   <p class="pdf-link"><a href="/ja/issues/2026-11-01/edition.pdf">PDF版 · A4</a></p>
@@ -119,19 +119,19 @@
 <p>導入判断では、研究結果と保証された運用性能を区別する必要がある。動作生成と長期計画の信頼性を別の層として評価できる。 対象は限定された双腕作業で、実機の成功は30試行中17回にとどまる。</p>
 
 
-<p>ロボット<sup class="term-reference"><a id="term-ref-1" href="#term-1" role="doc-noteref" aria-label="ことばの説明 1: ロボット">[1]</a></sup>が物を正しく置いたとしても、その後で誰かが物を動かせば、次の作業は失敗する可能性がある。Enqiao Luらが2026年10月29日に公開したLOGIVは、この問題を個々の腕の動作ではなく、作業間の依存関係として扱う仕組みだ。長い手順を実行するとき、以前に成立した条件が現在も保たれているかを確認する。単に命令が終了したという記録だけを信用しない点が重要である。ロボットの動作モデル<sup class="term-reference"><a id="term-ref-2" href="#term-2" role="doc-noteref" aria-label="ことばの説明 2: モデル">[2]</a></sup>そのものを置き換える提案ではなく、その上位で実行を管理する研究である。</p>
+<p>ロボットが物を正しく置いたとしても、その後で誰かが物を動かせば、次の作業は失敗する可能性がある。Enqiao Luらが2026年10月29日に公開したLOGIVは、この問題を個々の腕の動作ではなく、作業間の依存関係として扱う仕組みだ。長い手順を実行するとき、以前に成立した条件が現在も保たれているかを確認する。単に命令が終了したという記録だけを信用しない点が重要である。ロボットの動作モデルそのものを置き換える提案ではなく、その上位で実行を管理する研究である。</p>
 
 
-<p>中心になるのは作業グラフという表現だ。ある動作が次の動作に必要な状態を作る関係や、同じ資源を使う作業の順序を、明示的なつながりとして保存する。実行中にはカメラなどの観測結果から条件を確かめる。外部の変化で前提が崩れた場合、どの依存関係が壊れたかをたどり、必要な部分だけを回復する手順を選ぶ。残っている作業との整合性も記号的な計画検証によって確認してから再開する。画像、言語、行動を結びつけるVLAモデルなどの上に置ける構成で、新しい学習<sup class="term-reference"><a id="term-ref-3" href="#term-3" role="doc-noteref" aria-label="ことばの説明 3: 学習">[3]</a></sup>パラメータを追加しない。</p>
+<p>中心になるのは作業グラフという表現だ。ある動作が次の動作に必要な状態を作る関係や、同じ資源を使う作業の順序を、明示的なつながりとして保存する。実行中にはカメラなどの観測結果から条件を確かめる。外部の変化で前提が崩れた場合、どの依存関係が壊れたかをたどり、必要な部分だけを回復する手順を選ぶ。残っている作業との整合性も記号的な計画検証によって確認してから再開する。画像、言語、行動を結びつけるVLAモデル<sup class="term-reference"><a id="term-ref-1" href="#term-1" role="doc-noteref" aria-label="ことばの説明 1: VLAモデル">[1]</a></sup>などの上に置ける構成で、新しい学習パラメータを追加しない。</p>
 
 
-<p>研究ではRoboTwin V2とBiCoordという二つの双腕作業評価環境から計20課題を用い、三種類の実行基盤で比較した。人為的な妨害を入れない条件では、平均成功率がそれぞれ10.67ポイントと15.33ポイント改善したと報告する。決められた妨害を加えた実験<sup class="term-reference"><a id="term-ref-4" href="#term-4" role="doc-noteref" aria-label="ことばの説明 4: 実験">[4]</a></sup>でも、比較した三つの復旧方式より作業完了と条件回復が良好だった。さらに実物のロボットを使った三課題では、30試行中の成功が12回から17回に増えた。改善は確認できる一方、13回は失敗しており、完全な自律運転が実証されたわけではない。</p>
+<p>研究ではRoboTwin V2とBiCoordという二つの双腕作業評価環境から計20課題を用い、三種類の実行基盤で比較した。人為的な妨害を入れない条件では、平均成功率がそれぞれ10.67ポイントと15.33ポイント改善したと報告する。決められた妨害を加えた実験でも、比較した三つの復旧方式より作業完了と条件回復が良好だった。さらに実物のロボットを使った三課題では、30試行中の成功が12回から17回に増えた。改善は確認できる一方、13回は失敗しており、完全な自律運転が実証されたわけではない。</p>
 
 
 <p>実装上の意味は、動作の上手さと作業全体の信頼性を切り分けられることにある。腕が正確に動いても、計画が古い環境状態を前提にしていれば失敗する。依存関係を明示すれば、その原因を特定して部分的に修復しやすい。ただし観測が誤っている場合、必要条件の定義が不完全な場合、あるいは回復に使う動作が用意されていない場合には限界がある。より長い工場工程や同時に起こる複数の変化については、追加の検証が必要である。</p>
 
 
-<p>再現性<sup class="term-reference"><a id="term-ref-5" href="#term-5" role="doc-noteref" aria-label="ことばの説明 5: 再現性">[5]</a></sup>を確かめるには、論文で実際に測った結果と、別の環境で期待される利点を分けて考える必要がある。次の技術的な検証では、設定値、試験場面の選び方、失敗の記録方法を変えたときの結果を調べることが重要だ。</p>
+<p>再現性を確かめるには、論文で実際に測った結果と、別の環境で期待される利点を分けて考える必要がある。次の技術的な検証では、設定値、試験場面の選び方、失敗の記録方法を変えたときの結果を調べることが重要だ。</p>
 </div>
   <footer><h3>出典</h3><ul><li><a href="https://arxiv.org/abs/2610.40016" rel="noopener noreferrer">LOGIV: Graph-Verified Execution with Causal Local Repair for Long-Horizon Robot Tasks</a> · <time>2026-10-29</time></li></ul></footer>
   
@@ -145,28 +145,8 @@
   <dl class="glossary-list">
     
     <div class="glossary-entry" id="term-1" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">01</span><span>ロボット</span></dt>
-      <dd>命令に従って実際の物を動かす機械。<a class="glossary-backlink" href="#term-ref-1" aria-label="本文に戻る [1]">↩ 本文に戻る <span aria-hidden="true">[1]</span></a></dd>
-    </div>
-    
-    <div class="glossary-entry" id="term-2" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">02</span><span>モデル</span></dt>
-      <dd>データから動きや結果を予測する計算の仕組み。<a class="glossary-backlink" href="#term-ref-2" aria-label="本文に戻る [2]">↩ 本文に戻る <span aria-hidden="true">[2]</span></a></dd>
-    </div>
-    
-    <div class="glossary-entry" id="term-3" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">03</span><span>学習</span></dt>
-      <dd>例や経験を使ってモデルの働きを調整すること。<a class="glossary-backlink" href="#term-ref-3" aria-label="本文に戻る [3]">↩ 本文に戻る <span aria-hidden="true">[3]</span></a></dd>
-    </div>
-    
-    <div class="glossary-entry" id="term-4" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">04</span><span>実験</span></dt>
-      <dd>決めた条件で考えや方法を試すこと。<a class="glossary-backlink" href="#term-ref-4" aria-label="本文に戻る [4]">↩ 本文に戻る <span aria-hidden="true">[4]</span></a></dd>
-    </div>
-    
-    <div class="glossary-entry" id="term-5" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">05</span><span>再現性</span></dt>
-      <dd>同じ条件で試したときに近い結果を得られる性質。<a class="glossary-backlink" href="#term-ref-5" aria-label="本文に戻る [5]">↩ 本文に戻る <span aria-hidden="true">[5]</span></a></dd>
+      <dt><span class="glossary-index" aria-hidden="true">01</span><span>VLAモデル</span></dt>
+      <dd>視覚情報と言葉の指示を、ロボットの動作につなげるモデル。<a class="glossary-backlink" href="#term-ref-1" aria-label="本文に戻る [1]">↩ 本文に戻る <span aria-hidden="true">[1]</span></a></dd>
     </div>
     
   </dl>

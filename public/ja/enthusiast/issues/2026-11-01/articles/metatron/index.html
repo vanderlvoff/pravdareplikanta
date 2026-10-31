@@ -101,7 +101,7 @@
     
     <div class="issue-line">
       <p>号 № 4 · <time datetime="2026-11-01">2026-11-01</time></p>
-      <p>rev. 2 · <a href="/ja/enthusiast/archive/">アーカイブ</a></p>
+      <p>rev. 3 · <a href="/ja/enthusiast/archive/">アーカイブ</a></p>
     </div>
   </header>
   <p class="pdf-link"><a href="/ja/enthusiast/issues/2026-11-01/edition.pdf">PDF版 · A4</a></p>
@@ -111,21 +111,21 @@
 <p class="article-section">ニュース</p>
 <article class="article-detail">
   
-  <h2>一つの全身制御<sup class="term-reference"><a id="term-ref-1" href="#term-1" role="doc-noteref" aria-label="ことばの説明 1: 制御">[1]</a></sup>モデル<sup class="term-reference"><a id="term-ref-2" href="#term-2" role="doc-noteref" aria-label="ことばの説明 2: モデル">[2]</a></sup>で歩行と物体操作を切り替える</h2>
+  <h2>一つの全身制御モデルで歩行と物体操作を切り替える</h2>
   
   
   <div class="article-text">
 
-<p>人型ロボット<sup class="term-reference"><a id="term-ref-3" href="#term-3" role="doc-noteref" aria-label="ことばの説明 3: ロボット">[3]</a></sup>が机まで歩き、止まり、手を伸ばし、姿勢を立て直すには、全身の動きを連続して調整する必要がある。従来は動作ごとに別の制御モデルを学習<sup class="term-reference"><a id="term-ref-4" href="#term-4" role="doc-noteref" aria-label="ことばの説明 4: 学習">[4]</a></sup>させる場合が多い。Chen Tesslerらが10月27日に公開したMetatronは、一つの学習済み全身制御モデルと、目的に応じて書き換えられる技能プログラムを組み合わせる研究である。ニュース一覧に掲載された日と、論文が最初に公開された日を混同してはいけない。</p>
+<p>人型ロボットが机まで歩き、止まり、手を伸ばし、姿勢を立て直すには、全身の動きを連続して調整する必要がある。従来は動作ごとに別の制御モデルを学習させる場合が多い。Chen Tesslerらが10月27日に公開したMetatronは、一つの学習済み全身制御モデルと、目的に応じて書き換えられる技能プログラムを組み合わせる研究である。ニュース一覧に掲載された日と、論文が最初に公開された日を混同してはいけない。</p>
 
 
 <p>基盤となるモデルには、関節の動きを最初から最後まで細かく指定する代わりに、体の一部をいつどこへ動かすか、どの方向へ進むか、どんな動き方にするかといった部分的な目標を与える。学習には動作計測の記録、バランスを崩した状態から戻る合成データ、物に触れる動作をロボットへ変換したデータを用いた。学習後はモデルの重みを固定し、新しい技能ごとに学習し直さない構成とした。</p>
 
 
-<p>技能は状態を覚える通常のプログラムとして記述される。プログラムが毎回おおまかな動作目標を示し、共通の制御モデルが全身の関節を協調させる。著者らは記録された動きを解析し、簡潔な規則を調整するプログラミング用のエージェントも使った。実機のUnitree G1では、同じモデルで歩行、姿勢の回復、家具への着座、遠隔操作を伴う物体の持ち上げを実演した。比較試験では、選ばれた従来方式より手を目標へ届ける成功率と押された際の頑健性が高いと報告している。</p>
+<p>技能は状態を覚える通常のプログラムとして記述される。プログラムが毎回おおまかな動作目標を示し、共通の制御モデルが全身の関節を協調させる。著者らは記録された動きを解析し、簡潔な規則を調整するプログラミング用のエージェントも使った。実機のUnitree G1では、同じモデルで歩行、姿勢の回復、家具への着座、遠隔操作<sup class="term-reference"><a id="term-ref-1" href="#term-1" role="doc-noteref" aria-label="ことばの説明 1: 遠隔操作">[1]</a></sup>を伴う物体の持ち上げを実演した。比較試験では、選ばれた従来方式より手を目標へ届ける成功率と押された際の頑健性が高いと報告している。</p>
 
 
-<p>ただし、物体を持ち上げる実験には人間の遠隔操作が関与しており、未知の部屋で自分だけで作業を理解した証拠ではない。論文にある登坂や曲芸的な動作はシミュレーション<sup class="term-reference"><a id="term-ref-5" href="#term-5" role="doc-noteref" aria-label="ことばの説明 5: シミュレーション">[5]</a></sup>上のキャラクターでの結果で、実物のG1で確認した内容とは区別する必要がある。計算資源、未知の接触条件、安全停止、家具の種類による失敗率などは実運用に向けた検証課題である。共通の運動能力と作業ごとの手順を分ける設計が、どこまで再利用できるかが今後の焦点となる。</p>
+<p>ただし、物体を持ち上げる実験には人間の遠隔操作が関与しており、未知の部屋で自分だけで作業を理解した証拠ではない。論文にある登坂や曲芸的な動作はシミュレーション上のキャラクターでの結果で、実物のG1で確認した内容とは区別する必要がある。計算資源、未知の接触条件、安全停止、家具の種類による失敗率などは実運用に向けた検証課題である。共通の運動能力と作業ごとの手順を分ける設計が、どこまで再利用できるかが今後の焦点となる。</p>
 
 
 <p>読者が注目したいのは、どこまでが実験で確かめられ、どこからが今後の目標なのかという点だ。成功した映像だけでなく、失敗した場合にどうなったか、試験中に変えなかった条件は何かを知ると、技術の意味がより明確になる。</p>
@@ -142,28 +142,8 @@
   <dl class="glossary-list">
     
     <div class="glossary-entry" id="term-1" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">01</span><span>制御</span></dt>
-      <dd>機械をどのように動かすか決めること。<a class="glossary-backlink" href="#term-ref-1" aria-label="本文に戻る [1]">↩ 本文に戻る <span aria-hidden="true">[1]</span></a></dd>
-    </div>
-    
-    <div class="glossary-entry" id="term-2" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">02</span><span>モデル</span></dt>
-      <dd>データから動きや結果を予測する計算の仕組み。<a class="glossary-backlink" href="#term-ref-2" aria-label="本文に戻る [2]">↩ 本文に戻る <span aria-hidden="true">[2]</span></a></dd>
-    </div>
-    
-    <div class="glossary-entry" id="term-3" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">03</span><span>ロボット</span></dt>
-      <dd>命令に従って実際の物を動かす機械。<a class="glossary-backlink" href="#term-ref-3" aria-label="本文に戻る [3]">↩ 本文に戻る <span aria-hidden="true">[3]</span></a></dd>
-    </div>
-    
-    <div class="glossary-entry" id="term-4" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">04</span><span>学習</span></dt>
-      <dd>例や経験を使ってモデルの働きを調整すること。<a class="glossary-backlink" href="#term-ref-4" aria-label="本文に戻る [4]">↩ 本文に戻る <span aria-hidden="true">[4]</span></a></dd>
-    </div>
-    
-    <div class="glossary-entry" id="term-5" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">05</span><span>シミュレーション</span></dt>
-      <dd>実物を動かす前にコンピューター内で試すこと。<a class="glossary-backlink" href="#term-ref-5" aria-label="本文に戻る [5]">↩ 本文に戻る <span aria-hidden="true">[5]</span></a></dd>
+      <dt><span class="glossary-index" aria-hidden="true">01</span><span>遠隔操作</span></dt>
+      <dd>人が離れた場所からロボットを動かすこと。<a class="glossary-backlink" href="#term-ref-1" aria-label="本文に戻る [1]">↩ 本文に戻る <span aria-hidden="true">[1]</span></a></dd>
     </div>
     
   </dl>

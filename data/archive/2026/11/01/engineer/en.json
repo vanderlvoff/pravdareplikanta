@@ -108,40 +108,24 @@
   },
   "glossary": [
     {
-      "term": "model",
-      "definition": "A computational system trained to predict or select actions."
+      "term": "VLA model",
+      "definition": "A model that connects visual input, language instructions and robot actions."
     },
     {
-      "term": "simulat",
-      "definition": "A test in a computer environment rather than on physical hardware."
+      "term": "task graph",
+      "definition": "A representation of task steps and the dependencies between them."
     },
     {
-      "term": "gripp",
-      "definition": "A device or action used to hold an object."
+      "term": "compliant gripper",
+      "definition": "A flexible gripper designed to tolerate small positioning errors while holding an object."
     },
     {
-      "term": "trajector",
-      "definition": "A movement path considered over time."
+      "term": "collision checking",
+      "definition": "A test of whether a planned robot motion intersects an obstacle."
     },
     {
-      "term": "learn",
-      "definition": "Adjusting a model from examples or experience."
-    },
-    {
-      "term": "control",
-      "definition": "Choosing commands that determine a machine's movement."
-    },
-    {
-      "term": "sensor",
-      "definition": "A device that measures a condition or contact."
-    },
-    {
-      "term": "reproducib",
-      "definition": "The ability to repeat an experiment with comparable results."
-    },
-    {
-      "term": "robot",
-      "definition": "A physical machine that performs commanded actions."
+      "term": "whole-body control",
+      "definition": "Coordination of a humanoid robot's torso, arms and legs as one system."
     }
   ],
   "sources": [

@@ -3,7 +3,7 @@
   "issue_id": "2026-11-01",
   "number": 4,
   "publication_date": "2026-11-01",
-  "revision": 2,
+  "revision": 3,
   "status": "approved",
   "languages": {
     "ru": {
@@ -314,75 +314,43 @@
           "body": [
             {
               "type": "heading",
-              "text": "модель"
+              "text": "тактильный сигнал"
             },
             {
               "type": "paragraph",
-              "text": "Обученная вычислительная система, которая предсказывает или выбирает действие."
+              "text": "Данные о прикосновении или усилии, которые помогают роботу понять, что происходит при контакте."
             },
             {
               "type": "heading",
-              "text": "захват"
+              "text": "диффузионная политика"
             },
             {
               "type": "paragraph",
-              "text": "Устройство или действие, позволяющее удерживать предмет."
+              "text": "Способ построения действий, при котором модель постепенно уточняет возможное движение."
             },
             {
               "type": "heading",
-              "text": "траектор"
+              "text": "модель динамики"
             },
             {
               "type": "paragraph",
-              "text": "Путь движения во времени."
+              "text": "Приближённое описание того, как робот или связанная с ним система движется в ответ на команды."
             },
             {
               "type": "heading",
-              "text": "обучени"
+              "text": "дистанционное управление"
             },
             {
               "type": "paragraph",
-              "text": "Настройка модели на примерах или опыте."
+              "text": "Управление роботом человеком на расстоянии, например для записи демонстрации."
             },
             {
               "type": "heading",
-              "text": "управлени"
+              "text": "пятипалая кисть"
             },
             {
               "type": "paragraph",
-              "text": "Выбор команд, определяющих движение машины."
-            },
-            {
-              "type": "heading",
-              "text": "датчик"
-            },
-            {
-              "type": "paragraph",
-              "text": "Устройство, измеряющее состояние или контакт."
-            },
-            {
-              "type": "heading",
-              "text": "робот"
-            },
-            {
-              "type": "paragraph",
-              "text": "Механическая система, которая выполняет действия по командам."
-            },
-            {
-              "type": "heading",
-              "text": "инструмент"
-            },
-            {
-              "type": "paragraph",
-              "text": "Сменное приспособление для конкретной операции."
-            },
-            {
-              "type": "heading",
-              "text": "эксперимент"
-            },
-            {
-              "type": "paragraph",
-              "text": "Проверка гипотезы в определённых условиях."
+              "text": "Роботизированная кисть с пятью пальцами, способная брать предметы разной формы."
             }
           ],
           "sources": [
@@ -739,75 +707,43 @@
           "body": [
             {
               "type": "heading",
-              "text": "tactile"
+              "text": "tactile feedback"
             },
             {
               "type": "paragraph",
-              "text": "A measurement or signal related to physical touch."
+              "text": "Touch or force measurements that help a robot respond during physical contact."
             },
             {
               "type": "heading",
-              "text": "model"
+              "text": "diffusion policy"
             },
             {
               "type": "paragraph",
-              "text": "A computational system trained to predict or select actions."
+              "text": "An action-generation method that gradually refines a possible movement."
             },
             {
               "type": "heading",
-              "text": "simulat"
+              "text": "dynamics model"
             },
             {
               "type": "paragraph",
-              "text": "A test in a computer environment rather than on physical hardware."
+              "text": "An approximation of how a robot or coupled system moves in response to commands."
             },
             {
               "type": "heading",
-              "text": "gripp"
+              "text": "teleoperation"
             },
             {
               "type": "paragraph",
-              "text": "A device or action used to hold an object."
+              "text": "A person controlling a robot remotely, often to provide demonstrations."
             },
             {
               "type": "heading",
-              "text": "trajector"
+              "text": "five-finger hand"
             },
             {
               "type": "paragraph",
-              "text": "A movement path considered over time."
-            },
-            {
-              "type": "heading",
-              "text": "learn"
-            },
-            {
-              "type": "paragraph",
-              "text": "Adjusting a model from examples or experience."
-            },
-            {
-              "type": "heading",
-              "text": "control"
-            },
-            {
-              "type": "paragraph",
-              "text": "Choosing commands that determine a machine's movement."
-            },
-            {
-              "type": "heading",
-              "text": "sensor"
-            },
-            {
-              "type": "paragraph",
-              "text": "A device that measures a condition or contact."
-            },
-            {
-              "type": "heading",
-              "text": "robot"
-            },
-            {
-              "type": "paragraph",
-              "text": "A physical machine that performs commanded actions."
+              "text": "A robotic hand with five fingers for handling objects of different shapes."
             }
           ],
           "sources": [
@@ -1164,75 +1100,43 @@
           "body": [
             {
               "type": "heading",
-              "text": "触覚"
+              "text": "触覚情報"
             },
             {
               "type": "paragraph",
-              "text": "物にふれたときの情報を測る仕組み。"
+              "text": "物に触れたときの力や接触を示し、ロボットの動きを助ける情報。"
             },
             {
               "type": "heading",
-              "text": "モデル"
+              "text": "拡散方策"
             },
             {
               "type": "paragraph",
-              "text": "データから動きや結果を予測する計算の仕組み。"
+              "text": "候補となる動きを少しずつ整えて、実行する動作を作る方法。"
             },
             {
               "type": "heading",
-              "text": "シミュレーション"
+              "text": "動力学モデル"
             },
             {
               "type": "paragraph",
-              "text": "実物を動かす前にコンピューター内で試すこと。"
+              "text": "命令を出したとき、ロボットがどう動くかを近似するモデル。"
             },
             {
               "type": "heading",
-              "text": "ハンド"
+              "text": "遠隔操作"
             },
             {
               "type": "paragraph",
-              "text": "物をつかむためのロボットの部品。"
+              "text": "人が離れた場所からロボットを動かすこと。"
             },
             {
               "type": "heading",
-              "text": "学習"
+              "text": "五本指ハンド"
             },
             {
               "type": "paragraph",
-              "text": "例や経験を使ってモデルの働きを調整すること。"
-            },
-            {
-              "type": "heading",
-              "text": "制御"
-            },
-            {
-              "type": "paragraph",
-              "text": "機械をどのように動かすか決めること。"
-            },
-            {
-              "type": "heading",
-              "text": "センサー"
-            },
-            {
-              "type": "paragraph",
-              "text": "物の状態や接触を調べる装置。"
-            },
-            {
-              "type": "heading",
-              "text": "再現性"
-            },
-            {
-              "type": "paragraph",
-              "text": "同じ条件で試したときに近い結果を得られる性質。"
-            },
-            {
-              "type": "heading",
-              "text": "ロボット"
-            },
-            {
-              "type": "paragraph",
-              "text": "命令に従って実際の物を動かす機械。"
+              "text": "形の違う物を持てる、五本の指を備えたロボットの手。"
             }
           ],
           "sources": [

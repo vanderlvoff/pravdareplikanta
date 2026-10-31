@@ -101,7 +101,7 @@
     
     <div class="issue-line">
       <p>Issue № 4 · <time datetime="2026-11-01">2026-11-01</time></p>
-      <p>rev. 2 · <a href="/en/archive/">Archive</a></p>
+      <p>rev. 3 · <a href="/en/archive/">Archive</a></p>
     </div>
   </header>
   <p class="pdf-link"><a href="/en/issues/2026-11-01/edition.pdf">PDF edition · A4</a></p>
@@ -111,7 +111,7 @@
 <p class="article-section">News</p>
 <article class="article-detail">
   
-  <h2>A binary feasibility checker becomes part of learning safe robot<sup class="term-reference"><a id="term-ref-1" href="#term-1" role="doc-noteref" aria-label="Definition 1: robot">[1]</a></sup> actions</h2>
+  <h2>A binary feasibility checker becomes part of learning safe robot actions</h2>
   
   
   <div class="article-text">
@@ -119,16 +119,16 @@
 <p>Adoption decisions must separate research results from guaranteed operational performance. Existing collision checkers can potentially constrain generative action policies even when they are not differentiable. One simulation task; per-action-chunk inference time rose from 0.071 to 1.345 seconds.</p>
 
 
-<p>A generative robot policy can produce an apparently plausible movement that crosses an obstacle or violates a joint limit. Jianming Ma and coauthors addressed this problem in a paper posted on October 29, 2026. Their approach works with flow matching, a method that constructs an action trajectory through successive updates. The distinctive assumption is that the system can ask a checker whether a proposed robot configuration is feasible, but cannot obtain a convenient equation or gradient describing the entire safe region. That makes the interface closer to many practical collision-checking systems.</p>
+<p>A generative robot policy can produce an apparently plausible movement that crosses an obstacle or violates a joint limit. Jianming Ma and coauthors addressed this problem in a paper posted on October 29, 2026. Their approach works with flow matching, a method that constructs an action trajectory through successive updates. The distinctive assumption is that the system can ask a checker whether a proposed robot configuration is feasible, but cannot obtain a convenient equation or gradient describing the entire safe region. That makes the interface closer to many practical collision-checking<sup class="term-reference"><a id="term-ref-1" href="#term-1" role="doc-noteref" aria-label="Definition 1: collision checking">[1]</a></sup> systems.</p>
 
 
-<p>The checker is called a binary feasibility oracle because it returns only an allowed-or-disallowed answer. During the forward generation process, the safeguard searches along a proposed update and truncates it before leaving the feasible region. During training, additional queries around the detected boundary estimate its local direction and supply an approximate gradient to the policy. Consequently, the model<sup class="term-reference"><a id="term-ref-2" href="#term-2" role="doc-noteref" aria-label="Definition 2: model">[2]</a></sup> learns<sup class="term-reference"><a id="term-ref-3" href="#term-3" role="doc-noteref" aria-label="Definition 3: learn">[3]</a></sup> while experiencing the same type of intervention it will face at inference time. The method does not require differentiating through the collision checker itself, although it does require feasible starting samples and enough oracle queries to detect boundaries.</p>
+<p>The checker is called a binary feasibility oracle because it returns only an allowed-or-disallowed answer. During the forward generation process, the safeguard searches along a proposed update and truncates it before leaving the feasible region. During training, additional queries around the detected boundary estimate its local direction and supply an approximate gradient to the policy. Consequently, the model learns while experiencing the same type of intervention it will face at inference time. The method does not require differentiating through the collision checker itself, although it does require feasible starting samples and enough oracle queries to detect boundaries.</p>
 
 
-<p>The authors evaluated a simulated RoboTwin 2.0 pick-and-place task in which an arm moved a bottle while avoiding another bottle, the tabletop, and joint limits. They fine-tuned a pretrained π0.5 action model on 150 expert trajectories with a single H100 GPU and tested 30 episodes. The safeguarded model succeeded in 11 of 30 episodes with a 100% checked-step safety rate. The original Gaussian-initialized baseline succeeded in 13 of 30 episodes but recorded only 78.25% safe steps. Inference time per action chunk increased from 0.071 to 1.345 seconds, a material latency penalty for a real control<sup class="term-reference"><a id="term-ref-4" href="#term-4" role="doc-noteref" aria-label="Definition 4: control">[4]</a></sup> stack.</p>
+<p>The authors evaluated a simulated RoboTwin 2.0 pick-and-place task in which an arm moved a bottle while avoiding another bottle, the tabletop, and joint limits. They fine-tuned a pretrained π0.5 action model on 150 expert trajectories with a single H100 GPU and tested 30 episodes. The safeguarded model succeeded in 11 of 30 episodes with a 100% checked-step safety rate. The original Gaussian-initialized baseline succeeded in 13 of 30 episodes but recorded only 78.25% safe steps. Inference time per action chunk increased from 0.071 to 1.345 seconds, a material latency penalty for a real control stack.</p>
 
 
-<p>The engineering result is therefore narrower and more useful than a headline claiming perfectly safe robots. The experiment demonstrates constraint compliance under the simulator&#39;s checker, not physical safety around people. The oracle used privileged simulation information, and a checker built from noisy sensors<sup class="term-reference"><a id="term-ref-5" href="#term-5" role="doc-noteref" aria-label="Definition 5: sensor">[5]</a></sup> might miss hazards. Straight interpolation can also fail in highly non-convex spaces where a detour is needed. A deployment evaluation would have to measure checker fidelity, worst-case latency, recovery from infeasible starts, and the effect of moving obstacles before treating the safeguard as a production safety mechanism.</p>
+<p>The engineering result is therefore narrower and more useful than a headline claiming perfectly safe robots. The experiment demonstrates constraint compliance under the simulator&#39;s checker, not physical safety around people. The oracle used privileged simulation information, and a checker built from noisy sensors might miss hazards. Straight interpolation can also fail in highly non-convex spaces where a detour is needed. A deployment evaluation would have to measure checker fidelity, worst-case latency, recovery from infeasible starts, and the effect of moving obstacles before treating the safeguard as a production safety mechanism.</p>
 
 
 <p>Reproducibility requires separating what the experiment measured from the benefits anticipated in other settings. The next engineering step is to test sensitivity to configuration, scene selection and failure logging.</p>
@@ -145,28 +145,8 @@
   <dl class="glossary-list">
     
     <div class="glossary-entry" id="term-1" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">01</span><span>robot</span></dt>
-      <dd>A physical machine that performs commanded actions.<a class="glossary-backlink" href="#term-ref-1" aria-label="Back to text [1]">↩ Back to text <span aria-hidden="true">[1]</span></a></dd>
-    </div>
-    
-    <div class="glossary-entry" id="term-2" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">02</span><span>model</span></dt>
-      <dd>A computational system trained to predict or select actions.<a class="glossary-backlink" href="#term-ref-2" aria-label="Back to text [2]">↩ Back to text <span aria-hidden="true">[2]</span></a></dd>
-    </div>
-    
-    <div class="glossary-entry" id="term-3" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">03</span><span>learn</span></dt>
-      <dd>Adjusting a model from examples or experience.<a class="glossary-backlink" href="#term-ref-3" aria-label="Back to text [3]">↩ Back to text <span aria-hidden="true">[3]</span></a></dd>
-    </div>
-    
-    <div class="glossary-entry" id="term-4" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">04</span><span>control</span></dt>
-      <dd>Choosing commands that determine a machine&#39;s movement.<a class="glossary-backlink" href="#term-ref-4" aria-label="Back to text [4]">↩ Back to text <span aria-hidden="true">[4]</span></a></dd>
-    </div>
-    
-    <div class="glossary-entry" id="term-5" tabindex="-1">
-      <dt><span class="glossary-index" aria-hidden="true">05</span><span>sensor</span></dt>
-      <dd>A device that measures a condition or contact.<a class="glossary-backlink" href="#term-ref-5" aria-label="Back to text [5]">↩ Back to text <span aria-hidden="true">[5]</span></a></dd>
+      <dt><span class="glossary-index" aria-hidden="true">01</span><span>collision checking</span></dt>
+      <dd>A test of whether a planned robot motion intersects an obstacle.<a class="glossary-backlink" href="#term-ref-1" aria-label="Back to text [1]">↩ Back to text <span aria-hidden="true">[1]</span></a></dd>
     </div>
     
   </dl>
