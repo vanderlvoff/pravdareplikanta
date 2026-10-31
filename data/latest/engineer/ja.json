@@ -6,202 +6,90 @@
   "issue_id": "daily-2026-10-31",
   "edition": "engineer",
   "language": "ja",
-  "generated_at": "2026-10-31T13:48:50.995Z",
+  "generated_at": "2026-10-31T23:06:42+09:00",
   "title": "レプリカント・プラウダ — 技術者版",
-  "lead": "機体上のVLA、多指ハンド、行動の整合性、移動の記憶、巡回ロボットを扱う6本の記事。",
+  "lead": "動きの予測と失敗を生かす学習についての新しい研究。",
   "news": [
     {
-      "id": "openflyv2-onboard",
-      "title": "OpenFlyV2、ドローン上で画像と言語から飛行動作を決定",
-      "summary": "研究チームはJetson Orin NXで画像・言語・行動を統合し、実環境4種類でナビゲーション成功率48％と報告した。",
-      "details": "機体内で12個の経由点を一組として毎秒10回生成する。",
-      "technical_novelty": "共通の視覚言語表現を、小型の行動生成部と動きの履歴を扱う記憶に接続した。",
-      "engineering_impact": "外部計算機に頼らないVLA制御の具体的な構成例となる。",
-      "limitations": "成功率48％では実用上の信頼性は未証明。コード公開も予告段階。",
-      "evidence_status": "著者のプレプリントと実機飛行試験であり、独立した再現は未確認。",
+      "id": "worldflow-video-3d",
+      "title": "未来の映像と3次元の動きを予測するWorldFlow",
+      "summary": "10月29日の研究は、未来の映像と点の3次元移動を予測するモデルを報告。SpatialCogでの平均変位誤差は0.060メートル。",
+      "details": "研究者は144万件の物体データで学習し、11の情報源から1678件を集めたWorldFlowBenchで評価した。SpatialCogでは平均変位誤差が0.060メートルとなり、著者が比較した最も強い外部手法より54.2%小さかった。",
+      "technical_novelty": "映像と空間の動きを共通の生成モデルで予測する。",
+      "engineering_impact": "ロボットの計画に役立つ可能性があるが、制御器そのものではない。",
+      "limitations": "予測精度は自律作業の成功率を意味しない。",
+      "evidence_status": "著者の実験を含むプレプリント。",
       "published_at": "2026-10-29",
-      "organization": "OpenFlyV2 research authors",
+      "organization": "WorldFlow research authors",
       "source_ids": [
-        "openflyv2-source"
+        "worldflow-source"
       ],
       "time_window": "72h",
-      "body": "VLA（Vision-Language-Action）は、カメラ画像と言葉の指示からロボットの行動を決めるモデルだ。研究チームのOpenFlyV2は、この考え方をドローンに適用した。周囲の状況を理解し、物の位置関係を考え、飛行動作を選ぶ仕組みを機体上でまとめて動かす。画像を説明するだけでなく、新しい観測に合わせて動作を更新することが目的である。\n\n計算にはNVIDIA Jetson Orin NXを使う。小型の行動生成部が経由点12個を一組にして毎秒10回出力する。経由点とは経路の途中に置く目標位置だ。動きの履歴を扱う記憶を利用して計算量を抑え、飛行中も観測し直して次の動作を決める。これは閉ループ制御と呼ばれる。\n\n学習にはシミュレーションで作った約7万本の移動軌跡と約6万組の画像・言語データを用いた。実飛行データで追加学習せずに実機へ移し、4種類の環境で成功率48％と報告した。仮想環境から実機への移行を示すが、安全な運用を保証する数字ではない。遅延、消費電力、照明変化、動く障害物をさらに検証する必要がある。コードは今後公開予定とされる。",
+      "body": "ロボットが動く前に、物がどう動くか予測できれば役に立つ。10月29日に発表されたWorldFlowは、未来の映像と、指定した点が3次元空間でどう動くかを同時に予測する世界モデルだ。モーターを直接動かす装置ではない。\n\n研究者は144万件の物体データで学習し、11の情報源から1678件を集めたWorldFlowBenchで評価した。SpatialCogでは平均変位誤差が0.060メートルとなり、著者が比較した最も強い外部手法より54.2%小さかった。\n\n実機に使うには計算の遅れ、カメラのずれ、物が隠れる場面での誤差を調べる必要がある。位置の予測が正確でも、安全な作業ができるとは限らない。",
       "image": null
     },
     {
-      "id": "dexsuite-framework",
-      "title": "DexSuite、異なるロボットハンドを共通条件で比較",
-      "summary": "公開された実験環境は30課題、10種類のアーム、12種類の手先装置、成功したシミュレーション4700試行を含む。",
-      "details": "Genesis上で片腕100種類超、両腕では数千通りの構成を扱える。",
-      "technical_novelty": "共通API、遠隔操作、模擬触覚センサーを組み合わせて比較を支える。",
-      "engineering_impact": "実験環境を作り直す負担を減らし、再現性の検討に役立つ。",
-      "limitations": "4700試行は仮想環境の結果であり、実機への一般的な移行性能は未証明。",
-      "evidence_status": "公開研究プロジェクトとプレプリント。報告された試行はシミュレーションに基づく。",
-      "published_at": "2026-10-27",
-      "organization": "DexSuite research authors",
-      "source_ids": [
-        "dexsuite-source"
-      ],
-      "time_window": "7d",
-      "body": "ロボットの物体操作を比べるとき、研究ごとに腕の形や課題、物理計算が違えば結果を直接比較しにくい。研究チームが公開したDexSuiteは、Genesisというシミュレータを使った共通実験環境だ。腕や手先の装置を交換しても、同じ形式で制御と評価を行えるようにしている。\n\n収録されたのは30課題、10種類のアーム、12種類のエンドエフェクタである。エンドエフェクタは腕の先端に付くハンドや工具を指す。組み合わせは片腕で100種類を超え、両腕では数千通りになる。共通API（プログラムから操作する窓口）に加え、遠隔操作と接触を模擬する触覚センサーも備える。比較用のベンチマークは課題と機体の組み合わせ16条件で構成される。\n\n著者らは成功した4700件のシミュレーション試行を公開した。人による遠隔操作、プログラム化した手順、学習した制御方策から集めたデータだ。共通の条件は再現実験に役立つが、仮想空間の摩擦や物体の変形が現実と同じとは限らない。モーターの遅れやセンサーの雑音も異なるため、現場への適用には実機での評価が欠かせない。",
-      "image": null
-    },
-    {
-      "id": "acrossdex-two-hands",
-      "title": "AcrossDEX、人の手の動きを学び2本のロボットハンドを協調",
-      "summary": "AcrossDEX 1.0は人の手の動きで事前学習し、InspireとAllegroという異なるロボットハンドで物体操作を試した。",
-      "details": "画像と過去の指令を使って動作を短く計画し直し、ふたの開閉や物の向きの変更を行う。",
-      "technical_novelty": "手首の動きの表現を共有しながら、指の制御は各ハンドの構造に合わせる。",
-      "engineering_impact": "異なる機械構造へ同じ学習手順を適用する可能性を示す。",
-      "limitations": "成功率は課題によって40.6％から100％まで異なり、どんな物にも使えるとは示されていない。",
-      "evidence_status": "著者のプレプリントと実験。独立した再現は未確認。",
+      "id": "event2reward-progress",
+      "title": "失敗からも進み具合を学ぶEvent2Reward",
+      "summary": "10月29日の研究では失敗記録を学習に利用し、LIBEROの40課題で成功率が基準より平均18.16ポイント高くなった。",
+      "details": "研究者は失敗を含む約10万件の実機動作記録を調べ、近くの状態どうしの進み具合を比較した。LIBEROの40課題では、作業完了時だけ報酬を与える基準手法より平均成功率が18.16ポイント高かった。",
+      "technical_novelty": "近くの状態どうしの進捗関係を学習用の報酬に利用する。",
+      "engineering_impact": "失敗した動作記録からも学習情報を得られる。",
+      "limitations": "著者の課題での結果であり、安全な工場運用は未実証。",
+      "evidence_status": "著者によるシミュレーションと実機実験のプレプリント。",
       "published_at": "2026-10-29",
-      "organization": "AcrossDEX research authors",
+      "organization": "Event2Reward research authors",
       "source_ids": [
-        "acrossdex-source"
+        "event2reward-source"
       ],
       "time_window": "72h",
-      "body": "箱のふたを両手で開けるとき、人は片手で箱を押さえ、もう片方でふたを動かす。ロボットには、二つの手首と多数の指を同時に動かし、物を落とさない工夫が必要だ。研究チームが発表したAcrossDEX 1.0は、二つのロボットハンドで物を扱う「双腕の器用な操作」を学習する仕組みである。\n\n最初に人の手の動きを記録したデータで学び、次にシミュレーションやロボットの実演データを利用する。手首の動きを表す情報は共有する一方、指の命令はハンドごとに変える。研究では6つの制御チャンネルを持つInspireと、16関節のAllegroを使用した。構造が違うため、同じ関節角度をそのままコピーすることはできない。\n\n動作時にはカメラ画像と過去の指令から短い動作列を予測し、その一部を実行してから再び観測する。これは結果を見ながら計画を更新する方法だ。著者らは、直接数値を予測する方法と、diffusionやflow matchingと呼ばれる確率的な動作生成方法を比較した。\n\n成功率は課題によって大きく違う。直接予測では、ふたを開けて戻す課題が40.6％、Inspireによる物体の向きの変更が100％、Allegroでは93.3％だった。flow matchingによるAllegroの向き変更は90％。これは特定の試験結果であり、どんな物も人間のように扱える証拠ではない。未知の物体でも使えるかが次の問いになる。\n\nInspireとAllegroの間では手首の動作表現を共有する一方、指のパラメータは機構ごとに分け、存在しない自由度をマスクする。短い動作列を部分実行して再計画するため、接触の連続性が重要になる。再現には成功条件、対象物、制御周期の統一が必要だ。",
-      "image": null
-    },
-    {
-      "id": "coract-reason-action",
-      "title": "CoRAct、ロボットの説明と実際の動作の一致を学習",
-      "summary": "CoRActはVLAモデルが考えた動きと、生成した行動の予測結果が合うかを評価して学習する方法だ。",
-      "details": "動く方向と経由点を使い、候補の行動が予測した結果に近いかを採点する。",
-      "technical_novelty": "途中の空間的な予測を、文章の説明だけでなく行動生成の改善に利用する。",
-      "engineering_impact": "計画と実行のずれを調べる方法として応用が考えられる。",
-      "limitations": "RoboCasa、VLABench、実機課題での改善は著者報告であり、一般的な安全性は未証明。",
-      "evidence_status": "著者のプレプリントと評価実験。独立した産業実証はない。",
-      "published_at": "2026-10-29",
-      "organization": "CoRAct research authors",
-      "source_ids": [
-        "coract-source"
-      ],
-      "time_window": "72h",
-      "body": "ロボットが物を置く場所を正しく説明しても、実際には違う方向へ動かすことがある。研究チームのCoRActは、こうした説明と行動のずれを減らす方法だ。対象はVLA（Vision-Language-Action）モデルで、カメラ画像と言葉の指示からロボットの動作を作る。途中の予測を、実際の動きの結果と結び付けようとしている。\n\nCoRActは意図した移動方向と経由点を使う。経由点は途中で通ると予想した位置である。複数の動作候補を作り、それぞれが意図した方向や予測結果にどれほど合うかを評価する。その評価を次の学習に利用する。ここでいう「推論」は人間と同じ理解を意味せず、位置や動きについて検証可能な予測を作ることを指す。\n\n著者らはRoboCasaとVLABenchというロボット動作の評価環境や、実機の物体操作で改善を報告した。別の課題に専用の追加学習なしで適用するzero-shotについても検討している。ただし、誤った指示を必ず見抜ける、危険な接触を必ず防げるという証明ではない。\n\n物が滑ったとき、カメラが位置を読み違えたとき、人が目標を変えたときにも計画と動作は一致するだろうか。CoRActはその問いを具体的な実験に変える方法を示す。幅広い機体での独立した再現評価はこれからだ。\n\nCoRActは意図した移動と予測経由点に対する行動候補の一致度を評価し、生成器の初期ノイズを群内の相対評価で最適化する。技術評価では空間予測誤差、課題成功率、危険な接触の回数を分けて測る必要がある。",
-      "image": null
-    },
-    {
-      "id": "evolife-robot-memory",
-      "title": "EvoLife、ロボットが道を覚えて人に質問する研究",
-      "summary": "研究チームは、道を探し、場所を覚え、分からないときに人へ質問できる仕組みEvoLifeを発表した。",
-      "details": "前に見た場所や会話の情報を保存し、次に同じ場所へ行くときに利用する。",
-      "technical_novelty": "場所の記憶と質問する機能を、いくつかの移動方法と組み合わせる。",
-      "engineering_impact": "同じ建物を何度も移動するロボットに役立つ可能性がある。",
-      "limitations": "決められた試験での高い成功率は、どんな建物でも失敗しない証拠ではない。",
-      "evidence_status": "研究者による論文と実機での数日間の実験。別の研究者による確認はまだない。",
-      "published_at": "2026-10-29",
-      "organization": "EvoLife research authors",
-      "source_ids": [
-        "evolife-source"
-      ],
-      "time_window": "72h",
-      "body": "初めて大きな博物館に行くとき、階段の場所を覚えたり、道が分からなければ係の人に聞いたりするだろう。研究チームが発表したEvoLifeは、ロボットにも似た役立つしくみを持たせようとする研究だ。ロボットとは、まわりの様子を調べて、現実の世界で動ける機械のことだ。\n\nEvoLifeは目的地までの道を選び、前に見た場所や会話の情報を保存し、必要なときに人へ質問する。これは人間と同じ思い出ではなく、コンピューターに保存された場所や観測のデータだ。目的地への道を探すことをナビゲーションという。前に通った場所の情報を次の移動に使えるようにしている。\n\n研究者は、物を探したり言葉の指示で進んだりする8種類の評価の集まりで試した。決められた一部の試験では、それぞれ100回の初回移動がすべて成功したと報告している。実際のロボットを数日間使った実験も行った。ただし、どんな建物でも迷わないという意味ではない。家具が動いたり、ドアが閉まったりするかもしれない。\n\nロボットはだれに質問すればよいのだろう。聞いた答えが正しいかはどう確かめるのだろう。「分からないので助けてください」と言えることも大切だ。EvoLifeはまだ研究段階（けんきゅうだんかい）で、どこでも一人で働けることが証明（しょうめい）されたわけではない。\n\nEvoLifeは経由点への移動、局所的な修正、画像上の位置を指定する移動、対象物への移動を組み合わせる。空間記憶は観測と対話を場所に結び付ける。著者らはR2R再訪問で、経路長を考慮した成功指標SPLが82.23％から93.31％に改善したと報告する。これは実機の安全運用率ではない。\n\n運用には古くなった記憶の更新、助言の確認、安全停止が必要だ。実験での能動的な問い合わせは1エピソード平均1.87回と報告されているが、評価課題に依存する値である。",
-      "image": null
-    },
-    {
-      "id": "kit-go2-patrol",
-      "title": "金沢工業大学の四足歩行巡回ロボット、実証試験へ",
-      "summary": "金沢工業大学と企業2社はUnitree Go2を使う巡回システムの試作を完成。24時間連続試験は今後実施する計画だ。",
-      "details": "100メートル四方の地図を使った自律巡回機能を持ち、L1 LiDARと自動充電を利用する。",
-      "technical_novelty": "移動経路、距離センサー、充電設備を組み合わせて建物の巡回業務を検討する。",
-      "engineering_impact": "顧客は稼働率、異常時の対応、人的介入、保守費用を確認する必要がある。",
-      "limitations": "24時間連続運転の実証結果はまだ公表されていない。",
-      "evidence_status": "大学の公式発表による試作とPoC計画であり、独立した運用統計はない。",
-      "published_at": "2026-10-28",
-      "organization": "Kanazawa Institute of Technology",
-      "source_ids": [
-        "kit-go2-source"
-      ],
-      "time_window": "7d",
-      "body": "巡回ロボットの価値は、短いデモで歩けることより、夜間にも安定して巡回を終えられるかで決まる。金沢工業大学は10月28日、金沢機工とAIロボットシステムズとの共同開発を発表した。使う機体は四足歩行ロボットUnitree Go2である。大学によれば試作機は完成し、PoC（概念実証）、つまり実際の用途に近い条件で使えるかを確かめる段階に入った。\n\n試作機は100メートル四方の範囲を地図に基づいて自律巡回できるとされる。L1 LiDARはレーザーで周囲の物までの距離を測るセンサーで、水平方向360度、垂直方向90度の視野が示されている。自動充電も長時間運用のために使う。大学構内で24時間連続の試験を行い、その後に工場やオフィスでの実証を目指す計画だ。\n\n想定業務は定時巡回、設備の点検、危険な場所の遠隔確認などである。導入企業は人の通行、閉じた扉、通信障害、充電の失敗にどう対応するかを確認したい。巡回完了率、稼働率、担当者が介入した回数、保守費用も必要な指標になる。現時点の発表には予定された24時間試験の結果はなく、人件費削減の効果もまだ示されていない。\n\n技術構成は、水平方向360度・垂直方向90度の視野を持つとされるL1 LiDAR、地図に基づく経路制御、自動充電である。100メートル四方という範囲は自己位置推定精度や巡回完了率を示さない。予定された24時間試験では故障、担当者の介入、復旧時間を記録する必要がある。",
+      "body": "ロボットが物を落としたら、時間は進んでも仕事は進んでいない。10月29日に発表されたEvent2Rewardは、停滞や後戻り、回復を区別して強化学習の報酬を作る方法だ。報酬は、行動が目標に近づいたかを伝える信号である。\n\n研究者は失敗を含む約10万件の実機動作記録を調べ、近くの状態どうしの進み具合を比較した。LIBEROの40課題では、作業完了時だけ報酬を与える基準手法より平均成功率が18.16ポイント高かった。\n\n実機では30分の学習後、精密な挿入の3課題で平均60%、物体操作の3課題で90%の成功率だった。ただし、危険な失敗を自由に試せるわけではなく、安全制限と別の環境での検証が必要だ。",
       "image": null
     }
   ],
   "technology_signal": {
-    "title": "モデルから動作へ、実機での検証が重要",
-    "summary": "6件の研究・開発は制御、接触、記憶、フィードバック、試験条件を扱う。",
-    "implications": "動作の品質、失敗条件、シミュレーションからの移行、実機コストを分けて測定する。"
+    "title": "未来の映像と3次元の動きを予測するWorldFlow",
+    "summary": "10月29日の研究は、未来の映像と点の3次元移動を予測するモデルを報告。SpatialCogでの平均変位誤差は0.060メートル。",
+    "implications": "実機での検証が必要だ。"
   },
   "glossary": [
     {
-      "term": "VLA",
-      "definition": "画像と言葉から行動を決めるモデル。"
+      "term": "世界モデル",
+      "definition": "物理的な場面の変化を予測するモデル。"
     },
     {
-      "term": "閉ループ制御",
-      "definition": "新しい観測で次の命令を更新する制御。"
+      "term": "3次元の軌道",
+      "definition": "空間中の点が通る道筋。"
     },
     {
-      "term": "経由点",
-      "definition": "移動経路の途中にある目標位置。"
+      "term": "平均誤差",
+      "definition": "予測と実際のずれの平均。"
     },
     {
-      "term": "sim-to-real",
-      "definition": "仮想環境から実機への移行。"
+      "term": "強化学習",
+      "definition": "報酬を手掛かりに行動を学ぶ方法。"
     },
     {
-      "term": "エンドエフェクタ",
-      "definition": "ロボットの腕の先端にある手や工具。"
-    },
-    {
-      "term": "フィードバック",
-      "definition": "動作の結果を次の判断に使うこと。"
-    },
-    {
-      "term": "SPL",
-      "definition": "経路長を考慮したナビゲーション成功指標。"
+      "term": "報酬",
+      "definition": "行動の役立ち方を示す数値の信号。"
     }
   ],
   "sources": [
     {
-      "id": "openflyv2-source",
-      "title": "OpenFlyV2: An onboard vision-language-action model for aerial perception and navigation",
-      "url": "https://arxiv.org/abs/2610.39287",
+      "id": "worldflow-source",
+      "title": "WorldFlow: Joint Video and 3D Motion Prediction via Large-Scale Pretraining",
+      "url": "https://arxiv.org/abs/2610.39278",
       "domain": "arxiv.org",
-      "organization": "OpenFlyV2 research authors",
+      "organization": "WorldFlow research authors",
       "published_at": "2026-10-29"
     },
     {
-      "id": "dexsuite-source",
-      "title": "DexSuite: An All-in-One Framework for Dexterous Manipulation Across Arms, Hands, and Tasks",
-      "url": "https://arxiv.org/abs/2610.37799",
+      "id": "event2reward-source",
+      "title": "Event2Reward: Learning Robotic Rewards from Progress Relations",
+      "url": "https://arxiv.org/abs/2610.39212",
       "domain": "arxiv.org",
-      "organization": "DexSuite research authors",
-      "published_at": "2026-10-27"
-    },
-    {
-      "id": "acrossdex-source",
-      "title": "AcrossDEX 1.0: From Human Motion Pretraining to Bimanual Dexterous Manipulation across Hand Embodiments",
-      "url": "https://arxiv.org/abs/2610.40210",
-      "domain": "arxiv.org",
-      "organization": "AcrossDEX research authors",
+      "organization": "Event2Reward research authors",
       "published_at": "2026-10-29"
-    },
-    {
-      "id": "coract-source",
-      "title": "From Reasoning to Action: Consequence-Grounded Alignment for Vision-Language-Action Models",
-      "url": "https://arxiv.org/abs/2610.39543",
-      "domain": "arxiv.org",
-      "organization": "CoRAct research authors",
-      "published_at": "2026-10-29"
-    },
-    {
-      "id": "evolife-source",
-      "title": "Ask to Evolve: A Unified Harness for Lifelong Embodied Navigation with Hybrid Action Space and Persistent Memory",
-      "url": "https://arxiv.org/abs/2610.39446",
-      "domain": "arxiv.org",
-      "organization": "EvoLife research authors",
-      "published_at": "2026-10-29"
-    },
-    {
-      "id": "kit-go2-source",
-      "title": "四足歩行ロボット「Unitree Go2」を活用した巡回ロボットの社会実装を目指して",
-      "url": "https://www.kanazawa-it.ac.jp/kitnews/2026/1028_unitree-go2.html",
-      "domain": "www.kanazawa-it.ac.jp",
-      "organization": "Kanazawa Institute of Technology",
-      "published_at": "2026-10-28"
     }
   ]
 }
