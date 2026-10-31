@@ -6,7 +6,7 @@
   "issue_id": "daily-2026-11-01",
   "edition": "enthusiast",
   "language": "en",
-  "generated_at": "2026-10-31T16:51:31Z",
+  "generated_at": "2026-11-01T03:51:01+09:00",
   "title": "Replicant Data — Curious Minds",
   "lead": "How robots learn to change tools, move and carry out sequences of actions.",
   "news": [
@@ -102,9 +102,9 @@
     }
   ],
   "technology_signal": {
-    "title": "From isolated tricks to verifiable work",
-    "summary": "Research and demonstrations expand the range of robot actions, but the strength of the result depends on test conditions.",
-    "implications": "Evaluation should cover failures, repeatability, cost and human intervention as well as successful attempts."
+    "title": "How robots combine sensing and movement",
+    "summary": "Tool changes, towing, screw removal and humanoid motion depend on coordinated contact, planning and control.",
+    "implications": "Beyond impressive videos, ask what was learned and what people programmed in advance."
   },
   "glossary": [
     {
@@ -113,7 +113,7 @@
     },
     {
       "term": "diffusion policy",
-      "definition": "An action-generation method that gradually refines a possible movement."
+      "definition": "Learned controller that iteratively refines a proposed action sequence."
     },
     {
       "term": "dynamics model",

@@ -6,7 +6,7 @@
   "issue_id": "daily-2026-11-01",
   "edition": "business",
   "language": "en",
-  "generated_at": "2026-10-31T16:51:31Z",
+  "generated_at": "2026-11-01T03:51:01+09:00",
   "title": "Replicant Data — Business Edition",
   "lead": "Robotics from demonstrations to deployment: integration, economics and evidence.",
   "news": [
@@ -102,22 +102,22 @@
     }
   ],
   "technology_signal": {
-    "title": "From isolated tricks to verifiable work",
-    "summary": "Research and demonstrations expand the range of robot actions, but the strength of the result depends on test conditions.",
-    "implications": "Evaluation should cover failures, repeatability, cost and human intervention as well as successful attempts."
+    "title": "Robotics: measure operations, not promises",
+    "summary": "Warehouse deployments, Japanese expansion plans and experimental grippers represent different levels of commercial maturity.",
+    "implications": "Adoption decisions must distinguish operating systems from future plans and account for integration, maintenance and economics."
   },
   "glossary": [
     {
-      "term": "Robots-as-a-Service (RaaS)",
-      "definition": "A service model in which a customer receives robot capability and support rather than simply buying the machine."
+      "term": "deployment",
+      "definition": "Installation and operation of a robot in its intended workplace."
     },
     {
-      "term": "pilot deployment",
-      "definition": "A limited trial of a technology in a real workflow before wider rollout."
+      "term": "pilot project",
+      "definition": "Limited real-world test before wider deployment."
     },
     {
-      "term": "system integration",
-      "definition": "Connecting a robot with site equipment, safety procedures and business operations."
+      "term": "integration",
+      "definition": "Connecting a robot to equipment, procedures and safety controls."
     },
     {
       "term": "return on investment",

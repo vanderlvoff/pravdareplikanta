@@ -6,7 +6,7 @@
   "issue_id": "daily-2026-11-01",
   "edition": "children",
   "language": "en",
-  "generated_at": "2026-10-31T16:51:31Z",
+  "generated_at": "2026-11-01T03:51:01+09:00",
   "title": "Replicant Data — Young Explorers",
   "lead": "Five stories about how robots pick things up, pull loads and learn from tests.",
   "news": [
@@ -102,9 +102,9 @@
     }
   ],
   "technology_signal": {
-    "title": "From isolated tricks to verifiable work",
-    "summary": "Research and demonstrations expand the range of robot actions, but the strength of the result depends on test conditions.",
-    "implications": "Evaluation should cover failures, repeatability, cost and human intervention as well as successful attempts."
+    "title": "One successful test is not the whole story",
+    "summary": "These robots grasp objects, tow a wagon and try packing orders, but their tests use different conditions.",
+    "implications": "To understand the results, ask how often they succeeded, what happened after mistakes and where people helped."
   },
   "glossary": [
     {
@@ -120,8 +120,8 @@
       "definition": "The planned path the robot and its wagon will follow."
     },
     {
-      "term": "attempt",
-      "definition": "One try at a task; several attempts show how often it works."
+      "term": "repeatability",
+      "definition": "Whether similar results occur when a test is repeated under the same conditions."
     },
     {
       "term": "five-finger hand",

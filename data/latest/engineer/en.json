@@ -6,7 +6,7 @@
   "issue_id": "daily-2026-11-01",
   "edition": "engineer",
   "language": "en",
-  "generated_at": "2026-10-31T16:51:31Z",
+  "generated_at": "2026-11-01T03:51:01+09:00",
   "title": "Replicant Data — Engineering Edition",
   "lead": "New robot control methods, evaluation protocols and their reproducibility limits.",
   "news": [
@@ -102,14 +102,14 @@
     }
   ],
   "technology_signal": {
-    "title": "From isolated tricks to verifiable work",
-    "summary": "Research and demonstrations expand the range of robot actions, but the strength of the result depends on test conditions.",
-    "implications": "Evaluation should cover failures, repeatability, cost and human intervention as well as successful attempts."
+    "title": "From successful motion to verifiable control",
+    "summary": "This edition examines task graphs, motion constraints, adaptation costs and reproducibility rather than demonstrations alone.",
+    "implications": "Deployment requires testing on new scenes, measuring latency and documenting experimental conditions."
   },
   "glossary": [
     {
-      "term": "VLA model",
-      "definition": "A model that connects visual input, language instructions and robot actions."
+      "term": "reproducibility",
+      "definition": "Ability to repeat an experiment under documented conditions and obtain comparable results."
     },
     {
       "term": "task graph",
@@ -120,8 +120,8 @@
       "definition": "A flexible gripper designed to tolerate small positioning errors while holding an object."
     },
     {
-      "term": "collision checking",
-      "definition": "A test of whether a planned robot motion intersects an obstacle."
+      "term": "trajectory",
+      "definition": "Time-ordered sequence of robot states or commands."
     },
     {
       "term": "whole-body control",

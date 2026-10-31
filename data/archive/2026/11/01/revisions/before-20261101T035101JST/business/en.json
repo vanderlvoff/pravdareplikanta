@@ -1,0 +1,173 @@
+{
+  "schema_version": "1.4",
+  "publication": "pravda_replikanta",
+  "issue_type": "daily",
+  "issue_date": "2026-11-01",
+  "issue_id": "daily-2026-11-01",
+  "edition": "business",
+  "language": "en",
+  "generated_at": "2026-10-31T16:51:31Z",
+  "title": "Replicant Data — Business Edition",
+  "lead": "Robotics from demonstrations to deployment: integration, economics and evidence.",
+  "news": [
+    {
+      "id": "swapbot-tools",
+      "title": "Robot tool swapping gains tactile feedback",
+      "summary": "Yunchu Zhang and colleagues introduced SwapBot, a tool-changing robot interface with tactile sensors. Adding touch data improved task success by 15–25 percentage points over vision-only learning in their experiments.",
+      "details": "The architecture uses a fixed coupling on the robot and inexpensive adapters on ordinary tools. This changes the arm's function without requiring a new sophisticated gripper for every task. The authors describe compatibility with different tools, including articulated ones, and multiple robot platforms. The connection must physically secure the tool; merely bringing it close to the wrist would not work.",
+      "technical_novelty": "Compact tactile sensors are built into the adapters. A camera can show where an object is but may not reveal how firmly a tool presses against it. Operators collected demonstrations through teleoperation, then trained imitation-learning policies to select movements from examples. Reported tasks include cooking tofu, stirring salad and flipping meat.",
+      "engineering_impact": "The work offers an alternative to building one universal robotic hand: select the tool that suits the action. It does not demonstrate a robot preparing an entire meal autonomously in an unfamiliar kitchen. Wider object sets, unexpected contacts, long duty cycles and independent replication are still necessary before deployment claims become credible.",
+      "limitations": "The engineering contribution is a common interface for changing tools, sensing contact and recording demonstrations. It can make comparisons between vision and touch more systematic and allow hardware to be reused across tasks. However, allowable forces, connector wear, swapping speed, cleaning requirements and recovery from failed coupling still need prolonged testing.",
+      "evidence_status": "Research preprint; results are author-reported, without independent replication.",
+      "published_at": "2026-10-29",
+      "organization": "Yunchu Zhang et al.",
+      "source_ids": [
+        "src-swapbot-tools-20261029"
+      ],
+      "time_window": "7d",
+      "body": "Different kitchen actions require different tools: a knife cuts, a brush spreads liquid and a spatula turns food. Researchers led by Yunchu Zhang introduced SwapBot, a system that lets a robot arm exchange tools autonomously. The October 29, 2026 preprint describes a research prototype rather than a household appliance ready to cook without supervision.\n\nThe architecture uses a fixed coupling on the robot and inexpensive adapters on ordinary tools. This changes the arm's function without requiring a new sophisticated gripper for every task. The authors describe compatibility with different tools, including articulated ones, and multiple robot platforms. The connection must physically secure the tool; merely bringing it close to the wrist would not work.\n\nCompact tactile sensors are built into the adapters. A camera can show where an object is but may not reveal how firmly a tool presses against it. Operators collected demonstrations through teleoperation, then trained imitation-learning policies to select movements from examples. Reported tasks include cooking tofu, stirring salad and flipping meat.\n\nCompared with learning from RGB images alone, adding tactile data increased success by 15 to 25 percentage points in the reported experiments. User studies also found shorter task completion times and lower operator workload during teleoperation. These results concern particular laboratory tasks, not a universal reliability guarantee for every tool and material.\n\nThe engineering contribution is a common interface for changing tools, sensing contact and recording demonstrations. It can make comparisons between vision and touch more systematic and allow hardware to be reused across tasks. However, allowable forces, connector wear, swapping speed, cleaning requirements and recovery from failed coupling still need prolonged testing.\n\nThe work offers an alternative to building one universal robotic hand: select the tool that suits the action. It does not demonstrate a robot preparing an entire meal autonomously in an unfamiliar kitchen. Wider object sets, unexpected contacts, long duty cycles and independent replication are still necessary before deployment claims become credible.\n\nAn implementation team should define acceptance criteria in advance: results on representative workloads, recovery time after failures, operator intervention and support cost. A demonstration of feasibility is not a substitute for measuring these outcomes at a customer site.",
+      "image": null
+    },
+    {
+      "id": "gxo-digit-multisite",
+      "title": "GXO plans to expand Digit humanoid operations to two more warehouses",
+      "summary": "GXO Logistics and Agility Robotics announced plans to deploy Digit humanoids at sites in North Carolina and Tennessee beginning in 2027. The companies report more than 100,000 totes moved at their existing warehouse, but have not disclosed the new fleet size or contract economics.",
+      "details": "A commercial warehouse deployment is moving toward a multi-site rollout under a robots-as-a-service arrangement.",
+      "technical_novelty": "The expansion is expected to start with Digit 4 and later migrate to Digit 5, supported by Agility Arc fleet software.",
+      "engineering_impact": "Integration must account for conveyors, safety procedures, support, uptime and changes between sites.",
+      "limitations": "The additional sites are planned rather than operating; unit economics and independently audited performance are unavailable.",
+      "evidence_status": "Joint company announcement, with operating figures supplied by the partners rather than independent verification.",
+      "published_at": "2026-10-26",
+      "organization": "GXO Logistics and Agility Robotics",
+      "source_ids": [
+        "src-gxo-agility-20261026"
+      ],
+      "time_window": "7d",
+      "body": "The engineering question is how execution works and which constraints were actually tested. The expansion is expected to start with Digit 4 and later migrate to Digit 5, supported by Agility Arc fleet software. The additional sites are planned rather than operating; unit economics and independently audited performance are unavailable.\n\nA repeatable warehouse operation matters more to a customer than an impressive one-off robot demonstration. On October 26, 2026, GXO Logistics and Agility Robotics announced an expansion of their Digit humanoid partnership to two more US sites, in Statesville, North Carolina, and Lebanon, Tennessee. Deployments are expected to start in early 2027. The announcement is a plan for additional operations, not evidence that those two sites are already running. It builds on the existing GXO facility in Flowery Branch, Georgia, where Digit handles repetitive tote movement and places containers onto conveyors.\n\nThe partners say Digit has moved more than 100,000 totes at the Georgia facility. That cumulative figure establishes that work has occurred in a live logistics environment, but it does not reveal throughput per hour, human intervention rates, operating cost or total robot-hours. The arrangement is described as robots-as-a-service, meaning the customer obtains robotic capability and ongoing service rather than simply buying machines outright. Agility Arc is the cloud-based fleet-management and integration platform associated with the existing agreement.\n\nThe next sites will support e-commerce fulfillment and are expected to start with Digit 4, then transition to Digit 5 once the newer model is commercially available. For an implementation team, a multi-site rollout raises questions about conveyor interfaces, workspace safety, maintenance coverage, spare units, shift schedules and software change management. A skill that works in one warehouse does not automatically reproduce its economics in another building with different layouts and demand patterns. The new deployment is an opportunity to test operational transfer, not proof that transfer has already succeeded.\n\nNeither company disclosed the number of robots for the additional sites, contract value, payback period or independently audited productivity figures. The evidence therefore supports two narrower conclusions: a customer has decided to expand a live commercial relationship, and the original site has accumulated substantial tote-handling activity. A purchasing decision elsewhere should still require a measured baseline, uptime and exception logs, labor and integration costs, and an agreed method for calculating value. The commercial signal is credible, but the return on investment remains unquantified in this release.\n\nAn implementation team should define acceptance criteria in advance: results on representative workloads, recovery time after failures, operator intervention and support cost. A demonstration of feasibility is not a substitute for measuring these outcomes at a customer site.",
+      "image": null
+    },
+    {
+      "id": "elyza-robotics-japan-scale",
+      "title": "KDDI and ELYZA form a Japanese vehicle for deploying physical AI",
+      "summary": "KDDI and ELYZA announced that ELYZA Robotics has begun operations to combine robot-model research with enterprise integration. Their targets include ¥30 billion in research investment, more than 300 specialists and over 1,000 deployed robots by fiscal 2030, all of which are plans rather than achieved outcomes.",
+      "details": "The company began operating on October 1 and was publicly announced on October 27 with separate research and operations platforms.",
+      "technical_novelty": "The roadmap combines vision-language-action models, site data, digital twins, distributed inference and remote supervision.",
+      "engineering_impact": "Enterprise integration is proposed across retail, logistics, manufacturing and services using multiple robot types.",
+      "limitations": "No independently verified deployments, autonomy metrics or unit economics were provided.",
+      "evidence_status": "Corporate strategy and investment announcement, not an independent technical evaluation.",
+      "published_at": "2026-10-27",
+      "organization": "KDDI and ELYZA",
+      "source_ids": [
+        "src-elyza-robotics-20261027"
+      ],
+      "time_window": "7d",
+      "body": "The engineering question is how execution works and which constraints were actually tested. The roadmap combines vision-language-action models, site data, digital twins, distributed inference and remote supervision. No independently verified deployments, autonomy metrics or unit economics were provided.\n\nJapan's KDDI telecommunications group and AI developer ELYZA are establishing a dedicated organization for physical AI rather than treating robot intelligence as an isolated research product. Their October 27, 2026 announcement says ELYZA Robotics began operating on October 1. The group targets ¥30 billion of research and development investment, a specialist organization of more than 300 people, and more than 1,000 robots introduced into workplaces by fiscal 2030. These figures are forward-looking commitments and should not be mistaken for robots already deployed or capital already spent.\n\nThe proposed architecture spans three levels. Research teams plan to develop vision-language models that interpret images and text, and vision-language-action models that additionally produce robot actions. Implementation teams will collect data from workplaces and use digital twins, which are software representations of real equipment and processes, to support testing. Operations platforms are intended to provide distributed model execution, remote monitoring and coordination between machines. The combination recognizes a familiar deployment problem: an impressive robot skill does not become a business service until it can interact reliably with the customer's systems and procedures.\n\nKDDI identifies retail, logistics, manufacturing and services as early areas of application, with partners from its wider group including Lawson and Soracom. The company also expects to source different categories of robots, including industrial arms, quadrupeds and humanoids, according to the task. That could reduce dependence on one mechanical design, but creates integration demands around interfaces, training data, security, maintenance and responsibility for failures. Proof-of-concept projects are planned from 2026, with adoption expected to progress in stages.\n\nThe release contains no audited installed-base figure, measured autonomy rate, cost per completed task or customer payback calculation. The business case is therefore a strategic hypothesis, not an independently demonstrated result. A prospective customer should ask how safety validation is performed, how site-specific data is governed, which party supports a malfunctioning robot, and whether model updates require renewed acceptance testing. The meaningful milestone will be repeated, supportable operation in real workplaces rather than the announced size of the investment program.\n\nAn implementation team should define acceptance criteria in advance: results on representative workloads, recovery time after failures, operator intervention and support cost. A demonstration of feasibility is not a substitute for measuring these outcomes at a customer site.",
+      "image": null
+    },
+    {
+      "id": "simto-robust-grippers",
+      "title": "Soft grippers can be shaped to forgive positioning errors",
+      "summary": "Kurt Enkera and colleagues developed a simulation-driven method for designing soft grippers across objects and grasp poses. They generated 6,646 designs and physically tested 24 against conventional alternatives.",
+      "details": "Instead of optimizing for one ideal object and pose, the method simulates contact with several geometries and grasp positions. The resulting forces guide improvements to the compliant structure. Part of the robustness problem therefore moves from complicated control software into mechanical design. Cameras still matter, but small positioning errors may become less damaging.",
+      "technical_novelty": "The team generated 6,646 candidate designs and physically evaluated 24. Comparisons included ten specialized soft designs, two rigid baseline grippers and one conventional general-purpose soft gripper. In total, 37 devices were tested with five objects featuring distinctive shapes, six grasp poses and progressively stronger external disturbances during pick-and-place operations.",
+      "engineering_impact": "The broader lesson is that useful mechanical design can make a robot forgiving before the controller intervenes. That may matter in sorting, assembly and handling irregular objects. Long-term wear, contamination, cycle speed and performance with heavier or unfamiliar items remain open questions for practical deployment.",
+      "limitations": "On average, SimTO-Robust designs transferred objects more reliably than specialized soft designs and rigid baselines. The strongest candidates tolerated larger disturbances than the other tested devices. These findings apply to the reported materials, objects and conditions, not to every possible gripper or load.",
+      "evidence_status": "Research preprint; results are author-reported, without independent replication.",
+      "published_at": "2026-10-29",
+      "organization": "Kurt Enkera et al.",
+      "source_ids": [
+        "src-simto-robust-grippers-20261029"
+      ],
+      "time_window": "7d",
+      "body": "A robot may recognize an object correctly yet place its gripper slightly off target. Rigid fingers can lose contact, while a soft gripper may deform around the object. Researchers led by Kurt Enkera introduced SimTO-Robust, a computer-aided design method intended to make grippers tolerant of such errors through their physical shape.\n\nInstead of optimizing for one ideal object and pose, the method simulates contact with several geometries and grasp positions. The resulting forces guide improvements to the compliant structure. Part of the robustness problem therefore moves from complicated control software into mechanical design. Cameras still matter, but small positioning errors may become less damaging.\n\nThe team generated 6,646 candidate designs and physically evaluated 24. Comparisons included ten specialized soft designs, two rigid baseline grippers and one conventional general-purpose soft gripper. In total, 37 devices were tested with five objects featuring distinctive shapes, six grasp poses and progressively stronger external disturbances during pick-and-place operations.\n\nOn average, SimTO-Robust designs transferred objects more reliably than specialized soft designs and rigid baselines. The strongest candidates tolerated larger disturbances than the other tested devices. These findings apply to the reported materials, objects and conditions, not to every possible gripper or load.\n\nThe broader lesson is that useful mechanical design can make a robot forgiving before the controller intervenes. That may matter in sorting, assembly and handling irregular objects. Long-term wear, contamination, cycle speed and performance with heavier or unfamiliar items remain open questions for practical deployment.\n\nAn implementation team should define acceptance criteria in advance: results on representative workloads, recovery time after failures, operator intervention and support cost. A demonstration of feasibility is not a substitute for measuring these outcomes at a customer site.",
+      "image": null
+    },
+    {
+      "id": "rlwrld-packing",
+      "title": "Five-finger robot demonstrates order packing at a Tokyo event",
+      "summary": "RLWRLD reported on October 30 that its RLDX-1 robotics foundation model was demonstrated at KDDI SUMMIT in Tokyo. A robot with a five-finger hand handled small items in a packing workflow, but no independently verified throughput or long-duration reliability figures were disclosed.",
+      "details": "The exhibit used a robot equipped with a five-finger hand. According to RLWRLD, it removed a cardboard box from a conveyor, recognized small products of different materials and shapes, including smartphone accessories, and packed them for shipment. This is a description of an event demonstration, not an independent warehouse audit. The announcement supplies no comparable figures for items per hour, failed picks, damaged goods or hours of continuous unattended operation.",
+      "technical_novelty": "For a logistics operator, the real integration questions concern conveyors, inventory data, recovery from misaligned products, worker safety and responsibility for exceptions. A five-finger hand may provide flexibility for varied objects, but that alone does not establish an advantage over simpler grippers or purpose-built equipment. The company also mentions pilot projects with industrial partners; those statements do not establish completed, economically viable deployments. Cost, maintenance and operator workload remain open questions.",
+      "engineering_impact": "A credible next step would be a trial using a representative product mix and predefined measures of throughput, damage, human interventions and cost per order. At present the evidence is a company account of a public demonstration, with no independent verification of sustained performance. The news therefore signals progress toward applying robotics foundation models to fulfillment work, not proof that arbitrary warehouses can now run autonomously.",
+      "limitations": "A credible next step would be a trial using a representative product mix and predefined measures of throughput, damage, human interventions and cost per order. At present the evidence is a company account of a public demonstration, with no independent verification of sustained performance. The news therefore signals progress toward applying robotics foundation models to fulfillment work, not proof that arbitrary warehouses can now run autonomously.",
+      "evidence_status": "Company-reported demonstration; independent performance data unavailable.",
+      "published_at": "2026-10-30",
+      "organization": "RLWRLD",
+      "source_ids": [
+        "src-rlwrld-kddi-summit-20261030"
+      ],
+      "time_window": "72h",
+      "body": "Packing an order is not simply a matter of lifting a box. A robot must distinguish small products, position them without damage and handle changes in shape or material. On October 30, 2026, RLWRLD reported a public demonstration of this workflow at KDDI SUMMIT in Tokyo. The event itself took place on October 27 and 28, so the announcement date should not be confused with the demonstration dates. The company described RLDX-1 as its robotics foundation model for controlling physical actions.\n\nThe exhibit used a robot equipped with a five-finger hand. According to RLWRLD, it removed a cardboard box from a conveyor, recognized small products of different materials and shapes, including smartphone accessories, and packed them for shipment. This is a description of an event demonstration, not an independent warehouse audit. The announcement supplies no comparable figures for items per hour, failed picks, damaged goods or hours of continuous unattended operation.\n\nFor a logistics operator, the real integration questions concern conveyors, inventory data, recovery from misaligned products, worker safety and responsibility for exceptions. A five-finger hand may provide flexibility for varied objects, but that alone does not establish an advantage over simpler grippers or purpose-built equipment. The company also mentions pilot projects with industrial partners; those statements do not establish completed, economically viable deployments. Cost, maintenance and operator workload remain open questions.\n\nA credible next step would be a trial using a representative product mix and predefined measures of throughput, damage, human interventions and cost per order. At present the evidence is a company account of a public demonstration, with no independent verification of sustained performance. The news therefore signals progress toward applying robotics foundation models to fulfillment work, not proof that arbitrary warehouses can now run autonomously.",
+      "image": null
+    }
+  ],
+  "technology_signal": {
+    "title": "From isolated tricks to verifiable work",
+    "summary": "Research and demonstrations expand the range of robot actions, but the strength of the result depends on test conditions.",
+    "implications": "Evaluation should cover failures, repeatability, cost and human intervention as well as successful attempts."
+  },
+  "glossary": [
+    {
+      "term": "Robots-as-a-Service (RaaS)",
+      "definition": "A service model in which a customer receives robot capability and support rather than simply buying the machine."
+    },
+    {
+      "term": "pilot deployment",
+      "definition": "A limited trial of a technology in a real workflow before wider rollout."
+    },
+    {
+      "term": "system integration",
+      "definition": "Connecting a robot with site equipment, safety procedures and business operations."
+    },
+    {
+      "term": "return on investment",
+      "definition": "A comparison between deployment costs and the value gained over time."
+    },
+    {
+      "term": "foundation model",
+      "definition": "A broadly trained model that can be adapted for more specific tasks."
+    }
+  ],
+  "sources": [
+    {
+      "id": "src-swapbot-tools-20261029",
+      "title": "SwapBot: Tool-Centric Robot Manipulation via Interchangeable End-Effectors and Tactile Sensing",
+      "url": "https://arxiv.org/abs/2610.40646",
+      "domain": "arxiv.org",
+      "organization": "Yunchu Zhang et al.",
+      "published_at": "2026-10-29"
+    },
+    {
+      "id": "src-gxo-agility-20261026",
+      "url": "https://www.agilityrobotics.com/content/gxo-and-agility-robotics-expand-partnership-to-accelerate-deployment-of-humanoids-in-u-s-operations",
+      "domain": "agilityrobotics.com",
+      "organization": "GXO Logistics and Agility Robotics",
+      "published_at": "2026-10-26",
+      "title": "GXO and Agility Robotics Expand Partnership to Accelerate Deployment of Humanoids in U.S. Operations"
+    },
+    {
+      "id": "src-elyza-robotics-20261027",
+      "url": "https://prtimes.jp/main/html/rd/p/000000086.000047565.html",
+      "domain": "prtimes.jp",
+      "organization": "KDDI and ELYZA",
+      "published_at": "2026-10-27",
+      "title": "フィジカルAIを推進する新会社「ELYZA Robotics」事業開始"
+    },
+    {
+      "id": "src-simto-robust-grippers-20261029",
+      "title": "SimTO-Robust: Automated Design of Soft Grippers Robust to Grasp Pose and Object Geometry",
+      "url": "https://arxiv.org/abs/2610.39560",
+      "domain": "arxiv.org",
+      "organization": "Kurt Enkera et al.",
+      "published_at": "2026-10-29"
+    },
+    {
+      "id": "src-rlwrld-kddi-summit-20261030",
+      "title": "RLWRLD KDDI SUMMIT 2026 RLDX-1 logistics packing demonstration",
+      "url": "https://prtimes.jp/main/html/rd/p/000000006.000183256.html",
+      "domain": "prtimes.jp",
+      "organization": "RLWRLD",
+      "published_at": "2026-10-30"
+    }
+  ]
+}
