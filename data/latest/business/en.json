@@ -6,90 +6,90 @@
   "issue_id": "daily-2026-10-31",
   "edition": "business",
   "language": "en",
-  "generated_at": "2026-10-31T13:48:50.995Z",
+  "generated_at": "2026-10-31T23:06:42+09:00",
   "title": "Pravda Replikanta — Business Edition",
-  "lead": "Two Japanese initiatives raise deployment questions: improving VLA data and making patrol robots reliable in real buildings.",
+  "lead": "Production deployment and how to measure useful robot work.",
   "news": [
     {
-      "id": "fastlabel-data-competition",
-      "title": "FastLabel puts VLA data quality to a physical test",
-      "summary": "Japan's FastLabel announced a GENIAC-PRIZE student competition to improve robot datasets, retrain VLA models and evaluate them on a real SO-ARM101 arm.",
-      "details": "The proposed cycle of curation, training and hardware testing is planned for January–February 2027.",
-      "technical_novelty": "It focuses on repeatable data-quality improvements followed by physical evaluation, rather than model ranking alone.",
-      "engineering_impact": "Offers customers a process model for managing and auditing robotics training data.",
-      "limitations": "The contest has not taken place; performance gains and process costs are unknown.",
-      "evidence_status": "Company announcement of an accepted competition proposal, not a model performance result.",
-      "published_at": "2026-10-30",
-      "organization": "FastLabel",
+      "id": "yaskawa-gr-welding",
+      "title": "Yaskawa and GAZOO Racing bring adaptive welding into production",
+      "summary": "On October 28 Yaskawa reported that a MOTOMAN NEXT system began operating in September at a GR KART frame workshop, combining welding, inspection and correction.",
+      "details": "The robot assesses pipe-frame conditions, performs welding, inspects the result and makes corrections. The companies describe analysis of images, welding sound and other process data. The work builds on an earlier SFA process, short for Sequence Freezing Arc Welding. A previously reported reduction in roll-cage fabrication from two or three weeks to three days concerns that earlier process; it is not a measured improvement from the new robot installation.",
+      "technical_novelty": "Image, welding-sound and process-data analysis informs actions and quality checks.",
+      "engineering_impact": "A production installation extends automation beyond repeating a programmed weld path.",
+      "limitations": "Independent defect-rate, cycle-time and cost data for the new system are not disclosed.",
+      "evidence_status": "Official deployment report; benefits remain manufacturer claims.",
+      "published_at": "2026-10-28",
+      "organization": "Yaskawa Electric and GAZOO Racing",
       "source_ids": [
-        "fastlabel-source"
+        "yaskawa-release"
       ],
-      "time_window": "72h",
-      "body": "Choosing a larger model does not automatically solve a robot deployment's data problem. On October 30, FastLabel, a Japanese company specializing in artificial-intelligence datasets, announced that its proposal had been accepted into the GENIAC-PRIZE 2026 initiative involving Japan's METI and NEDO. The proposal targets Physical AI, systems that sense and act in the world, through VLA models. Vision-language-action (VLA) models connect camera input and language instructions to robot commands.\n\nStudent participants are expected to curate robot-operation recordings, correct labels and add examples before training models and testing them on a physical SO-ARM101 arm at FastLabel's office. The loop is intended to repeat. The planned contest runs for roughly two and a half weeks in January–February 2027. Submissions include code, the trained model, the dataset and a report; evaluation combines hardware trials with the written analysis.\n\nFor an integrator, the interesting issue is the operating model: data collection, review, traceability and repeated physical tests may become substantial project costs alongside compute. But acceptance into a contest is not evidence that any VLA has improved. The release does not establish accuracy gains, return on investment or deployment readiness. Those questions require the future evaluation results and a clear account of the cost of improving the data.",
+      "time_window": "7d",
+      "body": "Following a programmed welding path is not enough when workpieces vary. On October 28, Yaskawa Electric and Toyota's GAZOO Racing reported that an AI-assisted MOTOMAN NEXT system had entered production in September at a GR KART frame workshop in Gamagori, Japan. The announcement describes a working manufacturing process, not merely a laboratory demonstration.\n\nThe robot assesses pipe-frame conditions, performs welding, inspects the result and makes corrections. The companies describe analysis of images, welding sound and other process data. The work builds on an earlier SFA process, short for Sequence Freezing Arc Welding. A previously reported reduction in roll-cage fabrication from two or three weeks to three days concerns that earlier process; it is not a measured improvement from the new robot installation.\n\nFor a purchaser, the missing figures are manual rework, defect rates, cycle-time variation, maintenance cost and safety performance. The manufacturers claim productivity and cost benefits without independent financial validation. The important advance is the integration of inspection and correction into a production operation.",
       "image": null
     },
     {
-      "id": "kit-go2-patrol",
-      "title": "Japan's Go2 patrol prototype moves toward proof-of-concept testing",
-      "summary": "Kanazawa Institute of Technology and partners have developed a Unitree Go2 patrol prototype; a continuous 24-hour test is still planned, not completed.",
-      "details": "The prototype maps and patrols an area of 100 by 100 metres, using an L1 lidar and automatic charging.",
-      "technical_novelty": "It combines autonomous routes, ranging sensors and charging infrastructure for building patrols.",
-      "engineering_impact": "Customers should assess uptime, incident procedures, operator interventions and operating costs.",
-      "limitations": "The proposed 24-hour operation is not yet backed by completed continuous-run results.",
-      "evidence_status": "Official university announcement about a prototype and planned PoC, not independent field statistics.",
-      "published_at": "2026-10-28",
-      "organization": "Kanazawa Institute of Technology",
+      "id": "agibot-worken-measure",
+      "title": "AGIBOT wants to measure useful robot work, not just fleet size",
+      "summary": "At its October 29 Shanghai event, AGIBOT proposed Worken as a measure of productive autonomous work and unveiled G2 Max with a claimed combined dual-arm payload of up to 40 kg.",
+      "details": "The company also announced AHA3 hardware, the GO-3 Preview embodied model, WITA-Omni for interaction and the G2 Max industrial robot. For G2 Max it claims 21 degrees of freedom, up to 40 kilograms of combined dual-arm handling capacity and an adjustable working height from 0.1 to 2.5 metres. These are vendor specifications, not independently measured throughput.",
+      "technical_novelty": "A proposed output metric accompanies new robot hardware and embodied models.",
+      "engineering_impact": "Buyers need reliable output and intervention rates rather than deployment counts alone.",
+      "limitations": "Worken is not an independently validated standard; cross-task accounting remains unclear.",
+      "evidence_status": "Official vendor announcement without independent audit.",
+      "published_at": "2026-10-29",
+      "organization": "AGIBOT",
       "source_ids": [
-        "kit-go2-source"
+        "agibot-release"
       ],
-      "time_window": "7d",
-      "body": "A patrol robot's commercial value depends less on a polished demonstration than on whether it can reliably finish its rounds overnight. On October 28, Kanazawa Institute of Technology announced joint work with Kanazawa Kiko and AI Robot Systems on a patrol system based on the Unitree Go2 quadruped. The university says a prototype is complete and the project has entered a proof-of-concept (PoC) stage: testing whether an idea works under realistic conditions.\n\nThe team reports autonomous map-based patrol over a 100-by-100-metre area. An L1 lidar, a laser ranging sensor that measures distances to surrounding objects, provides a stated field of view of 360 degrees horizontally and 90 degrees vertically. Automatic charging is part of the proposed long-duration operation. A continuous 24-hour campus test is planned, followed by trials in factories and office buildings.\n\nPotential duties include routine rounds, equipment checks and remote observation of hazardous areas. A buyer still needs evidence about people crossing the route, locked doors, network failures, charging interruptions and escalation to human staff. Useful procurement metrics include completed patrols, uptime, operator interventions and maintenance costs. The university announcement contains no results from the planned 24-hour run and does not demonstrate a labor-saving return on investment.",
+      "time_window": "72h",
+      "body": "A robot buyer needs useful output, not an impressive shipment count. At its October 29 event in Shanghai, AGIBOT introduced Worken, a proposed concept combining the words 'work' and 'token'. It aims to measure productive autonomous robot activity. The proposal has not become an independently established industry standard.\n\nThe company also announced AHA3 hardware, the GO-3 Preview embodied model, WITA-Omni for interaction and the G2 Max industrial robot. For G2 Max it claims 21 degrees of freedom, up to 40 kilograms of combined dual-arm handling capacity and an adjustable working height from 0.1 to 2.5 metres. These are vendor specifications, not independently measured throughput.\n\nA deployment decision should consider completed cycles, uptime, operator interventions, quality, safety and total cost. An hour of box transport is not directly equivalent to an hour of precision assembly. Until AGIBOT publishes a transparent method for comparing different tasks, Worken is best treated as a useful question for procurement rather than a finished productivity standard.",
       "image": null
     }
   ],
   "technology_signal": {
-    "title": "Hardware tests matter more than promises",
-    "summary": "FastLabel plans physical evaluation of data improvements; the Go2 patrol project is preparing continuous trials.",
-    "implications": "Deployment decisions need measured reliability, ownership costs and clear failure procedures."
+    "title": "Yaskawa and GAZOO Racing bring adaptive welding into production",
+    "summary": "On October 28 Yaskawa reported that a MOTOMAN NEXT system began operating in September at a GR KART frame workshop, combining welding, inspection and correction.",
+    "implications": "Independent quality, cost and output metrics remain essential."
   },
   "glossary": [
     {
-      "term": "VLA",
-      "definition": "A model connecting visual observations and instructions to robot actions."
+      "term": "Adaptive welding",
+      "definition": "Welding that responds to workpiece conditions."
     },
     {
-      "term": "data labeling",
-      "definition": "Adding annotations that help a model learn from examples."
+      "term": "Quality inspection",
+      "definition": "Checking an output against requirements."
     },
     {
-      "term": "PoC",
-      "definition": "A proof-of-concept test of whether an idea works in realistic conditions."
+      "term": "Autonomous work",
+      "definition": "Work without continuous operator commands."
     },
     {
-      "term": "lidar",
-      "definition": "A laser-based sensor measuring distances to surrounding objects."
+      "term": "Payload",
+      "definition": "Mass a mechanism can carry."
     },
     {
-      "term": "uptime",
-      "definition": "The proportion of time a system is available for use."
+      "term": "Degree of freedom",
+      "definition": "An independent coordinate of motion."
     }
   ],
   "sources": [
     {
-      "id": "fastlabel-source",
-      "title": "FastLabel、GENIAC-PRIZE 2026 テーマ２に採択：データセントリックVLAモデル開発コンペ",
-      "url": "https://prtimes.jp/main/html/rd/p/000000215.000065427.html",
-      "domain": "prtimes.jp",
-      "organization": "FastLabel",
-      "published_at": "2026-10-30"
+      "id": "yaskawa-release",
+      "title": "AI-enabled robotic welding introduced at GR KART workshop",
+      "url": "https://www.yaskawa.co.jp/newsrelease/news/1682029",
+      "domain": "www.yaskawa.co.jp",
+      "organization": "Yaskawa Electric and GAZOO Racing",
+      "published_at": "2026-10-28"
     },
     {
-      "id": "kit-go2-source",
-      "title": "四足歩行ロボット「Unitree Go2」を活用した巡回ロボットの社会実装を目指して",
-      "url": "https://www.kanazawa-it.ac.jp/kitnews/2026/1028_unitree-go2.html",
-      "domain": "www.kanazawa-it.ac.jp",
-      "organization": "Kanazawa Institute of Technology",
-      "published_at": "2026-10-28"
+      "id": "agibot-release",
+      "title": "AGIBOT Introduces Worken to Measure Productive Robot Work at AGIBOT Innovation Day 2026",
+      "url": "https://agibot.com/article/231/detail/131.html",
+      "domain": "agibot.com",
+      "organization": "AGIBOT",
+      "published_at": "2026-10-29"
     }
   ]
 }
